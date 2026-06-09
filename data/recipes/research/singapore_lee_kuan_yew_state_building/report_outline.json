@@ -1,0 +1,244 @@
+{
+  "title": "Singapore: Lee Kuan Yew, State-Building, and Administrative Centralization",
+  "recipe_id": "singapore_lee_kuan_yew_state_building",
+  "topic": "Singapore: Lee Kuan Yew, state-building, and administrative centralization",
+  "abstract": "This synthetic research outline covers Lee Kuan Yew's role in turning self-governing Singapore into a highly centralized administrative state. It emphasizes the transition from colonial rule to independent government, the consolidation of cabinet and civil-service authority, anti-corruption and meritocratic staffing, economic planning and statutory boards, and the social-policy machinery that supported housing, education, and public order. The report is designed for stable PDF benchmark generation, with English prose and controlled Malay context markers.",
+  "language_profile": {
+    "primary_language": "English",
+    "allowed_pdf_languages": [
+      "English",
+      "Bahasa Melayu",
+      "Bahasa Indonesia",
+      "Simplified Chinese"
+    ],
+    "multilingual_terms": [
+      {
+        "term": "meritokrasi",
+        "language": "Bahasa Melayu",
+        "meaning": "meritocracy"
+      },
+      {
+        "term": "pelan pembangunan",
+        "language": "Bahasa Melayu",
+        "meaning": "development plan"
+      },
+      {
+        "term": "pentadbiran tersentral",
+        "language": "Bahasa Indonesia",
+        "meaning": "centralized administration"
+      },
+      {
+        "term": "birokrasi bersih",
+        "language": "Bahasa Melayu",
+        "meaning": "clean bureaucracy"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "heading": "From Self-Government to Independence",
+      "bullet_points": [
+        "Place Lee Kuan Yew's premiership in the 1959 transition to self-government and the PAP's assumption of executive control.",
+        "Treat the 1963 merger with Malaysia and the 1965 separation as the political shocks that made survival, continuity, and administrative capacity urgent state goals.",
+        "Explain that early nation-building was shaped by security concerns, external vulnerability, and the need to create durable institutions quickly.",
+        "Keep the account neutral by presenting state-building as an institutional response to historical constraints rather than as a personal myth."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_transition_milestones",
+          "title": "Key Political Milestones, 1959-1990",
+          "description": "Chronology of the main transitions that shaped Lee Kuan Yew's state-building agenda."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_transition_timeline",
+          "kind": "timeline",
+          "title": "Transition From Self-Government to Independent State"
+        }
+      ],
+      "source_notes": [
+        "Use the PMO biography for the prime-ministerial dates and office-holding sequence.",
+        "Use Remembering.gov.sg and Britannica for the merger, separation, and independence framing.",
+        "Keep the section focused on political transition rather than later policy outcomes."
+      ]
+    },
+    {
+      "heading": "Centralizing the Executive and Civil Service",
+      "bullet_points": [
+        "Describe the cabinet and prime minister's office as the coordinating core of government, with ministries and statutory boards aligned to central direction.",
+        "Explain how merit-based recruitment, scholarship pipelines, and the Administrative Service were used to build a disciplined public service.",
+        "Include anti-corruption, pay discipline, and performance expectations as part of the wider clean-government model.",
+        "Use meritokrasi and birokrasi bersih as controlled benchmark markers for the administrative ethos."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_central_apparatus",
+          "title": "Central Government Apparatus and Functions",
+          "description": "Institutional map of how executive authority was concentrated and operationalized."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_civil_service_hierarchy",
+          "kind": "flow_diagram",
+          "title": "Executive Coordination and Public Service Hierarchy"
+        }
+      ],
+      "source_notes": [
+        "Use PSD statements and speeches for the public-service ethos, meritocracy, and leadership framing.",
+        "Use the PSC page for scholarship and talent-pipeline context.",
+        "Use CPIB for the anti-corruption framework and clean-government narrative."
+      ]
+    },
+    {
+      "heading": "Economic Planning and the Developmental State",
+      "bullet_points": [
+        "Show how the State Development Plan, the Economic Development Board, and related planning units turned economic strategy into a central state function.",
+        "Explain the role of technocratic advice, industrial policy, land assembly, and infrastructure in attracting investment and creating jobs.",
+        "Connect economic planning to the broader project of administrative centralization, where ministries, boards, and budget authority were tied together.",
+        "Treat pelan pembangunan as a controlled Malay marker for the development-plan logic."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_development_tools",
+          "title": "Development Instruments and Implementation Channels",
+          "description": "Summary of the main planning tools and institutions used in Singapore's early industrial strategy."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_policy_pipeline",
+          "kind": "flow_diagram",
+          "title": "Policy Pipeline From Planning to Industrial Output"
+        }
+      ],
+      "source_notes": [
+        "Use the NLB State Development Plan article for the first development plan and EDB creation.",
+        "Use URA and HDB history sources where planning, land use, and industrial estates intersect with state capacity.",
+        "Keep quantitative output claims out of the outline unless a later canonical merge verifies them."
+      ]
+    },
+    {
+      "heading": "Social Policy as State Capacity",
+      "bullet_points": [
+        "Describe public housing, home ownership, education policy, health measures, and urban order as instruments that extended the state's reach into daily life.",
+        "Explain how HDB and related land and housing policies helped solve shortages while also strengthening administrative control and social stability.",
+        "Show how public campaigns, bilingual education, and local regulation reinforced the government's developmental and social goals.",
+        "Keep the emphasis on institutions and implementation rather than on celebratory national memory."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_social_capacity_tools",
+          "title": "Social Policy Tools and Administrative Effects",
+          "description": "Matrix linking social programs to the state capacity they built."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_social_policy_map",
+          "kind": "network_diagram",
+          "title": "Social Policy Network Around the Central State"
+        }
+      ],
+      "source_notes": [
+        "Use HDB history for the housing authority, home ownership, and land-acquisition context.",
+        "Use URA history for the urban-planning lineage that grew out of the housing and planning machinery.",
+        "Use NLB and PSD materials for the public-service framing of delivery and implementation."
+      ]
+    },
+    {
+      "heading": "Institutional Legacy and Tradeoffs",
+      "bullet_points": [
+        "Show how Lee's departure as prime minister in 1990 signaled succession within a system that had been heavily institutionalized by then.",
+        "Frame the legacy as a durable state apparatus that outlived the founder, not as a system that depended only on one person.",
+        "Note the tradeoff between centralized effectiveness and limited political pluralism without turning the topic into a present-day judgment.",
+        "Close the topic at the early post-Lee transition so the benchmark remains coherent and historically bounded."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_legacy_balance",
+          "title": "Institutional Strengths and Tradeoffs",
+          "description": "Comparative summary of the centralization model's benefits, constraints, and legacy."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_legacy_synthesis",
+          "kind": "timeline",
+          "title": "Institutionalization and Succession, 1959-1990"
+        }
+      ],
+      "source_notes": [
+        "Use the PMO biography for the 1990 handover and later office sequence.",
+        "Use the PSD and embassy commemorative material for the public-service legacy framing.",
+        "Keep the evaluation neutral and bounded to the late founding period."
+      ]
+    }
+  ],
+  "source_register": [
+    {
+      "source_id": "src_pmo_lky",
+      "title": "Mr LEE Kuan Yew",
+      "publisher": "Prime Minister's Office Singapore",
+      "url": "https://www.pmo.gov.sg/About-Us/Past-Prime-Ministers/Mr-LEE-Kuan-Yew",
+      "use": "Prime ministerial dates and office-holding sequence."
+    },
+    {
+      "source_id": "src_remembering_lky",
+      "title": "Lee Kuan Yew, 1923 - 2015",
+      "publisher": "Remembering.gov.sg",
+      "url": "https://www.remembering.gov.sg/life-and-contributions/mr-lee-and-singapore/lee-kuan-yew-1923-2015/",
+      "use": "Self-government, merger, separation, and nation-building framing."
+    },
+    {
+      "source_id": "src_britannica_lky",
+      "title": "Lee Kuan Yew",
+      "publisher": "Britannica",
+      "url": "https://www.britannica.com/biography/Lee-Kuan-Yew",
+      "use": "High-level biographical summary and chronology."
+    },
+    {
+      "source_id": "src_state_development_plan",
+      "title": "State Development Plan, 1961-1964",
+      "publisher": "National Library Board Singapore",
+      "url": "https://www.nlb.gov.sg/main/article-detail?cmsuuid=00df90f2-a3ac-4e9b-b507-f338eb2f933c",
+      "use": "Development planning, industrialization, and EDB context."
+    },
+    {
+      "source_id": "src_hdb_history",
+      "title": "Our History",
+      "publisher": "Housing & Development Board",
+      "url": "https://www.hdb.gov.sg/about-us/our-story/our-history",
+      "use": "Public housing, home ownership, land acquisition, and state capacity."
+    },
+    {
+      "source_id": "src_psd_note",
+      "title": "Head, Civil Service's note to public officers - Remembering Mr Lee Kuan Yew",
+      "publisher": "Public Service Division",
+      "url": "https://www.psd.gov.sg/newsroom/head-civil-services-note-to-public-officers-remembering-mr-lee-kuan-yew/",
+      "use": "Public-service ethos, clean government, and civil-service identity."
+    },
+    {
+      "source_id": "src_cpib_framework",
+      "title": "Singapore's Corruption Control Framework",
+      "publisher": "Corrupt Practices Investigation Bureau",
+      "url": "https://www.cpib.gov.sg/about-corruption/prevention-and-corruption/singapores-corruption-control-framework/",
+      "use": "Anti-corruption and political will."
+    },
+    {
+      "source_id": "src_psc_about",
+      "title": "About PSC",
+      "publisher": "Public Service Commission Singapore",
+      "url": "https://www.psc.gov.sg/about-psc",
+      "use": "Scholarship, meritocracy, and civil-service talent pipeline."
+    },
+    {
+      "source_id": "src_ura_history",
+      "title": "Urban Redevelopment Authority",
+      "publisher": "National Library Board Singapore",
+      "url": "https://www.nlb.gov.sg/main/article-detail?cmsuuid=7a64797c-e86c-44ac-ab2f-6c82a5e213b5",
+      "use": "Urban planning roots and the post-self-government planning problem."
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "recipe_id": "singapore_japanese_occupation_1942_1945",
+  "topic": "Singapore: Japanese occupation and wartime civilian life, 1942-1945",
+  "status": "complete_for_review",
+  "scope_decisions": [
+    "The artifact set covers one topic only and stays within the 1942-1945 occupation window.",
+    "No canonical recipes, generator code, docs, or unrelated recipe folders were modified.",
+    "PDF-facing prose stays in English, with only controlled transliterated or translated benchmark terms where needed.",
+    "Exact casualty totals, ration quotas, and other unstable numeric claims are intentionally omitted."
+  ],
+  "decisions": [
+    "The folder focuses on civilian experience, coercive control, food scarcity, internment, labour, and memory.",
+    "Syonan-to is used as a historical transliteration rather than as decorative terminology.",
+    "The narrative stops at the end of occupation and does not extend into postwar constitutional history."
+  ],
+  "open_questions": [],
+  "source_notes": [
+    {
+      "source_id": "src_former_ford_factory_syonan",
+      "title": "Becoming Syonan",
+      "publisher": "National Archives of Singapore / Former Ford Factory",
+      "url": "https://corporate.nas.gov.sg/former-ford-factory/whatson/exhibition-syonan/",
+      "used_for": [
+        "Singapore's renaming as Syonan-to after the surrender",
+        "Occupation framing and civilian suffering",
+        "Sook Ching and memory context"
+      ]
+    },
+    {
+      "source_id": "src_nlb_kempeitai",
+      "title": "Kempeitai",
+      "publisher": "National Library Board Singapore",
+      "url": "https://www.nlb.gov.sg/main/article-detail?cmsuuid=5c8c9772-69d9-4554-ae5c-7bfeb6ccd528",
+      "used_for": [
+        "Kempeitai powers and role in occupied Singapore",
+        "Military policing, interrogation, and surveillance"
+      ]
+    },
+    {
+      "source_id": "src_nlb_sook_ching",
+      "title": "Operation Sook Ching",
+      "publisher": "National Library Board Singapore",
+      "url": "https://www.nlb.gov.sg/main/article-detail?cmsuuid=cc4da337-3bcd-4f96-bdc6-5210646bdd90",
+      "used_for": [
+        "Mass screening campaign against Chinese civilians",
+        "Occupation violence and civilian fear"
+      ]
+    },
+    {
+      "source_id": "src_roots_sook_ching_site",
+      "title": "Sook Ching Inspection Centre",
+      "publisher": "Roots / National Heritage Board Singapore",
+      "url": "https://www.roots.gov.sg/places/places-landing/Places/historic-sites/sook-ching-inspection-centre",
+      "used_for": [
+        "Physical site context for screening and memory",
+        "Heritage framing of the operation"
+      ]
+    },
+    {
+      "source_id": "src_biblioasia_wartime_victuals",
+      "title": "Wartime Victuals: Surviving the Japanese Occupation",
+      "publisher": "BiblioAsia / National Library Board Singapore",
+      "url": "https://biblioasia.nlb.gov.sg/vol-15/issue-1/apr-jun-2019/wartime-victuals",
+      "used_for": [
+        "Food shortages, rationing, black markets, and survival strategies",
+        "Civilian memory of wartime eating and scarcity"
+      ]
+    },
+    {
+      "source_id": "src_nas_food_control",
+      "title": "Food Control During The Japanese Occupation 1942-1945",
+      "publisher": "National Archives of Singapore",
+      "url": "https://www.nas.gov.sg/archivesonline/audiovisual_records/record-details/468eb2bf-1164-11e3-83d5-0050568939ad",
+      "used_for": [
+        "Rationing system, food control, and agricultural improvisation",
+        "Black-market and self-sufficiency context"
+      ]
+    },
+    {
+      "source_id": "src_nlb_changi_internment",
+      "title": "Within Changi's walls: a record of civilian internment in World War II",
+      "publisher": "National Library Board Singapore",
+      "url": "https://www.nlb.gov.sg/main/book-detail?cmsuuid=b05bc049-34db-47a3-aed1-c7487cc4b08b",
+      "used_for": [
+        "Civilian internment at Changi",
+        "Detention, deprivation, and camp experience"
+      ]
+    },
+    {
+      "source_id": "src_nhb_occupation_guide",
+      "title": "Investigating History: Singapore Under the Japanese Occupation 1942-1945",
+      "publisher": "National Heritage Board Singapore / National Museum of Singapore",
+      "url": "https://www.nhb.gov.sg/nationalmuseum/-/media/nms2017/documents/school-programmes/teachers-hi-resource-unit-3-japanese-occupation.pdf",
+      "used_for": [
+        "Cautious framing of casualty estimates and wartime memory",
+        "Educational synthesis of occupation themes"
+      ]
+    },
+    {
+      "source_id": "src_nlb_surrender_image",
+      "title": "Japanese soldiers marching towards the Municipal Building to sign the surrender papers on 12 September 1945",
+      "publisher": "National Library Board Singapore",
+      "url": "https://www.nlb.gov.sg/main/image-detail?cmsuuid=19c36e57-3400-433d-a307-3a81b0570959",
+      "used_for": [
+        "Surrender-day imagery",
+        "End-of-occupation chronology"
+      ]
+    }
+  ]
+}

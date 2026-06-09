@@ -1,0 +1,244 @@
+{
+  "tables": [
+    {
+      "table_id": "tbl_merger_timeline_1963_1965",
+      "title": "Merger and Separation Timeline, 1961-1965",
+      "matrix": [
+        [
+          "Date or Period",
+          "Event",
+          "Why It Matters",
+          "Benchmark Note"
+        ],
+        [
+          "27 May 1961",
+          "Malaysia proposal enters public debate",
+          "Sets the constitutional path toward merger",
+          "Use as background to merger planning"
+        ],
+        [
+          "1 Sep 1962",
+          "Singapore referendum on merger options",
+          "Provides public authorization for the merger route",
+          "Do not overstate unanimity"
+        ],
+        [
+          "9 Jul 1963",
+          "London Agreement formalizes the Malaysia plan",
+          "Legal step toward federation formation",
+          "Useful for chronology extraction"
+        ],
+        [
+          "16 Sep 1963",
+          "Federation of Malaysia comes into being",
+          "Singapore enters the federation with Malaya, Sabah, and Sarawak",
+          "Core date for the topic"
+        ],
+        [
+          "7 Aug 1965",
+          "Separation agreement is signed",
+          "Prepares the constitutional break with Malaysia",
+          "Link to immediate legal steps"
+        ],
+        [
+          "9 Aug 1965",
+          "Singapore is proclaimed independent and sovereign",
+          "Marks the end of the merger period",
+          "Core date for the topic"
+        ]
+      ],
+      "notes": [
+        "The table prioritizes dates that are stable across public historical summaries.",
+        "Background events before 1963 are included only to explain the merger path.",
+        "The chronology is intentionally compact so it can support sequence extraction."
+      ],
+      "suggested_section": "From Self-Government to the Malaysia Project"
+    },
+    {
+      "table_id": "tbl_federal_roles_1963_1965",
+      "title": "Federal and State Roles After Merger",
+      "matrix": [
+        [
+          "Institution",
+          "Level",
+          "Main Role",
+          "Extraction Note"
+        ],
+        [
+          "Singapore State Government",
+          "State",
+          "Managed local administration and state-level policy within the federation",
+          "Do not treat it as fully sovereign in 1963-1965"
+        ],
+        [
+          "Malaysian Federal Government",
+          "Federal",
+          "Handled federal law, broader security, and nationwide political coordination",
+          "Key counterpart in merger disputes"
+        ],
+        [
+          "People's Action Party leadership",
+          "Singapore political leadership",
+          "Pressed for merger, economic growth, and a workable federal settlement",
+          "Use for party-political analysis"
+        ],
+        [
+          "Alliance federal leadership",
+          "Federal political leadership",
+          "Managed federal balance, communal concerns, and national coalition politics",
+          "Useful for power-sharing extraction"
+        ],
+        [
+          "Electorate and public bodies",
+          "Public sphere",
+          "Conveyed support, anxiety, and contested expectations around merger",
+          "Avoid implying stable consensus"
+        ]
+      ],
+      "notes": [
+        "This table focuses on role distinctions rather than detailed constitutional articles.",
+        "The institution labels are simplified for extraction and benchmark use.",
+        "Later canonical work can expand the constitutional detail if needed."
+      ],
+      "suggested_section": "Merger into the Federation of Malaysia"
+    },
+    {
+      "table_id": "tbl_economic_tensions_1963_1965",
+      "title": "Economic Expectations and Disputes",
+      "matrix": [
+        [
+          "Issue",
+          "Expected Benefit",
+          "Source of Friction",
+          "Benchmark Note"
+        ],
+        [
+          "Common market",
+          "Larger demand for Singapore industry",
+          "Timing and access were contested",
+          "Use the term pasaran bersama sparingly"
+        ],
+        [
+          "Tax and revenue",
+          "More stable public finance",
+          "Disagreement over revenue sharing and fiscal balance",
+          "Keep the label general"
+        ],
+        [
+          "Trade and tariffs",
+          "Easier regional commerce",
+          "Different policy interests across the federation",
+          "Relevant to port and business extraction"
+        ],
+        [
+          "Employment and industrialization",
+          "More jobs and faster growth",
+          "Slower-than-expected integration created disappointment",
+          "Use without exact employment figures"
+        ],
+        [
+          "Commercial confidence",
+          "Reassurance for firms and investors",
+          "Political conflict weakened confidence",
+          "Suitable for benchmark narratives"
+        ]
+      ],
+      "notes": [
+        "The table distinguishes expected gains from the political limits that frustrated them.",
+        "It is intentionally qualitative and avoids unstable economic statistics.",
+        "The common-market phrase is the main multilingual marker."
+      ],
+      "suggested_section": "Economic Integration and Federal Friction"
+    },
+    {
+      "table_id": "tbl_political_disputes_1963_1965",
+      "title": "Main Political Disputes in the Federation",
+      "matrix": [
+        [
+          "Dispute Area",
+          "What Was at Stake",
+          "Effect on the Federation",
+          "Benchmark Note"
+        ],
+        [
+          "Party competition",
+          "Control of political legitimacy",
+          "Raised the temperature of Singapore-Malaysia relations",
+          "Avoid reducing this to a personality clash"
+        ],
+        [
+          "Communal politics",
+          "Ethnic balance and representation",
+          "Made compromise harder in public debate",
+          "Keep language neutral and precise"
+        ],
+        [
+          "Security and anti-communism",
+          "Internal order and regional stability",
+          "Shaped arrests, rhetoric, and federal suspicion",
+          "Important for chronology and context"
+        ],
+        [
+          "Konfrontasi",
+          "Regional conflict around Malaysia's formation",
+          "Reduced the room for political normalization",
+          "Use as a regional pressure factor"
+        ],
+        [
+          "Constitutional authority",
+          "Who could decide what inside the federation",
+          "Led toward separation rather than continued bargaining",
+          "Core extraction theme"
+        ]
+      ],
+      "notes": [
+        "The table compresses a complex political period into extraction-friendly categories.",
+        "It emphasizes institutional effects rather than polemics.",
+        "This is the best place to encode the role of Konfrontasi as external pressure."
+      ],
+      "suggested_section": "Communal Politics, Konfrontasi, and Constitutional Crisis"
+    },
+    {
+      "table_id": "tbl_separation_documents_1965",
+      "title": "Separation Documents and Immediate Legal Steps",
+      "matrix": [
+        [
+          "Document or Step",
+          "Date",
+          "Function",
+          "Extraction Note"
+        ],
+        [
+          "Agreement to separate",
+          "7 Aug 1965",
+          "Set the legal framework for ending the union",
+          "Key pre-proclamation step"
+        ],
+        [
+          "Constitutional amendment",
+          "Aug 1965",
+          "Adjusted Malaysian constitutional provisions for separation",
+          "Legal mechanism of the break"
+        ],
+        [
+          "Proclamation of Singapore",
+          "9 Aug 1965",
+          "Declared Singapore independent and sovereign",
+          "Core historical milestone"
+        ],
+        [
+          "Government transition measures",
+          "Aug 1965",
+          "Kept administration, security, and public order functioning",
+          "Use for immediate state-building"
+        ]
+      ],
+      "notes": [
+        "The table is built around the documents named in NAS public archival descriptions.",
+        "It does not attempt to reproduce the full constitutional text.",
+        "The focus is on the separation sequence and its immediate effects."
+      ],
+      "suggested_section": "Separation and Immediate State-Building"
+    }
+  ]
+}

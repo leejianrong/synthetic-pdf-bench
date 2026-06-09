@@ -1,0 +1,214 @@
+{
+  "tables": [
+    {
+      "table_id": "tbl_housing_state_formation",
+      "title": "Housing Institutions and Early Post-Independence Roles",
+      "matrix": [
+        [
+          "Institution",
+          "Period in Scope",
+          "Main Function",
+          "Policy Significance"
+        ],
+        [
+          "Singapore Improvement Trust",
+          "Colonial legacy into the 1950s and early 1960s",
+          "Limited public housing and estate building",
+          "Showed the limits of small-scale colonial housing reform"
+        ],
+        [
+          "Housing and Development Board",
+          "From 1960 onward",
+          "Mass public housing, estate planning, resettlement support",
+          "Core agency for post-independence housing state-building"
+        ],
+        [
+          "Ministry and cabinet-level planning",
+          "1960s onward",
+          "Land, finance, development, and coordination",
+          "Linked housing to broader national development policy"
+        ],
+        [
+          "Public utilities and municipal agencies",
+          "1960s onward",
+          "Water, roads, sanitation, markets, and local services",
+          "Made estates liveable and commercially functional"
+        ]
+      ],
+      "notes": [
+        "Rows are qualitative and intended for stable extraction.",
+        "The table is designed to separate institutional roles rather than legal minutiae.",
+        "The colonial predecessor is included only as background context."
+      ],
+      "suggested_section": "Housing Crisis, Independence, and the Creation of HDB"
+    },
+    {
+      "table_id": "tbl_home_ownership_instruments",
+      "title": "Policy Instruments Supporting Home Ownership",
+      "matrix": [
+        [
+          "Instrument",
+          "Year",
+          "What It Did",
+          "Housing Effect"
+        ],
+        [
+          "Home Ownership for the People Scheme",
+          "1964",
+          "Allowed eligible households to buy HDB flats",
+          "Shifted public housing toward owner-occupation"
+        ],
+        [
+          "Land Acquisition Act",
+          "1967",
+          "Expanded state land assembly for redevelopment",
+          "Enabled larger-scale clearance and planning"
+        ],
+        [
+          "CPF housing access changes",
+          "1968",
+          "Allowed use of savings for housing purchase",
+          "Improved affordability and widened access"
+        ],
+        [
+          "Public rental and ownership pathways",
+          "1960s onward",
+          "Balanced emergency shelter with eventual ownership",
+          "Created a layered public housing ladder"
+        ]
+      ],
+      "notes": [
+        "The table uses stable milestone years from HDB's official history.",
+        "It is meant for policy-sequence extraction, not legal interpretation.",
+        "The scheme names are kept in standard official English."
+      ],
+      "suggested_section": "Home Ownership, Land Assembly, and Resettlement"
+    },
+    {
+      "table_id": "tbl_new_towns_and_estates",
+      "title": "Representative New Towns and Their Planning Functions",
+      "matrix": [
+        [
+          "Town or Estate",
+          "Development Role",
+          "Key Features",
+          "Planning Significance"
+        ],
+        [
+          "Queenstown",
+          "Early planned public housing town",
+          "Housing blocks, amenities, schools, and neighborhood services",
+          "Early model for self-contained satellite-town planning"
+        ],
+        [
+          "Toa Payoh",
+          "Major early HDB town",
+          "Large-scale flats, community facilities, and transport links",
+          "Showed how estate building could scale after 1960"
+        ],
+        [
+          "Tiong Bahru",
+          "Pre-independence housing precursor",
+          "Early public housing blocks and later conservation value",
+          "Demonstrates the colonial-to-national transition in housing"
+        ],
+        [
+          "Later HDB towns",
+          "Post-1971 expansion model",
+          "Integrated schools, shops, transport, and open space",
+          "Reflected the maturing new-town concept"
+        ]
+      ],
+      "notes": [
+        "The examples are representative rather than exhaustive.",
+        "The table intentionally spans both early and later estates to show continuity.",
+        "Planning function takes priority over architectural detail."
+      ],
+      "suggested_section": "New Towns, Public Estates, and Urban Service Integration"
+    },
+    {
+      "table_id": "tbl_estate_renewal_tools",
+      "title": "Estate Upgrading and Conservation Tools",
+      "matrix": [
+        [
+          "Tool",
+          "Typical Target",
+          "Main Purpose",
+          "Policy Role"
+        ],
+        [
+          "Flat upgrading",
+          "Older HDB blocks",
+          "Improve internal conditions and unit usability",
+          "Extends the life of the housing stock"
+        ],
+        [
+          "Common-area improvements",
+          "Stairwells, lifts, walkways, playgrounds",
+          "Upgrade shared space and daily convenience",
+          "Makes mature estates more liveable"
+        ],
+        [
+          "Town rejuvenation",
+          "Whole estates and neighborhood centers",
+          "Refresh the social and spatial environment",
+          "Keeps older towns competitive and familiar"
+        ],
+        [
+          "Conservation",
+          "Selected heritage districts",
+          "Preserve urban character and history",
+          "Balances planning with built heritage"
+        ]
+      ],
+      "notes": [
+        "The table separates maintenance, rejuvenation, and conservation as distinct tools.",
+        "The matrix avoids listing every program name, which can change over time.",
+        "It is intended for stable policy-category extraction."
+      ],
+      "suggested_section": "Upgrading, Renewal, and Conservation of Older Estates"
+    },
+    {
+      "table_id": "tbl_planning_evolution",
+      "title": "Long-Term Planning Milestones After Independence",
+      "matrix": [
+        [
+          "Planning Moment",
+          "Year",
+          "Main Idea",
+          "Housing Connection"
+        ],
+        [
+          "State and city planning work",
+          "Late 1960s to 1971",
+          "Prepared a long-range island-wide structure",
+          "Located housing within a national spatial framework"
+        ],
+        [
+          "Concept Plan 1971",
+          "1971",
+          "Ring of satellite towns around protected central land",
+          "Supported mass housing, industry, and transport integration"
+        ],
+        [
+          "Concept Plan review",
+          "1991",
+          "More balanced island city with stronger work-life integration",
+          "Expanded the role of mature towns and mixed-use nodes"
+        ],
+        [
+          "Later long-term plans",
+          "2000s onward",
+          "Greater attention to sustainability, connectivity, and conservation",
+          "Reinforced the mature public housing system"
+        ]
+      ],
+      "notes": [
+        "This table compresses a long planning history into benchmark-friendly milestones.",
+        "The terminology follows URA public planning pages.",
+        "The table is qualitative and deliberately avoids current-year projections."
+      ],
+      "suggested_section": "Long-Term Planning, Decentralization, and Contemporary Housing Policy"
+    }
+  ]
+}

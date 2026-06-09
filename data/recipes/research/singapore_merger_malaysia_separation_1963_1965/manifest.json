@@ -1,0 +1,22 @@
+{
+  "recipe_id": "singapore_merger_malaysia_separation_1963_1965",
+  "topic": "Singapore: merger with Malaysia and separation in 1963-1965",
+  "status": "complete_for_review",
+  "files": [
+    "report_outline.json",
+    "prose_blocks.json",
+    "tables.json",
+    "vector_figures.json",
+    "manifest.json",
+    "notes.json"
+  ],
+  "counts": {
+    "outline_sections": 5,
+    "prose_blocks": 15,
+    "tables": 5,
+    "figures": 5
+  },
+  "source_notes_present": true,
+  "open_uncertainty_count": 3,
+  "checklist_modified": false
+}

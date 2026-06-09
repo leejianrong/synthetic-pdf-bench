@@ -1,0 +1,122 @@
+{
+  "recipe_id": "singapore_lee_kuan_yew_state_building",
+  "topic": "Singapore: Lee Kuan Yew, state-building, and administrative centralization",
+  "status": "complete_for_review",
+  "scope_decisions": [
+    "The artifact set covers Lee Kuan Yew's state-building role from the 1959 self-government transition through the 1990 handover, with only brief legacy references after that point.",
+    "The topic is treated as an institutional history of Singapore's central state, not as a full biography or a current political analysis.",
+    "Quantitative claims are kept qualitative so the set stays stable and benchmark-friendly without depending on extra primary-source verification.",
+    "PDF-facing text uses English prose with controlled Malay markers only, which keeps the language profile within the handbook constraints."
+  ],
+  "decisions": [
+    "The outline is organized around five themes: political transition, executive centralization, developmental state, social policy, and legacy.",
+    "The prose uses neutral benchmark language and avoids celebratory framing so extraction tasks can focus on institutions and sequence.",
+    "Public housing, civil-service reform, anti-corruption, and planning are treated as connected elements of state capacity rather than as separate policy silos.",
+    "The figures and tables are deliberately schematic so they remain deterministic and easy to regenerate."
+  ],
+  "research_basis": [
+    {
+      "source_id": "src_pmo_lky",
+      "title": "Mr LEE Kuan Yew",
+      "publisher": "Prime Minister's Office Singapore",
+      "url": "https://www.pmo.gov.sg/About-Us/Past-Prime-Ministers/Mr-LEE-Kuan-Yew",
+      "used_for": [
+        "Prime ministerial dates",
+        "1990 handover",
+        "general office-holding chronology"
+      ]
+    },
+    {
+      "source_id": "src_remembering_lky",
+      "title": "Lee Kuan Yew, 1923 - 2015",
+      "publisher": "Remembering.gov.sg",
+      "url": "https://www.remembering.gov.sg/life-and-contributions/mr-lee-and-singapore/lee-kuan-yew-1923-2015/",
+      "used_for": [
+        "Self-government framing",
+        "merger and separation narrative",
+        "nation-building summary"
+      ]
+    },
+    {
+      "source_id": "src_britannica_lky",
+      "title": "Lee Kuan Yew",
+      "publisher": "Britannica",
+      "url": "https://www.britannica.com/biography/Lee-Kuan-Yew",
+      "used_for": [
+        "high-level biographical chronology",
+        "stable background on premiership and legacy"
+      ]
+    },
+    {
+      "source_id": "src_state_development_plan",
+      "title": "State Development Plan, 1961-1964",
+      "publisher": "National Library Board Singapore",
+      "url": "https://www.nlb.gov.sg/main/article-detail?cmsuuid=00df90f2-a3ac-4e9b-b507-f338eb2f933c",
+      "used_for": [
+        "first development plan",
+        "industrialization logic",
+        "Economic Development Board context"
+      ]
+    },
+    {
+      "source_id": "src_hdb_history",
+      "title": "Our History",
+      "publisher": "Housing & Development Board",
+      "url": "https://www.hdb.gov.sg/about-us/our-story/our-history",
+      "used_for": [
+        "public housing",
+        "home ownership policy",
+        "land acquisition and resettlement"
+      ]
+    },
+    {
+      "source_id": "src_psd_note",
+      "title": "Head, Civil Service's note to public officers - Remembering Mr Lee Kuan Yew",
+      "publisher": "Public Service Division",
+      "url": "https://www.psd.gov.sg/newsroom/head-civil-services-note-to-public-officers-remembering-mr-lee-kuan-yew/",
+      "used_for": [
+        "public-service ethos",
+        "clean government framing",
+        "institutional legacy language"
+      ]
+    },
+    {
+      "source_id": "src_cpib_framework",
+      "title": "Singapore's Corruption Control Framework",
+      "publisher": "Corrupt Practices Investigation Bureau",
+      "url": "https://www.cpib.gov.sg/about-corruption/prevention-and-corruption/singapores-corruption-control-framework/",
+      "used_for": [
+        "anti-corruption framework",
+        "political will and enforcement",
+        "clean-government narrative"
+      ]
+    },
+    {
+      "source_id": "src_psc_about",
+      "title": "About PSC",
+      "publisher": "Public Service Commission Singapore",
+      "url": "https://www.psc.gov.sg/about-psc",
+      "used_for": [
+        "scholarship pipeline",
+        "meritocratic recruitment",
+        "civil-service talent selection"
+      ]
+    },
+    {
+      "source_id": "src_ura_history",
+      "title": "Urban Redevelopment Authority",
+      "publisher": "National Library Board Singapore",
+      "url": "https://www.nlb.gov.sg/main/article-detail?cmsuuid=7a64797c-e86c-44ac-ab2f-6c82a5e213b5",
+      "used_for": [
+        "urban planning roots",
+        "state capacity in land use",
+        "post-self-government planning problem"
+      ]
+    }
+  ],
+  "open_questions": [],
+  "recommended_follow_up": [
+    "If this topic is later merged into a canonical recipe, decide whether the preferred endpoint should remain 1990 or extend a little farther into the early post-Lee transition.",
+    "A later canonical version could add a small primary-source table on the State Development Plan if numeric extraction becomes necessary."
+  ]
+}

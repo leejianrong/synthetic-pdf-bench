@@ -1,0 +1,90 @@
+{
+  "recipe_id": "singapore_merger_malaysia_separation_1963_1965",
+  "topic": "Singapore: merger with Malaysia and separation in 1963-1965",
+  "status": "complete_for_review",
+  "scope_decisions": [
+    "The artifact set covers one topic only and stays within 1963-1965, using brief background only when needed to explain the merger path.",
+    "No generator code, canonical recipes, unrelated research folders, or topic checklist entries were modified.",
+    "PDF-facing text uses English plus selected Bahasa Melayu and Simplified Chinese markers only.",
+    "The content avoids exact economic or electoral statistics because those would require additional primary-source verification."
+  ],
+  "decisions": [
+    "Scope is limited to Singapore's entry into Malaysia in 1963 and separation in 1965.",
+    "The merger is framed as a constitutional and economic project, not as a completed national settlement.",
+    "The separation moment is anchored to the legal sequence in August 1965 and the 9 August proclamation.",
+    "Multilingual terms are used only as controlled benchmark markers, not as decorative text."
+  ],
+  "research_basis": [
+    {
+      "source_id": "src_nlb_singapore_becomes_part_of_malaysia",
+      "title": "Singapore becomes part of Malaysia",
+      "publisher": "National Library Board Singapore",
+      "url": "https://www.nlb.gov.sg/main/article-detail?cmsuuid=1dab53ea-788c-461c-acfb-ca625b974c9c",
+      "used_for": [
+        "16 September 1963 merger date",
+        "Stated economic rationale for merger",
+        "Referendum and common market framing"
+      ]
+    },
+    {
+      "source_id": "src_nlb_singapore_separation_from_malaysia",
+      "title": "Singapore's separation from Malaysia",
+      "publisher": "National Library Board Singapore",
+      "url": "https://www.nlb.gov.sg/main/article-detail?cmsuuid=9641f35d-3ae5-41d8-9fa6-7ca8b845ea53",
+      "used_for": [
+        "9 August 1965 separation date",
+        "General explanation of the political and economic differences",
+        "Public framing of the separation"
+      ]
+    },
+    {
+      "source_id": "src_nas_proclamation_of_singapore",
+      "title": "Proclamation of Singapore, 1965",
+      "publisher": "National Archives of Singapore",
+      "url": "https://corporate.nas.gov.sg/media/collections-and-research/proclamationofsingapore/",
+      "used_for": [
+        "Official separation proclamation context",
+        "Legal sequence and drafted documents",
+        "Archival framing of the independence moment"
+      ]
+    },
+    {
+      "source_id": "src_nas_merger_proclamation_photo",
+      "title": "Malaysia - constituting the Federation of Malaya, Singapore, North Borneo and Sarawak - was officially formed on 16 September 1963",
+      "publisher": "National Archives of Singapore",
+      "url": "https://www.nas.gov.sg/archivesonline/photographs/record-details/9837f318-1162-11e3-83d5-0050568939ad",
+      "used_for": [
+        "Official proclamation language for merger",
+        "Multilingual presentation of the merger event",
+        "Public record of the formation date"
+      ]
+    },
+    {
+      "source_id": "src_britannica_singapore_history",
+      "title": "History of Singapore",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/history-of-Singapore",
+      "used_for": [
+        "High-level chronology for 1963 to 1965",
+        "Cross-check on merger and independence dates",
+        "Broad historical framing"
+      ]
+    }
+  ],
+  "open_factual_uncertainty": [
+    "The constitutional wording of the separation package can be expanded later if a canonical recipe needs the full legal sequence.",
+    "The economic dispute section intentionally avoids exact trade, revenue, and fiscal figures until they are verified from named primary reports.",
+    "The topic is often summarized through political biographies; this artifact keeps the emphasis on institutions and dates instead."
+  ],
+  "open_questions": [
+    "Should a future canonical version include the 1962 referendum percentages, or keep the discussion qualitative?",
+    "Should the legal sequence of 7 August and 9 August 1965 be expanded with named constitutional documents in full?",
+    "Should later enrichment add a separate table for Konfrontasi and regional security context?"
+  ],
+  "recommended_follow_up": [
+    "Before any canonical merge, verify whether the final narrative should name specific parliamentary instruments for the separation package.",
+    "If more detail is needed, add a primary-source table for merger and separation documents with exact document titles.",
+    "Review the multilingual markers against the target PDF font stack if this set is promoted into runtime output."
+  ],
+  "checklist_modified": false
+}

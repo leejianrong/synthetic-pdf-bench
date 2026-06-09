@@ -1,0 +1,300 @@
+{
+  "figures": [
+    {
+      "figure_id": "fig_housing_institution_shift",
+      "kind": "flow_diagram",
+      "title": "From SIT Legacy to HDB Mass Housing",
+      "caption": "Simplified institutional progression from the colonial housing precursor to the post-independence public housing agency and its state-building role.",
+      "data": {
+        "direction": "left_to_right",
+        "nodes": [
+          {
+            "id": "sit",
+            "label": "Singapore Improvement Trust",
+            "type": "legacy_housing_body"
+          },
+          {
+            "id": "housing_crisis",
+            "label": "Postwar housing shortage",
+            "type": "problem"
+          },
+          {
+            "id": "hdb",
+            "label": "Housing and Development Board, 1960",
+            "type": "public_agency"
+          },
+          {
+            "id": "mass_building",
+            "label": "Large-scale flat construction",
+            "type": "delivery"
+          },
+          {
+            "id": "rehousing",
+            "label": "Rehousing from squatter and unsafe housing",
+            "type": "social_policy"
+          }
+        ],
+        "edges": [
+          {
+            "from": "sit",
+            "to": "housing_crisis",
+            "label": "limited legacy"
+          },
+          {
+            "from": "housing_crisis",
+            "to": "hdb",
+            "label": "state response"
+          },
+          {
+            "from": "hdb",
+            "to": "mass_building",
+            "label": "builds flats"
+          },
+          {
+            "from": "hdb",
+            "to": "rehousing",
+            "label": "resettles households"
+          }
+        ],
+        "render_hints": {
+          "group_by_type": true,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 24,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "Housing Crisis, Independence, and the Creation of HDB"
+    },
+    {
+      "figure_id": "fig_home_ownership_timeline",
+      "kind": "timeline",
+      "title": "Home Ownership and Land Policy Milestones",
+      "caption": "Selected milestones showing how ownership, land assembly, and financing were combined after independence.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1960,
+          "end_year": 1968,
+          "tick_interval_years": 2
+        },
+        "events": [
+          {
+            "year": 1960,
+            "label": "HDB created to address the housing shortage",
+            "short_label": "HDB formed",
+            "event_type": "institutional_change"
+          },
+          {
+            "year": 1964,
+            "label": "Home Ownership for the People Scheme launched",
+            "short_label": "Ownership scheme",
+            "event_type": "policy_shift"
+          },
+          {
+            "year": 1967,
+            "label": "Land Acquisition Act expands redevelopment capacity",
+            "short_label": "Land act",
+            "event_type": "legal_change"
+          },
+          {
+            "year": 1968,
+            "label": "CPF changes support housing purchase",
+            "short_label": "CPF access",
+            "event_type": "financial_change"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 18
+        }
+      },
+      "suggested_section": "Home Ownership, Land Assembly, and Resettlement"
+    },
+    {
+      "figure_id": "fig_new_town_network",
+      "kind": "network_diagram",
+      "title": "Public Estate and Service Network",
+      "caption": "Simplified town system showing housing estates connected to daily services, transport, and employment areas.",
+      "data": {
+        "layout": "hub_and_spoke",
+        "central_node": "estate",
+        "nodes": [
+          {
+            "id": "estate",
+            "label": "Public estate / new town",
+            "type": "hub"
+          },
+          {
+            "id": "homes",
+            "label": "Flats and blocks",
+            "type": "residential"
+          },
+          {
+            "id": "schools",
+            "label": "Schools and childcare",
+            "type": "social_infrastructure"
+          },
+          {
+            "id": "shops",
+            "label": "Shops, markets, and neighborhood centers",
+            "type": "commercial_services"
+          },
+          {
+            "id": "transport",
+            "label": "Bus routes and later rail links",
+            "type": "mobility"
+          },
+          {
+            "id": "jobs",
+            "label": "Industrial estates and workplaces",
+            "type": "employment"
+          }
+        ],
+        "edges": [
+          {
+            "from": "estate",
+            "to": "homes",
+            "label": "provides housing"
+          },
+          {
+            "from": "estate",
+            "to": "schools",
+            "label": "serves families"
+          },
+          {
+            "from": "estate",
+            "to": "shops",
+            "label": "daily services"
+          },
+          {
+            "from": "estate",
+            "to": "transport",
+            "label": "connects residents"
+          },
+          {
+            "from": "estate",
+            "to": "jobs",
+            "label": "links to work"
+          }
+        ],
+        "render_hints": {
+          "hub_emphasis": true,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 22
+        }
+      },
+      "suggested_section": "New Towns, Public Estates, and Urban Service Integration"
+    },
+    {
+      "figure_id": "fig_estate_renewal_cycle",
+      "kind": "flow_diagram",
+      "title": "From New Estate to Mature Town",
+      "caption": "Lifecycle view of how a public estate moves from construction to upgrading, rejuvenation, and selective conservation.",
+      "data": {
+        "direction": "left_to_right",
+        "nodes": [
+          {
+            "id": "build",
+            "label": "New estate construction",
+            "type": "phase"
+          },
+          {
+            "id": "age",
+            "label": "Buildings and common spaces age",
+            "type": "phase"
+          },
+          {
+            "id": "upgrade",
+            "label": "Upgrading and common-area improvements",
+            "type": "phase"
+          },
+          {
+            "id": "rejuvenate",
+            "label": "Town rejuvenation and amenity renewal",
+            "type": "phase"
+          },
+          {
+            "id": "conserve",
+            "label": "Selective conservation of heritage districts",
+            "type": "phase"
+          }
+        ],
+        "edges": [
+          {
+            "from": "build",
+            "to": "age",
+            "label": "time passes"
+          },
+          {
+            "from": "age",
+            "to": "upgrade",
+            "label": "policy response"
+          },
+          {
+            "from": "upgrade",
+            "to": "rejuvenate",
+            "label": "estate renewal"
+          },
+          {
+            "from": "rejuvenate",
+            "to": "conserve",
+            "label": "selected districts"
+          }
+        ],
+        "render_hints": {
+          "group_by_type": false,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 24
+        }
+      },
+      "suggested_section": "Upgrading, Renewal, and Conservation of Older Estates"
+    },
+    {
+      "figure_id": "fig_planning_evolution_timeline",
+      "kind": "timeline",
+      "title": "Urban Planning Evolution After Independence",
+      "caption": "Selected planning milestones showing the shift from emergency housing provision to long-term spatial planning.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1968,
+          "end_year": 2001,
+          "tick_interval_years": 5
+        },
+        "events": [
+          {
+            "year": 1968,
+            "label": "State and city planning work begins",
+            "short_label": "Planning team",
+            "event_type": "planning"
+          },
+          {
+            "year": 1971,
+            "label": "Concept Plan establishes satellite-town structure",
+            "short_label": "Concept Plan",
+            "event_type": "planning"
+          },
+          {
+            "year": 1991,
+            "label": "Concept Plan review expands the island city vision",
+            "short_label": "1991 review",
+            "event_type": "planning"
+          },
+          {
+            "year": 2001,
+            "label": "Later long-term planning deepens conservation and connectivity",
+            "short_label": "2001 review",
+            "event_type": "planning"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 22
+        }
+      },
+      "suggested_section": "Long-Term Planning, Decentralization, and Contemporary Housing Policy"
+    }
+  ]
+}

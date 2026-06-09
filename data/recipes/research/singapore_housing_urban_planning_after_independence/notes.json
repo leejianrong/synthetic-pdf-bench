@@ -1,0 +1,80 @@
+{
+  "recipe_id": "singapore_housing_urban_planning_after_independence",
+  "topic": "Singapore: housing policy, public estates, and urban planning after independence",
+  "open_questions": [],
+  "decisions": [
+    "The topic is scoped from 1960 onward, with colonial SIT and Tiong Bahru included only as background context for the post-independence housing system.",
+    "The artifact set emphasizes stable institutional milestones: HDB creation, the 1964 ownership scheme, land acquisition and CPF policy changes, the 1971 Concept Plan, and later planning reviews.",
+    "PDF-facing prose stays in English, while multilingual markers are limited to controlled benchmark terms in the outline and notes."
+  ],
+  "source_notes": [
+    {
+      "source_id": "src_hdb_history",
+      "title": "Our History",
+      "publisher": "Housing & Development Board",
+      "url": "https://www.hdb.gov.sg/about-us/our-story/our-history",
+      "used_for": [
+        "1960 HDB founding",
+        "early flat-building milestone",
+        "1964 Home Ownership for the People Scheme",
+        "1967 Land Acquisition Act",
+        "1968 CPF housing access changes",
+        "upgrading programme context"
+      ]
+    },
+    {
+      "source_id": "src_ura_past_long_term_plans",
+      "title": "Past Long-Term Plans",
+      "publisher": "Urban Redevelopment Authority",
+      "url": "https://www.ura.gov.sg/Corporate/Planning/Long-Term-Plan-Review/Past-Long-Term-Plans",
+      "used_for": [
+        "1971 Concept Plan",
+        "satellite-town structure",
+        "1991 review framing"
+      ]
+    },
+    {
+      "source_id": "src_ura_first_ltp",
+      "title": "Singapore's first long-term plan",
+      "publisher": "Urban Redevelopment Authority",
+      "url": "https://www.ura.gov.sg/Corporate/Resources/Publications/Skyline/Skyline-issue14/Shaping-our-future-together/sg-first-ltp",
+      "used_for": [
+        "housing-town integration",
+        "industrial estate and transport linkage",
+        "conservation and planning evolution"
+      ]
+    },
+    {
+      "source_id": "src_ura_resettlement_speech",
+      "title": "Remarks by Mr Peter Ho, Chairman of the Urban Redevelopment Authority at the Lee Kuan Yew and the Physical Transformation of Singapore Public Conference",
+      "publisher": "Urban Redevelopment Authority",
+      "url": "https://www.ura.gov.sg/Corporate/Media-Room/Speeches/pr13-58",
+      "used_for": [
+        "systematic resettlement into public housing",
+        "1971 planning structure as a common reference"
+      ]
+    },
+    {
+      "source_id": "src_roots_tiong_bahru",
+      "title": "The Origin & Development of Tiong Bahru",
+      "publisher": "Roots / National Heritage Board Singapore",
+      "url": "https://www.roots.gov.sg/places/places-landing/Places/landmarks/tiong-bahru-heritage-trail/the-origin-development-of-tiong-bahru",
+      "used_for": [
+        "Singapore Improvement Trust legacy",
+        "pre-independence estate context",
+        "conservation framing"
+      ]
+    },
+    {
+      "source_id": "src_roots_queenstown",
+      "title": "Queenstown: The Queen of Singapore's Heartlands",
+      "publisher": "Roots / National Heritage Board Singapore",
+      "url": "https://www.roots.gov.sg/en/stories-landing/stories/queenstown-the-queen-of-housing-estates/story",
+      "used_for": [
+        "satellite town interpretation",
+        "self-contained estate planning",
+        "early public housing heritage context"
+      ]
+    }
+  ]
+}

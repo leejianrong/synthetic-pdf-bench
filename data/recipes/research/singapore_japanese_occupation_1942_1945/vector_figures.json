@@ -1,0 +1,273 @@
+{
+  "figures": [
+    {
+      "figure_id": "fig_occupation_admin_timeline",
+      "kind": "timeline",
+      "title": "Occupation Administration Timeline",
+      "caption": "Key administrative milestones from the fall of Singapore to the end of Japanese rule in 1945.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1942,
+          "end_year": 1945,
+          "tick_interval_years": 1
+        },
+        "events": [
+          {
+            "year": 1942,
+            "label": "British surrender and renaming of Singapore as Syonan-to",
+            "short_label": "Surrender",
+            "event_type": "administration"
+          },
+          {
+            "year": 1942,
+            "label": "Occupation administration and propaganda structures take shape",
+            "short_label": "Rule established",
+            "event_type": "administration"
+          },
+          {
+            "year": 1943,
+            "label": "Occupation institutions continue under wartime scarcity",
+            "short_label": "Occupational rule",
+            "event_type": "continuity"
+          },
+          {
+            "year": 1945,
+            "label": "Japanese surrender and return of Allied military authority",
+            "short_label": "Surrender",
+            "event_type": "boundary"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 20
+        }
+      },
+      "suggested_section": "Occupation, Syonan-to, and Rule by the Japanese Military"
+    },
+    {
+      "figure_id": "fig_sook_ching_map",
+      "kind": "flow_diagram",
+      "title": "Sook Ching Screening Process",
+      "caption": "Simplified process diagram for the mass screening campaign and its outcomes.",
+      "data": {
+        "direction": "left_to_right",
+        "nodes": [
+          {
+            "id": "callup",
+            "label": "Summons to screening centres"
+          },
+          {
+            "id": "screening",
+            "label": "Identity checks and suspicion-based screening"
+          },
+          {
+            "id": "pass",
+            "label": "Release for continued civilian life"
+          },
+          {
+            "id": "detain",
+            "label": "Detention, transport, or execution"
+          },
+          {
+            "id": "memory",
+            "label": "Later memorialization and public memory"
+          }
+        ],
+        "edges": [
+          {
+            "from": "callup",
+            "to": "screening",
+            "label": "orders"
+          },
+          {
+            "from": "screening",
+            "to": "pass",
+            "label": "passed"
+          },
+          {
+            "from": "screening",
+            "to": "detain",
+            "label": "failed or suspected"
+          },
+          {
+            "from": "detain",
+            "to": "memory",
+            "label": "later remembered"
+          }
+        ],
+        "render_hints": {
+          "wrap_labels": true,
+          "label_wrap_width_chars": 24,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "Violence, Screening, and Coercive Security"
+    },
+    {
+      "figure_id": "fig_rationing_cycle",
+      "kind": "flow_diagram",
+      "title": "Rationing and Distribution Cycle",
+      "caption": "Simplified path from centralized supply to ration cards, queues, shortages, and informal coping.",
+      "data": {
+        "direction": "left_to_right",
+        "nodes": [
+          {
+            "id": "supply",
+            "label": "Seized stocks and limited imports"
+          },
+          {
+            "id": "registration",
+            "label": "Household registration and ration cards"
+          },
+          {
+            "id": "distribution",
+            "label": "Controlled distribution and queueing"
+          },
+          {
+            "id": "shortage",
+            "label": "Persistent scarcity and inflation"
+          },
+          {
+            "id": "coping",
+            "label": "Substitution, gardening, barter, black markets"
+          }
+        ],
+        "edges": [
+          {
+            "from": "supply",
+            "to": "registration",
+            "label": "administration"
+          },
+          {
+            "from": "registration",
+            "to": "distribution",
+            "label": "rationing"
+          },
+          {
+            "from": "distribution",
+            "to": "shortage",
+            "label": "insufficient supply"
+          },
+          {
+            "from": "shortage",
+            "to": "coping",
+            "label": "civilian response"
+          }
+        ],
+        "render_hints": {
+          "wrap_labels": true,
+          "label_wrap_width_chars": 24
+        }
+      },
+      "suggested_section": "Food Shortages, Rationing, and Everyday Survival"
+    },
+    {
+      "figure_id": "fig_changi_network",
+      "kind": "network_diagram",
+      "title": "Changi and Occupation Detention Network",
+      "caption": "Simplified network of detention, labour, and restricted circulation associated with Changi and related occupation controls.",
+      "data": {
+        "layout": "hub_and_spoke",
+        "central_node": "changi",
+        "nodes": [
+          {
+            "id": "changi",
+            "label": "Changi detention space"
+          },
+          {
+            "id": "families",
+            "label": "Separated families and dependents"
+          },
+          {
+            "id": "labour",
+            "label": "Assigned labour and maintenance work"
+          },
+          {
+            "id": "permits",
+            "label": "Permits, checkpoints, and reporting"
+          },
+          {
+            "id": "food",
+            "label": "Scarcity, rations, and camp supply"
+          }
+        ],
+        "edges": [
+          {
+            "from": "families",
+            "to": "changi",
+            "label": "internment and separation"
+          },
+          {
+            "from": "labour",
+            "to": "changi",
+            "label": "work obligations"
+          },
+          {
+            "from": "permits",
+            "to": "changi",
+            "label": "mobility control"
+          },
+          {
+            "from": "food",
+            "to": "changi",
+            "label": "shortage conditions"
+          }
+        ],
+        "render_hints": {
+          "hub_emphasis": true,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 24
+        }
+      },
+      "suggested_section": "Civilian Internment, Labour, and Restricted Mobility"
+    },
+    {
+      "figure_id": "fig_1945_surrender_to_memory",
+      "kind": "timeline",
+      "title": "From Surrender to Memory",
+      "caption": "Timeline linking the end of occupation to later commemorative practices and museum interpretation.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1945,
+          "end_year": 1970,
+          "tick_interval_years": 5
+        },
+        "events": [
+          {
+            "year": 1945,
+            "label": "Japanese surrender and Allied reoccupation",
+            "short_label": "Surrender",
+            "event_type": "boundary"
+          },
+          {
+            "year": 1946,
+            "label": "Immediate postwar repair and return of civilians",
+            "short_label": "Aftermath",
+            "event_type": "aftermath"
+          },
+          {
+            "year": 1967,
+            "label": "Civilian War Memorial completed and dedicated",
+            "short_label": "Memorial",
+            "event_type": "commemoration"
+          },
+          {
+            "year": 1970,
+            "label": "Oral history and museum interpretation continue to expand",
+            "short_label": "Memory work",
+            "event_type": "interpretation"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 20
+        }
+      },
+      "suggested_section": "End of Occupation, Surrender, and Wartime Memory"
+    }
+  ]
+}

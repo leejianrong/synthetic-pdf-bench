@@ -4,12 +4,12 @@ Use this file as the backlog for future recipe enrichment. Topics should be turn
 
 ## Singapore
 
-- [ ] Singapore: British colonial administration, port governance, and commerce from 1900 to 1941
-- [ ] Singapore: Japanese occupation and wartime civilian life, 1942-1945
-- [ ] Singapore: labor movements, political parties, and self-government in the 1950s
-- [ ] Singapore: merger with Malaysia and separation in 1963-1965
-- [ ] Singapore: Lee Kuan Yew, state-building, and administrative centralization
-- [ ] Singapore: housing policy, public estates, and urban planning after independence
+- [x] Singapore: British colonial administration, port governance, and commerce from 1900 to 1941
+- [x] Singapore: Japanese occupation and wartime civilian life, 1942-1945
+- [x] Singapore: labor movements, political parties, and self-government in the 1950s
+- [x] Singapore: merger with Malaysia and separation in 1963-1965
+- [x] Singapore: Lee Kuan Yew, state-building, and administrative centralization
+- [x] Singapore: housing policy, public estates, and urban planning after independence
 - [ ] Singapore: Changi, shipping, finance, and advanced services in the late twentieth and early twenty-first centuries
 
 ## Malaysia

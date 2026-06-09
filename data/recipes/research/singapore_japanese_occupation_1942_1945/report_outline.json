@@ -1,0 +1,184 @@
+{
+  "title": "Singapore: Japanese Occupation and Wartime Civilian Life, 1942-1945",
+  "recipe_id": "singapore_japanese_occupation_1942_1945",
+  "topic": "Singapore: Japanese occupation and wartime civilian life, 1942-1945",
+  "abstract": "This synthetic research outline covers Singapore under Japanese occupation from the surrender in February 1942 to the return of British military administration in September 1945. It focuses on occupation rule, Syonan-to naming, coercive institutions, civilian hardship, food control, rationing, labour mobilization, internment, and the uneven forms of survival and memory that shaped wartime life. The report is designed for stable PDF benchmark generation, with primarily English prose and careful avoidance of unsupported scripts or unstable numeric claims.",
+  "language_profile": {
+    "primary_language": "English",
+    "allowed_pdf_languages": [
+      "English",
+      "Bahasa Melayu",
+      "Bahasa Indonesia",
+      "Simplified Chinese"
+    ],
+    "multilingual_terms": [
+      {
+        "term": "Syonan-to",
+        "language": "English transliteration",
+        "meaning": "Light of the South, the Japanese name for Singapore"
+      },
+      {
+        "term": "pelabuhan bebas",
+        "language": "Bahasa Melayu",
+        "meaning": "free port"
+      },
+      {
+        "term": "pencatuan",
+        "language": "Bahasa Melayu",
+        "meaning": "rationing"
+      },
+      {
+        "term": "转口贸易",
+        "language": "Simplified Chinese",
+        "meaning": "entrepot trade"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "heading": "Occupation, Syonan-to, and Rule by the Japanese Military",
+      "bullet_points": [
+        "Place the February 1942 surrender at the start of the occupation and explain the renaming of Singapore as Syonan-to.",
+        "Describe the transition from British colonial authority to Japanese military administration, propaganda, and local control structures.",
+        "Explain how the Kempeitai functioned as military police and internal security apparatus in occupied Singapore.",
+        "Keep the section focused on administration and rule rather than on battlefield history before the fall of Singapore."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_occupation_admin",
+          "title": "Occupation Administration and Control Layers",
+          "description": "Matrix of the main Japanese institutions, local intermediaries, and the functions they performed in occupied Singapore."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_occupation_admin_timeline",
+          "kind": "timeline",
+          "title": "Occupation Administration Timeline",
+          "description": "Key administrative milestones from surrender in 1942 to surrender and reoccupation in 1945."
+        }
+      ],
+      "source_notes": [
+        "Use the Former Ford Factory and NLB occupation materials for the surrender and renaming context.",
+        "Use the NLB Kempeitai entry for the military police role and powers.",
+        "Keep the administrative narrative neutral and benchmark-friendly."
+      ]
+    },
+    {
+      "heading": "Violence, Screening, and Coercive Security",
+      "bullet_points": [
+        "Describe Operation Sook Ching as the mass screening and killing campaign directed against suspected anti-Japanese elements, especially among Chinese civilians.",
+        "Explain the role of screening centres, local informants, arbitrary selection, and public fear in shaping civilian experience.",
+        "Include coercive rituals, public intimidation, and the broader climate of surveillance and punishment under occupation rule.",
+        "Avoid exact death tolls unless a later canonical merge requires them from a named primary source."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_coercive_mechanisms",
+          "title": "Coercive Mechanisms and Civilian Effects",
+          "description": "Matrix summarizing screenings, policing, interrogation, detention, and intimidation as occupation controls."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_sook_ching_map",
+          "kind": "flow_diagram",
+          "title": "Sook Ching Screening Process",
+          "description": "Simplified flow of screening, detention, release, and execution as documented in heritage and archival sources."
+        }
+      ],
+      "source_notes": [
+        "Use NLB Operation Sook Ching and Roots heritage site materials for the screening process and its sites.",
+        "Use NHB educational material for cautious phrasing about casualty counts and memory.",
+        "Treat estimates as unstable unless explicitly sourced."
+      ]
+    },
+    {
+      "heading": "Food Shortages, Rationing, and Everyday Survival",
+      "bullet_points": [
+        "Explain how shipping disruption, stock seizure, inflation, and administrative control created chronic shortages of rice, protein, fuel, and basic goods.",
+        "Describe ration cards, controlled prices, black markets, household registration, and neighborhood policing as mechanisms of food control.",
+        "Show how families substituted ingredients, gardened, bartered, stretched meals, and relied on improvised cooking to survive.",
+        "Keep the section qualitative and focused on civilian coping strategies rather than on precise ration quotas."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_food_control",
+          "title": "Food Control and Survival Strategies",
+          "description": "Matrix comparing occupation controls, shortages, black-market activity, and household coping methods."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_rationing_cycle",
+          "kind": "flow_diagram",
+          "title": "Rationing and Distribution Cycle",
+          "description": "Simplified process diagram for ration registration, distribution, scarcity, and informal coping."
+        }
+      ],
+      "source_notes": [
+        "Use BiblioAsia Wartime Victuals and NAS Food Control During The Japanese Occupation materials for rationing and food scarcity.",
+        "Use archival photographs of ration cards and Japanese occupation food-control records as supporting context.",
+        "Keep nutritional and commodity descriptions broad and stable."
+      ]
+    },
+    {
+      "heading": "Civilian Internment, Labour, and Restricted Mobility",
+      "bullet_points": [
+        "Describe civilian internment at Changi and other camps as part of the occupation's control over movement and population.",
+        "Explain labour mobilization, road building, camp routines, and the pressure placed on civilians and prisoners of war alike.",
+        "Show how permits, travel restrictions, checkpoints, and reporting requirements narrowed ordinary movement across the island.",
+        "Distinguish civilian internment from military imprisonment while recognizing the overlap in deprivation and coercion."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_internment_and_mobility",
+          "title": "Internment, Labour, and Mobility Restrictions",
+          "description": "Matrix covering camps, labour assignments, movement controls, and civilian consequences."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_changi_network",
+          "kind": "network_diagram",
+          "title": "Changi and Occupation Detention Network",
+          "description": "Simplified network showing detention sites, labour assignments, and restricted circulation under occupation."
+        }
+      ],
+      "source_notes": [
+        "Use NLB Changi and civilian internment materials, plus the Changi Chapel and Museum publication, for detainee context.",
+        "Use NLB and NAS materials on occupation labour and travel control for the mobility restrictions theme.",
+        "Keep site names and roles consistent with heritage sources."
+      ]
+    },
+    {
+      "heading": "End of Occupation, Surrender, and Wartime Memory",
+      "bullet_points": [
+        "End the narrative with the Japanese surrender in 1945, the return of Allied authority, and the immediate administrative transition.",
+        "Describe how wartime experience shaped postwar remembrance through memorials, exhibitions, oral history, and family memory.",
+        "Note that the occupation's legacies included trauma, resilience, food memory, and the public marking of civilian suffering.",
+        "Keep this section separate from the postwar constitutional and independence topics that follow in later Singapore history."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_memory_and_afterlife",
+          "title": "Surrender, Aftermath, and Memory Forms",
+          "description": "Matrix linking surrender, reoccupation, memorialization, and oral-history remembrance."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_1945_surrender_to_memory",
+          "kind": "timeline",
+          "title": "From Surrender to Memory",
+          "description": "Timeline from the Japanese surrender in 1945 to later commemorative and museum practices."
+        }
+      ],
+      "source_notes": [
+        "Use NLB images and museum materials for surrender day and postwar remembrance.",
+        "Use National Museum and NLB sources on Changi, the Civilian War Memorial, and oral history projects.",
+        "Do not extend the topic into postwar political development."
+      ]
+    }
+  ]
+}

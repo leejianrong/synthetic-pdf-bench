@@ -1,0 +1,164 @@
+{
+  "figures": [
+    {
+      "figure_id": "fig_merger_timeline_1963_1965",
+      "kind": "timeline",
+      "title": "Merger and Separation Timeline",
+      "caption": "Selected milestones from the Malaysia proposal through Singapore's separation from Malaysia.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1961,
+          "end_year": 1965,
+          "tick_interval_years": 1
+        },
+        "events": [
+          {
+            "date": "1961-05-27",
+            "label": "Malaysia proposal enters public debate"
+          },
+          {
+            "date": "1962-09-01",
+            "label": "Singapore referendum on merger options"
+          },
+          {
+            "date": "1963-07-09",
+            "label": "London Agreement formalizes the Malaysia plan"
+          },
+          {
+            "date": "1963-09-16",
+            "label": "Malaysia is formed and Singapore joins the federation"
+          },
+          {
+            "date": "1965-08-07",
+            "label": "Separation agreement is signed"
+          },
+          {
+            "date": "1965-08-09",
+            "label": "Singapore is proclaimed independent"
+          }
+        ],
+        "render_hints": {
+          "label_wrap_width_chars": 24,
+          "show_year_ticks": true,
+          "avoid_overlap": true
+        }
+      },
+      "suggested_section": "From Self-Government to the Malaysia Project"
+    },
+    {
+      "figure_id": "fig_federal_roles_map",
+      "kind": "flow_diagram",
+      "title": "Federal and State Relationship After Merger",
+      "caption": "Simplified view of the institutions and pressures that shaped Singapore's place inside Malaysia.",
+      "data": {
+        "direction": "top_down",
+        "nodes": [
+          { "id": "public", "label": "Singapore electorate and public", "type": "public" },
+          { "id": "pap", "label": "People's Action Party leadership", "type": "political_party" },
+          { "id": "state_gov", "label": "Singapore State Government", "type": "state_government" },
+          { "id": "federal_gov", "label": "Malaysian Federal Government", "type": "federal_government" },
+          { "id": "institutions", "label": "Legislative, fiscal, and security institutions", "type": "institutions" }
+        ],
+        "edges": [
+          { "from": "public", "to": "pap", "label": "electoral mandate" },
+          { "from": "pap", "to": "state_gov", "label": "governs Singapore" },
+          { "from": "state_gov", "to": "federal_gov", "label": "negotiates powers and revenue" },
+          { "from": "federal_gov", "to": "institutions", "label": "sets nationwide rules" },
+          { "from": "institutions", "to": "state_gov", "label": "federal constraints" }
+        ],
+        "render_hints": {
+          "group_by_type": true,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 24,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "Merger into the Federation of Malaysia"
+    },
+    {
+      "figure_id": "fig_economic_tension_map",
+      "kind": "flow_diagram",
+      "title": "Economic Integration and Friction",
+      "caption": "How the common market idea connected growth expectations to recurring disputes.",
+      "data": {
+        "direction": "left_right",
+        "nodes": [
+          { "id": "common_market", "label": "Common market expectation", "type": "idea" },
+          { "id": "industry", "label": "Industrial growth and jobs", "type": "outcome" },
+          { "id": "tax", "label": "Tax and revenue disputes", "type": "friction" },
+          { "id": "trade", "label": "Trade and tariff disagreements", "type": "friction" },
+          { "id": "confidence", "label": "Commercial confidence", "type": "outcome" }
+        ],
+        "edges": [
+          { "from": "common_market", "to": "industry", "label": "promised benefit" },
+          { "from": "common_market", "to": "tax", "label": "policy conflict" },
+          { "from": "common_market", "to": "trade", "label": "policy conflict" },
+          { "from": "tax", "to": "confidence", "label": "undermines" },
+          { "from": "trade", "to": "confidence", "label": "undermines" }
+        ],
+        "render_hints": {
+          "group_by_type": true,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 26,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "Economic Integration and Federal Friction"
+    },
+    {
+      "figure_id": "fig_political_disputes_flow",
+      "kind": "flow_diagram",
+      "title": "Political Escalation Toward Separation",
+      "caption": "A simplified diagram of the political, communal, and security pressures that made separation more likely.",
+      "data": {
+        "direction": "top_down",
+        "nodes": [
+          { "id": "party_competition", "label": "Party competition", "type": "pressure" },
+          { "id": "communal_tension", "label": "Communal tension", "type": "pressure" },
+          { "id": "konfrontasi", "label": "Konfrontasi", "type": "external_pressure" },
+          { "id": "constitutional_crisis", "label": "Constitutional crisis", "type": "outcome" },
+          { "id": "separation", "label": "Separation", "type": "outcome" }
+        ],
+        "edges": [
+          { "from": "party_competition", "to": "constitutional_crisis", "label": "raises conflict" },
+          { "from": "communal_tension", "to": "constitutional_crisis", "label": "narrows trust" },
+          { "from": "konfrontasi", "to": "constitutional_crisis", "label": "external pressure" },
+          { "from": "constitutional_crisis", "to": "separation", "label": "legal break" }
+        ],
+        "render_hints": {
+          "group_by_type": true,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 24,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "Communal Politics, Konfrontasi, and Constitutional Crisis"
+    },
+    {
+      "figure_id": "fig_separation_sequence",
+      "kind": "sequence_diagram",
+      "title": "Legal Sequence of Separation",
+      "caption": "The compressed sequence from the separation agreement to Singapore's proclamation of independence.",
+      "data": {
+        "participants": [
+          "Singapore leaders",
+          "Malaysian leaders",
+          "Constitutional drafters",
+          "Public proclamation"
+        ],
+        "steps": [
+          { "from": "Singapore leaders", "to": "Malaysian leaders", "label": "Negotiate separation" },
+          { "from": "Constitutional drafters", "to": "Malaysian leaders", "label": "Draft legal changes" },
+          { "from": "Malaysian leaders", "to": "Public proclamation", "label": "Approve separation framework" },
+          { "from": "Singapore leaders", "to": "Public proclamation", "label": "Declare independence" }
+        ],
+        "render_hints": {
+          "wrap_labels": true,
+          "label_wrap_width_chars": 24
+        }
+      },
+      "suggested_section": "Separation and Immediate State-Building"
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "title": "Singapore: Labor Movements, Political Parties, and Self-Government in the 1950s",
+  "recipe_id": "singapore_labor_self_government_1950s",
+  "topic": "Singapore: labor movements, political parties, and self-government in the 1950s",
+  "abstract": "This synthetic research outline covers Singapore's political transition in the 1950s, from the Rendel Commission and the 1955 Legislative Assembly to the consolidation of self-government in 1959. It emphasizes labour unrest, trade-union politics, party competition, constitutional negotiation, and the shift from colonial rule to an elected internal government. The report is designed for stable PDF benchmark generation, with primarily English prose and selected Malay and Simplified Chinese context markers that remain historically plausible and extraction-friendly.",
+  "language_profile": {
+    "primary_language": "English",
+    "allowed_pdf_languages": [
+      "English",
+      "Bahasa Melayu",
+      "Bahasa Indonesia",
+      "Simplified Chinese"
+    ],
+    "multilingual_terms": [
+      {
+        "term": "gerakan buruh",
+        "language": "Bahasa Melayu",
+        "meaning": "labour movement"
+      },
+      {
+        "term": "perlembagaan",
+        "language": "Bahasa Melayu",
+        "meaning": "constitution"
+      },
+      {
+        "term": "自治",
+        "language": "Simplified Chinese",
+        "meaning": "self-government or autonomy"
+      },
+      {
+        "term": "工会",
+        "language": "Simplified Chinese",
+        "meaning": "trade union"
+      },
+      {
+        "term": "政党",
+        "language": "Simplified Chinese",
+        "meaning": "political party"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "heading": "Constitutional Reform and the Rendel Commission",
+      "bullet_points": [
+        "Place the 1953 Rendel Commission at the center of the move toward internal self-government.",
+        "Explain that the 1955 Rendel Constitution created a Legislative Assembly with an elected majority, while the British retained control over external defence, foreign affairs, and internal security.",
+        "Describe constitutional reform as a response to postwar political pressure, not as a sudden break with colonial administration.",
+        "Keep the discussion inside the 1950s and separate it from the later 1960s state-building agenda."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_constitutional_timeline",
+          "title": "Constitutional Milestones, 1953-1959",
+          "description": "A compact timeline of constitutional reform from the Rendel Commission to self-government."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_constitutional_timeline",
+          "kind": "timeline",
+          "title": "Constitutional Reform Timeline",
+          "description": "Show the sequence from the Rendel Commission to the 1959 self-government settlement."
+        }
+      ],
+      "source_notes": [
+        "Parliament's historical-development pages give the clearest official summary of the 1953-1958 constitutional sequence.",
+        "NLB Infopedia's Rendel Commission article is the main source for the commission's purpose and effect.",
+        "Treat the topic as internal self-government in the 1950s, not full independence."
+      ]
+    },
+    {
+      "heading": "Labour Movements and Trade-Union Politics",
+      "bullet_points": [
+        "Describe the 1950s as a period of active labour unrest, with strikes and workplace conflict shaping public debate.",
+        "Use the split between the Singapore Trades Union Congress and the Singapore Trade Unions Working Committee to frame the organized labour landscape.",
+        "Connect major disputes such as the Hock Lee bus conflict, the Singapore Harbour Board strike, and the Singapore Traction Company strike to broader political mobilization.",
+        "Keep labour figures and strike totals qualitative unless a later canonical pass verifies exact counts from named sources."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_labour_landscape",
+          "title": "Trade-Union Landscape and Labour Conflict",
+          "description": "A matrix of the main union federations, strike episodes, and political implications."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_labour_movement_map",
+          "kind": "network_diagram",
+          "title": "Labour Movement and Protest Network",
+          "description": "Show how unions, industrial disputes, and political leaders overlapped in the 1950s."
+        }
+      ],
+      "source_notes": [
+        "Middle Road unions is the most useful NLB entry for the union federation split and labour unrest context.",
+        "NLB articles on the Hock Lee and Singapore Traction Company strikes provide stable examples of labour conflict.",
+        "Keep the language neutral; the benchmark should capture institution and event relationships rather than ideological judgments."
+      ]
+    },
+    {
+      "heading": "Political Parties and Electoral Competition",
+      "bullet_points": [
+        "Trace the emergence and consolidation of parties such as the Labour Front, the People's Action Party, the Workers' Party, the Progressive Party, and the Singapore People's Alliance.",
+        "Explain the 1955 election as the first test of the new constitutional order and as a turning point for local party politics.",
+        "Show how labour politics and party politics overlapped, especially where union leaders and left-leaning activists moved into electoral organizing.",
+        "Keep the focus on party formation, alliances, and electoral outcomes rather than on later post-1960 party splits."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_party_landscape",
+          "title": "Political Parties and Their 1950s Roles",
+          "description": "A comparison table of party origins, social bases, and election roles."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_party_ecosystem",
+          "kind": "flow_diagram",
+          "title": "1950s Party Ecosystem",
+          "description": "Show how party formations, mergers, and alliances shaped electoral competition."
+        }
+      ],
+      "source_notes": [
+        "NLB Infopedia entries on the Labour Front, PAP, Workers' Party, and the 1955 election support the party chronology.",
+        "The Roots collection page on the Labour Front is useful for the merger of the Singapore Labour Party and Singapore Socialist Party.",
+        "Avoid projecting post-1960 party labels backward into the 1950s."
+      ]
+    },
+    {
+      "heading": "Negotiating Self-Government, 1956-1958",
+      "bullet_points": [
+        "Describe the London negotiations led first by David Marshall and later by Lim Yew Hock as the practical path toward greater local control.",
+        "Treat unrest, detention, and public order concerns as part of the British bargaining position, especially after major labour and student disturbances.",
+        "Explain the 1958 State of Singapore Act as the legal bridge from colony to self-governing state.",
+        "Keep the institutional outcome clear: domestic affairs moved locally, while defence, foreign affairs, and internal security remained reserved."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_negotiation_milestones",
+          "title": "Negotiation Milestones and Reserved Powers",
+          "description": "A compact matrix of talks, constitutional changes, and powers retained by the British."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_negotiation_timeline",
+          "kind": "timeline",
+          "title": "Negotiations Toward Self-Government",
+          "description": "Show the sequence from the 1955 Assembly to the 1958 constitutional settlement."
+        }
+      ],
+      "source_notes": [
+        "Parliament's historical-development page is the best compact official source for the 1956-1958 mission sequence.",
+        "NLB's 1955 election and 1959 election pages help anchor the constitutional steps between elections.",
+        "Keep the line between negotiation history and later internal security politics explicit."
+      ]
+    },
+    {
+      "heading": "The 1959 Settlement and the New Political Order",
+      "bullet_points": [
+        "Use the 1959 election as the endpoint for the 1950s, when the People's Action Party won a decisive mandate.",
+        "State that Singapore became a self-governing state in 1959 with a new cabinet led by Lee Kuan Yew.",
+        "Note that the new assembly could debate in English, Malay, Mandarin, and Tamil, which is useful as a multilingual benchmark marker.",
+        "Frame the decade's close as a transition from colonial bargaining to elected internal government, not as the full story of later nation-building."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_1959_settlement",
+          "title": "The 1959 Political Settlement",
+          "description": "A matrix of the election result, institutional changes, and immediate governing responsibilities."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_1959_transition",
+          "kind": "flow_diagram",
+          "title": "From Colony to Self-Governing State",
+          "description": "Show the institutional transition completed in 1959."
+        }
+      ],
+      "source_notes": [
+        "NLB's 1959 election article provides the key seat totals and constitutional context.",
+        "Parliament's historical-development page confirms the scope of powers transferred in 1959.",
+        "Use 1959 as the terminal year for this topic and do not carry the discussion into the 1960s."
+      ]
+    }
+  ]
+}

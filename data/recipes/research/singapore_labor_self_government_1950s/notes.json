@@ -1,0 +1,130 @@
+{
+  "recipe_id": "singapore_labor_self_government_1950s",
+  "topic": "Singapore: labor movements, political parties, and self-government in the 1950s",
+  "status": "complete_for_review",
+  "scope_decisions": [
+    "The artifact set covers one topic only and stays inside the 1950s.",
+    "The set treats labour unrest, party competition, and constitutional change as connected but distinct strands.",
+    "PDF-facing text uses English with selected Malay and Simplified Chinese markers only.",
+    "No generator code, canonical recipes, checklist entries, or unrelated recipe folders were modified."
+  ],
+  "decisions": [
+    "The timeline begins with the 1953 Rendel Commission and ends at the 1959 self-government settlement.",
+    "Labour movements are represented through federations, strikes, and transport unrest rather than exact strike totals.",
+    "Party history is limited to the major 1950s formations and alliances that shaped the transition to self-government.",
+    "Reserved powers are described consistently as defence, foreign affairs, and internal security."
+  ],
+  "research_basis": [
+    {
+      "source_id": "src_parliament_historical_development",
+      "title": "Historical Development",
+      "publisher": "Parliament of Singapore",
+      "url": "https://www.parliament.gov.sg/history/historical-development",
+      "used_for": [
+        "1953 Rendel Commission summary",
+        "1958 State of Singapore Act and the scope of self-government",
+        "1959 constitutional powers and multilingual assembly context"
+      ]
+    },
+    {
+      "source_id": "src_parliament_educational_resources",
+      "title": "Educational Resources",
+      "publisher": "Parliament of Singapore",
+      "url": "https://www.parliament.gov.sg/visit-learn/educational-resources",
+      "used_for": [
+        "The first elections for the Legislative Assembly in 1955",
+        "The broad official summary of the route to self-government"
+      ]
+    },
+    {
+      "source_id": "src_nlb_rendel_commission",
+      "title": "Rendel Commission",
+      "publisher": "National Library Board Singapore",
+      "url": "https://www.nlb.gov.sg/main/article-detail?cmsuuid=5781af87-b7b5-4c91-a1a7-bfe92c3e0c15",
+      "used_for": [
+        "Rendel Commission purpose and constitutional effect",
+        "Link to the first Labour Front-led government"
+      ]
+    },
+    {
+      "source_id": "src_nlb_1955_legislative_assembly_election",
+      "title": "1955 Legislative Assembly general election",
+      "publisher": "National Library Board Singapore",
+      "url": "https://www.nlb.gov.sg/main/article-detail?cmsuuid=34e88c56-655f-4fa7-880c-aeed7645f9f0",
+      "used_for": [
+        "1955 seat totals and election significance",
+        "Labour Front victory and first chief minister context"
+      ]
+    },
+    {
+      "source_id": "src_nlb_1959_legislative_assembly_election",
+      "title": "1959 Legislative Assembly general election",
+      "publisher": "National Library Board Singapore",
+      "url": "https://www.nlb.gov.sg/main/article-detail?cmsuuid=cac95fb9-f39f-4de1-a142-41e971017fe3",
+      "used_for": [
+        "1959 seat totals and first prime minister context",
+        "State of Singapore Act background in the election article"
+      ]
+    },
+    {
+      "source_id": "src_nlb_middle_road_unions",
+      "title": "Middle Road Unions",
+      "publisher": "National Library Board Singapore",
+      "url": "https://www.nlb.gov.sg/main/article-detail?cmsuuid=e1231061-1b4f-41a5-9033-429c4dce6b94",
+      "used_for": [
+        "Union federation split in the 1950s",
+        "Middle Road unions, labour unrest, and Hock Lee riot context"
+      ]
+    },
+    {
+      "source_id": "src_nlb_hock_lee_strike",
+      "title": "1955 Singapore Harbour Board Staff Association Strike",
+      "publisher": "National Library Board Singapore",
+      "url": "https://www.nlb.gov.sg/main/article-detail?cmsuuid=d779b791-2ddf-45ab-8fb9-0676cb7cd6d6",
+      "used_for": [
+        "Port labour dispute example",
+        "Labour conflict and political activity restrictions"
+      ]
+    },
+    {
+      "source_id": "src_nlb_stc_strike",
+      "title": "Great Singapore Traction Company Strike",
+      "publisher": "National Library Board Singapore",
+      "url": "https://www.nlb.gov.sg/main/article-detail?cmsuuid=7ce740e8-2bf6-490b-bc29-9fb1433bd9ec",
+      "used_for": [
+        "Transport strike example",
+        "Evidence that labour unrest was common in the decade"
+      ]
+    },
+    {
+      "source_id": "src_nlb_labour_front",
+      "title": "A legal document belonging to the Labour Front",
+      "publisher": "Roots / National Heritage Board Singapore",
+      "url": "https://www.roots.gov.sg/Collection-Landing/listing/1221618",
+      "used_for": [
+        "Labour Front merger history",
+        "Labour Front government and Marshall resignation context"
+      ]
+    },
+    {
+      "source_id": "src_nlb_workers_party",
+      "title": "Workers' Party",
+      "publisher": "National Library Board Singapore",
+      "url": "https://www.nlb.gov.sg/main/article-detail?cmsuuid=913556d5-bf48-4623-8888-f6e268307c61",
+      "used_for": [
+        "Workers' Party formation in 1957",
+        "Marshall's party-building role after the Labour Front era"
+      ]
+    }
+  ],
+  "open_questions": [
+    "Should a later canonical merge keep the constitutional story at the 1958-1959 settlement level, or add more detail about the London missions and constitutional drafts?",
+    "Should the labour section remain qualitative, or should it add verified strike counts and union membership figures from specific archival sources?",
+    "Should the party section include deeper merger chronology for the Labour Front, Singapore People's Alliance, and related smaller parties?"
+  ],
+  "open_uncertainty": [
+    "Some secondary summaries compress the Labour Front's merger history differently; the benchmark set uses the stable version reflected in NLB and Roots sources.",
+    "Exact labour-unrest totals and union membership numbers vary across accounts, so the artifact set omits them.",
+    "The topic boundary stops at 1959 and does not include the later merger and separation period."
+  ]
+}

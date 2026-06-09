@@ -1,0 +1,244 @@
+{
+  "tables": [
+    {
+      "table_id": "tbl_occupation_admin",
+      "title": "Occupation Administration and Control Layers",
+      "matrix": [
+        [
+          "Layer",
+          "Institution or Office",
+          "Main Functions",
+          "Civilian Effect"
+        ],
+        [
+          "Military command",
+          "Japanese army headquarters in Singapore",
+          "Issued orders and set occupation priorities",
+          "Created a command-led state rather than a colonial civil service"
+        ],
+        [
+          "Security police",
+          "Kempeitai",
+          "Interrogation, surveillance, policing, enforcement",
+          "Made public life feel monitored and unsafe"
+        ],
+        [
+          "Local intermediaries",
+          "Occupation-approved civil and welfare offices",
+          "Distributed instructions and implemented controls",
+          "Linked households to official registration and reporting"
+        ],
+        [
+          "Propaganda system",
+          "Occupation media and public ritual",
+          "Promoted Syonan-to and Japanese authority",
+          "Shaped daily messaging but did not erase fear"
+        ],
+        [
+          "Economic control",
+          "Rationing and supply administration",
+          "Managed food, fuel, and basic goods",
+          "Turned scarcity into a form of governance"
+        ]
+      ],
+      "notes": [
+        "Rows are qualitative and intended for stable extraction.",
+        "The table emphasizes control layers rather than legal detail.",
+        "No exact personnel counts are included."
+      ],
+      "suggested_section": "Occupation, Syonan-to, and Rule by the Japanese Military"
+    },
+    {
+      "table_id": "tbl_coercive_mechanisms",
+      "title": "Coercive Mechanisms and Civilian Effects",
+      "matrix": [
+        [
+          "Mechanism",
+          "How It Worked",
+          "Targeted Group",
+          "Civilian Effect"
+        ],
+        [
+          "Sook Ching screening",
+          "Mass checks at designated centers and triage by suspicion",
+          "Chinese civilians and perceived anti-Japanese elements",
+          "Fear, detention, killing, and lasting trauma"
+        ],
+        [
+          "Interrogation",
+          "Questioning under military police authority",
+          "Suspected dissidents and information holders",
+          "Self-censorship and social distrust"
+        ],
+        [
+          "Censorship",
+          "Control of newspapers, speech, and public messaging",
+          "General population",
+          "Reduced public information and increased rumor"
+        ],
+        [
+          "Public intimidation",
+          "Armed patrols, checks, and visible discipline",
+          "Neighborhoods and workplaces",
+          "Normalised anxiety and compliance"
+        ],
+        [
+          "Punitive transport",
+          "Removal of detainees to remote sites or camps",
+          "People failed or detained in screening",
+          "Disappearance into coercive systems"
+        ]
+      ],
+      "notes": [
+        "The matrix reflects official and heritage descriptions of occupation coercion.",
+        "Casualty figures are intentionally omitted here.",
+        "Useful for comparing mechanisms across sources."
+      ],
+      "suggested_section": "Violence, Screening, and Coercive Security"
+    },
+    {
+      "table_id": "tbl_food_control",
+      "title": "Food Control and Survival Strategies",
+      "matrix": [
+        [
+          "Category",
+          "Occupation Control",
+          "Civilian Response",
+          "Benchmark Note"
+        ],
+        [
+          "Staple supply",
+          "Stock seizure and central distribution",
+          "Queuing, substitution, sharing",
+          "Core scarcity theme"
+        ],
+        [
+          "Rationing",
+          "Household registration and ration cards",
+          "Compliance mixed with informal exchange",
+          "Use ration-card language consistently"
+        ],
+        [
+          "Prices",
+          "Controlled pricing in official channels",
+          "Black-market purchases and barter",
+          "Shows the gap between policy and reality"
+        ],
+        [
+          "Home production",
+          "Encouragement of self-sufficiency plots",
+          "Gardening, small livestock, and improvised cultivation",
+          "Keep details qualitative"
+        ],
+        [
+          "Cooking adaptation",
+          "Limited access to meat, rice, and fuel",
+          "Use of tapioca, porridge, and substitutes",
+          "Strong link to wartime memory"
+        ]
+      ],
+      "notes": [
+        "The matrix is intentionally broad and stable.",
+        "Avoid exact ration quantities unless primary records are added later.",
+        "The table is designed to support OCR and extraction tasks."
+      ],
+      "suggested_section": "Food Shortages, Rationing, and Everyday Survival"
+    },
+    {
+      "table_id": "tbl_internment_and_mobility",
+      "title": "Internment, Labour, and Mobility Restrictions",
+      "matrix": [
+        [
+          "Theme",
+          "Institution or Practice",
+          "Civilian Consequence",
+          "Benchmark Note"
+        ],
+        [
+          "Internment",
+          "Changi and related detention sites",
+          "Separation from family and normal routines",
+          "Use Changi as the principal reference point"
+        ],
+        [
+          "Labour",
+          "Compulsory or pressured work assignments",
+          "Physical strain and reduced autonomy",
+          "Keep work categories broad"
+        ],
+        [
+          "Travel control",
+          "Permits, checkpoints, and reporting requirements",
+          "Restricted movement across the island",
+          "Important for daily life extraction"
+        ],
+        [
+          "Camp routine",
+          "Schedules, discipline, and shortages",
+          "Loss of privacy and chronic uncertainty",
+          "Relevant to civilian and POW overlap"
+        ],
+        [
+          "Social effect",
+          "Interrupted schooling, work, and care networks",
+          "Long-term disruption after release",
+          "Keep the focus on civilian experience"
+        ]
+      ],
+      "notes": [
+        "The table distinguishes internment from general occupation hardship.",
+        "It avoids camp-by-camp numerical claims.",
+        "The same broad pattern applied unevenly across communities."
+      ],
+      "suggested_section": "Civilian Internment, Labour, and Restricted Mobility"
+    },
+    {
+      "table_id": "tbl_memory_and_afterlife",
+      "title": "Surrender, Aftermath, and Memory Forms",
+      "matrix": [
+        [
+          "Phase",
+          "Approximate Timing",
+          "What Changed",
+          "Memory Form"
+        ],
+        [
+          "Surrender",
+          "1945",
+          "Japanese authority collapsed and Allied administration returned",
+          "Photographs, news reports, and official surrender records"
+        ],
+        [
+          "Immediate aftermath",
+          "1945-1946",
+          "Shortages, administrative repair, and return of displaced people",
+          "Family recall and oral testimony"
+        ],
+        [
+          "Commemoration",
+          "Postwar decades",
+          "Memorials and burial-site recognition",
+          "Civilian War Memorial and heritage markers"
+        ],
+        [
+          "Museum interpretation",
+          "Late twentieth century onward",
+          "Public exhibitions and curated remembrance",
+          "Changi and World War II heritage displays"
+        ],
+        [
+          "Oral history",
+          "Across the postwar period",
+          "Individual memories recorded and revisited",
+          "Survival stories and wartime food memory"
+        ]
+      ],
+      "notes": [
+        "This table keeps surrender and memory on one stable timeline.",
+        "It does not extend into constitutional or independence history.",
+        "All rows are phrased for deterministic extraction."
+      ],
+      "suggested_section": "End of Occupation, Surrender, and Wartime Memory"
+    }
+  ]
+}

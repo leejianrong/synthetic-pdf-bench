@@ -1,0 +1,352 @@
+{
+  "figures": [
+    {
+      "figure_id": "fig_constitutional_timeline",
+      "kind": "timeline",
+      "title": "Constitutional Reform Timeline",
+      "caption": "The sequence from the 1953 Rendel Commission to the 1959 self-government settlement.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1953,
+          "end_year": 1959,
+          "tick_interval_years": 1
+        },
+        "events": [
+          {
+            "year": 1953,
+            "label": "Rendel Commission appointed to review the constitution",
+            "short_label": "Rendel Commission",
+            "event_type": "commission"
+          },
+          {
+            "year": 1955,
+            "label": "Rendel Constitution takes effect and the first Legislative Assembly election is held",
+            "short_label": "1955 constitution",
+            "event_type": "constitutional_change"
+          },
+          {
+            "year": 1956,
+            "label": "Marshall's first London mission fails to secure the desired settlement",
+            "short_label": "First mission",
+            "event_type": "negotiation"
+          },
+          {
+            "year": 1958,
+            "label": "State of Singapore Act converts the colony into a self-governing state",
+            "short_label": "State of Singapore Act",
+            "event_type": "constitutional_change"
+          },
+          {
+            "year": 1959,
+            "label": "General election brings the first self-governing cabinet to office",
+            "short_label": "Self-government",
+            "event_type": "boundary"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 22
+        }
+      },
+      "suggested_section": "Constitutional Reform and the Rendel Commission"
+    },
+    {
+      "figure_id": "fig_labour_movement_map",
+      "kind": "network_diagram",
+      "title": "Labour Movement and Protest Network",
+      "caption": "A simplified network of unions, transport disputes, and political pressure points in 1950s Singapore.",
+      "data": {
+        "layout": "hub_and_spoke",
+        "central_node": "labour_unrest",
+        "nodes": [
+          {
+            "id": "labour_unrest",
+            "label": "Labour unrest in the 1950s",
+            "type": "hub"
+          },
+          {
+            "id": "stuc",
+            "label": "Singapore Trades Union Congress",
+            "type": "union_federation"
+          },
+          {
+            "id": "stuwc",
+            "label": "Singapore Trade Unions Working Committee",
+            "type": "union_federation"
+          },
+          {
+            "id": "middle_road",
+            "label": "Middle Road unions",
+            "type": "union_cluster"
+          },
+          {
+            "id": "hock_lee",
+            "label": "Hock Lee bus conflict",
+            "type": "strike"
+          },
+          {
+            "id": "harbour_strike",
+            "label": "Singapore Harbour Board strike",
+            "type": "strike"
+          },
+          {
+            "id": "stc_strike",
+            "label": "Singapore Traction Company strike",
+            "type": "strike"
+          }
+        ],
+        "edges": [
+          {
+            "from": "stuc",
+            "to": "labour_unrest",
+            "label": "formal union politics"
+          },
+          {
+            "from": "stuwc",
+            "to": "labour_unrest",
+            "label": "protest coordination"
+          },
+          {
+            "from": "middle_road",
+            "to": "labour_unrest",
+            "label": "left-wing organizing"
+          },
+          {
+            "from": "hock_lee",
+            "to": "labour_unrest",
+            "label": "public order crisis"
+          },
+          {
+            "from": "harbour_strike",
+            "to": "labour_unrest",
+            "label": "port labour dispute"
+          },
+          {
+            "from": "stc_strike",
+            "to": "labour_unrest",
+            "label": "transport strike"
+          }
+        ],
+        "render_hints": {
+          "wrap_labels": true,
+          "label_wrap_width_chars": 24,
+          "edge_label_density": "medium"
+        }
+      },
+      "suggested_section": "Labour Movements and Trade-Union Politics"
+    },
+    {
+      "figure_id": "fig_party_ecosystem",
+      "kind": "flow_diagram",
+      "title": "1950s Party Ecosystem",
+      "caption": "A compact view of how parties, mergers, and electoral competition developed across the decade.",
+      "data": {
+        "direction": "left_to_right",
+        "nodes": [
+          {
+            "id": "labour_front",
+            "label": "Labour Front",
+            "type": "party"
+          },
+          {
+            "id": "pap",
+            "label": "People's Action Party",
+            "type": "party"
+          },
+          {
+            "id": "workers_party",
+            "label": "Workers' Party",
+            "type": "party"
+          },
+          {
+            "id": "progressive",
+            "label": "Progressive Party",
+            "type": "party"
+          },
+          {
+            "id": "spa",
+            "label": "Singapore People's Alliance",
+            "type": "party"
+          },
+          {
+            "id": "1955_election",
+            "label": "1955 Legislative Assembly election",
+            "type": "election"
+          },
+          {
+            "id": "1959_election",
+            "label": "1959 General Election",
+            "type": "election"
+          }
+        ],
+        "edges": [
+          {
+            "from": "labour_front",
+            "to": "1955_election",
+            "label": "wins government"
+          },
+          {
+            "from": "pap",
+            "to": "1959_election",
+            "label": "wins majority"
+          },
+          {
+            "from": "workers_party",
+            "to": "1959_election",
+            "label": "opposition competition"
+          },
+          {
+            "from": "progressive",
+            "to": "1955_election",
+            "label": "older colonial politics"
+          },
+          {
+            "from": "spa",
+            "to": "1959_election",
+            "label": "late-1950s regrouping"
+          },
+          {
+            "from": "labour_front",
+            "to": "pap",
+            "label": "party competition shifts"
+          }
+        ],
+        "render_hints": {
+          "wrap_labels": true,
+          "label_wrap_width_chars": 20,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "Political Parties and Electoral Competition"
+    },
+    {
+      "figure_id": "fig_negotiation_timeline",
+      "kind": "timeline",
+      "title": "Negotiations Toward Self-Government",
+      "caption": "The sequence of missions, unrest, and constitutional changes that led to self-government.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1955,
+          "end_year": 1958,
+          "tick_interval_years": 1
+        },
+        "events": [
+          {
+            "year": 1955,
+            "label": "Labour Front wins the first Legislative Assembly election",
+            "short_label": "Assembly election",
+            "event_type": "election"
+          },
+          {
+            "year": 1956,
+            "label": "Marshall leads the first London talks on self-government",
+            "short_label": "Marshall mission",
+            "event_type": "negotiation"
+          },
+          {
+            "year": 1956,
+            "label": "Lim Yew Hock becomes chief minister and continues negotiations",
+            "short_label": "Lim Yew Hock",
+            "event_type": "leadership_change"
+          },
+          {
+            "year": 1957,
+            "label": "Further constitutional discussions continue under tighter security scrutiny",
+            "short_label": "Continued talks",
+            "event_type": "negotiation"
+          },
+          {
+            "year": 1958,
+            "label": "State of Singapore Act passes and a new constitution is prepared",
+            "short_label": "1958 settlement",
+            "event_type": "constitutional_change"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 24
+        }
+      },
+      "suggested_section": "Negotiating Self-Government, 1956-1958"
+    },
+    {
+      "figure_id": "fig_1959_transition",
+      "kind": "flow_diagram",
+      "title": "From Colony to Self-Governing State",
+      "caption": "The institutional transition completed in 1959, with elected government and reserved imperial powers separated.",
+      "data": {
+        "direction": "top_down",
+        "nodes": [
+          {
+            "id": "colony",
+            "label": "Colony under British rule",
+            "type": "starting_state"
+          },
+          {
+            "id": "constitution",
+            "label": "1958 State of Singapore Constitution",
+            "type": "legal_framework"
+          },
+          {
+            "id": "election",
+            "label": "1959 General Election",
+            "type": "election"
+          },
+          {
+            "id": "cabinet",
+            "label": "First self-governing cabinet",
+            "type": "executive"
+          },
+          {
+            "id": "domestic",
+            "label": "Domestic affairs under local control",
+            "type": "local_power"
+          },
+          {
+            "id": "reserved",
+            "label": "Defence, foreign affairs, internal security",
+            "type": "reserved_power"
+          }
+        ],
+        "edges": [
+          {
+            "from": "colony",
+            "to": "constitution",
+            "label": "constitutional reform"
+          },
+          {
+            "from": "constitution",
+            "to": "election",
+            "label": "elected assembly"
+          },
+          {
+            "from": "election",
+            "to": "cabinet",
+            "label": "PAP victory"
+          },
+          {
+            "from": "cabinet",
+            "to": "domestic",
+            "label": "local administration"
+          },
+          {
+            "from": "cabinet",
+            "to": "reserved",
+            "label": "limits of self-government"
+          }
+        ],
+        "render_hints": {
+          "group_by_type": true,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 26,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "The 1959 Settlement and the New Political Order"
+    }
+  ]
+}

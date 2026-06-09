@@ -1,0 +1,256 @@
+{
+  "tables": [
+    {
+      "table_id": "tbl_constitutional_timeline",
+      "title": "Constitutional Milestones, 1953-1959",
+      "matrix": [
+        [
+          "Year",
+          "Milestone",
+          "Institutional Effect",
+          "Benchmark Note"
+        ],
+        [
+          "1953",
+          "Rendel Commission appointed",
+          "Review of colonial constitutional arrangements",
+          "Start of the reform sequence"
+        ],
+        [
+          "1955",
+          "Rendel Constitution takes effect",
+          "Legislative Assembly with elected majority",
+          "Partial transfer of power"
+        ],
+        [
+          "1955",
+          "First Legislative Assembly election",
+          "Labour Front forms government with coalition support",
+          "Electoral test of the new constitution"
+        ],
+        [
+          "1956-1958",
+          "Negotiations continue with London",
+          "Talks over reserved powers and internal security",
+          "Shows that self-government was still incomplete"
+        ],
+        [
+          "1958",
+          "State of Singapore Act",
+          "Colony becomes a self-governing state",
+          "Legal bridge to 1959"
+        ],
+        [
+          "1959",
+          "General election and new cabinet",
+          "PAP forms the first elected government of self-government",
+          "End point for this topic"
+        ]
+      ],
+      "notes": [
+        "This table keeps the constitutional sequence compact and stable.",
+        "Reserved powers should be read as defence, foreign affairs, and internal security.",
+        "No exact vote totals are needed for the timeline itself."
+      ],
+      "suggested_section": "Constitutional Reform and the Rendel Commission"
+    },
+    {
+      "table_id": "tbl_labour_landscape",
+      "title": "Trade-Union Landscape and Labour Conflict",
+      "matrix": [
+        [
+          "Organization or Episode",
+          "Approximate Role",
+          "Political Significance",
+          "Extraction Cue"
+        ],
+        [
+          "Singapore Trades Union Congress (STUC)",
+          "Registered union federation formed in 1951",
+          "Represents a more formalized labour channel",
+          "Registered federation"
+        ],
+        [
+          "Singapore Trade Unions Working Committee (STUWC)",
+          "Unregistered federation formed in 1955",
+          "Associated with protest and anti-bill mobilization",
+          "Unregistered federation"
+        ],
+        [
+          "Middle Road unions",
+          "Left-leaning Chinese-speaking union cluster",
+          "Linked labour activism to anti-colonial politics",
+          "Union cluster label"
+        ],
+        [
+          "Hock Lee bus conflict",
+          "Transport strike and riot in 1955",
+          "Showed how labour disputes could become public-order crises",
+          "Transport unrest"
+        ],
+        [
+          "Singapore Harbour Board Staff Association strike",
+          "Port and clerical workers sought better conditions",
+          "Connected port labour to the political atmosphere",
+          "Port labour dispute"
+        ],
+        [
+          "Singapore Traction Company strike",
+          "Long transport strike in 1955",
+          "Illustrated the scale of workplace conflict in the decade",
+          "Public transport strike"
+        ]
+      ],
+      "notes": [
+        "The matrix keeps worker organizations and dispute episodes separate for extraction clarity.",
+        "It avoids exact membership numbers and strike totals.",
+        "The table is designed to capture the labour-political overlap of the decade."
+      ],
+      "suggested_section": "Labour Movements and Trade-Union Politics"
+    },
+    {
+      "table_id": "tbl_party_landscape",
+      "title": "Political Parties and Their 1950s Roles",
+      "matrix": [
+        [
+          "Party",
+          "Formation or 1950s Role",
+          "Main Base or Orientation",
+          "Benchmark Note"
+        ],
+        [
+          "Labour Front",
+          "Formed in 1955 from party merger",
+          "Labour-linked, reformist, and coalition-oriented",
+          "Won the 1955 election"
+        ],
+        [
+          "People's Action Party",
+          "Founded in 1954",
+          "Broad anti-colonial party with left and moderate wings",
+          "Won the 1959 election"
+        ],
+        [
+          "Workers' Party",
+          "Founded in 1957",
+          "Opposition party organized by David Marshall",
+          "Useful for post-1955 competition"
+        ],
+        [
+          "Progressive Party",
+          "Older colonial-era party still present in the 1950s",
+          "Elite and constitutionalist politics",
+          "Represents the older order"
+        ],
+        [
+          "Singapore People's Alliance",
+          "Political regrouping in the late 1950s",
+          "Centrist coalition politics",
+          "Shows party realignment"
+        ]
+      ],
+      "notes": [
+        "The table intentionally separates formation date from electoral role.",
+        "It keeps the Labour Front merger history concise for benchmark use.",
+        "This matrix does not attempt a full party genealogy beyond the 1950s."
+      ],
+      "suggested_section": "Political Parties and Electoral Competition"
+    },
+    {
+      "table_id": "tbl_negotiation_milestones",
+      "title": "Negotiation Milestones and Reserved Powers",
+      "matrix": [
+        [
+          "Date or Period",
+          "Event",
+          "Why It Mattered",
+          "Reserved-Power Note"
+        ],
+        [
+          "1956",
+          "Marshall leads first London mission",
+          "Initial attempt to secure broader self-government",
+          "British still hold major powers"
+        ],
+        [
+          "1956-1958",
+          "Lim Yew Hock continues negotiations",
+          "More restrictive political climate after unrest",
+          "Security concerns remain central"
+        ],
+        [
+          "1958",
+          "State of Singapore Act enacted",
+          "Colony becomes a self-governing state",
+          "Defence, foreign affairs, and internal security stay reserved"
+        ],
+        [
+          "1958",
+          "New constitution prepared for 1959",
+          "Legal framework for an elected government",
+          "Domestic affairs move locally"
+        ],
+        [
+          "1959",
+          "Self-government takes effect after election",
+          "The elected cabinet assumes office",
+          "Transition completed within the decade"
+        ]
+      ],
+      "notes": [
+        "This table focuses on negotiation, not on later 1960s constitutional change.",
+        "The British security rationale is part of the historical context and not a claim of inevitability.",
+        "The timeline is intentionally compact and deterministic."
+      ],
+      "suggested_section": "Negotiating Self-Government, 1956-1958"
+    },
+    {
+      "table_id": "tbl_1959_settlement",
+      "title": "The 1959 Political Settlement",
+      "matrix": [
+        [
+          "Item",
+          "Result in 1959",
+          "Institutional Meaning",
+          "Benchmark Note"
+        ],
+        [
+          "Election outcome",
+          "PAP wins 43 of 51 seats",
+          "Clear majority for the party led by Lee Kuan Yew",
+          "Electoral mandate"
+        ],
+        [
+          "Executive office",
+          "Lee becomes first prime minister",
+          "New local executive leadership",
+          "First self-governing cabinet"
+        ],
+        [
+          "Head of state",
+          "Yang di-Pertuan Negara created in the constitutional order",
+          "Symbolic local head of state within the new state structure",
+          "New constitutional office"
+        ],
+        [
+          "Language of debate",
+          "English, Malay, Mandarin, Tamil",
+          "Multilingual assembly practice",
+          "Useful extraction cue"
+        ],
+        [
+          "Reserved powers",
+          "Defence, foreign affairs, internal security",
+          "Limits of self-government in 1959",
+          "Keep the distinction clear"
+        ]
+      ],
+      "notes": [
+        "The table captures the immediate institutional result of the 1959 election.",
+        "It is intentionally limited to the 1959 settlement and does not extend into merger politics.",
+        "The multilingual row is included because it is historically stable and useful for benchmark extraction."
+      ],
+      "suggested_section": "The 1959 Settlement and the New Political Order"
+    }
+  ]
+}

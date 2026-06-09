@@ -1,0 +1,251 @@
+{
+  "tables": [
+    {
+      "table_id": "tbl_transition_milestones",
+      "title": "Key Political Milestones, 1959-1990",
+      "matrix": [
+        [
+          "Year or period",
+          "Milestone",
+          "State-building significance",
+          "Extraction note"
+        ],
+        [
+          "1959",
+          "Self-government and Lee becomes prime minister",
+          "Executive authority shifts to a local cabinet with national responsibilities",
+          "Start of the Lee Kuan Yew era"
+        ],
+        [
+          "1963",
+          "Singapore joins Malaysia",
+          "Merger intensifies the need for clear administrative coordination",
+          "Merger context"
+        ],
+        [
+          "1965",
+          "Separation from Malaysia",
+          "Independence forces rapid institution-building and survival planning",
+          "Boundary between federation and sovereign state"
+        ],
+        [
+          "1960s",
+          "Expansion of ministries and statutory boards",
+          "Implementation capacity grows across housing, industry, education, and services",
+          "Centralization of delivery"
+        ],
+        [
+          "1990",
+          "Lee steps down as prime minister",
+          "Succession shows the state outliving the founding leader",
+          "Legacy marker"
+        ]
+      ],
+      "notes": [
+        "Keep the chronology stable and avoid speculative sub-dating.",
+        "The matrix is designed for extraction of political sequence and governance consequences."
+      ],
+      "suggested_section": "From Self-Government to Independence"
+    },
+    {
+      "table_id": "tbl_central_apparatus",
+      "title": "Central Government Apparatus and Functions",
+      "matrix": [
+        [
+          "Institution",
+          "Core role",
+          "Centralizing function",
+          "Extraction note"
+        ],
+        [
+          "Prime Minister's Office",
+          "Coordinates executive direction",
+          "Concentrates agenda-setting and inter-ministry control",
+          "Executive center"
+        ],
+        [
+          "Cabinet",
+          "Collective decision-making by ministers",
+          "Aligns policy across sectors under one political leadership",
+          "Political coordination"
+        ],
+        [
+          "Ministries",
+          "Sector-specific policy and delivery",
+          "Turns national priorities into administrative action",
+          "Implementation layer"
+        ],
+        [
+          "Public Service Commission",
+          "Scholarships and senior talent selection",
+          "Builds a merit-based state cadre",
+          "Meritocracy pipeline"
+        ],
+        [
+          "Administrative Service",
+          "Senior cross-government leadership track",
+          "Creates whole-of-government policy managers",
+          "Leadership cadre"
+        ],
+        [
+          "Corrupt Practices Investigation Bureau",
+          "Anti-corruption enforcement",
+          "Supports clean-government discipline",
+          "Integrity system"
+        ]
+      ],
+      "notes": [
+        "Keep descriptions broad enough to stay stable across source versions.",
+        "The table is meant to show centralization by function, not to map every agency."
+      ],
+      "suggested_section": "Centralizing the Executive and Civil Service"
+    },
+    {
+      "table_id": "tbl_development_tools",
+      "title": "Development Instruments and Implementation Channels",
+      "matrix": [
+        [
+          "Instrument",
+          "Main purpose",
+          "Implementation channel",
+          "Extraction note"
+        ],
+        [
+          "State Development Plan",
+          "Provide a national economic blueprint",
+          "Budgeting, planning, and ministerial follow-through",
+          "First development plan"
+        ],
+        [
+          "Economic Development Board",
+          "Promote industrialization and investment",
+          "Industrial sites, investor outreach, and coordination",
+          "EDB as state tool"
+        ],
+        [
+          "Land assembly and site preparation",
+          "Make land available for growth",
+          "State-led acquisition and redevelopment",
+          "Land as policy asset"
+        ],
+        [
+          "Infrastructure buildout",
+          "Support ports, utilities, roads, and estates",
+          "Public works and statutory boards",
+          "Physical enabling capacity"
+        ],
+        [
+          "Technical advice and planning units",
+          "Link expertise to policy design",
+          "Civil service, planners, and external advisers",
+          "Technocratic governance"
+        ],
+        [
+          "Budget discipline",
+          "Keep development financially manageable",
+          "Ministry of Finance and central fiscal oversight",
+          "Fiscal coordination"
+        ]
+      ],
+      "notes": [
+        "The table keeps economic-state-building mechanisms separate from social policy.",
+        "Avoid exact growth or investment numbers unless a later canonical recipe verifies them."
+      ],
+      "suggested_section": "Economic Planning and the Developmental State"
+    },
+    {
+      "table_id": "tbl_social_capacity_tools",
+      "title": "Social Policy Tools and Administrative Effects",
+      "matrix": [
+        [
+          "Policy area",
+          "Institution or instrument",
+          "Administrative effect",
+          "Extraction note"
+        ],
+        [
+          "Public housing",
+          "HDB and estate planning",
+          "Expands state reach into land, housing, and daily living conditions",
+          "Housing authority"
+        ],
+        [
+          "Home ownership",
+          "CPF-linked housing measures",
+          "Builds a more stable and invested citizen base",
+          "Ownership policy"
+        ],
+        [
+          "Education",
+          "School expansion and bilingual policy",
+          "Standardizes skills and supports national integration",
+          "Human capital"
+        ],
+        [
+          "Public health and cleanliness",
+          "Sanitation rules and civic campaigns",
+          "Improves urban order and public confidence",
+          "Urban discipline"
+        ],
+        [
+          "Local administration",
+          "Municipal regulation and public-order agencies",
+          "Makes city life more legible and governable",
+          "Front-line governance"
+        ]
+      ],
+      "notes": [
+        "The rows are representative rather than exhaustive.",
+        "Use this table for extraction of state capacity in daily life."
+      ],
+      "suggested_section": "Social Policy as State Capacity"
+    },
+    {
+      "table_id": "tbl_legacy_balance",
+      "title": "Institutional Strengths and Tradeoffs",
+      "matrix": [
+        [
+          "Feature",
+          "What it looked like",
+          "Why it mattered",
+          "Benchmark note"
+        ],
+        [
+          "Strong center",
+          "High executive coordination across ministries and boards",
+          "Enabled fast and coherent policy execution",
+          "Centralization benefit"
+        ],
+        [
+          "Meritocratic staffing",
+          "Scholarships, exams, and professional career tracks",
+          "Built a capable and loyal public service",
+          "Talent pipeline"
+        ],
+        [
+          "Anti-corruption discipline",
+          "Hardline enforcement and public-service norms",
+          "Supported trust in the state",
+          "Clean government"
+        ],
+        [
+          "Policy continuity",
+          "Institutional routines that persisted beyond the founder",
+          "Reduced dependence on any single leader",
+          "Succession effect"
+        ],
+        [
+          "Political tradeoff",
+          "Limited room for contestation and pluralism",
+          "Raised questions about concentration of power",
+          "Neutral evaluative note"
+        ]
+      ],
+      "notes": [
+        "The table is deliberately balanced and neutral.",
+        "Use it to extract both strengths and tradeoffs without shifting into present-day polemics."
+      ],
+      "suggested_section": "Institutional Legacy and Tradeoffs"
+    }
+  ]
+}

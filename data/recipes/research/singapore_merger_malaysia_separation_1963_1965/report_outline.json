@@ -1,0 +1,174 @@
+{
+  "title": "Singapore: Merger with Malaysia and Separation, 1963-1965",
+  "recipe_id": "singapore_merger_malaysia_separation_1963_1965",
+  "topic": "Singapore: merger with Malaysia and separation in 1963-1965",
+  "abstract": "This synthetic research outline covers Singapore's entry into the Federation of Malaysia in 1963 and its separation in 1965. It emphasizes the merger campaign, the federation's constitutional and political arrangements, the economic promise of a common market, the escalation of federal and communal tensions, and the legal and administrative steps that produced an independent Singapore. The report is designed for stable PDF benchmark generation, with primarily English prose and selected Bahasa Melayu and Simplified Chinese context markers.",
+  "language_profile": {
+    "primary_language": "English",
+    "allowed_pdf_languages": [
+      "English",
+      "Bahasa Melayu",
+      "Bahasa Indonesia",
+      "Simplified Chinese"
+    ],
+    "multilingual_terms": [
+      {
+        "term": "pasaran bersama",
+        "language": "Bahasa Melayu",
+        "meaning": "common market"
+      },
+      {
+        "term": "penggabungan",
+        "language": "Bahasa Melayu",
+        "meaning": "merger or amalgamation"
+      },
+      {
+        "term": "分离",
+        "language": "Simplified Chinese",
+        "meaning": "separation"
+      },
+      {
+        "term": "独立",
+        "language": "Simplified Chinese",
+        "meaning": "independence"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "heading": "From Self-Government to the Malaysia Project",
+      "bullet_points": [
+        "Place merger inside Singapore's post-1959 search for a secure constitutional future after internal self-government.",
+        "Summarize the 1961 proposal for Malaysia and the 1962 referendum as the main political preconditions for joining the federation.",
+        "Frame the merger argument around security, anti-communism, and the promise of a larger economic hinterland rather than around sentiment alone."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_merger_timeline_1963_1965",
+          "title": "Merger and Separation Timeline, 1961-1965",
+          "description": "Chronology of the main steps from the Malaysia proposal to Singapore's separation."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_merger_timeline_1963_1965",
+          "kind": "timeline",
+          "title": "Merger and Separation Timeline"
+        }
+      ],
+      "source_notes": [
+        "NLB Infopedia articles on Singapore becomes part of Malaysia and Singapore's separation from Malaysia provide the basic chronology.",
+        "NAS materials on the Proclamation of Singapore and merger records help anchor the legal sequence and official language.",
+        "Keep the background brief so the topic remains centered on 1963-1965 rather than the earlier self-government period."
+      ]
+    },
+    {
+      "heading": "Merger into the Federation of Malaysia",
+      "bullet_points": [
+        "Explain that Singapore joined Malaysia on 16 September 1963 alongside Malaya, North Borneo, and Sarawak.",
+        "Describe the new federal relationship between the Singapore state government and the Malaysian federal government.",
+        "Note that merger was presented as a path to stability, legitimacy, and economic development."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_federal_roles_1963_1965",
+          "title": "Federal and State Roles After Merger",
+          "description": "Matrix of the main institutions and the division of responsibilities after 16 September 1963."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_federal_roles_map",
+          "kind": "flow_diagram",
+          "title": "Federal and State Relationship After Merger"
+        }
+      ],
+      "source_notes": [
+        "The NLB article on Singapore becomes part of Malaysia is the clearest public overview of the merger date and stated rationale.",
+        "NAS archival photographs and recordings can be used to confirm official proclamation language and public presentation.",
+        "Keep institutional descriptions neutral and avoid projecting later Singapore state structures backward into 1963."
+      ]
+    },
+    {
+      "heading": "Economic Integration and Federal Friction",
+      "bullet_points": [
+        "Focus on the common market idea, industrial growth, trade integration, and the expectation that Singapore would gain access to Malayan demand.",
+        "Show how tax, revenue, labor, and market-access disputes complicated the merger almost immediately.",
+        "Treat economic planning and federal bargaining as linked issues rather than as separate technical debates."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_economic_tensions_1963_1965",
+          "title": "Economic Expectations and Disputes",
+          "description": "Matrix of the merger-era economic promise, the main frictions, and the extraction notes."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_economic_tension_map",
+          "kind": "flow_diagram",
+          "title": "Economic Integration and Friction"
+        }
+      ],
+      "source_notes": [
+        "NLB merger coverage notes Singapore's expectation of a larger market and job creation through federation.",
+        "Post-independence summaries from NLB help identify the economic arguments that later became points of friction.",
+        "Avoid exact trade or revenue figures unless a later canonical pass verifies them from a named annual report."
+      ]
+    },
+    {
+      "heading": "Communal Politics, Konfrontasi, and Constitutional Crisis",
+      "bullet_points": [
+        "Describe the rise of party conflict, communal tension, and disagreement over representation inside the federation.",
+        "Keep Konfrontasi in view as part of the wider regional pressure that narrowed the room for compromise.",
+        "Connect political deadlock to the legal and administrative crisis that made separation thinkable by 1965."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_political_disputes_1963_1965",
+          "title": "Main Political Disputes in the Federation",
+          "description": "Matrix of the key disputes, the actors involved, and the effect on the merger."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_political_disputes_flow",
+          "kind": "flow_diagram",
+          "title": "Political Escalation Toward Separation"
+        }
+      ],
+      "source_notes": [
+        "NLB and NAS sources can support the linkage between constitutional stress, public rhetoric, and the later separation documents.",
+        "Keep the account neutral by describing tensions and institutional breakdown rather than assigning simplified blame.",
+        "The topic should remain focused on the merger period's crisis dynamics, not on later state ideology."
+      ]
+    },
+    {
+      "heading": "Separation and Immediate State-Building",
+      "bullet_points": [
+        "Describe the separation agreement, constitutional change, and the 9 August 1965 proclamation of independence.",
+        "Show how the new Singapore state had to stabilize administration, diplomacy, security, and economic expectations almost at once.",
+        "Treat separation as an abrupt constitutional settlement rather than a clean political ending."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_separation_documents_1965",
+          "title": "Separation Documents and Immediate Legal Steps",
+          "description": "Matrix listing the main documents and what each one did in the breakup process."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_separation_sequence",
+          "kind": "sequence_diagram",
+          "title": "Legal Sequence of Separation"
+        }
+      ],
+      "source_notes": [
+        "NAS's Proclamation of Singapore record is the key archival reference for the separation moment.",
+        "NLB's separation article provides a concise public narrative of the constitutional break.",
+        "Immediate state-building should be kept brief so the artifact remains centered on the 1963-1965 transition."
+      ]
+    }
+  ]
+}

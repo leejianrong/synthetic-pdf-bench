@@ -1,0 +1,223 @@
+{
+  "title": "Singapore: Housing Policy, Public Estates, and Urban Planning After Independence",
+  "recipe_id": "singapore_housing_urban_planning_after_independence",
+  "topic": "Singapore: housing policy, public estates, and urban planning after independence",
+  "abstract": "This synthetic research outline covers Singapore's post-independence housing and urban planning state-building project from 1960 onward. It emphasizes the Housing and Development Board's creation, the move from rental flats to home ownership, large-scale resettlement and land assembly, the development of self-contained towns and public estates, and the long-term planning framework that coordinated housing with transport, industry, conservation, and estate renewal. The report is designed for stable PDF benchmark generation, with primarily English prose and selected multilingual context markers kept to controlled, non-quotation use.",
+  "language_profile": {
+    "primary_language": "English",
+    "allowed_pdf_languages": [
+      "English",
+      "Bahasa Melayu",
+      "Bahasa Indonesia",
+      "Simplified Chinese"
+    ],
+    "multilingual_terms": [
+      {
+        "term": "rumah awam",
+        "language": "Bahasa Melayu",
+        "meaning": "public housing"
+      },
+      {
+        "term": "perumahan rakyat",
+        "language": "Bahasa Melayu",
+        "meaning": "people's housing"
+      },
+      {
+        "term": "组屋",
+        "language": "Simplified Chinese",
+        "meaning": "public housing flat"
+      },
+      {
+        "term": "总体规划",
+        "language": "Simplified Chinese",
+        "meaning": "master plan"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "heading": "Housing Crisis, Independence, and the Creation of HDB",
+      "bullet_points": [
+        "Situate the housing agenda in the acute shortage inherited at independence, including overcrowding, squatter settlements, and limited sanitary housing stock.",
+        "Explain the 1960 creation of the Housing and Development Board as the main state agency for mass public housing and estate building.",
+        "Describe the early emphasis on fast delivery, basic flat design, and rehousing families from unsafe or unsanitary accommodation.",
+        "Treat the colonial-era Singapore Improvement Trust as a limited predecessor whose small-scale work did not solve the postwar housing crisis."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_housing_state_formation",
+          "title": "Housing Institutions and Early Post-Independence Roles",
+          "description": "Matrix comparing the SIT legacy, HDB formation, and the first policy tools used to address Singapore's housing shortage."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_housing_institution_shift",
+          "kind": "flow_diagram",
+          "title": "From SIT Legacy to HDB Mass Housing"
+        }
+      ],
+      "source_notes": [
+        "HDB's official history states that the board was set up in 1960 and built more than 21,000 flats within three years.",
+        "Roots heritage material on Tiong Bahru and Queenstown provides stable context for the SIT's limited pre-independence housing role.",
+        "Use the colonial predecessor only as background, not as the main topic."
+      ]
+    },
+    {
+      "heading": "Home Ownership, Land Assembly, and Resettlement",
+      "bullet_points": [
+        "Explain the 1964 Home Ownership for the People Scheme as the key shift from rental-only public housing toward owner-occupation.",
+        "Describe how the 1967 Land Acquisition Act and 1968 CPF changes strengthened the state's capacity to assemble land and broaden access to home purchase.",
+        "Connect clearance and resettlement to the transformation of old urban districts, squatter areas, and peripheral settlements into planned estates.",
+        "Keep the account neutral by treating resettlement as a policy instrument that involved disruption as well as rehousing."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_home_ownership_instruments",
+          "title": "Policy Instruments Supporting Home Ownership",
+          "description": "Matrix listing the main legal and financial instruments used to expand public home ownership after independence."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_home_ownership_timeline",
+          "kind": "timeline",
+          "title": "Home Ownership and Land Policy Milestones"
+        }
+      ],
+      "source_notes": [
+        "HDB official history gives the 1964, 1967, and 1968 milestone sequence.",
+        "URA remarks on resettlement describe the systematic move from squalid city accommodation into public housing in satellite towns.",
+        "Keep legal and financial instruments distinct from later upgrading policies."
+      ]
+    },
+    {
+      "heading": "New Towns, Public Estates, and Urban Service Integration",
+      "bullet_points": [
+        "Describe new towns such as Queenstown and Toa Payoh as self-contained estates with schools, shops, markets, transport links, and community facilities.",
+        "Explain how town planning linked housing with employment areas, industrial estates, roads, and transit to reduce distance between homes and work.",
+        "Show how estate design moved from basic emergency housing toward more varied flat types, neighborhood centers, and social infrastructure.",
+        "Use estate development as a planning question, not only as an architecture question."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_new_towns_and_estates",
+          "title": "Representative New Towns and Their Planning Functions",
+          "description": "Matrix comparing early and mature public estates by planning role, facilities, and urban significance."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_new_town_network",
+          "kind": "network_diagram",
+          "title": "Public Estate and Service Network"
+        }
+      ],
+      "source_notes": [
+        "HDB town pages and Roots heritage entries support the early development of Queenstown and Toa Payoh.",
+        "URA planning materials link housing towns to industrial estates and transport infrastructure.",
+        "Avoid over-precise claims about every estate's completion sequence unless sourced in a named page."
+      ]
+    },
+    {
+      "heading": "Upgrading, Renewal, and Conservation of Older Estates",
+      "bullet_points": [
+        "Explain how the state moved from initial supply expansion to the upgrading of older estates, lifted walkways, landscaping, and amenity improvements.",
+        "Describe renewal as a response to aging flats, changing household expectations, and the need to keep mature towns liveable.",
+        "Include conservation where relevant, such as the retention of historically significant housing districts with heritage value.",
+        "Treat renewal as a continuing policy layer that sits on top of the original mass-housing program."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_estate_renewal_tools",
+          "title": "Estate Upgrading and Conservation Tools",
+          "description": "Matrix of upgrading, rejuvenation, conservation, and replacement approaches used in mature public estates."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_estate_renewal_cycle",
+          "kind": "flow_diagram",
+          "title": "From New Estate to Mature Town"
+        }
+      ],
+      "source_notes": [
+        "HDB official history notes the subsidised upgrading programme for older flats and common areas.",
+        "Roots material on Tiong Bahru shows conservation as part of the urban planning story.",
+        "Use conservation as a planning and heritage decision, not as a separate housing system."
+      ]
+    },
+    {
+      "heading": "Long-Term Planning, Decentralization, and Contemporary Housing Policy",
+      "bullet_points": [
+        "Explain how the 1971 Concept Plan established the long-term framework of satellite towns, industry, transport, and protected central land.",
+        "Describe how the 1991 review and later plans extended the city into a more polycentric, connected, and mixed-use urban structure.",
+        "Connect long-term planning to housing affordability, aging population needs, sustainability, and the continued management of state land.",
+        "Close with Singapore's housing system as an integrated policy regime rather than a one-off building program."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_planning_evolution",
+          "title": "Long-Term Planning Milestones After Independence",
+          "description": "Matrix summarizing the key planning documents and the housing-urban structure they established."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_planning_evolution_timeline",
+          "kind": "timeline",
+          "title": "Urban Planning Evolution After Independence"
+        }
+      ],
+      "source_notes": [
+        "URA's long-term planning pages describe the 1971 Concept Plan and the 1991 review.",
+        "HDB materials on continuing public housing delivery support the claim that policy remained active beyond the initial housing emergency.",
+        "Keep contemporary discussion at the level of durable policy themes."
+      ]
+    }
+  ],
+  "source_register": [
+    {
+      "source_id": "src_hdb_history",
+      "title": "Our History",
+      "publisher": "Housing & Development Board",
+      "url": "https://www.hdb.gov.sg/about-us/our-story/our-history",
+      "use": "1960 HDB creation, early flat production, 1964 home ownership scheme, 1967 Land Acquisition Act, 1968 CPF changes."
+    },
+    {
+      "source_id": "src_ura_past_long_term_plans",
+      "title": "Past Long-Term Plans",
+      "publisher": "Urban Redevelopment Authority",
+      "url": "https://www.ura.gov.sg/Corporate/Planning/Long-Term-Plan-Review/Past-Long-Term-Plans",
+      "use": "1971 Concept Plan, satellite towns, and 1991 review framing."
+    },
+    {
+      "source_id": "src_ura_first_ltp",
+      "title": "Singapore's first long-term plan",
+      "publisher": "Urban Redevelopment Authority",
+      "url": "https://www.ura.gov.sg/Corporate/Resources/Publications/Skyline/Skyline-issue14/Shaping-our-future-together/sg-first-ltp",
+      "use": "How long-term planning linked housing towns, industry, transport, and conservation."
+    },
+    {
+      "source_id": "src_ura_resettlement_speech",
+      "title": "Remarks by Mr Peter Ho, Chairman of the Urban Redevelopment Authority at the Lee Kuan Yew and the Physical Transformation of Singapore Public Conference",
+      "publisher": "Urban Redevelopment Authority",
+      "url": "https://www.ura.gov.sg/Corporate/Media-Room/Speeches/pr13-58",
+      "use": "Resettlement from city housing into satellite towns and the 1971 planning structure."
+    },
+    {
+      "source_id": "src_roots_tiong_bahru",
+      "title": "The Origin & Development of Tiong Bahru",
+      "publisher": "Roots / National Heritage Board Singapore",
+      "url": "https://www.roots.gov.sg/places/places-landing/Places/landmarks/tiong-bahru-heritage-trail/the-origin-development-of-tiong-bahru",
+      "use": "Singapore Improvement Trust legacy, early public housing, and conservation context."
+    },
+    {
+      "source_id": "src_roots_queenstown",
+      "title": "Queenstown: The Queen of Singapore's Heartlands",
+      "publisher": "Roots / National Heritage Board Singapore",
+      "url": "https://www.roots.gov.sg/en/stories-landing/stories/queenstown-the-queen-of-housing-estates/story",
+      "use": "Satellite town concept and early HDB estate development."
+    }
+  ]
+}

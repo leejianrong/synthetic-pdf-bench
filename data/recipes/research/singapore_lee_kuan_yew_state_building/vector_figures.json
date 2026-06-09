@@ -1,0 +1,355 @@
+{
+  "figures": [
+    {
+      "figure_id": "fig_transition_timeline",
+      "kind": "timeline",
+      "title": "Transition From Self-Government to Independent State",
+      "caption": "Selected milestones in Singapore's transition from self-government under Lee Kuan Yew to an independent state with durable institutions.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1959,
+          "end_year": 1990,
+          "tick_interval_years": 5
+        },
+        "events": [
+          {
+            "year": 1959,
+            "label": "Self-government and Lee becomes prime minister",
+            "short_label": "Self-government",
+            "event_type": "political_change"
+          },
+          {
+            "year": 1963,
+            "label": "Singapore joins Malaysia",
+            "short_label": "Merger",
+            "event_type": "constitutional_change"
+          },
+          {
+            "year": 1965,
+            "label": "Separation from Malaysia and independent statehood",
+            "short_label": "Independence",
+            "event_type": "state_formation"
+          },
+          {
+            "year": 1967,
+            "label": "Planning and industrial policy expand under a central state",
+            "short_label": "Planning state",
+            "event_type": "policy_expansion"
+          },
+          {
+            "year": 1970,
+            "label": "Public-service and development machinery mature",
+            "short_label": "Mature system",
+            "event_type": "institutionalization"
+          },
+          {
+            "year": 1990,
+            "label": "Lee steps down as prime minister",
+            "short_label": "Succession",
+            "event_type": "boundary"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 22
+        }
+      },
+      "suggested_section": "From Self-Government to Independence"
+    },
+    {
+      "figure_id": "fig_civil_service_hierarchy",
+      "kind": "flow_diagram",
+      "title": "Executive Coordination and Public Service Hierarchy",
+      "caption": "Simplified hierarchy showing how political direction, civil-service selection, and statutory boards were aligned under a strong central government.",
+      "data": {
+        "direction": "top_down",
+        "nodes": [
+          {
+            "id": "pap_government",
+            "label": "PAP government",
+            "type": "political_leadership"
+          },
+          {
+            "id": "pm_and_cabinet",
+            "label": "Prime Minister and Cabinet",
+            "type": "executive_center"
+          },
+          {
+            "id": "ministries",
+            "label": "Ministries",
+            "type": "sector_administration"
+          },
+          {
+            "id": "psc",
+            "label": "Public Service Commission",
+            "type": "talent_pipeline"
+          },
+          {
+            "id": "admin_service",
+            "label": "Administrative Service",
+            "type": "leadership_cadre"
+          },
+          {
+            "id": "statutory_boards",
+            "label": "Statutory boards and agencies",
+            "type": "delivery_system"
+          },
+          {
+            "id": "cipb",
+            "label": "Corrupt Practices Investigation Bureau",
+            "type": "integrity_system"
+          }
+        ],
+        "edges": [
+          {
+            "from": "pap_government",
+            "to": "pm_and_cabinet",
+            "label": "sets political direction"
+          },
+          {
+            "from": "pm_and_cabinet",
+            "to": "ministries",
+            "label": "coordinates policy"
+          },
+          {
+            "from": "pm_and_cabinet",
+            "to": "psc",
+            "label": "recruits talent"
+          },
+          {
+            "from": "psc",
+            "to": "admin_service",
+            "label": "selects and develops"
+          },
+          {
+            "from": "ministries",
+            "to": "statutory_boards",
+            "label": "implements programs"
+          },
+          {
+            "from": "cipb",
+            "to": "pm_and_cabinet",
+            "label": "supports clean government"
+          },
+          {
+            "from": "cipb",
+            "to": "ministries",
+            "label": "enforces integrity"
+          }
+        ],
+        "render_hints": {
+          "group_by_type": true,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 24,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "Centralizing the Executive and Civil Service"
+    },
+    {
+      "figure_id": "fig_policy_pipeline",
+      "kind": "flow_diagram",
+      "title": "Policy Pipeline From Planning to Industrial Output",
+      "caption": "A simplified policy pipeline showing how planning, technical advice, and state implementation were linked in Singapore's developmental strategy.",
+      "data": {
+        "direction": "left_right",
+        "nodes": [
+          {
+            "id": "strategy",
+            "label": "State Development Plan",
+            "type": "planning"
+          },
+          {
+            "id": "advice",
+            "label": "Technical advice and external expertise",
+            "type": "expert_input"
+          },
+          {
+            "id": "edb",
+            "label": "Economic Development Board",
+            "type": "implementation_body"
+          },
+          {
+            "id": "sites",
+            "label": "Land, infrastructure, and industrial sites",
+            "type": "enabling_assets"
+          },
+          {
+            "id": "firms",
+            "label": "Investors and firms",
+            "type": "economic_actors"
+          },
+          {
+            "id": "jobs",
+            "label": "Jobs, exports, and fiscal capacity",
+            "type": "outcome"
+          }
+        ],
+        "edges": [
+          {
+            "from": "strategy",
+            "to": "advice",
+            "label": "frames priorities"
+          },
+          {
+            "from": "advice",
+            "to": "edb",
+            "label": "shapes policy design"
+          },
+          {
+            "from": "edb",
+            "to": "sites",
+            "label": "coordinates development"
+          },
+          {
+            "from": "sites",
+            "to": "firms",
+            "label": "supports investment"
+          },
+          {
+            "from": "firms",
+            "to": "jobs",
+            "label": "produces growth"
+          }
+        ],
+        "render_hints": {
+          "group_by_type": false,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 20,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "Economic Planning and the Developmental State"
+    },
+    {
+      "figure_id": "fig_social_policy_map",
+      "kind": "network_diagram",
+      "title": "Social Policy Network Around the Central State",
+      "caption": "A hub-and-spoke view of how housing, education, health, and urban regulation were organized through the central state.",
+      "data": {
+        "layout": "hub_and_spoke",
+        "central_node": "state_center",
+        "nodes": [
+          {
+            "id": "state_center",
+            "label": "Central government",
+            "type": "hub"
+          },
+          {
+            "id": "hdb",
+            "label": "HDB and housing policy",
+            "type": "housing"
+          },
+          {
+            "id": "cpf",
+            "label": "CPF-linked home ownership",
+            "type": "finance"
+          },
+          {
+            "id": "schools",
+            "label": "Education and bilingual policy",
+            "type": "education"
+          },
+          {
+            "id": "health",
+            "label": "Public health and cleanliness",
+            "type": "health"
+          },
+          {
+            "id": "urban",
+            "label": "Urban planning and local regulation",
+            "type": "urban_governance"
+          }
+        ],
+        "edges": [
+          {
+            "from": "state_center",
+            "to": "hdb",
+            "label": "houses the population"
+          },
+          {
+            "from": "state_center",
+            "to": "cpf",
+            "label": "finances ownership"
+          },
+          {
+            "from": "state_center",
+            "to": "schools",
+            "label": "builds human capital"
+          },
+          {
+            "from": "state_center",
+            "to": "health",
+            "label": "improves living conditions"
+          },
+          {
+            "from": "state_center",
+            "to": "urban",
+            "label": "organizes city space"
+          }
+        ],
+        "render_hints": {
+          "hub_emphasis": true,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 22,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "Social Policy as State Capacity"
+    },
+    {
+      "figure_id": "fig_legacy_synthesis",
+      "kind": "timeline",
+      "title": "Institutionalization and Succession, 1959-1990",
+      "caption": "A short synthesis of the founding era, showing how centralization, institution-building, and succession fit together.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1959,
+          "end_year": 1990,
+          "tick_interval_years": 5
+        },
+        "events": [
+          {
+            "year": 1959,
+            "label": "Executive control and state-building begin",
+            "short_label": "Start",
+            "event_type": "political_change"
+          },
+          {
+            "year": 1965,
+            "label": "Independence turns survival into a state project",
+            "short_label": "Survival",
+            "event_type": "state_formation"
+          },
+          {
+            "year": 1968,
+            "label": "Clean-government and development programs deepen",
+            "short_label": "Deepening",
+            "event_type": "institutionalization"
+          },
+          {
+            "year": 1970,
+            "label": "Centralized administration matures into routine governance",
+            "short_label": "Routine",
+            "event_type": "institutionalization"
+          },
+          {
+            "year": 1990,
+            "label": "Succession confirms institutional continuity",
+            "short_label": "Handover",
+            "event_type": "boundary"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 24
+        }
+      },
+      "suggested_section": "Institutional Legacy and Tradeoffs"
+    }
+  ]
+}
