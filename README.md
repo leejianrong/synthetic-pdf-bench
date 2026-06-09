@@ -92,6 +92,60 @@ Supported table variants:
 - merged-cell approximation with span metadata
 - multi-page table splitting
 
+## Benchmark evaluation
+
+Expected parser output directory shape:
+
+```text
+prediction/
+  document.md          # predicted Markdown, optional if prediction.json has markdown
+  prediction.json      # structured prediction
+  figures/*.png        # optional extracted figure files
+```
+
+Minimal `prediction.json` shape:
+
+```json
+{
+  "doc_id": "optional",
+  "markdown": "# Predicted Markdown",
+  "blocks": [
+    {"block_id": "b000001", "type": "paragraph", "page_index": 0, "bbox_pt": [72, 100, 540, 130]}
+  ],
+  "tables": [
+    {"table_id": "tbl_001", "matrix": [["A", "B"]], "page_index": 0, "bbox_pt": [72, 100, 540, 160]}
+  ],
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "page_index": 0,
+      "bbox_pt": [72, 200, 540, 360],
+      "markdown_ref": "![Figure 1](figures/fig_001.png)",
+      "png_path": "figures/fig_001.png"
+    }
+  ]
+}
+```
+
+Run the evaluator:
+
+```bash
+uv run synthetic-pdf-bench evaluate \
+  --truth output/synthetic_000001/truth \
+  --prediction path/to/parser/output \
+  --output output/synthetic_000001/evaluation.json
+```
+
+Metrics include normalized Markdown exact match, Markdown token F1, block bbox IoU, table matrix exact match, figure count match, figure bbox IoU, and figure Markdown reference match.
+
+For smoke testing the evaluator, generate a truth-copy dummy prediction:
+
+```bash
+uv run synthetic-pdf-bench dummy-parse \
+  --truth output/synthetic_000001/truth \
+  --prediction output/synthetic_000001/dummy_prediction
+```
+
 ## Fonts
 
 The ReportLab renderer automatically uses the built-in `STSong-Light` CID font for text containing Chinese characters. Latin-only text uses Helvetica by default. Future phases can add configurable external fonts such as Noto Sans CJK for higher visual fidelity.

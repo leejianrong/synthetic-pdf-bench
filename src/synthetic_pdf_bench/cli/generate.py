@@ -5,6 +5,11 @@ import json
 from pathlib import Path
 
 from synthetic_pdf_bench.generators.recipes import default_recipe_path, recipe_variant_names
+from synthetic_pdf_bench.evaluation.evaluator import (
+    expected_prediction_shape,
+    prediction_from_truth,
+    write_evaluation_report,
+)
 from synthetic_pdf_bench.layout.flow_layout import build_scene_from_recipe_path
 from synthetic_pdf_bench.markdown.writer import write_markdown
 from synthetic_pdf_bench.render.crops import crop_figures
@@ -122,6 +127,28 @@ def generate_dataset(
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Generate a synthetic PDF benchmark document.")
+    subparsers = parser.add_subparsers(dest="command")
+
+    generate_parser = subparsers.add_parser("generate", help="Generate one document or a dataset.")
+    _add_generation_args(generate_parser)
+
+    evaluate_parser = subparsers.add_parser("evaluate", help="Evaluate parser output against truth.")
+    evaluate_parser.add_argument("--truth", type=Path, required=True)
+    evaluate_parser.add_argument("--prediction", type=Path, required=True)
+    evaluate_parser.add_argument("--output", type=Path)
+
+    dummy_parser = subparsers.add_parser("dummy-parse", help="Write a truth-copy prediction for evaluator tests.")
+    dummy_parser.add_argument("--truth", type=Path, required=True)
+    dummy_parser.add_argument("--prediction", type=Path, required=True)
+
+    shape_parser = subparsers.add_parser("prediction-shape", help="Print expected parser output shape.")
+    shape_parser.add_argument("--output", type=Path)
+
+    _add_generation_args(parser)
+    return parser
+
+
+def _add_generation_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--output", type=Path, help="Output directory for a single document.")
     parser.add_argument("--output-root", type=Path, help="Output root for dataset generation.")
     parser.add_argument("--count", type=int, default=1, help="Number of documents to generate in dataset mode.")
@@ -141,11 +168,25 @@ def build_parser() -> argparse.ArgumentParser:
         nargs="+",
         help="Variants to cycle through in dataset mode.",
     )
-    return parser
 
 
 def main() -> None:
     args = build_parser().parse_args()
+    if args.command == "evaluate":
+        report = write_evaluation_report(args.truth, args.prediction, args.output)
+        print(json.dumps(report, indent=2, ensure_ascii=False))
+        return
+    if args.command == "dummy-parse":
+        prediction_from_truth(args.truth, args.prediction)
+        return
+    if args.command == "prediction-shape":
+        shape = expected_prediction_shape()
+        if args.output is not None:
+            args.output.parent.mkdir(parents=True, exist_ok=True)
+            args.output.write_text(json.dumps(shape, indent=2, ensure_ascii=False), encoding="utf-8")
+        else:
+            print(json.dumps(shape, indent=2, ensure_ascii=False))
+        return
     recipe_paths = args.recipe or [default_recipe_path()]
     if args.output_root is not None:
         generate_dataset(

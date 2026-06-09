@@ -27,7 +27,7 @@ class PageTruth(BaseModel):
     height_pt: float
     rotation: int = 0
     rendered_image: RenderedPage | None = None
-    blocks: list[Block | TableBlock | FigureBlock] = Field(default_factory=list)
+    blocks: list[TableBlock | FigureBlock | Block] = Field(default_factory=list)
 
 
 class DocumentTruth(BaseModel):
@@ -38,7 +38,7 @@ class DocumentTruth(BaseModel):
     source_pdf: str = "document.pdf"
     language_profile: dict[str, Any] = Field(default_factory=lambda: {"primary": "en"})
     pages: list[PageTruth] = Field(default_factory=list)
-    blocks: list[Block | TableBlock | FigureBlock] = Field(default_factory=list)
+    blocks: list[TableBlock | FigureBlock | Block] = Field(default_factory=list)
     tables: list[TableBlock] = Field(default_factory=list)
     figures: list[FigureBlock] = Field(default_factory=list)
     markdown_path: str = "truth/document.md"
