@@ -1,0 +1,154 @@
+{
+  "title": "Indonesia: Nationalist Movements, Youth Politics, and Anti-Colonial Organization Before 1945",
+  "recipe_id": "indonesia_nationalist_youth_anti_colonial_before_1945",
+  "topic": "Indonesia: nationalist movements, youth politics, and anti-colonial organization before 1945",
+  "abstract": "This synthetic research outline traces the development of organized Indonesian nationalism before 1945, from the early associational politics of Budi Utomo and Sarekat Islam to youth-led national unity claims in 1928, the party politics and repression of the 1930s, and the reconfiguration of anti-colonial organization under Japanese occupation. The folder is designed for stable benchmark generation with deterministic structure, English-facing prose, and careful avoidance of post-1945 independence narrative."
+  ,
+  "sections": [
+    {
+      "heading": "Early Organized Nationalism in the Dutch East Indies",
+      "bullet_points": [
+        "Start with the emergence of organized nationalism in the early twentieth century, especially Budi Utomo in 1908 and the widening associational field that followed.",
+        "Explain how Dutch colonial rule, modern schooling, urban social change, and print networks helped create a new political vocabulary for anti-colonial activity.",
+        "Distinguish elite cultural reform from overt political nationalism while showing how both became stepping stones toward later organization.",
+        "Keep the section focused on the formation of nationalist organizations rather than on the later independence struggle."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_early_nationalism",
+          "title": "Early Nationalist Organizations and Their Initial Bases",
+          "description": "Matrix comparing the founding moment, social base, and political orientation of the first major nationalist associations."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_early_nationalism_timeline",
+          "kind": "timeline",
+          "title": "From Budi Utomo to Broad Nationalism",
+          "description": "Timeline showing the shift from early elite association to broader nationalist organization before the 1920s."
+        }
+      ],
+      "source_notes": [
+        "Britannica on Budi Utomo for the 1908 founding and early nationalist framing.",
+        "Britannica on Indonesia toward independence for the larger historical sequence before 1945.",
+        "Use this section to mark the transition from cultural reform to organized politics."
+      ]
+    },
+    {
+      "heading": "Mass Politics, Islamic Reform, and Broadening Anti-Colonial Coalitions",
+      "bullet_points": [
+        "Describe Sarekat Islam as a mass political force that widened anti-colonial participation beyond the small elite circles that had dominated early nationalist activity.",
+        "Show how Islamic reform organizations, trader networks, and urban social mobilization helped anti-colonial politics reach broader audiences.",
+        "Note the importance of Tjokroaminoto and other public leaders in turning organization into persuasion, discipline, and public speech.",
+        "Avoid treating the movement as a single ideological bloc; emphasize its internal diversity and changing political lines."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_mass_organizing",
+          "title": "Mass Politics and Organizing Channels",
+          "description": "Matrix summarizing organizations, social bases, and anti-colonial functions in the expanding political field."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_mass_organizing_network",
+          "kind": "network_diagram",
+          "title": "Mass Political Networks",
+          "description": "Network diagram linking Sarekat Islam, reformist Islam, urban traders, and nationalist speakers."
+        }
+      ],
+      "source_notes": [
+        "Britannica on Sarekat Islam for mass support and political development.",
+        "Britannica on Omar Said Tjokroaminoto for leadership and nationalist influence.",
+        "Britannica on Muhammadiyah for the reformist social field around modern Muslim organization."
+      ]
+    },
+    {
+      "heading": "Youth Organizations, Student Networks, and the 1928 Youth Pledge",
+      "bullet_points": [
+        "Explain how youth organizations such as Jong Java, Jong Sumatranen Bond, and PPPI helped transform ethnicity-based clubs into a national political imagination.",
+        "Center the Second Youth Congress of October 1928 and the Youth Pledge as a turning point in claims to one nation, one homeland, and one language.",
+        "Show why youth politics mattered: students and young activists provided organizational energy, symbolic language, and a bridge between regional societies and national politics.",
+        "Keep the section anchored in pre-1945 organizing and avoid drifting into post-independence institutional history."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_youth_politics",
+          "title": "Youth Associations and Political Contributions",
+          "description": "Matrix comparing youth groups, main venues, and their contribution to national unity politics."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_youth_pledge_flow",
+          "kind": "flow_diagram",
+          "title": "From Youth Clubs to National Unity",
+          "description": "Flow diagram tracing how student associations culminated in the Youth Pledge of 1928."
+        }
+      ],
+      "source_notes": [
+        "Museum Sumpah Pemuda repository material for the Congress, its setting, and its political meaning.",
+        "Britannica on Indonesia toward independence for the 1928 Youth Pledge summary.",
+        "Use this section to connect regional youth clubs to the language of Indonesian nationhood."
+      ]
+    },
+    {
+      "heading": "Party Politics, Repression, and Intellectual Exile in the 1930s",
+      "bullet_points": [
+        "Describe the rise of explicitly political nationalist parties, including the Indonesian Nationalist Party, and the choice between cooperation and noncooperation with colonial rule.",
+        "Show how arrests, censorship, exile, and surveillance narrowed the public field even as nationalist ideas continued to circulate.",
+        "Explain the importance of intellectual networks, student travel, and overseas organizing for preserving anti-colonial strategy when domestic parties were restricted.",
+        "Keep the focus on political organization and repression rather than on military conflict or postwar developments."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_repression_exile",
+          "title": "1930s Repression and Political Repositioning",
+          "description": "Matrix comparing party forms, colonial pressure, and the movement of activists between prison, exile, and intellectual networks."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_1930s_repression_timeline",
+          "kind": "timeline",
+          "title": "Repression and Reorganization in the 1930s",
+          "description": "Timeline of party formation, repression, and organizational continuity across the 1930s."
+        }
+      ],
+      "source_notes": [
+        "Britannica on the Indonesian Nationalist Party for noncooperation and party formation.",
+        "Britannica on Mohammad Hatta for student nationalism, overseas organizing, and later anti-colonial leadership.",
+        "Britannica on Indonesia toward independence for the sequence of arrests and political fragmentation."
+      ]
+    },
+    {
+      "heading": "Japanese Occupation and the Reconfiguration of Anti-Colonial Organization, 1942-1944",
+      "bullet_points": [
+        "Describe how Japanese occupation dismantled Dutch colonial authority while creating new state-sponsored mass organizations and controlled political channels.",
+        "Explain how figures such as Sukarno and Hatta used occupation-era openings to rebuild public mobilization under severe constraints.",
+        "Show the role of youth, labor, and paramilitary mobilization in shifting anti-colonial organization from clandestine party work toward state-managed mass politics.",
+        "End before the formal independence proclamation and keep the section within the pre-1945 horizon."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_occupation_reconfiguration",
+          "title": "Occupation-Era Anti-Colonial Reconfiguration",
+          "description": "Matrix comparing occupation-sponsored organizations, their public functions, and their political consequences."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_occupation_reconfiguration_flow",
+          "kind": "flow_diagram",
+          "title": "Occupation Channels and National Mobilization",
+          "description": "Flow diagram showing how occupation control and mobilization interacted before 1945."
+        }
+      ],
+      "source_notes": [
+        "Britannica on Putera for occupation-era mobilization under Japanese rule.",
+        "Britannica on Mohammad Hatta for occupation-period organizational work and home defense structures.",
+        "Use this section to show continuity between prewar nationalism and occupation-era mobilization."
+      ]
+    }
+  ]
+}

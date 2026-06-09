@@ -1,0 +1,226 @@
+{
+  "tables": [
+    {
+      "table_id": "tbl_nep_origin_timeline",
+      "title": "NEP Origins and Early Milestones",
+      "matrix": [
+        [
+          "Phase",
+          "Date or Period",
+          "Event",
+          "Significance"
+        ],
+        [
+          "Political shock",
+          "1969",
+          "Election crisis and racial violence",
+          "Created the policy opening for long-term restructuring"
+        ],
+        [
+          "Policy launch",
+          "1971",
+          "New Economic Policy introduced",
+          "Linked national unity to redistribution and growth"
+        ],
+        [
+          "Planning consolidation",
+          "1971-1975",
+          "Second Malaysia Plan and early implementation",
+          "Translated NEP goals into concrete programs"
+        ],
+        [
+          "Mid-course planning",
+          "1976-1980",
+          "Third Malaysia Plan and revised targets",
+          "Deepened the development-state approach"
+        ],
+        [
+          "Policy horizon",
+          "1990",
+          "End of the NEP era",
+          "Closed the original policy cycle before the NDP"
+        ]
+      ],
+      "notes": [
+        "Use this table for a compact chronology rather than a deep event history.",
+        "The anchor dates are the 1969 crisis, the 1971 launch, and the 1990 endpoint.",
+        "Keep the wording neutral and benchmark-friendly."
+      ],
+      "suggested_section": "Crisis, Racial Violence, and the Policy Turn of 1971"
+    },
+    {
+      "table_id": "tbl_nep_goals_and_instruments",
+      "title": "NEP Goals and Policy Instruments",
+      "matrix": [
+        [
+          "Goal",
+          "Policy Logic",
+          "Main Instruments",
+          "Expected Effect"
+        ],
+        [
+          "Poverty eradication",
+          "Raise incomes across society",
+          "Education, land programs, rural support, public services",
+          "Lower deprivation and broaden opportunity"
+        ],
+        [
+          "Societal restructuring",
+          "Reduce racial concentration in occupations and ownership",
+          "Affirmative action, recruitment rules, ownership measures",
+          "Broader participation in the modern economy"
+        ],
+        [
+          "National unity",
+          "Link distribution to social stability",
+          "Planning documents, Rukunegara, state messaging",
+          "Reduce the political salience of economic inequality"
+        ],
+        [
+          "Development credibility",
+          "Make growth visibly shared",
+          "Public investment, industrial policy, state coordination",
+          "Support legitimacy for the policy order"
+        ]
+      ],
+      "notes": [
+        "The matrix separates goals from instruments so extraction stays clean.",
+        "It should be read as a policy design table, not as a list of every program.",
+        "The logic row is the key interpretive element."
+      ],
+      "suggested_section": "Poverty Eradication and the Restructuring of Society"
+    },
+    {
+      "table_id": "tbl_redistribution_channels",
+      "title": "Redistribution Channels Under the NEP",
+      "matrix": [
+        [
+          "Channel",
+          "Mechanism",
+          "Target Area",
+          "Benchmark Note"
+        ],
+        [
+          "Education",
+          "Scholarships, training, and access expansion",
+          "Human capital and professional entry",
+          "Built future participation rather than immediate cash transfer"
+        ],
+        [
+          "Employment",
+          "Civil service and public-sector hiring",
+          "State employment and administrative influence",
+          "Expanded access to secure jobs"
+        ],
+        [
+          "Ownership",
+          "Corporate equity and commercial access measures",
+          "Business and asset ownership",
+          "Addressed the distribution of capital, not only income"
+        ],
+        [
+          "Rural development",
+          "Land settlement and infrastructure",
+          "Village incomes and agricultural upgrading",
+          "Linked poverty reduction to spatial development"
+        ],
+        [
+          "Enterprise support",
+          "Credit, licensing, and public agencies",
+          "Private and quasi-public business growth",
+          "Helped create a broader entrepreneurial base"
+        ]
+      ],
+      "notes": [
+        "The channels are intentionally generic enough to survive later canonical refinement.",
+        "Avoid unsupported share targets or program totals in this research stage.",
+        "The table is meant to support extraction of the policy mechanism."
+      ],
+      "suggested_section": "Redistribution Channels, Institutions, and Access to Opportunity"
+    },
+    {
+      "table_id": "tbl_growth_strategy",
+      "title": "NEP Growth Strategy and Sectoral Direction",
+      "matrix": [
+        [
+          "Priority",
+          "Policy Direction",
+          "Economic Role",
+          "Development Significance"
+        ],
+        [
+          "Manufacturing",
+          "Expand export-oriented industry",
+          "Diversify the production base",
+          "Reduce dependence on primary commodities"
+        ],
+        [
+          "Infrastructure",
+          "Build roads, utilities, ports, and urban systems",
+          "Lower transaction costs and raise connectivity",
+          "Support broad-based growth"
+        ],
+        [
+          "Public investment",
+          "Use the state to guide strategic sectors",
+          "Shape industrial capacity and market structure",
+          "Make growth politically usable"
+        ],
+        [
+          "Stability",
+          "Coordinate growth with redistribution",
+          "Protect social cohesion",
+          "Prevent development from deepening conflict"
+        ]
+      ],
+      "notes": [
+        "The table summarizes the strategy rather than listing every plan instrument.",
+        "It is useful for showing the policy's growth side alongside its redistribution side.",
+        "Keep the focus on the 1970s and 1980s through 1990."
+      ],
+      "suggested_section": "Growth Strategy, Industrialization, and State-Led Development"
+    },
+    {
+      "table_id": "tbl_nep_outcomes",
+      "title": "NEP Outcomes and Debates",
+      "matrix": [
+        [
+          "Outcome Area",
+          "Observed Direction",
+          "Persistent Issue",
+          "Legacy"
+        ],
+        [
+          "Poverty",
+          "Substantial reduction over time",
+          "Regional and sectoral gaps remained",
+          "Established poverty reduction as a state objective"
+        ],
+        [
+          "Participation",
+          "Broader bumiputera entry into education and employment",
+          "Distribution of high-value ownership remained debated",
+          "Changed the composition of the middle class"
+        ],
+        [
+          "Growth",
+          "Economy diversified and expanded",
+          "Risk of uneven benefits and political capture",
+          "Anchored Malaysia's developmental reputation"
+        ],
+        [
+          "Politics",
+          "Helped stabilize the post-1969 settlement",
+          "Critiques of patronage and ethnic classification persisted",
+          "Carried forward into the 1991 policy transition"
+        ]
+      ],
+      "notes": [
+        "This table is deliberately balanced between gains and criticism.",
+        "It should support benchmark extraction of both success and tradeoff.",
+        "The legacy row bridges cleanly to the next policy frame."
+      ],
+      "suggested_section": "Outcomes, Critiques, and the Transition to the New Development Policy"
+    }
+  ]
+}

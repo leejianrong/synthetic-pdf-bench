@@ -1,0 +1,189 @@
+{
+  "title": "Malaysia: New Economic Policy, Redistribution, and Development Strategy",
+  "recipe_id": "malaysia_new_economic_policy_redistribution_development",
+  "topic": "Malaysia: New Economic Policy, redistribution, and development strategy",
+  "abstract": "This synthetic research outline covers Malaysia's New Economic Policy from its launch in 1971 through the end of the policy era in 1990. It focuses on the policy's origin in the 1969 crisis, its dual goals of poverty eradication and restructuring society, the administrative tools used to expand bumiputera participation, and the development strategy that linked redistribution to growth, industrialization, and state-led planning. The report is designed for stable PDF benchmark generation, with primarily English prose and a controlled set of Malay policy terms.",
+  "language_profile": {
+    "primary_language": "English",
+    "allowed_pdf_languages": [
+      "English",
+      "Bahasa Melayu",
+      "Bahasa Indonesia",
+      "Simplified Chinese"
+    ],
+    "multilingual_terms": [
+      {
+        "term": "bumiputera",
+        "language": "Bahasa Melayu",
+        "meaning": "indigenous and Malay citizens used in Malaysian policy language"
+      },
+      {
+        "term": "Dasar Ekonomi Baru",
+        "language": "Bahasa Melayu",
+        "meaning": "New Economic Policy"
+      },
+      {
+        "term": "pembasmian kemiskinan",
+        "language": "Bahasa Melayu",
+        "meaning": "poverty eradication"
+      },
+      {
+        "term": "penyusunan semula masyarakat",
+        "language": "Bahasa Melayu",
+        "meaning": "restructuring of society"
+      },
+      {
+        "term": "Rukunegara",
+        "language": "Bahasa Melayu",
+        "meaning": "national ideology adopted after the 1969 crisis"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "heading": "Crisis, Racial Violence, and the Policy Turn of 1971",
+      "bullet_points": [
+        "Place the New Economic Policy in the aftermath of the 1969 election crisis and the 13 May violence.",
+        "Explain why the state treated the riots as a national warning about social fragmentation, not only as a public-order event.",
+        "Show how the policy turn of 1971 linked political stabilization to long-term social and economic restructuring.",
+        "Keep the opening frame centered on state response, legitimacy, and the search for national unity."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_nep_origin_timeline",
+          "title": "NEP Origins and Early Milestones",
+          "description": "Timeline matrix covering the 1969 crisis, the 1971 launch, and the policy framework through the 1970s."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_nep_origin_timeline",
+          "kind": "timeline",
+          "title": "NEP Origin Timeline",
+          "description": "Timeline of the 1969 crisis, the 1971 policy launch, and the early planning milestones."
+        }
+      ],
+      "source_notes": [
+        "Britannica summarizes the link between the 1969 crisis, the NEP, and the broader political transformation of Malaysia.",
+        "Official Malaysian planning documents frame the NEP as a response to national unity and socio-economic weakness.",
+        "The section should stay focused on the policy turn rather than on a full account of the riots themselves."
+      ]
+    },
+    {
+      "heading": "Poverty Eradication and the Restructuring of Society",
+      "bullet_points": [
+        "State the two core NEP goals: poverty eradication regardless of race and the restructuring of society to reduce the identification of race with economic function.",
+        "Explain why the policy used bumiputera advancement as its main redistribution channel while presenting the program as national in scope.",
+        "Describe the policy logic as a mix of redistribution, opportunity expansion, and political legitimacy building.",
+        "Treat the goals as linked rather than competing, because the policy was designed to do both at once."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_nep_goals_and_instruments",
+          "title": "NEP Goals and Policy Instruments",
+          "description": "Matrix linking poverty eradication and social restructuring to the main policy levers used by the Malaysian state."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_nep_policy_logic",
+          "kind": "flow_diagram",
+          "title": "NEP Policy Logic",
+          "description": "Flow diagram showing how crisis, redistribution, and national unity were connected in the policy design."
+        }
+      ],
+      "source_notes": [
+        "The official NEP chapter in the Malaysian development plans is the clearest source for the two stated goals.",
+        "Britannica is useful for the broader historical interpretation of redistribution and ethnic balance.",
+        "Keep the wording precise: the NEP sought restructuring, not simple equalization of outcomes."
+      ]
+    },
+    {
+      "heading": "Redistribution Channels, Institutions, and Access to Opportunity",
+      "bullet_points": [
+        "Describe how the state expanded access through education, civil service recruitment, licensing, credit, and public enterprise.",
+        "Explain the role of agencies and development institutions in channeling opportunities toward bumiputera participation.",
+        "Show how land development, resettlement, and rural support programs complemented urban and corporate measures.",
+        "Keep the emphasis on administrative mechanism rather than on a single agency or a single sector."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_redistribution_channels",
+          "title": "Redistribution Channels Under the NEP",
+          "description": "Matrix comparing education, employment, ownership, rural development, and enterprise access as redistribution channels."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_redistribution_network",
+          "kind": "network_diagram",
+          "title": "Redistribution and Opportunity Network",
+          "description": "Network diagram linking state agencies, households, firms, and public programs in the NEP system."
+        }
+      ],
+      "source_notes": [
+        "Official Malaysian poverty-eradication material documents the role of state programs in widening participation and reducing deprivation.",
+        "The Third Malaysia Plan materials show how NEP objectives were translated into planning and implementation machinery.",
+        "This section should remain qualitative and avoid unsupported numeric detail about ownership shares or quotas."
+      ]
+    },
+    {
+      "heading": "Growth Strategy, Industrialization, and State-Led Development",
+      "bullet_points": [
+        "Explain that the NEP did not reject growth; it tried to make growth politically sustainable by tying it to redistribution.",
+        "Describe the shift toward export-oriented manufacturing, infrastructure expansion, and a more active development state.",
+        "Show how the state used planning, public investment, and strategic industry support to diversify the economy beyond commodities.",
+        "Present development strategy as a balance between market expansion and government direction, not as pure central planning."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_growth_strategy",
+          "title": "NEP Growth Strategy and Sectoral Direction",
+          "description": "Matrix comparing commodity dependence, manufacturing growth, infrastructure, and public investment priorities."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_growth_strategy_path",
+          "kind": "flow_diagram",
+          "title": "Growth Strategy Path",
+          "description": "Flow diagram of the shift from commodity dependence toward industrialization and export growth."
+        }
+      ],
+      "source_notes": [
+        "The World Bank overview is useful for the long-run transformation from agriculture and commodities to manufacturing and services.",
+        "Britannica summarizes the NEP's growth-and-redistribution balance within Malaysia's economic history.",
+        "Keep the section anchored on development strategy through 1990, not on later 1990s reform debates."
+      ]
+    },
+    {
+      "heading": "Outcomes, Critiques, and the Transition to the New Development Policy",
+      "bullet_points": [
+        "Describe the policy's long-run effects on poverty reduction, education access, middle-class formation, and bumiputera participation.",
+        "Note the continuing debates over equity, efficiency, patronage, and the persistence of inequality despite major gains.",
+        "Explain why the NEP era ended in 1990 and how its priorities were renewed and reframed in the New Development Policy in 1991.",
+        "Keep the final section balanced: acknowledge measurable gains while preserving the benchmark's focus on policy tradeoffs."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_nep_outcomes",
+          "title": "NEP Outcomes and Debates",
+          "description": "Matrix of measurable gains, distributional debates, and the transition to the post-1990 policy frame."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_nep_legacy_timeline",
+          "kind": "timeline",
+          "title": "NEP Legacy Timeline",
+          "description": "Timeline of the NEP era, its 1990 endpoint, and the transition to the New Development Policy."
+        }
+      ],
+      "source_notes": [
+        "Government of Malaysia materials on poverty eradication and World Bank country summaries support the outcome narrative.",
+        "Britannica provides a concise bridge from the NEP to the New Development Policy in 1991.",
+        "The section should avoid turning into a general post-1990 Malaysian politics overview."
+      ]
+    }
+  ]
+}

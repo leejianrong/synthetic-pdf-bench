@@ -1,0 +1,283 @@
+{
+  "figures": [
+    {
+      "figure_id": "fig_election_transition_timeline",
+      "kind": "timeline",
+      "title": "Post-2018 Federal Transition Timeline",
+      "caption": "The sequence from GE14 through the post-GE15 coalition settlement.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 2018,
+          "end_year": 2022,
+          "tick_interval_years": 1
+        },
+        "events": [
+          {
+            "year": 2018,
+            "label": "GE14 ends BN's uninterrupted federal dominance",
+            "short_label": "GE14",
+            "event_type": "election"
+          },
+          {
+            "year": 2020,
+            "label": "Sheraton Move collapses the PH majority and resets government",
+            "short_label": "Sheraton Move",
+            "event_type": "government_change"
+          },
+          {
+            "year": 2021,
+            "label": "Ismail Sabri is appointed after Muhyiddin loses support",
+            "short_label": "2021 reset",
+            "event_type": "government_change"
+          },
+          {
+            "year": 2022,
+            "label": "GE15 produces a hung parliament and Anwar forms a coalition government",
+            "short_label": "GE15",
+            "event_type": "election"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 24
+        }
+      },
+      "suggested_section": "The 2018 Election and the End of BN's Dominance"
+    },
+    {
+      "figure_id": "fig_coalition_blocks",
+      "kind": "network_diagram",
+      "title": "Coalition Bloc Map",
+      "caption": "A simplified network of the blocs that shaped post-2018 federal bargaining.",
+      "data": {
+        "layout": "hub_and_spoke",
+        "central_node": "federal_bargaining",
+        "nodes": [
+          {
+            "id": "federal_bargaining",
+            "label": "Federal bargaining after 2018",
+            "type": "hub"
+          },
+          {
+            "id": "ph",
+            "label": "Pakatan Harapan",
+            "type": "coalition"
+          },
+          {
+            "id": "bn",
+            "label": "Barisan Nasional",
+            "type": "coalition"
+          },
+          {
+            "id": "pn",
+            "label": "Perikatan Nasional",
+            "type": "coalition"
+          },
+          {
+            "id": "gps",
+            "label": "Gabungan Parti Sarawak",
+            "type": "regional_bloc"
+          },
+          {
+            "id": "warisan",
+            "label": "Warisan and Sabah actors",
+            "type": "regional_bloc"
+          }
+        ],
+        "edges": [
+          {
+            "from": "ph",
+            "to": "federal_bargaining",
+            "label": "2018 reform victory"
+          },
+          {
+            "from": "bn",
+            "to": "federal_bargaining",
+            "label": "post-2018 opposition role"
+          },
+          {
+            "from": "pn",
+            "to": "federal_bargaining",
+            "label": "2020 government reset"
+          },
+          {
+            "from": "gps",
+            "to": "federal_bargaining",
+            "label": "kingmaker leverage"
+          },
+          {
+            "from": "warisan",
+            "to": "federal_bargaining",
+            "label": "East Malaysian balance"
+          }
+        ],
+        "render_hints": {
+          "wrap_labels": true,
+          "label_wrap_width_chars": 20,
+          "edge_label_density": "medium"
+        }
+      },
+      "suggested_section": "Coalition Bargaining Inside Pakatan Harapan"
+    },
+    {
+      "figure_id": "fig_government_transitions",
+      "kind": "flow_diagram",
+      "title": "From PH Victory to PN Government",
+      "caption": "The main steps that turned the 2018 election into the 2020 government reset.",
+      "data": {
+        "direction": "left_to_right",
+        "nodes": [
+          {
+            "id": "ge14",
+            "label": "GE14 victory for PH",
+            "type": "election"
+          },
+          {
+            "id": "coalition_strain",
+            "label": "Intra-coalition strain",
+            "type": "process"
+          },
+          {
+            "id": "sheraton",
+            "label": "Sheraton Move",
+            "type": "turning_point"
+          },
+          {
+            "id": "majority_test",
+            "label": "Majority testing at the palace",
+            "type": "process"
+          },
+          {
+            "id": "muhyiddin",
+            "label": "Muhyiddin-led PN government",
+            "type": "outcome"
+          }
+        ],
+        "edges": [
+          {
+            "from": "ge14",
+            "to": "coalition_strain",
+            "label": "broad coalition enters office"
+          },
+          {
+            "from": "coalition_strain",
+            "to": "sheraton",
+            "label": "defections and withdrawal"
+          },
+          {
+            "from": "sheraton",
+            "to": "majority_test",
+            "label": "support shifts"
+          },
+          {
+            "from": "majority_test",
+            "to": "muhyiddin",
+            "label": "appointed with majority support"
+          }
+        ],
+        "render_hints": {
+          "wrap_labels": true,
+          "label_wrap_width_chars": 22,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "The Sheraton Move and the 2020 Government Reset"
+    },
+    {
+      "figure_id": "fig_institutional_reforms",
+      "kind": "timeline",
+      "title": "Repair Measures After the 2020 Crisis",
+      "caption": "A short timeline of the reforms and bargaining devices that followed coalition instability.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 2020,
+          "end_year": 2022,
+          "tick_interval_years": 1
+        },
+        "events": [
+          {
+            "year": 2021,
+            "label": "Transformation and Political Stability MoU is negotiated",
+            "short_label": "MoU",
+            "event_type": "agreement"
+          },
+          {
+            "year": 2022,
+            "label": "Parliament moves to prohibit party hopping through constitutional amendment",
+            "short_label": "Anti-hopping law",
+            "event_type": "reform"
+          },
+          {
+            "year": 2022,
+            "label": "Cross-party consultation and confidence management become routine",
+            "short_label": "Confidence tools",
+            "event_type": "process"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 22
+        }
+      },
+      "suggested_section": "Pandemic Rule, Party Defections, and Institutional Repair"
+    },
+    {
+      "figure_id": "fig_post_2018_electoral_pattern",
+      "kind": "flow_diagram",
+      "title": "New Electoral Equilibrium After GE15",
+      "caption": "How a hung parliament and coalition negotiation produced the post-GE15 settlement.",
+      "data": {
+        "direction": "left_to_right",
+        "nodes": [
+          {
+            "id": "ge15",
+            "label": "GE15",
+            "type": "election"
+          },
+          {
+            "id": "hung_parliament",
+            "label": "Hung parliament",
+            "type": "problem"
+          },
+          {
+            "id": "negotiation",
+            "label": "Coalition negotiation",
+            "type": "process"
+          },
+          {
+            "id": "unity_gov",
+            "label": "kerajaan perpaduan",
+            "type": "outcome"
+          }
+        ],
+        "edges": [
+          {
+            "from": "ge15",
+            "to": "hung_parliament",
+            "label": "no simple majority"
+          },
+          {
+            "from": "hung_parliament",
+            "to": "negotiation",
+            "label": "needs majority assembly"
+          },
+          {
+            "from": "negotiation",
+            "to": "unity_gov",
+            "label": "cross-bloc settlement"
+          }
+        ],
+        "render_hints": {
+          "wrap_labels": true,
+          "label_wrap_width_chars": 20,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "GE15, Hung Parliament, and the New Coalition Equilibrium"
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "title": "Indonesia: Dutch Colonial Rule in the Netherlands East Indies in the Early Twentieth Century",
+  "recipe_id": "indonesia_dutch_colonial_rule_early_twentieth_century",
+  "sections": [
+    {
+      "heading": "Colonial Layers and the Governor-General",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Between 1900 and 1941, Dutch rule in the Netherlands East Indies was layered rather than uniform. Batavia sat at the center of a colonial bureaucracy that linked the Governor-General, departmental offices, residency officials, and local intermediaries across a vast archipelago. Java received the densest administrative attention, while the outer islands were more often governed through indirect channels."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The key institutional point is that direct colonial authority and indirect rule coexisted. Dutch officials exercised stronger control in the core territories, but they also depended on regents, aristocratic intermediaries, and district-level officials to manage many local affairs. That combination made the colony workable, yet it also produced different political statuses inside one imperial frame."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The Governor-General was the principal colonial executive. He oversaw appointments, policing, taxation, and the larger coordination of colonial policy, while the broader bureaucratic system handled daily administration. For benchmark purposes, this matters because Dutch rule should be read as an administrative hierarchy with several layers of authority, not as a single centralized ministry transplanted wholesale to Asia."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "A controlled phrase such as Hindia Belanda is useful in the PDF because it lets extraction systems recognize the historical territory. The prose should still remain mostly in English, with the Indonesian term used as a label rather than as a stylistic flourish. That keeps the artifact stable and machine readable."
+        }
+      ],
+      "source_notes": [
+        "Britannica's Dutch East Indies overview supports the layered colonial geography.",
+        "Britannica's history of Indonesia pages support Batavia-centric administration and Java's prominence."
+      ]
+    },
+    {
+      "heading": "Ethical Policy, Education, and Decentralization",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The Ethical Policy marked a major shift in colonial rhetoric at the turn of the twentieth century. Dutch administrators and reformers justified the policy as a response to earlier extraction, arguing that the colonial state should expand welfare, irrigation, and education for indigenous populations. In practice, the policy did not dismantle colonial hierarchy, but it did broaden the reach of the state."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Education was one of the most visible channels of change. The Dutch school system expanded, creating new forms of elite training and administrative preparation. That mattered politically because schooling helped produce a generation of Indonesians who could move between local society, colonial institutions, and emerging nationalist organizations."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Decentralization was part of the same reform climate, but it should be read carefully. The colonial government created more local and regional administrative bodies, yet these bodies remained embedded in Dutch oversight. The result was more administrative complexity, not full political autonomy."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The term Politik Etis is a good controlled marker for extraction, but the prose should explain it in plain English. In benchmark terms, the phrase stands for a reform program with welfare language and limited practical empowerment. It is therefore best presented as a colonial adjustment, not as a transition to self-rule."
+        }
+      ],
+      "source_notes": [
+        "Britannica's Ethical Policy entry supports the reform agenda and the decentralization turn.",
+        "Britannica's Dutch rule history page supports the link between education, welfare reform, and social change."
+      ]
+    },
+    {
+      "heading": "Volksraad and Limited Representation",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The Volksraad was created in 1917 and opened in 1918 as an advisory body for the colony. It gave the Dutch a way to stage consultation without surrendering executive power. Its membership mixed appointed and indirectly elected members, but the franchise remained narrow and the institution never became a sovereign parliament."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The council mattered because it made colonial politics more visible. Indigenous elites and later some nationalist figures could raise grievances and debate policy, yet the governor-general and the metropolitan government retained final authority. Even when the council gained a stronger consultative role in the 1920s, it still worked inside a colonial legal order."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "This structure is useful for a benchmark because it captures a common colonial pattern: participation without sovereignty. The Dutch state allowed limited representation where it was useful for legitimacy and administration, but it did not convert the colony into a self-governing polity. The distinction should stay explicit throughout the artifact set."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "A concise description of the Volksraad is enough. The report should not overload the reader with procedural detail, because the point is institutional role, not parliamentary technique. The council is best treated as one node in a larger colonial governance network."
+        }
+      ],
+      "source_notes": [
+        "Britannica's Volksraad entry provides the core chronology and institutional limits.",
+        "Britannica's history of Indonesia page supports the broader representational context."
+      ]
+    },
+    {
+      "heading": "Plantation Economy, Labor, and Social Hierarchy",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Dutch colonial rule depended heavily on an export economy. Sugar, rubber, tobacco, and other plantation crops tied the colony to global markets, while transport and port infrastructure linked production zones to export channels. Java remained especially important because population density and administrative depth made it the core of both cultivation and control."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Labor arrangements were central to this system. Recruitment, contract work, migration, and coercive pressures all shaped how plantations and estates functioned. The point for the benchmark is not to fix on one labor regime alone, but to show that colonial economic growth depended on managed labor mobility and strong state supervision."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The social hierarchy of the colony also mattered. European officials occupied the top of the administrative order, while indigenous officials and the priyayi class formed an intermediary elite that helped implement policy. That elite layer connected colonial control to local society, which made the system more durable and also more uneven."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "This topic should remain qualitative and structurally focused. Exact crop tonnage, labor counts, and annual export values would add noise unless they are verified against a primary-source set. For the research folder, the important point is the political economy of extraction and hierarchy."
+        }
+      ],
+      "source_notes": [
+        "Britannica's Dutch East Indies overview supports the export-economy framing.",
+        "Britannica's Java economy page supports Java's role in agriculture, manufacturing, and trade.",
+        "Britannica's history of Indonesia page supports the importance of social hierarchy and colonial labor control."
+      ]
+    },
+    {
+      "heading": "Nationalism and the 1941 Boundary",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Early nationalist politics grew out of the social changes produced by schooling, urban contact, and the reform era. Organizations such as Budi Utomo and Sarekat Islam emerged from a colonial setting that had expanded indigenous education while also making the limits of Dutch inclusion more visible. The nationalism that followed was therefore tied to colonial modernization as well as to opposition."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The 1926-27 communist uprisings and the crackdown that followed showed that colonial reform had not stabilized the political order. Dutch authorities tightened surveillance, repression, and administrative control in response to organized unrest. By the 1930s, the colony faced stronger nationalist pressure, economic stress, and a more defensive colonial posture."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The proper endpoint for this topic is 1941. That boundary keeps the folder separate from the Japanese invasion, occupation, and the wartime collapse of Dutch rule, which belong to a different benchmark topic. The research set should therefore stop at the last pre-occupation year rather than cross into the war."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "For extraction purposes, the historical arc is straightforward: reform, limited representation, economic hierarchy, nationalist mobilization, and then the hard prewar cutoff. That sequence is the core of the topic and should remain visible in every artifact type."
+        }
+      ],
+      "source_notes": [
+        "Britannica's history of Indonesia and Dutch rule pages support the nationalist chronology and the 1941 boundary.",
+        "Britannica's Dutch East Indies overview supports the broad prewar colony framing."
+      ]
+    }
+  ]
+}

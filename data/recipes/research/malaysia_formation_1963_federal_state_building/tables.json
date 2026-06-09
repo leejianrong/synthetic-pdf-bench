@@ -1,0 +1,204 @@
+{
+  "tables": [
+    {
+      "table_id": "tbl_from_proposal_to_negotiation",
+      "title": "Timeline from Proposal to Formal Negotiation",
+      "matrix": [
+        [
+          "Year",
+          "Event",
+          "Why It Mattered",
+          "Extraction Cue"
+        ],
+        [
+          "1961",
+          "Tunku Abdul Rahman proposes Malaysia",
+          "Moves the idea of merger into public federal politics",
+          "1961 proposal"
+        ],
+        [
+          "1961",
+          "House of Representatives approves the proposal",
+          "Gives the plan parliamentary legitimacy",
+          "Parliamentary approval"
+        ],
+        [
+          "1962",
+          "Consultation work expands in Sabah and Sarawak",
+          "Links formation to local consent",
+          "Cobbold Commission"
+        ],
+        [
+          "1963",
+          "Agreement and declaration complete the process",
+          "Creates the new federation",
+          "16 September 1963"
+        ]
+      ],
+      "notes": [
+        "The table keeps the chronology compact and deterministic.",
+        "It is designed to show the move from idea to formal formation."
+      ],
+      "suggested_section": "From Proposal to Federal Negotiation"
+    },
+    {
+      "table_id": "tbl_consultation_in_sabah_and_sarawak",
+      "title": "Consultation Bodies and Local Responses",
+      "matrix": [
+        [
+          "Body or Actor",
+          "Territory",
+          "Role",
+          "Benchmark Note"
+        ],
+        [
+          "Cobbold Commission",
+          "Sabah and Sarawak",
+          "Collected views on the Malaysia proposal",
+          "Consultation mechanism"
+        ],
+        [
+          "Local political leaders",
+          "Sabah",
+          "Negotiated conditions and safeguards",
+          "Local consent"
+        ],
+        [
+          "Local political leaders",
+          "Sarawak",
+          "Negotiated conditions and safeguards",
+          "Local consent"
+        ],
+        [
+          "State-level responses",
+          "Sabah and Sarawak",
+          "Helped shape the final agreement",
+          "Conditional entry"
+        ]
+      ],
+      "notes": [
+        "The matrix keeps Sabah and Sarawak visible as separate territories.",
+        "It avoids turning consultation into a single undifferentiated event."
+      ],
+      "suggested_section": "Consultation in Sabah and Sarawak"
+    },
+    {
+      "table_id": "tbl_malaysia_agreement_and_revision",
+      "title": "Legal Steps in the 1963 Formation",
+      "matrix": [
+        [
+          "Date",
+          "Legal Step",
+          "Institutional Effect",
+          "Extraction Cue"
+        ],
+        [
+          "9 July 1963",
+          "Malaysia Agreement signed",
+          "Creates the legal foundation for the federation",
+          "MA63 signing"
+        ],
+        [
+          "1963",
+          "Constitutional revision prepared",
+          "Moves from agreement to law",
+          "Federal Constitution revision"
+        ],
+        [
+          "16 September 1963",
+          "Malaysia declared",
+          "New federation comes into being",
+          "Malaysia Day"
+        ],
+        [
+          "1963",
+          "States take part through resolutions and assent",
+          "Shows federal participation in the formation process",
+          "State resolutions"
+        ]
+      ],
+      "notes": [
+        "This table keeps the legal sequence separate from the consultation sequence.",
+        "It is intentionally compact so the chronology stays easy to verify."
+      ],
+      "suggested_section": "The Malaysia Agreement and Constitutional Revision"
+    },
+    {
+      "table_id": "tbl_federal_institutions_and_state_building",
+      "title": "Early Federal Institutions After 1963",
+      "matrix": [
+        [
+          "Institution",
+          "Role After Formation",
+          "State-Building Function",
+          "Extraction Cue"
+        ],
+        [
+          "Parliament",
+          "Legislates for the new federation",
+          "Converts agreement into routine government",
+          "Federal legislature"
+        ],
+        [
+          "House of Representatives",
+          "Includes new territorial representation",
+          "Shows how the federation was assembled politically",
+          "Representation"
+        ],
+        [
+          "Senate",
+          "Represents state interests",
+          "Supports federal balance",
+          "State interests"
+        ],
+        [
+          "King and Cabinet",
+          "Provide executive continuity",
+          "Keeps the new state operational",
+          "Executive continuity"
+        ]
+      ],
+      "notes": [
+        "The rows are framed as functions rather than as a complete institutional history.",
+        "That keeps the table focused on state-building after 1963."
+      ],
+      "suggested_section": "Federal Institutions and Early State-Building"
+    },
+    {
+      "table_id": "tbl_safeguards_and_boundary",
+      "title": "Safeguards and Topic Boundary",
+      "matrix": [
+        [
+          "Included",
+          "Excluded",
+          "Reason"
+        ],
+        [
+          "Special interests for Sabah and Sarawak",
+          "Later autonomy disputes",
+          "Different historical phase"
+        ],
+        [
+          "Malaysia Agreement and constitutional revision",
+          "Later federal reform packages",
+          "Outside the 1963 formation story"
+        ],
+        [
+          "16 September 1963 declaration",
+          "Subsequent policy controversies",
+          "Keeps the benchmark narrow"
+        ],
+        [
+          "Early federal state-building",
+          "Later devolution debates",
+          "Separate recipe topic"
+        ]
+      ],
+      "notes": [
+        "This table is a control device for topic scope.",
+        "It keeps the recipe from drifting into later constitutional arguments."
+      ],
+      "suggested_section": "Safeguards, Asymmetry, and Topic Boundary"
+    }
+  ]
+}

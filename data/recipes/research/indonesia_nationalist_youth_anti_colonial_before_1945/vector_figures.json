@@ -1,0 +1,273 @@
+{
+  "figures": [
+    {
+      "figure_id": "fig_early_nationalism_timeline",
+      "kind": "timeline",
+      "title": "From Budi Utomo to Broad Nationalism",
+      "caption": "Timeline showing the early growth of organized nationalism from 1908 through the late 1920s.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1908,
+          "end_year": 1928,
+          "tick_interval_years": 2
+        },
+        "events": [
+          {
+            "year": 1908,
+            "label": "Budi Utomo founded in the Dutch East Indies",
+            "short_label": "Budi Utomo",
+            "event_type": "origin"
+          },
+          {
+            "year": 1912,
+            "label": "Sarekat Islam and Muhammadiyah expand organized politics",
+            "short_label": "Mass politics",
+            "event_type": "expansion"
+          },
+          {
+            "year": 1920,
+            "label": "Student and overseas nationalist networks become more visible",
+            "short_label": "Student networks",
+            "event_type": "continuity"
+          },
+          {
+            "year": 1928,
+            "label": "Youth Pledge defines one nation, one homeland, and one language",
+            "short_label": "Youth Pledge",
+            "event_type": "boundary"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 20
+        }
+      },
+      "suggested_section": "Early Organized Nationalism in the Dutch East Indies"
+    },
+    {
+      "figure_id": "fig_mass_organizing_network",
+      "kind": "network_diagram",
+      "title": "Mass Political Networks",
+      "caption": "Network of reform, trade, speech, and congress politics that widened anti-colonial participation.",
+      "data": {
+        "layout": "hub_and_spoke",
+        "central_node": "mass_politics",
+        "nodes": [
+          {
+            "id": "mass_politics",
+            "label": "Mass anti-colonial politics"
+          },
+          {
+            "id": "sarekat",
+            "label": "Sarekat Islam"
+          },
+          {
+            "id": "reform",
+            "label": "Islamic reform and education"
+          },
+          {
+            "id": "trade",
+            "label": "Urban traders and markets"
+          },
+          {
+            "id": "speech",
+            "label": "Public speaking and congresses"
+          }
+        ],
+        "edges": [
+          {
+            "from": "sarekat",
+            "to": "mass_politics",
+            "label": "popular support"
+          },
+          {
+            "from": "reform",
+            "to": "mass_politics",
+            "label": "social discipline"
+          },
+          {
+            "from": "trade",
+            "to": "mass_politics",
+            "label": "economic networks"
+          },
+          {
+            "from": "speech",
+            "to": "mass_politics",
+            "label": "political education"
+          }
+        ],
+        "render_hints": {
+          "hub_emphasis": true,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 24
+        }
+      },
+      "suggested_section": "Mass Politics, Islamic Reform, and Broadening Anti-Colonial Coalitions"
+    },
+    {
+      "figure_id": "fig_youth_pledge_flow",
+      "kind": "flow_diagram",
+      "title": "From Youth Clubs to National Unity",
+      "caption": "Flow diagram linking regional youth clubs to the 1928 Youth Pledge and national language politics.",
+      "data": {
+        "direction": "left_to_right",
+        "nodes": [
+          {
+            "id": "regional_clubs",
+            "label": "Regional youth clubs"
+          },
+          {
+            "id": "student_networks",
+            "label": "Student networks and study circles"
+          },
+          {
+            "id": "congress",
+            "label": "Second Youth Congress"
+          },
+          {
+            "id": "pledge",
+            "label": "One homeland, one nation, one language"
+          },
+          {
+            "id": "national_public",
+            "label": "National political public"
+          }
+        ],
+        "edges": [
+          {
+            "from": "regional_clubs",
+            "to": "student_networks",
+            "label": "cross-regional contact"
+          },
+          {
+            "from": "student_networks",
+            "to": "congress",
+            "label": "organization"
+          },
+          {
+            "from": "congress",
+            "to": "pledge",
+            "label": "public declaration"
+          },
+          {
+            "from": "pledge",
+            "to": "national_public",
+            "label": "national language"
+          }
+        ],
+        "render_hints": {
+          "wrap_labels": true,
+          "label_wrap_width_chars": 22,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "Youth Organizations, Student Networks, and the 1928 Youth Pledge"
+    },
+    {
+      "figure_id": "fig_1930s_repression_timeline",
+      "kind": "timeline",
+      "title": "Repression and Reorganization in the 1930s",
+      "caption": "Timeline showing how repression, exile, and party reorganization shaped nationalist politics in the 1930s.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1927,
+          "end_year": 1940,
+          "tick_interval_years": 2
+        },
+        "events": [
+          {
+            "year": 1927,
+            "label": "Indonesian Nationalist Association formed under Sukarno",
+            "short_label": "PNI begins",
+            "event_type": "formation"
+          },
+          {
+            "year": 1930,
+            "label": "Colonial repression and legal pressure intensify",
+            "short_label": "Repression",
+            "event_type": "pressure"
+          },
+          {
+            "year": 1931,
+            "label": "Successor nationalist groupings continue under constraint",
+            "short_label": "Adaptation",
+            "event_type": "continuity"
+          },
+          {
+            "year": 1930,
+            "label": "Overseas student and exile networks preserve nationalist strategy",
+            "short_label": "Exile networks",
+            "event_type": "continuity"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 22
+        }
+      },
+      "suggested_section": "Party Politics, Repression, and Intellectual Exile in the 1930s"
+    },
+    {
+      "figure_id": "fig_occupation_reconfiguration_flow",
+      "kind": "flow_diagram",
+      "title": "Occupation Channels and National Mobilization",
+      "caption": "Flow diagram showing how Japanese occupation control and nationalist mobilization interacted before 1945.",
+      "data": {
+        "direction": "left_to_right",
+        "nodes": [
+          {
+            "id": "dutch_collapse",
+            "label": "Dutch colonial collapse"
+          },
+          {
+            "id": "occupation_control",
+            "label": "Japanese occupation control"
+          },
+          {
+            "id": "mass_orgs",
+            "label": "Controlled mass organizations"
+          },
+          {
+            "id": "nationalist_leaders",
+            "label": "Sukarno and Hatta"
+          },
+          {
+            "id": "cadres",
+            "label": "Youth and future cadres"
+          }
+        ],
+        "edges": [
+          {
+            "from": "dutch_collapse",
+            "to": "occupation_control",
+            "label": "new authority"
+          },
+          {
+            "from": "occupation_control",
+            "to": "mass_orgs",
+            "label": "managed mobilization"
+          },
+          {
+            "from": "mass_orgs",
+            "to": "nationalist_leaders",
+            "label": "public platform"
+          },
+          {
+            "from": "nationalist_leaders",
+            "to": "cadres",
+            "label": "political training"
+          }
+        ],
+        "render_hints": {
+          "wrap_labels": true,
+          "label_wrap_width_chars": 22
+        }
+      },
+      "suggested_section": "Japanese Occupation and the Reconfiguration of Anti-Colonial Organization, 1942-1944"
+    }
+  ]
+}

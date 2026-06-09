@@ -1,0 +1,79 @@
+{
+  "recipe_id": "malaysia_new_economic_policy_redistribution_development",
+  "topic": "Malaysia: New Economic Policy, redistribution, and development strategy",
+  "open_questions": [],
+  "decisions": [
+    "The recipe stays within the 1971-1990 NEP era and uses the 1991 New Development Policy only as a brief transition note.",
+    "The prose uses English as the primary language, with controlled Malay policy terms such as bumiputera and Dasar Ekonomi Baru.",
+    "The artifact set emphasizes both redistribution and growth so the NEP is not reduced to a single ethnic policy dimension.",
+    "The tables and figures are kept compact and deterministic so downstream validation remains straightforward."
+  ],
+  "scope_decisions": [
+    "The artifact set covers one topic only and does not expand into unrelated Malaysian political history after 1990.",
+    "The structure treats the NEP as a development strategy grounded in the 1969 crisis and the state response to social fragmentation.",
+    "The policy discussion centers on poverty eradication, restructuring society, and development planning rather than on later reform agendas.",
+    "No canonical recipes, generator code, docs, or unrelated research folders were modified."
+  ],
+  "source_notes": [
+    {
+      "source_id": "src_britannica_new_development_policy",
+      "title": "New Development Policy",
+      "publisher": "Britannica",
+      "url": "https://www.britannica.com/topic/New-Development-Policy",
+      "used_for": [
+        "High-level summary of the NEP and its continuation into the NDP",
+        "Broad framing of redistribution and growth in Malaysian economic history"
+      ]
+    },
+    {
+      "source_id": "src_moe_third_malaysia_plan",
+      "title": "Third Malaysia Plan, 1976 - 1980",
+      "publisher": "Ministry of Economy, Malaysia",
+      "url": "https://ekonomi.gov.my/en/economic-developments/development-plans/rmk/third-malaysia-plan-1976-1980",
+      "used_for": [
+        "The NEP goals and strategy chapter reference",
+        "The planning sequence that connects the NEP to later development cycles"
+      ]
+    },
+    {
+      "source_id": "src_moe_nep_goals_and_strategy",
+      "title": "Chapter I: The New Economic Policy: Goals and Strategy",
+      "publisher": "Ministry of Economy, Malaysia",
+      "url": "https://ekonomi.gov.my/sites/default/files/2020-03/chapt%201.pdf",
+      "used_for": [
+        "NEP objectives of poverty eradication and restructuring society",
+        "The policy context after the 1969 crisis"
+      ]
+    },
+    {
+      "source_id": "src_moe_second_plan_contents",
+      "title": "Contents and chapter overview for the Second Malaysia Plan",
+      "publisher": "Ministry of Economy, Malaysia",
+      "url": "https://ekonomi.gov.my/sites/default/files/2020-03/contents_0.pdf",
+      "used_for": [
+        "The official chapter structure for poverty eradication and social restructuring",
+        "The placement of NEP goals inside national development planning"
+      ]
+    },
+    {
+      "source_id": "src_gov_poverty_eradication",
+      "title": "Malaysia Success Story In Poverty Eradication",
+      "publisher": "Government of Malaysia / Ministry of Economy",
+      "url": "https://www.ekonomi.gov.my/sites/default/files/2020-02/Malaysia_Success_Story_In_Poverty_Eradication.pdf",
+      "used_for": [
+        "Long-run poverty reduction context",
+        "The developmental logic of policy interventions and distributional change"
+      ]
+    },
+    {
+      "source_id": "src_worldbank_malaysia_overview",
+      "title": "Malaysia Overview",
+      "publisher": "World Bank Group",
+      "url": "https://www.worldbank.org/en/country/malaysia/overview",
+      "used_for": [
+        "Malaysia's transformation from agriculture and commodities toward manufacturing and services",
+        "High-level context for growth, poverty reduction, and structural change"
+      ]
+    }
+  ]
+}

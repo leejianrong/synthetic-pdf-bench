@@ -1,0 +1,244 @@
+{
+  "tables": [
+    {
+      "table_id": "tbl_early_nationalism",
+      "title": "Early Nationalist Organizations and Their Initial Bases",
+      "matrix": [
+        [
+          "Organization",
+          "Founded",
+          "Initial Social Base",
+          "Political Significance"
+        ],
+        [
+          "Budi Utomo",
+          "1908",
+          "Educated Javanese elites and students",
+          "Opened organized nationalism and reformist association"
+        ],
+        [
+          "Sarekat Islam",
+          "1912",
+          "Urban traders and Muslim publics",
+          "Broadened anti-colonial participation beyond elites"
+        ],
+        [
+          "Muhammadiyah",
+          "1912",
+          "Reformist Muslim educators and communities",
+          "Built modern associational habits and social infrastructure"
+        ],
+        [
+          "Indische Partij",
+          "1912",
+          "Radical anti-colonial intellectuals",
+          "Linked political independence to explicit opposition"
+        ],
+        [
+          "Perhimpunan Indonesia",
+          "1920s",
+          "Overseas students and nationalist intellectuals",
+          "Extended nationalism into transnational student politics"
+        ]
+      ],
+      "notes": [
+        "The table keeps organization names and roles stable for extraction.",
+        "Dates are presented at a coarse level to avoid unnecessary precision.",
+        "The emphasis is on early formation rather than post-1945 legacy."
+      ],
+      "suggested_section": "Early Organized Nationalism in the Dutch East Indies"
+    },
+    {
+      "table_id": "tbl_mass_organizing",
+      "title": "Mass Politics and Organizing Channels",
+      "matrix": [
+        [
+          "Channel",
+          "Typical Venue",
+          "Organizing Function",
+          "Anti-Colonial Effect"
+        ],
+        [
+          "Congress politics",
+          "Public meetings and formal congresses",
+          "Set agendas and tested leadership",
+          "Made nationalist demands visible"
+        ],
+        [
+          "Religious reform",
+          "Mosques, schools, and educational groups",
+          "Built disciplined communities",
+          "Expanded the social base of politics"
+        ],
+        [
+          "Print and newspapers",
+          "Urban reading publics",
+          "Spread arguments and criticism",
+          "Connected distant localities"
+        ],
+        [
+          "Trader networks",
+          "Markets and commercial associations",
+          "Enabled fundraising and circulation",
+          "Linked economic grievance to public action"
+        ],
+        [
+          "Public speech",
+          "Open-air meetings and party gatherings",
+          "Turned persuasion into practice",
+          "Normalized nationalist language"
+        ]
+      ],
+      "notes": [
+        "Rows are qualitative and intentionally broad.",
+        "The matrix is designed for consistent OCR and CSV-style extraction.",
+        "No unstable membership counts are included."
+      ],
+      "suggested_section": "Mass Politics, Islamic Reform, and Broadening Anti-Colonial Coalitions"
+    },
+    {
+      "table_id": "tbl_youth_politics",
+      "title": "Youth Associations and Political Contributions",
+      "matrix": [
+        [
+          "Group",
+          "Main Base",
+          "Political Role",
+          "Contribution to Nationalism"
+        ],
+        [
+          "Jong Java",
+          "Javanese students and youth",
+          "Regional association with widening political horizons",
+          "Helped shift identity toward Indonesian unity"
+        ],
+        [
+          "Jong Sumatranen Bond",
+          "Sumatran students and youth",
+          "Interregional discussion and cooperation",
+          "Connected regional identity to national claims"
+        ],
+        [
+          "PPPI",
+          "Student activists in Batavia and beyond",
+          "Organized nationalist student leadership",
+          "Helped convene the Youth Congress"
+        ],
+        [
+          "Second Youth Congress",
+          "Cross-regional youth delegates",
+          "Issued the Youth Pledge",
+          "Defined one homeland, one nation, and one language"
+        ],
+        [
+          "Youth press and study circles",
+          "Urban student publics",
+          "Spread nationalist arguments",
+          "Turned youth culture into political infrastructure"
+        ]
+      ],
+      "notes": [
+        "The rows are written to support benchmark extraction of youth politics.",
+        "The table keeps the Youth Pledge as the central historical hinge.",
+        "Terms are Latin-script only for PDF safety."
+      ],
+      "suggested_section": "Youth Organizations, Student Networks, and the 1928 Youth Pledge"
+    },
+    {
+      "table_id": "tbl_repression_exile",
+      "title": "1930s Repression and Political Repositioning",
+      "matrix": [
+        [
+          "Pressure",
+          "Colonial Response",
+          "Movement Effect",
+          "Organizational Adaptation"
+        ],
+        [
+          "Arrest",
+          "Detained leading activists",
+          "Disrupted open leadership",
+          "Shifted work toward deputies and networks"
+        ],
+        [
+          "Censorship",
+          "Restricted newspapers and speeches",
+          "Narrowed public debate",
+          "Encouraged coded writing and private discussion"
+        ],
+        [
+          "Exile",
+          "Removed activists from Java and other centers",
+          "Separated leaders from local bases",
+          "Expanded transregional and overseas ties"
+        ],
+        [
+          "Surveillance",
+          "Monitored meetings and correspondence",
+          "Increased caution",
+          "Promoted selective and disciplined organizing"
+        ],
+        [
+          "Party bans",
+          "Restricted formal party life",
+          "Forced movement fragmentation",
+          "Produced successor organizations and alliances"
+        ]
+      ],
+      "notes": [
+        "The matrix avoids a detailed prison-by-prison chronology.",
+        "It is intended as a stable structural summary of repression.",
+        "The focus remains on anti-colonial organization, not on legal doctrine."
+      ],
+      "suggested_section": "Party Politics, Repression, and Intellectual Exile in the 1930s"
+    },
+    {
+      "table_id": "tbl_occupation_reconfiguration",
+      "title": "Occupation-Era Anti-Colonial Reconfiguration",
+      "matrix": [
+        [
+          "Organization or Channel",
+          "Occupation Purpose",
+          "Nationalist Use",
+          "Political Consequence"
+        ],
+        [
+          "Putera",
+          "Mass mobilization for wartime rule",
+          "Public platform for nationalist leaders",
+          "Kept anti-colonial speech visible"
+        ],
+        [
+          "Labor mobilization",
+          "War production and discipline",
+          "Training and social integration of youth",
+          "Linked politics with coercive work regimes"
+        ],
+        [
+          "Home defense corps",
+          "Local security and wartime order",
+          "Created disciplined public roles",
+          "Expanded the political meaning of service"
+        ],
+        [
+          "Youth channels",
+          "Political education under control",
+          "Recruited young activists",
+          "Built future nationalist cadres"
+        ],
+        [
+          "Occupation bureaucracy",
+          "Control over public life",
+          "Space for tactical negotiation",
+          "Reconfigured anti-colonial organization"
+        ]
+      ],
+      "notes": [
+        "The table keeps the occupation focus on 1942-1944 rather than postwar events.",
+        "The language is intentionally broad because occupation institutions shifted quickly.",
+        "This table is meant to support comparison across organizations and functions."
+      ],
+      "suggested_section": "Japanese Occupation and the Reconfiguration of Anti-Colonial Organization, 1942-1944"
+    }
+  ]
+}

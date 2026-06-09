@@ -1,0 +1,184 @@
+{
+  "title": "Malaysia: Coalition Politics, Political Transitions, and Post-2018 Electoral Change",
+  "recipe_id": "malaysia_coalition_politics_post_2018_electoral_change",
+  "topic": "Malaysia: coalition politics, political transitions, and post-2018 electoral change",
+  "abstract": "This synthetic research outline covers Malaysia's post-2018 federal political change, focusing on coalition bargaining after GE14, the 2020 Sheraton Move, pandemic-era government turnover, and the hung parliament that followed GE15. It treats electoral change as a shift from dominant-party rule to coalition bargaining, with defections, regional blocs, and anti-hopping reforms shaping outcomes. The set is designed for stable benchmark generation and keeps PDF-facing text in English with selected Malay and Simplified Chinese markers for extraction clarity.",
+  "language_profile": {
+    "primary_language": "English",
+    "allowed_pdf_languages": [
+      "English",
+      "Bahasa Melayu",
+      "Bahasa Indonesia",
+      "Simplified Chinese"
+    ],
+    "multilingual_terms": [
+      {
+        "term": "kerajaan perpaduan",
+        "language": "Bahasa Melayu",
+        "meaning": "unity government"
+      },
+      {
+        "term": "lompat parti",
+        "language": "Bahasa Melayu",
+        "meaning": "party hopping"
+      },
+      {
+        "term": "政党联盟",
+        "language": "Simplified Chinese",
+        "meaning": "party coalition"
+      },
+      {
+        "term": "团结政府",
+        "language": "Simplified Chinese",
+        "meaning": "unity government"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "heading": "The 2018 Election and the End of BN's Dominance",
+      "bullet_points": [
+        "Place GE14 in 2018 at the center of the break from uninterrupted Barisan Nasional federal rule.",
+        "Explain that Pakatan Harapan won power through a broad anti-incumbent coalition rather than a single-party sweep.",
+        "Treat Mahathir Mohamad's return as prime minister as part of a coalition bargain, not as a simple restoration of old politics.",
+        "Keep the section focused on the federal breakthrough and the new electoral baseline it created."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_election_transition_timeline",
+          "title": "From GE14 to GE15: Core Political Markers",
+          "description": "A compact chronology of the post-2018 federal transition points."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_election_transition_timeline",
+          "kind": "timeline",
+          "title": "Post-2018 Federal Transition Timeline",
+          "description": "Show the sequence from GE14 through the first coalition resets after 2018."
+        }
+      ],
+      "source_notes": [
+        "Britannica's Malaysia overview is a stable summary source for the 2018 election and Mahathir's return.",
+        "Use this section to frame the end of BN dominance at the federal level, not to retell the entire campaign.",
+        "Treat GE14 as the start of a new coalition era, not as the end of political conflict."
+      ]
+    },
+    {
+      "heading": "Coalition Bargaining Inside Pakatan Harapan",
+      "bullet_points": [
+        "Describe Pakatan Harapan as a coalition with internal balance problems, not a monolithic governing machine.",
+        "Show how disagreements over leadership succession, institutional reform, and alliance discipline created pressure inside the coalition.",
+        "Explain why Bersatu's position inside PH mattered so much for the durability of the 2018 settlement.",
+        "Keep the section on the mechanics of coalition bargaining rather than on the later collapse itself."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_coalition_blocks",
+          "title": "Major Coalition Blocs After 2018",
+          "description": "A comparison of the main federal blocs and their political roles."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_coalition_blocks",
+          "kind": "network_diagram",
+          "title": "Coalition Bloc Map",
+          "description": "Show the main parties and coalitions that shaped post-2018 bargaining."
+        }
+      ],
+      "source_notes": [
+        "Britannica and contemporary reporting are sufficient for the broad coalition story after GE14.",
+        "The section should stress bargaining and alliance management rather than a detailed manifesto summary.",
+        "Use coalition labels consistently so the benchmark can follow shifts between blocs."
+      ]
+    },
+    {
+      "heading": "The Sheraton Move and the 2020 Government Reset",
+      "bullet_points": [
+        "Treat the Sheraton Move as the turning point that converted coalition strain into a federal government reset.",
+        "Explain that defections, party withdrawals, and royal appointment procedures mattered more than a fresh general election.",
+        "Describe the shift from a PH-led cabinet to a Muhyiddin-led coalition as a parliamentary realignment.",
+        "Keep the section anchored in February and March 2020, with the pandemic only as background context."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_government_transitions",
+          "title": "Government Transitions, 2018-2022",
+          "description": "A short table of the major federal leadership changes and what triggered them."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_government_transitions",
+          "kind": "flow_diagram",
+          "title": "From PH Victory to PN Government",
+          "description": "Show the causal chain from coalition tension to the 2020 government reset."
+        }
+      ],
+      "source_notes": [
+        "Malay Mail's Sheraton Move timeline is useful for the sequence of meetings and resignations.",
+        "Use this section to capture the parliamentary mechanism of transition, not the full day-by-day media cycle.",
+        "The key point is that executive change happened through coalition collapse and majority testing."
+      ]
+    },
+    {
+      "heading": "Pandemic Rule, Party Defections, and Institutional Repair",
+      "bullet_points": [
+        "Explain how pandemic-era governance intensified the importance of parliamentary majority testing and elite bargaining.",
+        "Show why Muhyiddin's government became vulnerable once UMNO support thinned and defections continued.",
+        "Describe the 2021 shift to Ismail Sabri as a coalition compromise built on narrower support but broader cross-bloc tolerance.",
+        "Use this section to connect political instability to the later anti-hopping reform agenda."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_institutional_reforms",
+          "title": "Institutional Responses to Coalition Instability",
+          "description": "A compact comparison of anti-hopping reform, parliamentary negotiation, and confidence-building measures."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_institutional_reforms",
+          "kind": "timeline",
+          "title": "Repair Measures After the 2020 Crisis",
+          "description": "Show the reform sequence that followed coalition instability and defections."
+        }
+      ],
+      "source_notes": [
+        "The Malaysian Parliament portal is the best official source for the anti-party hopping bill and its committee process.",
+        "Use this section to connect instability to reform, not to turn the topic into a legal history of every constitutional amendment.",
+        "Keep the framing neutral: the benchmark should register institutional repair, not praise or blame."
+      ]
+    },
+    {
+      "heading": "GE15, Hung Parliament, and the New Coalition Equilibrium",
+      "bullet_points": [
+        "Describe GE15 in 2022 as the moment when no bloc secured a simple majority and coalition bargaining became unavoidable.",
+        "Explain Anwar Ibrahim's eventual appointment as prime minister as the outcome of post-election coalition assembly, not a single-party mandate.",
+        "Show how regional blocs such as GPS and other cross-party alignments became decisive in the final settlement.",
+        "Frame the new equilibrium as a normalized coalition era shaped by hung parliament arithmetic and anti-hopping rules."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_post_2018_electoral_pattern",
+          "title": "Post-2018 Electoral Change Markers",
+          "description": "A comparison of the main electoral and parliamentary changes that followed GE14."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_post_2018_electoral_pattern",
+          "kind": "flow_diagram",
+          "title": "New Electoral Equilibrium After GE15",
+          "description": "Show how the hung parliament led into a coalition-government settlement."
+        }
+      ],
+      "source_notes": [
+        "IDEA's Malaysia democracy tracker and Reuters-sourced reporting are useful for the hung parliament and government formation after GE15.",
+        "Use the Malay phrase kerajaan perpaduan sparingly as a stable label for the unity-government settlement.",
+        "This section closes the topic at the post-GE15 settlement and does not move into later state election cycles."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "tables": [
+    {
+      "table_id": "tbl_colonial_layers",
+      "title": "Colonial Layers in the Netherlands East Indies, 1900-1941",
+      "matrix": [
+        [
+          "Layer",
+          "Main Territories or Offices",
+          "Governing Form",
+          "Political Meaning",
+          "Benchmark Note"
+        ],
+        [
+          "Imperial center",
+          "Netherlands and Ministry of Colonies",
+          "Metropolitan oversight",
+          "Set broad colonial policy and fiscal direction",
+          "Do not treat as local administration"
+        ],
+        [
+          "Colonial executive",
+          "Governor-General in Batavia",
+          "Central colonial command",
+          "Coordinated appointments, security, and bureaucracy",
+          "Key authority node"
+        ],
+        [
+          "Core colony",
+          "Java and Madura",
+          "Direct and dense administration",
+          "Most intensively governed region",
+          "Use for Java-centric extraction"
+        ],
+        [
+          "Outer islands",
+          "Sumatra, Borneo, Celebes, Moluccas, Lesser Sundas",
+          "Residencies and indirect channels",
+          "Uneven control through local intermediaries",
+          "Keep the archipelago structure visible"
+        ],
+        [
+          "Local intermediaries",
+          "Regents, district heads, priyayi elites",
+          "Indirect rule and cooperation",
+          "Linked colonial policy to local society",
+          "Do not collapse them into Europeans"
+        ]
+      ],
+      "notes": [
+        "The matrix separates metropolitan policy from colonial implementation.",
+        "Java and the outer islands are kept distinct because their administrative density differed sharply."
+      ],
+      "suggested_section": "Colonial Layers and the Governor-General"
+    },
+    {
+      "table_id": "tbl_ethics_reforms",
+      "title": "Ethical Policy Reforms and Administrative Effects",
+      "matrix": [
+        [
+          "Reform Area",
+          "Early Twentieth-Century Change",
+          "Institutional Effect",
+          "Political Meaning",
+          "Benchmark Note"
+        ],
+        [
+          "Education",
+          "Expansion of Dutch schooling",
+          "Broader elite training and literacy",
+          "Produced new intermediaries and nationalist cadres",
+          "Keep the policy change visible"
+        ],
+        [
+          "Irrigation",
+          "State-backed agricultural improvement",
+          "More colonial intervention in rural production",
+          "Linked welfare rhetoric to economic management",
+          "Do not overstate distributive justice"
+        ],
+        [
+          "Decentralization",
+          "More local councils and administrative bodies",
+          "Greater administrative layering",
+          "Limited autonomy inside colonial oversight",
+          "Administrative, not sovereign"
+        ],
+        [
+          "Native welfare",
+          "Official talk of improvement and responsibility",
+          "Expanded state presence in indigenous society",
+          "Reframed colonial rule without ending hierarchy",
+          "Use neutral wording"
+        ]
+      ],
+      "notes": [
+        "The table links reform language to practical colonial effects.",
+        "It avoids precise budget figures and keeps the policy discussion structural."
+      ],
+      "suggested_section": "Ethical Policy, Education, and Decentralization"
+    },
+    {
+      "table_id": "tbl_representative_institutions",
+      "title": "Representative Institutions and Their Limits",
+      "matrix": [
+        [
+          "Institution",
+          "Date or Period",
+          "Membership Pattern",
+          "Main Function",
+          "Limit"
+        ],
+        [
+          "Volksraad",
+          "1917-1942",
+          "Appointed and indirectly elected members",
+          "Advisory and consultative council",
+          "No sovereign parliamentary power"
+        ],
+        [
+          "Municipal councils",
+          "Early twentieth century",
+          "Restricted local elites",
+          "Local administration and advice",
+          "Narrow franchise"
+        ],
+        [
+          "Regional councils",
+          "Decentralization era",
+          "Selected local notables",
+          "Territorial administration",
+          "Remained under Dutch supervision"
+        ],
+        [
+          "Regency-level offices",
+          "Ongoing colonial period",
+          "Regents and indigenous officials",
+          "Local mediation",
+          "Served colonial order rather than popular representation"
+        ]
+      ],
+      "notes": [
+        "The matrix keeps advisory bodies distinct from sovereign institutions.",
+        "It is meant to support extraction of limited representation rather than democratic transition."
+      ],
+      "suggested_section": "Volksraad and Limited Representation"
+    },
+    {
+      "table_id": "tbl_economy_labor",
+      "title": "Plantation Economy, Labor, and Administrative Control",
+      "matrix": [
+        [
+          "Sector",
+          "Geographic Concentration",
+          "Labor Form",
+          "Colonial Effect",
+          "Benchmark Note"
+        ],
+        [
+          "Sugar",
+          "Java",
+          "Planned estate and mill labor",
+          "Tied production to export markets and state oversight",
+          "Core plantation example"
+        ],
+        [
+          "Rubber",
+          "Sumatra and other outer-island estates",
+          "Migrant and contract labor",
+          "Expanded inter-island labor mobility",
+          "Use for archipelagic extraction"
+        ],
+        [
+          "Tobacco",
+          "North Sumatra and similar estate zones",
+          "Recruitment and contract regimes",
+          "Strengthened plantation capital",
+          "Keep the labor aspect explicit"
+        ],
+        [
+          "Transport and ports",
+          "Batavia, Java coastal zones, export routes",
+          "Managed labor and clerical work",
+          "Connected production to global shipping",
+          "Infrastructure as governance"
+        ],
+        [
+          "Oil and mining",
+          "Selected industrial enclaves",
+          "Technical and wage labor",
+          "Extended colonial extraction beyond agriculture",
+          "Do not overstate industrial breadth"
+        ]
+      ],
+      "notes": [
+        "The table is qualitative and intentionally avoids annual output totals.",
+        "It links economic sectors to labor control and colonial governance."
+      ],
+      "suggested_section": "Plantation Economy, Labor, and Social Hierarchy"
+    },
+    {
+      "table_id": "tbl_1901_1941_threshold",
+      "title": "Early Twentieth Century to the 1941 Break",
+      "matrix": [
+        [
+          "Period or Pressure",
+          "Prewar Condition",
+          "Why It Mattered",
+          "Boundary Note",
+          "Benchmark Note"
+        ],
+        [
+          "1901 reform turn",
+          "Ethical Policy announced and debated",
+          "Opened a new language of welfare and education",
+          "Do not treat as decolonization",
+          "Start of the early twentieth-century frame"
+        ],
+        [
+          "1917-1918 representation",
+          "Volksraad created and opened",
+          "Expanded advisory politics without sovereignty",
+          "Still colonial rule",
+          "Limited participation marker"
+        ],
+        [
+          "1926-1927 unrest",
+          "Communist uprisings and repression",
+          "Showed the fragility of colonial consensus",
+          "Keep unrest separate from occupation",
+          "Political tension marker"
+        ],
+        [
+          "1930s stress",
+          "Depression-era strain and harder surveillance",
+          "Strengthened defensive colonial governance",
+          "Remain in the prewar period",
+          "Do not add wartime collapse"
+        ],
+        [
+          "1941 endpoint",
+          "Final pre-occupation year",
+          "Marks the end of the topic window",
+          "Stop before the Japanese invasion",
+          "Hard boundary for the research folder"
+        ]
+      ],
+      "notes": [
+        "The table keeps the chronology compact and benchmark-friendly.",
+        "It clearly separates reform, representation, unrest, and the prewar cutoff."
+      ],
+      "suggested_section": "Nationalism and the 1941 Boundary"
+    }
+  ]
+}

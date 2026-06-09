@@ -1,0 +1,109 @@
+{
+  "recipe_id": "malaysia_coalition_politics_post_2018_electoral_change",
+  "topic": "Malaysia: coalition politics, political transitions, and post-2018 electoral change",
+  "status": "complete_for_review",
+  "scope_decisions": [
+    "The set stays focused on federal coalition politics from GE14 through the post-GE15 settlement.",
+    "It treats government changes in 2020 and 2021 as parliamentary realignments rather than as fresh electoral mandates.",
+    "Regional blocs are included because GPS and other East Malaysian actors became decisive in coalition arithmetic.",
+    "The artifact set uses stable coalition labels and avoids a state-election deep dive so the benchmark stays compact."
+  ],
+  "decisions": [
+    "Keep the chronological boundary centered on 2018-2022 so the topic covers the whole post-GE14 transition arc.",
+    "Use qualitative language for seat arithmetic except where a source makes the majority condition clear.",
+    "Frame the anti-hopping law as institutional repair, not as a separate legal-history topic.",
+    "Use short Malay and Simplified Chinese markers only where they help extraction and remain historically plausible."
+  ],
+  "open_questions": [
+    "Should a later canonical pass add a dedicated comparison with state-level coalition shifts in Sabah and Melaka, or keep the federal focus only?",
+    "Should the coalition map be extended to include more temporary 2020-2022 labels, or stay with the stable blocs used here?",
+    "Should future canonical output include exact seat totals for GE14 and GE15, or keep the current majority-and-hung-parliament framing?"
+  ],
+  "open_uncertainty": [
+    "Coalition labels changed quickly between 2020 and 2022, so the set uses the most stable high-level bloc names rather than every short-lived arrangement.",
+    "Different summaries present the 2020-2021 transition with slightly different emphasis, so the prose keeps the parliamentary majority test central and avoids over-specific personality disputes.",
+    "Exact seat totals are omitted in the prose and tables because the benchmark only needs the structural change from dominant-party rule to coalition bargaining."
+  ],
+  "source_notes": [
+    {
+      "source_id": "src_britannica_malaysia_21st_century",
+      "title": "Malaysia in the 21st Century",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/place/Malaysia/Malaysia-in-the-21st-century",
+      "used_for": [
+        "Broad summary of the 2018 election and Mahathir's return to office",
+        "Context for Malaysia's post-2018 political transition"
+      ]
+    },
+    {
+      "source_id": "src_malaymail_sheraton_move",
+      "title": "Ex-PMO officer breaks down the 'Sheraton Move'",
+      "publisher": "Malay Mail",
+      "url": "https://www.malaymail.com/news/malaysia/2020/03/02/ex-pmo-officer-breaks-down-the-sheraton-move/1842542",
+      "used_for": [
+        "Sequence of meetings, resignations, and coalition shifts around February 2020",
+        "Public chronology of the Sheraton Move"
+      ]
+    },
+    {
+      "source_id": "src_malaymail_ismail_sabri_appoint",
+      "title": "Agong appoints Ismail Sabri as Malaysia's ninth prime minister",
+      "publisher": "Malay Mail",
+      "url": "https://www.malaymail.com/news/malaysia/2021/08/20/agong-appoints-ismail-sabri-as-malaysias-ninth-prime-minister/1999150",
+      "used_for": [
+        "Officially reported majority support for Ismail Sabri's appointment",
+        "August 2021 transition from Muhyiddin to Ismail Sabri"
+      ]
+    },
+    {
+      "source_id": "src_malaymail_ismail_sabri_sworn_in",
+      "title": "Ismail Sabri sworn in as country's 9th PM",
+      "publisher": "Malay Mail",
+      "url": "https://www.malaymail.com/news/malaysia/2021/08/21/ismail-sabri-sworn-in-as-countrys-9th-pm/1999348",
+      "used_for": [
+        "Swearing-in date and coalition context for the 2021 transition",
+        "Support from MPs after Muhyiddin lost majority backing"
+      ]
+    },
+    {
+      "source_id": "src_parliament_structure",
+      "title": "Structure of Parliament of Malaysia",
+      "publisher": "Parliament of Malaysia",
+      "url": "https://www.parlimen.gov.my/struktur-parlimen.html?lang=en&uweb=p",
+      "used_for": [
+        "Official description of the House of Representatives and election cycle",
+        "General institutional background for parliamentary majority testing"
+      ]
+    },
+    {
+      "source_id": "src_parliament_anti_hopping_committee",
+      "title": "Special Select Committee on the Constitution (Amendment) Bill (No.3) 2022 and the Provision to Prohibit Party Hopping for Members of House of Representatives",
+      "publisher": "Parliament of Malaysia",
+      "url": "https://www.parlimen.gov.my/jawatankuasa-pilihan-khas-menimbang-rang-undang-undang-perlembagaan-pindaan-no3-2022-dan-mengenai-peruntukan-larangan-ahli-dewan-rakyat-bertukar-parti.html?lang=en&uweb=dr",
+      "used_for": [
+        "Official committee framing for the anti-party hopping amendment",
+        "Institutional repair measures after coalition instability"
+      ]
+    },
+    {
+      "source_id": "src_idea_malaysia_nov_2022",
+      "title": "Malaysia - November 2022",
+      "publisher": "International IDEA Democracy Tracker",
+      "url": "https://www.idea.int/democracytracker/report/malaysia/november-2022",
+      "used_for": [
+        "Hung parliament context after GE15",
+        "Swearing-in timing for Anwar Ibrahim and post-election settlement"
+      ]
+    },
+    {
+      "source_id": "src_reuters_ge15_hung_parliament",
+      "title": "Malaysia faces hung parliament in tight election race",
+      "publisher": "Reuters",
+      "url": "https://www.investing.com/news/world-news/malaysias-muhyiddin-leads-in-general-election-with-anwar-close-behind-2948261",
+      "used_for": [
+        "Reuters-sourced reporting on the hung parliament after GE15",
+        "Context for coalition bargaining after the vote"
+      ]
+    }
+  ]
+}

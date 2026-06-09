@@ -1,0 +1,121 @@
+{
+  "recipe_id": "indonesia_nationalist_youth_anti_colonial_before_1945",
+  "topic": "Indonesia: nationalist movements, youth politics, and anti-colonial organization before 1945",
+  "status": "complete_for_review",
+  "scope_decisions": [
+    "The folder stays focused on organized nationalism, youth politics, and anti-colonial organization before 1945.",
+    "The narrative includes the Japanese occupation only as a pre-1945 reconfiguration of nationalist organization.",
+    "Post-1945 independence history is intentionally excluded."
+  ],
+  "decisions": [
+    "Use English for PDF-facing prose and Latin-script Indonesian terms only when they clarify historical usage.",
+    "Treat the Youth Pledge as a political and organizational hinge rather than a stand-alone ceremonial event.",
+    "Keep figures and tables qualitative so the folder remains stable across source revisions.",
+    "Avoid unstable exact counts for membership, arrests, or crowd sizes unless a later canonical recipe requires them."
+  ],
+  "open_questions": [],
+  "source_notes": [
+    {
+      "source_id": "src_britannica_budi_utomo",
+      "title": "Budi Utomo",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/Budi-Utomo",
+      "used_for": [
+        "1908 founding of Budi Utomo",
+        "Early elite nationalist associational politics"
+      ]
+    },
+    {
+      "source_id": "src_britannica_sarekat_islam",
+      "title": "Sarekat Isl\u00e2m",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/Sarekat-Islam",
+      "used_for": [
+        "Mass political support and broad nationalist participation",
+        "Islamic reform and public associational politics"
+      ]
+    },
+    {
+      "source_id": "src_britannica_indonesia_toward_independence",
+      "title": "Indonesia - Toward independence",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/place/Indonesia/Toward-independence",
+      "used_for": [
+        "Sequence of early nationalist organizations",
+        "Youth Pledge and the 1928 national unity claim",
+        "General pre-1945 chronology"
+      ]
+    },
+    {
+      "source_id": "src_kemdikbud_sumpah_pemuda_2005",
+      "title": "Sumpah pemuda: latar sejarah dan pengaruhnya bagi pergerakan nasional",
+      "publisher": "Museum Sumpah Pemuda, Kementerian Pendidikan dan Kebudayaan",
+      "url": "https://repositori.kemdikbud.go.id/27651/",
+      "used_for": [
+        "Second Youth Congress context",
+        "Political meaning of the Youth Pledge",
+        "Youth organizations and national movement framing"
+      ]
+    },
+    {
+      "source_id": "src_kemdikbud_jong_java",
+      "title": "Jong Java: peranannya dalam Persatuan Bangsa",
+      "publisher": "Museum Sumpah Pemuda, Kementerian Pendidikan dan Kebudayaan",
+      "url": "https://repositori.kemdikbud.go.id/24311/",
+      "used_for": [
+        "Youth association context for the 1928 congress",
+        "Jong Java and interregional youth politics"
+      ]
+    },
+    {
+      "source_id": "src_britannica_indonesian_nationalist_party",
+      "title": "Indonesian Nationalist Party",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/Indonesian-Nationalist-Party",
+      "used_for": [
+        "PNI formation under Sukarno",
+        "Noncooperation as a nationalist strategy"
+      ]
+    },
+    {
+      "source_id": "src_britannica_hatta",
+      "title": "Mohammad Hatta",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/biography/Mohammad-Hatta",
+      "used_for": [
+        "Overseas student nationalism",
+        "Pre-1945 organizational continuity and occupation-era political work"
+      ]
+    },
+    {
+      "source_id": "src_britannica_putera",
+      "title": "Putera",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/Putera",
+      "used_for": [
+        "Occupation-era mass mobilization under Japanese rule",
+        "Pre-1945 reconfiguration of anti-colonial organization"
+      ]
+    },
+    {
+      "source_id": "src_britannica_tjokroaminoto",
+      "title": "Omar Said Tjokroaminoto",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/biography/Omar-Said-Tjokroaminoto",
+      "used_for": [
+        "Leadership within Sarekat Islam",
+        "Public speech and nationalist influence"
+      ]
+    },
+    {
+      "source_id": "src_britannica_muhammadiyah",
+      "title": "Muhammadiyah",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/Muhammadiyah",
+      "used_for": [
+        "Reformist Muslim associational life",
+        "Educational and social infrastructure for broader politics"
+      ]
+    }
+  ]
+}

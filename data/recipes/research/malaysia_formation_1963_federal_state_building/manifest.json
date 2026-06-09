@@ -1,0 +1,22 @@
+{
+  "recipe_id": "malaysia_formation_1963_federal_state_building",
+  "topic": "Malaysia: formation of Malaysia in 1963 and federal state-building",
+  "status": "complete_for_review",
+  "files": [
+    "report_outline.json",
+    "prose_blocks.json",
+    "tables.json",
+    "vector_figures.json",
+    "manifest.json",
+    "notes.json"
+  ],
+  "counts": {
+    "outline_sections": 5,
+    "prose_blocks": 20,
+    "tables": 5,
+    "figures": 5
+  },
+  "source_notes_present": true,
+  "open_uncertainty_count": 0,
+  "checklist_modified": false
+}

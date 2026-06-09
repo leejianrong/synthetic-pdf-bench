@@ -1,0 +1,85 @@
+{
+  "recipe_id": "malaysia_formation_1963_federal_state_building",
+  "topic": "Malaysia: formation of Malaysia in 1963 and federal state-building",
+  "open_questions": [],
+  "decisions": [
+    "The recipe stays centered on the 1961-1963 formation sequence and does not drift into later Malaysia politics.",
+    "The prose uses English with a few stable Malay markers such as Malaysia Day and Merdeka only where they help the benchmark.",
+    "Sabah and Sarawak are treated as negotiated federal partners with safeguards, not as a single undifferentiated block.",
+    "The figure and table set is intentionally compact so validation and downstream extraction stay deterministic."
+  ],
+  "source_notes": [
+    {
+      "source_id": "src_parliament_general_information_malaysia_formation",
+      "title": "General Information",
+      "publisher": "Official Portal of the Parliament of Malaysia",
+      "url": "https://parlimen.gov.my/maklumat-umum.html?lang=en&uweb=dn",
+      "used_for": [
+        "1961 proposal to merge Malaya with Singapore, Sarawak, and Sabah",
+        "Cobbold Commission summary",
+        "Malaysia declared on 16 September 1963",
+        "Parliament representation after formation"
+      ]
+    },
+    {
+      "source_id": "src_parliament_history_malaysia",
+      "title": "History of Parliament of Malaysia",
+      "publisher": "Official Portal of the Parliament of Malaysia",
+      "url": "https://parlimen.gov.my/sejarah-institusi.html?lang=en&uweb=web",
+      "used_for": [
+        "Malaysia as a federal parliamentary system",
+        "The constitutional monarchy and federal structure framing",
+        "State power sharing within the federation"
+      ]
+    },
+    {
+      "source_id": "src_parliament_structure_malaysia",
+      "title": "Structure of Parliament of Malaysia",
+      "publisher": "Official Portal of the Parliament of Malaysia",
+      "url": "https://parlimen.gov.my/struktur-parlimen.html?lang=en",
+      "used_for": [
+        "Malaysia was formed on 16 September 1963",
+        "The post-1963 parliamentary framing of the federation",
+        "Federal institutional composition"
+      ]
+    },
+    {
+      "source_id": "src_pmo_ma63_pdf",
+      "title": "Perjanjian Malaysia 1963",
+      "publisher": "Prime Minister's Office of Malaysia",
+      "url": "https://www.pmo.gov.my/wp-content/uploads/2019/04/MA63_S.pdf",
+      "used_for": [
+        "MA63 signing date and signatories",
+        "The constitutional basis for forming Malaysia",
+        "Special interests and safeguards for Sabah and Sarawak"
+      ]
+    },
+    {
+      "source_id": "src_arkib_pemasyhuran_malaysia_1963",
+      "title": "Pemasyhuran Malaysia 1963",
+      "publisher": "National Archives of Malaysia",
+      "url": "https://pustakailmu.arkib.gov.my/index.php/ms/pustaka-ilmu/permata-pusaka/pemasyhuran-malaysia-1963",
+      "used_for": [
+        "Archival framing for the Malaysia proclamation",
+        "Supportive ceremonial and historical context"
+      ]
+    },
+    {
+      "source_id": "src_arkib_penubuhan_malaysia_1963",
+      "title": "Penubuhan Malaysia 16 September 1963",
+      "publisher": "National Archives of Malaysia",
+      "url": "https://pustakailmu.arkib.gov.my/index.php/ms/pustaka-ilmu/jendela-sejarah/penubuhan-malaysia-16-september-1963",
+      "used_for": [
+        "Archival explanation of the formation process",
+        "Consultation and historical framing for Malaysia Day"
+      ]
+    }
+  ],
+  "scope_decisions": [
+    "The topic includes the 1961 proposal, consultation in Sabah and Sarawak, the Malaysia Agreement, and early federal institution building.",
+    "The topic stops at the initial 1963 federal settlement and does not expand into later constitutional disputes or autonomy reforms.",
+    "The benchmark keeps Malaysia as a federation created through negotiation, consent, and legal revision rather than as a purely ceremonial event.",
+    "The research set is built to stay within stable official-source facts that are straightforward to verify."
+  ],
+  "open_uncertainty": []
+}

@@ -1,0 +1,89 @@
+{
+  "recipe_id": "indonesia_dutch_colonial_rule_early_twentieth_century",
+  "topic": "Indonesia: Dutch colonial rule in the Netherlands East Indies in the early twentieth century",
+  "status": "complete_for_review",
+  "scope_decisions": [
+    "The artifact set covers one topic only and stops at 1941, before the Japanese occupation topic.",
+    "The prose uses English as the primary language, with controlled Bahasa Indonesia markers only where they clarify colonial institutions.",
+    "The structure is treated as layered and overlapping rather than as a single uniform colonial state.",
+    "No generator code, canonical recipes, unrelated research folders, or topic checklist entries were modified."
+  ],
+  "decisions": [
+    "The report distinguishes direct colonial administration in Java from indirect rule and uneven governance in the outer islands.",
+    "The wording uses the neutral umbrella terms Ethical Policy and Volksraad because those labels are stable benchmark markers across source summaries.",
+    "The 1941 cutoff is treated as a hard boundary so the artifact does not absorb the Japanese occupation and wartime collapse of Dutch rule.",
+    "The plantation economy is kept qualitative rather than numeric to avoid unstable commodity totals."
+  ],
+  "open_questions": [
+    "Should a later canonical merge distinguish more sharply between the 1901 Ethical Policy announcement and later administrative decentralization laws?",
+    "Should a future pass add primary-source detail on the exact legal status of specific outer-island territories, or keep the archipelago-level treatment that is used here?"
+  ],
+  "source_notes": [
+    {
+      "source_id": "src_britannica_dutch_east_indies",
+      "title": "Dutch East Indies",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/place/Dutch-East-Indies",
+      "used_for": [
+        "Archipelago-level colony framing",
+        "Dutch East Indies territorial scope",
+        "General prewar colonial boundary"
+      ]
+    },
+    {
+      "source_id": "src_britannica_ethical_policy",
+      "title": "Ethical Policy",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/event/Ethical-Policy",
+      "used_for": [
+        "1901 reform turn",
+        "Education and irrigation emphasis",
+        "Decentralization language"
+      ]
+    },
+    {
+      "source_id": "src_britannica_volksraad",
+      "title": "Volksraad",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/Volksraad",
+      "used_for": [
+        "1917 creation and 1918 opening",
+        "Limited representative role",
+        "Consultative institution framing"
+      ]
+    },
+    {
+      "source_id": "src_britannica_history_indonesia",
+      "title": "History of Indonesia",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/history-of-Indonesia",
+      "used_for": [
+        "Broad chronology for early nationalism",
+        "Prewar framing",
+        "Java-centered political development"
+      ]
+    },
+    {
+      "source_id": "src_britannica_dutch_rule_1815_1920",
+      "title": "History of Indonesia: Dutch rule from 1815 to c. 1920",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/history-of-Indonesia/Dutch-rule-from-1815-to-c-1920",
+      "used_for": [
+        "Early twentieth-century colonial rule context",
+        "Ethical Policy and social change",
+        "Nationalist movement background"
+      ]
+    },
+    {
+      "source_id": "src_britannica_java_economy",
+      "title": "Java: Agriculture, Manufacturing, Trade",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/place/Java-island-Indonesia/Economy",
+      "used_for": [
+        "Java's dense colonial economy",
+        "Agriculture and trade context",
+        "Plantation and infrastructure framing"
+      ]
+    }
+  ]
+}

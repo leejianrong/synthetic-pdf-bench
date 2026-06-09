@@ -1,0 +1,259 @@
+{
+  "figures": [
+    {
+      "figure_id": "fig_from_proposal_to_negotiation",
+      "kind": "timeline",
+      "title": "Proposal to Negotiation",
+      "caption": "A timeline from the 1961 merger proposal to the formation of Malaysia in 1963.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1961,
+          "end_year": 1963,
+          "tick_interval_years": 1
+        },
+        "events": [
+          {
+            "year": 1961,
+            "label": "Malaysia proposal announced",
+            "short_label": "Proposal",
+            "event_type": "proposal"
+          },
+          {
+            "year": 1961,
+            "label": "House of Representatives approves the proposal",
+            "short_label": "Parliament",
+            "event_type": "approval"
+          },
+          {
+            "year": 1962,
+            "label": "Negotiation and consultation deepen",
+            "short_label": "Consultation",
+            "event_type": "consultation"
+          },
+          {
+            "year": 1963,
+            "label": "Malaysia Agreement signed",
+            "short_label": "MA63",
+            "event_type": "agreement"
+          },
+          {
+            "year": 1963,
+            "label": "Malaysia declared on 16 September",
+            "short_label": "Malaysia Day",
+            "event_type": "boundary"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 20
+        }
+      },
+      "suggested_section": "From Proposal to Federal Negotiation"
+    },
+    {
+      "figure_id": "fig_consultation_in_sabah_and_sarawak",
+      "kind": "flow_diagram",
+      "title": "Consultation and Consent",
+      "caption": "A simple flow from consultation bodies to local responses and the final federation.",
+      "data": {
+        "direction": "left_to_right",
+        "nodes": [
+          {
+            "id": "proposal",
+            "label": "Malaysia proposal",
+            "type": "proposal"
+          },
+          {
+            "id": "cobbold",
+            "label": "Cobbold Commission",
+            "type": "consultation"
+          },
+          {
+            "id": "local_leaders",
+            "label": "Sabah and Sarawak leaders",
+            "type": "local_response"
+          },
+          {
+            "id": "safeguards",
+            "label": "Special interests and safeguards",
+            "type": "constitutional_protection"
+          },
+          {
+            "id": "formation",
+            "label": "Malaysia formed",
+            "type": "boundary"
+          }
+        ],
+        "edges": [
+          {
+            "from": "proposal",
+            "to": "cobbold",
+            "label": "consultation request"
+          },
+          {
+            "from": "cobbold",
+            "to": "local_leaders",
+            "label": "views collected"
+          },
+          {
+            "from": "local_leaders",
+            "to": "safeguards",
+            "label": "conditions negotiated"
+          },
+          {
+            "from": "safeguards",
+            "to": "formation",
+            "label": "constitutional settlement"
+          }
+        ],
+        "render_hints": {
+          "wrap_labels": true,
+          "label_wrap_width_chars": 24,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "Consultation in Sabah and Sarawak"
+    },
+    {
+      "figure_id": "fig_malaysia_agreement_and_revision",
+      "kind": "comparison_chart",
+      "title": "From Federation of Malaya to Malaysia",
+      "caption": "A before-and-after view of the legal and territorial change created by MA63.",
+      "data": {
+        "mode": "before_after",
+        "labels": [
+          "Before 9 July 1963",
+          "After 16 September 1963"
+        ],
+        "rows": [
+          {
+            "category": "Constitution",
+            "before": "Federation of Malaya constitution",
+            "after": "Federal Constitution of Malaysia"
+          },
+          {
+            "category": "Territory",
+            "before": "Malaya only",
+            "after": "Malaya, Sabah, Sarawak, and Singapore"
+          },
+          {
+            "category": "Legal basis",
+            "before": "Existing federation",
+            "after": "Malaysia Agreement and amendments"
+          },
+          {
+            "category": "Public status",
+            "before": "Proposed merger",
+            "after": "Declared federation"
+          }
+        ],
+        "render_hints": {
+          "emphasize_row_labels": true,
+          "compact_layout": true
+        }
+      },
+      "suggested_section": "The Malaysia Agreement and Constitutional Revision"
+    },
+    {
+      "figure_id": "fig_federal_institutions_and_state_building",
+      "kind": "network_diagram",
+      "title": "Federal Institutions in the New Malaysia",
+      "caption": "A small network showing the institutional pieces that had to work together after formation.",
+      "data": {
+        "layout": "hub_and_spoke",
+        "central_node": "parliament",
+        "nodes": [
+          {
+            "id": "parliament",
+            "label": "Parliament",
+            "type": "federal_institution"
+          },
+          {
+            "id": "king",
+            "label": "King",
+            "type": "constitutional_monarchy"
+          },
+          {
+            "id": "senate",
+            "label": "Senate",
+            "type": "upper_house"
+          },
+          {
+            "id": "house",
+            "label": "House of Representatives",
+            "type": "lower_house"
+          },
+          {
+            "id": "cabinet",
+            "label": "Cabinet",
+            "type": "executive"
+          }
+        ],
+        "edges": [
+          {
+            "from": "king",
+            "to": "parliament",
+            "label": "constitutional head"
+          },
+          {
+            "from": "senate",
+            "to": "parliament",
+            "label": "federal chamber"
+          },
+          {
+            "from": "house",
+            "to": "parliament",
+            "label": "elected chamber"
+          },
+          {
+            "from": "cabinet",
+            "to": "parliament",
+            "label": "responsible government"
+          }
+        ],
+        "render_hints": {
+          "wrap_labels": true,
+          "label_wrap_width_chars": 20,
+          "edge_label_density": "medium"
+        }
+      },
+      "suggested_section": "Federal Institutions and Early State-Building"
+    },
+    {
+      "figure_id": "fig_safeguards_and_boundary",
+      "kind": "timeline",
+      "title": "Boundary of the 1963 Topic",
+      "caption": "A short timeline showing the limit of the topic at formation and the first federal settlement.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1963,
+          "end_year": 1963,
+          "tick_interval_years": 1
+        },
+        "events": [
+          {
+            "year": 1963,
+            "label": "Malaysia Agreement signed",
+            "short_label": "MA63",
+            "event_type": "agreement"
+          },
+          {
+            "year": 1963,
+            "label": "Malaysia declared on 16 September",
+            "short_label": "Malaysia Day",
+            "event_type": "boundary"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 18
+        }
+      },
+      "suggested_section": "Safeguards, Asymmetry, and Topic Boundary"
+    }
+  ]
+}

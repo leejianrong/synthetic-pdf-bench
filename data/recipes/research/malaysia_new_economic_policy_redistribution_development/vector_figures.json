@@ -1,0 +1,326 @@
+{
+  "figures": [
+    {
+      "figure_id": "fig_nep_origin_timeline",
+      "kind": "timeline",
+      "title": "NEP Origin Timeline",
+      "caption": "Key dates from the 1969 crisis to the NEP launch and its planning milestones through 1990.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1969,
+          "end_year": 1991,
+          "tick_interval_years": 2
+        },
+        "events": [
+          {
+            "year": 1969,
+            "label": "Election crisis and 13 May violence",
+            "short_label": "1969 crisis",
+            "event_type": "context"
+          },
+          {
+            "year": 1971,
+            "label": "New Economic Policy launched",
+            "short_label": "NEP launch",
+            "event_type": "policy"
+          },
+          {
+            "year": 1976,
+            "label": "Third Malaysia Plan deepens NEP implementation",
+            "short_label": "Third Plan",
+            "event_type": "planning"
+          },
+          {
+            "year": 1990,
+            "label": "End of the original NEP era",
+            "short_label": "NEP ends",
+            "event_type": "policy_end"
+          },
+          {
+            "year": 1991,
+            "label": "New Development Policy begins",
+            "short_label": "NDP begins",
+            "event_type": "legacy"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 22
+        }
+      },
+      "suggested_section": "Crisis, Racial Violence, and the Policy Turn of 1971"
+    },
+    {
+      "figure_id": "fig_nep_policy_logic",
+      "kind": "flow_diagram",
+      "title": "NEP Policy Logic",
+      "caption": "A simplified flow from political crisis to redistribution, growth, and national unity.",
+      "data": {
+        "direction": "left_to_right",
+        "nodes": [
+          {
+            "id": "crisis",
+            "label": "1969 crisis",
+            "type": "context"
+          },
+          {
+            "id": "state_response",
+            "label": "State response",
+            "type": "policy"
+          },
+          {
+            "id": "redistribution",
+            "label": "Redistribution and access expansion",
+            "type": "program"
+          },
+          {
+            "id": "growth",
+            "label": "Growth and industrialization",
+            "type": "program"
+          },
+          {
+            "id": "unity",
+            "label": "National unity",
+            "type": "outcome"
+          }
+        ],
+        "edges": [
+          {
+            "from": "crisis",
+            "to": "state_response",
+            "label": "policy opening"
+          },
+          {
+            "from": "state_response",
+            "to": "redistribution",
+            "label": "poverty and restructuring goals"
+          },
+          {
+            "from": "state_response",
+            "to": "growth",
+            "label": "development strategy"
+          },
+          {
+            "from": "redistribution",
+            "to": "unity",
+            "label": "broader participation"
+          },
+          {
+            "from": "growth",
+            "to": "unity",
+            "label": "shared gains"
+          }
+        ],
+        "render_hints": {
+          "wrap_labels": true,
+          "label_wrap_width_chars": 26,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "Poverty Eradication and the Restructuring of Society"
+    },
+    {
+      "figure_id": "fig_redistribution_network",
+      "kind": "network_diagram",
+      "title": "Redistribution and Opportunity Network",
+      "caption": "State agencies, households, and firms were connected through education, employment, ownership, and rural programs.",
+      "data": {
+        "layout": "hub_and_spoke",
+        "central_node": "state_system",
+        "nodes": [
+          {
+            "id": "state_system",
+            "label": "State system",
+            "type": "hub"
+          },
+          {
+            "id": "education",
+            "label": "Education access",
+            "type": "service"
+          },
+          {
+            "id": "employment",
+            "label": "Employment access",
+            "type": "service"
+          },
+          {
+            "id": "ownership",
+            "label": "Ownership measures",
+            "type": "service"
+          },
+          {
+            "id": "rural",
+            "label": "Rural development",
+            "type": "service"
+          },
+          {
+            "id": "firms",
+            "label": "Firms and public enterprise",
+            "type": "actor"
+          }
+        ],
+        "edges": [
+          {
+            "from": "state_system",
+            "to": "education",
+            "label": "scholarships and training"
+          },
+          {
+            "from": "state_system",
+            "to": "employment",
+            "label": "recruitment and access"
+          },
+          {
+            "from": "state_system",
+            "to": "ownership",
+            "label": "equity and licensing"
+          },
+          {
+            "from": "state_system",
+            "to": "rural",
+            "label": "land and services"
+          },
+          {
+            "from": "education",
+            "to": "firms",
+            "label": "skills pipeline"
+          },
+          {
+            "from": "ownership",
+            "to": "firms",
+            "label": "commercial participation"
+          }
+        ],
+        "render_hints": {
+          "hub_emphasis": true,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 24
+        }
+      },
+      "suggested_section": "Redistribution Channels, Institutions, and Access to Opportunity"
+    },
+    {
+      "figure_id": "fig_growth_strategy_path",
+      "kind": "flow_diagram",
+      "title": "Growth Strategy Path",
+      "caption": "A compact diagram of Malaysia's shift from commodities toward industrialization under the NEP framework.",
+      "data": {
+        "direction": "left_to_right",
+        "nodes": [
+          {
+            "id": "commodities",
+            "label": "Commodity dependence",
+            "type": "starting_point"
+          },
+          {
+            "id": "state_planning",
+            "label": "State planning and public investment",
+            "type": "intermediate"
+          },
+          {
+            "id": "industry",
+            "label": "Manufacturing and export growth",
+            "type": "intermediate"
+          },
+          {
+            "id": "infrastructure",
+            "label": "Infrastructure and connectivity",
+            "type": "intermediate"
+          },
+          {
+            "id": "development",
+            "label": "Broader development capacity",
+            "type": "outcome"
+          }
+        ],
+        "edges": [
+          {
+            "from": "commodities",
+            "to": "state_planning",
+            "label": "policy shift"
+          },
+          {
+            "from": "state_planning",
+            "to": "industry",
+            "label": "industrial policy"
+          },
+          {
+            "from": "state_planning",
+            "to": "infrastructure",
+            "label": "public investment"
+          },
+          {
+            "from": "industry",
+            "to": "development",
+            "label": "diversification"
+          },
+          {
+            "from": "infrastructure",
+            "to": "development",
+            "label": "market access"
+          }
+        ],
+        "render_hints": {
+          "wrap_labels": true,
+          "label_wrap_width_chars": 24,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "Growth Strategy, Industrialization, and State-Led Development"
+    },
+    {
+      "figure_id": "fig_nep_legacy_timeline",
+      "kind": "timeline",
+      "title": "NEP Legacy Timeline",
+      "caption": "The original NEP era ended in 1990, but its logic carried into the New Development Policy after 1991.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1971,
+          "end_year": 1991,
+          "tick_interval_years": 4
+        },
+        "events": [
+          {
+            "year": 1971,
+            "label": "NEP begins",
+            "short_label": "1971 launch",
+            "event_type": "policy"
+          },
+          {
+            "year": 1976,
+            "label": "Implementation deepens in the Third Malaysia Plan",
+            "short_label": "Third Plan",
+            "event_type": "planning"
+          },
+          {
+            "year": 1980,
+            "label": "Long-term planning continues through the OPP horizon",
+            "short_label": "OPP horizon",
+            "event_type": "planning"
+          },
+          {
+            "year": 1990,
+            "label": "NEP era ends",
+            "short_label": "1990 end",
+            "event_type": "policy_end"
+          },
+          {
+            "year": 1991,
+            "label": "New Development Policy starts",
+            "short_label": "NDP",
+            "event_type": "legacy"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 22
+        }
+      },
+      "suggested_section": "Outcomes, Critiques, and the Transition to the New Development Policy"
+    }
+  ]
+}

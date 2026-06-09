@@ -18,14 +18,14 @@ Use this file as the backlog for future recipe enrichment. Topics should be turn
 - [x] Malaysia: Japanese occupation in Malaya and its postwar political consequences
 - [x] Malaysia: the Emergency, security policy, and anti-communist conflict
 - [x] Malaysia: Tunku Abdul Rahman and negotiated independence in 1957
-- [ ] Malaysia: formation of Malaysia in 1963 and federal state-building
-- [ ] Malaysia: New Economic Policy, redistribution, and development strategy
-- [ ] Malaysia: coalition politics, political transitions, and post-2018 electoral change
+- [x] Malaysia: formation of Malaysia in 1963 and federal state-building
+- [x] Malaysia: New Economic Policy, redistribution, and development strategy
+- [x] Malaysia: coalition politics, political transitions, and post-2018 electoral change
 
 ## Indonesia
 
-- [ ] Indonesia: Dutch colonial rule in the Netherlands East Indies in the early twentieth century
-- [ ] Indonesia: nationalist movements, youth politics, and anti-colonial organization before 1945
+- [x] Indonesia: Dutch colonial rule in the Netherlands East Indies in the early twentieth century
+- [x] Indonesia: nationalist movements, youth politics, and anti-colonial organization before 1945
 - [ ] Indonesia: Japanese occupation and the road to independence
 - [ ] Indonesia: Sukarno, the 1945 proclamation, revolution, and sovereignty transfer
 - [ ] Indonesia: Guided Democracy, military influence, and political centralization

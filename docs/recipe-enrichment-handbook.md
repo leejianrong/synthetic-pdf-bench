@@ -90,6 +90,12 @@ Recommended reference reads when needed:
 - `docs/parser-pipeline-guide.md`
 - an existing research folder under `data/recipes/research/`
 
+For converting validated research artifacts into generator-ready canonical
+recipes, read:
+
+- `docs/canonical-assembly-workflow.md`
+- `docs/canonical-recipe-backlog.md`
+
 ## Token-Efficient Batch Workflow
 
 The orchestrator should process the backlog in batches of up to five topics.

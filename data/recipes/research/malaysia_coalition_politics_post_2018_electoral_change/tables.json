@@ -1,0 +1,250 @@
+{
+  "tables": [
+    {
+      "table_id": "tbl_election_transition_timeline",
+      "title": "From GE14 to GE15: Core Political Markers",
+      "matrix": [
+        [
+          "Date",
+          "Event",
+          "Coalition Effect",
+          "Benchmark Note"
+        ],
+        [
+          "9 May 2018",
+          "GE14 returns federal power to Pakatan Harapan",
+          "BN loses uninterrupted federal dominance",
+          "Start of the post-2018 era"
+        ],
+        [
+          "10 May 2018",
+          "Mahathir Mohamad is sworn in as prime minister",
+          "PH begins governing through coalition bargaining",
+          "Coalition victory becomes executive power"
+        ],
+        [
+          "23-24 Feb 2020",
+          "Sheraton Move and collapse of the PH majority",
+          "Parliamentary realignment replaces the elected coalition",
+          "Government reset without a fresh election"
+        ],
+        [
+          "1 Mar 2020",
+          "Muhyiddin Yassin is appointed prime minister",
+          "Perikatan Nasional becomes the governing bloc",
+          "Majority testing decides the executive"
+        ],
+        [
+          "21 Aug 2021",
+          "Ismail Sabri Yaakob takes office",
+          "Coalition support is reassembled after Muhyiddin's fall",
+          "Pandemic-era compromise government"
+        ],
+        [
+          "19-24 Nov 2022",
+          "GE15 produces a hung parliament and Anwar is appointed prime minister",
+          "No bloc wins alone; coalition assembly becomes decisive",
+          "New normal of post-election bargaining"
+        ]
+      ],
+      "notes": [
+        "This table keeps the federal sequence compact and stable.",
+        "The rows use broad coalition effects rather than detailed vote totals.",
+        "The chronology is designed to be sufficient for extraction without overloading the benchmark."
+      ],
+      "suggested_section": "The 2018 Election and the End of BN's Dominance"
+    },
+    {
+      "table_id": "tbl_coalition_blocks",
+      "title": "Major Coalition Blocs After 2018",
+      "matrix": [
+        [
+          "Bloc",
+          "Core Parties or Base",
+          "Role in the Post-2018 Period",
+          "Benchmark Note"
+        ],
+        [
+          "Pakatan Harapan (PH)",
+          "PKR, DAP, Amanah, Bersatu in the 2018 coalition",
+          "Won GE14 and opened the reform phase",
+          "The reform coalition"
+        ],
+        [
+          "Barisan Nasional (BN)",
+          "UMNO and longstanding allied parties",
+          "Lost federal dominance but remained a major bloc",
+          "The former governing coalition"
+        ],
+        [
+          "Perikatan Nasional (PN)",
+          "Bersatu, PAS, and aligned supporters",
+          "Formed the 2020 federal government after the realignment",
+          "The post-Sheraton governing bloc"
+        ],
+        [
+          "Gabungan Parti Sarawak (GPS)",
+          "Sarawak-based regional bloc",
+          "Became a decisive kingmaker in later coalition bargaining",
+          "Regional leverage bloc"
+        ],
+        [
+          "Warisan and Sabah-aligned actors",
+          "Sabah regional politics",
+          "Added to the bargaining weight of East Malaysian politics",
+          "Regional balance marker"
+        ]
+      ],
+      "notes": [
+        "The matrix keeps coalition blocs distinct from individual party histories.",
+        "Regional blocs are included because they became decisive in federal arithmetic.",
+        "The table avoids over-specifying every temporary alliance that changed during the period."
+      ],
+      "suggested_section": "Coalition Bargaining Inside Pakatan Harapan"
+    },
+    {
+      "table_id": "tbl_government_transitions",
+      "title": "Government Transitions, 2018-2022",
+      "matrix": [
+        [
+          "Date",
+          "Trigger",
+          "Immediate Outcome",
+          "Institutional Meaning"
+        ],
+        [
+          "10 May 2018",
+          "PH wins GE14",
+          "Mahathir forms a PH-led federal government",
+          "Electoral change becomes executive change"
+        ],
+        [
+          "24 Feb 2020",
+          "Coalition collapse and resignation dynamics",
+          "Mahathir resigns and PH loses its working majority",
+          "Parliamentary support outranks electoral mandate"
+        ],
+        [
+          "1 Mar 2020",
+          "Majority testing at the palace",
+          "Muhyiddin is appointed prime minister",
+          "Executive authority shifts through coalition reassembly"
+        ],
+        [
+          "16-21 Aug 2021",
+          "UMNO support for Muhyiddin erodes",
+          "Ismail Sabri is appointed and sworn in",
+          "A narrower coalition becomes the new government"
+        ],
+        [
+          "19-24 Nov 2022",
+          "GE15 yields a hung parliament",
+          "Anwar is appointed after coalition talks",
+          "Post-election bargaining becomes routine"
+        ]
+      ],
+      "notes": [
+        "This table is the main transition map for the whole recipe.",
+        "It keeps the executive shifts separate from the electoral results that produced them.",
+        "The wording stays neutral and avoids implying that any change was inevitable."
+      ],
+      "suggested_section": "The Sheraton Move and the 2020 Government Reset"
+    },
+    {
+      "table_id": "tbl_institutional_reforms",
+      "title": "Institutional Responses to Coalition Instability",
+      "matrix": [
+        [
+          "Measure",
+          "Year",
+          "Purpose",
+          "Observed Effect"
+        ],
+        [
+          "Anti-party hopping constitutional amendment",
+          "2022",
+          "Reduce defections that can collapse a majority",
+          "Makes individual party-switching costlier"
+        ],
+        [
+          "Special select committee on the anti-hopping bill",
+          "2022",
+          "Shape the amendment through parliamentary review",
+          "Shows cross-party formalization of reform"
+        ],
+        [
+          "Transformation and Political Stability MoU",
+          "2021",
+          "Create a cross-party stability framework",
+          "Cuts immediate confrontation while keeping opposition oversight"
+        ],
+        [
+          "Majority verification by royal consultation",
+          "2020-2022",
+          "Identify who can command confidence in the House",
+          "Becomes central to government formation after crises"
+        ],
+        [
+          "Confidence vote practice",
+          "2022",
+          "Test support after a hung parliament settlement",
+          "Normalizes coalition confidence management"
+        ]
+      ],
+      "notes": [
+        "This table connects instability to repair without making the reform story the only story.",
+        "It is intentionally qualitative and avoids legal fine print that would distract from the political sequence.",
+        "The table pairs parliamentary process with coalition behavior to keep the benchmark coherent."
+      ],
+      "suggested_section": "Pandemic Rule, Party Defections, and Institutional Repair"
+    },
+    {
+      "table_id": "tbl_post_2018_electoral_pattern",
+      "title": "Post-2018 Electoral Change Markers",
+      "matrix": [
+        [
+          "Marker",
+          "Observed Change",
+          "Why It Matters",
+          "Benchmark Note"
+        ],
+        [
+          "GE14 result",
+          "A reform coalition defeats the long-ruling incumbent bloc",
+          "Proves that federal alternation is possible",
+          "The first break from BN dominance"
+        ],
+        [
+          "Government change without election in 2020",
+          "A parliamentary realignment replaces the governing coalition",
+          "Shows that coalition survival now matters as much as voter preference",
+          "Parliamentary fluidity"
+        ],
+        [
+          "2021 minority-style compromise",
+          "A narrower coalition rebuilds executive control",
+          "Makes cross-bloc support a governing condition",
+          "Coalition pragmatism"
+        ],
+        [
+          "GE15 outcome",
+          "Hung parliament with no simple majority",
+          "Coalitions must negotiate after the vote rather than before it alone",
+          "Post-election bargaining becomes normal"
+        ],
+        [
+          "Anti-hopping law",
+          "Defection becomes more difficult",
+          "Limits one source of parliamentary volatility",
+          "Institutional response to fragmentation"
+        ]
+      ],
+      "notes": [
+        "This table summarizes the post-2018 pattern rather than repeating the full chronology.",
+        "It is meant to capture the benchmark shift from dominant-party politics to coalition negotiation.",
+        "The rows avoid exact percentages so the table stays stable across sources."
+      ],
+      "suggested_section": "GE15, Hung Parliament, and the New Coalition Equilibrium"
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "figures": [
+    {
+      "figure_id": "fig_colonial_hierarchy",
+      "kind": "flow_diagram",
+      "title": "Dutch East Indies Governance Hierarchy",
+      "caption": "Simplified hierarchy from metropolitan authority to colonial bureaucracy and local intermediaries.",
+      "data": {
+        "direction": "top_down",
+        "nodes": [
+          {
+            "id": "metropole",
+            "label": "Netherlands / Ministry of Colonies",
+            "type": "imperial_authority"
+          },
+          {
+            "id": "governor_general",
+            "label": "Governor-General in Batavia",
+            "type": "colonial_executive"
+          },
+          {
+            "id": "departments",
+            "label": "Colonial Departments and Residency Offices",
+            "type": "bureaucracy"
+          },
+          {
+            "id": "java",
+            "label": "Java and Madura",
+            "type": "core_colony"
+          },
+          {
+            "id": "outer_islands",
+            "label": "Outer Islands",
+            "type": "regional_zone"
+          },
+          {
+            "id": "intermediaries",
+            "label": "Regents, District Heads, Priyayi",
+            "type": "local_intermediaries"
+          }
+        ],
+        "edges": [
+          {
+            "from": "metropole",
+            "to": "governor_general",
+            "label": "metropolitan oversight"
+          },
+          {
+            "from": "governor_general",
+            "to": "departments",
+            "label": "executive coordination"
+          },
+          {
+            "from": "departments",
+            "to": "java",
+            "label": "dense administration"
+          },
+          {
+            "from": "departments",
+            "to": "outer_islands",
+            "label": "residencies and indirect control"
+          },
+          {
+            "from": "java",
+            "to": "intermediaries",
+            "label": "local governance"
+          },
+          {
+            "from": "outer_islands",
+            "to": "intermediaries",
+            "label": "indirect rule"
+          }
+        ],
+        "render_hints": {
+          "group_by_type": true,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 26,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "Colonial Layers and the Governor-General"
+    },
+    {
+      "figure_id": "fig_ethics_timeline",
+      "kind": "timeline",
+      "title": "Ethical Policy Reform Sequence",
+      "caption": "Timeline from the 1901 reform turn through the later narrowing of policy ambitions.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1901,
+          "end_year": 1930,
+          "tick_interval_years": 5
+        },
+        "events": [
+          {
+            "year": 1901,
+            "label": "Ethical Policy announced as a reform turn",
+            "short_label": "1901 reform",
+            "event_type": "policy_shift"
+          },
+          {
+            "year": 1905,
+            "label": "Education and irrigation programs expand colonial reach",
+            "short_label": "Education and irrigation",
+            "event_type": "administrative_change"
+          },
+          {
+            "year": 1910,
+            "label": "Decentralization and local councils widen administrative layering",
+            "short_label": "Decentralization",
+            "event_type": "administrative_change"
+          },
+          {
+            "year": 1918,
+            "label": "Volksraad opens as an advisory institution",
+            "short_label": "Volksraad opens",
+            "event_type": "institution"
+          },
+          {
+            "year": 1925,
+            "label": "Consultative role expands, but sovereignty remains colonial",
+            "short_label": "Limited expansion",
+            "event_type": "institution"
+          },
+          {
+            "year": 1930,
+            "label": "Policy ambitions narrow under unrest and fiscal stress",
+            "short_label": "Policy narrowing",
+            "event_type": "pressure"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 20
+        }
+      },
+      "suggested_section": "Ethical Policy, Education, and Decentralization"
+    },
+    {
+      "figure_id": "fig_volksraad_network",
+      "kind": "network_diagram",
+      "title": "The Volksraad and Colonial Decision Channels",
+      "caption": "Network showing how advisory institutions connected to the governor-general and local councils.",
+      "data": {
+        "layout": "hub_and_spoke",
+        "central_node": "colonial_government",
+        "nodes": [
+          {
+            "id": "colonial_government",
+            "label": "Colonial Government",
+            "type": "hub"
+          },
+          {
+            "id": "governor_general",
+            "label": "Governor-General",
+            "type": "executive"
+          },
+          {
+            "id": "volksraad",
+            "label": "Volksraad",
+            "type": "advisory_body"
+          },
+          {
+            "id": "local_councils",
+            "label": "Municipal and Regional Councils",
+            "type": "local_body"
+          },
+          {
+            "id": "elite_members",
+            "label": "Appointed and Indirectly Elected Elites",
+            "type": "membership"
+          },
+          {
+            "id": "nationalists",
+            "label": "Nationalist Critics",
+            "type": "pressure_group"
+          }
+        ],
+        "edges": [
+          {
+            "from": "colonial_government",
+            "to": "governor_general",
+            "label": "executive authority"
+          },
+          {
+            "from": "governor_general",
+            "to": "volksraad",
+            "label": "consultation"
+          },
+          {
+            "from": "local_councils",
+            "to": "volksraad",
+            "label": "indirect elections"
+          },
+          {
+            "from": "volksraad",
+            "to": "elite_members",
+            "label": "limited membership"
+          },
+          {
+            "from": "elite_members",
+            "to": "nationalists",
+            "label": "political debate"
+          }
+        ],
+        "render_hints": {
+          "group_by_type": true,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 24,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "Volksraad and Limited Representation"
+    },
+    {
+      "figure_id": "fig_plantation_chain",
+      "kind": "flow_diagram",
+      "title": "Plantation Economy and Labor Flow",
+      "caption": "Diagram showing how export production connected capital, transport, labor recruitment, and colonial oversight.",
+      "data": {
+        "direction": "left_to_right",
+        "nodes": [
+          {
+            "id": "capital",
+            "label": "Export Capital",
+            "type": "investment"
+          },
+          {
+            "id": "plantations",
+            "label": "Plantation and Estate Production",
+            "type": "production"
+          },
+          {
+            "id": "labor",
+            "label": "Contract and Migrant Labor",
+            "type": "labor"
+          },
+          {
+            "id": "transport",
+            "label": "Railways, Roads, and Ports",
+            "type": "infrastructure"
+          },
+          {
+            "id": "state",
+            "label": "Colonial Administration",
+            "type": "governance"
+          },
+          {
+            "id": "unrest",
+            "label": "Labor Disputes and Nationalist Critique",
+            "type": "pressure"
+          }
+        ],
+        "edges": [
+          {
+            "from": "capital",
+            "to": "plantations",
+            "label": "investment"
+          },
+          {
+            "from": "plantations",
+            "to": "labor",
+            "label": "recruitment"
+          },
+          {
+            "from": "labor",
+            "to": "transport",
+            "label": "movement and export"
+          },
+          {
+            "from": "transport",
+            "to": "state",
+            "label": "administrative control"
+          },
+          {
+            "from": "labor",
+            "to": "unrest",
+            "label": "conflict"
+          },
+          {
+            "from": "state",
+            "to": "unrest",
+            "label": "surveillance and repression"
+          }
+        ],
+        "render_hints": {
+          "group_by_type": true,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 22,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "Plantation Economy, Labor, and Social Hierarchy"
+    },
+    {
+      "figure_id": "fig_1901_1941_synthesis",
+      "kind": "timeline",
+      "title": "Colonial Rule from 1901 to 1941",
+      "caption": "Timeline covering reform, representation, nationalist mobilization, and the prewar endpoint.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1901,
+          "end_year": 1941,
+          "tick_interval_years": 5
+        },
+        "events": [
+          {
+            "year": 1901,
+            "label": "Ethical Policy announced",
+            "short_label": "Ethical Policy",
+            "event_type": "policy_shift"
+          },
+          {
+            "year": 1917,
+            "label": "Volksraad created",
+            "short_label": "Volksraad",
+            "event_type": "institution"
+          },
+          {
+            "year": 1918,
+            "label": "Volksraad opens",
+            "short_label": "Open",
+            "event_type": "institution"
+          },
+          {
+            "year": 1926,
+            "label": "Communist uprisings and repression",
+            "short_label": "1926 unrest",
+            "event_type": "conflict"
+          },
+          {
+            "year": 1930,
+            "label": "Depression-era stress and surveillance intensify",
+            "short_label": "1930s strain",
+            "event_type": "pressure"
+          },
+          {
+            "year": 1941,
+            "label": "Final pre-occupation year",
+            "short_label": "1941 boundary",
+            "event_type": "boundary"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 18
+        }
+      },
+      "suggested_section": "Nationalism and the 1941 Boundary"
+    }
+  ]
+}

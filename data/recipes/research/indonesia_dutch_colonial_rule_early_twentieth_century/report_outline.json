@@ -1,0 +1,179 @@
+{
+  "title": "Indonesia: Dutch Colonial Rule in the Netherlands East Indies in the Early Twentieth Century",
+  "recipe_id": "indonesia_dutch_colonial_rule_early_twentieth_century",
+  "topic": "Indonesia: Dutch colonial rule in the Netherlands East Indies in the early twentieth century",
+  "abstract": "This synthetic outline covers Dutch colonial rule in the Netherlands East Indies from 1900 to 1941. It emphasizes the layered colonial state centered on Batavia, the Ethical Policy and its reform agenda, the expansion of education and decentralization, the creation and limits of the Volksraad, and the political consequences of plantation capitalism and labor migration. The report is designed for stable PDF benchmark generation, with primarily English prose and a small number of controlled Bahasa Indonesia markers.",
+  "language_profile": {
+    "primary_language": "English",
+    "allowed_pdf_languages": [
+      "English",
+      "Bahasa Melayu",
+      "Bahasa Indonesia",
+      "Simplified Chinese"
+    ],
+    "multilingual_terms": [
+      {
+        "term": "Hindia Belanda",
+        "language": "Bahasa Indonesia",
+        "meaning": "Netherlands East Indies"
+      },
+      {
+        "term": "Politik Etis",
+        "language": "Bahasa Indonesia",
+        "meaning": "Ethical Policy"
+      },
+      {
+        "term": "priyayi",
+        "language": "Bahasa Indonesia",
+        "meaning": "educated indigenous official elite"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "heading": "Colonial Layers and the Governor-General",
+      "bullet_points": [
+        "Describe the Dutch East Indies as a layered colonial system rather than a single uniform administration, with Batavia as the political center and Java the most intensively governed region.",
+        "Distinguish direct colonial administration from indirect rule through regents, local aristocrats, and district officials in the outer islands.",
+        "Explain the central role of the Governor-General and the colonial bureaucracy in coordinating taxation, security, appointments, and territorial oversight.",
+        "Keep the framing neutral and structural so the topic reads as institutional history rather than as a moral verdict."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_colonial_layers",
+          "title": "Colonial Layers in the Netherlands East Indies, 1900-1941",
+          "description": "Matrix summarizing the main administrative layers, governing channels, and political meaning."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_colonial_hierarchy",
+          "kind": "flow_diagram",
+          "title": "Dutch East Indies Governance Hierarchy",
+          "description": "Simplified hierarchy from metropolitan authority to colonial bureaucracy and local intermediaries."
+        }
+      ],
+      "source_notes": [
+        "Britannica's Dutch East Indies overview supports the broad territorial and administrative framing.",
+        "Britannica's history of Indonesia pages help anchor Java-centric governance and the wider archipelago context.",
+        "Keep Batavia, Java, and the outer islands distinct so the report does not flatten the colony into one administrative layer."
+      ]
+    },
+    {
+      "heading": "Ethical Policy, Education, and Decentralization",
+      "bullet_points": [
+        "Describe the Ethical Policy as a turn toward welfare, irrigation, and education after criticism of the older extractive order.",
+        "Show how reform rhetoric expanded schooling and technical administration without ending colonial hierarchy.",
+        "Treat decentralization as a controlled administrative change, not as self-government in a modern democratic sense.",
+        "Use controlled Bahasa Indonesia terms only as stable markers for benchmark extraction."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_ethics_reforms",
+          "title": "Ethical Policy Reforms and Administrative Effects",
+          "description": "Matrix linking reform areas to colonial goals and institutional changes."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_ethics_timeline",
+          "kind": "timeline",
+          "title": "Ethical Policy Reform Sequence",
+          "description": "Timeline from the 1901 reform turn through the later narrowing of policy ambitions."
+        }
+      ],
+      "source_notes": [
+        "Britannica's Ethical Policy entry supports the early twentieth-century reform turn and decentralization agenda.",
+        "Britannica's Dutch rule history page supports the connection between welfare policy, education, and political unrest.",
+        "The section should keep reform language descriptive rather than celebratory."
+      ]
+    },
+    {
+      "heading": "Volksraad and Limited Representation",
+      "bullet_points": [
+        "Explain that the Volksraad was an advisory council created in 1917 and opened in 1918, with limited and indirect representation.",
+        "Clarify that even when the council gained a stronger consultative role, final authority remained with Dutch colonial officials.",
+        "Distinguish between electoral mechanisms at local levels and genuine parliamentary power, which the colony did not have.",
+        "Treat the Volksraad as a useful benchmark for limited colonial participation, not as evidence of full constitutional reform."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_representative_institutions",
+          "title": "Representative Institutions and Their Limits",
+          "description": "Matrix covering the Volksraad and related local bodies in the colonial political order."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_volksraad_network",
+          "kind": "network_diagram",
+          "title": "The Volksraad and Colonial Decision Channels",
+          "description": "Network showing how advisory institutions connected to the governor-general and local councils."
+        }
+      ],
+      "source_notes": [
+        "Britannica's Volksraad entry gives the clearest compact chronology for 1917, 1918, and later institutional changes.",
+        "Britannica's Indonesia history page supports the limited representational character of the council.",
+        "Do not model the Volksraad as a modern parliament; its powers were constrained by design."
+      ]
+    },
+    {
+      "heading": "Plantation Economy, Labor, and Social Hierarchy",
+      "bullet_points": [
+        "Describe the colonial economy as centered on plantation agriculture, export crops, and inter-island labor and commodity flows.",
+        "Show how sugar, rubber, tobacco, and other export sectors shaped labor recruitment, transportation, and administrative control.",
+        "Explain the role of social hierarchy, including European officials, indigenous elites, and the priyayi class, in maintaining colonial order.",
+        "Keep the discussion focused on stable structural relationships rather than on annual output statistics."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_economy_labor",
+          "title": "Plantation Economy, Labor, and Administrative Control",
+          "description": "Matrix linking major sectors to labor arrangements and colonial political effects."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_plantation_chain",
+          "kind": "flow_diagram",
+          "title": "Plantation Economy and Labor Flow",
+          "description": "Diagram showing how export production connected capital, transport, labor recruitment, and colonial oversight."
+        }
+      ],
+      "source_notes": [
+        "Britannica's Dutch East Indies and Java economy pages support the plantation and export framing.",
+        "Britannica's history of Indonesia page supports the emphasis on Java as the most intensively governed and developed region.",
+        "The section should stay qualitative and avoid unstable numeric claims."
+      ]
+    },
+    {
+      "heading": "Nationalism and the 1941 Boundary",
+      "bullet_points": [
+        "Describe early nationalist organizations such as Budi Utomo and Sarekat Islam as products of the educational and social shifts of the Ethical Policy era.",
+        "Explain that the late 1920s and 1930s brought repression, ideological conflict, and tighter surveillance, especially after the 1926-27 communist uprisings.",
+        "Keep 1941 as the hard endpoint so the topic remains separate from the Japanese occupation and wartime collapse of Dutch rule.",
+        "Frame the topic as a prewar colonial structure study, not as a decolonization narrative."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_1901_1941_threshold",
+          "title": "Early Twentieth Century to the 1941 Break",
+          "description": "Matrix separating colonial reform, nationalist mobilization, and the pre-occupation boundary."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_1901_1941_synthesis",
+          "kind": "timeline",
+          "title": "Colonial Rule from 1901 to 1941",
+          "description": "Timeline covering reform, representation, nationalist mobilization, and the prewar endpoint."
+        }
+      ],
+      "source_notes": [
+        "Britannica's history of Indonesia and Dutch rule pages support the early nationalist chronology and the 1941 boundary.",
+        "Britannica's Dutch East Indies overview supports the broad prewar framing.",
+        "Do not absorb the Japanese occupation into this artifact set."
+      ]
+    }
+  ]
+}

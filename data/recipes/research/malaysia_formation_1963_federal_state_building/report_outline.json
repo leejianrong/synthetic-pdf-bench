@@ -1,0 +1,146 @@
+{
+  "title": "Malaysia: Formation of Malaysia in 1963 and Federal State-Building",
+  "abstract": "This recipe covers the creation of Malaysia in 1963, the consultation process in Sabah and Sarawak, the Malaysia Agreement, and the early federal state-building that followed the new constitutional order.",
+  "sections": [
+    {
+      "heading": "From Proposal to Federal Negotiation",
+      "bullet_points": [
+        "The topic begins with Tunku Abdul Rahman's 1961 proposal to merge Malaya with Singapore, Sarawak, and Sabah.",
+        "The House of Representatives approved the proposal, which moved the idea from speech into formal federal politics.",
+        "Negotiation in London turned the merger idea into a constitutional project rather than a loose political slogan.",
+        "The benchmark should keep the sequence stable: proposal, parliamentary approval, negotiation, and then legal formation."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_from_proposal_to_negotiation",
+          "title": "Timeline from Proposal to Formal Negotiation",
+          "description": "A compact chronology from the 1961 proposal through the talks that led to Malaysia."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_from_proposal_to_negotiation",
+          "kind": "timeline",
+          "title": "Proposal to Negotiation",
+          "description": "A timeline showing the move from the 1961 proposal to the 1963 agreement."
+        }
+      ],
+      "source_notes": [
+        "Parliament of Malaysia general information gives the official chronology for the 1961 proposal and the London discussions.",
+        "The same page anchors the 1963 formation date and the role of the Federal Parliament in the process."
+      ]
+    },
+    {
+      "heading": "Consultation in Sabah and Sarawak",
+      "bullet_points": [
+        "The Cobbold Commission is central because it gathered views in Sabah and Sarawak on the federation proposal.",
+        "The consultation process matters for state-building because it linked formation to local consent and safeguards.",
+        "The result was not a simple annexation story; it was a negotiated entry with political conditions attached.",
+        "The benchmark should preserve the distinction between consultation, acceptance, and later constitutional protection."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_consultation_in_sabah_and_sarawak",
+          "title": "Consultation Bodies and Local Responses",
+          "description": "A structured summary of the consultation process in Sabah and Sarawak."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_consultation_in_sabah_and_sarawak",
+          "kind": "flow_diagram",
+          "title": "Consultation and Consent",
+          "description": "A simple flow from commission work to local resolutions and formation."
+        }
+      ],
+      "source_notes": [
+        "Parliament of Malaysia general information states that the Cobbold Commission examined support in Sabah and Sarawak.",
+        "The National Archives material on Penubuhan Malaysia 16 September 1963 gives a stable archival framing for the consultation process."
+      ]
+    },
+    {
+      "heading": "The Malaysia Agreement and Constitutional Revision",
+      "bullet_points": [
+        "The Malaysia Agreement was signed in London on 9 July 1963 by the United Kingdom, Malaya, North Borneo, Sarawak, and Singapore.",
+        "The agreement provided the legal basis for changing the Federation of Malaya constitution into the Federal Constitution of Malaysia.",
+        "Malaysia was declared on 16 September 1963, which is the fixed date the benchmark should use for the new federation.",
+        "This section should treat the agreement, constitutional amendment, and declaration as linked but distinct steps."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_malaysia_agreement_and_revision",
+          "title": "Legal Steps in the 1963 Formation",
+          "description": "A deterministic summary of the agreement, constitutional revision, and declaration sequence."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_malaysia_agreement_and_revision",
+          "kind": "comparison_chart",
+          "title": "From Federation of Malaya to Malaysia",
+          "description": "A before-and-after comparison of constitutional status and territorial composition."
+        }
+      ],
+      "source_notes": [
+        "The PMO MA63 article and PDF provide the signed date, signatories, and constitutional basis for Malaysia.",
+        "Parliament of Malaysia general information confirms the 16 September 1963 declaration and the state legislatures' role."
+      ]
+    },
+    {
+      "heading": "Federal Institutions and Early State-Building",
+      "bullet_points": [
+        "State-building after 16 September 1963 meant creating a working federal legislature for the new federation.",
+        "The Parliament of Malaysia began operating with a representation that included Sabah, Sarawak, and Singapore alongside the Malayan states.",
+        "The new federal system had to coordinate executive power, legislative authority, and a larger territorial map at once.",
+        "The benchmark should stay focused on institution building, not later policy controversies."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_federal_institutions_and_state_building",
+          "title": "Early Federal Institutions After 1963",
+          "description": "A compact view of how the new federation organized Parliament and state representation."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_federal_institutions_and_state_building",
+          "kind": "network_diagram",
+          "title": "Federal Institutions in the New Malaysia",
+          "description": "A network diagram showing Parliament, the King, the Senate, and the House of Representatives."
+        }
+      ],
+      "source_notes": [
+        "Parliament of Malaysia history and structure pages describe the post-1963 parliamentary system and the federal layout.",
+        "Those pages also show how Malaysia's federal democracy was presented as a constitutional structure after formation."
+      ]
+    },
+    {
+      "heading": "Safeguards, Asymmetry, and Topic Boundary",
+      "bullet_points": [
+        "Sabah and Sarawak entered Malaysia with special interests and safeguards that were embedded in the constitutional settlement.",
+        "Federal state-building therefore meant asymmetry as well as unity, especially in language, entry control, and state powers.",
+        "The topic should stop at the formation of Malaysia and the early federal framework, not drift into later constitutional disputes.",
+        "A clean boundary helps the benchmark recover the specific history of how Malaysia was built in 1963."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_safeguards_and_boundary",
+          "title": "Safeguards and Topic Boundary",
+          "description": "A boundary table that separates 1963 formation from later political and constitutional questions."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_safeguards_and_boundary",
+          "kind": "timeline",
+          "title": "Boundary of the 1963 Topic",
+          "description": "A short timeline ending at the formation of Malaysia and the first federal adjustments."
+        }
+      ],
+      "source_notes": [
+        "The PMO MA63 article notes the special interests and safeguards for Sabah and Sarawak.",
+        "Parliament and National Archives material both support the 16 September 1963 boundary and the federal framing."
+      ]
+    }
+  ]
+}
