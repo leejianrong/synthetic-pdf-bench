@@ -1,0 +1,1006 @@
+{
+  "doc_id": "singapore_malaysia_1963_1965_v1",
+  "title": "Singapore and Malaysia: Merger, Conflict, Separation, and State-Building, 1963-1965",
+  "language_profile": {
+    "primary": "en",
+    "secondary": ["ms", "zh", "id"],
+    "encoding": "UTF-8",
+    "notes": "Primarily English prose with controlled Malay and Chinese markers for stable extraction across the merger, separation, and early state-building sequence."
+  },
+  "metadata": {
+    "document_family": "synthetic_historical_research_report",
+    "target_pages": "5-8",
+    "content_scope": "Merger, federal conflict, separation, and immediate state-building links across Singapore and Malaysia, 1961-1965",
+    "source_notes": [
+      {
+        "recipe_id": "singapore_merger_malaysia_separation_1963_1965",
+        "topic": "Singapore: merger with Malaysia and separation in 1963-1965",
+        "source_notes": [
+          "src_nlb_singapore_becomes_part_of_malaysia: merger date, referendum framing, and common-market rationale.",
+          "src_nlb_singapore_separation_from_malaysia: 9 August 1965 separation chronology and public narrative.",
+          "src_nas_proclamation_of_singapore: legal sequence and archival framing for independence.",
+          "src_nas_merger_proclamation_photo: official proclamation language and public presentation.",
+          "src_britannica_singapore_history: broad chronology cross-check."
+        ]
+      },
+      {
+        "recipe_id": "singapore_lee_kuan_yew_state_building",
+        "topic": "Singapore: Lee Kuan Yew, state-building, and administrative centralization",
+        "source_notes": [
+          "src_pmo_lky: prime ministerial dates and office-holding sequence.",
+          "src_remembering_lky: self-government, merger, separation, and nation-building framing.",
+          "src_state_development_plan: industrialization logic and the EDB context.",
+          "src_hdb_history: public housing, home ownership, and land-acquisition context.",
+          "src_psd_note and src_cpib_framework: public-service ethos and anti-corruption framework.",
+          "src_psc_about and src_ura_history: meritocratic recruitment and planning capacity."
+        ]
+      },
+      {
+        "recipe_id": "malaysia_formation_1963_federal_state_building",
+        "topic": "Malaysia: formation of Malaysia in 1963 and federal state-building",
+        "source_notes": [
+          "src_parliament_general_information_malaysia_formation: 1961 proposal, consultation, and 16 September 1963 formation date.",
+          "src_parliament_history_malaysia and src_parliament_structure_malaysia: federal parliamentary framing and post-1963 representation.",
+          "src_pmo_ma63_pdf: MA63 signing date, signatories, and constitutional basis.",
+          "src_arkib_pemasyhuran_malaysia_1963 and src_arkib_penubuhan_malaysia_1963: archival formation context and ceremonial framing."
+        ]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "heading": "From Self-Government to the Malaysia Project",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Singapore entered the Malaysia question from a position of internal self-government rather than full independence. By the early 1960s, merger was being presented as a constitutional answer to insecurity, employment pressure, and the island's narrow economic base. In benchmark terms, the project was about state capacity as much as political identity.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Synthesized from Singapore merger/separation research notes and the NLB merger chronology."
+            ],
+            "source_research_recipe": "singapore_merger_malaysia_separation_1963_1965"
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "The Malaysia proposal emerged in 1961 and became a major public issue in Singapore in 1962. The referendum did not produce a unanimous social mandate; instead, it showed how the merger route was authorized through contested political options. The economic argument for pasaran bersama, or common market, linked constitutional change to jobs, industrialization, and regional scale.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Referendum, common-market, and merger-rationale framing drawn from Singapore research notes."
+            ],
+            "source_research_recipe": "singapore_merger_malaysia_separation_1963_1965"
+          }
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_merger_timeline_1963_1965",
+          "title": "Merger and Separation Timeline, 1961-1965",
+          "caption": "Merger and Separation Timeline, 1961-1965",
+          "matrix": [
+            [
+              "Date or Period",
+              "Event",
+              "Why It Matters",
+              "Benchmark Note"
+            ],
+            [
+              "27 May 1961",
+              "Malaysia proposal enters public debate",
+              "Sets the constitutional path toward merger",
+              "Use as background to merger planning"
+            ],
+            [
+              "1 Sep 1962",
+              "Singapore referendum on merger options",
+              "Provides public authorization for the merger route",
+              "Do not overstate unanimity"
+            ],
+            [
+              "9 Jul 1963",
+              "London Agreement formalizes the Malaysia plan",
+              "Legal step toward federation formation",
+              "Useful for chronology extraction"
+            ],
+            [
+              "16 Sep 1963",
+              "Federation of Malaysia comes into being",
+              "Singapore enters the federation with Malaya, Sabah, and Sarawak",
+              "Core date for the topic"
+            ],
+            [
+              "7 Aug 1965",
+              "Separation agreement is signed",
+              "Prepares the constitutional break with Malaysia",
+              "Link to immediate legal steps"
+            ],
+            [
+              "9 Aug 1965",
+              "Singapore is proclaimed independent and sovereign",
+              "Marks the end of the merger period",
+              "Core date for the topic"
+            ]
+          ],
+          "metadata": {
+            "source_notes": [
+              "The table prioritizes dates that are stable across public historical summaries.",
+              "Background events before 1963 are included only to explain the merger path.",
+              "The chronology is intentionally compact so it can support sequence extraction."
+            ],
+            "source_research_recipe": "singapore_merger_malaysia_separation_1963_1965"
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_merger_timeline_1963_1965",
+          "kind": "timeline",
+          "source_type": "vector",
+          "title": "Merger and Separation Timeline",
+          "caption": "Selected milestones from the Malaysia proposal through Singapore's separation from Malaysia.",
+          "data": {
+            "orientation": "horizontal",
+            "scale": {
+              "start_year": 1961,
+              "end_year": 1965,
+              "tick_interval_years": 1
+            },
+            "events": [
+              {
+                "date": "1961-05-27",
+                "label": "Malaysia proposal enters public debate"
+              },
+              {
+                "date": "1962-09-01",
+                "label": "Singapore referendum on merger options"
+              },
+              {
+                "date": "1963-07-09",
+                "label": "London Agreement formalizes the Malaysia plan"
+              },
+              {
+                "date": "1963-09-16",
+                "label": "Malaysia is formed and Singapore joins the federation"
+              },
+              {
+                "date": "1965-08-07",
+                "label": "Separation agreement is signed"
+              },
+              {
+                "date": "1965-08-09",
+                "label": "Singapore is proclaimed independent"
+              }
+            ],
+            "render_hints": {
+              "label_wrap_width_chars": 24,
+              "show_year_ticks": true,
+              "avoid_overlap": true
+            }
+          },
+          "metadata": {
+            "source_notes": [
+              "The figure compresses the public chronology into a small timeline for extraction.",
+              "It keeps the Malaysia proposal, referendum, formation, and separation dates in one sequence."
+            ],
+            "source_research_recipe": "singapore_merger_malaysia_separation_1963_1965"
+          }
+        }
+      ],
+      "metadata": {
+        "source_notes": [
+          "NLB merger and separation articles supply the public chronology and the stated rationale for merger.",
+          "NAS merger and proclamation material anchors the official language of formation and independence.",
+          "Britannica provides a stable cross-check for the 1961-1965 sequence."
+        ]
+      }
+    },
+    {
+      "heading": "Merger into the Federation of Malaysia",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "On 16 September 1963, Singapore became part of the Federation of Malaysia together with Malaya, North Borneo, and Sarawak. The public language of the merger presented the new federation as sovereign and democratic, but the arrangement still had to reconcile state autonomy with federal authority. That tension is central to any accurate summary of the period.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Singapore merger chronology and Malaysia formation chronology used for the 16 September 1963 date."
+            ],
+            "source_research_recipe": "singapore_merger_malaysia_separation_1963_1965"
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "Merger did not dissolve the Singapore government. Instead, it placed the island inside a federal framework with a Singapore state administration, a Malaysian federal government, and continuing bargaining over powers, revenue, and representation. In the Malaysian case, the new federation had to operate immediately as a real federal system rather than as a ceremonial declaration.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Merged Singapore and Malaysia state-arrangement framing drawn from Singapore and Malaysia research notes."
+            ],
+            "source_research_recipe": "singapore_merger_malaysia_separation_1963_1965"
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "Official publicity treated the merger as a constitutional settlement with public legitimacy. The important extraction cue is that federation created two linked but distinct levels of authority: Singapore's state-level government and Malaysia's federal institutions. That split later shaped the separation sequence.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Official proclamation language and federal/state distinction synthesized from archival and parliamentary sources."
+            ],
+            "source_research_recipe": "malaysia_formation_1963_federal_state_building"
+          }
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_federal_roles_1963_1965",
+          "title": "Federal and State Roles After Merger",
+          "caption": "Federal and State Roles After Merger",
+          "matrix": [
+            [
+              "Institution",
+              "Level",
+              "Main Role",
+              "Extraction Note"
+            ],
+            [
+              "Singapore State Government",
+              "State",
+              "Managed local administration and state-level policy within the federation",
+              "Do not treat it as fully sovereign in 1963-1965"
+            ],
+            [
+              "Malaysian Federal Government",
+              "Federal",
+              "Handled federal law, broader security, and nationwide political coordination",
+              "Key counterpart in merger disputes"
+            ],
+            [
+              "People's Action Party leadership",
+              "Singapore political leadership",
+              "Pressed for merger, economic growth, and a workable federal settlement",
+              "Use for party-political analysis"
+            ],
+            [
+              "Alliance federal leadership",
+              "Federal political leadership",
+              "Managed federal balance, communal concerns, and national coalition politics",
+              "Useful for power-sharing extraction"
+            ],
+            [
+              "Electorate and public bodies",
+              "Public sphere",
+              "Conveyed support, anxiety, and contested expectations around merger",
+              "Avoid implying stable consensus"
+            ]
+          ],
+          "metadata": {
+            "source_notes": [
+              "The table focuses on role distinctions rather than detailed constitutional articles.",
+              "The institution labels are simplified for extraction and benchmark use.",
+              "Later canonical work can expand the constitutional detail if needed."
+            ],
+            "source_research_recipe": "singapore_merger_malaysia_separation_1963_1965"
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_consultation_in_sabah_and_sarawak",
+          "kind": "flow_diagram",
+          "source_type": "vector",
+          "title": "Consultation and Consent",
+          "caption": "A simple flow from consultation bodies to local responses and the final federation.",
+          "data": {
+            "direction": "left_to_right",
+            "nodes": [
+              {
+                "id": "proposal",
+                "label": "Malaysia proposal",
+                "type": "proposal"
+              },
+              {
+                "id": "cobbold",
+                "label": "Cobbold Commission",
+                "type": "consultation"
+              },
+              {
+                "id": "local_leaders",
+                "label": "Sabah and Sarawak leaders",
+                "type": "local_response"
+              },
+              {
+                "id": "safeguards",
+                "label": "Special interests and safeguards",
+                "type": "constitutional_protection"
+              },
+              {
+                "id": "formation",
+                "label": "Malaysia formed",
+                "type": "boundary"
+              }
+            ],
+            "edges": [
+              {
+                "from": "proposal",
+                "to": "cobbold",
+                "label": "consultation request"
+              },
+              {
+                "from": "cobbold",
+                "to": "local_leaders",
+                "label": "views collected"
+              },
+              {
+                "from": "local_leaders",
+                "to": "safeguards",
+                "label": "conditions negotiated"
+              },
+              {
+                "from": "safeguards",
+                "to": "formation",
+                "label": "constitutional settlement"
+              }
+            ],
+            "render_hints": {
+              "wrap_labels": true,
+              "label_wrap_width_chars": 24,
+              "avoid_edge_crossing": true
+            }
+          },
+          "metadata": {
+            "source_notes": [
+              "Parliament of Malaysia general information names the Cobbold Commission and the consultation process.",
+              "The figure keeps Sabah and Sarawak visible as negotiated participants rather than passive territories."
+            ],
+            "source_research_recipe": "malaysia_formation_1963_federal_state_building"
+          }
+        }
+      ],
+      "metadata": {
+        "source_notes": [
+          "The Singapore merger research establishes the state-versus-federal split after 16 September 1963.",
+          "The Malaysia formation research supplies the consultation and consent path into the new federation.",
+          "Together they show the new constitutional order as negotiated rather than merely proclaimed."
+        ]
+      }
+    },
+    {
+      "heading": "Economic Integration and Federal Friction",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Merger supporters repeatedly argued that Singapore needed a larger hinterland. A common market was expected to expand industrial production, create jobs, and strengthen the island's position as a commercial and financial center. The economic case mattered because it tied constitutional change to practical employment concerns.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Common-market and industrialization rationale synthesized from Singapore merger research notes."
+            ],
+            "source_research_recipe": "singapore_merger_malaysia_separation_1963_1965"
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "The same economic logic created disputes over revenue, taxation, and market access. Singapore expected federal arrangements that would make trade and industry easier, while federal leaders worried about political balance and distributional consequences across the new state. The result was not a single policy disagreement but a cluster of linked bargaining problems.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Revenue, taxation, and market-access frictions synthesized from Singapore merger research notes."
+            ],
+            "source_research_recipe": "singapore_merger_malaysia_separation_1963_1965"
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "The period should be treated as one of partial integration, not complete economic union. The phrase pasaran bersama is useful as a controlled marker for the common-market idea, but the historical issue was the tension between economic planning and federal bargaining.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "The common-market phrase is used as a controlled multilingual marker, not as decorative text."
+            ],
+            "source_research_recipe": "singapore_merger_malaysia_separation_1963_1965"
+          }
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_economic_tensions_1963_1965",
+          "title": "Economic Expectations and Disputes",
+          "caption": "Economic Expectations and Disputes",
+          "matrix": [
+            [
+              "Issue",
+              "Expected Benefit",
+              "Source of Friction",
+              "Benchmark Note"
+            ],
+            [
+              "Common market",
+              "Larger demand for Singapore industry",
+              "Timing and access were contested",
+              "Use the term pasaran bersama sparingly"
+            ],
+            [
+              "Tax and revenue",
+              "More stable public finance",
+              "Disagreement over revenue sharing and fiscal balance",
+              "Keep the label general"
+            ],
+            [
+              "Trade and tariffs",
+              "Easier regional commerce",
+              "Different policy interests across the federation",
+              "Relevant to port and business extraction"
+            ],
+            [
+              "Employment and industrialization",
+              "More jobs and faster growth",
+              "Slower-than-expected integration created disappointment",
+              "Use without exact employment figures"
+            ],
+            [
+              "Commercial confidence",
+              "Reassurance for firms and investors",
+              "Political conflict weakened confidence",
+              "Suitable for benchmark narratives"
+            ]
+          ],
+          "metadata": {
+            "source_notes": [
+              "The table distinguishes expected gains from the political limits that frustrated them.",
+              "It is intentionally qualitative and avoids unstable economic statistics.",
+              "The common-market phrase is the main multilingual marker."
+            ],
+            "source_research_recipe": "singapore_merger_malaysia_separation_1963_1965"
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_economic_tension_map",
+          "kind": "flow_diagram",
+          "source_type": "vector",
+          "title": "Economic Integration and Friction",
+          "caption": "How the common market idea connected growth expectations to recurring disputes.",
+          "data": {
+            "direction": "left_right",
+            "nodes": [
+              {
+                "id": "common_market",
+                "label": "Common market expectation",
+                "type": "idea"
+              },
+              {
+                "id": "industry",
+                "label": "Industrial growth and jobs",
+                "type": "outcome"
+              },
+              {
+                "id": "tax",
+                "label": "Tax and revenue disputes",
+                "type": "friction"
+              },
+              {
+                "id": "trade",
+                "label": "Trade and tariff disagreements",
+                "type": "friction"
+              },
+              {
+                "id": "confidence",
+                "label": "Commercial confidence",
+                "type": "outcome"
+              }
+            ],
+            "edges": [
+              {
+                "from": "common_market",
+                "to": "industry",
+                "label": "promised benefit"
+              },
+              {
+                "from": "common_market",
+                "to": "tax",
+                "label": "policy conflict"
+              },
+              {
+                "from": "common_market",
+                "to": "trade",
+                "label": "policy conflict"
+              },
+              {
+                "from": "tax",
+                "to": "confidence",
+                "label": "undermines"
+              },
+              {
+                "from": "trade",
+                "to": "confidence",
+                "label": "undermines"
+              }
+            ],
+            "render_hints": {
+              "group_by_type": true,
+              "wrap_labels": true,
+              "label_wrap_width_chars": 26,
+              "avoid_edge_crossing": true
+            }
+          },
+          "metadata": {
+            "source_notes": [
+              "The figure translates the economic tensions into a compact policy-flow diagram.",
+              "It keeps the common market, tax, trade, and confidence links visible."
+            ],
+            "source_research_recipe": "singapore_merger_malaysia_separation_1963_1965"
+          }
+        }
+      ],
+      "metadata": {
+        "source_notes": [
+          "Singapore merger research frames economic integration as the key promise of federation.",
+          "The table and figure keep the economic dispute cluster qualitative and stable for extraction."
+        ]
+      }
+    },
+    {
+      "heading": "Communal Politics, Konfrontasi, and Constitutional Crisis",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Political conflict quickly sharpened inside the federation. Singapore politics did not settle into a single stable pattern, and rivalry between the ruling party in Singapore and federal actors in Malaysia became difficult to manage. A neutral benchmark narrative should describe this as a constitutional and party-political breakdown rather than as a simple personal dispute.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Party rivalry and constitutional breakdown synthesized from Singapore merger research notes."
+            ],
+            "source_research_recipe": "singapore_merger_malaysia_separation_1963_1965"
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "Communal rhetoric and fears about political dominance intensified the pressure. The merger had always been entangled with questions about Malay and Chinese political balance, and those concerns did not disappear once Malaysia was formed. At the same time, regional pressure from Konfrontasi made the political environment less forgiving and reduced the room for compromise.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Communal tension and Konfrontasi framing synthesized from Singapore merger research notes."
+            ],
+            "source_research_recipe": "singapore_merger_malaysia_separation_1963_1965"
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "By 1965, the federation had entered a constitutional crisis. The practical issue was no longer just whether Singapore could remain in Malaysia, but whether the existing federal arrangement could continue without repeated conflict over authority, representation, and public order. The phrase 分离 is a controlled marker for the separation that followed.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "The separation marker is retained as controlled multilingual text rather than decorative prose."
+            ],
+            "source_research_recipe": "singapore_merger_malaysia_separation_1963_1965"
+          }
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_political_disputes_1963_1965",
+          "title": "Main Political Disputes in the Federation",
+          "caption": "Main Political Disputes in the Federation",
+          "matrix": [
+            [
+              "Dispute Area",
+              "What Was at Stake",
+              "Effect on the Federation",
+              "Benchmark Note"
+            ],
+            [
+              "Party competition",
+              "Control of political legitimacy",
+              "Raised the temperature of Singapore-Malaysia relations",
+              "Avoid reducing this to a personality clash"
+            ],
+            [
+              "Communal politics",
+              "Ethnic balance and representation",
+              "Made compromise harder in public debate",
+              "Keep language neutral and precise"
+            ],
+            [
+              "Security and anti-communism",
+              "Internal order and regional stability",
+              "Shaped arrests, rhetoric, and federal suspicion",
+              "Important for chronology and context"
+            ],
+            [
+              "Konfrontasi",
+              "Regional conflict around Malaysia's formation",
+              "Reduced the room for political normalization",
+              "Use as a regional pressure factor"
+            ],
+            [
+              "Constitutional authority",
+              "Who could decide what inside the federation",
+              "Led toward separation rather than continued bargaining",
+              "Core extraction theme"
+            ]
+          ],
+          "metadata": {
+            "source_notes": [
+              "The table compresses a complex political period into extraction-friendly categories.",
+              "It emphasizes institutional effects rather than polemics.",
+              "This is the best place to encode the role of Konfrontasi as external pressure."
+            ],
+            "source_research_recipe": "singapore_merger_malaysia_separation_1963_1965"
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_political_disputes_flow",
+          "kind": "flow_diagram",
+          "source_type": "vector",
+          "title": "Political Escalation Toward Separation",
+          "caption": "A simplified diagram of the political, communal, and security pressures that made separation more likely.",
+          "data": {
+            "direction": "top_down",
+            "nodes": [
+              {
+                "id": "party_competition",
+                "label": "Party competition",
+                "type": "pressure"
+              },
+              {
+                "id": "communal_tension",
+                "label": "Communal tension",
+                "type": "pressure"
+              },
+              {
+                "id": "konfrontasi",
+                "label": "Konfrontasi",
+                "type": "external_pressure"
+              },
+              {
+                "id": "constitutional_crisis",
+                "label": "Constitutional crisis",
+                "type": "outcome"
+              },
+              {
+                "id": "separation",
+                "label": "Separation",
+                "type": "outcome"
+              }
+            ],
+            "edges": [
+              {
+                "from": "party_competition",
+                "to": "constitutional_crisis",
+                "label": "raises conflict"
+              },
+              {
+                "from": "communal_tension",
+                "to": "constitutional_crisis",
+                "label": "narrows trust"
+              },
+              {
+                "from": "konfrontasi",
+                "to": "constitutional_crisis",
+                "label": "external pressure"
+              },
+              {
+                "from": "constitutional_crisis",
+                "to": "separation",
+                "label": "legal break"
+              }
+            ],
+            "render_hints": {
+              "group_by_type": true,
+              "wrap_labels": true,
+              "label_wrap_width_chars": 24,
+              "avoid_edge_crossing": true
+            }
+          },
+          "metadata": {
+            "source_notes": [
+              "The figure pulls the political and security pressures into one escalation path.",
+              "It keeps constitutional crisis and separation as the key outcomes."
+            ],
+            "source_research_recipe": "singapore_merger_malaysia_separation_1963_1965"
+          }
+        }
+      ],
+      "metadata": {
+        "source_notes": [
+          "Singapore merger research provides the party, communal, and Konfrontasi context that narrowed the federation's room for compromise.",
+          "The section remains focused on the merger period's crisis dynamics rather than later state ideology."
+        ]
+      }
+    },
+    {
+      "heading": "Separation and Immediate State-Building",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The separation was finalized through a legal and political sequence in August 1965. The key date for the new state is 9 August 1965, when Singapore was proclaimed an independent and sovereign state. The legal record matters because the break was not merely a speech act; it was supported by documents that altered constitutional relations.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Separation date and legal-sequence framing synthesized from Singapore merger research notes."
+            ],
+            "source_research_recipe": "singapore_merger_malaysia_separation_1963_1965"
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "The immediate challenge after separation was state formation under pressure. Singapore had to stabilize administration, reassure the public, preserve trade links, and communicate that continuity of government would remain intact even as the constitutional framework changed. Independence therefore began with emergency-like political clarity rather than with a long transition period.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Immediate state-building after separation synthesized from Singapore and Lee Kuan Yew research notes."
+            ],
+            "source_research_recipe": "singapore_lee_kuan_yew_state_building"
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "The opening months after separation are best summarized as a compact state-building problem: institutions had to keep working, external relations had to be reset, and economic confidence had to be maintained. The next phase of Singapore's history moved quickly toward central coordination, meritocratic staffing, and stronger executive control.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Immediate state-building links to the later centralization program in Singapore."
+            ],
+            "source_research_recipe": "singapore_lee_kuan_yew_state_building"
+          }
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_separation_documents_1965",
+          "title": "Separation Documents and Immediate Legal Steps",
+          "caption": "Separation Documents and Immediate Legal Steps",
+          "matrix": [
+            [
+              "Document or Step",
+              "Date",
+              "Function",
+              "Extraction Note"
+            ],
+            [
+              "Agreement to separate",
+              "7 Aug 1965",
+              "Set the legal framework for ending the union",
+              "Key pre-proclamation step"
+            ],
+            [
+              "Constitutional amendment",
+              "Aug 1965",
+              "Adjusted Malaysian constitutional provisions for separation",
+              "Legal mechanism of the break"
+            ],
+            [
+              "Proclamation of Singapore",
+              "9 Aug 1965",
+              "Declared Singapore independent and sovereign",
+              "Core historical milestone"
+            ],
+            [
+              "Government transition measures",
+              "Aug 1965",
+              "Kept administration, security, and public order functioning",
+              "Use for immediate state-building"
+            ]
+          ],
+          "metadata": {
+            "source_notes": [
+              "The table is built around the documents named in NAS public archival descriptions.",
+              "It does not attempt to reproduce the full constitutional text.",
+              "The focus is on the separation sequence and its immediate effects."
+            ],
+            "source_research_recipe": "singapore_merger_malaysia_separation_1963_1965"
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_separation_sequence",
+          "kind": "sequence_diagram",
+          "source_type": "vector",
+          "title": "Legal Sequence of Separation",
+          "caption": "The compressed sequence from the separation agreement to Singapore's proclamation of independence.",
+          "data": {
+            "participants": [
+              "Singapore leaders",
+              "Malaysian leaders",
+              "Constitutional drafters",
+              "Public proclamation"
+            ],
+            "steps": [
+              {
+                "from": "Singapore leaders",
+                "to": "Malaysian leaders",
+                "label": "Negotiate separation"
+              },
+              {
+                "from": "Constitutional drafters",
+                "to": "Malaysian leaders",
+                "label": "Draft legal changes"
+              },
+              {
+                "from": "Malaysian leaders",
+                "to": "Public proclamation",
+                "label": "Approve separation framework"
+              },
+              {
+                "from": "Singapore leaders",
+                "to": "Public proclamation",
+                "label": "Declare independence"
+              }
+            ],
+            "render_hints": {
+              "wrap_labels": true,
+              "label_wrap_width_chars": 24
+            }
+          },
+          "metadata": {
+            "source_notes": [
+              "The figure abstracts the agreement-to-proclamation sequence into a compact legal flow.",
+              "It keeps the negotiation and public proclamation steps distinct."
+            ],
+            "source_research_recipe": "singapore_merger_malaysia_separation_1963_1965"
+          }
+        }
+      ],
+      "metadata": {
+        "source_notes": [
+          "NAS Proclamation of Singapore material is the key archival reference for the separation moment.",
+          "NLB's separation article provides a concise public narrative of the constitutional break.",
+          "The immediate state-building section is deliberately brief so the recipe remains centered on 1963-1965."
+        ]
+      }
+    },
+    {
+      "heading": "Divergent State-Building After the Split",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Separation did not end state-building; it split it into two linked but different projects. Singapore had to build a tightly coordinated central state almost immediately, while Malaysia had to stabilize a federal parliamentary system that still depended on territorial balance and negotiated safeguards.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Comparison of post-split state-building paths synthesized from Singapore Lee Kuan Yew and Malaysia formation research notes."
+            ],
+            "source_research_recipe": "singapore_lee_kuan_yew_state_building"
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "In Singapore, Lee Kuan Yew's government concentrated coordination in the cabinet, the prime minister's office, and a disciplined civil service. Merit selection, anti-corruption enforcement, and planning capacity were used to make a small city-state governable under pressure. The history here is institutional rather than personal, even though leadership mattered.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Centralization, meritocracy, and anti-corruption framing synthesized from Singapore state-building research notes."
+            ],
+            "source_research_recipe": "singapore_lee_kuan_yew_state_building"
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "In Malaysia, the new federation had to keep Parliament, the King, the Cabinet, and the House of Representatives functioning across a larger territorial frame. The constitutional settlement also preserved special interests and safeguards for Sabah and Sarawak, showing that federal state-building after 1963 was organized around asymmetry as well as unity.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Federal continuity and safeguards for Sabah and Sarawak synthesized from Malaysia formation research notes."
+            ],
+            "source_research_recipe": "malaysia_formation_1963_federal_state_building"
+          }
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_federal_institutions_and_state_building",
+          "title": "Early Federal Institutions After 1963",
+          "caption": "Early Federal Institutions After 1963",
+          "matrix": [
+            [
+              "Institution",
+              "Role After Formation",
+              "State-Building Function",
+              "Extraction Cue"
+            ],
+            [
+              "Parliament",
+              "Legislates for the new federation",
+              "Converts agreement into routine government",
+              "Federal legislature"
+            ],
+            [
+              "House of Representatives",
+              "Includes new territorial representation",
+              "Shows how the federation was assembled politically",
+              "Representation"
+            ],
+            [
+              "Senate",
+              "Represents state interests",
+              "Supports federal balance",
+              "State interests"
+            ],
+            [
+              "King and Cabinet",
+              "Provide executive continuity",
+              "Keeps the new state operational",
+              "Executive continuity"
+            ]
+          ],
+          "metadata": {
+            "source_notes": [
+              "The rows are framed as functions rather than as a complete institutional history.",
+              "That keeps the table focused on state-building after 1963."
+            ],
+            "source_research_recipe": "malaysia_formation_1963_federal_state_building"
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_transition_timeline",
+          "kind": "timeline",
+          "source_type": "vector",
+          "title": "Transition From Self-Government to Independent State",
+          "caption": "Selected milestones in Singapore's transition from self-government under Lee Kuan Yew to an independent state with durable institutions.",
+          "data": {
+            "orientation": "horizontal",
+            "scale": {
+              "start_year": 1959,
+              "end_year": 1990,
+              "tick_interval_years": 5
+            },
+            "events": [
+              {
+                "year": 1959,
+                "label": "Self-government and Lee becomes prime minister",
+                "short_label": "Self-government",
+                "event_type": "political_change"
+              },
+              {
+                "year": 1963,
+                "label": "Singapore joins Malaysia",
+                "short_label": "Merger",
+                "event_type": "constitutional_change"
+              },
+              {
+                "year": 1965,
+                "label": "Separation from Malaysia and independent statehood",
+                "short_label": "Independence",
+                "event_type": "state_formation"
+              },
+              {
+                "year": 1967,
+                "label": "Planning and industrial policy expand under a central state",
+                "short_label": "Planning state",
+                "event_type": "policy_expansion"
+              },
+              {
+                "year": 1970,
+                "label": "Public-service and development machinery mature",
+                "short_label": "Mature system",
+                "event_type": "institutionalization"
+              },
+              {
+                "year": 1990,
+                "label": "Lee steps down as prime minister",
+                "short_label": "Succession",
+                "event_type": "boundary"
+              }
+            ],
+            "render_hints": {
+              "show_year_labels": true,
+              "avoid_event_overlap": true,
+              "label_wrap_width_chars": 22
+            }
+          },
+          "metadata": {
+            "source_notes": [
+              "The timeline captures the transition from merger shock to longer-term institutionalization.",
+              "It keeps the 1963, 1965, and 1990 markers visible as boundary points."
+            ],
+            "source_research_recipe": "singapore_lee_kuan_yew_state_building"
+          }
+        }
+      ],
+      "metadata": {
+        "source_notes": [
+          "Singapore's state-building research explains the centralization path after separation.",
+          "Malaysia's formation research explains the federal continuity and safeguard structure after 1963.",
+          "Together they show how the split produced two different but connected state-building trajectories."
+        ]
+      }
+    }
+  ]
+}

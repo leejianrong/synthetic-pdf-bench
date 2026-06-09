@@ -1,0 +1,1820 @@
+{
+  "doc_id": "indonesia_colonial_nationalist_origins_v1",
+  "title": "Indonesia: Dutch Colonial Rule and Nationalist Movements Before 1945",
+  "language_profile": {
+    "primary": "en",
+    "secondary": [
+      "zh",
+      "ms",
+      "id"
+    ],
+    "encoding": "UTF-8",
+    "notes": "Primarily English prose with controlled Bahasa Indonesia markers for historical institutions and nationalist terminology."
+  },
+  "metadata": {
+    "document_family": "synthetic_historical_research_report",
+    "content_scope": "Indonesia from Dutch colonial rule through nationalist movements before 1945",
+    "source_notes": [
+      {
+        "recipe_id": "indonesia_dutch_colonial_rule_early_twentieth_century",
+        "topic": "Indonesia: Dutch colonial rule in the Netherlands East Indies in the early twentieth century",
+        "status": "complete_for_review",
+        "scope_decisions": [
+          "The artifact set covers one topic only and stops at 1941, before the Japanese occupation topic.",
+          "The prose uses English as the primary language, with controlled Bahasa Indonesia markers only where they clarify colonial institutions.",
+          "The structure is treated as layered and overlapping rather than as a single uniform colonial state.",
+          "No generator code, canonical recipes, unrelated research folders, or topic checklist entries were modified."
+        ],
+        "decisions": [
+          "The report distinguishes direct colonial administration in Java from indirect rule and uneven governance in the outer islands.",
+          "The wording uses the neutral umbrella terms Ethical Policy and Volksraad because those labels are stable benchmark markers across source summaries.",
+          "The 1941 cutoff is treated as a hard boundary so the artifact does not absorb the Japanese occupation and wartime collapse of Dutch rule.",
+          "The plantation economy is kept qualitative rather than numeric to avoid unstable commodity totals."
+        ],
+        "open_questions": [
+          "Should a later canonical merge distinguish more sharply between the 1901 Ethical Policy announcement and later administrative decentralization laws?",
+          "Should a future pass add primary-source detail on the exact legal status of specific outer-island territories, or keep the archipelago-level treatment that is used here?"
+        ],
+        "source_notes": [
+          {
+            "source_id": "src_britannica_dutch_east_indies",
+            "title": "Dutch East Indies",
+            "publisher": "Encyclopaedia Britannica",
+            "url": "https://www.britannica.com/place/Dutch-East-Indies",
+            "used_for": [
+              "Archipelago-level colony framing",
+              "Dutch East Indies territorial scope",
+              "General prewar colonial boundary"
+            ]
+          },
+          {
+            "source_id": "src_britannica_ethical_policy",
+            "title": "Ethical Policy",
+            "publisher": "Encyclopaedia Britannica",
+            "url": "https://www.britannica.com/event/Ethical-Policy",
+            "used_for": [
+              "1901 reform turn",
+              "Education and irrigation emphasis",
+              "Decentralization language"
+            ]
+          },
+          {
+            "source_id": "src_britannica_volksraad",
+            "title": "Volksraad",
+            "publisher": "Encyclopaedia Britannica",
+            "url": "https://www.britannica.com/topic/Volksraad",
+            "used_for": [
+              "1917 creation and 1918 opening",
+              "Limited representative role",
+              "Consultative institution framing"
+            ]
+          },
+          {
+            "source_id": "src_britannica_history_indonesia",
+            "title": "History of Indonesia",
+            "publisher": "Encyclopaedia Britannica",
+            "url": "https://www.britannica.com/topic/history-of-Indonesia",
+            "used_for": [
+              "Broad chronology for early nationalism",
+              "Prewar framing",
+              "Java-centered political development"
+            ]
+          },
+          {
+            "source_id": "src_britannica_dutch_rule_1815_1920",
+            "title": "History of Indonesia: Dutch rule from 1815 to c. 1920",
+            "publisher": "Encyclopaedia Britannica",
+            "url": "https://www.britannica.com/topic/history-of-Indonesia/Dutch-rule-from-1815-to-c-1920",
+            "used_for": [
+              "Early twentieth-century colonial rule context",
+              "Ethical Policy and social change",
+              "Nationalist movement background"
+            ]
+          },
+          {
+            "source_id": "src_britannica_java_economy",
+            "title": "Java: Agriculture, Manufacturing, Trade",
+            "publisher": "Encyclopaedia Britannica",
+            "url": "https://www.britannica.com/place/Java-island-Indonesia/Economy",
+            "used_for": [
+              "Java's dense colonial economy",
+              "Agriculture and trade context",
+              "Plantation and infrastructure framing"
+            ]
+          }
+        ]
+      },
+      {
+        "recipe_id": "indonesia_nationalist_youth_anti_colonial_before_1945",
+        "topic": "Indonesia: nationalist movements, youth politics, and anti-colonial organization before 1945",
+        "status": "complete_for_review",
+        "scope_decisions": [
+          "The folder stays focused on organized nationalism, youth politics, and anti-colonial organization before 1945.",
+          "The narrative includes the Japanese occupation only as a pre-1945 reconfiguration of nationalist organization.",
+          "Post-1945 independence history is intentionally excluded."
+        ],
+        "decisions": [
+          "Use English for PDF-facing prose and Latin-script Indonesian terms only when they clarify historical usage.",
+          "Treat the Youth Pledge as a political and organizational hinge rather than a stand-alone ceremonial event.",
+          "Keep figures and tables qualitative so the folder remains stable across source revisions.",
+          "Avoid unstable exact counts for membership, arrests, or crowd sizes unless a later canonical recipe requires them."
+        ],
+        "open_questions": [],
+        "source_notes": [
+          {
+            "source_id": "src_britannica_budi_utomo",
+            "title": "Budi Utomo",
+            "publisher": "Encyclopaedia Britannica",
+            "url": "https://www.britannica.com/topic/Budi-Utomo",
+            "used_for": [
+              "1908 founding of Budi Utomo",
+              "Early elite nationalist associational politics"
+            ]
+          },
+          {
+            "source_id": "src_britannica_sarekat_islam",
+            "title": "Sarekat Islâm",
+            "publisher": "Encyclopaedia Britannica",
+            "url": "https://www.britannica.com/topic/Sarekat-Islam",
+            "used_for": [
+              "Mass political support and broad nationalist participation",
+              "Islamic reform and public associational politics"
+            ]
+          },
+          {
+            "source_id": "src_britannica_indonesia_toward_independence",
+            "title": "Indonesia - Toward independence",
+            "publisher": "Encyclopaedia Britannica",
+            "url": "https://www.britannica.com/place/Indonesia/Toward-independence",
+            "used_for": [
+              "Sequence of early nationalist organizations",
+              "Youth Pledge and the 1928 national unity claim",
+              "General pre-1945 chronology"
+            ]
+          },
+          {
+            "source_id": "src_kemdikbud_sumpah_pemuda_2005",
+            "title": "Sumpah pemuda: latar sejarah dan pengaruhnya bagi pergerakan nasional",
+            "publisher": "Museum Sumpah Pemuda, Kementerian Pendidikan dan Kebudayaan",
+            "url": "https://repositori.kemdikbud.go.id/27651/",
+            "used_for": [
+              "Second Youth Congress context",
+              "Political meaning of the Youth Pledge",
+              "Youth organizations and national movement framing"
+            ]
+          },
+          {
+            "source_id": "src_kemdikbud_jong_java",
+            "title": "Jong Java: peranannya dalam Persatuan Bangsa",
+            "publisher": "Museum Sumpah Pemuda, Kementerian Pendidikan dan Kebudayaan",
+            "url": "https://repositori.kemdikbud.go.id/24311/",
+            "used_for": [
+              "Youth association context for the 1928 congress",
+              "Jong Java and interregional youth politics"
+            ]
+          },
+          {
+            "source_id": "src_britannica_indonesian_nationalist_party",
+            "title": "Indonesian Nationalist Party",
+            "publisher": "Encyclopaedia Britannica",
+            "url": "https://www.britannica.com/topic/Indonesian-Nationalist-Party",
+            "used_for": [
+              "PNI formation under Sukarno",
+              "Noncooperation as a nationalist strategy"
+            ]
+          },
+          {
+            "source_id": "src_britannica_hatta",
+            "title": "Mohammad Hatta",
+            "publisher": "Encyclopaedia Britannica",
+            "url": "https://www.britannica.com/biography/Mohammad-Hatta",
+            "used_for": [
+              "Overseas student nationalism",
+              "Pre-1945 organizational continuity and occupation-era political work"
+            ]
+          },
+          {
+            "source_id": "src_britannica_putera",
+            "title": "Putera",
+            "publisher": "Encyclopaedia Britannica",
+            "url": "https://www.britannica.com/topic/Putera",
+            "used_for": [
+              "Occupation-era mass mobilization under Japanese rule",
+              "Pre-1945 reconfiguration of anti-colonial organization"
+            ]
+          },
+          {
+            "source_id": "src_britannica_tjokroaminoto",
+            "title": "Omar Said Tjokroaminoto",
+            "publisher": "Encyclopaedia Britannica",
+            "url": "https://www.britannica.com/biography/Omar-Said-Tjokroaminoto",
+            "used_for": [
+              "Leadership within Sarekat Islam",
+              "Public speech and nationalist influence"
+            ]
+          },
+          {
+            "source_id": "src_britannica_muhammadiyah",
+            "title": "Muhammadiyah",
+            "publisher": "Encyclopaedia Britannica",
+            "url": "https://www.britannica.com/topic/Muhammadiyah",
+            "used_for": [
+              "Reformist Muslim associational life",
+              "Educational and social infrastructure for broader politics"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "heading": "Colonial Layers and the Governor-General",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Between 1900 and 1941, Dutch rule in the Netherlands East Indies was layered rather than uniform. Batavia sat at the center of a colonial bureaucracy that linked the Governor-General, departmental offices, residency officials, and local intermediaries across a vast archipelago. Java received the densest administrative attention, while the outer islands were more often governed through indirect channels."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The key institutional point is that direct colonial authority and indirect rule coexisted. Dutch officials exercised stronger control in the core territories, but they also depended on regents, aristocratic intermediaries, and district-level officials to manage many local affairs. That combination made the colony workable, yet it also produced different political statuses inside one imperial frame."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The Governor-General was the principal colonial executive. He oversaw appointments, policing, taxation, and the larger coordination of colonial policy, while the broader bureaucratic system handled daily administration. For benchmark purposes, this matters because Dutch rule should be read as an administrative hierarchy with several layers of authority, not as a single centralized ministry transplanted wholesale to Asia."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "A controlled phrase such as Hindia Belanda is useful in the PDF because it lets extraction systems recognize the historical territory. The prose should still remain mostly in English, with the Indonesian term used as a label rather than as a stylistic flourish. That keeps the artifact stable and machine readable."
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_colonial_layers",
+          "title": "Colonial Layers in the Netherlands East Indies, 1900-1941",
+          "caption": "Colonial Layers in the Netherlands East Indies, 1900-1941",
+          "caption_position": "after",
+          "matrix": [
+            [
+              "Layer",
+              "Main Territories or Offices",
+              "Governing Form",
+              "Political Meaning",
+              "Benchmark Note"
+            ],
+            [
+              "Imperial center",
+              "Netherlands and Ministry of Colonies",
+              "Metropolitan oversight",
+              "Set broad colonial policy and fiscal direction",
+              "Do not treat as local administration"
+            ],
+            [
+              "Colonial executive",
+              "Governor-General in Batavia",
+              "Central colonial command",
+              "Coordinated appointments, security, and bureaucracy",
+              "Key authority node"
+            ],
+            [
+              "Core colony",
+              "Java and Madura",
+              "Direct and dense administration",
+              "Most intensively governed region",
+              "Use for Java-centric extraction"
+            ],
+            [
+              "Outer islands",
+              "Sumatra, Borneo, Celebes, Moluccas, Lesser Sundas",
+              "Residencies and indirect channels",
+              "Uneven control through local intermediaries",
+              "Keep the archipelago structure visible"
+            ],
+            [
+              "Local intermediaries",
+              "Regents, district heads, priyayi elites",
+              "Indirect rule and cooperation",
+              "Linked colonial policy to local society",
+              "Do not collapse them into Europeans"
+            ]
+          ],
+          "metadata": {
+            "source_notes": [
+              "The matrix separates metropolitan policy from colonial implementation.",
+              "Java and the outer islands are kept distinct because their administrative density differed sharply."
+            ],
+            "source_research_recipe": "indonesia_dutch_colonial_rule_early_twentieth_century",
+            "source_research_topic": "Indonesia: Dutch colonial rule in the Netherlands East Indies in the early twentieth century"
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_colonial_hierarchy",
+          "kind": "flow_diagram",
+          "source_type": "vector",
+          "title": "Dutch East Indies Governance Hierarchy",
+          "caption": "Simplified hierarchy from metropolitan authority to colonial bureaucracy and local intermediaries.",
+          "caption_position": "after",
+          "data": {
+            "direction": "top_down",
+            "nodes": [
+              {
+                "id": "metropole",
+                "label": "Netherlands / Ministry of Colonies",
+                "type": "imperial_authority"
+              },
+              {
+                "id": "governor_general",
+                "label": "Governor-General in Batavia",
+                "type": "colonial_executive"
+              },
+              {
+                "id": "departments",
+                "label": "Colonial Departments and Residency Offices",
+                "type": "bureaucracy"
+              },
+              {
+                "id": "java",
+                "label": "Java and Madura",
+                "type": "core_colony"
+              },
+              {
+                "id": "outer_islands",
+                "label": "Outer Islands",
+                "type": "regional_zone"
+              },
+              {
+                "id": "intermediaries",
+                "label": "Regents, District Heads, Priyayi",
+                "type": "local_intermediaries"
+              }
+            ],
+            "edges": [
+              {
+                "from": "metropole",
+                "to": "governor_general",
+                "label": "metropolitan oversight"
+              },
+              {
+                "from": "governor_general",
+                "to": "departments",
+                "label": "executive coordination"
+              },
+              {
+                "from": "departments",
+                "to": "java",
+                "label": "dense administration"
+              },
+              {
+                "from": "departments",
+                "to": "outer_islands",
+                "label": "residencies and indirect control"
+              },
+              {
+                "from": "java",
+                "to": "intermediaries",
+                "label": "local governance"
+              },
+              {
+                "from": "outer_islands",
+                "to": "intermediaries",
+                "label": "indirect rule"
+              }
+            ],
+            "render_hints": {
+              "group_by_type": true,
+              "wrap_labels": true,
+              "label_wrap_width_chars": 26,
+              "avoid_edge_crossing": true
+            }
+          },
+          "metadata": {
+            "source_notes": [],
+            "source_research_recipe": "indonesia_dutch_colonial_rule_early_twentieth_century",
+            "source_research_topic": "Indonesia: Dutch colonial rule in the Netherlands East Indies in the early twentieth century"
+          }
+        }
+      ],
+      "page_break_before": true,
+      "metadata": {
+        "source_notes": [
+          "Britannica's Dutch East Indies overview supports the layered colonial geography.",
+          "Britannica's history of Indonesia pages support Batavia-centric administration and Java's prominence."
+        ],
+        "source_research_recipe": "indonesia_dutch_colonial_rule_early_twentieth_century",
+        "source_research_topic": "Indonesia: Dutch colonial rule in the Netherlands East Indies in the early twentieth century"
+      }
+    },
+    {
+      "heading": "Ethical Policy, Education, and Decentralization",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The Ethical Policy marked a major shift in colonial rhetoric at the turn of the twentieth century. Dutch administrators and reformers justified the policy as a response to earlier extraction, arguing that the colonial state should expand welfare, irrigation, and education for indigenous populations. In practice, the policy did not dismantle colonial hierarchy, but it did broaden the reach of the state."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Education was one of the most visible channels of change. The Dutch school system expanded, creating new forms of elite training and administrative preparation. That mattered politically because schooling helped produce a generation of Indonesians who could move between local society, colonial institutions, and emerging nationalist organizations."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Decentralization was part of the same reform climate, but it should be read carefully. The colonial government created more local and regional administrative bodies, yet these bodies remained embedded in Dutch oversight. The result was more administrative complexity, not full political autonomy."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The term Politik Etis is a good controlled marker for extraction, but the prose should explain it in plain English. In benchmark terms, the phrase stands for a reform program with welfare language and limited practical empowerment. It is therefore best presented as a colonial adjustment, not as a transition to self-rule."
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_ethics_reforms",
+          "title": "Ethical Policy Reforms and Administrative Effects",
+          "caption": "Ethical Policy Reforms and Administrative Effects",
+          "caption_position": "after",
+          "matrix": [
+            [
+              "Reform Area",
+              "Early Twentieth-Century Change",
+              "Institutional Effect",
+              "Political Meaning",
+              "Benchmark Note"
+            ],
+            [
+              "Education",
+              "Expansion of Dutch schooling",
+              "Broader elite training and literacy",
+              "Produced new intermediaries and nationalist cadres",
+              "Keep the policy change visible"
+            ],
+            [
+              "Irrigation",
+              "State-backed agricultural improvement",
+              "More colonial intervention in rural production",
+              "Linked welfare rhetoric to economic management",
+              "Do not overstate distributive justice"
+            ],
+            [
+              "Decentralization",
+              "More local councils and administrative bodies",
+              "Greater administrative layering",
+              "Limited autonomy inside colonial oversight",
+              "Administrative, not sovereign"
+            ],
+            [
+              "Native welfare",
+              "Official talk of improvement and responsibility",
+              "Expanded state presence in indigenous society",
+              "Reframed colonial rule without ending hierarchy",
+              "Use neutral wording"
+            ]
+          ],
+          "metadata": {
+            "source_notes": [
+              "The table links reform language to practical colonial effects.",
+              "It avoids precise budget figures and keeps the policy discussion structural."
+            ],
+            "source_research_recipe": "indonesia_dutch_colonial_rule_early_twentieth_century",
+            "source_research_topic": "Indonesia: Dutch colonial rule in the Netherlands East Indies in the early twentieth century"
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_ethics_timeline",
+          "kind": "timeline",
+          "source_type": "vector",
+          "title": "Ethical Policy Reform Sequence",
+          "caption": "Timeline from the 1901 reform turn through the later narrowing of policy ambitions.",
+          "caption_position": "after",
+          "data": {
+            "orientation": "horizontal",
+            "scale": {
+              "start_year": 1901,
+              "end_year": 1930,
+              "tick_interval_years": 5
+            },
+            "events": [
+              {
+                "year": 1901,
+                "label": "Ethical Policy announced as a reform turn",
+                "short_label": "1901 reform",
+                "event_type": "policy_shift"
+              },
+              {
+                "year": 1905,
+                "label": "Education and irrigation programs expand colonial reach",
+                "short_label": "Education and irrigation",
+                "event_type": "administrative_change"
+              },
+              {
+                "year": 1910,
+                "label": "Decentralization and local councils widen administrative layering",
+                "short_label": "Decentralization",
+                "event_type": "administrative_change"
+              },
+              {
+                "year": 1918,
+                "label": "Volksraad opens as an advisory institution",
+                "short_label": "Volksraad opens",
+                "event_type": "institution"
+              },
+              {
+                "year": 1925,
+                "label": "Consultative role expands, but sovereignty remains colonial",
+                "short_label": "Limited expansion",
+                "event_type": "institution"
+              },
+              {
+                "year": 1930,
+                "label": "Policy ambitions narrow under unrest and fiscal stress",
+                "short_label": "Policy narrowing",
+                "event_type": "pressure"
+              }
+            ],
+            "render_hints": {
+              "show_year_labels": true,
+              "avoid_event_overlap": true,
+              "label_wrap_width_chars": 20
+            }
+          },
+          "metadata": {
+            "source_notes": [],
+            "source_research_recipe": "indonesia_dutch_colonial_rule_early_twentieth_century",
+            "source_research_topic": "Indonesia: Dutch colonial rule in the Netherlands East Indies in the early twentieth century"
+          }
+        }
+      ],
+      "page_break_before": true,
+      "metadata": {
+        "source_notes": [
+          "Britannica's Ethical Policy entry supports the reform agenda and the decentralization turn.",
+          "Britannica's Dutch rule history page supports the link between education, welfare reform, and social change."
+        ],
+        "source_research_recipe": "indonesia_dutch_colonial_rule_early_twentieth_century",
+        "source_research_topic": "Indonesia: Dutch colonial rule in the Netherlands East Indies in the early twentieth century"
+      }
+    },
+    {
+      "heading": "Volksraad and Limited Representation",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The Volksraad was created in 1917 and opened in 1918 as an advisory body for the colony. It gave the Dutch a way to stage consultation without surrendering executive power. Its membership mixed appointed and indirectly elected members, but the franchise remained narrow and the institution never became a sovereign parliament."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The council mattered because it made colonial politics more visible. Indigenous elites and later some nationalist figures could raise grievances and debate policy, yet the governor-general and the metropolitan government retained final authority. Even when the council gained a stronger consultative role in the 1920s, it still worked inside a colonial legal order."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "This structure is useful for a benchmark because it captures a common colonial pattern: participation without sovereignty. The Dutch state allowed limited representation where it was useful for legitimacy and administration, but it did not convert the colony into a self-governing polity. The distinction should stay explicit throughout the artifact set."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "A concise description of the Volksraad is enough. The report should not overload the reader with procedural detail, because the point is institutional role, not parliamentary technique. The council is best treated as one node in a larger colonial governance network."
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_representative_institutions",
+          "title": "Representative Institutions and Their Limits",
+          "caption": "Representative Institutions and Their Limits",
+          "caption_position": "after",
+          "matrix": [
+            [
+              "Institution",
+              "Date or Period",
+              "Membership Pattern",
+              "Main Function",
+              "Limit"
+            ],
+            [
+              "Volksraad",
+              "1917-1942",
+              "Appointed and indirectly elected members",
+              "Advisory and consultative council",
+              "No sovereign parliamentary power"
+            ],
+            [
+              "Municipal councils",
+              "Early twentieth century",
+              "Restricted local elites",
+              "Local administration and advice",
+              "Narrow franchise"
+            ],
+            [
+              "Regional councils",
+              "Decentralization era",
+              "Selected local notables",
+              "Territorial administration",
+              "Remained under Dutch supervision"
+            ],
+            [
+              "Regency-level offices",
+              "Ongoing colonial period",
+              "Regents and indigenous officials",
+              "Local mediation",
+              "Served colonial order rather than popular representation"
+            ]
+          ],
+          "metadata": {
+            "source_notes": [
+              "The matrix keeps advisory bodies distinct from sovereign institutions.",
+              "It is meant to support extraction of limited representation rather than democratic transition."
+            ],
+            "source_research_recipe": "indonesia_dutch_colonial_rule_early_twentieth_century",
+            "source_research_topic": "Indonesia: Dutch colonial rule in the Netherlands East Indies in the early twentieth century"
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_volksraad_network",
+          "kind": "network_diagram",
+          "source_type": "vector",
+          "title": "The Volksraad and Colonial Decision Channels",
+          "caption": "Network showing how advisory institutions connected to the governor-general and local councils.",
+          "caption_position": "after",
+          "data": {
+            "layout": "hub_and_spoke",
+            "central_node": "colonial_government",
+            "nodes": [
+              {
+                "id": "colonial_government",
+                "label": "Colonial Government",
+                "type": "hub"
+              },
+              {
+                "id": "governor_general",
+                "label": "Governor-General",
+                "type": "executive"
+              },
+              {
+                "id": "volksraad",
+                "label": "Volksraad",
+                "type": "advisory_body"
+              },
+              {
+                "id": "local_councils",
+                "label": "Municipal and Regional Councils",
+                "type": "local_body"
+              },
+              {
+                "id": "elite_members",
+                "label": "Appointed and Indirectly Elected Elites",
+                "type": "membership"
+              },
+              {
+                "id": "nationalists",
+                "label": "Nationalist Critics",
+                "type": "pressure_group"
+              }
+            ],
+            "edges": [
+              {
+                "from": "colonial_government",
+                "to": "governor_general",
+                "label": "executive authority"
+              },
+              {
+                "from": "governor_general",
+                "to": "volksraad",
+                "label": "consultation"
+              },
+              {
+                "from": "local_councils",
+                "to": "volksraad",
+                "label": "indirect elections"
+              },
+              {
+                "from": "volksraad",
+                "to": "elite_members",
+                "label": "limited membership"
+              },
+              {
+                "from": "elite_members",
+                "to": "nationalists",
+                "label": "political debate"
+              }
+            ],
+            "render_hints": {
+              "group_by_type": true,
+              "wrap_labels": true,
+              "label_wrap_width_chars": 24,
+              "avoid_edge_crossing": true
+            }
+          },
+          "metadata": {
+            "source_notes": [],
+            "source_research_recipe": "indonesia_dutch_colonial_rule_early_twentieth_century",
+            "source_research_topic": "Indonesia: Dutch colonial rule in the Netherlands East Indies in the early twentieth century"
+          }
+        }
+      ],
+      "page_break_before": true,
+      "metadata": {
+        "source_notes": [
+          "Britannica's Volksraad entry provides the core chronology and institutional limits.",
+          "Britannica's history of Indonesia page supports the broader representational context."
+        ],
+        "source_research_recipe": "indonesia_dutch_colonial_rule_early_twentieth_century",
+        "source_research_topic": "Indonesia: Dutch colonial rule in the Netherlands East Indies in the early twentieth century"
+      }
+    },
+    {
+      "heading": "Plantation Economy, Labor, and Social Hierarchy",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Dutch colonial rule depended heavily on an export economy. Sugar, rubber, tobacco, and other plantation crops tied the colony to global markets, while transport and port infrastructure linked production zones to export channels. Java remained especially important because population density and administrative depth made it the core of both cultivation and control."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Labor arrangements were central to this system. Recruitment, contract work, migration, and coercive pressures all shaped how plantations and estates functioned. The point for the benchmark is not to fix on one labor regime alone, but to show that colonial economic growth depended on managed labor mobility and strong state supervision."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The social hierarchy of the colony also mattered. European officials occupied the top of the administrative order, while indigenous officials and the priyayi class formed an intermediary elite that helped implement policy. That elite layer connected colonial control to local society, which made the system more durable and also more uneven."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "This topic should remain qualitative and structurally focused. Exact crop tonnage, labor counts, and annual export values would add noise unless they are verified against a primary-source set. For the research folder, the important point is the political economy of extraction and hierarchy."
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_economy_labor",
+          "title": "Plantation Economy, Labor, and Administrative Control",
+          "caption": "Plantation Economy, Labor, and Administrative Control",
+          "caption_position": "after",
+          "matrix": [
+            [
+              "Sector",
+              "Geographic Concentration",
+              "Labor Form",
+              "Colonial Effect",
+              "Benchmark Note"
+            ],
+            [
+              "Sugar",
+              "Java",
+              "Planned estate and mill labor",
+              "Tied production to export markets and state oversight",
+              "Core plantation example"
+            ],
+            [
+              "Rubber",
+              "Sumatra and other outer-island estates",
+              "Migrant and contract labor",
+              "Expanded inter-island labor mobility",
+              "Use for archipelagic extraction"
+            ],
+            [
+              "Tobacco",
+              "North Sumatra and similar estate zones",
+              "Recruitment and contract regimes",
+              "Strengthened plantation capital",
+              "Keep the labor aspect explicit"
+            ],
+            [
+              "Transport and ports",
+              "Batavia, Java coastal zones, export routes",
+              "Managed labor and clerical work",
+              "Connected production to global shipping",
+              "Infrastructure as governance"
+            ],
+            [
+              "Oil and mining",
+              "Selected industrial enclaves",
+              "Technical and wage labor",
+              "Extended colonial extraction beyond agriculture",
+              "Do not overstate industrial breadth"
+            ]
+          ],
+          "metadata": {
+            "source_notes": [
+              "The table is qualitative and intentionally avoids annual output totals.",
+              "It links economic sectors to labor control and colonial governance."
+            ],
+            "source_research_recipe": "indonesia_dutch_colonial_rule_early_twentieth_century",
+            "source_research_topic": "Indonesia: Dutch colonial rule in the Netherlands East Indies in the early twentieth century"
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_plantation_chain",
+          "kind": "flow_diagram",
+          "source_type": "vector",
+          "title": "Plantation Economy and Labor Flow",
+          "caption": "Diagram showing how export production connected capital, transport, labor recruitment, and colonial oversight.",
+          "caption_position": "after",
+          "data": {
+            "direction": "left_to_right",
+            "nodes": [
+              {
+                "id": "capital",
+                "label": "Export Capital",
+                "type": "investment"
+              },
+              {
+                "id": "plantations",
+                "label": "Plantation and Estate Production",
+                "type": "production"
+              },
+              {
+                "id": "labor",
+                "label": "Contract and Migrant Labor",
+                "type": "labor"
+              },
+              {
+                "id": "transport",
+                "label": "Railways, Roads, and Ports",
+                "type": "infrastructure"
+              },
+              {
+                "id": "state",
+                "label": "Colonial Administration",
+                "type": "governance"
+              },
+              {
+                "id": "unrest",
+                "label": "Labor Disputes and Nationalist Critique",
+                "type": "pressure"
+              }
+            ],
+            "edges": [
+              {
+                "from": "capital",
+                "to": "plantations",
+                "label": "investment"
+              },
+              {
+                "from": "plantations",
+                "to": "labor",
+                "label": "recruitment"
+              },
+              {
+                "from": "labor",
+                "to": "transport",
+                "label": "movement and export"
+              },
+              {
+                "from": "transport",
+                "to": "state",
+                "label": "administrative control"
+              },
+              {
+                "from": "labor",
+                "to": "unrest",
+                "label": "conflict"
+              },
+              {
+                "from": "state",
+                "to": "unrest",
+                "label": "surveillance and repression"
+              }
+            ],
+            "render_hints": {
+              "group_by_type": true,
+              "wrap_labels": true,
+              "label_wrap_width_chars": 22,
+              "avoid_edge_crossing": true
+            }
+          },
+          "metadata": {
+            "source_notes": [],
+            "source_research_recipe": "indonesia_dutch_colonial_rule_early_twentieth_century",
+            "source_research_topic": "Indonesia: Dutch colonial rule in the Netherlands East Indies in the early twentieth century"
+          }
+        }
+      ],
+      "page_break_before": true,
+      "metadata": {
+        "source_notes": [
+          "Britannica's Dutch East Indies overview supports the export-economy framing.",
+          "Britannica's Java economy page supports Java's role in agriculture, manufacturing, and trade.",
+          "Britannica's history of Indonesia page supports the importance of social hierarchy and colonial labor control."
+        ],
+        "source_research_recipe": "indonesia_dutch_colonial_rule_early_twentieth_century",
+        "source_research_topic": "Indonesia: Dutch colonial rule in the Netherlands East Indies in the early twentieth century"
+      }
+    },
+    {
+      "heading": "Nationalism and the 1941 Boundary",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Early nationalist politics grew out of the social changes produced by schooling, urban contact, and the reform era. Organizations such as Budi Utomo and Sarekat Islam emerged from a colonial setting that had expanded indigenous education while also making the limits of Dutch inclusion more visible. The nationalism that followed was therefore tied to colonial modernization as well as to opposition."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The 1926-27 communist uprisings and the crackdown that followed showed that colonial reform had not stabilized the political order. Dutch authorities tightened surveillance, repression, and administrative control in response to organized unrest. By the 1930s, the colony faced stronger nationalist pressure, economic stress, and a more defensive colonial posture."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The proper endpoint for this topic is 1941. That boundary keeps the folder separate from the Japanese invasion, occupation, and the wartime collapse of Dutch rule, which belong to a different benchmark topic. The research set should therefore stop at the last pre-occupation year rather than cross into the war."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "For extraction purposes, the historical arc is straightforward: reform, limited representation, economic hierarchy, nationalist mobilization, and then the hard prewar cutoff. That sequence is the core of the topic and should remain visible in every artifact type."
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_1901_1941_threshold",
+          "title": "Early Twentieth Century to the 1941 Break",
+          "caption": "Early Twentieth Century to the 1941 Break",
+          "caption_position": "after",
+          "matrix": [
+            [
+              "Period or Pressure",
+              "Prewar Condition",
+              "Why It Mattered",
+              "Boundary Note",
+              "Benchmark Note"
+            ],
+            [
+              "1901 reform turn",
+              "Ethical Policy announced and debated",
+              "Opened a new language of welfare and education",
+              "Do not treat as decolonization",
+              "Start of the early twentieth-century frame"
+            ],
+            [
+              "1917-1918 representation",
+              "Volksraad created and opened",
+              "Expanded advisory politics without sovereignty",
+              "Still colonial rule",
+              "Limited participation marker"
+            ],
+            [
+              "1926-1927 unrest",
+              "Communist uprisings and repression",
+              "Showed the fragility of colonial consensus",
+              "Keep unrest separate from occupation",
+              "Political tension marker"
+            ],
+            [
+              "1930s stress",
+              "Depression-era strain and harder surveillance",
+              "Strengthened defensive colonial governance",
+              "Remain in the prewar period",
+              "Do not add wartime collapse"
+            ],
+            [
+              "1941 endpoint",
+              "Final pre-occupation year",
+              "Marks the end of the topic window",
+              "Stop before the Japanese invasion",
+              "Hard boundary for the research folder"
+            ]
+          ],
+          "metadata": {
+            "source_notes": [
+              "The table keeps the chronology compact and benchmark-friendly.",
+              "It clearly separates reform, representation, unrest, and the prewar cutoff."
+            ],
+            "source_research_recipe": "indonesia_dutch_colonial_rule_early_twentieth_century",
+            "source_research_topic": "Indonesia: Dutch colonial rule in the Netherlands East Indies in the early twentieth century"
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_1901_1941_synthesis",
+          "kind": "timeline",
+          "source_type": "vector",
+          "title": "Colonial Rule from 1901 to 1941",
+          "caption": "Timeline covering reform, representation, nationalist mobilization, and the prewar endpoint.",
+          "caption_position": "after",
+          "data": {
+            "orientation": "horizontal",
+            "scale": {
+              "start_year": 1901,
+              "end_year": 1941,
+              "tick_interval_years": 5
+            },
+            "events": [
+              {
+                "year": 1901,
+                "label": "Ethical Policy announced",
+                "short_label": "Ethical Policy",
+                "event_type": "policy_shift"
+              },
+              {
+                "year": 1917,
+                "label": "Volksraad created",
+                "short_label": "Volksraad",
+                "event_type": "institution"
+              },
+              {
+                "year": 1918,
+                "label": "Volksraad opens",
+                "short_label": "Open",
+                "event_type": "institution"
+              },
+              {
+                "year": 1926,
+                "label": "Communist uprisings and repression",
+                "short_label": "1926 unrest",
+                "event_type": "conflict"
+              },
+              {
+                "year": 1930,
+                "label": "Depression-era stress and surveillance intensify",
+                "short_label": "1930s strain",
+                "event_type": "pressure"
+              },
+              {
+                "year": 1941,
+                "label": "Final pre-occupation year",
+                "short_label": "1941 boundary",
+                "event_type": "boundary"
+              }
+            ],
+            "render_hints": {
+              "show_year_labels": true,
+              "avoid_event_overlap": true,
+              "label_wrap_width_chars": 18
+            }
+          },
+          "metadata": {
+            "source_notes": [],
+            "source_research_recipe": "indonesia_dutch_colonial_rule_early_twentieth_century",
+            "source_research_topic": "Indonesia: Dutch colonial rule in the Netherlands East Indies in the early twentieth century"
+          }
+        }
+      ],
+      "page_break_before": true,
+      "metadata": {
+        "source_notes": [
+          "Britannica's history of Indonesia and Dutch rule pages support the nationalist chronology and the 1941 boundary.",
+          "Britannica's Dutch East Indies overview supports the broad prewar colony framing."
+        ],
+        "source_research_recipe": "indonesia_dutch_colonial_rule_early_twentieth_century",
+        "source_research_topic": "Indonesia: Dutch colonial rule in the Netherlands East Indies in the early twentieth century"
+      }
+    },
+    {
+      "heading": "Early Organized Nationalism in the Dutch East Indies",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Modern Indonesian nationalism did not appear all at once. It emerged through associations, schools, newspapers, and urban discussion circles in the Dutch East Indies. Budi Utomo, founded in 1908, is often treated as the symbolic beginning of organized nationalism because it showed that educated Indonesians could create a public organization around collective improvement and political consciousness."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The early nationalist field was shaped by colonial education and the uneven growth of an urban public sphere. Schooling produced a small but important class of students, clerks, and professionals who could read, debate, and travel across local boundaries. That did not make them nationalist by default, but it gave anti-colonial politics a social base and a language for coordination."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Budi Utomo itself was not yet the broad political movement later generations would associate with independence. Its early character was more reformist and culturally grounded. Even so, it helped normalize the idea that people in the colony could organize themselves, discuss the future, and claim a collective public identity."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "That first phase matters because it created the organizational habits that later nationalism depended on. The benchmark frame should treat Budi Utomo as an opening, not an endpoint: a sign that anti-colonial politics was becoming organized, but not yet unified or fully mass based."
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_early_nationalism",
+          "title": "Early Nationalist Organizations and Their Initial Bases",
+          "caption": "Early Nationalist Organizations and Their Initial Bases",
+          "caption_position": "after",
+          "matrix": [
+            [
+              "Organization",
+              "Founded",
+              "Initial Social Base",
+              "Political Significance"
+            ],
+            [
+              "Budi Utomo",
+              "1908",
+              "Educated Javanese elites and students",
+              "Opened organized nationalism and reformist association"
+            ],
+            [
+              "Sarekat Islam",
+              "1912",
+              "Urban traders and Muslim publics",
+              "Broadened anti-colonial participation beyond elites"
+            ],
+            [
+              "Muhammadiyah",
+              "1912",
+              "Reformist Muslim educators and communities",
+              "Built modern associational habits and social infrastructure"
+            ],
+            [
+              "Indische Partij",
+              "1912",
+              "Radical anti-colonial intellectuals",
+              "Linked political independence to explicit opposition"
+            ],
+            [
+              "Perhimpunan Indonesia",
+              "1920s",
+              "Overseas students and nationalist intellectuals",
+              "Extended nationalism into transnational student politics"
+            ]
+          ],
+          "metadata": {
+            "source_notes": [
+              "The table keeps organization names and roles stable for extraction.",
+              "Dates are presented at a coarse level to avoid unnecessary precision.",
+              "The emphasis is on early formation rather than post-1945 legacy."
+            ],
+            "source_research_recipe": "indonesia_nationalist_youth_anti_colonial_before_1945",
+            "source_research_topic": "Indonesia: nationalist movements, youth politics, and anti-colonial organization before 1945"
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_early_nationalism_timeline",
+          "kind": "timeline",
+          "source_type": "vector",
+          "title": "From Budi Utomo to Broad Nationalism",
+          "caption": "Timeline showing the early growth of organized nationalism from 1908 through the late 1920s.",
+          "caption_position": "after",
+          "data": {
+            "orientation": "horizontal",
+            "scale": {
+              "start_year": 1908,
+              "end_year": 1928,
+              "tick_interval_years": 2
+            },
+            "events": [
+              {
+                "year": 1908,
+                "label": "Budi Utomo founded in the Dutch East Indies",
+                "short_label": "Budi Utomo",
+                "event_type": "origin"
+              },
+              {
+                "year": 1912,
+                "label": "Sarekat Islam and Muhammadiyah expand organized politics",
+                "short_label": "Mass politics",
+                "event_type": "expansion"
+              },
+              {
+                "year": 1920,
+                "label": "Student and overseas nationalist networks become more visible",
+                "short_label": "Student networks",
+                "event_type": "continuity"
+              },
+              {
+                "year": 1928,
+                "label": "Youth Pledge defines one nation, one homeland, and one language",
+                "short_label": "Youth Pledge",
+                "event_type": "boundary"
+              }
+            ],
+            "render_hints": {
+              "show_year_labels": true,
+              "avoid_event_overlap": true,
+              "label_wrap_width_chars": 20
+            }
+          },
+          "metadata": {
+            "source_notes": [],
+            "source_research_recipe": "indonesia_nationalist_youth_anti_colonial_before_1945",
+            "source_research_topic": "Indonesia: nationalist movements, youth politics, and anti-colonial organization before 1945"
+          }
+        }
+      ],
+      "page_break_before": true,
+      "metadata": {
+        "source_notes": [
+          "Britannica on Budi Utomo and the early nationalist start date.",
+          "Britannica on Indonesia toward independence for the broader colonial context.",
+          "This section keeps early nationalism qualitative rather than numerical."
+        ],
+        "source_research_recipe": "indonesia_nationalist_youth_anti_colonial_before_1945",
+        "source_research_topic": "Indonesia: nationalist movements, youth politics, and anti-colonial organization before 1945"
+      }
+    },
+    {
+      "heading": "Mass Politics, Islamic Reform, and Broadening Anti-Colonial Coalitions",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Sarekat Islam expanded the scale of anti-colonial politics by connecting nationalist language to traders, urban Muslims, and a wider public. Its growth mattered because it showed that political organization in the colony could move beyond elite circles and become socially broad. The organization also made public speaking, congresses, and discipline central to nationalist practice."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Islamic reform organizations reinforced this widening field. Muhammadiyah, founded in 1912, is important not because it was a party in the narrow sense, but because it helped build modern associational habits, educational work, and a reformist public culture. Those networks gave later nationalist politics more social density and more organizational skill."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The movement around Tjokroaminoto gave mass politics a recognizable public voice. He and other leaders turned meetings into sites of political education and dispute. That mattered because anti-colonial organization was not only a matter of slogans; it was also a matter of how people learned to assemble, speak, and take part in a common cause."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "This broader coalition did not stay ideologically uniform. Islamic, socialist, and nationalist strands often overlapped, split, and contested one another. For a benchmark summary, the key point is that anti-colonial organization was becoming mass based, even when its internal politics remained unstable."
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_mass_organizing",
+          "title": "Mass Politics and Organizing Channels",
+          "caption": "Mass Politics and Organizing Channels",
+          "caption_position": "after",
+          "matrix": [
+            [
+              "Channel",
+              "Typical Venue",
+              "Organizing Function",
+              "Anti-Colonial Effect"
+            ],
+            [
+              "Congress politics",
+              "Public meetings and formal congresses",
+              "Set agendas and tested leadership",
+              "Made nationalist demands visible"
+            ],
+            [
+              "Religious reform",
+              "Mosques, schools, and educational groups",
+              "Built disciplined communities",
+              "Expanded the social base of politics"
+            ],
+            [
+              "Print and newspapers",
+              "Urban reading publics",
+              "Spread arguments and criticism",
+              "Connected distant localities"
+            ],
+            [
+              "Trader networks",
+              "Markets and commercial associations",
+              "Enabled fundraising and circulation",
+              "Linked economic grievance to public action"
+            ],
+            [
+              "Public speech",
+              "Open-air meetings and party gatherings",
+              "Turned persuasion into practice",
+              "Normalized nationalist language"
+            ]
+          ],
+          "metadata": {
+            "source_notes": [
+              "Rows are qualitative and intentionally broad.",
+              "The matrix is designed for consistent OCR and CSV-style extraction.",
+              "No unstable membership counts are included."
+            ],
+            "source_research_recipe": "indonesia_nationalist_youth_anti_colonial_before_1945",
+            "source_research_topic": "Indonesia: nationalist movements, youth politics, and anti-colonial organization before 1945"
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_mass_organizing_network",
+          "kind": "network_diagram",
+          "source_type": "vector",
+          "title": "Mass Political Networks",
+          "caption": "Network of reform, trade, speech, and congress politics that widened anti-colonial participation.",
+          "caption_position": "after",
+          "data": {
+            "layout": "hub_and_spoke",
+            "central_node": "mass_politics",
+            "nodes": [
+              {
+                "id": "mass_politics",
+                "label": "Mass anti-colonial politics"
+              },
+              {
+                "id": "sarekat",
+                "label": "Sarekat Islam"
+              },
+              {
+                "id": "reform",
+                "label": "Islamic reform and education"
+              },
+              {
+                "id": "trade",
+                "label": "Urban traders and markets"
+              },
+              {
+                "id": "speech",
+                "label": "Public speaking and congresses"
+              }
+            ],
+            "edges": [
+              {
+                "from": "sarekat",
+                "to": "mass_politics",
+                "label": "popular support"
+              },
+              {
+                "from": "reform",
+                "to": "mass_politics",
+                "label": "social discipline"
+              },
+              {
+                "from": "trade",
+                "to": "mass_politics",
+                "label": "economic networks"
+              },
+              {
+                "from": "speech",
+                "to": "mass_politics",
+                "label": "political education"
+              }
+            ],
+            "render_hints": {
+              "hub_emphasis": true,
+              "wrap_labels": true,
+              "label_wrap_width_chars": 24
+            }
+          },
+          "metadata": {
+            "source_notes": [],
+            "source_research_recipe": "indonesia_nationalist_youth_anti_colonial_before_1945",
+            "source_research_topic": "Indonesia: nationalist movements, youth politics, and anti-colonial organization before 1945"
+          }
+        }
+      ],
+      "page_break_before": true,
+      "metadata": {
+        "source_notes": [
+          "Britannica on Sarekat Islam for mass support and political development.",
+          "Britannica on Omar Said Tjokroaminoto for leadership and public influence.",
+          "Britannica on Muhammadiyah for reformist associational life."
+        ],
+        "source_research_recipe": "indonesia_nationalist_youth_anti_colonial_before_1945",
+        "source_research_topic": "Indonesia: nationalist movements, youth politics, and anti-colonial organization before 1945"
+      }
+    },
+    {
+      "heading": "Youth Organizations, Student Networks, and the 1928 Youth Pledge",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Youth politics changed the scale of nationalist imagination. Student and youth associations such as Jong Java, Jong Sumatranen Bond, and the Perhimpunan Pelajar-Pelajar Indonesia helped move politics away from regional identity alone and toward a broader claim about Indonesia as a nation. These were not simply social clubs. They were training grounds for national language, discipline, and political debate."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The Second Youth Congress in October 1928 became a defining moment because it compressed that organizational work into a public pledge. The formula of one homeland, one nation, and one language gave anti-colonial politics a concise statement that could travel beyond the congress room. It turned a scattered network of youth associations into a durable symbol of unity."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Youth politics mattered for more than symbolism. Young activists carried newspapers, attended meetings, created interregional connections, and linked student culture with nationalist strategy. They often had fewer institutional obligations than older leaders, which made them especially important in moments when experimentation and coordination were both necessary."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The 1928 moment should therefore be read as an organizational achievement rather than a stand-alone declaration. It showed that anti-colonial politics had acquired a language of national unity and that young people had become a force in shaping that language."
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_youth_politics",
+          "title": "Youth Associations and Political Contributions",
+          "caption": "Youth Associations and Political Contributions",
+          "caption_position": "after",
+          "matrix": [
+            [
+              "Group",
+              "Main Base",
+              "Political Role",
+              "Contribution to Nationalism"
+            ],
+            [
+              "Jong Java",
+              "Javanese students and youth",
+              "Regional association with widening political horizons",
+              "Helped shift identity toward Indonesian unity"
+            ],
+            [
+              "Jong Sumatranen Bond",
+              "Sumatran students and youth",
+              "Interregional discussion and cooperation",
+              "Connected regional identity to national claims"
+            ],
+            [
+              "PPPI",
+              "Student activists in Batavia and beyond",
+              "Organized nationalist student leadership",
+              "Helped convene the Youth Congress"
+            ],
+            [
+              "Second Youth Congress",
+              "Cross-regional youth delegates",
+              "Issued the Youth Pledge",
+              "Defined one homeland, one nation, and one language"
+            ],
+            [
+              "Youth press and study circles",
+              "Urban student publics",
+              "Spread nationalist arguments",
+              "Turned youth culture into political infrastructure"
+            ]
+          ],
+          "metadata": {
+            "source_notes": [
+              "The rows are written to support benchmark extraction of youth politics.",
+              "The table keeps the Youth Pledge as the central historical hinge.",
+              "Terms are Latin-script only for PDF safety."
+            ],
+            "source_research_recipe": "indonesia_nationalist_youth_anti_colonial_before_1945",
+            "source_research_topic": "Indonesia: nationalist movements, youth politics, and anti-colonial organization before 1945"
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_youth_pledge_flow",
+          "kind": "flow_diagram",
+          "source_type": "vector",
+          "title": "From Youth Clubs to National Unity",
+          "caption": "Flow diagram linking regional youth clubs to the 1928 Youth Pledge and national language politics.",
+          "caption_position": "after",
+          "data": {
+            "direction": "left_to_right",
+            "nodes": [
+              {
+                "id": "regional_clubs",
+                "label": "Regional youth clubs"
+              },
+              {
+                "id": "student_networks",
+                "label": "Student networks and study circles"
+              },
+              {
+                "id": "congress",
+                "label": "Second Youth Congress"
+              },
+              {
+                "id": "pledge",
+                "label": "One homeland, one nation, one language"
+              },
+              {
+                "id": "national_public",
+                "label": "National political public"
+              }
+            ],
+            "edges": [
+              {
+                "from": "regional_clubs",
+                "to": "student_networks",
+                "label": "cross-regional contact"
+              },
+              {
+                "from": "student_networks",
+                "to": "congress",
+                "label": "organization"
+              },
+              {
+                "from": "congress",
+                "to": "pledge",
+                "label": "public declaration"
+              },
+              {
+                "from": "pledge",
+                "to": "national_public",
+                "label": "national language"
+              }
+            ],
+            "render_hints": {
+              "wrap_labels": true,
+              "label_wrap_width_chars": 22,
+              "avoid_edge_crossing": true
+            }
+          },
+          "metadata": {
+            "source_notes": [],
+            "source_research_recipe": "indonesia_nationalist_youth_anti_colonial_before_1945",
+            "source_research_topic": "Indonesia: nationalist movements, youth politics, and anti-colonial organization before 1945"
+          }
+        }
+      ],
+      "page_break_before": true,
+      "metadata": {
+        "source_notes": [
+          "Museum Sumpah Pemuda repository material for the Second Youth Congress.",
+          "Britannica on Indonesia toward independence for the Youth Pledge summary.",
+          "This section emphasizes youth networks rather than later state history."
+        ],
+        "source_research_recipe": "indonesia_nationalist_youth_anti_colonial_before_1945",
+        "source_research_topic": "Indonesia: nationalist movements, youth politics, and anti-colonial organization before 1945"
+      }
+    },
+    {
+      "heading": "Party Politics, Repression, and Intellectual Exile in the 1930s",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "By the late 1920s and 1930s, nationalism had entered a more explicitly political phase. The Indonesian Nationalist Party made noncooperation with colonial rule a core principle, which made the party both clear in purpose and vulnerable to repression. Anti-colonial politics now had a party form, but the colonial state treated that form as a threat."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Arrest, censorship, exile, and surveillance fractured the movement. Yet repression did not simply end political work. It pushed activists to diversify their methods, preserve networks, and keep nationalist ideas alive through writing, student exchanges, and quiet organizational continuity. The movement became less open, but not necessarily less coherent."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Mohammad Hatta represents one important channel through which intellectual exile and student nationalism stayed connected to the movement at home. Overseas study did not remove him from politics; it broadened the transnational side of Indonesian anti-colonialism and helped sustain a cadre of activists who thought strategically about the colony's future."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The 1930s should therefore be read as a period of compression and adaptation. The colonial state restricted public politics, but the nationalist movement survived through organizational fragmentation, disciplined leadership, and a persistent belief that the anti-colonial struggle would return to public scale."
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_repression_exile",
+          "title": "1930s Repression and Political Repositioning",
+          "caption": "1930s Repression and Political Repositioning",
+          "caption_position": "after",
+          "matrix": [
+            [
+              "Pressure",
+              "Colonial Response",
+              "Movement Effect",
+              "Organizational Adaptation"
+            ],
+            [
+              "Arrest",
+              "Detained leading activists",
+              "Disrupted open leadership",
+              "Shifted work toward deputies and networks"
+            ],
+            [
+              "Censorship",
+              "Restricted newspapers and speeches",
+              "Narrowed public debate",
+              "Encouraged coded writing and private discussion"
+            ],
+            [
+              "Exile",
+              "Removed activists from Java and other centers",
+              "Separated leaders from local bases",
+              "Expanded transregional and overseas ties"
+            ],
+            [
+              "Surveillance",
+              "Monitored meetings and correspondence",
+              "Increased caution",
+              "Promoted selective and disciplined organizing"
+            ],
+            [
+              "Party bans",
+              "Restricted formal party life",
+              "Forced movement fragmentation",
+              "Produced successor organizations and alliances"
+            ]
+          ],
+          "metadata": {
+            "source_notes": [
+              "The matrix avoids a detailed prison-by-prison chronology.",
+              "It is intended as a stable structural summary of repression.",
+              "The focus remains on anti-colonial organization, not on legal doctrine."
+            ],
+            "source_research_recipe": "indonesia_nationalist_youth_anti_colonial_before_1945",
+            "source_research_topic": "Indonesia: nationalist movements, youth politics, and anti-colonial organization before 1945"
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_1930s_repression_timeline",
+          "kind": "timeline",
+          "source_type": "vector",
+          "title": "Repression and Reorganization in the 1930s",
+          "caption": "Timeline showing how repression, exile, and party reorganization shaped nationalist politics in the 1930s.",
+          "caption_position": "after",
+          "data": {
+            "orientation": "horizontal",
+            "scale": {
+              "start_year": 1927,
+              "end_year": 1940,
+              "tick_interval_years": 2
+            },
+            "events": [
+              {
+                "year": 1927,
+                "label": "Indonesian Nationalist Association formed under Sukarno",
+                "short_label": "PNI begins",
+                "event_type": "formation"
+              },
+              {
+                "year": 1930,
+                "label": "Colonial repression and legal pressure intensify",
+                "short_label": "Repression",
+                "event_type": "pressure"
+              },
+              {
+                "year": 1931,
+                "label": "Successor nationalist groupings continue under constraint",
+                "short_label": "Adaptation",
+                "event_type": "continuity"
+              },
+              {
+                "year": 1930,
+                "label": "Overseas student and exile networks preserve nationalist strategy",
+                "short_label": "Exile networks",
+                "event_type": "continuity"
+              }
+            ],
+            "render_hints": {
+              "show_year_labels": true,
+              "avoid_event_overlap": true,
+              "label_wrap_width_chars": 22
+            }
+          },
+          "metadata": {
+            "source_notes": [],
+            "source_research_recipe": "indonesia_nationalist_youth_anti_colonial_before_1945",
+            "source_research_topic": "Indonesia: nationalist movements, youth politics, and anti-colonial organization before 1945"
+          }
+        }
+      ],
+      "page_break_before": true,
+      "metadata": {
+        "source_notes": [
+          "Britannica on the Indonesian Nationalist Party for noncooperation and party formation.",
+          "Britannica on Mohammad Hatta for overseas organizing and nationalist continuity.",
+          "Britannica on Indonesia toward independence for repression and fragmentation."
+        ],
+        "source_research_recipe": "indonesia_nationalist_youth_anti_colonial_before_1945",
+        "source_research_topic": "Indonesia: nationalist movements, youth politics, and anti-colonial organization before 1945"
+      }
+    },
+    {
+      "heading": "Japanese Occupation and the Reconfiguration of Anti-Colonial Organization, 1942-1944",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The Japanese occupation broke the Dutch colonial framework, but it did not create independence. Instead, it imposed a new authoritarian order that reshaped anti-colonial politics. Existing nationalist leaders were forced to work inside occupation structures, where public activity was tightly monitored and useful only when it served Japanese wartime goals."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "That constraint also opened a limited space for mass mobilization. Organizations such as Putera gave Sukarno and Hatta a public role, but the role was conditional and controlled. The occupation state wanted mobilization, labor, and discipline, not free political competition. Nationalist organizers had to use that space carefully, translating old anti-colonial ideas into forms that could survive inside the new order."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Youth, labor, and paramilitary mobilization became especially important. The occupation pushed many young people into new organizational channels, including forms of civic duty and home defense. That shift mattered because it linked nationalist politics to bodily discipline, public service, and the practical training of future cadres."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "By 1944, Indonesian anti-colonial organization had become more centralized, more mass oriented, and more exposed to the logic of wartime administration. This folder stops before the 1945 proclamation so the benchmark remains focused on the pre-independence political formation that made later events possible."
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_occupation_reconfiguration",
+          "title": "Occupation-Era Anti-Colonial Reconfiguration",
+          "caption": "Occupation-Era Anti-Colonial Reconfiguration",
+          "caption_position": "after",
+          "matrix": [
+            [
+              "Organization or Channel",
+              "Occupation Purpose",
+              "Nationalist Use",
+              "Political Consequence"
+            ],
+            [
+              "Putera",
+              "Mass mobilization for wartime rule",
+              "Public platform for nationalist leaders",
+              "Kept anti-colonial speech visible"
+            ],
+            [
+              "Labor mobilization",
+              "War production and discipline",
+              "Training and social integration of youth",
+              "Linked politics with coercive work regimes"
+            ],
+            [
+              "Home defense corps",
+              "Local security and wartime order",
+              "Created disciplined public roles",
+              "Expanded the political meaning of service"
+            ],
+            [
+              "Youth channels",
+              "Political education under control",
+              "Recruited young activists",
+              "Built future nationalist cadres"
+            ],
+            [
+              "Occupation bureaucracy",
+              "Control over public life",
+              "Space for tactical negotiation",
+              "Reconfigured anti-colonial organization"
+            ]
+          ],
+          "metadata": {
+            "source_notes": [
+              "The table keeps the occupation focus on 1942-1944 rather than postwar events.",
+              "The language is intentionally broad because occupation institutions shifted quickly.",
+              "This table is meant to support comparison across organizations and functions."
+            ],
+            "source_research_recipe": "indonesia_nationalist_youth_anti_colonial_before_1945",
+            "source_research_topic": "Indonesia: nationalist movements, youth politics, and anti-colonial organization before 1945"
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_occupation_reconfiguration_flow",
+          "kind": "flow_diagram",
+          "source_type": "vector",
+          "title": "Occupation Channels and National Mobilization",
+          "caption": "Flow diagram showing how Japanese occupation control and nationalist mobilization interacted before 1945.",
+          "caption_position": "after",
+          "data": {
+            "direction": "left_to_right",
+            "nodes": [
+              {
+                "id": "dutch_collapse",
+                "label": "Dutch colonial collapse"
+              },
+              {
+                "id": "occupation_control",
+                "label": "Japanese occupation control"
+              },
+              {
+                "id": "mass_orgs",
+                "label": "Controlled mass organizations"
+              },
+              {
+                "id": "nationalist_leaders",
+                "label": "Sukarno and Hatta"
+              },
+              {
+                "id": "cadres",
+                "label": "Youth and future cadres"
+              }
+            ],
+            "edges": [
+              {
+                "from": "dutch_collapse",
+                "to": "occupation_control",
+                "label": "new authority"
+              },
+              {
+                "from": "occupation_control",
+                "to": "mass_orgs",
+                "label": "managed mobilization"
+              },
+              {
+                "from": "mass_orgs",
+                "to": "nationalist_leaders",
+                "label": "public platform"
+              },
+              {
+                "from": "nationalist_leaders",
+                "to": "cadres",
+                "label": "political training"
+              }
+            ],
+            "render_hints": {
+              "wrap_labels": true,
+              "label_wrap_width_chars": 22
+            }
+          },
+          "metadata": {
+            "source_notes": [],
+            "source_research_recipe": "indonesia_nationalist_youth_anti_colonial_before_1945",
+            "source_research_topic": "Indonesia: nationalist movements, youth politics, and anti-colonial organization before 1945"
+          }
+        }
+      ],
+      "page_break_before": true,
+      "metadata": {
+        "source_notes": [
+          "Britannica on Putera for occupation-era mobilization.",
+          "Britannica on Mohammad Hatta for occupation-period organization and home defense work.",
+          "This section keeps the chronology within the pre-1945 horizon."
+        ],
+        "source_research_recipe": "indonesia_nationalist_youth_anti_colonial_before_1945",
+        "source_research_topic": "Indonesia: nationalist movements, youth politics, and anti-colonial organization before 1945"
+      }
+    }
+  ]
+}
