@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from synthetic_pdf_bench.generators.recipes import load_recipe
+from synthetic_pdf_bench.generators.recipes import apply_recipe_variant, load_recipe
 from synthetic_pdf_bench.layout.flow_layout import build_scene_from_recipe
 from synthetic_pdf_bench.schema.blocks import FigureBlock, TableBlock
 
@@ -29,3 +29,13 @@ def test_flow_layout_records_table_cells() -> None:
     for table in tables:
         assert len(table.cells) == len(table.matrix) * len(table.matrix[0])
         assert all(cell.bbox_pt for cell in table.cells)
+
+
+def test_flow_layout_variant_changes_document_shape() -> None:
+    recipe = load_recipe(Path("data/recipes/sea_historical_report_v1.json"))
+    compact = build_scene_from_recipe(apply_recipe_variant(recipe, "compact", 1), seed=1, variant="compact").to_truth()
+    spacious = build_scene_from_recipe(apply_recipe_variant(recipe, "spacious", 1), seed=1, variant="spacious").to_truth()
+
+    assert len(compact.blocks) != len(spacious.blocks) or len(compact.pages) != len(spacious.pages)
+    assert compact.metadata["recipe_variant"] == "compact"
+    assert spacious.metadata["recipe_variant"] == "spacious"

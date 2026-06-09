@@ -36,6 +36,48 @@ class LayoutStyle:
     raster_figure_height: float = 130
 
 
+def style_for_variant(variant: str) -> LayoutStyle:
+    if variant == "compact":
+        return LayoutStyle(
+            margin_left=50,
+            margin_right=50,
+            margin_top=62,
+            margin_bottom=62,
+            body_font_size=8,
+            body_line_height=10,
+            block_spacing=6,
+            section_spacing=8,
+            table_row_height=16,
+            table_caption_height=20,
+            figure_height=124,
+            figure_caption_height=24,
+            raster_figure_height=110,
+        )
+    if variant == "spacious":
+        return LayoutStyle(
+            margin_left=70,
+            margin_right=70,
+            margin_top=78,
+            margin_bottom=78,
+            body_font_size=10,
+            body_line_height=14,
+            block_spacing=13,
+            section_spacing=16,
+            table_row_height=22,
+            table_caption_height=28,
+            figure_height=166,
+            figure_caption_height=32,
+            raster_figure_height=145,
+        )
+    if variant == "figure_heavy":
+        return LayoutStyle(figure_height=166, raster_figure_height=145, block_spacing=8)
+    if variant == "table_heavy":
+        return LayoutStyle(table_row_height=17, table_caption_height=22, body_font_size=8, body_line_height=11)
+    if variant == "text_heavy":
+        return LayoutStyle(body_font_size=9, body_line_height=12, figure_height=128, raster_figure_height=110)
+    return LayoutStyle()
+
+
 class FlowLayoutPlanner:
     def __init__(self, seed: int = 123, dpi: int = 144, style: LayoutStyle | None = None) -> None:
         self.seed = seed
@@ -333,11 +375,14 @@ class FlowLayoutPlanner:
         return self.reading_order
 
 
-def build_scene_from_recipe(recipe: DocumentRecipe, seed: int = 123, dpi: int = 144) -> SceneGraph:
-    return FlowLayoutPlanner(seed=seed, dpi=dpi).build_scene(recipe)
+def build_scene_from_recipe(
+    recipe: DocumentRecipe, seed: int = 123, dpi: int = 144, variant: str = "standard"
+) -> SceneGraph:
+    return FlowLayoutPlanner(seed=seed, dpi=dpi, style=style_for_variant(variant)).build_scene(recipe)
 
 
-def build_scene_from_recipe_path(path: Path, seed: int = 123, dpi: int = 144) -> SceneGraph:
-    from synthetic_pdf_bench.generators.recipes import load_recipe
+def build_scene_from_recipe_path(path: Path, seed: int = 123, dpi: int = 144, variant: str = "standard") -> SceneGraph:
+    from synthetic_pdf_bench.generators.recipes import apply_recipe_variant, load_recipe
 
-    return build_scene_from_recipe(load_recipe(path), seed=seed, dpi=dpi)
+    recipe = apply_recipe_variant(load_recipe(path), variant=variant, seed=seed)
+    return build_scene_from_recipe(recipe, seed=seed, dpi=dpi, variant=variant)

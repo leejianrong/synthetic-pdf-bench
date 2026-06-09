@@ -73,6 +73,43 @@ class DocumentRecipe(BaseModel):
     sections: list[SectionRecipe]
 
 
+RecipeVariant = Literal["standard", "compact", "spacious", "text_heavy", "figure_heavy", "table_heavy"]
+
+
+def recipe_variant_names() -> list[str]:
+    return ["standard", "compact", "spacious", "text_heavy", "figure_heavy", "table_heavy"]
+
+
+def apply_recipe_variant(recipe: DocumentRecipe, variant: str, seed: int) -> DocumentRecipe:
+    if variant not in recipe_variant_names():
+        raise ValueError(f"unknown recipe variant: {variant}")
+    copied = recipe.model_copy(deep=True)
+    copied.doc_id = f"{recipe.doc_id}_{variant}_{seed:06d}"
+    copied.metadata = {
+        **copied.metadata,
+        "base_doc_id": recipe.doc_id,
+        "recipe_variant": variant,
+        "variant_seed": seed,
+    }
+    if variant in {"standard", "spacious"}:
+        return copied
+
+    for section_index, section in enumerate(copied.sections):
+        paragraphs = [block for block in section.blocks if block.type == "paragraph"]
+        tables = [block for block in section.blocks if block.type == "table"]
+        figures = [block for block in section.blocks if block.type == "figure"]
+        if variant == "compact":
+            section.blocks = paragraphs[:2] + tables[:1] + figures[:1]
+        elif variant == "text_heavy":
+            section.blocks = paragraphs + tables[:1]
+        elif variant == "figure_heavy":
+            section.blocks = paragraphs[:2] + figures + tables[:1]
+        elif variant == "table_heavy":
+            keep_figure = figures[:1] if section_index % 2 == 0 else []
+            section.blocks = paragraphs[:2] + tables + keep_figure
+    return copied
+
+
 def load_recipe(path: Path) -> DocumentRecipe:
     data = json.loads(path.read_text(encoding="utf-8"))
     return DocumentRecipe.model_validate(data)
