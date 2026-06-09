@@ -1,0 +1,86 @@
+{
+  "recipe_id": "malaysia_british_malaya_colonial_structure_1900_1941",
+  "topic": "Malaysia: British Malaya, protectorates, and colonial political structure from 1900 to 1941",
+  "status": "complete_for_review",
+  "scope_decisions": [
+    "The artifact set covers one topic only and stops at 1941, before the Japanese occupation topic.",
+    "The structure is treated as layered and overlapping rather than as a single unified Malayan state.",
+    "The prose uses English as the primary language, with selected Malay administrative terms as controlled markers.",
+    "No generator code, canonical recipes, unrelated research folders, or topic checklist entries were modified."
+  ],
+  "decisions": [
+    "The report distinguishes direct colony rule in the Straits Settlements from indirect rule in the Federated Malay States and the protected states.",
+    "The wording uses the neutral umbrella term British adviser for Johor because source titles vary on the exact office label and date.",
+    "The Northern Malay States are treated as a 1909 treaty shift into the British sphere rather than as direct annexations.",
+    "The artifact set ends at 1941 and does not absorb the occupation period."
+  ],
+  "research_basis": [
+    {
+      "source_id": "src_tna_straits_settlements",
+      "title": "Straits Settlements",
+      "publisher": "The National Archives",
+      "url": "https://www.nationalarchives.gov.uk/first-world-war__trashed/a-global-view__trashed/asia/straits-settlements/",
+      "used_for": [
+        "Direct-colony framing",
+        "Governor and High Commissioner context",
+        "Colony composition"
+      ]
+    },
+    {
+      "source_id": "src_tna_malaya_1914",
+      "title": "Malaya in 1914",
+      "publisher": "The National Archives",
+      "url": "https://www.nationalarchives.gov.uk/first-world-war__trashed/a-global-view__trashed/asia/malaya/",
+      "used_for": [
+        "Federal Council summary",
+        "British Political Resident structure",
+        "State grouping across British Malaya"
+      ]
+    },
+    {
+      "source_id": "src_britannica_history_malaysia",
+      "title": "History of Malaysia",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/history-of-Malaysia",
+      "used_for": [
+        "1909 northern states transfer",
+        "Johor adviser chronology",
+        "Broad British control timeline"
+      ]
+    },
+    {
+      "source_id": "src_britannica_straits_settlements",
+      "title": "Straits Settlements",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/place/Straits-Settlements",
+      "used_for": [
+        "Direct colonial geography",
+        "Penang and Malacca context"
+      ]
+    },
+    {
+      "source_id": "src_tna_anglo_siamese_boundary",
+      "title": "Anglo-Siamese Boundary Commission map and treaty records",
+      "publisher": "The National Archives",
+      "url": "https://discovery.nationalarchives.gov.uk/details/r/C3004670",
+      "used_for": [
+        "1909 treaty boundary context",
+        "Northern state status shift"
+      ]
+    },
+    {
+      "source_id": "src_johor_jmf_history",
+      "title": "SEJARAH PENUBUHAN ATSNJ",
+      "publisher": "Johor Military Force",
+      "url": "https://jmf.johor.gov.my/en/sejarah/",
+      "used_for": [
+        "Johor adviser chronology",
+        "Johor as a distinct political path outside the federation"
+      ]
+    }
+  ],
+  "open_questions": [
+    "Should a later canonical merge distinguish the 1909 treaty date from the boundary commission maps if the benchmark needs a single legal-versus-cartographic date?",
+    "Should Johor be rendered with the exact local office title in a later pass, or should the neutral term British adviser remain the default to avoid source divergence?"
+  ]
+}

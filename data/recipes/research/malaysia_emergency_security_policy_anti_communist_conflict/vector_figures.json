@@ -1,0 +1,337 @@
+{
+  "figures": [
+    {
+      "figure_id": "fig_emergency_origins_timeline",
+      "kind": "timeline",
+      "title": "Emergency Origins Timeline",
+      "caption": "Key dates and transitions from postwar instability to the 1948 emergency declaration and early counterinsurgency.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1945,
+          "end_year": 1950,
+          "tick_interval_years": 1
+        },
+        "events": [
+          {
+            "year": 1945,
+            "label": "Japanese surrender and postwar transition",
+            "short_label": "Postwar transition",
+            "event_type": "context"
+          },
+          {
+            "year": 1948,
+            "label": "State of emergency declared in Malaya",
+            "short_label": "Emergency declared",
+            "event_type": "legislation"
+          },
+          {
+            "year": 1948,
+            "label": "Insurgent attacks expand across estates and mines",
+            "short_label": "Insurgent escalation",
+            "event_type": "conflict"
+          },
+          {
+            "year": 1950,
+            "label": "Briggs Plan reorganizes counterinsurgency",
+            "short_label": "Briggs Plan",
+            "event_type": "policy"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 22
+        }
+      },
+      "suggested_section": "Origins of the Emergency and the Communist Challenge"
+    },
+    {
+      "figure_id": "fig_security_command_structure",
+      "kind": "flow_diagram",
+      "title": "Security Command Structure",
+      "caption": "Simplified command and coordination relationships among executive authority, police, intelligence, military units, and local administration.",
+      "data": {
+        "direction": "top_down",
+        "nodes": [
+          {
+            "id": "executive",
+            "label": "Colonial and federal executive",
+            "type": "executive"
+          },
+          {
+            "id": "security_committee",
+            "label": "Emergency committees and operational coordination",
+            "type": "coordination"
+          },
+          {
+            "id": "police",
+            "label": "Malayan Police",
+            "type": "police"
+          },
+          {
+            "id": "special_branch",
+            "label": "Special Branch intelligence",
+            "type": "intelligence"
+          },
+          {
+            "id": "military",
+            "label": "Army and Commonwealth forces",
+            "type": "military"
+          },
+          {
+            "id": "district_admin",
+            "label": "District and village administration",
+            "type": "local_governance"
+          }
+        ],
+        "edges": [
+          {
+            "from": "executive",
+            "to": "security_committee",
+            "label": "policy direction"
+          },
+          {
+            "from": "security_committee",
+            "to": "police",
+            "label": "civil enforcement"
+          },
+          {
+            "from": "security_committee",
+            "to": "special_branch",
+            "label": "intelligence"
+          },
+          {
+            "from": "security_committee",
+            "to": "military",
+            "label": "area operations"
+          },
+          {
+            "from": "security_committee",
+            "to": "district_admin",
+            "label": "local implementation"
+          },
+          {
+            "from": "special_branch",
+            "to": "district_admin",
+            "label": "screening and local data"
+          }
+        ],
+        "render_hints": {
+          "group_by_type": true,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 26,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "Emergency Law, Security Institutions, and Intelligence"
+    },
+    {
+      "figure_id": "fig_new_villages_network",
+      "kind": "network_diagram",
+      "title": "New Villages and Rural Control Network",
+      "caption": "Resettlement linked roads, villages, police control, and service provision into a managed counterinsurgency landscape.",
+      "data": {
+        "layout": "hub_and_spoke",
+        "central_node": "state_control",
+        "nodes": [
+          {
+            "id": "state_control",
+            "label": "State control system",
+            "type": "hub"
+          },
+          {
+            "id": "new_villages",
+            "label": "New villages / kampung baharu",
+            "type": "resettlement"
+          },
+          {
+            "id": "roads",
+            "label": "Roadblocks and supply routes",
+            "type": "mobility_control"
+          },
+          {
+            "id": "police_posts",
+            "label": "Police posts and guards",
+            "type": "security"
+          },
+          {
+            "id": "services",
+            "label": "Water, schools, clinics",
+            "type": "services"
+          },
+          {
+            "id": "rural_population",
+            "label": "Rural communities",
+            "type": "population"
+          }
+        ],
+        "edges": [
+          {
+            "from": "state_control",
+            "to": "new_villages",
+            "label": "resettlement policy"
+          },
+          {
+            "from": "state_control",
+            "to": "roads",
+            "label": "movement control"
+          },
+          {
+            "from": "state_control",
+            "to": "police_posts",
+            "label": "guarded perimeter"
+          },
+          {
+            "from": "state_control",
+            "to": "services",
+            "label": "legitimacy and welfare"
+          },
+          {
+            "from": "rural_population",
+            "to": "new_villages",
+            "label": "relocation"
+          },
+          {
+            "from": "new_villages",
+            "to": "services",
+            "label": "provision and control"
+          }
+        ],
+        "render_hints": {
+          "hub_emphasis": true,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 24
+        }
+      },
+      "suggested_section": "Rural Control, New Villages, and Counterinsurgency"
+    },
+    {
+      "figure_id": "fig_settlement_transition",
+      "kind": "timeline",
+      "title": "From Emergency to Independence",
+      "caption": "A compact sequence showing how constitutional negotiation and anti-communist consolidation overlapped during the 1950s.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1948,
+          "end_year": 1960,
+          "tick_interval_years": 2
+        },
+        "events": [
+          {
+            "year": 1948,
+            "label": "Emergency declared",
+            "short_label": "1948",
+            "event_type": "policy"
+          },
+          {
+            "year": 1950,
+            "label": "Briggs Plan and coordinated counterinsurgency",
+            "short_label": "1950",
+            "event_type": "policy"
+          },
+          {
+            "year": 1955,
+            "label": "Political participation expands through local elections",
+            "short_label": "1955",
+            "event_type": "politics"
+          },
+          {
+            "year": 1957,
+            "label": "Federation of Malaya becomes independent",
+            "short_label": "1957",
+            "event_type": "sovereignty"
+          },
+          {
+            "year": 1960,
+            "label": "Emergency declared over",
+            "short_label": "1960",
+            "event_type": "boundary"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 20
+        }
+      },
+      "suggested_section": "Political Settlement, Independence, and Anti-Communist Nation-Building"
+    },
+    {
+      "figure_id": "fig_legacy_spread",
+      "kind": "flow_diagram",
+      "title": "Security Legacy After the Emergency",
+      "caption": "How emergency-era institutions and practices persisted into the post-1960 Malaysian security state.",
+      "data": {
+        "direction": "left_right",
+        "nodes": [
+          {
+            "id": "emergency_state",
+            "label": "Emergency state, 1948-1960",
+            "type": "origin"
+          },
+          {
+            "id": "detention",
+            "label": "Preventive detention and emergency powers",
+            "type": "legal"
+          },
+          {
+            "id": "intelligence",
+            "label": "Police intelligence and surveillance",
+            "type": "intelligence"
+          },
+          {
+            "id": "development_control",
+            "label": "Development linked to population control",
+            "type": "governance"
+          },
+          {
+            "id": "post1960_state",
+            "label": "Post-1960 Malaysian security order",
+            "type": "legacy"
+          }
+        ],
+        "edges": [
+          {
+            "from": "emergency_state",
+            "to": "detention",
+            "label": "legal inheritance"
+          },
+          {
+            "from": "emergency_state",
+            "to": "intelligence",
+            "label": "institutional inheritance"
+          },
+          {
+            "from": "emergency_state",
+            "to": "development_control",
+            "label": "policy template"
+          },
+          {
+            "from": "detention",
+            "to": "post1960_state",
+            "label": "continued use"
+          },
+          {
+            "from": "intelligence",
+            "to": "post1960_state",
+            "label": "continued use"
+          },
+          {
+            "from": "development_control",
+            "to": "post1960_state",
+            "label": "governance model"
+          }
+        ],
+        "render_hints": {
+          "group_by_type": true,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 28,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "Legacy in Malaysia After 1960"
+    }
+  ]
+}

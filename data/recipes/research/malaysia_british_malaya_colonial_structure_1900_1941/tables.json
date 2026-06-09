@@ -1,0 +1,253 @@
+{
+  "tables": [
+    {
+      "table_id": "tbl_colonial_layers",
+      "title": "Colonial Layers in British Malaya, 1900-1941",
+      "matrix": [
+        [
+          "Layer",
+          "Main Territories or Offices",
+          "Governing Form",
+          "Political Meaning",
+          "Benchmark Note"
+        ],
+        [
+          "Direct colony",
+          "Straits Settlements",
+          "Crown colony under the governor",
+          "Direct British rule with colony-wide administration",
+          "Use for hierarchy extraction"
+        ],
+        [
+          "Federated core",
+          "Perak, Selangor, Negeri Sembilan, Pahang",
+          "Residents and Federal Council",
+          "Indirect rule with tighter British coordination",
+          "Core of negeri-negeri Melayu Bersekutu"
+        ],
+        [
+          "Unfederated states",
+          "Johor, Kedah, Kelantan, Perlis, Terengganu",
+          "Sultans with advisers or protected status",
+          "Separate political identities under British influence",
+          "Do not merge into the federation"
+        ],
+        [
+          "Imperial oversight",
+          "Governor / High Commissioner and Colonial Office",
+          "Strategic supervision and senior appointments",
+          "Linked colony, federation, and protectorates",
+          "Useful for authority mapping"
+        ]
+      ],
+      "notes": [
+        "The matrix keeps the categories stable across the whole topic.",
+        "It intentionally separates status from administrative practice.",
+        "The Straits Settlements are retained because they shaped the peninsula-wide political system."
+      ],
+      "suggested_section": "Colonial Layers and Imperial Oversight"
+    },
+    {
+      "table_id": "tbl_fms_structure",
+      "title": "Federated Malay States Structure and Functions",
+      "matrix": [
+        [
+          "Component",
+          "Members or Office",
+          "Main Function",
+          "Political Effect",
+          "Benchmark Note"
+        ],
+        [
+          "Federated Malay States",
+          "Perak, Selangor, Negeri Sembilan, Pahang",
+          "Shared colonial framework for administration",
+          "Created the core federation of British Malaya",
+          "Use the state list as written"
+        ],
+        [
+          "British Resident",
+          "One resident in each federated state",
+          "Guided administration and policy",
+          "Shifted practical power toward British officials",
+          "Indirect rule marker"
+        ],
+        [
+          "Resident-General / federal coordination",
+          "Central coordinating officer",
+          "Aligned state administration across the federation",
+          "Increased standardization of colonial rule",
+          "Keep the title generic if sources differ"
+        ],
+        [
+          "Federal Council",
+          "Rulers and colonial officials",
+          "Federal-level policy and oversight",
+          "Provided a colonial forum, not a parliament",
+          "Avoid modern democratic framing"
+        ]
+      ],
+      "notes": [
+        "This table isolates the federated core and its administrative logic.",
+        "The title is kept generic because local source titles vary in wording.",
+        "The benchmark emphasis is on the resident system and federal coordination."
+      ],
+      "suggested_section": "Federated Malay States and Resident Rule"
+    },
+    {
+      "table_id": "tbl_protectorate_changes",
+      "title": "Protectorate and Adviser Changes, 1900-1941",
+      "matrix": [
+        [
+          "Territory",
+          "Status around 1900",
+          "Change by 1909 or 1914",
+          "Political Effect",
+          "Benchmark Note"
+        ],
+        [
+          "Kedah",
+          "Under Siamese suzerainty before 1909",
+          "Moved into the British sphere after the Anglo-Siamese Treaty",
+          "Became part of the northern protected states",
+          "Treat as protected, not directly annexed"
+        ],
+        [
+          "Kelantan",
+          "Under Siamese suzerainty before 1909",
+          "Moved into the British sphere after the Anglo-Siamese Treaty",
+          "Retained a ruler but faced British influence",
+          "State identity remained intact"
+        ],
+        [
+          "Perlis",
+          "Under Siamese suzerainty before 1909",
+          "Moved into the British sphere after the Anglo-Siamese Treaty",
+          "Entered the protectorate orbit",
+          "Keep the boundary and treaty context visible"
+        ],
+        [
+          "Terengganu",
+          "Under Siamese suzerainty before 1909",
+          "Moved into the British sphere after the Anglo-Siamese Treaty",
+          "Joined the group of northern protected states",
+          "Do not describe as a direct colony"
+        ],
+        [
+          "Johor",
+          "Separate Malay state outside the FMS",
+          "Accepted a British adviser in 1914",
+          "British influence deepened without federation",
+          "Useful comparison case"
+        ]
+      ],
+      "notes": [
+        "The table keeps the northern states together because their status shifted through the same treaty framework.",
+        "Johor is separate because its route into British influence was different.",
+        "The wording avoids overclaiming exact titles where sources differ."
+      ],
+      "suggested_section": "Protectorates, Unfederated States, and Treaty Reordering"
+    },
+    {
+      "table_id": "tbl_decision_channels",
+      "title": "Decision Channels in Colonial Political Structure",
+      "matrix": [
+        [
+          "Issue Area",
+          "Main Venue",
+          "Who Held Practical Influence",
+          "Representation Form",
+          "Benchmark Note"
+        ],
+        [
+          "Revenue and finance",
+          "State and federal councils",
+          "British officers and selected rulers",
+          "Elite consultation",
+          "Shows colonial fiscal control"
+        ],
+        [
+          "Land and administration",
+          "Residents and state departments",
+          "Residents, Advisers, and rulers",
+          "Indirect rule",
+          "Core colonial power channel"
+        ],
+        [
+          "Law and policing",
+          "Colonial and state legal offices",
+          "Colonial officials and police chiefs",
+          "Administrative hierarchy",
+          "Keep order and revenue connected"
+        ],
+        [
+          "Railways and public works",
+          "Colonial departments and boards",
+          "Engineers, residents, and senior officials",
+          "Technical administration",
+          "Infrastructure as governance"
+        ],
+        [
+          "External relations and security",
+          "Governor / High Commissioner office",
+          "Imperial government and senior colonial staff",
+          "Protected-state supervision",
+          "Useful for imperial layering"
+        ]
+      ],
+      "notes": [
+        "The table maps issue areas to the institutions that handled them.",
+        "It is intentionally functional rather than constitutional.",
+        "This supports extraction of how colonial authority moved through the system."
+      ],
+      "suggested_section": "Councils, Rulers, and Limited Participation"
+    },
+    {
+      "table_id": "tbl_1941_threshold",
+      "title": "Late Colonial Structure Before the 1941 Break",
+      "matrix": [
+        [
+          "Layer or Pressure",
+          "Prewar Condition",
+          "Why It Mattered",
+          "Boundary Note",
+          "Benchmark Note"
+        ],
+        [
+          "Direct colony",
+          "Straits Settlements still under direct British rule",
+          "Provided the administrative center for the wider peninsula system",
+          "Do not extend into the occupation period",
+          "Keep as the colony reference point"
+        ],
+        [
+          "Federated states",
+          "Resident-based federation still operating",
+          "Gave British Malaya its core coordinated structure",
+          "Do not add postwar constitutional reforms",
+          "Core of the prewar system"
+        ],
+        [
+          "Unfederated states",
+          "Separate protected or advised states remained distinct",
+          "Preserved variety within the colonial order",
+          "No consolidation into a single nation-state yet",
+          "Shows structural fragmentation"
+        ],
+        [
+          "1930s pressures",
+          "Depression, defense, and administrative strain",
+          "Exposed the limits of the existing structure",
+          "1941 remains the endpoint",
+          "Use as late-colonial context"
+        ]
+      ],
+      "notes": [
+        "The table keeps 1941 as a hard stop.",
+        "It separates the colonial system from the wartime occupation topic.",
+        "The pressure row is qualitative and stable rather than numeric."
+      ],
+      "suggested_section": "Late Colonial Strain and the 1941 Boundary"
+    }
+  ]
+}

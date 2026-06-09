@@ -1,0 +1,204 @@
+{
+  "tables": [
+    {
+      "table_id": "tbl_pre_independence_path",
+      "title": "Key Steps Before Independence",
+      "matrix": [
+        [
+          "Period",
+          "Event",
+          "Why It Mattered",
+          "Extraction Cue"
+        ],
+        [
+          "Postwar years",
+          "Constitutional opening after wartime disruption",
+          "Created space for negotiation over self-government",
+          "Postwar constitutional change"
+        ],
+        [
+          "Early 1950s",
+          "Alliance politics consolidate",
+          "Gave independence a cross-communal governing base",
+          "Alliance coalition"
+        ],
+        [
+          "1956",
+          "Independence Mission to London",
+          "Brought the independence demand into formal talks",
+          "London mission"
+        ],
+        [
+          "1957",
+          "Independence settlement and declaration",
+          "Transferred sovereignty into an independent constitutional order",
+          "31 August 1957"
+        ]
+      ],
+      "notes": [
+        "This timeline keeps the pre-independence path compact and deterministic.",
+        "It does not attempt to list every local political milestone."
+      ],
+      "suggested_section": "From Alliance Politics to the Independence Demand"
+    },
+    {
+      "table_id": "tbl_london_bargaining",
+      "title": "Negotiation Milestones and Actors",
+      "matrix": [
+        [
+          "Date or Phase",
+          "Actor or Institution",
+          "Role in the Process",
+          "Benchmark Note"
+        ],
+        [
+          "1956",
+          "Tunku Abdul Rahman and the Alliance delegation",
+          "Led the Independence Mission to London",
+          "Political demand"
+        ],
+        [
+          "1956",
+          "British government",
+          "Evaluated the transfer of authority and political readiness",
+          "Negotiating counterpart"
+        ],
+        [
+          "1956-1957",
+          "Reid Commission",
+          "Drafted the constitutional framework for independent Malaya",
+          "Constitutional bridge"
+        ],
+        [
+          "1957",
+          "Federal Legislative Council",
+          "Adopted the constitutional settlement",
+          "Legal adoption"
+        ]
+      ],
+      "notes": [
+        "The table separates negotiation from constitutional drafting so the sequence stays legible.",
+        "It does not include later constitutional revisions."
+      ],
+      "suggested_section": "Negotiations in London and Constitutional Bargaining"
+    },
+    {
+      "table_id": "tbl_1957_settlement",
+      "title": "Constitutional Results of Independence",
+      "matrix": [
+        [
+          "Institutional Item",
+          "1957 Result",
+          "Meaning",
+          "Extraction Cue"
+        ],
+        [
+          "Political status",
+          "Federation of Malaya becomes independent",
+          "Ends British colonial sovereignty",
+          "Independence declaration"
+        ],
+        [
+          "Executive office",
+          "Tunku Abdul Rahman becomes first prime minister",
+          "Local national executive takes office",
+          "First prime minister"
+        ],
+        [
+          "System of government",
+          "Parliamentary system under a constitutional monarchy",
+          "Stable postcolonial constitutional order",
+          "Parliamentary monarchy"
+        ],
+        [
+          "Public symbolism",
+          "Merdeka declared on 31 August 1957",
+          "Marks the ceremonial and political moment of sovereignty",
+          "31 August 1957"
+        ]
+      ],
+      "notes": [
+        "The table keeps the result of independence distinct from the negotiation process.",
+        "It is designed for deterministic extraction rather than exhaustive constitutional description."
+      ],
+      "suggested_section": "The Independence Settlement of 1957"
+    },
+    {
+      "table_id": "tbl_alliance_base",
+      "title": "Alliance Coalition and Political Base",
+      "matrix": [
+        [
+          "Party",
+          "Coalition Role",
+          "Main Political Base",
+          "Benchmark Note"
+        ],
+        [
+          "UMNO",
+          "Leading partner in the Alliance",
+          "Malay political support",
+          "Core national bargaining base"
+        ],
+        [
+          "MCA",
+          "Alliance partner",
+          "Chinese political support",
+          "Communal breadth"
+        ],
+        [
+          "MIC",
+          "Alliance partner",
+          "Indian political support",
+          "Multiethnic legitimacy"
+        ],
+        [
+          "Tunku Abdul Rahman",
+          "Alliance leader and chief negotiator",
+          "Public national leadership",
+          "Face of the independence settlement"
+        ]
+      ],
+      "notes": [
+        "The table is intentionally simple and avoids later coalition history.",
+        "It is meant to show why the independence settlement could claim broad representation."
+      ],
+      "suggested_section": "Coalition Politics and Multiethnic Legitimacy"
+    },
+    {
+      "table_id": "tbl_topic_boundary",
+      "title": "What This Topic Includes and Excludes",
+      "matrix": [
+        [
+          "Included",
+          "Excluded",
+          "Reason"
+        ],
+        [
+          "Alliance-led independence negotiations",
+          "Formation of Malaysia in 1963",
+          "Different historical topic"
+        ],
+        [
+          "1956 London mission",
+          "Post-1957 federal restructuring",
+          "Outside the 1957 boundary"
+        ],
+        [
+          "Reid Commission and Federal Constitution",
+          "Later independence anniversaries and commemorations",
+          "This recipe focuses on the original settlement"
+        ],
+        [
+          "31 August 1957 declaration",
+          "Subsequent national policy debates",
+          "Keeps the benchmark narrow and stable"
+        ]
+      ],
+      "notes": [
+        "The boundary table is a recipe-control device rather than a historical claim.",
+        "It helps downstream users avoid mixing this topic with Malaysia's later formation."
+      ],
+      "suggested_section": "Limits of the 1957 Topic Boundary"
+    }
+  ]
+}

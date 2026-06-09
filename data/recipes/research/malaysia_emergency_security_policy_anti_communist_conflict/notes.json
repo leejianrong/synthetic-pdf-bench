@@ -1,0 +1,84 @@
+{
+  "recipe_id": "malaysia_emergency_security_policy_anti_communist_conflict",
+  "topic": "Malaysia: the Emergency, security policy, and anti-communist conflict",
+  "status": "complete_for_review",
+  "scope_decisions": [
+    "The artifact set covers the 1948-1960 Malayan Emergency as the core event and treats post-1960 security practices as legacy rather than as a new primary topic.",
+    "The content stays focused on security policy, counterinsurgency, and anti-communist state formation instead of broad general Malaysian political history.",
+    "PDF-facing text uses English with limited controlled Malay and Simplified Chinese markers only.",
+    "The set avoids precise casualty totals, resettlement totals, and legal-code citations that would require more granular primary-source verification."
+  ],
+  "decisions": [
+    "Use 18 June 1948 as the emergency declaration anchor and 31 July 1960 as the formal end date.",
+    "Treat the Briggs Plan, new villages, and Special Branch intelligence as the main counterinsurgency mechanisms.",
+    "Frame independence in 1957 as part of the political settlement that weakened the insurgency's colonial-war narrative.",
+    "Keep later anti-communist policy in the post-1960 section short so the artifact remains centered on the Emergency."
+  ],
+  "open_questions": [],
+  "source_notes": [
+    {
+      "source_id": "src_britannica_malayan_emergency",
+      "title": "Malayan Emergency",
+      "publisher": "Britannica",
+      "url": "https://www.britannica.com/event/Malayan-Emergency",
+      "used_for": [
+        "1948 outbreak and 1960 end date",
+        "political settlement and independence framing",
+        "general chronology of the conflict"
+      ]
+    },
+    {
+      "source_id": "src_nam_malayan_emergency",
+      "title": "Malayan Emergency",
+      "publisher": "National Army Museum",
+      "url": "https://www.nam.ac.uk/explore/malayan-emergency",
+      "used_for": [
+        "Emergency law and initial security response",
+        "Briggs Plan and Special Branch role",
+        "new villages, White Areas, and counterinsurgency methods"
+      ]
+    },
+    {
+      "source_id": "src_britannica_cpm",
+      "title": "Communist Party of Malaya",
+      "publisher": "Britannica",
+      "url": "https://www.britannica.com/topic/Communist-Party-of-Malaya",
+      "used_for": [
+        "MCP founding in 1930",
+        "communist movement background",
+        "anti-colonial and insurgent orientation"
+      ]
+    },
+    {
+      "source_id": "src_iwm_malaya_guerrilla_war",
+      "title": "How Britain fought a guerrilla war during the Malayan Emergency",
+      "publisher": "Imperial War Museums",
+      "url": "https://www.iwm.org.uk/history/conflict-since-1945/how-britain-fought-a-guerrilla-war-during-the-malayan-emergency",
+      "used_for": [
+        "coordinated command structure",
+        "intelligence-centered counterinsurgency",
+        "population security and operational coordination"
+      ]
+    },
+    {
+      "source_id": "src_britannica_malaysia_security",
+      "title": "Malaysia: Security",
+      "publisher": "Britannica",
+      "url": "https://www.britannica.com/place/Malaysia/Security",
+      "used_for": [
+        "postcolonial inherited internal-security model",
+        "security-state continuity after independence"
+      ]
+    },
+    {
+      "source_id": "src_nlb_cpm_bibliography",
+      "title": "Communist Party of Malaya: A Comprehensive Bibliography",
+      "publisher": "National Library Board Singapore",
+      "url": "https://reference.nlb.gov.sg/guides/singapore/history/cpm-biblio/",
+      "used_for": [
+        "background bibliography for MCP and Emergency-era scholarship",
+        "context for later research refinement"
+      ]
+    }
+  ]
+}

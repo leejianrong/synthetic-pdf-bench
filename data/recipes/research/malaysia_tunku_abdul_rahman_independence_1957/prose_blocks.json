@@ -1,0 +1,151 @@
+{
+  "title": "Malaysia: Tunku Abdul Rahman and Negotiated Independence in 1957",
+  "recipe_id": "malaysia_tunku_abdul_rahman_independence_1957",
+  "sections": [
+    {
+      "heading": "From Alliance Politics to the Independence Demand",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Tunku Abdul Rahman became the most visible spokesman for Malayan independence because he combined electoral legitimacy with a negotiable constitutional strategy. The Alliance victory in the early self-government era gave the independence demand a practical political base, not just a symbolic one."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The postwar route to independence grew out of constitutional change after the Japanese occupation and the Malayan Union controversy. By the mid-1950s, the Alliance was pressing for a full transfer of authority rather than a narrow administrative adjustment. That distinction matters for benchmark extraction because it separates decolonization from routine reform."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The coalition itself mattered. UMNO, MCA, and MIC gave the independence claim a multiethnic political base, which helped Tunku present the demand as representative of the Federation of Malaya rather than of one community alone. In a compact summary, the Alliance turned independence into a governing project."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "A stable way to frame the opening phase is to say that independence was negotiated by a coalition that could speak for several constituencies at once. That framing avoids exaggerating either British generosity or unilateral nationalist pressure, and it keeps the topic grounded in institutional politics."
+        }
+      ],
+      "source_notes": [
+        "Use the official Parliament history page for the broad chronology of Tunku's rise and the Alliance-led demand for independence.",
+        "Malaysia government history materials support the public role of Tunku and the coalition in the independence process."
+      ]
+    },
+    {
+      "heading": "Negotiations in London and Constitutional Bargaining",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The 1956 London mission was the crucial negotiating event. Tunku Abdul Rahman led the Independence Mission to London to ask the British government to grant independence, and the talks set the terms for a constitutional transfer rather than an abrupt break. The result was a settlement that could be converted into law."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The British response was shaped by the need for an orderly handover and confidence in local leadership. Independence was not treated as a purely ceremonial announcement; it required agreement on constitutional structure, administrative continuity, and the political legitimacy of the incoming government. Those conditions are central to the phrase negotiated independence."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The Reid Commission translated the political settlement into constitutional form. Its work produced a framework for an independent and sovereign Malaya under a parliamentary system, and that framework made the 1957 transition durable. For a benchmark dataset, the commission should be treated as the constitutional bridge between negotiation and statehood."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "This section should stay precise about sequence. First came political demand, then London negotiation, then constitutional drafting, and only then the independence settlement. Keeping that order stable helps downstream extraction tasks recover the causal chain without conflating different institutions."
+        }
+      ],
+      "source_notes": [
+        "The Parliament of Malaysia's general information page explicitly summarizes the 1956 Independence Mission and the 1957 constitutional process.",
+        "Official archival sources on the independence agreement support the legal settlement and 31 August 1957 date."
+      ]
+    },
+    {
+      "heading": "The Independence Settlement of 1957",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Independence was declared on 31 August 1957, ending British colonial rule in the Federation of Malaya. The ceremony made the political settlement visible to the public, but its significance rested on the constitutional arrangement already agreed in advance. The declaration and the constitution belong together in any careful summary."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Tunku Abdul Rahman became the first prime minister of independent Malaya. That office was not merely honorary; it marked the shift from colonial administration to an elected national executive. The first cabinet signaled that independence had become an operating government structure, not just a flag-raising event."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The Federal Constitution established a constitutional monarchy and a parliamentary framework. It also gave the new state a stable legal identity that could be presented as sovereign and modern at the same time. The benchmark wording should keep these institutional elements separate so that extraction can recover each one reliably."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The term Merdeka is useful as a controlled Malay marker because it appears in the public language of independence. It should not replace the formal constitutional description, but it does capture the symbolic register of 1957 in a way that is historically accurate and easy to recognize."
+        }
+      ],
+      "source_notes": [
+        "Official archival memorial pages support the 31 August 1957 declaration and the ceremonial record.",
+        "The Parliament of Malaysia page supports the first prime minister and constitutional settlement."
+      ]
+    },
+    {
+      "heading": "Coalition Politics and Multiethnic Legitimacy",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The Alliance coalition mattered because it gave independence a multiethnic governing base. UMNO, MCA, and MIC were not simply election labels; they were the mechanism through which a negotiated settlement could claim broader legitimacy inside the federation. That structure helped make independence politically sustainable."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Tunku's leadership style was to present independence as a common national project rather than as a victory for one party or one community. That framing mattered in a multiethnic society where elite bargaining had to be matched by a public language of inclusion. A benchmark summary should preserve both the coalition and the constitutional logic."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The new state also had to manage continuity. Administrative institutions, legal authority, and executive responsibility could not disappear on the day of independence. For that reason, the 1957 settlement should be understood as a controlled transfer of sovereignty rather than a rupture without institutional carryover."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "This section should remain within the 1957 frame. Later debates about federal expansion, new constitutional arrangements, or post-independence policy belong to other recipes. Keeping the boundary clear makes the benchmark more useful for precise historical extraction."
+        }
+      ],
+      "source_notes": [
+        "Official Malaysia government history pages support the Alliance's public role in the independence settlement.",
+        "The section avoids later developments so the topic stays tied to 1957 only."
+      ]
+    },
+    {
+      "heading": "Limits of the 1957 Topic Boundary",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "This recipe ends with the independence settlement and does not extend into the 1963 formation of Malaysia. That cutoff is deliberate because the benchmark needs a clean boundary between independence in 1957 and later federal restructuring."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The safest summary is that 1957 closed the colonial chapter and opened an independent constitutional order under Tunku Abdul Rahman. Everything after that belongs to separate historical questions, even when the same actors continue to appear."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "For extraction purposes, the topic is complete once it explains the Alliance base, the London negotiations, the constitutional settlement, and the independence declaration. Extra detail is acceptable only if it remains inside that frame."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The boundary itself is a recipe-design decision, not a claim that later events were unimportant. It exists so the benchmark can isolate the specific historical problem of negotiated independence in 1957."
+        }
+      ],
+      "source_notes": [
+        "The cutoff is intentional and keeps this recipe separate from Malaysia's 1963 formation topic.",
+        "The final section exists to prevent scope drift rather than to add new historical claims."
+      ]
+    }
+  ]
+}

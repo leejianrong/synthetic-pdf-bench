@@ -1,0 +1,146 @@
+{
+  "title": "Malaysia: Tunku Abdul Rahman and Negotiated Independence in 1957",
+  "abstract": "This recipe covers the negotiated path to Malayan independence in 1957, centered on Tunku Abdul Rahman, the Alliance leadership, the London talks, the constitutional settlement, and the institutional shape of the new independent state.",
+  "sections": [
+    {
+      "heading": "From Alliance Politics to the Independence Demand",
+      "bullet_points": [
+        "Tunku Abdul Rahman became the central public figure in the independence drive after the Alliance consolidated electoral legitimacy.",
+        "The topic begins with the postwar constitutional opening and the move from colonial consultation to formal self-rule demands.",
+        "The alliance between UMNO, MCA, and MIC is important because it gave the independence claim a cross-communal political base.",
+        "The benchmark should emphasize negotiation and coalition politics rather than a purely unilateral anti-colonial break."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_pre_independence_path",
+          "title": "Key Steps Before Independence",
+          "description": "A compact timeline from postwar political change to the 1956-1957 settlement."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_independence_path",
+          "kind": "timeline",
+          "title": "Road to Independence",
+          "description": "A timeline showing the progression from Alliance politics to the 31 August 1957 declaration."
+        }
+      ],
+      "source_notes": [
+        "Parliament of Malaysia's history page gives the official summary of Tunku's 1956 mission and the 1957 transition.",
+        "National Archives material on the independence memorial supports the ceremonial and documentary record."
+      ]
+    },
+    {
+      "heading": "Negotiations in London and Constitutional Bargaining",
+      "bullet_points": [
+        "The 1956 London mission was the decisive negotiated step in the route to independence.",
+        "British agreement was tied to constitutional safeguards, orderly transfer, and confidence in local political leadership.",
+        "The Reid Commission process mattered because it translated the political settlement into a durable constitutional framework.",
+        "The benchmark should preserve the distinction between achieving independence and designing the constitutional state that followed."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_london_bargaining",
+          "title": "Negotiation Milestones and Actors",
+          "description": "A comparison of the main talks, institutions, and constitutional outputs."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_negotiation_flow",
+          "kind": "flow_diagram",
+          "title": "Negotiation and Constitutional Output",
+          "description": "A simple flow diagram from London talks to constitutional drafting and adoption."
+        }
+      ],
+      "source_notes": [
+        "The Parliament of Malaysia page provides a clean official chronology of the 1956 mission and 1957 constitution.",
+        "Official archival material on the Federal Constitution and independence agreement supports the settlement sequence."
+      ]
+    },
+    {
+      "heading": "The Independence Settlement of 1957",
+      "bullet_points": [
+        "Independence was declared on 31 August 1957 and marked the end of British colonial rule in the Federation of Malaya.",
+        "Tunku Abdul Rahman became the first prime minister of an independent Malaya.",
+        "The Federal Constitution created a constitutional monarchy and established a parliamentary framework.",
+        "The benchmark should treat the declaration, the constitutional order, and the first cabinet as linked but distinct facts."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_1957_settlement",
+          "title": "Constitutional Results of Independence",
+          "description": "A deterministic summary of the main institutional changes that took effect in 1957."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_1957_settlement",
+          "kind": "comparison_chart",
+          "title": "Colonial Status Versus Independent State",
+          "description": "A comparison of the authority structure before and after 31 August 1957."
+        }
+      ],
+      "source_notes": [
+        "The official Parliament page and archival independence materials anchor the declaration date and first cabinet.",
+        "The constitutional summary should stay focused on the 1957 settlement, not later federation changes."
+      ]
+    },
+    {
+      "heading": "Coalition Politics and Multiethnic Legitimacy",
+      "bullet_points": [
+        "The Alliance's cross-communal structure helped make independence politically credible inside the Federation of Malaya.",
+        "UMNO, MCA, and MIC mattered not only as parties but as coalition partners in a negotiated transfer of power.",
+        "The topic can mention Bahasa Melayu terms such as merdeka and Persekutuan Tanah Melayu without drifting into another language domain.",
+        "This section should show how negotiated independence depended on elite bargaining and broad electoral legitimacy at the same time."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_alliance_base",
+          "title": "Alliance Coalition and Political Base",
+          "description": "A structured view of the parties and constituencies behind the independence settlement."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_alliance_network",
+          "kind": "network_diagram",
+          "title": "Alliance Coalition Network",
+          "description": "A network view of the coalition partners and their relationship to the independence outcome."
+        }
+      ],
+      "source_notes": [
+        "Official Malaysia government history pages support the public role of Tunku and the Alliance.",
+        "The section is intentionally limited to coalition politics before and during independence, not later interethnic policy debates."
+      ]
+    },
+    {
+      "heading": "Limits of the 1957 Topic Boundary",
+      "bullet_points": [
+        "The recipe stops at the 1957 independence settlement and does not expand into the formation of Malaysia in 1963.",
+        "Later constitutional or federal developments belong to separate topics and should not be merged into this one.",
+        "The benchmark should emphasize stable, documentary facts that are easy to verify from official sources.",
+        "The narrative is complete when it explains how negotiation, constitutional drafting, and declaration came together in 1957."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_topic_boundary",
+          "title": "What This Topic Includes and Excludes",
+          "description": "A boundary table that keeps the recipe from spilling into later Malaysian history."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_topic_boundary",
+          "kind": "timeline",
+          "title": "Topic Boundary",
+          "description": "A short timeline ending at the 1957 declaration to keep the scope strict."
+        }
+      ],
+      "source_notes": [
+        "The boundary is a recipe-design choice, not a historical claim.",
+        "The topic ends at independence to keep it distinct from the later formation of Malaysia."
+      ]
+    }
+  ]
+}

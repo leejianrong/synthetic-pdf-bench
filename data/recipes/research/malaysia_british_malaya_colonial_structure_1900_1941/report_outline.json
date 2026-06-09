@@ -1,0 +1,223 @@
+{
+  "title": "Malaysia: British Malaya, Protectorates, and Colonial Political Structure, 1900-1941",
+  "recipe_id": "malaysia_british_malaya_colonial_structure_1900_1941",
+  "topic": "Malaysia: British Malaya, protectorates, and colonial political structure from 1900 to 1941",
+  "abstract": "This synthetic research outline covers British Malaya from 1900 to 1941 with emphasis on the layered political structure linking the Straits Settlements, the Federated Malay States, the Unfederated Malay States, and the northern protectorates. It focuses on the direct colony versus indirect rule distinction, the role of the Governor and High Commissioner, Residents and Advisers, the Federal Council, and the limits of colonial representation. The report is designed for stable PDF benchmark generation, with primarily English prose and selected Bahasa Melayu context markers.",
+  "language_profile": {
+    "primary_language": "English",
+    "allowed_pdf_languages": [
+      "English",
+      "Bahasa Melayu",
+      "Bahasa Indonesia",
+      "Simplified Chinese"
+    ],
+    "multilingual_terms": [
+      {
+        "term": "negeri-negeri Melayu Bersekutu",
+        "language": "Bahasa Melayu",
+        "meaning": "Federated Malay States"
+      },
+      {
+        "term": "negeri-negeri Melayu Tidak Bersekutu",
+        "language": "Bahasa Melayu",
+        "meaning": "Unfederated Malay States"
+      },
+      {
+        "term": "Residen",
+        "language": "Bahasa Melayu",
+        "meaning": "British Resident"
+      },
+      {
+        "term": "Penasihat British",
+        "language": "Bahasa Melayu",
+        "meaning": "British Adviser"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "heading": "Colonial Layers and Imperial Oversight",
+      "bullet_points": [
+        "Place the Straits Settlements as the direct Crown colony core of British Malaya, especially Penang and Malacca on the peninsula, under a governor answerable to the Colonial Office.",
+        "Distinguish direct colonial rule from protectorate arrangements so the report does not flatten the peninsula into one uniform administration.",
+        "Explain that the Governor of the Straits Settlements also served as High Commissioner for the Malay States, which linked colony-wide authority to the sultanates.",
+        "Keep the description neutral and structural rather than celebratory or nationalist."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_colonial_layers",
+          "title": "Colonial Layers in British Malaya, 1900-1941",
+          "description": "Matrix summarizing the main territorial categories and governing channels."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_colonial_hierarchy",
+          "kind": "flow_diagram",
+          "title": "British Malaya Governance Hierarchy"
+        }
+      ],
+      "source_notes": [
+        "The National Archives overview of Straits Settlements gives the direct-colony framing and the governor's role.",
+        "Britannica summaries provide a stable high-level description of British control in Malaya.",
+        "Keep Penang and Malacca in view as part of the colony while not drifting into the separate Singapore topic."
+      ]
+    },
+    {
+      "heading": "Federated Malay States and Resident Rule",
+      "bullet_points": [
+        "Identify Perak, Selangor, Negeri Sembilan, and Pahang as the Federated Malay States in the period covered by the topic.",
+        "Describe the resident system as indirect rule: Malay rulers remained in place, but British Residents shaped administration, revenue, and policy.",
+        "Explain the Federal Council as the main federal forum, with the sultans represented there and British officials coordinating policy across the federation.",
+        "Use the Malay phrase negeri-negeri Melayu Bersekutu as a controlled benchmark marker only."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_fms_structure",
+          "title": "Federated Malay States Structure and Functions",
+          "description": "Matrix covering the four federated states, the Resident system, and the federal council layer."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_fms_timeline",
+          "kind": "timeline",
+          "title": "Federated Malay States Milestones"
+        }
+      ],
+      "source_notes": [
+        "The National Archives Malaya overview states that the Federated Malay States had a Federal Council and a British Political Resident system.",
+        "Britannica history material confirms the federated core states and the wider British control pattern.",
+        "Avoid turning the Federal Council into a modern parliament; it was a colonial institution with limited representation."
+      ]
+    },
+    {
+      "heading": "Protectorates, Unfederated States, and Treaty Reordering",
+      "bullet_points": [
+        "Describe the northern Malay states as moving into the British sphere after the 1909 Anglo-Siamese Treaty, which redirected sovereignty and boundary arrangements.",
+        "Treat Kedah, Kelantan, Perlis, and Terengganu as protectorates or states under British protection, not as direct colonies.",
+        "Explain that Johor remained outside the federation but accepted a British adviser in 1914, showing a different path to British influence.",
+        "Emphasize that the Unfederated Malay States kept more local autonomy than the Federated Malay States, even though British leverage steadily increased."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_protectorate_changes",
+          "title": "Protectorate and Adviser Changes, 1900-1941",
+          "description": "Matrix showing how status shifted for the northern states and Johor."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_protectorate_network",
+          "kind": "network_diagram",
+          "title": "Protectorate and Adviser Network"
+        }
+      ],
+      "source_notes": [
+        "Britannica states that Britain pressured Siam in 1909 to transfer sovereignty over the northern Malay states.",
+        "The National Archives treaty and boundary records support the 1909 treaty and the post-treaty boundary work.",
+        "Johor government and Britannica material support the 1914 adviser milestone while showing that Johor remained distinct from the FMS."
+      ]
+    },
+    {
+      "heading": "Councils, Rulers, and Limited Participation",
+      "bullet_points": [
+        "Describe political authority as layered: sultans, state councils, Residents or Advisers, federal officers, and colonial officials all played different roles.",
+        "Explain that representation was narrow and elite-based, not electoral democracy in the modern sense.",
+        "Show how decisions about revenue, land, labor, police, railways, and public works moved through colonial and state channels rather than through one unified Malayan legislature.",
+        "Use the report to clarify how colonial legitimacy depended on working through rulers rather than replacing them everywhere."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_decision_channels",
+          "title": "Decision Channels in Colonial Political Structure",
+          "description": "Matrix connecting policy areas to the institutions that controlled them."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_decision_flow",
+          "kind": "flow_diagram",
+          "title": "How Colonial Decisions Moved"
+        }
+      ],
+      "source_notes": [
+        "The National Archives Malaya overview gives the clearest compact summary of rulers, councils, and British Political Residents.",
+        "Britannica materials on British rule in Malaya support the distinction between direct and indirect control.",
+        "Keep the language neutral: the point is institutional structure, not a verdict on legitimacy."
+      ]
+    },
+    {
+      "heading": "Late Colonial Strain and the 1941 Boundary",
+      "bullet_points": [
+        "Describe the 1930s as a period when depression, defense concerns, and administrative complexity exposed the limits of the existing structure.",
+        "Explain that British Malaya remained layered rather than unified, even as imperial coordination increased in strategic importance.",
+        "Use 1941 as a hard endpoint so the topic stays separate from the Japanese invasion and wartime occupation.",
+        "Frame the topic as a prewar political structure report, not as a war or occupation narrative."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_1941_threshold",
+          "title": "Late Colonial Structure Before the 1941 Break",
+          "description": "Matrix separating the prewar political layers from the occupation period that follows."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_1900_1941_synthesis",
+          "kind": "timeline",
+          "title": "Colonial Structure from 1900 to 1941"
+        }
+      ],
+      "source_notes": [
+        "Britannica and National Archives material support the high-level 1941 boundary and the prewar colonial framing.",
+        "Do not cross into the Japanese occupation topic except as a boundary marker.",
+        "Keep defense language broad and historically stable rather than tactical."
+      ]
+    }
+  ],
+  "source_register": [
+    {
+      "source_id": "src_tna_straits_settlements",
+      "title": "Straits Settlements",
+      "publisher": "The National Archives",
+      "url": "https://www.nationalarchives.gov.uk/first-world-war__trashed/a-global-view__trashed/asia/straits-settlements/",
+      "use": "Direct-colony framing and governor/High Commissioner context."
+    },
+    {
+      "source_id": "src_tna_malaya_1914",
+      "title": "Malaya in 1914",
+      "publisher": "The National Archives",
+      "url": "https://www.nationalarchives.gov.uk/first-world-war__trashed/a-global-view__trashed/asia/malaya/",
+      "use": "Federal Council, British Political Resident, and state grouping summary."
+    },
+    {
+      "source_id": "src_britannica_history_malaysia",
+      "title": "History of Malaysia",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/history-of-Malaysia",
+      "use": "1909 northern states transfer, Johor in 1914, and broad British control chronology."
+    },
+    {
+      "source_id": "src_britannica_straits_settlements",
+      "title": "Straits Settlements",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/place/Straits-Settlements",
+      "use": "Colony composition and administrative geography."
+    },
+    {
+      "source_id": "src_tna_anglo_siamese_boundary",
+      "title": "Anglo-Siamese Boundary Commission map and treaty records",
+      "publisher": "The National Archives",
+      "url": "https://discovery.nationalarchives.gov.uk/details/r/C3004670",
+      "use": "1909 treaty boundary context for the northern Malay states."
+    },
+    {
+      "source_id": "src_johor_jmf_history",
+      "title": "SEJARAH PENUBUHAN ATSNJ",
+      "publisher": "Johor Military Force",
+      "url": "https://jmf.johor.gov.my/en/sejarah/",
+      "use": "Johor adviser chronology and the state's distinct political path."
+    }
+  ]
+}

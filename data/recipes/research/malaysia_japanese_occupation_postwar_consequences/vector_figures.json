@@ -1,0 +1,270 @@
+{
+  "figures": [
+    {
+      "figure_id": "fig_occupation_timeline",
+      "kind": "timeline",
+      "title": "From Invasion to Surrender",
+      "caption": "Timeline of the main occupation milestones from the Japanese invasion to surrender in 1945.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1941,
+          "end_year": 1945,
+          "tick_interval_years": 1
+        },
+        "events": [
+          {
+            "year": 1941,
+            "label": "Japanese invasion of Malaya begins",
+            "short_label": "Invasion",
+            "event_type": "war"
+          },
+          {
+            "year": 1942,
+            "label": "British authority collapses and military occupation takes hold",
+            "short_label": "Occupation",
+            "event_type": "administration"
+          },
+          {
+            "year": 1943,
+            "label": "Occupation administration continues under wartime scarcity",
+            "short_label": "Rule continues",
+            "event_type": "continuity"
+          },
+          {
+            "year": 1945,
+            "label": "Japanese surrender and end of occupation",
+            "short_label": "Surrender",
+            "event_type": "boundary"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 20
+        }
+      },
+      "suggested_section": "Japanese Invasion, Military Rule, and the Occupation State"
+    },
+    {
+      "figure_id": "fig_coercion_flow",
+      "kind": "flow_diagram",
+      "title": "Occupation Coercion Cycle",
+      "caption": "Simplified flow showing how surveillance, rationing, fear, and informal coping reinforced one another.",
+      "data": {
+        "direction": "left_to_right",
+        "nodes": [
+          {
+            "id": "surveillance",
+            "label": "Surveillance and censorship"
+          },
+          {
+            "id": "shortage",
+            "label": "Scarcity and inflation"
+          },
+          {
+            "id": "fear",
+            "label": "Fear and uncertainty"
+          },
+          {
+            "id": "coping",
+            "label": "Barter, rationing, and improvisation"
+          }
+        ],
+        "edges": [
+          {
+            "from": "surveillance",
+            "to": "shortage",
+            "label": "controls"
+          },
+          {
+            "from": "shortage",
+            "to": "fear",
+            "label": "daily pressure"
+          },
+          {
+            "from": "fear",
+            "to": "coping",
+            "label": "adaptation"
+          },
+          {
+            "from": "coping",
+            "to": "surveillance",
+            "label": "informal networks"
+          }
+        ],
+        "render_hints": {
+          "wrap_labels": true,
+          "label_wrap_width_chars": 24,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "Coercion, Scarcity, and Communal Differentiation"
+    },
+    {
+      "figure_id": "fig_resistance_network",
+      "kind": "network_diagram",
+      "title": "Resistance and Postwar Influence Network",
+      "caption": "Network diagram linking resistance formations, British liaison, and postwar political claims.",
+      "data": {
+        "layout": "hub_and_spoke",
+        "central_node": "mpaja",
+        "nodes": [
+          {
+            "id": "mpaja",
+            "label": "MPAJA"
+          },
+          {
+            "id": "mcp",
+            "label": "Malayan Communist Party"
+          },
+          {
+            "id": "british",
+            "label": "British wartime liaison"
+          },
+          {
+            "id": "veterans",
+            "label": "Wartime veterans and supporters"
+          },
+          {
+            "id": "postwar",
+            "label": "Postwar political claims"
+          }
+        ],
+        "edges": [
+          {
+            "from": "mcp",
+            "to": "mpaja",
+            "label": "leadership influence"
+          },
+          {
+            "from": "british",
+            "to": "mpaja",
+            "label": "support and coordination"
+          },
+          {
+            "from": "veterans",
+            "to": "mpaja",
+            "label": "reputation and memory"
+          },
+          {
+            "from": "mpaja",
+            "to": "postwar",
+            "label": "political capital"
+          }
+        ],
+        "render_hints": {
+          "hub_emphasis": true,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 22
+        }
+      },
+      "suggested_section": "Resistance, the MPAJA, and Postwar Political Capital"
+    },
+    {
+      "figure_id": "fig_postwar_settlement_path",
+      "kind": "flow_diagram",
+      "title": "Postwar Settlement Path",
+      "caption": "Flow diagram from Japanese surrender to British Military Administration, Malayan Union, and Malay opposition.",
+      "data": {
+        "direction": "left_to_right",
+        "nodes": [
+          {
+            "id": "surrender",
+            "label": "Japanese surrender"
+          },
+          {
+            "id": "bma",
+            "label": "British Military Administration"
+          },
+          {
+            "id": "union",
+            "label": "Malayan Union proposal"
+          },
+          {
+            "id": "opposition",
+            "label": "Malay nationalist backlash"
+          },
+          {
+            "id": "federation",
+            "label": "Federation of Malaya"
+          }
+        ],
+        "edges": [
+          {
+            "from": "surrender",
+            "to": "bma",
+            "label": "restoration"
+          },
+          {
+            "from": "bma",
+            "to": "union",
+            "label": "constitutional planning"
+          },
+          {
+            "from": "union",
+            "to": "opposition",
+            "label": "political reaction"
+          },
+          {
+            "from": "opposition",
+            "to": "federation",
+            "label": "new settlement"
+          }
+        ],
+        "render_hints": {
+          "wrap_labels": true,
+          "label_wrap_width_chars": 24,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "British Return, the Malayan Union, and Malay Nationalist Backlash"
+    },
+    {
+      "figure_id": "fig_legacy_timeline",
+      "kind": "timeline",
+      "title": "Occupation Legacy Timeline",
+      "caption": "Timeline covering the surrender, Malayan Union, Federation of Malaya, Emergency, and independence.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1945,
+          "end_year": 1957,
+          "tick_interval_years": 2
+        },
+        "events": [
+          {
+            "year": 1945,
+            "label": "Japanese surrender and British return",
+            "short_label": "Surrender",
+            "event_type": "boundary"
+          },
+          {
+            "year": 1946,
+            "label": "Malayan Union proposal becomes a political flashpoint",
+            "short_label": "Union crisis",
+            "event_type": "constitutional"
+          },
+          {
+            "year": 1948,
+            "label": "Federation of Malaya established and Emergency begins",
+            "short_label": "Federation and Emergency",
+            "event_type": "constitutional"
+          },
+          {
+            "year": 1957,
+            "label": "Independence and Merdeka",
+            "short_label": "Independence",
+            "event_type": "boundary"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 20
+        }
+      },
+      "suggested_section": "Federation, Emergency, and the Long Political Shadow of Occupation"
+    }
+  ]
+}

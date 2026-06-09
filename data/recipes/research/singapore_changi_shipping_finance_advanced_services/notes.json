@@ -1,0 +1,130 @@
+{
+  "recipe_id": "singapore_changi_shipping_finance_advanced_services",
+  "topic": "Singapore: Changi, shipping, finance, and advanced services in the late twentieth and early twenty-first centuries",
+  "open_questions": [],
+  "decisions": [
+    "The topic is scoped from the 1981 opening of Changi Airport through the 2020s, with the main emphasis on durable institutional change rather than on short-run performance data.",
+    "Shipping is treated as a logistics-and-services ecosystem that includes port governance, transshipment, cargo coordination, and multimodal links to Changi.",
+    "Finance is treated primarily through market infrastructure, digital exchange, and headquarters functions rather than through annual market statistics."
+  ],
+  "source_notes": [
+    {
+      "source_id": "src_changi_about_us",
+      "title": "About Us",
+      "publisher": "Changi Airport Group",
+      "url": "https://www.changiairport.com/en/corporate/about-us.html",
+      "used_for": [
+        "1981 opening of Changi Airport",
+        "relocation from Paya Lebar",
+        "2019 Jewel milestone",
+        "airport growth and service framing"
+      ]
+    },
+    {
+      "source_id": "src_changi_east",
+      "title": "Changi East Development",
+      "publisher": "Changi Airport Group",
+      "url": "https://www.changiairport.com/en/corporate/about-us/future-developments/changi-east.html",
+      "used_for": [
+        "Terminal 5",
+        "three-runway system",
+        "Changi East Industrial Zone",
+        "2014, 2020, 2022, and 2025 expansion markers"
+      ]
+    },
+    {
+      "source_id": "src_mpa_global_connectivity",
+      "title": "Global Connectivity",
+      "publisher": "Maritime and Port Authority of Singapore",
+      "url": "https://www.mpa.gov.sg/maritime-singapore/what-maritime-singapore-offers/global-hub-port",
+      "used_for": [
+        "1986 busiest-port-by-tonnage claim",
+        "vessel-call and shipping-line connectivity",
+        "transshipment and multimodal network framing"
+      ]
+    },
+    {
+      "source_id": "src_masnet",
+      "title": "About MASNET",
+      "publisher": "MASNET / Monetary Authority of Singapore",
+      "url": "https://masnet.mas.gov.sg/portal/about-masnet/",
+      "used_for": [
+        "1991 launch of secure financial-sector communications",
+        "digital exchange and data-sharing framing"
+      ]
+    },
+    {
+      "source_id": "src_sgfindex",
+      "title": "Singapore Financial Data Exchange infographic",
+      "publisher": "Monetary Authority of Singapore",
+      "url": "https://www.mas.gov.sg/-/media/mas/fintech/sgfindex/sgfindex-infographic-2022.pdf",
+      "used_for": [
+        "SGFinDex architecture",
+        "Singpass authentication",
+        "consent-based data exchange",
+        "digital finance infrastructure"
+      ]
+    },
+    {
+      "source_id": "src_mas_corporate_debt",
+      "title": "Singapore Corporate Debt Market Development 2024",
+      "publisher": "Monetary Authority of Singapore",
+      "url": "https://www.mas.gov.sg/-/media/mas/news-and-publications/surveys/debts/singapore-corporate-debt-market-development-2024-18-jul-2024.pdf",
+      "used_for": [
+        "corporate-debt market development",
+        "fundraising-centre framing",
+        "asset and wealth-management hub context"
+      ]
+    },
+    {
+      "source_id": "src_edb_logistics",
+      "title": "Logistics & Supply Chain Management",
+      "publisher": "Singapore Economic Development Board",
+      "url": "https://www.edb.gov.sg/en/our-industries/logistics-and-supply-chain-management.html",
+      "used_for": [
+        "integration of PSA and Changi Airport into logistics positioning",
+        "regional HQ and supply-chain ecosystem framing"
+      ]
+    },
+    {
+      "source_id": "src_edb_professional_services",
+      "title": "Professional Services",
+      "publisher": "Singapore Economic Development Board",
+      "url": "https://www.edb.gov.sg/en/our-industries/professional-services.html",
+      "used_for": [
+        "professional-services categories",
+        "regional headquarters platform",
+        "talent and trusted-expertise framing"
+      ]
+    },
+    {
+      "source_id": "src_edb_headquarters",
+      "title": "Headquarters in Singapore",
+      "publisher": "Singapore Economic Development Board",
+      "url": "https://www.edb.gov.sg/en/our-industries/industries-and-key-activities/headquarters.html",
+      "used_for": [
+        "regional headquarters destination framing",
+        "ecosystem and connectivity argument"
+      ]
+    },
+    {
+      "source_id": "src_ura_business_park",
+      "title": "Business Park Introduction",
+      "publisher": "Urban Redevelopment Authority",
+      "url": "https://www.ura.gov.sg/Corporate/Guidelines/Development-Control/Non-Residential/Business-Park/Introduction.aspx",
+      "used_for": [
+        "business park use as a high-technology, R&D, and knowledge-intensive land use"
+      ]
+    },
+    {
+      "source_id": "src_jtc_changi_business_park",
+      "title": "7 & 9 Changi Business Park",
+      "publisher": "JTC",
+      "url": "https://www.jtc.gov.sg/find-space/7--9-changi-business-park",
+      "used_for": [
+        "Changi Business Park as an eastern business-park anchor",
+        "airport-adjacent knowledge-cluster geography"
+      ]
+    }
+  ]
+}

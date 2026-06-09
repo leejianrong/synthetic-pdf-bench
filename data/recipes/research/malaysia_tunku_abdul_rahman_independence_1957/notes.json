@@ -1,0 +1,81 @@
+{
+  "recipe_id": "malaysia_tunku_abdul_rahman_independence_1957",
+  "topic": "Malaysia: Tunku Abdul Rahman and negotiated independence in 1957",
+  "open_questions": [],
+  "decisions": [
+    "The recipe stays strictly inside 1957 and does not extend into the 1963 formation of Malaysia.",
+    "The prose uses English with a small number of stable Malay markers such as Merdeka and Persekutuan Tanah Melayu.",
+    "The artifact set emphasizes negotiation, constitutional drafting, and the independence declaration as distinct but linked steps.",
+    "The figures and tables are deliberately compact so validation and downstream extraction remain deterministic."
+  ],
+  "source_notes": [
+    {
+      "source_id": "src_parliament_malaysia_general_information",
+      "title": "General Information",
+      "publisher": "Official Portal of the Parliament of Malaysia",
+      "url": "https://parlimen.gov.my/maklumat-umum.html?lang=en&uweb=dn",
+      "used_for": [
+        "Tunku Abdul Rahman's 1956 Independence Mission to London",
+        "The 1957 constitutional settlement and first prime minister context",
+        "The official chronology of independence"
+      ]
+    },
+    {
+      "source_id": "src_arkib_proclamation_memorial",
+      "title": "The Proclamation of Independence Memorial",
+      "publisher": "National Archives of Malaysia",
+      "url": "https://www.arkib.gov.my/en/perkhidmatan/arkib-memorial/info-galeri/the-proclamation-of-independence-memorial",
+      "used_for": [
+        "Ceremonial and documentary record for the 31 August 1957 declaration",
+        "Independence memorial context and the independence agreement record"
+      ]
+    },
+    {
+      "source_id": "src_arkib_independence_proclamation",
+      "title": "Pengisytiharan Kemerdekaan Persekutuan Tanah Melayu",
+      "publisher": "National Archives of Malaysia",
+      "url": "https://hids.arkib.gov.my/print_peristiwa/4110?lang=bm",
+      "used_for": [
+        "The 31 August 1957 proclamation date",
+        "The public Merdeka ceremony summary"
+      ]
+    },
+    {
+      "source_id": "src_arkib_independence_agreement",
+      "title": "Perjanjian Kemerdekaan Persekutuan Tanah Melayu",
+      "publisher": "National Archives of Malaysia",
+      "url": "https://pustakailmu.arkib.gov.my/index.php/ms/pustaka-ilmu/jendela-sejarah/perjanjian-kemerdekaan-persekutuan-tanah-melayu",
+      "used_for": [
+        "The independence agreement and its date",
+        "Support for the legal settlement before declaration"
+      ]
+    },
+    {
+      "source_id": "src_arkib_pemasyhuran_1957",
+      "title": "Pemasyhuran Kemerdekaan 1957",
+      "publisher": "National Archives of Malaysia",
+      "url": "https://pustakailmu.arkib.gov.my/index.php/ms/pustaka-ilmu/permata-pusaka/pemasyhuran-kemerdekaan-1957",
+      "used_for": [
+        "The independence proclamation itself",
+        "Public-facing ceremonial language"
+      ]
+    },
+    {
+      "source_id": "src_pmo_former_prime_ministers",
+      "title": "Former Prime Ministers of Malaysia",
+      "publisher": "Prime Minister's Office of Malaysia",
+      "url": "https://www.pmo.gov.my/en/former-prime-ministers-of-malaysia/",
+      "used_for": [
+        "Tunku Abdul Rahman as the first prime minister",
+        "General official framing of the independence-era leadership"
+      ]
+    }
+  ],
+  "scope_decisions": [
+    "The topic covers only the negotiated route to independence in 1957, not the later formation of Malaysia in 1963.",
+    "The prose treats the Alliance coalition as the principal political base for the independence settlement.",
+    "The constitutional drafting step is attributed to the Reid Commission and the formal 1957 settlement.",
+    "The recipe is designed to stay within stable, official-source facts that are easy to verify."
+  ],
+  "open_uncertainty": []
+}

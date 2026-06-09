@@ -1,0 +1,99 @@
+{
+  "recipe_id": "malaysia_japanese_occupation_postwar_consequences",
+  "topic": "Malaysia: Japanese occupation in Malaya and its postwar political consequences",
+  "status": "complete_for_review",
+  "scope_decisions": [
+    "The artifact set covers one topic only and stays within Malaya and its postwar political consequences.",
+    "No canonical recipes, generator code, docs, or unrelated recipe folders were modified.",
+    "PDF-facing prose stays in English, with only controlled Malay political terms where they clarify the history.",
+    "Exact casualty totals, precise ration quotas, and other unstable numeric claims are intentionally omitted."
+  ],
+  "decisions": [
+    "The narrative centers on military rule, scarcity, resistance, the Malayan Union, the Federation of Malaya, and the Emergency.",
+    "The folder treats wartime resistance as a source of postwar political capital but does not try to write a full military history.",
+    "The topic boundary stops before later development history after independence."
+  ],
+  "open_questions": [],
+  "source_notes": [
+    {
+      "source_id": "src_britannica_malaysia_political_transformation",
+      "title": "Malaysia: Political transformation",
+      "publisher": "Britannica",
+      "url": "https://www.britannica.com/place/Malaysia/Political-transformation",
+      "used_for": [
+        "Broad occupation-era changes in Malaya and Borneo",
+        "Communal tension and political consequences of Japanese rule"
+      ]
+    },
+    {
+      "source_id": "src_britannica_mpaja",
+      "title": "Malayan People's Anti-Japanese Army",
+      "publisher": "Britannica",
+      "url": "https://www.britannica.com/topic/Malayan-Peoples-Anti-Japanese-Army",
+      "used_for": [
+        "Wartime resistance formation",
+        "Postwar political prestige and communist-linked leadership"
+      ]
+    },
+    {
+      "source_id": "src_britannica_malayan_emergency",
+      "title": "Malayan Emergency",
+      "publisher": "Britannica",
+      "url": "https://www.britannica.com/event/Malayan-Emergency",
+      "used_for": [
+        "Postwar security politics",
+        "The Emergency as a long political consequence of wartime change"
+      ]
+    },
+    {
+      "source_id": "src_arkib_malayan_union_article",
+      "title": "MALAYAN UNION - Teladan buat generasi kini, akan datang",
+      "publisher": "Arkib Negara Malaysia / Pustaka Ilmu",
+      "url": "https://pustakailmu.arkib.gov.my/index.php/ms/pustaka-ilmu/jendela-sejarah/malayan-union-teladan-buat-generasi-kini-akan-datang",
+      "used_for": [
+        "Malayan Union backlash and Malay political mobilization",
+        "UMNO formation context"
+      ]
+    },
+    {
+      "source_id": "src_arkib_federation_1948",
+      "title": "FEDERATION OF MALAYA, 1ST FEBRUARY 1948",
+      "publisher": "Arkib Negara Malaysia Online Finding Aids",
+      "url": "https://ofa.arkib.gov.my/ofa/group/asset/1023530",
+      "used_for": [
+        "Constitutional transition to the Federation of Malaya",
+        "Postwar state-building chronology"
+      ]
+    },
+    {
+      "source_id": "src_arkib_colonial_office_asia",
+      "title": "KOLEKSI DIGITAL COLONIAL OFFICE ASIA",
+      "publisher": "Arkib Negara Malaysia",
+      "url": "https://www.arkib.gov.my/images/perkhidmatan-penyelidikan/pangkalan-data-elektronik/SENARAI%20KOLEKSI%20DIGITAL%20COLONIAL%20OFFICE%20ASIA.pdf",
+      "used_for": [
+        "Administrative context for Malaya and the Straits Settlements",
+        "Archival framing for British colonial and postwar records"
+      ]
+    },
+    {
+      "source_id": "src_national_museum_colonial_era",
+      "title": "Gallery C: Colonial Era",
+      "publisher": "National Museum of Malaysia",
+      "url": "https://www.muziumnegara.gov.my/en/node/101",
+      "used_for": [
+        "Museum-level framing of Japanese occupation in Malaya",
+        "Long-run colonial and postcolonial presentation of the topic"
+      ]
+    },
+    {
+      "source_id": "src_arkib_japanese_occupation_report",
+      "title": "Arkib : Intipati Kepada Masa",
+      "publisher": "Arkib Negara Malaysia",
+      "url": "https://www.arkib.gov.my/images/penerbitan/edaran%20awam/laporan%20tahunan/Laporan%20Tahunan%202016%20Arkib%20Negara%20Malaysia.pdf",
+      "used_for": [
+        "Archive framing that links Japanese Occupation, BMA, Malayan Union, and Emergency",
+        "High-level chronology for the topic boundary"
+      ]
+    }
+  ]
+}

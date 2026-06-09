@@ -1,0 +1,228 @@
+{
+  "title": "Malaysia: The Emergency, Security Policy, and Anti-Communist Conflict",
+  "recipe_id": "malaysia_emergency_security_policy_anti_communist_conflict",
+  "topic": "Malaysia: the Emergency, security policy, and anti-communist conflict",
+  "abstract": "This synthetic research outline covers the Malayan Emergency and its security-policy legacy in the transition from late colonial Malaya to independent Malaysia. It emphasizes the outbreak of communist insurgency in 1948, emergency law, intelligence and police coordination, resettlement and rural control, political settlement and independence, and the longer anti-communist security state that shaped Malaysia after 1960. The report is designed for stable PDF benchmark generation, with primarily English prose and selected Bahasa Melayu and Simplified Chinese context markers.",
+  "language_profile": {
+    "primary_language": "English",
+    "allowed_pdf_languages": [
+      "English",
+      "Bahasa Melayu",
+      "Bahasa Indonesia",
+      "Simplified Chinese"
+    ],
+    "multilingual_terms": [
+      {
+        "term": "darurat",
+        "language": "Bahasa Melayu",
+        "meaning": "emergency"
+      },
+      {
+        "term": "kampung baharu",
+        "language": "Bahasa Melayu",
+        "meaning": "new village"
+      },
+      {
+        "term": "keselamatan dalam negeri",
+        "language": "Bahasa Melayu",
+        "meaning": "internal security"
+      },
+      {
+        "term": "紧急状态",
+        "language": "Simplified Chinese",
+        "meaning": "emergency"
+      },
+      {
+        "term": "反共",
+        "language": "Simplified Chinese",
+        "meaning": "anti-communist"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "heading": "Origins of the Emergency and the Communist Challenge",
+      "bullet_points": [
+        "Place the Malayan Emergency in the postwar transition from Japanese occupation to renewed British control in the Federation of Malaya.",
+        "Explain the role of the Malayan Communist Party and its armed wing, the Malayan National Liberation Army, as the central insurgent force.",
+        "Describe why 18 June 1948 became the opening date of the emergency regime and why the conflict was framed as a state of emergency rather than a formal war.",
+        "Use the Malay term darurat as a controlled benchmark marker for emergency policy."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_emergency_origins_timeline",
+          "title": "Emergency Origins and Early Escalation",
+          "description": "Timeline matrix showing postwar tensions, the 1948 declaration, and the first phase of insurgent violence."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_emergency_origins_timeline",
+          "kind": "timeline",
+          "title": "Emergency Origins Timeline"
+        }
+      ],
+      "source_notes": [
+        "Britannica and the National Army Museum summarize the 1948 outbreak, MCP insurgency, and the emergency framing.",
+        "Use the conflict as a Malayan and early Malaysian state-security problem rather than as a purely military episode.",
+        "Keep the opening narrative separate from later constitutional and post-1960 security developments."
+      ]
+    },
+    {
+      "heading": "Emergency Law, Security Institutions, and Intelligence",
+      "bullet_points": [
+        "Explain how colonial and federal authorities relied on emergency regulations, detention powers, curfews, and movement restrictions.",
+        "Describe the growth of police intelligence, Special Branch work, military coordination, and district-level command structures.",
+        "Show how the state made security policy a daily administrative system rather than a temporary battlefield response.",
+        "Use the phrases keselamatan dalam negeri and 反共 as controlled benchmark markers for internal security and anti-communism."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_security_institutions",
+          "title": "Security Institutions and Roles",
+          "description": "Matrix of police, Special Branch, civil administration, military command, and emergency powers."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_security_command_structure",
+          "kind": "flow_diagram",
+          "title": "Security Command Structure"
+        }
+      ],
+      "source_notes": [
+        "National Army Museum and IWM summarize detention powers, police intelligence, and coordinated emergency response.",
+        "Malaysia's later internal-security system should be treated as a legacy of this period, not as a separate unrelated origin.",
+        "Avoid overstating legal precision unless a later canonical merge verifies specific ordinance text."
+      ]
+    },
+    {
+      "heading": "Rural Control, New Villages, and Counterinsurgency",
+      "bullet_points": [
+        "Describe the Briggs Plan as a counterinsurgency strategy that isolated guerrillas from food, shelter, and information.",
+        "Explain the resettlement of rural Chinese communities into guarded new villages and the accompanying provision of water, schools, and clinics.",
+        "Relate the campaign to the control of rubber estates, mines, roads, and jungle access routes across Malaya.",
+        "Use kampung baharu as a controlled multilingual marker for the new-village program."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_counterinsurgency_measures",
+          "title": "Counterinsurgency Measures and Effects",
+          "description": "Matrix comparing resettlement, patrols, food denial, and local security administration."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_new_villages_network",
+          "kind": "network_diagram",
+          "title": "New Villages and Rural Control Network"
+        }
+      ],
+      "source_notes": [
+        "National Army Museum material supports the Briggs Plan, new villages, White Areas, and the role of the Malayan Police.",
+        "Britannica notes the political effect of the new-village program and the move to win support in populated areas.",
+        "Keep the account qualitative and avoid unsupported numeric precision on resettlement unless separately verified."
+      ]
+    },
+    {
+      "heading": "Political Settlement, Independence, and Anti-Communist Nation-Building",
+      "bullet_points": [
+        "Describe how the emergency overlapped with constitutional negotiation, local elections, and the road to Federation independence in 1957.",
+        "Explain why anti-communism became central to mainstream politics and how it shaped Malay, Chinese, and multiethnic state-building strategies.",
+        "Connect the end of the colonial emergency to the emergence of Malaysia's governing order and to the narrowing of left-wing political space.",
+        "Keep the focus on state formation and political settlement, not on a separate detailed history of parties after 1960."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_political_settlement",
+          "title": "Political Settlement and Anti-Communist Consolidation",
+          "description": "Matrix linking independence, elections, citizenship policy, and anti-communist state-building."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_settlement_transition",
+          "kind": "timeline",
+          "title": "From Emergency to Independence"
+        }
+      ],
+      "source_notes": [
+        "Britannica and NAM describe the shift toward independence, citizenship expansion, and political isolation of the insurgency.",
+        "Use the period as a transition from colonial rule to federated self-government and not as a complete history of party politics.",
+        "The topic remains centered on security policy and anti-communist conflict, not on general Malaysian independence history."
+      ]
+    },
+    {
+      "heading": "Legacy in Malaysia After 1960",
+      "bullet_points": [
+        "Explain the declaration that the Emergency was over in 1960 and why the security apparatus did not simply disappear.",
+        "Show how the emergency left Malaysia with preventive detention norms, intelligence institutions, and a durable internal-security mindset.",
+        "Briefly situate later anti-communist conflict and border-based insurgent activity as a legacy topic rather than a replacement for the 1948-1960 core.",
+        "Use the phrase tidak aman for limited benchmark context only if needed, but keep the PDF text primarily in English."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_emergency_legacy",
+          "title": "Emergency Legacy in Post-1960 Malaysia",
+          "description": "Matrix showing which security practices persisted and how they were repurposed after the emergency."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_legacy_spread",
+          "kind": "flow_diagram",
+          "title": "Security Legacy After the Emergency"
+        }
+      ],
+      "source_notes": [
+        "Britannica and the National Army Museum identify 31 July 1960 as the formal end of the Emergency.",
+        "Britannica's Malaysia security overview is useful for the inherited internal-security frame.",
+        "Keep post-1960 conflict references brief so the artifact set stays anchored on the emergency and its policy legacy."
+      ]
+    }
+  ],
+  "source_register": [
+    {
+      "source_id": "src_britannica_malayan_emergency",
+      "title": "Malayan Emergency",
+      "publisher": "Britannica",
+      "url": "https://www.britannica.com/event/Malayan-Emergency",
+      "use": "Emergency chronology, political settlement, and broad policy framing."
+    },
+    {
+      "source_id": "src_nam_malayan_emergency",
+      "title": "Malayan Emergency",
+      "publisher": "National Army Museum",
+      "url": "https://www.nam.ac.uk/explore/malayan-emergency",
+      "use": "Insurgency methods, emergency law, Briggs Plan, new villages, White Areas, and 1960 end date."
+    },
+    {
+      "source_id": "src_britannica_cpm",
+      "title": "Communist Party of Malaya",
+      "publisher": "Britannica",
+      "url": "https://www.britannica.com/topic/Communist-Party-of-Malaya",
+      "use": "MCP background, 1930 founding, and anti-colonial communist context."
+    },
+    {
+      "source_id": "src_iwm_malaya_guerrilla_war",
+      "title": "How Britain fought a guerrilla war during the Malayan Emergency",
+      "publisher": "Imperial War Museums",
+      "url": "https://www.iwm.org.uk/history/conflict-since-1945/how-britain-fought-a-guerrilla-war-during-the-malayan-emergency",
+      "use": "Counterinsurgency coordination, intelligence, and population control framing."
+    },
+    {
+      "source_id": "src_britannica_malaysia_security",
+      "title": "Malaysia: Security",
+      "publisher": "Britannica",
+      "url": "https://www.britannica.com/place/Malaysia/Security",
+      "use": "Postcolonial internal-security legacy and the inherited security model."
+    },
+    {
+      "source_id": "src_nlb_cpm_bibliography",
+      "title": "Communist Party of Malaya: A Comprehensive Bibliography",
+      "publisher": "National Library Board Singapore",
+      "url": "https://reference.nlb.gov.sg/guides/singapore/history/cpm-biblio/",
+      "use": "Background bibliography for MCP and emergency-era political history."
+    }
+  ]
+}

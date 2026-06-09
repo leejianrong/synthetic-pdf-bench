@@ -1,0 +1,156 @@
+{
+  "title": "Malaysia: British Malaya, Protectorates, and Colonial Political Structure, 1900-1941",
+  "recipe_id": "malaysia_british_malaya_colonial_structure_1900_1941",
+  "sections": [
+    {
+      "heading": "Colonial Layers and Imperial Oversight",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Between 1900 and 1941, British Malaya was not a single unitary state. It was a layered political order built around the Straits Settlements as a direct Crown colony and the Malay states as protectorates or protected polities. That distinction mattered because the colony was governed directly, while the Malay rulers remained in place under forms of British supervision that varied by state."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The Straits Settlements supplied the colony-wide administrative center. Penang and Malacca were part of that direct colonial system, and the governor in Singapore served as the key imperial official. In practice, the governor linked the Malay Peninsula to the Colonial Office in London and coordinated issues that crossed state borders, especially security, commerce, and senior appointments."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "This did not make British Malaya a uniform bureaucracy. The peninsula remained split between direct colonial rule and indirect rule. The result was a political map with multiple legal statuses, overlapping jurisdictions, and different channels for dealing with revenue, land, police, and public works. For benchmark purposes, that complexity is the main point: colonial power was real, but it was distributed through several institutions."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "A short Malay marker such as negeri-negeri Melayu Bersekutu can help extraction systems recognize the federated states, but the prose should stay primarily in English. The report should treat that phrase as a label for an administrative category, not as a slogan or quotation. The same rule applies to all multilingual terms in this artifact set."
+        }
+      ],
+      "source_notes": [
+        "Use Straits Settlements administrative context from The National Archives and Britannica.",
+        "Keep the direct-colony versus protectorate distinction explicit.",
+        "The Malay term is controlled benchmark text, not a historical quotation."
+      ]
+    },
+    {
+      "heading": "Federated Malay States and Resident Rule",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The Federated Malay States, usually identified as Perak, Selangor, Negeri Sembilan, and Pahang, formed the core of British indirect rule on the peninsula. Their rulers remained on the throne, but British Residents guided administration in areas that mattered to the colonial state. This arrangement was the institutional heart of British Malaya before 1941."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The Federal Council gave the federation a more centralized political form. It was not a democratic parliament. It was a colonial council in which rulers were represented and British officials coordinated policy. The council helped standardize revenue, infrastructure, and wider administrative decisions across the federation, especially where the separate states needed common rules or common finance."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The Resident system was central to how colonial authority worked. Residents were not simply observers. They acted as advisers whose views were meant to carry decisive weight in daily government. In effect, Malay sovereignty survived in symbolic and legal form, but practical control over major administrative questions had shifted into British hands."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The Malay label negeri-negeri Melayu Bersekutu is useful in the PDF because it ties the political unit to the local administrative vocabulary. Even so, the prose should keep the concept plain: the federation was a colonial construct that combined several ruler-based states under a tighter British framework."
+        }
+      ],
+      "source_notes": [
+        "The National Archives Malaya overview gives a compact summary of the Federal Council and British Political Resident system.",
+        "Britannica provides the broad history and the list of federated states.",
+        "Keep the legal form and the practical power relationship distinct in the wording."
+      ]
+    },
+    {
+      "heading": "Protectorates, Unfederated States, and Treaty Reordering",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The rest of the peninsula was not absorbed into the federation. Instead, a group of Unfederated Malay States retained separate political identities while falling under British influence. Kedah, Kelantan, Perlis, and Terengganu came into the British sphere after the 1909 Anglo-Siamese Treaty, while Johor followed a different route and accepted a British adviser in 1914."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "These states were not direct colonies in the way the Straits Settlements were. They were protected or advised polities, with the sultans still occupying the center of the formal political order. British influence worked through diplomacy, advice, boundary arrangements, and the growing dependence of local administrations on imperial support."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The status of the northern states is important because it shows how British power expanded without a single annexation event. The 1909 treaty moved sovereignty and border control, but state institutions remained in place. That pattern is exactly why British Malaya is best described as a composite political structure rather than a uniform colony."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Johor is a good reminder that the peninsula did not develop along one fixed template. It stayed outside the Federated Malay States, but British influence still hardened over time. In benchmark terms, this makes Johor a useful case for comparing an adviser system with the resident system used in the federated core."
+        }
+      ],
+      "source_notes": [
+        "Britannica confirms the 1909 transfer of the northern Malay states and the 1914 Johor adviser milestone.",
+        "The National Archives treaty records support the 1909 boundary shift.",
+        "Johor government material keeps the 1914 adviser date visible without collapsing Johor into the federation."
+      ]
+    },
+    {
+      "heading": "Councils, Rulers, and Limited Participation",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "Political participation in British Malaya was limited and elite based. Sultans, rajahs, colonial officers, and selected local notables dominated the formal institutions. State councils and federal councils existed, but they did not create broad representation in the modern electoral sense. Their function was to channel negotiation, not popular sovereignty."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "That structure mattered because the colonial government still needed local legitimacy. British administrators usually governed by working through rulers rather than by abolishing them. As a result, the political order mixed formal sovereignty claims by Malay rulers with practical control by British Residents, Advisers, and senior colonial officials."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "A useful way to describe the system is to say that it separated symbolic authority from administrative authority. The sultans retained courtly and religious standing, while British officers shaped the state functions that mattered most to the colonial economy. Revenue, policing, railways, land, and public works were therefore political questions as much as technical ones."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The report should avoid turning this into a story of one unified Malayan political class. There were local elites, merchant interests, state officials, and imperial officers, but the institutional order remained fragmented. That fragmentation is one of the defining features of British Malaya from 1900 to 1941."
+        }
+      ],
+      "source_notes": [
+        "The National Archives Malaya overview supports the ruler-council-resident summary.",
+        "Britannica provides the broader British rule context and the indirect-rule pattern.",
+        "Keep the language neutral and descriptive rather than evaluative."
+      ]
+    },
+    {
+      "heading": "Late Colonial Strain and the 1941 Boundary",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "By the 1930s, the political structure of British Malaya was under pressure from depression-era economic stress, rising strategic concern, and the increasing complexity of colonial administration. The existing system still functioned, but it depended on many separate channels of authority and a steady flow of coordination across state lines."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The imperial problem was not simply control. It was also coherence. Direct colony, federation, protectorate, adviser state, and ruler-based administration all coexisted, which made the peninsula manageable but not simple. That is why the topic is best framed as a political structure study rather than as a constitutional history of one legislature."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The year 1941 is the correct stopping point. It marks the final prewar phase of British Malaya before the Japanese advance overturned the existing order. The occupation and the wartime collapse of colonial authority belong to a separate topic and should not be folded into this set."
+        },
+        {
+          "type": "paragraph",
+          "language": "en",
+          "text": "The simplest synthesis is that British Malaya was a colonial system of mixed statuses. Some territories were directly ruled, some were federated under Residents, and others remained protected or advised states. The resulting structure was resilient enough to last until 1941, but it was never a single, uniform state."
+        }
+      ],
+      "source_notes": [
+        "Britannica and The National Archives support the 1941 prewar boundary framing.",
+        "Do not move into occupation chronology in this artifact set.",
+        "The key benchmark idea is structural coexistence, not constitutional unity."
+      ]
+    }
+  ]
+}

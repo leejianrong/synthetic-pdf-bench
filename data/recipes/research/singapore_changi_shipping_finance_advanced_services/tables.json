@@ -1,0 +1,245 @@
+{
+  "tables": [
+    {
+      "table_id": "tbl_changi_aviation_milestones",
+      "title": "Changi Aviation Milestones and Expansion Phases",
+      "matrix": [
+        [
+          "Year",
+          "Milestone",
+          "Institutional Role",
+          "Benchmark Note"
+        ],
+        [
+          "1981",
+          "Changi Airport opens after relocation from Paya Lebar",
+          "Creates the modern Singapore air hub",
+          "Start of the core aviation period"
+        ],
+        [
+          "2014",
+          "Land preparation begins for Changi East",
+          "Starts the long-range expansion sequence",
+          "Signals planning for future demand"
+        ],
+        [
+          "2019",
+          "Jewel Changi Airport opens",
+          "Adds a passenger and lifestyle layer to the airport",
+          "Shows the airport's service depth"
+        ],
+        [
+          "2020",
+          "Changi East work is paused during the pandemic",
+          "Temporary reset of the expansion timetable",
+          "Useful boundary for the crisis period"
+        ],
+        [
+          "2022",
+          "Changi East development is resumed",
+          "Reaffirms the long-term air-hub strategy",
+          "Keeps the terminal-five plan active"
+        ],
+        [
+          "2025",
+          "Terminal 5 groundbreaking takes place",
+          "Begins the next major construction phase",
+          "Shows the hub model extending ahead"
+        ]
+      ],
+      "notes": [
+        "Keep the sequence compact and deterministic.",
+        "Use the listed years as anchor points rather than as a full construction chronology."
+      ],
+      "suggested_section": "Changi Airport, Air Hub Capacity, and Eastward Expansion"
+    },
+    {
+      "table_id": "tbl_shipping_modernization",
+      "title": "Port Governance and Shipping-System Milestones",
+      "matrix": [
+        [
+          "Year or Period",
+          "Milestone",
+          "Operational Effect",
+          "Benchmark Note"
+        ],
+        [
+          "1986",
+          "Singapore becomes the busiest port in the world by shipping tonnage",
+          "Confirms the scale of the maritime hub",
+          "Core port benchmark"
+        ],
+        [
+          "1996",
+          "Maritime and Port Authority of Singapore is established",
+          "Brings port regulation and planning under one authority",
+          "Institutional modernization point"
+        ],
+        [
+          "1997",
+          "PSA is corporatised",
+          "Separates port operations from the regulatory role",
+          "Improves operational focus"
+        ],
+        [
+          "2004",
+          "Singapore marks its first billionth shipping tonnage milestone",
+          "Shows cumulative throughput growth",
+          "Useful extraction cue for scale"
+        ],
+        [
+          "2022",
+          "MPA reports over 37 million TEU handled",
+          "Highlights container-transshipment depth",
+          "Shows continuing global connectivity"
+        ]
+      ],
+      "notes": [
+        "The table combines governance and throughput because the topic needs both.",
+        "Avoid overloading it with too many terminal-specific details."
+      ],
+      "suggested_section": "Shipping, Port Modernization, and Regional Logistics"
+    },
+    {
+      "table_id": "tbl_finance_infrastructure",
+      "title": "Financial Infrastructure Milestones and Functions",
+      "matrix": [
+        [
+          "Year",
+          "Infrastructure or Policy",
+          "Function",
+          "Benchmark Note"
+        ],
+        [
+          "1991",
+          "MASNET launches",
+          "Secure communications and data exchange for the financial sector",
+          "Early digital finance plumbing"
+        ],
+        [
+          "2000s",
+          "Market-development reporting expands",
+          "Tracks debt-market and fundraising capacity",
+          "Shows the deepening of financial markets"
+        ],
+        [
+          "2020",
+          "SGFinDex launches",
+          "Consent-based digital financial data exchange",
+          "Public digital infrastructure milestone"
+        ],
+        [
+          "2024",
+          "MAS expands grants for quantum and AI capabilities in financial services",
+          "Supports future-facing financial innovation",
+          "Advanced-services continuity point"
+        ],
+        [
+          "2020s",
+          "Singapore is framed as a wealth and asset-management hub",
+          "Supports treasury, investment, and cross-border capital functions",
+          "Finance as a coordination layer"
+        ]
+      ],
+      "notes": [
+        "The exact market numbers are intentionally omitted.",
+        "The matrix is meant to show infrastructure, not short-term volatility."
+      ],
+      "suggested_section": "Finance Infrastructure, Market Plumbing, and Digital Services"
+    },
+    {
+      "table_id": "tbl_advanced_services_ecosystem",
+      "title": "Advanced Services and Regional Headquarters Functions",
+      "matrix": [
+        [
+          "Service Category",
+          "Typical Function",
+          "Why Singapore Works",
+          "Benchmark Note"
+        ],
+        [
+          "Finance and accounting",
+          "Treasury, reporting, audit, and control",
+          "Dense regulatory and talent ecosystem",
+          "Core headquarters function"
+        ],
+        [
+          "Legal and compliance",
+          "Contracts, disputes, and governance",
+          "Trusted rule environment and cross-border reach",
+          "Supports regional decision-making"
+        ],
+        [
+          "Consulting and advisory",
+          "Strategy, transformation, and trade advice",
+          "Strong business-services market",
+          "Connects firms to regional growth"
+        ],
+        [
+          "Engineering and design",
+          "Technical coordination and project support",
+          "Links to logistics, aviation, and infrastructure",
+          "Useful for advanced operations"
+        ],
+        [
+          "Digital and AI services",
+          "Analytics, workflow automation, and platform services",
+          "Connectivity, data infrastructure, and innovation support",
+          "Shows the twenty-first-century layer"
+        ]
+      ],
+      "notes": [
+        "This table stays broad enough to cover multiple HQ functions without becoming a directory.",
+        "It is intentionally framed around intermediation."
+      ],
+      "suggested_section": "Regional Headquarters, Professional Services, and Advanced Intermediation"
+    },
+    {
+      "table_id": "tbl_hub_model_synthesis",
+      "title": "How the Hub Model Works Across Sectors",
+      "matrix": [
+        [
+          "Sector",
+          "Key Singapore Node",
+          "Main Service Layer",
+          "Historical Effect"
+        ],
+        [
+          "Aviation",
+          "Changi Airport and Changi East",
+          "Passenger transfers and air cargo",
+          "Anchors Singapore's global air connectivity"
+        ],
+        [
+          "Shipping",
+          "Port of Singapore and PSA terminals",
+          "Transshipment and maritime services",
+          "Keeps sea trade dense and reliable"
+        ],
+        [
+          "Finance",
+          "MAS, MASNET, and market infrastructure",
+          "Payments, data exchange, and capital markets",
+          "Moves capital and information efficiently"
+        ],
+        [
+          "Advanced services",
+          "Regional HQs and professional-services districts",
+          "Legal, advisory, accounting, and engineering support",
+          "Lets firms coordinate Southeast Asia from Singapore"
+        ],
+        [
+          "Knowledge parks",
+          "Changi Business Park and related east-side zones",
+          "Office, R&D, and business-park uses",
+          "Spatializes the hub economy"
+        ]
+      ],
+      "notes": [
+        "This is the synthesis table for the whole topic.",
+        "The rows should stay high-level so the table remains stable over time."
+      ],
+      "suggested_section": "The Integrated Hub Model in the Twenty-First Century"
+    }
+  ]
+}

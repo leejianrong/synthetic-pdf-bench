@@ -1,0 +1,259 @@
+{
+  "figures": [
+    {
+      "figure_id": "fig_independence_path",
+      "kind": "timeline",
+      "title": "Road to Independence",
+      "caption": "A compact timeline from postwar political change to the declaration of independence on 31 August 1957.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1945,
+          "end_year": 1957,
+          "tick_interval_years": 1
+        },
+        "events": [
+          {
+            "year": 1945,
+            "label": "Postwar political restructuring begins",
+            "short_label": "Postwar opening",
+            "event_type": "context"
+          },
+          {
+            "year": 1952,
+            "label": "Alliance politics strengthen the independence platform",
+            "short_label": "Alliance politics",
+            "event_type": "party_politics"
+          },
+          {
+            "year": 1956,
+            "label": "Tunku leads the Independence Mission to London",
+            "short_label": "London mission",
+            "event_type": "negotiation"
+          },
+          {
+            "year": 1957,
+            "label": "Federal Constitution and independence settlement are finalized",
+            "short_label": "Constitutional settlement",
+            "event_type": "constitutional_change"
+          },
+          {
+            "year": 1957,
+            "label": "Independence is declared on 31 August 1957",
+            "short_label": "Merdeka",
+            "event_type": "boundary"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 22
+        }
+      },
+      "suggested_section": "From Alliance Politics to the Independence Demand"
+    },
+    {
+      "figure_id": "fig_negotiation_flow",
+      "kind": "flow_diagram",
+      "title": "Negotiation and Constitutional Output",
+      "caption": "A simple flow from political demand to constitutional drafting and independence.",
+      "data": {
+        "direction": "left_to_right",
+        "nodes": [
+          {
+            "id": "demand",
+            "label": "Alliance demand for independence",
+            "type": "political_demand"
+          },
+          {
+            "id": "london",
+            "label": "1956 London mission",
+            "type": "negotiation"
+          },
+          {
+            "id": "reid",
+            "label": "Reid Commission and constitutional drafting",
+            "type": "constitutional_drafting"
+          },
+          {
+            "id": "settlement",
+            "label": "1957 independence settlement",
+            "type": "constitutional_change"
+          },
+          {
+            "id": "declaration",
+            "label": "31 August 1957 declaration",
+            "type": "boundary"
+          }
+        ],
+        "edges": [
+          {
+            "from": "demand",
+            "to": "london",
+            "label": "formal negotiation"
+          },
+          {
+            "from": "london",
+            "to": "reid",
+            "label": "constitutional follow-through"
+          },
+          {
+            "from": "reid",
+            "to": "settlement",
+            "label": "legal framework"
+          },
+          {
+            "from": "settlement",
+            "to": "declaration",
+            "label": "public proclamation"
+          }
+        ],
+        "render_hints": {
+          "wrap_labels": true,
+          "label_wrap_width_chars": 24,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "Negotiations in London and Constitutional Bargaining"
+    },
+    {
+      "figure_id": "fig_1957_settlement",
+      "kind": "comparison_chart",
+      "title": "Colonial Status Versus Independent State",
+      "caption": "A structured comparison of the authority pattern before and after the 1957 settlement.",
+      "data": {
+        "mode": "before_after",
+        "labels": [
+          "Before 1957",
+          "After 31 August 1957"
+        ],
+        "rows": [
+          {
+            "category": "Sovereignty",
+            "before": "British colonial rule",
+            "after": "Independent Federation of Malaya"
+          },
+          {
+            "category": "Executive authority",
+            "before": "Colonial administration",
+            "after": "Elected national government led by Tunku Abdul Rahman"
+          },
+          {
+            "category": "Constitutional form",
+            "before": "Colonial constitutional arrangement",
+            "after": "Parliamentary system under a constitutional monarchy"
+          },
+          {
+            "category": "Public symbol",
+            "before": "Colonial status",
+            "after": "Merdeka declaration"
+          }
+        ],
+        "render_hints": {
+          "emphasize_row_labels": true,
+          "compact_layout": true
+        }
+      },
+      "suggested_section": "The Independence Settlement of 1957"
+    },
+    {
+      "figure_id": "fig_alliance_network",
+      "kind": "network_diagram",
+      "title": "Alliance Coalition Network",
+      "caption": "A small network showing how the Alliance coalition supported the independence settlement.",
+      "data": {
+        "layout": "hub_and_spoke",
+        "central_node": "tunku",
+        "nodes": [
+          {
+            "id": "tunku",
+            "label": "Tunku Abdul Rahman",
+            "type": "leader"
+          },
+          {
+            "id": "umno",
+            "label": "UMNO",
+            "type": "party"
+          },
+          {
+            "id": "mca",
+            "label": "MCA",
+            "type": "party"
+          },
+          {
+            "id": "mic",
+            "label": "MIC",
+            "type": "party"
+          },
+          {
+            "id": "public",
+            "label": "Federation of Malaya electorate",
+            "type": "constituency"
+          }
+        ],
+        "edges": [
+          {
+            "from": "umno",
+            "to": "tunku",
+            "label": "Malay political base"
+          },
+          {
+            "from": "mca",
+            "to": "tunku",
+            "label": "Chinese coalition partner"
+          },
+          {
+            "from": "mic",
+            "to": "tunku",
+            "label": "Indian coalition partner"
+          },
+          {
+            "from": "public",
+            "to": "tunku",
+            "label": "electoral legitimacy"
+          }
+        ],
+        "render_hints": {
+          "wrap_labels": true,
+          "label_wrap_width_chars": 20,
+          "edge_label_density": "medium"
+        }
+      },
+      "suggested_section": "Coalition Politics and Multiethnic Legitimacy"
+    },
+    {
+      "figure_id": "fig_topic_boundary",
+      "kind": "timeline",
+      "title": "Topic Boundary",
+      "caption": "A short timeline ending at the 1957 declaration so the recipe does not spill into later Malaysian federal history.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1956,
+          "end_year": 1957,
+          "tick_interval_years": 1
+        },
+        "events": [
+          {
+            "year": 1956,
+            "label": "Independence Mission to London",
+            "short_label": "1956 mission",
+            "event_type": "negotiation"
+          },
+          {
+            "year": 1957,
+            "label": "Independence settlement and declaration",
+            "short_label": "1957 settlement",
+            "event_type": "boundary"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 18
+        }
+      },
+      "suggested_section": "Limits of the 1957 Topic Boundary"
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "tables": [
+    {
+      "table_id": "tbl_occupation_governance",
+      "title": "Occupation Governance and Control Layers",
+      "matrix": [
+        [
+          "Layer",
+          "Institution or Office",
+          "Main Functions",
+          "Political Effect"
+        ],
+        [
+          "Military command",
+          "Japanese army headquarters in Malaya",
+          "Issued orders and set occupation priorities",
+          "Replaced colonial routine with command rule"
+        ],
+        [
+          "Security police",
+          "Kempeitai and related security units",
+          "Interrogation, surveillance, and enforcement",
+          "Made public life feel monitored and unsafe"
+        ],
+        [
+          "Local intermediaries",
+          "Occupation-approved civil and welfare offices",
+          "Implemented instructions and registration",
+          "Linked households to the occupation state"
+        ],
+        [
+          "Economic control",
+          "Rationing and supply administration",
+          "Managed food, fuel, and basic goods",
+          "Turned scarcity into a form of governance"
+        ],
+        [
+          "Public messaging",
+          "Propaganda and ritual display",
+          "Promoted Japanese authority",
+          "Could not fully conceal coercion"
+        ]
+      ],
+      "notes": [
+        "The table is qualitative and designed for stable extraction.",
+        "It emphasizes governance over combat chronology.",
+        "No exact personnel counts are included."
+      ],
+      "suggested_section": "Japanese Invasion, Military Rule, and the Occupation State"
+    },
+    {
+      "table_id": "tbl_coercion_and_effects",
+      "title": "Coercive Mechanisms and Civilian Effects",
+      "matrix": [
+        [
+          "Mechanism",
+          "How It Worked",
+          "Targeted Group",
+          "Civilian Effect"
+        ],
+        [
+          "Surveillance",
+          "Police checks, informants, and observation",
+          "General population",
+          "Self-censorship and distrust"
+        ],
+        [
+          "Censorship",
+          "Control of speech, newspapers, and public messaging",
+          "General population",
+          "Reduced public information and increased rumor"
+        ],
+        [
+          "Requisitioning",
+          "Seizure or control of goods and services",
+          "Merchants and households",
+          "Shortages and market distortion"
+        ],
+        [
+          "Rationing",
+          "Household registration and controlled distribution",
+          "Urban consumers and families",
+          "Queues, inequality, and informal exchange"
+        ],
+        [
+          "Punishment",
+          "Detention, intimidation, and selective violence",
+          "Suspected opponents",
+          "Fear and political compliance"
+        ]
+      ],
+      "notes": [
+        "Casualty figures are intentionally omitted.",
+        "The matrix is designed for OCR and comparison across sources.",
+        "Use the same terminology consistently across the folder."
+      ],
+      "suggested_section": "Coercion, Scarcity, and Communal Differentiation"
+    },
+    {
+      "table_id": "tbl_resistance_capital",
+      "title": "Resistance Groups and Postwar Political Capital",
+      "matrix": [
+        [
+          "Group",
+          "Wartime Role",
+          "Leadership Base",
+          "Postwar Political Effect"
+        ],
+        [
+          "MPAJA",
+          "Guerrilla resistance to Japanese rule",
+          "Communist-linked underground networks",
+          "Claimed prestige as anti-occupation fighters"
+        ],
+        [
+          "Malayan Communist Party",
+          "Organized core of many resistance networks",
+          "Urban and clandestine political organizing",
+          "Gained influence through wartime credentials"
+        ],
+        [
+          "British liaison and support",
+          "Supplied some anti-Japanese forces",
+          "British wartime planning channels",
+          "Shaped postwar demobilization and leverage"
+        ],
+        [
+          "Malay nationalist activists",
+          "Observed occupation and postwar change",
+          "Local associations and emerging party work",
+          "Turned postwar backlash into organized politics"
+        ],
+        [
+          "Malay rulers",
+          "Symbolic authorities under pressure",
+          "State and court networks",
+          "Became central to the postwar constitutional bargain"
+        ]
+      ],
+      "notes": [
+        "This is a political matrix, not a military order of battle.",
+        "The table keeps the wartime to postwar bridge explicit.",
+        "Avoid reading the categories as exhaustive."
+      ],
+      "suggested_section": "Resistance, the MPAJA, and Postwar Political Capital"
+    },
+    {
+      "table_id": "tbl_postwar_settlement",
+      "title": "From British Military Administration to Malayan Union",
+      "matrix": [
+        [
+          "Phase",
+          "Approximate Timing",
+          "Main Change",
+          "Political Meaning"
+        ],
+        [
+          "British Military Administration",
+          "1945-1946",
+          "Restored basic order after surrender",
+          "A transitional rather than legitimate settlement"
+        ],
+        [
+          "Malayan Union proposal",
+          "1946",
+          "Centralized administration and citizenship proposal",
+          "Triggered Malay political backlash"
+        ],
+        [
+          "Malay mobilization",
+          "1946-1948",
+          "Organized opposition and constitutional bargaining",
+          "Strengthened Malay nationalist politics"
+        ],
+        [
+          "Federation of Malaya",
+          "1948",
+          "Replaced the Malayan Union",
+          "Established a more acceptable constitutional compromise"
+        ],
+        [
+          "Security state",
+          "1948 onward",
+          "Emergency and anti-communist policy",
+          "Expanded state power and narrowed dissent"
+        ]
+      ],
+      "notes": [
+        "The table keeps the postwar sequence compact and chronological.",
+        "It stops before later independence detail becomes the main topic.",
+        "The wording is designed for deterministic extraction."
+      ],
+      "suggested_section": "British Return, the Malayan Union, and Malay Nationalist Backlash"
+    },
+    {
+      "table_id": "tbl_emergency_legacy",
+      "title": "Occupation Legacies and Postwar State-Building",
+      "matrix": [
+        [
+          "Legacy",
+          "Occupation Source",
+          "Postwar Expression",
+          "Long-Term Result"
+        ],
+        [
+          "Imperial credibility loss",
+          "Rapid British defeat in 1942",
+          "Stronger doubts about colonial permanence",
+          "Greater willingness to bargain for self-rule"
+        ],
+        [
+          "Resistance prestige",
+          "Wartime anti-Japanese guerrilla activity",
+          "MPAJA and MCP postwar standing",
+          "Security fears and anti-communist policy"
+        ],
+        [
+          "Communal politicization",
+          "Different wartime experiences across groups",
+          "Malay nationalist and Chinese leftist mobilization",
+          "Sharper political competition"
+        ],
+        [
+          "Constitutional redesign",
+          "Postwar pressure to rebuild authority",
+          "Federation of Malaya and later self-government",
+          "A more durable but contested state"
+        ],
+        [
+          "Security expansion",
+          "War, occupation, and insurgency memory",
+          "Emergency powers and policing",
+          "Longer security-state habits"
+        ]
+      ],
+      "notes": [
+        "The matrix links occupation to later political change rather than to social history in general.",
+        "It is intended as the main synthesis table for the folder.",
+        "Avoid reading it as a complete chronology of postwar Malaya."
+      ],
+      "suggested_section": "Federation, Emergency, and the Long Political Shadow of Occupation"
+    }
+  ]
+}

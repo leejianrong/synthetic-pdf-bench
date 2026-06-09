@@ -1,0 +1,358 @@
+{
+  "figures": [
+    {
+      "figure_id": "fig_colonial_hierarchy",
+      "kind": "flow_diagram",
+      "title": "British Malaya Governance Hierarchy",
+      "caption": "Simplified hierarchy showing direct colony rule, federation, protected states, and imperial oversight in British Malaya.",
+      "data": {
+        "direction": "top_down",
+        "nodes": [
+          {
+            "id": "colonial_office",
+            "label": "Colonial Office",
+            "type": "imperial_authority"
+          },
+          {
+            "id": "governor",
+            "label": "Governor of the Straits Settlements / High Commissioner",
+            "type": "imperial_interface"
+          },
+          {
+            "id": "straits_settlements",
+            "label": "Straits Settlements",
+            "type": "direct_colony"
+          },
+          {
+            "id": "fms",
+            "label": "Federated Malay States",
+            "type": "federation"
+          },
+          {
+            "id": "ums",
+            "label": "Unfederated Malay States",
+            "type": "protected_states"
+          },
+          {
+            "id": "residents",
+            "label": "Residents and Advisers",
+            "type": "indirect_rule"
+          },
+          {
+            "id": "rulers",
+            "label": "Sultans and Rajahs",
+            "type": "local_rulers"
+          }
+        ],
+        "edges": [
+          {
+            "from": "colonial_office",
+            "to": "governor",
+            "label": "imperial oversight"
+          },
+          {
+            "from": "governor",
+            "to": "straits_settlements",
+            "label": "direct administration"
+          },
+          {
+            "from": "governor",
+            "to": "fms",
+            "label": "high commission"
+          },
+          {
+            "from": "governor",
+            "to": "ums",
+            "label": "protected-state supervision"
+          },
+          {
+            "from": "fms",
+            "to": "residents",
+            "label": "resident system"
+          },
+          {
+            "from": "ums",
+            "to": "rulers",
+            "label": "formal sovereignty"
+          },
+          {
+            "from": "residents",
+            "to": "rulers",
+            "label": "advice and control"
+          }
+        ],
+        "render_hints": {
+          "group_by_type": true,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 28,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "Colonial Layers and Imperial Oversight"
+    },
+    {
+      "figure_id": "fig_fms_timeline",
+      "kind": "timeline",
+      "title": "Federated Malay States Milestones",
+      "caption": "Selected milestones for the federated core and the wider British influence over the peninsula.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1900,
+          "end_year": 1941,
+          "tick_interval_years": 5
+        },
+        "events": [
+          {
+            "year": 1900,
+            "label": "Federated Malay States operate as the core indirect-rule structure",
+            "short_label": "FMS core",
+            "event_type": "context"
+          },
+          {
+            "year": 1909,
+            "label": "Anglo-Siamese Treaty moves the northern Malay states into the British sphere",
+            "short_label": "1909 treaty",
+            "event_type": "treaty"
+          },
+          {
+            "year": 1914,
+            "label": "Johor accepts a British adviser",
+            "short_label": "Johor adviser",
+            "event_type": "administrative_change"
+          },
+          {
+            "year": 1920,
+            "label": "Interwar coordination continues across colony, federation, and protected states",
+            "short_label": "Interwar rule",
+            "event_type": "context"
+          },
+          {
+            "year": 1930,
+            "label": "Depression-era stress raises the importance of colonial coordination",
+            "short_label": "1930s strain",
+            "event_type": "pressure"
+          },
+          {
+            "year": 1941,
+            "label": "Final pre-occupation year of British Malaya",
+            "short_label": "1941 boundary",
+            "event_type": "boundary"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 20
+        }
+      },
+      "suggested_section": "Federated Malay States and Resident Rule"
+    },
+    {
+      "figure_id": "fig_protectorate_network",
+      "kind": "network_diagram",
+      "title": "Protectorate and Adviser Network",
+      "caption": "Simplified network showing how the northern states and Johor sat inside British influence without becoming one direct colony.",
+      "data": {
+        "layout": "hub_and_spoke",
+        "central_node": "british_malaya",
+        "nodes": [
+          {
+            "id": "british_malaya",
+            "label": "British Malaya",
+            "type": "hub"
+          },
+          {
+            "id": "fms",
+            "label": "FMS: Perak, Selangor, Negeri Sembilan, Pahang",
+            "type": "federated_core"
+          },
+          {
+            "id": "northern_states",
+            "label": "Kedah, Kelantan, Perlis, Terengganu",
+            "type": "protected_states"
+          },
+          {
+            "id": "johor",
+            "label": "Johor",
+            "type": "separate_state"
+          },
+          {
+            "id": "straits_settlements",
+            "label": "Straits Settlements",
+            "type": "direct_colony"
+          },
+          {
+            "id": "colonial_office",
+            "label": "Colonial Office and Governor",
+            "type": "imperial_authority"
+          }
+        ],
+        "edges": [
+          {
+            "from": "colonial_office",
+            "to": "straits_settlements",
+            "label": "direct rule"
+          },
+          {
+            "from": "colonial_office",
+            "to": "fms",
+            "label": "high commission"
+          },
+          {
+            "from": "colonial_office",
+            "to": "northern_states",
+            "label": "treaty sphere"
+          },
+          {
+            "from": "colonial_office",
+            "to": "johor",
+            "label": "adviser system"
+          },
+          {
+            "from": "fms",
+            "to": "northern_states",
+            "label": "regional comparison"
+          },
+          {
+            "from": "fms",
+            "to": "johor",
+            "label": "different status"
+          }
+        ],
+        "render_hints": {
+          "hub_emphasis": true,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 24
+        }
+      },
+      "suggested_section": "Protectorates, Unfederated States, and Treaty Reordering"
+    },
+    {
+      "figure_id": "fig_decision_flow",
+      "kind": "flow_diagram",
+      "title": "How Colonial Decisions Moved",
+      "caption": "Decision flow from imperial authority to residents, advisers, rulers, and state councils across British Malaya.",
+      "data": {
+        "direction": "left_to_right",
+        "nodes": [
+          {
+            "id": "policy_issue",
+            "label": "Policy issue",
+            "type": "start"
+          },
+          {
+            "id": "federal_layer",
+            "label": "Federal Council / Governor",
+            "type": "federal_layer"
+          },
+          {
+            "id": "state_layer",
+            "label": "Residents / Advisers / State Councils",
+            "type": "state_layer"
+          },
+          {
+            "id": "rulers",
+            "label": "Sultans and Rajahs",
+            "type": "rulers"
+          },
+          {
+            "id": "implementation",
+            "label": "Administration, police, land, works",
+            "type": "implementation"
+          }
+        ],
+        "edges": [
+          {
+            "from": "policy_issue",
+            "to": "federal_layer",
+            "label": "cross-state issue"
+          },
+          {
+            "from": "policy_issue",
+            "to": "state_layer",
+            "label": "state issue"
+          },
+          {
+            "from": "federal_layer",
+            "to": "state_layer",
+            "label": "coordination"
+          },
+          {
+            "from": "state_layer",
+            "to": "rulers",
+            "label": "advice and assent"
+          },
+          {
+            "from": "rulers",
+            "to": "implementation",
+            "label": "formal authority"
+          },
+          {
+            "from": "state_layer",
+            "to": "implementation",
+            "label": "daily administration"
+          }
+        ],
+        "render_hints": {
+          "group_by_type": true,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 22
+        }
+      },
+      "suggested_section": "Councils, Rulers, and Limited Participation"
+    },
+    {
+      "figure_id": "fig_1900_1941_synthesis",
+      "kind": "timeline",
+      "title": "Colonial Structure from 1900 to 1941",
+      "caption": "Synthesis timeline for the main political structure changes covered by the topic.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1900,
+          "end_year": 1941,
+          "tick_interval_years": 5
+        },
+        "events": [
+          {
+            "year": 1900,
+            "label": "Peninsula governed through a mix of direct colony and protected states",
+            "short_label": "Mixed rule",
+            "event_type": "context"
+          },
+          {
+            "year": 1909,
+            "label": "Northern Malay states enter the British sphere after the Anglo-Siamese Treaty",
+            "short_label": "Treaty shift",
+            "event_type": "treaty"
+          },
+          {
+            "year": 1914,
+            "label": "Johor accepts a British adviser",
+            "short_label": "Johor adviser",
+            "event_type": "administrative_change"
+          },
+          {
+            "year": 1930,
+            "label": "Interwar pressures highlight the limits of a fragmented political structure",
+            "short_label": "Interwar strain",
+            "event_type": "pressure"
+          },
+          {
+            "year": 1941,
+            "label": "Topic boundary before Japanese invasion and occupation",
+            "short_label": "Boundary",
+            "event_type": "boundary"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 22
+        }
+      },
+      "suggested_section": "Late Colonial Strain and the 1941 Boundary"
+    }
+  ]
+}

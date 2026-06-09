@@ -1,0 +1,358 @@
+{
+  "figures": [
+    {
+      "figure_id": "fig_changi_expansion_timeline",
+      "kind": "timeline",
+      "title": "Changi Airport Expansion Timeline",
+      "caption": "The airport's main expansion phases from the 1981 opening to the Changi East programme.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1981,
+          "end_year": 2025,
+          "tick_interval_years": 5
+        },
+        "events": [
+          {
+            "year": 1981,
+            "label": "Changi Airport opens after relocation from Paya Lebar",
+            "short_label": "Opening",
+            "event_type": "opening"
+          },
+          {
+            "year": 2014,
+            "label": "Land preparation begins for Changi East",
+            "short_label": "Changi East begins",
+            "event_type": "expansion"
+          },
+          {
+            "year": 2019,
+            "label": "Jewel Changi Airport opens",
+            "short_label": "Jewel",
+            "event_type": "expansion"
+          },
+          {
+            "year": 2020,
+            "label": "Changi East work is paused during the pandemic",
+            "short_label": "Pause",
+            "event_type": "pause"
+          },
+          {
+            "year": 2022,
+            "label": "Changi East development resumes",
+            "short_label": "Resume",
+            "event_type": "expansion"
+          },
+          {
+            "year": 2025,
+            "label": "Terminal 5 groundbreaking marks the next phase",
+            "short_label": "T5 groundbreaking",
+            "event_type": "milestone"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 22
+        }
+      },
+      "suggested_section": "Changi Airport, Air Hub Capacity, and Eastward Expansion"
+    },
+    {
+      "figure_id": "fig_shipping_logistics_network",
+      "kind": "network_diagram",
+      "title": "Singapore's Port and Logistics Network",
+      "caption": "A simplified network showing how port terminals, shipping lines, cargo handling, and logistics services reinforce one another.",
+      "data": {
+        "layout": "hub_and_spoke",
+        "central_node": "hub",
+        "nodes": [
+          {
+            "id": "hub",
+            "label": "Singapore logistics hub",
+            "type": "hub"
+          },
+          {
+            "id": "port",
+            "label": "Port terminals",
+            "type": "infrastructure"
+          },
+          {
+            "id": "shipping",
+            "label": "Shipping lines",
+            "type": "network"
+          },
+          {
+            "id": "cargo",
+            "label": "Container and bulk cargo",
+            "type": "flow"
+          },
+          {
+            "id": "airfreight",
+            "label": "Changi air cargo",
+            "type": "infrastructure"
+          },
+          {
+            "id": "logistics",
+            "label": "Third-party logistics",
+            "type": "service"
+          },
+          {
+            "id": "trade",
+            "label": "Regional trade flows",
+            "type": "flow"
+          }
+        ],
+        "edges": [
+          {
+            "from": "port",
+            "to": "hub",
+            "label": "terminal operations"
+          },
+          {
+            "from": "shipping",
+            "to": "hub",
+            "label": "vessel networks"
+          },
+          {
+            "from": "cargo",
+            "to": "hub",
+            "label": "transshipment"
+          },
+          {
+            "from": "airfreight",
+            "to": "hub",
+            "label": "multimodal cargo"
+          },
+          {
+            "from": "logistics",
+            "to": "hub",
+            "label": "planning and coordination"
+          },
+          {
+            "from": "trade",
+            "to": "hub",
+            "label": "regional flows"
+          }
+        ],
+        "render_hints": {
+          "wrap_labels": true,
+          "label_wrap_width_chars": 24,
+          "edge_label_density": "medium"
+        }
+      },
+      "suggested_section": "Shipping, Port Modernization, and Regional Logistics"
+    },
+    {
+      "figure_id": "fig_finance_infrastructure_timeline",
+      "kind": "timeline",
+      "title": "Finance Infrastructure Timeline",
+      "caption": "A timeline of financial-sector infrastructure from MASNET to SGFinDex and recent capability support.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1991,
+          "end_year": 2024,
+          "tick_interval_years": 5
+        },
+        "events": [
+          {
+            "year": 1991,
+            "label": "MASNET launches as a secure communications network",
+            "short_label": "MASNET",
+            "event_type": "infrastructure"
+          },
+          {
+            "year": 2000,
+            "label": "Financial market operations continue to scale with electronic systems",
+            "short_label": "Electronic finance",
+            "event_type": "infrastructure"
+          },
+          {
+            "year": 2020,
+            "label": "SGFinDex launches with Singpass-based consent sharing",
+            "short_label": "SGFinDex",
+            "event_type": "digital_service"
+          },
+          {
+            "year": 2023,
+            "label": "MAS expands support for fund-management and investment platforms",
+            "short_label": "Capital deployment",
+            "event_type": "policy"
+          },
+          {
+            "year": 2024,
+            "label": "MAS grants support quantum and AI capabilities in financial services",
+            "short_label": "Quantum and AI",
+            "event_type": "policy"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 24
+        }
+      },
+      "suggested_section": "Finance Infrastructure, Market Plumbing, and Digital Services"
+    },
+    {
+      "figure_id": "fig_hq_service_network",
+      "kind": "network_diagram",
+      "title": "Regional Headquarters Service Network",
+      "caption": "A network view of the advanced services that allow firms to manage Southeast Asian operations from Singapore.",
+      "data": {
+        "layout": "hub_and_spoke",
+        "central_node": "singapore_hq",
+        "nodes": [
+          {
+            "id": "singapore_hq",
+            "label": "Singapore regional HQ",
+            "type": "hub"
+          },
+          {
+            "id": "legal",
+            "label": "Legal and compliance",
+            "type": "service"
+          },
+          {
+            "id": "accounting",
+            "label": "Finance and accounting",
+            "type": "service"
+          },
+          {
+            "id": "consulting",
+            "label": "Consulting and advisory",
+            "type": "service"
+          },
+          {
+            "id": "engineering",
+            "label": "Engineering and design",
+            "type": "service"
+          },
+          {
+            "id": "digital",
+            "label": "Digital and AI services",
+            "type": "service"
+          },
+          {
+            "id": "trade_advice",
+            "label": "Trade advisory and procurement",
+            "type": "service"
+          }
+        ],
+        "edges": [
+          {
+            "from": "legal",
+            "to": "singapore_hq",
+            "label": "governance"
+          },
+          {
+            "from": "accounting",
+            "to": "singapore_hq",
+            "label": "control systems"
+          },
+          {
+            "from": "consulting",
+            "to": "singapore_hq",
+            "label": "strategy"
+          },
+          {
+            "from": "engineering",
+            "to": "singapore_hq",
+            "label": "technical coordination"
+          },
+          {
+            "from": "digital",
+            "to": "singapore_hq",
+            "label": "workflow automation"
+          },
+          {
+            "from": "trade_advice",
+            "to": "singapore_hq",
+            "label": "regional execution"
+          }
+        ],
+        "render_hints": {
+          "wrap_labels": true,
+          "label_wrap_width_chars": 22,
+          "edge_label_density": "medium"
+        }
+      },
+      "suggested_section": "Regional Headquarters, Professional Services, and Advanced Intermediation"
+    },
+    {
+      "figure_id": "fig_integrated_hub_model",
+      "kind": "flow_diagram",
+      "title": "Integrated Hub Model",
+      "caption": "A flow diagram showing how transport, capital, and services connect Singapore to regional markets.",
+      "data": {
+        "direction": "left_to_right",
+        "nodes": [
+          {
+            "id": "connectivity",
+            "label": "Connectivity",
+            "type": "concept"
+          },
+          {
+            "id": "transport",
+            "label": "Aviation and shipping",
+            "type": "sector"
+          },
+          {
+            "id": "capital",
+            "label": "Finance and market infrastructure",
+            "type": "sector"
+          },
+          {
+            "id": "services",
+            "label": "Advanced services and HQs",
+            "type": "sector"
+          },
+          {
+            "id": "region",
+            "label": "Regional markets",
+            "type": "outcome"
+          }
+        ],
+        "edges": [
+          {
+            "from": "connectivity",
+            "to": "transport",
+            "label": "moves goods and people"
+          },
+          {
+            "from": "connectivity",
+            "to": "capital",
+            "label": "moves money and data"
+          },
+          {
+            "from": "connectivity",
+            "to": "services",
+            "label": "moves decisions and expertise"
+          },
+          {
+            "from": "transport",
+            "to": "region",
+            "label": "trade flows"
+          },
+          {
+            "from": "capital",
+            "to": "region",
+            "label": "funding and treasury"
+          },
+          {
+            "from": "services",
+            "to": "region",
+            "label": "coordination"
+          }
+        ],
+        "render_hints": {
+          "wrap_labels": true,
+          "label_wrap_width_chars": 20,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "The Integrated Hub Model in the Twenty-First Century"
+    }
+  ]
+}

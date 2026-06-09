@@ -1,0 +1,242 @@
+{
+  "title": "Singapore: Changi, Shipping, Finance, and Advanced Services in the Late Twentieth and Early Twenty-First Centuries",
+  "recipe_id": "singapore_changi_shipping_finance_advanced_services",
+  "topic": "Singapore: Changi, shipping, finance, and advanced services in the late twentieth and early twenty-first centuries",
+  "abstract": "This synthetic research outline covers Singapore's late-twentieth- and early-twenty-first-century shift from a trade-dependent city-state into an integrated hub for aviation, shipping, finance, and advanced services. It emphasizes Changi Airport as a global air node, Singapore's port and logistics system, the financial infrastructure that supports trade and capital flows, and the professional and knowledge-intensive services that allow regional headquarters to operate from Singapore. The report is designed for stable PDF benchmark generation, with controlled English prose and a deterministic section structure.",
+  "language_profile": {
+    "primary_language": "English",
+    "allowed_pdf_languages": [
+      "English",
+      "Bahasa Melayu",
+      "Bahasa Indonesia",
+      "Simplified Chinese"
+    ],
+    "multilingual_terms": []
+  },
+  "sections": [
+    {
+      "heading": "Changi Airport, Air Hub Capacity, and Eastward Expansion",
+      "bullet_points": [
+        "Explain how Changi Airport's 1981 opening marked the relocation from Paya Lebar and the start of Singapore's modern air-hub strategy.",
+        "Describe how the airport expanded through new terminals, automated systems, and destination-style facilities while keeping transfer efficiency central.",
+        "Show how the Changi East development and Terminal 5 plan extended the airport's role into the 2020s and beyond.",
+        "Treat Changi as both a passenger gateway and a cargo platform rather than as a purely symbolic landmark."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_changi_aviation_milestones",
+          "title": "Changi Aviation Milestones and Expansion Phases",
+          "description": "Matrix summarizing the major steps in Changi's development from the 1981 opening to the Changi East programme."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_changi_expansion_timeline",
+          "kind": "timeline",
+          "title": "Changi Airport Expansion Timeline",
+          "description": "A deterministic timeline from the airport opening through Jewel and Changi East."
+        }
+      ],
+      "source_notes": [
+        "Changi Airport Group's About Us page gives the 1981 opening, Jewel 2019, and future-development framing.",
+        "The Changi East development page provides the Terminal 5, three-runway system, and industrial-zone context.",
+        "Use Changi as a hub and infrastructure story, not only as a tourism story."
+      ]
+    },
+    {
+      "heading": "Shipping, Port Modernization, and Regional Logistics",
+      "bullet_points": [
+        "Describe how the Singapore port became a world-leading transshipment system built on dense vessel calls, container handling, and global line connectivity.",
+        "Explain how the Maritime and Port Authority and PSA structure port governance and terminal operations in the modern period.",
+        "Connect sea freight, air freight, and inland logistics into a single speed-to-market system that supports regional trade.",
+        "Show why shipping in Singapore should be read as a service cluster involving scheduling, brokerage, data, bunkering, and cargo coordination."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_shipping_modernization",
+          "title": "Port Governance and Shipping-System Milestones",
+          "description": "Matrix comparing the late-twentieth-century shift from port growth to integrated maritime governance and logistics services."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_shipping_logistics_network",
+          "kind": "network_diagram",
+          "title": "Singapore's Port and Logistics Network",
+          "description": "A network view of port terminals, shipping lines, cargo flows, and logistics functions."
+        }
+      ],
+      "source_notes": [
+        "MPA's Global Connectivity page states that Singapore has been the busiest port in the world by shipping tonnage since 1986.",
+        "The same page gives the transshipment and vessel-call context that keeps the shipping story stable and benchmark-friendly.",
+        "EDB's logistics page helps connect PSA, Changi Airport, and the wider logistics ecosystem."
+      ]
+    },
+    {
+      "heading": "Finance Infrastructure, Market Plumbing, and Digital Services",
+      "bullet_points": [
+        "Explain how Singapore's finance story in this period is about infrastructure first: payments, clearing, market access, and secure information exchange.",
+        "Describe MASNET as an early digital layer for the financial sector and SGFinDex as a later example of public digital-finance infrastructure.",
+        "Connect financial depth to the city's role as a treasury, funding, and asset-management base for regional firms.",
+        "Keep the narrative focused on durable institutional capacity rather than on volatile annual market figures."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_finance_infrastructure",
+          "title": "Financial Infrastructure Milestones and Functions",
+          "description": "Matrix summarizing the main finance-system layers from MASNET to SGFinDex and market-development reporting."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_finance_infrastructure_timeline",
+          "kind": "timeline",
+          "title": "Finance Infrastructure Timeline",
+          "description": "A timeline of financial-sector plumbing from early network infrastructure to digital consent-based services."
+        }
+      ],
+      "source_notes": [
+        "MASNET's official description states that it launched in 1991 as a secure communications network for the financial sector.",
+        "MAS' SGFinDex materials describe a public digital infrastructure that uses Singpass and consent-based data sharing.",
+        "MAS corporate-debt market reports support the framing of Singapore as a continuing fundraising and market-development centre."
+      ]
+    },
+    {
+      "heading": "Regional Headquarters, Professional Services, and Advanced Intermediation",
+      "bullet_points": [
+        "Describe Singapore's rise as a regional headquarters platform for firms that need legal, accounting, consulting, engineering, and coordination services.",
+        "Explain how advanced services sit between trade, finance, and technology, making Singapore useful for orchestration rather than only for production.",
+        "Connect Changi Business Park and the Changi region to knowledge-intensive activities tied to aviation, logistics, and corporate functions.",
+        "Keep the service-sector story broad enough to include professional services, trade advisory, software, and innovation hubs."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_advanced_services_ecosystem",
+          "title": "Advanced Services and Regional Headquarters Functions",
+          "description": "Matrix comparing the main service categories that allow firms to manage regional operations from Singapore."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_hq_service_network",
+          "kind": "network_diagram",
+          "title": "Regional Headquarters Service Network",
+          "description": "A simplified network of headquarters functions, professional services, and regional market access."
+        }
+      ],
+      "source_notes": [
+        "EDB's professional-services page describes Singapore as a globally leading hub for trusted expertise and notes the importance of finance, accounting, consulting, legal, engineering, advertising, marketing, and design roles.",
+        "EDB's headquarters pages support the role of Singapore as a regional HQ base.",
+        "JTC and URA materials on Changi Business Park and business parks support the eastern knowledge-cluster framing."
+      ]
+    },
+    {
+      "heading": "The Integrated Hub Model in the Twenty-First Century",
+      "bullet_points": [
+        "Synthesize the airport, port, finance, and advanced-services layers into one mutually reinforcing hub model.",
+        "Show how Singapore's competitive advantage increasingly came from speed, reliability, and coordination across sectors rather than from any single industry alone.",
+        "Explain why the Changi region matters as a spatial expression of this model: airport, cargo, business park, and future expansion are linked in one zone.",
+        "Close by noting that this topic is about an institutional system that matured across the late twentieth and early twenty-first centuries."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_hub_model_synthesis",
+          "title": "How the Hub Model Works Across Sectors",
+          "description": "Matrix showing how aviation, shipping, finance, and advanced services reinforce one another in Singapore."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_integrated_hub_model",
+          "kind": "flow_diagram",
+          "title": "Integrated Hub Model",
+          "description": "A flow diagram showing how transport, capital, and services connect Singapore to regional markets."
+        }
+      ],
+      "source_notes": [
+        "The integration point is supported by the Changi Airport, MPA, and EDB materials used elsewhere in the recipe.",
+        "This section is synthetic and interpretive, so it should remain anchored to stable institutional milestones.",
+        "Avoid turning the synthesis into a generic praise statement; keep the causal links explicit."
+      ]
+    }
+  ],
+  "source_register": [
+    {
+      "source_id": "src_changi_about_us",
+      "title": "About Us",
+      "publisher": "Changi Airport Group",
+      "url": "https://www.changiairport.com/en/corporate/about-us.html",
+      "use": "1981 opening, relationship to Paya Lebar relocation, 2019 Jewel milestone, airport-experience framing."
+    },
+    {
+      "source_id": "src_changi_east",
+      "title": "Changi East Development",
+      "publisher": "Changi Airport Group",
+      "url": "https://www.changiairport.com/en/corporate/about-us/future-developments/changi-east.html",
+      "use": "Terminal 5, three-runway system, Changi East Industrial Zone, and 2014-2025 development sequence."
+    },
+    {
+      "source_id": "src_mpa_global_connectivity",
+      "title": "Global Connectivity",
+      "publisher": "Maritime and Port Authority of Singapore",
+      "url": "https://www.mpa.gov.sg/maritime-singapore/what-maritime-singapore-offers/global-hub-port",
+      "use": "Busiest-port-by-tonnage claim since 1986, transshipment role, shipping-line connectivity, and air-sea network framing."
+    },
+    {
+      "source_id": "src_masnet",
+      "title": "About MASNET",
+      "publisher": "MASNET / Monetary Authority of Singapore",
+      "url": "https://masnet.mas.gov.sg/portal/about-masnet/",
+      "use": "1991 launch of secure communications and data exchange for the financial sector."
+    },
+    {
+      "source_id": "src_sgfindex",
+      "title": "Singapore Financial Data Exchange infographic",
+      "publisher": "Monetary Authority of Singapore",
+      "url": "https://www.mas.gov.sg/-/media/mas/fintech/sgfindex/sgfindex-infographic-2022.pdf",
+      "use": "Public digital financial infrastructure, Singpass authentication, and consent-based data exchange."
+    },
+    {
+      "source_id": "src_mas_corporate_debt",
+      "title": "Singapore Corporate Debt Market Development 2024",
+      "publisher": "Monetary Authority of Singapore",
+      "url": "https://www.mas.gov.sg/-/media/mas/news-and-publications/surveys/debts/singapore-corporate-debt-market-development-2024-18-jul-2024.pdf",
+      "use": "Corporate-debt market development, fundraising-centre framing, and Singapore's role as an asset and wealth-management hub."
+    },
+    {
+      "source_id": "src_edb_logistics",
+      "title": "Logistics & Supply Chain Management",
+      "publisher": "Singapore Economic Development Board",
+      "url": "https://www.edb.gov.sg/en/our-industries/logistics-and-supply-chain-management.html",
+      "use": "PSA, Changi Airport, logistics firms, and Singapore's integrated logistics positioning."
+    },
+    {
+      "source_id": "src_edb_professional_services",
+      "title": "Professional Services",
+      "publisher": "Singapore Economic Development Board",
+      "url": "https://www.edb.gov.sg/en/our-industries/professional-services.html",
+      "use": "Regional headquarters platform, professional-services categories, and talent concentration."
+    },
+    {
+      "source_id": "src_edb_headquarters",
+      "title": "Headquarters in Singapore",
+      "publisher": "Singapore Economic Development Board",
+      "url": "https://www.edb.gov.sg/en/our-industries/industries-and-key-activities/headquarters.html",
+      "use": "Singapore as a regional headquarters destination and ecosystem platform."
+    },
+    {
+      "source_id": "src_ura_business_park",
+      "title": "Business Park Introduction",
+      "publisher": "Urban Redevelopment Authority",
+      "url": "https://www.ura.gov.sg/Corporate/Guidelines/Development-Control/Non-Residential/Business-Park/Introduction.aspx",
+      "use": "Business parks as sites for high-technology, R&D, and knowledge-intensive activities."
+    },
+    {
+      "source_id": "src_jtc_changi_business_park",
+      "title": "7 & 9 Changi Business Park",
+      "publisher": "JTC",
+      "url": "https://www.jtc.gov.sg/find-space/7--9-changi-business-park",
+      "use": "Changi Business Park as an eastern business-park anchor near Expo and the airport."
+    }
+  ]
+}

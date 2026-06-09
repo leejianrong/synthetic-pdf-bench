@@ -1,0 +1,184 @@
+{
+  "title": "Malaysia: Japanese Occupation in Malaya and Its Postwar Political Consequences",
+  "recipe_id": "malaysia_japanese_occupation_postwar_consequences",
+  "topic": "Malaysia: Japanese occupation in Malaya and its postwar political consequences",
+  "abstract": "This synthetic research outline covers the Japanese occupation of Malaya from the invasion of 1941-1942 through the occupation's political afterlife in the postwar period. It focuses on military rule, coercion, scarcity, communal differentiation, resistance, the return of British authority, the Malayan Union controversy, the Federation of Malaya, and the security politics that followed. The report is designed for stable PDF benchmark generation, with primarily English prose and carefully bounded use of Malay political terms where they clarify the historical record.",
+  "language_profile": {
+    "primary_language": "English",
+    "allowed_pdf_languages": [
+      "English",
+      "Bahasa Melayu",
+      "Bahasa Indonesia",
+      "Simplified Chinese"
+    ],
+    "multilingual_terms": [
+      {
+        "term": "Tanah Melayu",
+        "language": "Bahasa Melayu",
+        "meaning": "Malaya or the Malay lands"
+      },
+      {
+        "term": "Persekutuan Tanah Melayu",
+        "language": "Bahasa Melayu",
+        "meaning": "Federation of Malaya"
+      },
+      {
+        "term": "darurat",
+        "language": "Bahasa Melayu",
+        "meaning": "emergency"
+      },
+      {
+        "term": "Merdeka",
+        "language": "Bahasa Melayu",
+        "meaning": "independence"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "heading": "Japanese Invasion, Military Rule, and the Occupation State",
+      "bullet_points": [
+        "Describe the rapid collapse of British military and colonial authority in Malaya during the Japanese invasion of 1941-1942.",
+        "Explain how occupation rule relied on military command, emergency administration, and selective use of local intermediaries.",
+        "Keep the focus on governance and control rather than on battlefield chronology.",
+        "Note that occupation practice varied by locality, but all areas were reshaped by command rule and wartime extraction."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_occupation_governance",
+          "title": "Occupation Governance and Control Layers",
+          "description": "Matrix of the main military, administrative, and intermediary layers that structured Japanese rule in Malaya."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_occupation_timeline",
+          "kind": "timeline",
+          "title": "From Invasion to Surrender",
+          "description": "Timeline of the main occupation milestones from the invasion of Malaya to the Japanese surrender in 1945."
+        }
+      ],
+      "source_notes": [
+        "Use Britannica's Malaysia political transformation coverage for the occupation's broad historical setting.",
+        "Use the National Museum of Malaysia's colonial era gallery for the museum-level framing of Japanese rule in Malaya.",
+        "Use National Archives of Malaysia material on colonial office records for the Malaya administrative record context."
+      ]
+    },
+    {
+      "heading": "Coercion, Scarcity, and Communal Differentiation",
+      "bullet_points": [
+        "Describe how surveillance, censorship, requisitioning, and military policing shaped civilian life under occupation.",
+        "Explain how shortage and insecurity made identity and political trust more visible in everyday life.",
+        "Treat communal experience as uneven and locally specific rather than as a single uniform story.",
+        "Avoid precise casualty totals and other unstable counts unless they are later added from named primary sources."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_coercion_and_effects",
+          "title": "Coercive Mechanisms and Civilian Effects",
+          "description": "Matrix comparing surveillance, rationing, punishment, and public intimidation with their social effects."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_coercion_flow",
+          "kind": "flow_diagram",
+          "title": "Occupation Coercion Cycle",
+          "description": "Simplified flow showing how surveillance, rationing, fear, and informal coping reinforced one another."
+        }
+      ],
+      "source_notes": [
+        "Use Britannica for the summary claim that occupation intensified communal tension and disrupted the economy.",
+        "Use the National Museum's Japanese-era object pages for occupation material culture context.",
+        "Use archival summaries sparingly and keep numeric claims uncommitted unless directly sourced."
+      ]
+    },
+    {
+      "heading": "Resistance, the MPAJA, and Postwar Political Capital",
+      "bullet_points": [
+        "Explain how anti-Japanese resistance developed, including the Malayan People's Anti-Japanese Army and its communist-linked leadership.",
+        "Show how wartime resistance gave some groups military experience, political credibility, and a claim to postwar legitimacy.",
+        "Describe the gap between wartime guerrilla prestige and the limited power they retained once the British returned.",
+        "Keep the section centered on the political consequences of wartime resistance rather than on tactical combat history."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_resistance_capital",
+          "title": "Resistance Groups and Postwar Political Capital",
+          "description": "Matrix of the main resistance formations, wartime roles, and the political leverage they carried into the postwar period."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_resistance_network",
+          "kind": "network_diagram",
+          "title": "Resistance and Postwar Influence Network",
+          "description": "Network diagram linking resistance formations, British liaison, and postwar political claims."
+        }
+      ],
+      "source_notes": [
+        "Use Britannica's entry on the Malayan People's Anti-Japanese Army for the basic wartime resistance narrative.",
+        "Use Britannica's Malayan Communist Party coverage for the political trajectory of resistance leadership.",
+        "Keep the emphasis on how wartime resistance shaped postwar politics in Malaya."
+      ]
+    },
+    {
+      "heading": "British Return, the Malayan Union, and Malay Nationalist Backlash",
+      "bullet_points": [
+        "Describe the British Military Administration as a transitional postwar authority that restored order but did not restore the prewar political settlement.",
+        "Explain why the Malayan Union became so controversial, especially its citizenship and constitutional implications.",
+        "Show how Malay elites and activists organized against the Malayan Union and helped consolidate new nationalist politics.",
+        "Connect the wartime collapse of imperial prestige to the postwar demand for a stronger Malay political position."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_postwar_settlement",
+          "title": "From British Military Administration to Malayan Union",
+          "description": "Matrix of the main postwar transition steps, constitutional changes, and political reactions."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_postwar_settlement_path",
+          "kind": "flow_diagram",
+          "title": "Postwar Settlement Path",
+          "description": "Flow diagram from Japanese surrender to British Military Administration, Malayan Union, and Malay opposition."
+        }
+      ],
+      "source_notes": [
+        "Use the National Archives of Malaysia Malayan Union materials and public archive articles on opposition to the union.",
+        "Use Britannica's Malaysia political transformation coverage for the broad constitutional sequence.",
+        "Keep the constitutional discussion bounded to Malaya, not later wider Malaysian federation history."
+      ]
+    },
+    {
+      "heading": "Federation, Emergency, and the Long Political Shadow of Occupation",
+      "bullet_points": [
+        "Explain how the Federation of Malaya in 1948 replaced the Malayan Union and restructured the constitutional order.",
+        "Describe the Emergency as a security response that hardened anti-communist politics and expanded state power.",
+        "Show how wartime occupation, resistance, and postwar settlement helped shape the path to 1957 independence.",
+        "Keep the section focused on political consequences that flowed from the occupation rather than on later national development topics."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_emergency_legacy",
+          "title": "Occupation Legacies and Postwar State-Building",
+          "description": "Matrix linking occupation-era political changes with the Federation, Emergency, and eventual independence."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_legacy_timeline",
+          "kind": "timeline",
+          "title": "Occupation Legacy Timeline",
+          "description": "Timeline covering the surrender, Malayan Union, Federation of Malaya, Emergency, and independence."
+        }
+      ],
+      "source_notes": [
+        "Use Britannica's Malayan Emergency entry for the postwar security context.",
+        "Use National Archives of Malaysia records and published archive material on the Federation of Malaya for the constitutional transition.",
+        "Use the National Museum of Malaysia gallery materials for the long-run historical framing of Malaya's political change."
+      ]
+    }
+  ]
+}

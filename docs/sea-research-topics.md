@@ -10,14 +10,14 @@ Use this file as the backlog for future recipe enrichment. Topics should be turn
 - [x] Singapore: merger with Malaysia and separation in 1963-1965
 - [x] Singapore: Lee Kuan Yew, state-building, and administrative centralization
 - [x] Singapore: housing policy, public estates, and urban planning after independence
-- [ ] Singapore: Changi, shipping, finance, and advanced services in the late twentieth and early twenty-first centuries
+- [x] Singapore: Changi, shipping, finance, and advanced services in the late twentieth and early twenty-first centuries
 
 ## Malaysia
 
-- [ ] Malaysia: British Malaya, protectorates, and colonial political structure from 1900 to 1941
-- [ ] Malaysia: Japanese occupation in Malaya and its postwar political consequences
-- [ ] Malaysia: the Emergency, security policy, and anti-communist conflict
-- [ ] Malaysia: Tunku Abdul Rahman and negotiated independence in 1957
+- [x] Malaysia: British Malaya, protectorates, and colonial political structure from 1900 to 1941
+- [x] Malaysia: Japanese occupation in Malaya and its postwar political consequences
+- [x] Malaysia: the Emergency, security policy, and anti-communist conflict
+- [x] Malaysia: Tunku Abdul Rahman and negotiated independence in 1957
 - [ ] Malaysia: formation of Malaysia in 1963 and federal state-building
 - [ ] Malaysia: New Economic Policy, redistribution, and development strategy
 - [ ] Malaysia: coalition politics, political transitions, and post-2018 electoral change

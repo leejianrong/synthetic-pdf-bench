@@ -1,0 +1,220 @@
+{
+  "tables": [
+    {
+      "table_id": "tbl_emergency_origins_timeline",
+      "title": "Emergency Origins and Early Escalation",
+      "matrix": [
+        [
+          "Phase",
+          "Date or Period",
+          "Event",
+          "Significance"
+        ],
+        [
+          "Postwar transition",
+          "1945-1948",
+          "Japanese surrender, constitutional negotiation, renewed colonial rule",
+          "Created the political setting for postwar conflict"
+        ],
+        [
+          "Insurgent escalation",
+          "Early 1948",
+          "Attacks on estates, mines, police posts, and transport",
+          "Signaled the move from labor unrest and underground organization to armed conflict"
+        ],
+        [
+          "Emergency declaration",
+          "18 June 1948",
+          "State of emergency declared in Malaya",
+          "Established the legal frame for counterinsurgency"
+        ],
+        [
+          "Early security response",
+          "1948-1950",
+          "Detention, curfews, troop deployment, and police action",
+          "Marked the first phase of emergency law and security administration"
+        ]
+      ],
+      "notes": [
+        "Use this table to extract the transition from postwar unrest to formal emergency governance.",
+        "The matrix is qualitative and avoids unsupported casualty figures.",
+        "The date 18 June 1948 is the key anchor for the topic."
+      ],
+      "suggested_section": "Origins of the Emergency and the Communist Challenge"
+    },
+    {
+      "table_id": "tbl_security_institutions",
+      "title": "Security Institutions and Roles",
+      "matrix": [
+        [
+          "Institution",
+          "Function",
+          "Policy Tool",
+          "Benchmark Note"
+        ],
+        [
+          "Colonial and federal executive",
+          "Directed emergency policy and legal powers",
+          "Emergency regulations, curfews, restrictions",
+          "State authority expanded under emergency conditions"
+        ],
+        [
+          "Malayan Police",
+          "Public order and local enforcement",
+          "Patrols, screening, arrests",
+          "Core civil-security actor"
+        ],
+        [
+          "Special Branch",
+          "Intelligence and informant handling",
+          "Surveillance, source networks, analysis",
+          "Central to anti-guerrilla intelligence"
+        ],
+        [
+          "Military command",
+          "Area clearance and offensive operations",
+          "Patrols, jungle operations, support to police",
+          "Worked with civil agencies"
+        ],
+        [
+          "District and village administration",
+          "Local implementation",
+          "Registration, permits, resettlement controls",
+          "Made security policy everyday governance"
+        ]
+      ],
+      "notes": [
+        "The table separates institutions even when they cooperated in practice.",
+        "Keep legal detail general unless a later canonical merge adds ordinance citations.",
+        "The policy tools are the key extraction targets."
+      ],
+      "suggested_section": "Emergency Law, Security Institutions, and Intelligence"
+    },
+    {
+      "table_id": "tbl_counterinsurgency_measures",
+      "title": "Counterinsurgency Measures and Effects",
+      "matrix": [
+        [
+          "Measure",
+          "What It Did",
+          "Intended Effect",
+          "Observed Policy Logic"
+        ],
+        [
+          "Briggs Plan",
+          "Reorganized command around food denial and population control",
+          "Separated guerrillas from civilian support",
+          "Security and administration were integrated"
+        ],
+        [
+          "New villages",
+          "Resettled rural communities into guarded settlements",
+          "Protected civilians while restricting insurgent access",
+          "Population management became central to policy"
+        ],
+        [
+          "White Areas",
+          "Lifted restrictions in cleared zones",
+          "Rewarded cooperation and security success",
+          "Used positive incentives alongside coercion"
+        ],
+        [
+          "Village services",
+          "Provided water, schooling, and clinics",
+          "Improved state legitimacy in resettled areas",
+          "Development and control operated together"
+        ]
+      ],
+      "notes": [
+        "The matrix is designed for stable qualitative extraction.",
+        "The policy logic row helps benchmark reasoning about counterinsurgency.",
+        "Avoid precise resettlement totals unless separately verified."
+      ],
+      "suggested_section": "Rural Control, New Villages, and Counterinsurgency"
+    },
+    {
+      "table_id": "tbl_political_settlement",
+      "title": "Political Settlement and Anti-Communist Consolidation",
+      "matrix": [
+        [
+          "Element",
+          "Period",
+          "Change",
+          "Security Significance"
+        ],
+        [
+          "Local elections",
+          "Early 1950s",
+          "Limited political participation expanded",
+          "Helped undercut insurgent legitimacy"
+        ],
+        [
+          "Citizenship policy",
+          "1950s",
+          "Selected Chinese and other residents gained citizenship access",
+          "Reduced the appeal of communist exclusivity"
+        ],
+        [
+          "Independence",
+          "1957",
+          "Federation of Malaya became self-governing",
+          "Shifted the conflict from colonial war to state security"
+        ],
+        [
+          "Anti-communist consensus",
+          "Late 1950s and beyond",
+          "Mainstream politics narrowed the space for armed left-wing opposition",
+          "Shaped national order after the emergency"
+        ]
+      ],
+      "notes": [
+        "This table links constitutional transition to security policy.",
+        "The scope is political settlement rather than full party history.",
+        "The wording remains neutral and benchmark-friendly."
+      ],
+      "suggested_section": "Political Settlement, Independence, and Anti-Communist Nation-Building"
+    },
+    {
+      "table_id": "tbl_emergency_legacy",
+      "title": "Emergency Legacy in Post-1960 Malaysia",
+      "matrix": [
+        [
+          "Legacy Area",
+          "What Persisted",
+          "How It Was Used",
+          "Relevance"
+        ],
+        [
+          "Preventive detention",
+          "Broad security detention norms",
+          "Managed subversion and public-order threats",
+          "Continued the emergency state's legal habits"
+        ],
+        [
+          "Intelligence institutions",
+          "Police intelligence and informant networks",
+          "Tracked political and security threats",
+          "Made intelligence a permanent state function"
+        ],
+        [
+          "Emergency mindset",
+          "State readiness for exceptional powers",
+          "Applied to later unrest and anti-communist concerns",
+          "Shaped Malaysian governance culture"
+        ],
+        [
+          "Development-security link",
+          "Services and control were combined",
+          "Used to stabilize settlements and rural areas",
+          "Created a durable policy template"
+        ]
+      ],
+      "notes": [
+        "The table keeps the post-1960 phase brief and structural.",
+        "Later conflicts are treated as legacy, not as a separate main topic.",
+        "The matrix is meant for extraction of continuity between emergency and state-building."
+      ],
+      "suggested_section": "Legacy in Malaysia After 1960"
+    }
+  ]
+}
