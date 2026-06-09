@@ -25,6 +25,7 @@ class TableRecipe(BaseModel):
     caption: str = ""
     caption_position: Literal["before", "after"] = "after"
     matrix: list[list[str]]
+    merged_cells: list[dict[str, Any]] = Field(default_factory=list)
     metadata: dict[str, Any] = Field(default_factory=dict)
 
     @field_validator("matrix")

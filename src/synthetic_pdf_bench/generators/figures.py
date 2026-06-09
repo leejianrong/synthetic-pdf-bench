@@ -1,8 +1,13 @@
 from __future__ import annotations
 
 from pathlib import Path
+from random import Random
 from tempfile import gettempdir
 
+import matplotlib
+
+matplotlib.use("Agg")
+from matplotlib import pyplot as plt
 from PIL import Image, ImageDraw
 
 
@@ -23,3 +28,123 @@ def make_raster_figure(seed: int) -> Path:
     draw.text((322, 270), "Region", fill="#1a1a1a")
     image.save(path)
     return path
+
+
+def make_matplotlib_figure(kind: str, data: dict, seed: int, figure_id: str) -> Path:
+    path = Path(gettempdir()) / f"synthetic_pdf_bench_{figure_id}_{seed}.png"
+    rng = Random(seed + sum(ord(char) for char in figure_id))
+    fig, ax = plt.subplots(figsize=(7.2, 3.4), dpi=120)
+    if kind == "bar_chart":
+        _draw_bar_chart(ax, data)
+    elif kind == "line_chart":
+        _draw_line_chart(ax, data)
+    elif kind == "stacked_bar":
+        _draw_stacked_bar(ax, data)
+    elif kind == "timeline":
+        _draw_timeline(ax, data)
+    elif kind == "scatter_plot":
+        _draw_scatter_plot(ax, data, rng)
+    elif kind == "heatmap":
+        _draw_heatmap(ax, data)
+    else:
+        _draw_bar_chart(ax, data)
+    fig.tight_layout()
+    fig.savefig(path, facecolor="white")
+    plt.close(fig)
+    return path
+
+
+def _labels(data: dict) -> list[str]:
+    return data.get("labels") or ["Singapore", "Malaysia", "Indonesia"]
+
+
+def _series(data: dict) -> list[float]:
+    return data.get("values") or [88, 74, 69]
+
+
+def _draw_bar_chart(ax, data: dict) -> None:
+    labels = _labels(data)
+    values = _series(data)
+    ax.bar(labels, values, color=["#2f6f73", "#7a4c9f", "#9a6a18", "#4f7cac"][: len(labels)])
+    ax.set_ylabel(data.get("y_label", "Index"))
+    ax.set_title(data.get("title", "Comparative bar chart"))
+    ax.grid(axis="y", alpha=0.25)
+
+
+def _draw_line_chart(ax, data: dict) -> None:
+    years = data.get("years") or [1960, 1970, 1980, 1990, 2000, 2010, 2020]
+    series = data.get("series") or {
+        "Singapore": [20, 35, 55, 72, 83, 91, 96],
+        "Malaysia": [18, 28, 42, 55, 68, 78, 84],
+        "Indonesia": [12, 19, 31, 43, 56, 67, 75],
+    }
+    for label, values in series.items():
+        ax.plot(years, values, marker="o", linewidth=1.8, label=label)
+    ax.set_title(data.get("title", "Trend over time"))
+    ax.set_xlabel(data.get("x_label", "Year"))
+    ax.set_ylabel(data.get("y_label", "Index"))
+    ax.grid(alpha=0.25)
+    ax.legend(fontsize=7)
+
+
+def _draw_stacked_bar(ax, data: dict) -> None:
+    labels = _labels(data)
+    series = data.get("series") or {
+        "Services": [55, 42, 38],
+        "Manufacturing": [25, 34, 29],
+        "Resources": [5, 14, 23],
+    }
+    bottoms = [0.0] * len(labels)
+    palette = ["#2f6f73", "#7a4c9f", "#9a6a18", "#4f7cac", "#c45b4b"]
+    for idx, (name, values) in enumerate(series.items()):
+        ax.bar(labels, values, bottom=bottoms, label=name, color=palette[idx % len(palette)])
+        bottoms = [bottom + value for bottom, value in zip(bottoms, values)]
+    ax.set_title(data.get("title", "Stacked composition"))
+    ax.set_ylabel(data.get("y_label", "Share"))
+    ax.legend(fontsize=7)
+
+
+def _draw_timeline(ax, data: dict) -> None:
+    events = data.get("events") or [
+        {"year": 1945, "label": "Indonesia"},
+        {"year": 1957, "label": "Malaya"},
+        {"year": 1965, "label": "Singapore"},
+        {"year": 1998, "label": "Reformasi"},
+    ]
+    years = [event["year"] for event in events]
+    ax.hlines(1, min(years) - 5, max(years) + 5, color="#8c969b")
+    ax.scatter(years, [1] * len(years), color="#2f6f73")
+    for idx, event in enumerate(events):
+        offset = 0.12 if idx % 2 == 0 else -0.18
+        ax.text(event["year"], 1 + offset, event["label"], ha="center", fontsize=7)
+    ax.set_ylim(0.65, 1.35)
+    ax.set_yticks([])
+    ax.set_title(data.get("title", "Timeline"))
+
+
+def _draw_scatter_plot(ax, data: dict, rng: Random) -> None:
+    groups = data.get("groups") or ["Singapore", "Malaysia", "Indonesia"]
+    for idx, group in enumerate(groups):
+        xs = [rng.uniform(0.1, 1.0) + idx * 0.08 for _ in range(18)]
+        ys = [x * (0.65 + idx * 0.12) + rng.uniform(0.0, 0.3) for x in xs]
+        ax.scatter(xs, ys, s=18, alpha=0.75, label=group)
+    ax.set_title(data.get("title", "Synthetic scatter plot"))
+    ax.set_xlabel(data.get("x_label", "Urbanization proxy"))
+    ax.set_ylabel(data.get("y_label", "Development proxy"))
+    ax.grid(alpha=0.2)
+    ax.legend(fontsize=7)
+
+
+def _draw_heatmap(ax, data: dict) -> None:
+    matrix = data.get("matrix") or [
+        [0.8, 0.6, 0.5, 0.7],
+        [0.5, 0.7, 0.8, 0.6],
+        [0.4, 0.6, 0.7, 0.9],
+    ]
+    row_labels = data.get("row_labels") or ["Singapore", "Malaysia", "Indonesia"]
+    col_labels = data.get("col_labels") or ["Politics", "Economy", "Society", "Region"]
+    im = ax.imshow(matrix, cmap="YlGnBu", vmin=0, vmax=1)
+    ax.set_xticks(range(len(col_labels)), col_labels, rotation=25, ha="right")
+    ax.set_yticks(range(len(row_labels)), row_labels)
+    ax.set_title(data.get("title", "Qualitative heatmap"))
+    plt.colorbar(im, ax=ax, fraction=0.046, pad=0.04)

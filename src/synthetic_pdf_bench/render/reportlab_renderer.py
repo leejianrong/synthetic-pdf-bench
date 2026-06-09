@@ -6,7 +6,7 @@ from reportlab.lib import colors
 from reportlab.lib.utils import ImageReader
 from reportlab.pdfgen.canvas import Canvas
 
-from synthetic_pdf_bench.generators.figures import make_raster_figure
+from synthetic_pdf_bench.generators.figures import make_matplotlib_figure, make_raster_figure
 from synthetic_pdf_bench.render.fonts import contains_cjk, font_for_text, register_fonts
 from synthetic_pdf_bench.schema.blocks import Block, FigureBlock, TableBlock
 from synthetic_pdf_bench.schema.truth import PageTruth
@@ -80,7 +80,19 @@ class ReportLabRenderer:
     def _draw_figure(self, canvas: Canvas, block: FigureBlock) -> None:
         x0, y0, x1, y1 = block.bbox_pt
         if block.source_type == "raster":
-            canvas.drawImage(ImageReader(str(make_raster_figure(self.seed))), x0, y0, x1 - x0, y1 - y0)
+            data = block.metadata.get("data", {})
+            if data.get("backend") == "matplotlib" or block.kind in {
+                "bar_chart",
+                "line_chart",
+                "stacked_bar",
+                "timeline",
+                "scatter_plot",
+                "heatmap",
+            }:
+                image_path = make_matplotlib_figure(block.kind, data, self.seed, block.figure_id)
+            else:
+                image_path = make_raster_figure(self.seed)
+            canvas.drawImage(ImageReader(str(image_path)), x0, y0, x1 - x0, y1 - y0)
             return
         if block.kind == "timeline":
             self._draw_timeline(canvas, block)

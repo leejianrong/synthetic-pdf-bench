@@ -69,6 +69,29 @@ The flow layout engine uses ReportLab font metrics for text height estimation an
 - figure captions before or after figures
 - page-level validation for bounds and content-block overlap
 
+## Visual benchmark recipe
+
+`data/recipes/visual_benchmark_v1.json` exercises visual extraction with deterministic matplotlib chart figures and richer table shapes.
+
+Supported matplotlib chart kinds:
+
+- `bar_chart`
+- `line_chart`
+- `stacked_bar`
+- `timeline`
+- `scatter_plot`
+- `heatmap`
+
+Supported table variants:
+
+- narrow table
+- wide table
+- numeric table
+- multilingual table
+- wrapped cell text
+- merged-cell approximation with span metadata
+- multi-page table splitting
+
 ## Fonts
 
 The ReportLab renderer automatically uses the built-in `STSong-Light` CID font for text containing Chinese characters. Latin-only text uses Helvetica by default. Future phases can add configurable external fonts such as Noto Sans CJK for higher visual fidelity.

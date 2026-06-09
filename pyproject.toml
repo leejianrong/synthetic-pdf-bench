@@ -5,6 +5,7 @@ description = "Synthetic PDF generator with deterministic scene-graph ground tru
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "matplotlib",
     "pillow",
     "pydantic",
     "pymupdf",

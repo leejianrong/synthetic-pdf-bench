@@ -1,0 +1,215 @@
+{
+  "doc_id": "visual_benchmark_v1",
+  "title": "Visual Benchmark: Southeast Asia Charts and Tables",
+  "language_profile": {
+    "primary": "en",
+    "secondary": ["zh", "ms", "id"],
+    "encoding": "UTF-8"
+  },
+  "metadata": {
+    "document_family": "synthetic_visual_extraction_benchmark",
+    "source_notes": [
+      "Synthetic chart and table content for visual extraction benchmarking.",
+      "Numerical values are deterministic illustrative values, not factual claims."
+    ]
+  },
+  "sections": [
+    {
+      "heading": "Chart Families",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "This section exercises chart extraction with deterministic raster charts generated from recipe data. The figures use Singapore, Malaysia, and Indonesia as labels while avoiding time-sensitive statistical claims.",
+          "metadata": {"source_notes": ["Synthetic benchmark prose."]}
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_bar_chart",
+          "kind": "bar_chart",
+          "source_type": "raster",
+          "title": "Synthetic Development Index",
+          "caption": "Bar chart with country labels and deterministic illustrative values.",
+          "data": {
+            "backend": "matplotlib",
+            "title": "Synthetic Development Index",
+            "labels": ["Singapore", "Malaysia", "Indonesia"],
+            "values": [94, 81, 76],
+            "y_label": "Index"
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_line_chart",
+          "kind": "line_chart",
+          "source_type": "raster",
+          "title": "Illustrative Urbanization Trend",
+          "caption": "Line chart with three country series across stable historical periods.",
+          "data": {
+            "backend": "matplotlib",
+            "title": "Illustrative Urbanization Trend",
+            "years": [1960, 1980, 2000, 2020],
+            "series": {
+              "Singapore": [45, 72, 88, 96],
+              "Malaysia": [28, 44, 62, 78],
+              "Indonesia": [18, 31, 46, 59]
+            },
+            "y_label": "Urbanization proxy"
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_stacked_bar",
+          "kind": "stacked_bar",
+          "source_type": "raster",
+          "title": "Illustrative Sector Composition",
+          "caption": "Stacked bar chart showing deterministic qualitative sector composition.",
+          "data": {
+            "backend": "matplotlib",
+            "title": "Illustrative Sector Composition",
+            "labels": ["Singapore", "Malaysia", "Indonesia"],
+            "series": {
+              "Services": [65, 45, 40],
+              "Manufacturing": [25, 35, 30],
+              "Resources": [10, 20, 30]
+            },
+            "y_label": "Share"
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_timeline_chart",
+          "kind": "timeline",
+          "source_type": "raster",
+          "title": "Selected Political Milestones",
+          "caption": "Timeline chart rendered through the matplotlib backend.",
+          "data": {
+            "backend": "matplotlib",
+            "title": "Selected Political Milestones",
+            "events": [
+              {"year": 1945, "label": "Indonesia"},
+              {"year": 1957, "label": "Malaya"},
+              {"year": 1965, "label": "Singapore"},
+              {"year": 1998, "label": "Reformasi"}
+            ]
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_scatter_plot",
+          "kind": "scatter_plot",
+          "source_type": "raster",
+          "title": "Synthetic City Cluster Scatter",
+          "caption": "Scatter plot with deterministic pseudo-random clusters.",
+          "data": {
+            "backend": "matplotlib",
+            "title": "Synthetic City Cluster Scatter",
+            "groups": ["Singapore", "Malaysia", "Indonesia"],
+            "x_label": "Connectivity proxy",
+            "y_label": "Urban services proxy"
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_heatmap",
+          "kind": "heatmap",
+          "source_type": "raster",
+          "title": "Qualitative Theme Heatmap",
+          "caption": "Heatmap chart with country rows and thematic columns.",
+          "data": {
+            "backend": "matplotlib",
+            "title": "Qualitative Theme Heatmap",
+            "row_labels": ["Singapore", "Malaysia", "Indonesia"],
+            "col_labels": ["Politics", "Economy", "Society", "Region"],
+            "matrix": [
+              [0.9, 0.8, 0.7, 0.9],
+              [0.7, 0.7, 0.8, 0.8],
+              [0.6, 0.8, 0.7, 0.9]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Table Families",
+      "blocks": [
+        {
+          "type": "table",
+          "table_id": "tbl_narrow",
+          "title": "Narrow Table",
+          "caption": "Narrow two-column table.",
+          "matrix": [["Country", "Theme"], ["Singapore", "Port city"], ["Malaysia", "Federal economy"], ["Indonesia", "Archipelago"]],
+          "metadata": {"table_variant": "narrow"}
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_wide",
+          "title": "Wide Table",
+          "caption": "Wide table with several semantic columns.",
+          "matrix": [
+            ["Country", "Politics", "Economy", "Society", "Language", "Regional Role"],
+            ["Singapore", "Republic", "Services", "Urban planning", "Multilingual", "Hub"],
+            ["Malaysia", "Federal monarchy", "Manufacturing", "Urban corridors", "Bahasa Malaysia", "Connector"],
+            ["Indonesia", "Republic", "Domestic scale", "Regional diversity", "Bahasa Indonesia", "Scale"]
+          ],
+          "metadata": {"table_variant": "wide"}
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_numeric",
+          "title": "Numeric Table",
+          "caption": "Numeric table with decimal values.",
+          "matrix": [["Country", "1960", "2000", "Recent"], ["Singapore", "45.0", "88.4", "94.1"], ["Malaysia", "39.7", "72.6", "81.3"], ["Indonesia", "31.9", "63.8", "75.5"]],
+          "metadata": {"table_variant": "numeric"}
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_multilingual",
+          "title": "Multilingual Table",
+          "caption": "Table with English, Malay or Indonesian, and Chinese text.",
+          "matrix": [["Country", "English", "Malay/Indonesian", "Chinese"], ["Singapore", "diverse society", "masyarakat majmuk", "多元社会"], ["Malaysia", "independence", "merdeka", "独立"], ["Indonesia", "development", "pembangunan", "发展"]],
+          "metadata": {"table_variant": "multilingual"}
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_wrapped",
+          "title": "Wrapped Cell Text",
+          "caption": "Table with intentionally long cell text.",
+          "matrix": [
+            ["Country", "Long Description", "Benchmark Purpose"],
+            ["Singapore", "Compact city-state with port, finance, logistics, public housing, and multilingual administration.", "Tests wrapped text in narrow cells."],
+            ["Malaysia", "Federal country with peninsular and Bornean regions, commodities, manufacturing, and services.", "Tests multi-line cell rendering."],
+            ["Indonesia", "Large archipelagic republic with decentralization, infrastructure expansion, resources, and services.", "Tests long text extraction."]
+          ],
+          "metadata": {"table_variant": "wrapped_cell_text"}
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_merged_approx",
+          "title": "Merged Cell Approximation",
+          "caption": "Rectangular matrix with merged-cell span metadata.",
+          "matrix": [["Theme", "Singapore", "Malaysia", "Indonesia"], ["Politics", "Republic", "Federal monarchy", "Republic"], ["Economy", "Services hub", "Mixed economy", "Domestic scale"], ["Society", "Urban multilingual", "Multicultural", "Archipelagic diversity"]],
+          "merged_cells": [{"row": 0, "col": 0, "rowspan": 1, "colspan": 4, "text": "Regional Comparison Header"}],
+          "metadata": {"table_variant": "merged_cell_approximation"}
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_multi_page",
+          "title": "Multi-page Table",
+          "caption": "Long table intended to split across page or column boundaries.",
+          "matrix": [
+            ["Year", "Singapore", "Malaysia", "Indonesia"],
+            ["1901", "51", "46", "41"], ["1902", "52", "47", "42"], ["1903", "53", "48", "43"], ["1904", "54", "49", "44"], ["1905", "55", "50", "45"],
+            ["1906", "56", "51", "46"], ["1907", "57", "52", "47"], ["1908", "58", "53", "48"], ["1909", "59", "54", "49"], ["1910", "60", "55", "50"],
+            ["1911", "61", "56", "51"], ["1912", "62", "57", "52"], ["1913", "63", "58", "53"], ["1914", "64", "59", "54"], ["1915", "65", "60", "55"],
+            ["1916", "66", "61", "56"], ["1917", "67", "62", "57"], ["1918", "68", "63", "58"], ["1919", "69", "64", "59"], ["1920", "70", "65", "60"],
+            ["1921", "71", "66", "61"], ["1922", "72", "67", "62"], ["1923", "73", "68", "63"], ["1924", "74", "69", "64"], ["1925", "75", "70", "65"],
+            ["1926", "76", "71", "66"], ["1927", "77", "72", "67"], ["1928", "78", "73", "68"], ["1929", "79", "74", "69"], ["1930", "80", "75", "70"],
+            ["1931", "81", "76", "71"], ["1932", "82", "77", "72"], ["1933", "83", "78", "73"], ["1934", "84", "79", "74"], ["1935", "85", "80", "75"],
+            ["1936", "86", "81", "76"], ["1937", "87", "82", "77"], ["1938", "88", "83", "78"], ["1939", "89", "84", "79"], ["1940", "90", "85", "80"]
+          ],
+          "metadata": {"table_variant": "multi_page"}
+        }
+      ]
+    }
+  ]
+}

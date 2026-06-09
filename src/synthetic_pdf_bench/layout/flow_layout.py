@@ -358,7 +358,7 @@ class FlowLayoutPlanner:
         height = len(matrix) * self.style.table_row_height
         self._ensure_space(height + self.style.block_spacing)
         bbox = self._take_box(height)
-        cells = self._table_cells(table_id, matrix, self._page_index, bbox)
+        cells = self._table_cells(table_id, matrix, self._page_index, bbox, recipe.merged_cells)
         table = TableBlock(
             block_id=self._next_block_id(),
             page_index=self._page_index,
@@ -373,6 +373,7 @@ class FlowLayoutPlanner:
                 **recipe.metadata,
                 "title": recipe.title,
                 "caption": recipe.caption,
+                "merged_cells": recipe.merged_cells,
                 "parent_table_id": recipe.table_id,
                 "table_segment_index": segment_index,
                 "body_rows_remaining": body_rows_remaining,
@@ -469,7 +470,9 @@ class FlowLayoutPlanner:
         self._add_block(caption)
         return caption
 
-    def _table_cells(self, table_id: str, matrix: list[list[str]], page_index: int, bbox: list[float]) -> list[TableCell]:
+    def _table_cells(
+        self, table_id: str, matrix: list[list[str]], page_index: int, bbox: list[float], merged_cells: list[dict] | None = None
+    ) -> list[TableCell]:
         x0, y0, x1, y1 = bbox
         row_count = len(matrix)
         col_count = len(matrix[0])
@@ -482,17 +485,35 @@ class FlowLayoutPlanner:
                 cell_x1 = cell_x0 + col_w
                 cell_y1 = y1 - row_idx * row_h
                 cell_y0 = cell_y1 - row_h
+                span = self._span_for_cell(row_idx, col_idx, merged_cells or [])
                 cells.append(
                     TableCell(
                         cell_id=f"{table_id}_r{row_idx + 1:02d}c{col_idx + 1:02d}",
                         row=row_idx,
                         col=col_idx,
+                        rowspan=span["rowspan"],
+                        colspan=span["colspan"],
                         text=text,
                         bbox_pt=[cell_x0, cell_y0, cell_x1, cell_y1],
                         is_header=row_idx == 0,
+                        metadata=self._cell_metadata(table_id, span),
                     )
                 )
         return cells
+
+    def _span_for_cell(self, row_idx: int, col_idx: int, merged_cells: list[dict]) -> dict:
+        for span in merged_cells:
+            if span.get("row") == row_idx and span.get("col") == col_idx:
+                return {
+                    "span_kind": "merged_approximation",
+                    "rowspan": int(span.get("rowspan", 1)),
+                    "colspan": int(span.get("colspan", 1)),
+                    "text": span.get("text", ""),
+                }
+        return {"span_kind": "regular", "rowspan": 1, "colspan": 1}
+
+    def _cell_metadata(self, table_id: str, span: dict) -> dict:
+        return {"table_id": table_id, **span}
 
     def _text_height(self, text: str, font_size: int, width: float, line_height: float) -> float:
         return len(self._wrap_text(text, font_size, width)) * line_height
