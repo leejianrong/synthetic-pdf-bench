@@ -36,6 +36,8 @@ class ReportLabRenderer:
             self._draw_text(canvas, block, font_size=20, bold=True)
         elif block.type == "heading":
             self._draw_text(canvas, block, font_size=14, bold=True)
+        elif block.type in {"footnote", "reference", "caption"}:
+            self._draw_text(canvas, block, font_size=8)
         elif block.type in {"footer", "page_number", "header"}:
             self._draw_text(canvas, block, font_size=8)
         else:
@@ -44,7 +46,7 @@ class ReportLabRenderer:
     def _draw_text(self, canvas: Canvas, block: Block, font_size: int, bold: bool = False) -> None:
         x0, y0, x1, y1 = block.bbox_pt
         canvas.setFillColor(colors.black)
-        text = block.text or block.markdown
+        text = block.markdown if block.type == "list" and block.markdown else block.text or block.markdown
         font_name = font_for_text(text, bold=bold)
         canvas.setFont(font_name, font_size)
         lines = self._wrap_text(canvas, text, font_name, font_size, x1 - x0)

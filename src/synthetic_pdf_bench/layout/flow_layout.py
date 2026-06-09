@@ -1,15 +1,23 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from math import ceil
 from pathlib import Path
 
 from reportlab.lib.pagesizes import letter
+from reportlab.pdfbase import pdfmetrics
 
 from synthetic_pdf_bench.generators.figures import make_raster_figure
-from synthetic_pdf_bench.generators.recipes import DocumentRecipe, FigureRecipe, TableRecipe
+from synthetic_pdf_bench.generators.recipes import (
+    DocumentRecipe,
+    FigureRecipe,
+    FootnoteRecipe,
+    ListRecipe,
+    ReferenceRecipe,
+    TableRecipe,
+)
 from synthetic_pdf_bench.generators.tables import table_to_html, table_to_markdown
 from synthetic_pdf_bench.layout.scene import SceneGraph
+from synthetic_pdf_bench.render.fonts import contains_cjk, font_for_text, register_fonts
 from synthetic_pdf_bench.schema.blocks import Block, FigureBlock, TableBlock, TableCell
 
 
@@ -34,6 +42,10 @@ class LayoutStyle:
     figure_height: float = 148
     figure_caption_height: float = 28
     raster_figure_height: float = 130
+    columns: int = 1
+    column_gutter: float = 24
+    min_table_rows_per_segment: int = 2
+    force_section_page_breaks: bool = False
 
 
 def style_for_variant(variant: str) -> LayoutStyle:
@@ -69,6 +81,24 @@ def style_for_variant(variant: str) -> LayoutStyle:
             figure_caption_height=32,
             raster_figure_height=145,
         )
+    if variant == "two_column":
+        return LayoutStyle(
+            margin_left=50,
+            margin_right=50,
+            margin_top=66,
+            margin_bottom=66,
+            body_font_size=8,
+            body_line_height=10,
+            block_spacing=6,
+            section_spacing=9,
+            table_row_height=15,
+            table_caption_height=20,
+            figure_height=112,
+            figure_caption_height=22,
+            raster_figure_height=96,
+            columns=2,
+            column_gutter=24,
+        )
     if variant == "figure_heavy":
         return LayoutStyle(figure_height=166, raster_figure_height=145, block_spacing=8)
     if variant == "table_heavy":
@@ -86,13 +116,16 @@ class FlowLayoutPlanner:
         self.page_width, self.page_height = letter
         self.scene: SceneGraph | None = None
         self.cursor_y = 0.0
+        self.column_index = 0
         self.reading_order = 0
         self.block_counter = 0
         self.figure_counter = 0
+        register_fonts()
 
     @property
     def content_width(self) -> float:
-        return self.page_width - self.style.margin_left - self.style.margin_right
+        full_width = self.page_width - self.style.margin_left - self.style.margin_right
+        return (full_width - self.style.column_gutter * (self.style.columns - 1)) / self.style.columns
 
     @property
     def content_bottom(self) -> float:
@@ -106,21 +139,41 @@ class FlowLayoutPlanner:
         self._add_title(recipe.title, recipe.metadata)
         self._add_raster_overview(recipe)
         for section in recipe.sections:
+            if section.page_break_before or self.style.force_section_page_breaks or section.metadata.get("page_break_before"):
+                self._advance_page()
             self._add_heading(section.heading, section.metadata)
             for recipe_block in section.blocks:
                 if recipe_block.type == "paragraph":
                     self._add_paragraph(recipe_block.text, recipe_block.language, recipe_block.metadata)
+                elif recipe_block.type == "list":
+                    self._add_list(recipe_block)
                 elif recipe_block.type == "table":
                     self._add_table(recipe_block)
                 elif recipe_block.type == "figure":
                     self._add_figure(recipe_block)
+                elif recipe_block.type == "footnote":
+                    self._add_note(recipe_block)
+                elif recipe_block.type == "reference":
+                    self._add_reference(recipe_block)
+        self.validate_layout()
         return self.scene
 
     def _new_page(self) -> None:
         assert self.scene is not None
         page = self.scene.add_page(width_pt=self.page_width, height_pt=self.page_height)
+        self.column_index = 0
         self.cursor_y = self.page_height - self.style.margin_top - self.style.header_height
         self._add_page_furniture(page.page_index)
+
+    def _advance_page(self) -> None:
+        self._new_page()
+
+    def _advance_region(self) -> None:
+        if self.column_index + 1 < self.style.columns:
+            self.column_index += 1
+            self.cursor_y = self.page_height - self.style.margin_top - self.style.header_height
+            return
+        self._advance_page()
 
     def _add_page_furniture(self, page_index: int) -> None:
         assert self.scene is not None
@@ -248,34 +301,97 @@ class FlowLayoutPlanner:
             )
         )
 
-    def _add_table(self, recipe: TableRecipe) -> None:
-        row_count = len(recipe.matrix)
-        height = row_count * self.style.table_row_height
-        total_height = height + self.style.table_caption_height + self.style.block_spacing
-        self._ensure_space(total_height)
+    def _add_list(self, recipe: ListRecipe) -> None:
+        lines: list[str] = []
+        for idx, item in enumerate(recipe.items, start=1):
+            marker = f"{idx}." if recipe.ordered else "-"
+            lines.append(f"{marker} {item}")
+        markdown = "\n".join(lines)
+        height = self._text_height(markdown, self.style.body_font_size, self.content_width, self.style.body_line_height)
+        self._ensure_space(height + self.style.block_spacing)
         bbox = self._take_box(height)
-        cells = self._table_cells(recipe.table_id, recipe.matrix, self._page_index, bbox)
+        self._add_block(
+            Block(
+                block_id=self._next_block_id(),
+                type="list",
+                subtype="ordered" if recipe.ordered else "unordered",
+                page_index=self._page_index,
+                reading_order=self._next_reading_order(),
+                bbox_pt=bbox,
+                text="\n".join(recipe.items),
+                markdown=markdown,
+                language=recipe.language,
+                metadata=recipe.metadata,
+            )
+        )
+
+    def _add_table(self, recipe: TableRecipe) -> None:
+        if recipe.caption and recipe.caption_position == "before":
+            self._add_caption(recipe.caption, self.style.table_caption_height, {"caption_for": recipe.table_id, "caption_type": "table"})
+        header = recipe.matrix[0]
+        body_rows = recipe.matrix[1:]
+        segment_index = 1
+        while body_rows:
+            available_height = max(0, self.cursor_y - self.content_bottom)
+            available_rows = int(available_height // self.style.table_row_height)
+            if available_rows < self.style.min_table_rows_per_segment:
+                self._advance_region()
+                continue
+            max_body_rows = max(1, available_rows - 1)
+            segment_rows = body_rows[:max_body_rows]
+            body_rows = body_rows[max_body_rows:]
+            matrix = [header] + segment_rows
+            table_id = recipe.table_id if segment_index == 1 and not body_rows else f"{recipe.table_id}_part_{segment_index:02d}"
+            self._add_table_segment(recipe, table_id, matrix, segment_index, body_rows_remaining=len(body_rows))
+            segment_index += 1
+        if recipe.caption and recipe.caption_position == "after":
+            self._add_caption(recipe.caption, self.style.table_caption_height, {"caption_for": recipe.table_id, "caption_type": "table"})
+
+    def _add_table_segment(
+        self,
+        recipe: TableRecipe,
+        table_id: str,
+        matrix: list[list[str]],
+        segment_index: int,
+        body_rows_remaining: int,
+    ) -> None:
+        height = len(matrix) * self.style.table_row_height
+        self._ensure_space(height + self.style.block_spacing)
+        bbox = self._take_box(height)
+        cells = self._table_cells(table_id, matrix, self._page_index, bbox)
         table = TableBlock(
             block_id=self._next_block_id(),
             page_index=self._page_index,
             reading_order=self._next_reading_order(),
             bbox_pt=bbox,
-            table_id=recipe.table_id,
-            matrix=recipe.matrix,
-            markdown=table_to_markdown(recipe.matrix),
-            html=table_to_html(recipe.matrix),
+            table_id=table_id,
+            matrix=matrix,
+            markdown=table_to_markdown(matrix),
+            html=table_to_html(matrix),
             cells=cells,
-            metadata={**recipe.metadata, "title": recipe.title, "caption": recipe.caption},
+            metadata={
+                **recipe.metadata,
+                "title": recipe.title,
+                "caption": recipe.caption,
+                "parent_table_id": recipe.table_id,
+                "table_segment_index": segment_index,
+                "body_rows_remaining": body_rows_remaining,
+            },
         )
         self._add_block(table)
-        if recipe.caption:
-            self._add_caption(recipe.caption, self.style.table_caption_height, {"caption_for": recipe.table_id, "caption_type": "table"})
 
     def _add_figure(self, recipe: FigureRecipe) -> None:
         height = self.style.figure_height
         total_height = height + self.style.figure_caption_height + self.style.block_spacing
         self._ensure_space(total_height)
         self.figure_counter += 1
+        caption: Block | None = None
+        if recipe.caption_position == "before":
+            caption = self._add_caption(
+                f"Figure {self.figure_counter}: {recipe.caption}",
+                self.style.figure_caption_height,
+                {"caption_for": recipe.figure_id},
+            )
         bbox = self._take_box(height, horizontal_inset=18)
         figure = FigureBlock(
             block_id=self._next_block_id(),
@@ -291,12 +407,51 @@ class FlowLayoutPlanner:
             metadata={**recipe.metadata, "title": recipe.title, "data": recipe.data},
         )
         self._add_block(figure)
-        caption = self._add_caption(
-            f"Figure {self.figure_counter}: {recipe.caption}",
-            self.style.figure_caption_height,
-            {"caption_for": recipe.figure_id},
-        )
+        if caption is None:
+            caption = self._add_caption(
+                f"Figure {self.figure_counter}: {recipe.caption}",
+                self.style.figure_caption_height,
+                {"caption_for": recipe.figure_id},
+            )
         figure.caption_block_id = caption.block_id
+
+    def _add_note(self, recipe: FootnoteRecipe) -> None:
+        marker = recipe.marker or "*"
+        text = f"{marker} {recipe.text}"
+        height = self._text_height(text, self.style.caption_font_size, self.content_width, self.style.body_line_height)
+        self._ensure_space(height + self.style.block_spacing)
+        bbox = self._take_box(height)
+        self._add_block(
+            Block(
+                block_id=self._next_block_id(),
+                type="footnote",
+                page_index=self._page_index,
+                reading_order=self._next_reading_order(),
+                bbox_pt=bbox,
+                text=text,
+                markdown=text,
+                language=recipe.language,
+                metadata=recipe.metadata,
+            )
+        )
+
+    def _add_reference(self, recipe: ReferenceRecipe) -> None:
+        height = self._text_height(recipe.text, self.style.caption_font_size, self.content_width, self.style.body_line_height)
+        self._ensure_space(height + self.style.block_spacing)
+        bbox = self._take_box(height)
+        self._add_block(
+            Block(
+                block_id=self._next_block_id(),
+                type="reference",
+                page_index=self._page_index,
+                reading_order=self._next_reading_order(),
+                bbox_pt=bbox,
+                text=recipe.text,
+                markdown=recipe.text,
+                language=recipe.language,
+                metadata=recipe.metadata,
+            )
+        )
 
     def _add_caption(self, text: str, height: float, metadata: dict) -> Block:
         self._ensure_space(height + self.style.block_spacing)
@@ -340,18 +495,55 @@ class FlowLayoutPlanner:
         return cells
 
     def _text_height(self, text: str, font_size: int, width: float, line_height: float) -> float:
-        avg_char_width = font_size * 0.52
-        chars_per_line = max(16, int(width / avg_char_width))
-        line_count = max(1, ceil(len(text) / chars_per_line))
-        return line_count * line_height
+        return len(self._wrap_text(text, font_size, width)) * line_height
+
+    def _wrap_text(self, text: str, font_size: int, width: float) -> list[str]:
+        font_name = font_for_text(text)
+        lines: list[str] = []
+        for paragraph in text.splitlines() or [""]:
+            tokens = self._wrap_tokens(paragraph)
+            current = ""
+            for token in tokens:
+                candidate = token if not current else current + token
+                if pdfmetrics.stringWidth(candidate, font_name, font_size) <= width:
+                    current = candidate
+                    continue
+                if current:
+                    lines.append(current.strip())
+                current = token.lstrip()
+            if current:
+                lines.append(current.strip())
+            elif not tokens:
+                lines.append("")
+        return lines or [""]
+
+    def _wrap_tokens(self, text: str) -> list[str]:
+        tokens: list[str] = []
+        current = ""
+        for char in text:
+            if contains_cjk(char):
+                if current:
+                    tokens.append(current)
+                    current = ""
+                tokens.append(char)
+            elif char.isspace():
+                current += char
+                tokens.append(current)
+                current = ""
+            else:
+                current += char
+        if current:
+            tokens.append(current)
+        return tokens
 
     def _ensure_space(self, height: float) -> None:
         if self.cursor_y - height < self.content_bottom:
-            self._new_page()
+            self._advance_region()
 
     def _take_box(self, height: float, horizontal_inset: float = 0) -> list[float]:
-        x0 = self.style.margin_left + horizontal_inset
-        x1 = self.page_width - self.style.margin_right - horizontal_inset
+        column_x0 = self.style.margin_left + self.column_index * (self.content_width + self.style.column_gutter)
+        x0 = column_x0 + horizontal_inset
+        x1 = column_x0 + self.content_width - horizontal_inset
         y1 = self.cursor_y
         y0 = y1 - height
         self.cursor_y = y0 - self.style.block_spacing
@@ -373,6 +565,28 @@ class FlowLayoutPlanner:
     def _next_reading_order(self) -> int:
         self.reading_order += 1
         return self.reading_order
+
+    def validate_layout(self) -> None:
+        assert self.scene is not None
+        for page in self.scene.pages:
+            content_blocks = [
+                block
+                for block in page.blocks
+                if block.type not in {"header", "footer", "page_number"}
+            ]
+            for block in page.blocks:
+                x0, y0, x1, y1 = block.bbox_pt
+                if x0 < 0 or y0 < 0 or x1 > page.width_pt or y1 > page.height_pt:
+                    raise ValueError(f"block {block.block_id} is outside page bounds")
+            for index, block_a in enumerate(content_blocks):
+                for block_b in content_blocks[index + 1 :]:
+                    if self._boxes_overlap(block_a.bbox_pt, block_b.bbox_pt):
+                        raise ValueError(f"blocks {block_a.block_id} and {block_b.block_id} overlap")
+
+    def _boxes_overlap(self, box_a: list[float], box_b: list[float]) -> bool:
+        ax0, ay0, ax1, ay1 = box_a
+        bx0, by0, bx1, by1 = box_b
+        return max(ax0, bx0) < min(ax1, bx1) and max(ay0, by0) < min(ay1, by1)
 
 
 def build_scene_from_recipe(

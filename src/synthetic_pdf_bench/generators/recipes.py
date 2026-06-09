@@ -23,6 +23,7 @@ class TableRecipe(BaseModel):
     table_id: str
     title: str = ""
     caption: str = ""
+    caption_position: Literal["before", "after"] = "after"
     matrix: list[list[str]]
     metadata: dict[str, Any] = Field(default_factory=dict)
 
@@ -48,11 +49,48 @@ class FigureRecipe(BaseModel):
     source_type: Literal["raster", "vector", "hybrid"] = "vector"
     title: str = ""
     caption: str
+    caption_position: Literal["before", "after"] = "after"
     data: dict[str, Any] = Field(default_factory=dict)
     metadata: dict[str, Any] = Field(default_factory=dict)
 
 
-RecipeBlock = ParagraphRecipe | TableRecipe | FigureRecipe
+class ListRecipe(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    type: Literal["list"]
+    items: list[str]
+    ordered: bool = False
+    language: str = "en"
+    metadata: dict[str, Any] = Field(default_factory=dict)
+
+    @field_validator("items")
+    @classmethod
+    def validate_items(cls, items: list[str]) -> list[str]:
+        if not items:
+            raise ValueError("list must include at least one item")
+        return items
+
+
+class FootnoteRecipe(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    type: Literal["footnote"]
+    text: str
+    marker: str = ""
+    language: str = "en"
+    metadata: dict[str, Any] = Field(default_factory=dict)
+
+
+class ReferenceRecipe(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    type: Literal["reference"]
+    text: str
+    language: str = "en"
+    metadata: dict[str, Any] = Field(default_factory=dict)
+
+
+RecipeBlock = ParagraphRecipe | TableRecipe | FigureRecipe | ListRecipe | FootnoteRecipe | ReferenceRecipe
 
 
 class SectionRecipe(BaseModel):
@@ -60,6 +98,7 @@ class SectionRecipe(BaseModel):
 
     heading: str
     blocks: list[RecipeBlock]
+    page_break_before: bool = False
     metadata: dict[str, Any] = Field(default_factory=dict)
 
 
@@ -73,11 +112,11 @@ class DocumentRecipe(BaseModel):
     sections: list[SectionRecipe]
 
 
-RecipeVariant = Literal["standard", "compact", "spacious", "text_heavy", "figure_heavy", "table_heavy"]
+RecipeVariant = Literal["standard", "compact", "spacious", "text_heavy", "figure_heavy", "table_heavy", "two_column"]
 
 
 def recipe_variant_names() -> list[str]:
-    return ["standard", "compact", "spacious", "text_heavy", "figure_heavy", "table_heavy"]
+    return ["standard", "compact", "spacious", "text_heavy", "figure_heavy", "table_heavy", "two_column"]
 
 
 def apply_recipe_variant(recipe: DocumentRecipe, variant: str, seed: int) -> DocumentRecipe:
@@ -91,7 +130,7 @@ def apply_recipe_variant(recipe: DocumentRecipe, variant: str, seed: int) -> Doc
         "recipe_variant": variant,
         "variant_seed": seed,
     }
-    if variant in {"standard", "spacious"}:
+    if variant in {"standard", "spacious", "two_column"}:
         return copied
 
     for section_index, section in enumerate(copied.sections):

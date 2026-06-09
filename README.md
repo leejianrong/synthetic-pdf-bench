@@ -55,7 +55,19 @@ output/small_dataset/
   synthetic_000003/
 ```
 
-Available variants are `standard`, `compact`, `spacious`, `text_heavy`, `figure_heavy`, and `table_heavy`.
+Available variants are `standard`, `compact`, `spacious`, `text_heavy`, `figure_heavy`, `table_heavy`, and `two_column`.
+
+## Layout features
+
+The flow layout engine uses ReportLab font metrics for text height estimation and supports:
+
+- one-column and two-column page flow
+- repeated headers, footers, and page numbers
+- section page-break hints
+- paragraphs, lists, tables, figures, captions, footnotes, and references
+- split table segments when a table does not fit in the current column/page
+- figure captions before or after figures
+- page-level validation for bounds and content-block overlap
 
 ## Fonts
 
