@@ -1,0 +1,95 @@
+{
+  "recipe_id": "singapore_colonial_port_governance_1900_1941",
+  "topic": "Singapore: British colonial administration, port governance, and commerce from 1900 to 1941",
+  "status": "complete_for_review",
+  "scope_decisions": [
+    "The artifact set covers one topic only and stops at 1941, before the Japanese occupation topic.",
+    "No generator code, canonical recipes, unrelated research folders, or topic checklist entries were modified.",
+    "PDF-facing text uses English plus selected Bahasa Melayu and Simplified Chinese markers only.",
+    "The content avoids exact trade tonnage, census shares, and annual financial statistics because those would require additional primary-source verification."
+  ],
+  "decisions": [
+    "Scope is limited to Singapore under British colonial administration, port governance, and commerce from 1900 to 1941.",
+    "The artifact set stops before the Japanese occupation and does not cover wartime civilian life after the 1941 threshold.",
+    "PDF-facing prose blocks are marked with language code en; multilingual terms remain embedded as controlled context markers inside English prose.",
+    "Quantitative trade, census, and budget claims are omitted unless a future canonical merge verifies primary-source figures."
+  ],
+  "research_basis": [
+    {
+      "source_id": "src_nlb_harbour_board",
+      "title": "Singapore Harbour Board is established",
+      "publisher": "National Library Board Singapore",
+      "url": "https://www.nlb.gov.sg/main/article-detail?cmsuuid=933eb182-4c7b-405b-a8c6-3e176018e9b4",
+      "used_for": [
+        "1905 public takeover of Tanjong Pagar Dock Company facilities",
+        "1911 port legislation context",
+        "Singapore Harbour Board institutional framing"
+      ]
+    },
+    {
+      "source_id": "src_nas_tanjong_pagar_dock_board",
+      "title": "Agency Details: Tanjong Pagar Dock Board",
+      "publisher": "National Archives of Singapore",
+      "url": "https://www.nas.gov.sg/archivesonline/government_records/agency-details/149",
+      "used_for": [
+        "Tanjong Pagar Dock Board predecessor status",
+        "Singapore Harbour Board establishment in 1913"
+      ]
+    },
+    {
+      "source_id": "src_cambridge_entrepot",
+      "title": "Singapore: Its Growth as an Entrepot Port, 1819-1941",
+      "publisher": "Journal of Southeast Asian Studies / Cambridge Core",
+      "url": "https://www.cambridge.org/core/journals/journal-of-southeast-asian-studies/article/singapore-its-growth-as-an-entrepot-port-18191941/ED876C3834A931E303957CEFAD8C8D65",
+      "used_for": [
+        "Long-run entrepot port framing",
+        "Use of 1941 as a commercial-historical endpoint"
+      ]
+    },
+    {
+      "source_id": "src_tna_straits_settlements",
+      "title": "Straits Settlements",
+      "publisher": "The National Archives, United Kingdom",
+      "url": "https://www.nationalarchives.gov.uk/first-world-war__trashed/a-global-view__trashed/asia/straits-settlements/",
+      "used_for": [
+        "Singapore as focal point of the Straits Settlements",
+        "Colony defense and harbour context"
+      ]
+    },
+    {
+      "source_id": "src_roots_police_courts",
+      "title": "Police Courts (demolished)",
+      "publisher": "Roots / National Heritage Board Singapore",
+      "url": "https://www.roots.gov.sg/places/places-landing/Places/landmarks/police-heritage-trail/police-courts-demolished",
+      "used_for": [
+        "Urban public order and courts context",
+        "Police and colonial administration context"
+      ]
+    },
+    {
+      "source_id": "src_britannica_singapore_history",
+      "title": "Singapore: British Colony, Trade Hub, Modern City",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/place/Singapore/History",
+      "used_for": [
+        "High-level chronology",
+        "Naval base and defense framing after the First World War"
+      ]
+    }
+  ],
+  "open_factual_uncertainty": [
+    "The artifact uses 1913 for the Singapore Harbour Board establishment, following National Archives of Singapore agency metadata, while some secondary summaries discuss the 1911 bill or 1912 ordinance. If a canonical recipe later needs a single legal enactment date, verify against the Straits Settlements Port Ordinance text.",
+    "Deep-water harbour modernization in the 1930s is kept qualitative. A future canonical merge could add exact project names or budgets only after checking Singapore Harbour Board annual reports.",
+    "Commercial commodity categories are stable, but no exact tonnage, revenue, or census figures are included."
+  ],
+  "open_questions": [
+    "Should a canonical recipe use 1911, 1912, or 1913 when referring to the Singapore Harbour Board legal and operational transition?",
+    "Should later enrichment add exact deep-water harbour modernization project names or budgets from Singapore Harbour Board annual reports?",
+    "Should benchmark coverage remain qualitative, or should it include verified numeric trade, revenue, or census tables?"
+  ],
+  "recommended_follow_up": [
+    "Before canonical merge, decide whether to include exact legal dates for the Port Ordinance and Harbour Board commencement.",
+    "Optionally add a primary-source table from Straits Settlements annual reports if benchmark coverage needs numeric extraction.",
+    "Review multilingual snippets for rendering in the target PDF font stack."
+  ]
+}

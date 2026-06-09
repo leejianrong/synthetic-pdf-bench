@@ -1,0 +1,256 @@
+{
+  "tables": [
+    {
+      "table_id": "tbl_administrative_layers_1900_1941",
+      "title": "Administrative Layers in Colonial Singapore, 1900-1941",
+      "matrix": [
+        [
+          "Layer",
+          "Institution or Office",
+          "Main Functions",
+          "Commerce Link",
+          "Benchmark Note"
+        ],
+        [
+          "Imperial authority",
+          "Colonial Office and British imperial system",
+          "Oversight of Crown colony policy and senior appointments",
+          "Protected shipping, imperial trade, and strategic interests",
+          "Use for hierarchy extraction"
+        ],
+        [
+          "Colony government",
+          "Governor and senior Straits Settlements officials",
+          "Law, finance, public order, defense coordination, administration",
+          "Set policies affecting port dues, public works, and trade regulation",
+          "Singapore was part of a wider colony"
+        ],
+        [
+          "Legislative forum",
+          "Legislative Council",
+          "Ordinances, budgets, debate, nominated unofficial participation",
+          "Commercial representatives could raise infrastructure and trade issues",
+          "Avoid implying broad electoral democracy"
+        ],
+        [
+          "Municipal governance",
+          "Municipal commissioners and public works agencies",
+          "Roads, water, sanitation, markets, urban regulation",
+          "Supported warehousing, labor housing, markets, and transport",
+          "Useful for institution-function parsing"
+        ],
+        [
+          "Judicial and police order",
+          "Courts and Straits Settlements Police",
+          "Dispute handling, prosecution, policing, public order",
+          "Helped maintain predictable conditions for commerce",
+          "Keep description neutral"
+        ]
+      ],
+      "notes": [
+        "Rows are qualitative and historically stable.",
+        "The table intentionally separates administrative layers that often interacted in practice.",
+        "No checklist status is encoded in the artifact."
+      ],
+      "suggested_section": "Colonial Administrative Framework"
+    },
+    {
+      "table_id": "tbl_port_institutions",
+      "title": "Port Governance Institutions and Functions",
+      "matrix": [
+        [
+          "Institution",
+          "Approximate Period in Scope",
+          "Core Function",
+          "Governance Significance"
+        ],
+        [
+          "Tanjong Pagar Dock Company",
+          "Before 1905",
+          "Private dock and wharf operations at a major harbour site",
+          "Showed the importance of private capital in early port infrastructure"
+        ],
+        [
+          "Tanjong Pagar Dock Board",
+          "1905-1913",
+          "Public control of former company facilities",
+          "Marked colonial state intervention in strategic dock infrastructure"
+        ],
+        [
+          "Singapore Harbour Board",
+          "1913-1941",
+          "Harbour works, docks, wharves, and port facilities",
+          "Created a more formal public authority for港口治理"
+        ],
+        [
+          "Colonial government",
+          "1900-1941",
+          "Legislation, finance, security, public works, defense coordination",
+          "Linked port policy to colony-wide administration"
+        ],
+        [
+          "Commercial firms",
+          "1900-1941",
+          "Shipping, agency work, finance, warehousing, insurance, repair services",
+          "Used and influenced port infrastructure without holding full public authority"
+        ]
+      ],
+      "notes": [
+        "The Chinese phrase in the table means port governance.",
+        "Singapore Harbour Board dating follows National Archives of Singapore agency metadata.",
+        "This table is designed for stable institution extraction rather than detailed legal history."
+      ],
+      "suggested_section": "Port Governance and Harbour Institutions"
+    },
+    {
+      "table_id": "tbl_commerce_networks",
+      "title": "Commerce and Entrepot Networks",
+      "matrix": [
+        [
+          "Commercial Channel",
+          "Goods or Services",
+          "Connected Regions",
+          "Governance Touchpoint"
+        ],
+        [
+          "Malayan exports",
+          "Rubber, tin, plantation products",
+          "Malay Peninsula, Singapore, Britain, global markets",
+          "Shipping schedules, warehousing, finance, port facilities"
+        ],
+        [
+          "Regional food trade",
+          "Rice and provisions",
+          "Mainland Southeast Asia, island Southeast Asia, Singapore",
+          "Import controls, market regulation, storage, public health"
+        ],
+        [
+          "Petroleum and bunkering",
+          "Fuel, oil products, coaling and later fuel services",
+          "Regional shipping lanes and ocean routes",
+          "Harbour safety, strategic supply, naval and commercial logistics"
+        ],
+        [
+          "Manufactured imports",
+          "Textiles, machinery, consumer goods",
+          "Europe, India, China, Japan, Southeast Asia",
+          "Customs procedures, merchant lobbying, wharf capacity"
+        ],
+        [
+          "Commercial services",
+          "Banking, insurance, brokerage, agency work, repair, printing",
+          "Port-city networks across Asia and Europe",
+          "Legal rules, chambers of commerce, business records"
+        ],
+        [
+          "Entrepot trade",
+          "转口贸易 and redistribution services",
+          "Regional ports, plantations, mines, and shipping companies",
+          "Free-port policy, pelabuhan bebas, harbour administration"
+        ]
+      ],
+      "notes": [
+        "Commodity categories are qualitative and avoid unstable annual tonnage figures.",
+        "Malay and Chinese terms are included for controlled multilingual PDF extraction.",
+        "Connected regions are broad to remain stable across sources."
+      ],
+      "suggested_section": "Commerce, Free-Port Policy, and Entrepot Trade"
+    },
+    {
+      "table_id": "tbl_labor_and_services",
+      "title": "Labor, Services, and Urban Governance Themes",
+      "matrix": [
+        [
+          "Theme",
+          "Representative Workers or Institutions",
+          "Port-City Function",
+          "Administrative Concern"
+        ],
+        [
+          "Dock labor",
+          "Dock workers, lightermen, ship repair workers",
+          "Loaded, unloaded, moved, and repaired ships and cargo",
+          "Work discipline, safety, policing, disease control"
+        ],
+        [
+          "Commercial clerical work",
+          "Clerks, brokers, interpreters, agents",
+          "Connected firms, customers, documents, and payments",
+          "Contract enforcement and multilingual administration"
+        ],
+        [
+          "Urban retail and provisioning",
+          "Shopkeepers, hawkers, market operators",
+          "Supplied food and goods to workers, crews, and residents",
+          "Market regulation, sanitation, licensing"
+        ],
+        [
+          "Public order",
+          "Police, courts, prison service, municipal inspectors",
+          "Maintained order in a dense commercial city",
+          "Crime control, prosecutions, ordinances, public confidence"
+        ],
+        [
+          "Community infrastructure",
+          "Associations, schools, newspapers, welfare groups",
+          "Organized social support and commercial trust",
+          "Limited official participation and informal mediation"
+        ]
+      ],
+      "notes": [
+        "Worker categories are representative rather than exhaustive.",
+        "The table avoids unsupported demographic precision.",
+        "Useful for extraction of social and administrative role pairs."
+      ],
+      "suggested_section": "Urban Society, Labor, and Commercial Services"
+    },
+    {
+      "table_id": "tbl_1941_threshold",
+      "title": "Late Colonial Pressures Before 1942",
+      "matrix": [
+        [
+          "Pressure Area",
+          "Prewar Development",
+          "Why It Mattered",
+          "Boundary for This Topic"
+        ],
+        [
+          "Defense planning",
+          "Naval base and imperial defense emphasis after the First World War",
+          "Made Singapore a strategic outpost as well as a commercial port",
+          "Mention only as pre-1942 context"
+        ],
+        [
+          "Harbour modernization",
+          "Deep-water and facility improvement debates in the 1930s",
+          "Larger ships and heavier cargo required stronger infrastructure",
+          "Keep separate from postwar port authority history"
+        ],
+        [
+          "Commercial uncertainty",
+          "Depression-era trade pressure and rising international tension",
+          "Affected confidence, shipping, credit, and commodity flows",
+          "Avoid detailed wartime occupation narrative"
+        ],
+        [
+          "Urban administration",
+          "Public order, health, municipal works, and emergency planning",
+          "Dense port-city life required administrative coordination",
+          "Stop at 1941 as requested"
+        ],
+        [
+          "Historical threshold",
+          "Japanese advance through Malaya began after December 1941",
+          "Colonial assumptions about security were tested militarily",
+          "Occupation belongs to the next Singapore topic"
+        ]
+      ],
+      "notes": [
+        "The table uses 1941 as a strict endpoint for this artifact set.",
+        "The Japanese occupation is referenced only to explain the boundary.",
+        "No current statistics or unstable claims are included."
+      ],
+      "suggested_section": "Late Colonial Pressures and the 1941 Threshold"
+    }
+  ]
+}

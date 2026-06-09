@@ -1,0 +1,453 @@
+{
+  "figures": [
+    {
+      "figure_id": "fig_governance_structure_1900_1941",
+      "kind": "flow_diagram",
+      "title": "Colonial Governance Structure",
+      "caption": "Simplified administrative relationships in colonial Singapore, showing how imperial authority, colony government, legislative debate, municipal services, port governance, and courts interacted.",
+      "data": {
+        "direction": "top_down",
+        "nodes": [
+          {
+            "id": "colonial_office",
+            "label": "Colonial Office",
+            "type": "imperial_authority"
+          },
+          {
+            "id": "governor",
+            "label": "Governor of the Straits Settlements",
+            "type": "colony_government"
+          },
+          {
+            "id": "senior_officials",
+            "label": "Colonial Secretary, Treasurer, Attorney-General, engineers",
+            "type": "administration"
+          },
+          {
+            "id": "legislative_council",
+            "label": "Legislative Council",
+            "type": "legislative_forum"
+          },
+          {
+            "id": "municipal_services",
+            "label": "Municipal services: roads, water, sanitation, markets",
+            "type": "municipal_governance"
+          },
+          {
+            "id": "harbour_board",
+            "label": "Singapore Harbour Board",
+            "type": "port_authority"
+          },
+          {
+            "id": "courts_police",
+            "label": "Courts and police",
+            "type": "public_order"
+          },
+          {
+            "id": "commerce",
+            "label": "Merchants, shipping firms, banks, warehouses",
+            "type": "commercial_sector"
+          }
+        ],
+        "edges": [
+          {
+            "from": "colonial_office",
+            "to": "governor",
+            "label": "imperial oversight"
+          },
+          {
+            "from": "governor",
+            "to": "senior_officials",
+            "label": "administration"
+          },
+          {
+            "from": "governor",
+            "to": "legislative_council",
+            "label": "laws and budgets"
+          },
+          {
+            "from": "senior_officials",
+            "to": "municipal_services",
+            "label": "public works coordination"
+          },
+          {
+            "from": "senior_officials",
+            "to": "harbour_board",
+            "label": "port legislation and finance"
+          },
+          {
+            "from": "senior_officials",
+            "to": "courts_police",
+            "label": "public order"
+          },
+          {
+            "from": "commerce",
+            "to": "legislative_council",
+            "label": "nominated representation and lobbying"
+          },
+          {
+            "from": "commerce",
+            "to": "harbour_board",
+            "label": "uses port facilities"
+          },
+          {
+            "from": "municipal_services",
+            "to": "commerce",
+            "label": "urban operating conditions"
+          }
+        ],
+        "render_hints": {
+          "group_by_type": true,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 28,
+          "avoid_edge_crossing": true
+        }
+      },
+      "suggested_section": "Colonial Administrative Framework"
+    },
+    {
+      "figure_id": "fig_port_governance_timeline",
+      "kind": "timeline",
+      "title": "Port Governance Timeline, 1900-1941",
+      "caption": "Selected milestones in Singapore port governance from private dock operations to public harbour administration and late colonial modernization pressures.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1900,
+          "end_year": 1941,
+          "tick_interval_years": 5
+        },
+        "events": [
+          {
+            "year": 1900,
+            "label": "Private and colonial port arrangements support entrepot trade",
+            "short_label": "Entrepot port",
+            "event_type": "context"
+          },
+          {
+            "year": 1905,
+            "label": "Tanjong Pagar Dock Company facilities move into public control",
+            "short_label": "Dock Board",
+            "event_type": "institutional_change"
+          },
+          {
+            "year": 1911,
+            "label": "Port legislation debated for public harbour boards",
+            "short_label": "Port bill",
+            "event_type": "legislation"
+          },
+          {
+            "year": 1913,
+            "label": "Singapore Harbour Board established",
+            "short_label": "Harbour Board",
+            "event_type": "institutional_change"
+          },
+          {
+            "year": 1920,
+            "label": "Postwar defense planning increases Singapore's strategic importance",
+            "short_label": "Defense planning",
+            "event_type": "strategic_context"
+          },
+          {
+            "year": 1930,
+            "label": "Deep-water and modernization questions become more prominent",
+            "short_label": "Modernization",
+            "event_type": "infrastructure"
+          },
+          {
+            "year": 1941,
+            "label": "Final pre-occupation year of British colonial port governance",
+            "short_label": "1941 threshold",
+            "event_type": "boundary"
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 20
+        }
+      },
+      "suggested_section": "Port Governance and Harbour Institutions"
+    },
+    {
+      "figure_id": "fig_entrepot_network",
+      "kind": "network_diagram",
+      "title": "Singapore Entrepot Network",
+      "caption": "Simplified network showing Singapore as a free-port hub linking regional export zones, ocean shipping, commercial services, and import distribution.",
+      "data": {
+        "layout": "hub_and_spoke",
+        "central_node": "singapore",
+        "nodes": [
+          {
+            "id": "singapore",
+            "label": "Singapore: pelabuhan bebas",
+            "type": "hub"
+          },
+          {
+            "id": "malaya",
+            "label": "British Malaya: rubber and tin",
+            "type": "export_region"
+          },
+          {
+            "id": "island_sea",
+            "label": "Island Southeast Asia: rice, oil, regional goods",
+            "type": "regional_trade"
+          },
+          {
+            "id": "mainland_sea",
+            "label": "Mainland Southeast Asia: rice and provisions",
+            "type": "regional_trade"
+          },
+          {
+            "id": "china_india",
+            "label": "China and India: people, goods, finance",
+            "type": "migration_trade"
+          },
+          {
+            "id": "europe_global",
+            "label": "Europe and global routes: manufactured imports",
+            "type": "global_trade"
+          },
+          {
+            "id": "services",
+            "label": "Banks, insurers, brokers, warehouses",
+            "type": "commercial_services"
+          }
+        ],
+        "edges": [
+          {
+            "from": "malaya",
+            "to": "singapore",
+            "label": "exports through port"
+          },
+          {
+            "from": "island_sea",
+            "to": "singapore",
+            "label": "regional exchange"
+          },
+          {
+            "from": "mainland_sea",
+            "to": "singapore",
+            "label": "food and provisions"
+          },
+          {
+            "from": "china_india",
+            "to": "singapore",
+            "label": "migration and commerce"
+          },
+          {
+            "from": "europe_global",
+            "to": "singapore",
+            "label": "shipping and imports"
+          },
+          {
+            "from": "singapore",
+            "to": "services",
+            "label": "转口贸易 services"
+          },
+          {
+            "from": "services",
+            "to": "malaya",
+            "label": "credit and agency links"
+          },
+          {
+            "from": "services",
+            "to": "europe_global",
+            "label": "insurance and finance"
+          }
+        ],
+        "render_hints": {
+          "hub_emphasis": true,
+          "wrap_labels": true,
+          "label_wrap_width_chars": 24,
+          "edge_label_density": "medium"
+        }
+      },
+      "suggested_section": "Commerce, Free-Port Policy, and Entrepot Trade"
+    },
+    {
+      "figure_id": "fig_port_city_functions",
+      "kind": "flow_diagram",
+      "title": "Port City Functions",
+      "caption": "Functional diagram linking cargo movement, commercial services, labor, municipal governance, and public order in colonial Singapore.",
+      "data": {
+        "direction": "left_to_right",
+        "nodes": [
+          {
+            "id": "shipping",
+            "label": "Shipping arrivals and departures",
+            "type": "port_activity"
+          },
+          {
+            "id": "cargo",
+            "label": "Cargo handling and warehousing",
+            "type": "port_activity"
+          },
+          {
+            "id": "services",
+            "label": "Banks, agents, insurers, brokers",
+            "type": "commercial_services"
+          },
+          {
+            "id": "labor",
+            "label": "Dock labor, clerks, shop workers",
+            "type": "labor"
+          },
+          {
+            "id": "municipal",
+            "label": "Water, roads, sanitation, markets",
+            "type": "urban_services"
+          },
+          {
+            "id": "order",
+            "label": "Courts, police, licensing, public health",
+            "type": "public_order"
+          },
+          {
+            "id": "commerce",
+            "label": "Perdagangan and port revenue",
+            "type": "outcome"
+          }
+        ],
+        "edges": [
+          {
+            "from": "shipping",
+            "to": "cargo",
+            "label": "moves goods"
+          },
+          {
+            "from": "cargo",
+            "to": "services",
+            "label": "requires documents and credit"
+          },
+          {
+            "from": "labor",
+            "to": "cargo",
+            "label": "handles goods"
+          },
+          {
+            "from": "municipal",
+            "to": "labor",
+            "label": "supports daily life"
+          },
+          {
+            "from": "order",
+            "to": "shipping",
+            "label": "regulates safety"
+          },
+          {
+            "from": "services",
+            "to": "commerce",
+            "label": "enables trade"
+          },
+          {
+            "from": "cargo",
+            "to": "commerce",
+            "label": "generates activity"
+          }
+        ],
+        "render_hints": {
+          "wrap_labels": true,
+          "label_wrap_width_chars": 22,
+          "show_node_types": false
+        }
+      },
+      "suggested_section": "Urban Society, Labor, and Commercial Services"
+    },
+    {
+      "figure_id": "fig_1900_1941_synthesis",
+      "kind": "timeline",
+      "title": "Administrative and Commercial Milestones, 1900-1941",
+      "caption": "A combined timeline of governance, commerce, and strategic pressures in colonial Singapore before the Japanese occupation.",
+      "data": {
+        "orientation": "horizontal",
+        "scale": {
+          "start_year": 1900,
+          "end_year": 1941,
+          "tick_interval_years": 10
+        },
+        "lanes": [
+          {
+            "lane_id": "administration",
+            "label": "Administration",
+            "events": [
+              {
+                "year": 1900,
+                "label": "Straits Settlements colonial administration governs Singapore",
+                "short_label": "Colonial government",
+                "event_type": "administration"
+              },
+              {
+                "year": 1911,
+                "label": "Port legislation enters Legislative Council debate",
+                "short_label": "Port legislation",
+                "event_type": "legislation"
+              },
+              {
+                "year": 1941,
+                "label": "Emergency pressures intensify before occupation",
+                "short_label": "Emergency pressure",
+                "event_type": "boundary"
+              }
+            ]
+          },
+          {
+            "lane_id": "port",
+            "label": "Port Governance",
+            "events": [
+              {
+                "year": 1905,
+                "label": "Tanjong Pagar Dock Board follows public takeover of dock assets",
+                "short_label": "Dock Board",
+                "event_type": "institution"
+              },
+              {
+                "year": 1913,
+                "label": "Singapore Harbour Board established",
+                "short_label": "Harbour Board",
+                "event_type": "institution"
+              },
+              {
+                "year": 1930,
+                "label": "Modern deep-water port questions gain visibility",
+                "short_label": "Deep-water debate",
+                "event_type": "infrastructure"
+              }
+            ]
+          },
+          {
+            "lane_id": "commerce",
+            "label": "Commerce",
+            "events": [
+              {
+                "year": 1900,
+                "label": "Free-port entrepot role links Southeast Asian and global trade",
+                "short_label": "Free port",
+                "event_type": "commerce"
+              },
+              {
+                "year": 1929,
+                "label": "Global depression affects trade and commodity conditions",
+                "short_label": "Depression",
+                "event_type": "economic_pressure"
+              },
+              {
+                "year": 1941,
+                "label": "Wartime risk disrupts assumptions about security and shipping",
+                "short_label": "Wartime risk",
+                "event_type": "boundary"
+              }
+            ]
+          }
+        ],
+        "render_hints": {
+          "show_year_labels": true,
+          "show_lane_labels": true,
+          "avoid_event_overlap": true,
+          "label_wrap_width_chars": 20
+        }
+      },
+      "suggested_section": "Late Colonial Pressures and the 1941 Threshold"
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "title": "Singapore: British Colonial Administration, Port Governance, and Commerce, 1900-1941",
+  "recipe_id": "singapore_colonial_port_governance_1900_1941",
+  "topic": "Singapore: British colonial administration, port governance, and commerce from 1900 to 1941",
+  "abstract": "This synthetic research outline covers Singapore under British rule from 1900 to the eve of the Japanese occupation. It emphasizes the Straits Settlements administrative framework, the role of the Legislative Council and municipal government, the transition from private dock company control to public harbour governance, Singapore's commercial position as a free port and entrepot, and the relationship between commerce, labor migration, urban services, and imperial defense. The report is designed for stable PDF benchmark generation, with primarily English prose and selected Bahasa Melayu and Simplified Chinese context markers.",
+  "language_profile": {
+    "primary_language": "English",
+    "allowed_pdf_languages": [
+      "English",
+      "Bahasa Melayu",
+      "Bahasa Indonesia",
+      "Simplified Chinese"
+    ],
+    "multilingual_terms": [
+      {
+        "term": "pelabuhan bebas",
+        "language": "Bahasa Melayu",
+        "meaning": "free port"
+      },
+      {
+        "term": "perdagangan",
+        "language": "Bahasa Melayu",
+        "meaning": "commerce or trade"
+      },
+      {
+        "term": "港口治理",
+        "language": "Simplified Chinese",
+        "meaning": "port governance"
+      },
+      {
+        "term": "转口贸易",
+        "language": "Simplified Chinese",
+        "meaning": "entrepot trade"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "heading": "Colonial Administrative Framework",
+      "bullet_points": [
+        "Place Singapore within the Straits Settlements Crown colony system, administered through a governor and senior colonial officials responsible to the Colonial Office.",
+        "Describe the Legislative Council as a site where official members and nominated commercial representatives debated laws, budgets, public works, port questions, and revenue.",
+        "Explain the separation between colony-wide administration and municipal services such as roads, water, markets, sanitation, and urban regulation.",
+        "Keep the account neutral by treating colonial institutions as governance structures rather than as a measure of local political consent."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_administrative_layers_1900_1941",
+          "title": "Administrative Layers in Colonial Singapore, 1900-1941",
+          "description": "Matrix listing the main governing bodies, responsibilities, and benchmark-friendly extraction notes."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_governance_structure_1900_1941",
+          "kind": "flow_diagram",
+          "title": "Colonial Governance Structure"
+        }
+      ],
+      "source_notes": [
+        "National Archives UK overview notes Singapore as capital and focal point of the Straits Settlements during the First World War period.",
+        "NLB and NewspaperSG records document Legislative Council proceedings and colonial administrative terminology.",
+        "Roots/NHB heritage accounts provide stable background on municipal works, police, courts, and public institutions."
+      ]
+    },
+    {
+      "heading": "Port Governance and Harbour Institutions",
+      "bullet_points": [
+        "Explain the transition from the privately owned Tanjong Pagar Dock Company to public control through the Tanjong Pagar Dock Board in 1905.",
+        "Describe the creation of the Singapore Harbour Board in the early 1910s as a port trust structure for wharves, docks, harbour works, and cargo handling infrastructure.",
+        "Link harbour governance to wider imperial requirements, including naval defense, coaling, repair, shipping safety, and wartime security.",
+        "Use the phrase 港口治理 sparingly as a multilingual benchmark marker for port governance."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_port_institutions",
+          "title": "Port Governance Institutions and Functions",
+          "description": "Matrix covering the dock company, Tanjong Pagar Dock Board, Singapore Harbour Board, and related colonial authorities."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_port_governance_timeline",
+          "kind": "timeline",
+          "title": "Port Governance Timeline, 1900-1941"
+        }
+      ],
+      "source_notes": [
+        "NLB HistorySG article on the establishment of the Singapore Harbour Board describes the 1905 expropriation of Tanjong Pagar Dock Company and the 1911 port bill.",
+        "National Archives of Singapore agency record identifies the Tanjong Pagar Dock Board as predecessor to the Singapore Harbour Board, established in 1913.",
+        "Postwar institutional names should not be projected backward into 1900-1941 except in source notes."
+      ]
+    },
+    {
+      "heading": "Commerce, Free-Port Policy, and Entrepot Trade",
+      "bullet_points": [
+        "Describe Singapore as a free port and entrepot linking British Malaya, the Netherlands East Indies, Siam, China, India, Europe, and other shipping networks.",
+        "Emphasize that commerce included rubber, tin, rice, petroleum products, manufactured imports, finance, insurance, shipping services, and warehousing.",
+        "Explain the role of commercial chambers and merchants in lobbying colonial authorities over tariffs, port dues, quarantine, currency, shipping schedules, and infrastructure.",
+        "Use the terms pelabuhan bebas and 转口贸易 as controlled multilingual markers."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_commerce_networks",
+          "title": "Commerce and Entrepot Networks",
+          "description": "Matrix summarizing trade flows, services, connected regions, and governance touchpoints."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_entrepot_network",
+          "kind": "network_diagram",
+          "title": "Singapore Entrepot Network"
+        }
+      ],
+      "source_notes": [
+        "Cambridge Journal of Southeast Asian Studies article on Singapore's growth as an entrepot port, 1819-1941, supports the long-run commercial framing.",
+        "NUS/ARI public article on maps, money, and merchants highlights free-port status and merchant networks in colonial Singapore.",
+        "Avoid exact trade tonnage unless later verified from a named annual report."
+      ]
+    },
+    {
+      "heading": "Urban Society, Labor, and Commercial Services",
+      "bullet_points": [
+        "Connect port commerce to migration, dock labor, clerical work, warehousing, ship repair, money changing, brokerage, and shop-house commerce.",
+        "Describe colonial administration of public order, courts, policing, markets, health controls, and municipal infrastructure as part of the commercial city's operating environment.",
+        "Mention multilingual public life without overloading the PDF with unsupported scripts or unstable demographic numbers.",
+        "Include neutral discussion of inequality and limited political participation under colonial rule."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_labor_and_services",
+          "title": "Labor, Services, and Urban Governance Themes",
+          "description": "Matrix linking port activity to workers, service sectors, and colonial urban controls."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_port_city_functions",
+          "kind": "flow_diagram",
+          "title": "Port City Functions"
+        }
+      ],
+      "source_notes": [
+        "Roots/NHB heritage entries on police, courts, markets, and public works provide institutional background for urban governance.",
+        "NLB BiblioAsia and NUS material provide context on colonial administrators and merchant society.",
+        "Use qualitative labor and migration descriptions rather than precise ethnicity shares."
+      ]
+    },
+    {
+      "heading": "Late Colonial Pressures and the 1941 Threshold",
+      "bullet_points": [
+        "Explain how Singapore's status as a port and imperial base made defense policy increasingly important after the First World War.",
+        "Describe the naval base and harbour modernization as connected but distinct from everyday commercial port governance.",
+        "End the report at 1941, before Japanese forces entered the island in February 1942, to keep the topic separate from the occupation checklist item.",
+        "Frame 1941 as a threshold of wartime pressure, not as a detailed account of the occupation."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_1941_threshold",
+          "title": "Late Colonial Pressures Before 1942",
+          "description": "Matrix separating commercial, administrative, defense, and social pressures."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_1900_1941_synthesis",
+          "kind": "timeline",
+          "title": "Administrative and Commercial Milestones, 1900-1941"
+        }
+      ],
+      "source_notes": [
+        "Britannica and National Archives UK summaries support the high-level statement that Singapore became more important to British defense planning after World War I.",
+        "Do not cover the Japanese occupation except as a boundary marker for the next topic."
+      ]
+    }
+  ],
+  "source_register": [
+    {
+      "source_id": "src_nlb_harbour_board",
+      "title": "Singapore Harbour Board is established",
+      "publisher": "National Library Board Singapore",
+      "url": "https://www.nlb.gov.sg/main/article-detail?cmsuuid=933eb182-4c7b-405b-a8c6-3e176018e9b4",
+      "use": "Port governance timeline and institutional transition."
+    },
+    {
+      "source_id": "src_nas_tanjong_pagar_dock_board",
+      "title": "Agency Details: Tanjong Pagar Dock Board",
+      "publisher": "National Archives of Singapore",
+      "url": "https://www.nas.gov.sg/archivesonline/government_records/agency-details/149",
+      "use": "Institutional predecessor and Singapore Harbour Board establishment date."
+    },
+    {
+      "source_id": "src_cambridge_entrepot",
+      "title": "Singapore: Its Growth as an Entrepot Port, 1819-1941",
+      "publisher": "Journal of Southeast Asian Studies / Cambridge Core",
+      "url": "https://www.cambridge.org/core/journals/journal-of-southeast-asian-studies/article/singapore-its-growth-as-an-entrepot-port-18191941/ED876C3834A931E303957CEFAD8C8D65",
+      "use": "Long-run entrepot framing."
+    },
+    {
+      "source_id": "src_tna_straits_settlements",
+      "title": "Straits Settlements",
+      "publisher": "The National Archives, United Kingdom",
+      "url": "https://www.nationalarchives.gov.uk/first-world-war__trashed/a-global-view__trashed/asia/straits-settlements/",
+      "use": "Straits Settlements administrative and defense context."
+    },
+    {
+      "source_id": "src_roots_police_courts",
+      "title": "Police Courts (demolished)",
+      "publisher": "Roots / National Heritage Board Singapore",
+      "url": "https://www.roots.gov.sg/places/places-landing/Places/landmarks/police-heritage-trail/police-courts-demolished",
+      "use": "Urban order, courts, and police governance context."
+    },
+    {
+      "source_id": "src_britannica_singapore_history",
+      "title": "Singapore: British Colony, Trade Hub, Modern City",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/place/Singapore/History",
+      "use": "High-level colonial, defense, and prewar chronology."
+    }
+  ]
+}
