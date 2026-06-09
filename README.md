@@ -57,6 +57,8 @@ output/small_dataset/
 
 Available variants are `standard`, `compact`, `spacious`, `text_heavy`, `figure_heavy`, `table_heavy`, and `two_column`.
 
+Each document manifest includes a `quality` report. The dataset manifest includes aggregate `summary_stats` for pages, blocks, tables, figures, and variant counts.
+
 ## Layout features
 
 The flow layout engine uses ReportLab font metrics for text height estimation and supports:
@@ -145,6 +147,18 @@ uv run synthetic-pdf-bench dummy-parse \
   --truth output/synthetic_000001/truth \
   --prediction output/synthetic_000001/dummy_prediction
 ```
+
+## Quality controls
+
+Generation runs quality validation before writing the final manifest. The checks verify:
+
+- all blocks have bounding boxes
+- included Markdown blocks have valid spans
+- figure caption links resolve
+- table cells stay inside table bounding boxes
+- content blocks do not overlap
+- rendered page images exist and are nonblank
+- figure crops exist and are nonblank
 
 ## Fonts
 

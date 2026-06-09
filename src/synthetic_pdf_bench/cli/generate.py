@@ -12,6 +12,7 @@ from synthetic_pdf_bench.evaluation.evaluator import (
 )
 from synthetic_pdf_bench.layout.flow_layout import build_scene_from_recipe_path
 from synthetic_pdf_bench.markdown.writer import write_markdown
+from synthetic_pdf_bench.quality import manifest_summary_stats, validate_generation
 from synthetic_pdf_bench.render.crops import crop_figures
 from synthetic_pdf_bench.render.pymupdf_rasterizer import rasterize_pdf
 from synthetic_pdf_bench.render.reportlab_renderer import ReportLabRenderer
@@ -32,7 +33,7 @@ def _clear_generated_outputs(output: Path) -> None:
             path.unlink()
 
 
-def _document_summary(output: Path, truth, recipe_path: Path, variant: str) -> dict:
+def _document_summary(output: Path, truth, recipe_path: Path, variant: str, quality: dict) -> dict:
     return {
         "doc_id": truth.doc_id,
         "output_dir": str(output),
@@ -48,6 +49,7 @@ def _document_summary(output: Path, truth, recipe_path: Path, variant: str) -> d
         "figure_count": len(truth.figures),
         "language_profile": truth.language_profile,
         "metadata": truth.metadata,
+        "quality": quality,
     }
 
 
@@ -85,8 +87,9 @@ def generate(
     truth_dir.mkdir(parents=True, exist_ok=True)
     (truth_dir / "document.md").write_text(markdown, encoding="utf-8")
     truth = scene.to_truth()
+    quality = validate_generation(output, truth, markdown)
     (truth_dir / "document.json").write_text(truth.model_dump_json(indent=2), encoding="utf-8")
-    summary = _document_summary(output, truth, resolved_recipe_path, variant)
+    summary = _document_summary(output, truth, resolved_recipe_path, variant, quality)
     (truth_dir / "manifest.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
     return summary
 
@@ -119,6 +122,7 @@ def generate_dataset(
         "dpi": dpi,
         "recipe_paths": [str(path) for path in recipes],
         "variants": selected_variants,
+        "summary_stats": manifest_summary_stats(documents),
         "documents": documents,
     }
     (output_root / "manifest.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")
