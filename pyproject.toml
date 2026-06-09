@@ -1,0 +1,28 @@
+[project]
+name = "synthetic-pdf-bench"
+version = "0.1.0"
+description = "Synthetic PDF generator with deterministic scene-graph ground truth."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pillow",
+    "pydantic",
+    "pymupdf",
+    "reportlab",
+]
+
+[project.scripts]
+synthetic-pdf-bench = "synthetic_pdf_bench.cli.generate:main"
+
+[dependency-groups]
+dev = [
+    "pytest",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

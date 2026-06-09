@@ -1,0 +1,279 @@
+{
+  "tables": [
+    {
+      "table_id": "tbl_001_political_milestones",
+      "title": "Selected Political Milestones, 1900-Present",
+      "matrix": [
+        ["Country", "Period", "Milestone", "Historical Significance"],
+        [
+          "Singapore",
+          "1942-1945",
+          "Japanese occupation",
+          "Disrupted British colonial rule and reshaped postwar political expectations"
+        ],
+        [
+          "Indonesia",
+          "1945-1949",
+          "Independence proclamation and revolution",
+          "Established the basis for sovereign statehood after Dutch colonial rule"
+        ],
+        [
+          "Malaysia",
+          "1957",
+          "Federation of Malaya independence",
+          "Marked negotiated independence from British rule"
+        ],
+        [
+          "Malaysia",
+          "1963",
+          "Formation of Malaysia",
+          "Joined Malaya, Singapore, Sabah, and Sarawak in a new federation"
+        ],
+        [
+          "Singapore",
+          "1965",
+          "Separation from Malaysia and independence",
+          "Created an independent city-state republic"
+        ],
+        [
+          "Indonesia",
+          "1998-present",
+          "Reformasi period",
+          "Expanded electoral competition, decentralization, and constitutional reform"
+        ]
+      ],
+      "notes": [
+        "Dates are selected for broad historical stability.",
+        "Rows are intentionally qualitative and suitable for synthetic benchmark use.",
+        "The table avoids ranking political systems."
+      ],
+      "suggested_section": "War, Occupation, Decolonization, and State Formation"
+    },
+    {
+      "table_id": "tbl_002_governance_models",
+      "title": "Governance and Political Development Themes",
+      "matrix": [
+        [
+          "Country",
+          "Post-Colonial Structure",
+          "Major Governance Theme",
+          "Selected Reform or Transition"
+        ],
+        [
+          "Singapore",
+          "Parliamentary republic",
+          "Centralized administration and long-term planning",
+          "Independence after separation from Malaysia in 1965"
+        ],
+        [
+          "Malaysia",
+          "Federal parliamentary monarchy",
+          "Coalition politics, federalism, and communal bargaining",
+          "Political competition and coalition change in the twenty-first century"
+        ],
+        [
+          "Indonesia",
+          "Republic with presidential system",
+          "Regime change, decentralization, and democratic reform",
+          "Reformasi after 1998"
+        ],
+        [
+          "Regional comparison",
+          "Varied institutional forms",
+          "State capacity and legitimacy shaped development paths",
+          "Different responses to colonial legacies and social diversity"
+        ]
+      ],
+      "notes": [
+        "Institutional labels are simplified for a six-page synthetic report.",
+        "The regional comparison row supports table extraction with non-country category values.",
+        "Descriptions are neutral and avoid evaluative scoring."
+      ],
+      "suggested_section": "Political Institutions, Governance Models, and National Development"
+    },
+    {
+      "table_id": "tbl_003_economic_transitions",
+      "title": "Major Economic Transitions Since 1900",
+      "matrix": [
+        [
+          "Country",
+          "Early 20th Century Base",
+          "Postwar Development Phase",
+          "Late 20th Century Shift",
+          "Contemporary Emphasis"
+        ],
+        [
+          "Singapore",
+          "Port trade and colonial services",
+          "Entrepot recovery and industrialization",
+          "Finance, logistics, electronics, and services",
+          "Advanced services, connectivity, technology, and resilience"
+        ],
+        [
+          "Malaysia",
+          "Tin, rubber, plantations, and ports",
+          "Rural development and import substitution",
+          "Export manufacturing, petroleum, palm oil, and electronics",
+          "Industrial upgrading, services, commodities, and regional development"
+        ],
+        [
+          "Indonesia",
+          "Plantations, oil, agriculture, and inter-island trade",
+          "State-building and resource-linked development",
+          "Manufacturing, energy, domestic-market growth, and crisis adjustment",
+          "Infrastructure, digital economy, resources, and large consumer market"
+        ],
+        [
+          "Regional pattern",
+          "Colonial commodity and trade systems",
+          "National planning after independence",
+          "Export orientation and financial integration",
+          "Supply-chain adaptation and climate-aware development"
+        ]
+      ],
+      "notes": [
+        "Economic categories are qualitative and deterministic.",
+        "The table avoids unstable current GDP or sector-share statistics.",
+        "Useful for testing wide tables with five columns."
+      ],
+      "suggested_section": "Economic Transformation, Industrialization, and Global Integration"
+    },
+    {
+      "table_id": "tbl_004_population_urbanization",
+      "title": "Population Scale and Urbanization Themes",
+      "matrix": [
+        [
+          "Country",
+          "Relative Population Scale",
+          "Urbanization Pattern",
+          "Major Urban Centers",
+          "Planning Theme"
+        ],
+        [
+          "Singapore",
+          "Small city-state population",
+          "Highly urbanized island city-state",
+          "Singapore",
+          "Public housing, transport integration, land-use planning"
+        ],
+        [
+          "Malaysia",
+          "Medium regional population scale",
+          "Urban corridors and mixed rural-urban regions",
+          "Kuala Lumpur, Penang, Johor Bahru, Kota Kinabalu",
+          "Metropolitan growth, regional balance, infrastructure"
+        ],
+        [
+          "Indonesia",
+          "Large archipelagic population",
+          "Rapid growth across capital, provincial, and industrial cities",
+          "Jakarta, Surabaya, Bandung, Medan, Makassar",
+          "Decentralized infrastructure, migration, urban services"
+        ],
+        [
+          "Regional comparison",
+          "Highly varied scale",
+          "Urbanization linked to migration and industrial change",
+          "Cross-border metropolitan and maritime networks",
+          "Connectivity, housing, environment, and service access"
+        ]
+      ],
+      "notes": [
+        "Population scale is expressed qualitatively to avoid time-sensitive exact figures.",
+        "Urban-center examples are stable and useful for multilingual geographic text testing.",
+        "The table is designed to support mixed entity extraction."
+      ],
+      "suggested_section": "Social Change, Education, Urbanization, and Multilingual Society"
+    },
+    {
+      "table_id": "tbl_005_education_labor_language",
+      "title": "Education, Labor-Force Development, and Language Policy Themes",
+      "matrix": [
+        [
+          "Country",
+          "Education Development Theme",
+          "Labor-Force Theme",
+          "Language Context"
+        ],
+        [
+          "Singapore",
+          "Mass education, bilingual policy, technical and tertiary expansion",
+          "Skills upgrading, services, manufacturing, professional sectors",
+          "English plus official Malay, Mandarin Chinese, and Tamil"
+        ],
+        [
+          "Malaysia",
+          "National education expansion with multiple school traditions",
+          "Manufacturing, services, public sector, plantations, and skilled employment",
+          "Bahasa Malaysia with multilingual social and educational contexts"
+        ],
+        [
+          "Indonesia",
+          "School expansion across a large archipelago",
+          "Agriculture, manufacturing, services, migration, and informal employment",
+          "Bahasa Indonesia as national language with many regional languages"
+        ],
+        [
+          "Regional comparison",
+          "Education linked to nation-building and development",
+          "Labor markets shaped by urbanization and cross-border movement",
+          "Multilingual settings remain important in public life"
+        ]
+      ],
+      "notes": [
+        "This table supports multilingual benchmark content without requiring non-Latin scripts in every cell.",
+        "Rows summarize broad themes rather than precise enrollment or labor statistics.",
+        "The regional row helps test non-country aggregation in table parsing."
+      ],
+      "suggested_section": "Social Change, Education, Urbanization, and Multilingual Society"
+    },
+    {
+      "table_id": "tbl_006_asean_regional_context",
+      "title": "ASEAN and Regional Integration Themes",
+      "matrix": [
+        ["Theme", "Singapore", "Malaysia", "Indonesia", "Regional Comparison"],
+        [
+          "ASEAN role",
+          "Founding member and diplomatic hub",
+          "Founding member with peninsular and Bornean links",
+          "Founding member and largest member by population",
+          "Shared regional forum with different national scales"
+        ],
+        [
+          "Trade and logistics",
+          "Port, finance, aviation, and services hub",
+          "Manufacturing corridors, ports, and commodities",
+          "Large domestic market, resources, and maritime trade",
+          "Interdependent supply chains and transport networks"
+        ],
+        [
+          "Labor and migration",
+          "Destination for regional workers and professionals",
+          "Sender, receiver, and transit country in regional labor flows",
+          "Major source of migrant labor and domestic mobility",
+          "Cross-border movement shapes households and labor markets"
+        ],
+        [
+          "Environmental issues",
+          "Urban resilience and resource constraints",
+          "Forest, coastal, flood, and urban sustainability concerns",
+          "Archipelagic climate, forest, peatland, and coastal challenges",
+          "Climate adaptation requires national and regional coordination"
+        ],
+        [
+          "Contemporary policy themes",
+          "Digital services, resilience, and connectivity",
+          "Industrial upgrading and regional development",
+          "Infrastructure, decentralization, and resource management",
+          "Digitalization, energy transition, and public health preparedness"
+        ]
+      ],
+      "notes": [
+        "ASEAN context is summarized at a high level for synthetic report use.",
+        "Rows are qualitative and avoid fast-changing policy details.",
+        "The table intentionally uses a theme-by-country comparison layout."
+      ],
+      "suggested_section": "Regional Integration, ASEAN Context, and Contemporary Comparisons"
+    }
+  ]
+}

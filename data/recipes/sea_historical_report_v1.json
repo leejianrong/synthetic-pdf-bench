@@ -1,0 +1,1211 @@
+{
+  "doc_id": "sea_historical_report_v1",
+  "title": "Singapore, Malaysia, and Indonesia: Political, Economic, and Social Change Since 1900",
+  "language_profile": {
+    "primary": "en",
+    "secondary": ["zh", "ms", "id"],
+    "encoding": "UTF-8",
+    "notes": "Primarily English prose with short Chinese, Malay, and Indonesian excerpts for multilingual PDF extraction testing."
+  },
+  "metadata": {
+    "document_family": "synthetic_historical_research_report",
+    "target_pages": "3-8",
+    "content_scope": "Comparative historical synthesis from 1900 to the present",
+    "source_notes": [
+      "Synthetic benchmark content based on broadly known historical themes.",
+      "Source notes are preserved as metadata and are not intended for Phase 1 rendering.",
+      "Tables use qualitative or rounded descriptors unless exact chronology is stable.",
+      "Vector figure specifications are designed for programmatic rendering, not image URL retrieval."
+    ]
+  },
+  "sections": [
+    {
+      "heading": "Colonial Legacies and Early Twentieth-Century Southeast Asia",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "At the start of the twentieth century, Singapore, Malaya, and the Netherlands East Indies were connected by trade but governed through different colonial systems. Singapore functioned as a British port and administrative node, while Malaya combined colonial administration with Malay states, plantation zones, and mining districts. The Netherlands East Indies was ruled through a larger Dutch imperial structure that linked Java, Sumatra, and other islands to export production. These arrangements shaped later institutions, infrastructure, and social divisions.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "General historical synthesis of British colonial Singapore, British Malaya, and the Netherlands East Indies."
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "Colonial economies depended heavily on ports, commodities, and labor mobility. Rubber, tin, oil, sugar, and maritime services tied the region to global markets. Singapore's role as an entrepot made it unusually dependent on shipping, finance, and commercial services. Malaya's economy was strongly connected to plantations and mining, while the Netherlands East Indies combined plantation agriculture, resource extraction, and regional trade. These patterns did not determine later development, but they created durable economic starting points.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Economic descriptions are qualitative and intended for synthetic report prose."
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "Social life in the region was multilingual and plural. Malay, Chinese languages, Tamil, Dutch, English, and local Indonesian languages appeared in schools, courts, markets, and religious settings. Colonial governments often classified people by ethnicity, legal status, and occupation, which influenced education access and political representation. The phrase masyarakat majmuk, meaning plural society, is useful for describing the layered communities that emerged in port cities, rural estates, and administrative centers.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Malay phrase is synthetic benchmark content rather than a documentary quotation."
+            ],
+            "multilingual_terms": [
+              {
+                "text": "masyarakat majmuk",
+                "language": "ms",
+                "gloss": "plural society"
+              }
+            ]
+          }
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_001_political_milestones",
+          "title": "Selected Political Milestones, 1900-Present",
+          "caption": "Selected political milestones that shaped state formation and institutional development in Singapore, Malaysia, and Indonesia.",
+          "matrix": [
+            ["Country", "Period", "Milestone", "Historical Significance"],
+            [
+              "Singapore",
+              "1942-1945",
+              "Japanese occupation",
+              "Disrupted British colonial rule and reshaped postwar political expectations"
+            ],
+            [
+              "Indonesia",
+              "1945-1949",
+              "Independence proclamation and revolution",
+              "Established the basis for sovereign statehood after Dutch colonial rule"
+            ],
+            [
+              "Malaysia",
+              "1957",
+              "Federation of Malaya independence",
+              "Marked negotiated independence from British rule"
+            ],
+            [
+              "Malaysia",
+              "1963",
+              "Formation of Malaysia",
+              "Joined Malaya, Singapore, Sabah, and Sarawak in a new federation"
+            ],
+            [
+              "Singapore",
+              "1965",
+              "Separation from Malaysia and independence",
+              "Created an independent city-state republic"
+            ],
+            [
+              "Indonesia",
+              "1998-present",
+              "Reformasi period",
+              "Expanded electoral competition, decentralization, and constitutional reform"
+            ]
+          ],
+          "metadata": {
+            "source_notes": [
+              "Dates are selected for broad historical stability.",
+              "Rows are qualitative and suitable for synthetic benchmark use."
+            ]
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_001_independence_timeline",
+          "kind": "timeline",
+          "source_type": "vector",
+          "title": "Independence and State Formation Timeline",
+          "caption": "Selected milestones in wartime occupation, decolonization, independence, and state formation for Singapore, Malaysia, and Indonesia.",
+          "data": {
+            "orientation": "horizontal",
+            "scale": {
+              "start_year": 1900,
+              "end_year": 2025,
+              "tick_interval_years": 25
+            },
+            "lanes": [
+              {
+                "lane_id": "singapore",
+                "label": "Singapore",
+                "events": [
+                  {
+                    "year": 1942,
+                    "label": "Japanese occupation begins",
+                    "short_label": "Occupation",
+                    "event_type": "wartime"
+                  },
+                  {
+                    "year": 1959,
+                    "label": "Internal self-government",
+                    "short_label": "Self-government",
+                    "event_type": "constitutional"
+                  },
+                  {
+                    "year": 1963,
+                    "label": "Joins Malaysia",
+                    "short_label": "Malaysia",
+                    "event_type": "state_formation"
+                  },
+                  {
+                    "year": 1965,
+                    "label": "Independent republic",
+                    "short_label": "Independence",
+                    "event_type": "state_formation"
+                  }
+                ]
+              },
+              {
+                "lane_id": "malaysia",
+                "label": "Malaysia",
+                "events": [
+                  {
+                    "year": 1942,
+                    "label": "Japanese occupation of Malaya begins",
+                    "short_label": "Occupation",
+                    "event_type": "wartime"
+                  },
+                  {
+                    "year": 1957,
+                    "label": "Federation of Malaya independence",
+                    "short_label": "Merdeka",
+                    "event_type": "independence"
+                  },
+                  {
+                    "year": 1963,
+                    "label": "Formation of Malaysia",
+                    "short_label": "Malaysia formed",
+                    "event_type": "state_formation"
+                  },
+                  {
+                    "year": 1965,
+                    "label": "Singapore separates from Malaysia",
+                    "short_label": "Separation",
+                    "event_type": "constitutional"
+                  }
+                ]
+              },
+              {
+                "lane_id": "indonesia",
+                "label": "Indonesia",
+                "events": [
+                  {
+                    "year": 1942,
+                    "label": "Japanese occupation of the Netherlands East Indies begins",
+                    "short_label": "Occupation",
+                    "event_type": "wartime"
+                  },
+                  {
+                    "year": 1945,
+                    "label": "Independence proclaimed",
+                    "short_label": "Proclamation",
+                    "event_type": "independence"
+                  },
+                  {
+                    "year": 1949,
+                    "label": "Transfer of sovereignty",
+                    "short_label": "Sovereignty",
+                    "event_type": "state_formation"
+                  },
+                  {
+                    "year": 1998,
+                    "label": "Reformasi begins",
+                    "short_label": "Reformasi",
+                    "event_type": "political_reform"
+                  }
+                ]
+              }
+            ],
+            "render_hints": {
+              "show_year_labels": true,
+              "show_lane_labels": true,
+              "avoid_event_overlap": true,
+              "label_wrap_width_chars": 18
+            }
+          },
+          "metadata": {
+            "source_notes": [
+              "Vector timeline should be rendered from structured event data."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "heading": "War, Occupation, Decolonization, and State Formation",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The Japanese occupation during the Second World War disrupted colonial authority across Southeast Asia. Existing administrations were weakened, economic life was strained, and civilians experienced hardship under wartime conditions. The occupation also changed political expectations by showing that European colonial rule could be overturned. Its effects varied across Singapore, Malaya, and Indonesia, but in each case the war accelerated debates about sovereignty, citizenship, security, and the future organization of government.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Use sensitive phrasing around wartime hardship and political change."
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "Indonesia's path to independence involved a proclamation in 1945, armed struggle, diplomacy, and eventual international recognition of sovereignty. In contrast, Malaya followed a more negotiated route that included constitutional bargaining, emergency conditions, and independence in 1957. Malaysia was formed in 1963 through the joining of Malaya, Singapore, Sabah, and Sarawak, although Singapore separated in 1965 and became an independent republic. These different transitions shaped later political institutions.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Chronology uses broadly accepted dates for major postwar transitions."
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "State formation involved more than the transfer of authority from colonial governments. New leaders faced questions about citizenship, language, education, internal security, federalism, and economic planning. The word merdeka, meaning independence or freedom in Malay and Indonesian usage, became a powerful public term. Yet independence did not remove all tensions. Each country had to define national identity while managing local, ethnic, religious, and regional differences.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Malay and Indonesian term is included as controlled multilingual content."
+            ],
+            "multilingual_terms": [
+              {
+                "text": "merdeka",
+                "language": "ms/id",
+                "gloss": "independence or freedom"
+              }
+            ]
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_003_governance_transition_diagram",
+          "kind": "flow_diagram",
+          "source_type": "vector",
+          "title": "Governance Transition Patterns",
+          "caption": "Simplified governance trajectories showing how post-colonial political institutions evolved differently in Singapore, Malaysia, and Indonesia.",
+          "data": {
+            "orientation": "left_to_right",
+            "nodes": [
+              {
+                "node_id": "colonial_rule",
+                "label": "Colonial rule",
+                "group": "shared_context",
+                "level": 0
+              },
+              {
+                "node_id": "wartime_disruption",
+                "label": "Japanese occupation and wartime disruption",
+                "group": "shared_context",
+                "level": 1
+              },
+              {
+                "node_id": "singapore_self_government",
+                "label": "Self-government and merger debate",
+                "group": "singapore",
+                "level": 2
+              },
+              {
+                "node_id": "singapore_republic",
+                "label": "Independent parliamentary republic",
+                "group": "singapore",
+                "level": 3
+              },
+              {
+                "node_id": "malaya_independence",
+                "label": "Federation of Malaya independence",
+                "group": "malaysia",
+                "level": 2
+              },
+              {
+                "node_id": "malaysia_federation",
+                "label": "Federal parliamentary monarchy",
+                "group": "malaysia",
+                "level": 3
+              },
+              {
+                "node_id": "indonesia_revolution",
+                "label": "Independence revolution and sovereignty transfer",
+                "group": "indonesia",
+                "level": 2
+              },
+              {
+                "node_id": "indonesia_reformasi",
+                "label": "Reformasi, elections, and decentralization",
+                "group": "indonesia",
+                "level": 3
+              }
+            ],
+            "edges": [
+              {
+                "from": "colonial_rule",
+                "to": "wartime_disruption",
+                "label": "1942-1945"
+              },
+              {
+                "from": "wartime_disruption",
+                "to": "singapore_self_government",
+                "label": "postwar transition"
+              },
+              {
+                "from": "singapore_self_government",
+                "to": "singapore_republic",
+                "label": "1965"
+              },
+              {
+                "from": "wartime_disruption",
+                "to": "malaya_independence",
+                "label": "negotiated transition"
+              },
+              {
+                "from": "malaya_independence",
+                "to": "malaysia_federation",
+                "label": "1957-1963"
+              },
+              {
+                "from": "wartime_disruption",
+                "to": "indonesia_revolution",
+                "label": "1945-1949"
+              },
+              {
+                "from": "indonesia_revolution",
+                "to": "indonesia_reformasi",
+                "label": "1998 onward"
+              }
+            ],
+            "render_hints": {
+              "node_shape": "rounded_rectangle",
+              "route_edges": "orthogonal",
+              "show_group_labels": true,
+              "allow_wrapped_node_labels": true
+            }
+          },
+          "metadata": {
+            "source_notes": [
+              "Flow diagram is simplified for page-fit and extraction testing."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Political Institutions, Governance Models, and National Development",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "After independence, political institutions became central to national development strategies. Singapore developed a highly centralized parliamentary system with strong administrative coordination. Malaysia maintained parliamentary institutions within a federal structure and coalition-based politics for much of its post-independence history. Indonesia experienced more pronounced regime change, moving from early parliamentary experiments to guided democracy, then to the New Order, and later to reformasi after 1998.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Use neutral comparative political language rather than evaluative ranking."
+            ],
+            "multilingual_terms": [
+              {
+                "text": "reformasi",
+                "language": "id",
+                "gloss": "reform"
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "Governance models influenced how each country managed development planning, infrastructure, education, and social policy. Singapore used state agencies, public housing, and export-oriented planning to organize rapid urban transformation. Malaysia combined federal development programs with policies addressing rural development, industrialization, and social restructuring. Indonesia's large geography and population required different approaches, including central planning, regional administration, and later decentralization. These choices reflected both political priorities and practical administrative constraints.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Governance descriptions are simplified for a six-page synthetic report."
+            ]
+          }
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_002_governance_models",
+          "title": "Governance and Political Development Themes",
+          "caption": "Simplified comparison of post-colonial institutional structures and governance themes.",
+          "matrix": [
+            [
+              "Country",
+              "Post-Colonial Structure",
+              "Major Governance Theme",
+              "Selected Reform or Transition"
+            ],
+            [
+              "Singapore",
+              "Parliamentary republic",
+              "Centralized administration and long-term planning",
+              "Independence after separation from Malaysia in 1965"
+            ],
+            [
+              "Malaysia",
+              "Federal parliamentary monarchy",
+              "Coalition politics, federalism, and communal bargaining",
+              "Political competition and coalition change in the twenty-first century"
+            ],
+            [
+              "Indonesia",
+              "Republic with presidential system",
+              "Regime change, decentralization, and democratic reform",
+              "Reformasi after 1998"
+            ],
+            [
+              "Regional comparison",
+              "Varied institutional forms",
+              "State capacity and legitimacy shaped development paths",
+              "Different responses to colonial legacies and social diversity"
+            ]
+          ],
+          "metadata": {
+            "source_notes": [
+              "Institutional labels are simplified for synthetic benchmark use.",
+              "Descriptions are neutral and avoid evaluative scoring."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Economic Transformation, Industrialization, and Global Integration",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Economic change since 1900 moved the region from colonial trade and commodity production toward more diversified national economies. Singapore developed from a port city into a center for manufacturing, logistics, finance, technology, and services. Malaysia expanded beyond tin and rubber into electronics, palm oil, petroleum, tourism, and industrial production. Indonesia remained shaped by its large domestic market, natural resources, agriculture, manufacturing, and services across a geographically dispersed economy.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Economic descriptions are qualitative and avoid current statistical claims."
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "Regional economies were affected by major shocks, including war, postwar reconstruction, commodity price movements, and the Asian financial crisis. The 1997-1998 crisis had especially important political and economic consequences, most dramatically in Indonesia, while also affecting Malaysia and Singapore in different ways. Later decades brought new concerns about supply chains, digital services, energy transition, public health resilience, and climate-related infrastructure. Economic history therefore includes both growth and adjustment.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Regional shocks are described at a high level to avoid over-specific claims."
+            ]
+          }
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_003_economic_transitions",
+          "title": "Major Economic Transitions Since 1900",
+          "caption": "Qualitative comparison of broad economic transitions from colonial economies to contemporary development priorities.",
+          "matrix": [
+            [
+              "Country",
+              "Early 20th Century Base",
+              "Postwar Development Phase",
+              "Late 20th Century Shift",
+              "Contemporary Emphasis"
+            ],
+            [
+              "Singapore",
+              "Port trade and colonial services",
+              "Entrepot recovery and industrialization",
+              "Finance, logistics, electronics, and services",
+              "Advanced services, connectivity, technology, and resilience"
+            ],
+            [
+              "Malaysia",
+              "Tin, rubber, plantations, and ports",
+              "Rural development and import substitution",
+              "Export manufacturing, petroleum, palm oil, and electronics",
+              "Industrial upgrading, services, commodities, and regional development"
+            ],
+            [
+              "Indonesia",
+              "Plantations, oil, agriculture, and inter-island trade",
+              "State-building and resource-linked development",
+              "Manufacturing, energy, domestic-market growth, and crisis adjustment",
+              "Infrastructure, digital economy, resources, and large consumer market"
+            ],
+            [
+              "Regional pattern",
+              "Colonial commodity and trade systems",
+              "National planning after independence",
+              "Export orientation and financial integration",
+              "Supply-chain adaptation and climate-aware development"
+            ]
+          ],
+          "metadata": {
+            "source_notes": [
+              "Economic categories are qualitative and deterministic.",
+              "The table avoids unstable current GDP or sector-share statistics."
+            ]
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_002_economic_phases_chart",
+          "kind": "comparison_chart",
+          "source_type": "vector",
+          "title": "Comparative Economic Development Phases",
+          "caption": "Qualitative comparison of broad economic development phases across Singapore, Malaysia, and Indonesia from colonial economies to contemporary regional integration.",
+          "data": {
+            "chart_type": "phase_band",
+            "x_axis": {
+              "label": "Period",
+              "categories": [
+                "1900-1941",
+                "1942-1945",
+                "1946-1965",
+                "1966-1985",
+                "1986-2000",
+                "2001-present"
+              ]
+            },
+            "y_axis": {
+              "label": "Country",
+              "categories": ["Singapore", "Malaysia", "Indonesia"]
+            },
+            "series": [
+              {
+                "country": "Singapore",
+                "phases": [
+                  {
+                    "period": "1900-1941",
+                    "label": "Port trade and colonial services",
+                    "theme": "colonial_trade"
+                  },
+                  {
+                    "period": "1942-1945",
+                    "label": "Wartime disruption",
+                    "theme": "disruption"
+                  },
+                  {
+                    "period": "1946-1965",
+                    "label": "Recovery, self-government, and industrial start",
+                    "theme": "postwar_reconstruction"
+                  },
+                  {
+                    "period": "1966-1985",
+                    "label": "Export manufacturing and public housing expansion",
+                    "theme": "industrialization"
+                  },
+                  {
+                    "period": "1986-2000",
+                    "label": "Finance, logistics, electronics, and services",
+                    "theme": "services_growth"
+                  },
+                  {
+                    "period": "2001-present",
+                    "label": "Advanced services, technology, and resilience",
+                    "theme": "knowledge_economy"
+                  }
+                ]
+              },
+              {
+                "country": "Malaysia",
+                "phases": [
+                  {
+                    "period": "1900-1941",
+                    "label": "Tin, rubber, plantations, and ports",
+                    "theme": "colonial_commodity"
+                  },
+                  {
+                    "period": "1942-1945",
+                    "label": "Wartime disruption",
+                    "theme": "disruption"
+                  },
+                  {
+                    "period": "1946-1965",
+                    "label": "Postwar recovery and early national planning",
+                    "theme": "postwar_reconstruction"
+                  },
+                  {
+                    "period": "1966-1985",
+                    "label": "Rural development, commodities, and industrial zones",
+                    "theme": "diversification"
+                  },
+                  {
+                    "period": "1986-2000",
+                    "label": "Electronics, petroleum, palm oil, and export manufacturing",
+                    "theme": "export_industrialization"
+                  },
+                  {
+                    "period": "2001-present",
+                    "label": "Industrial upgrading, services, and regional development",
+                    "theme": "upgrading"
+                  }
+                ]
+              },
+              {
+                "country": "Indonesia",
+                "phases": [
+                  {
+                    "period": "1900-1941",
+                    "label": "Plantations, oil, agriculture, and inter-island trade",
+                    "theme": "colonial_commodity"
+                  },
+                  {
+                    "period": "1942-1945",
+                    "label": "Wartime disruption",
+                    "theme": "disruption"
+                  },
+                  {
+                    "period": "1946-1965",
+                    "label": "State-building and post-colonial consolidation",
+                    "theme": "state_building"
+                  },
+                  {
+                    "period": "1966-1985",
+                    "label": "Resource-linked development and central planning",
+                    "theme": "resource_development"
+                  },
+                  {
+                    "period": "1986-2000",
+                    "label": "Manufacturing growth, crisis adjustment, and reform",
+                    "theme": "adjustment"
+                  },
+                  {
+                    "period": "2001-present",
+                    "label": "Infrastructure, digital economy, and domestic market scale",
+                    "theme": "domestic_market"
+                  }
+                ]
+              }
+            ],
+            "render_hints": {
+              "cell_label_max_lines": 3,
+              "show_period_headers": true,
+              "use_distinct_patterns": true
+            }
+          },
+          "metadata": {
+            "source_notes": [
+              "Comparison chart is qualitative and suitable for deterministic vector rendering."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Social Change, Education, Urbanization, and Multilingual Society",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Social change in Singapore, Malaysia, and Indonesia involved education expansion, urban growth, public health improvement, and changing labor markets. Singapore became highly urbanized and developed extensive public housing and mass education systems. Malaysia experienced urban expansion alongside rural development, industrial employment, and rising educational participation. Indonesia's social change occurred across a much larger and more diverse population, with urbanization spreading through major cities, provincial towns, and industrial corridors.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Social development themes are summarized qualitatively."
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "Education became a central instrument of social mobility and national development. Schools transmitted language policy, technical skills, civic identity, and access to professional employment. Singapore's system emphasized bilingual education and workforce planning. Malaysia balanced national language policy with multiple school traditions and higher education expansion. Indonesia used Bahasa Indonesia to support national integration while expanding schooling across islands and regions. These systems evolved over time in response to economic and demographic pressures.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Education and language-policy paragraph supports mixed-language wrapping tests."
+            ],
+            "multilingual_terms": [
+              {
+                "text": "Bahasa Indonesia",
+                "language": "id",
+                "gloss": "Indonesian language"
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "The region's multilingual character remained important after independence. English, Malay, Mandarin Chinese, Tamil, Bahasa Malaysia, Bahasa Indonesia, and other languages appeared in public life in different combinations. A synthetic benchmark paragraph may include the phrase 多元社会, meaning diverse society, to test Chinese character extraction in mixed text. Such language variation is historically plausible for the region, but in this document it is used primarily to support controlled PDF extraction testing.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Chinese phrase is synthetic benchmark content and should be UTF-8 encoded."
+            ],
+            "multilingual_terms": [
+              {
+                "text": "多元社会",
+                "language": "zh",
+                "gloss": "diverse society"
+              }
+            ]
+          }
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_004_population_urbanization",
+          "title": "Population Scale and Urbanization Themes",
+          "caption": "Qualitative comparison of population scale, urbanization patterns, major urban centers, and planning themes.",
+          "matrix": [
+            [
+              "Country",
+              "Relative Population Scale",
+              "Urbanization Pattern",
+              "Major Urban Centers",
+              "Planning Theme"
+            ],
+            [
+              "Singapore",
+              "Small city-state population",
+              "Highly urbanized island city-state",
+              "Singapore",
+              "Public housing, transport integration, land-use planning"
+            ],
+            [
+              "Malaysia",
+              "Medium regional population scale",
+              "Urban corridors and mixed rural-urban regions",
+              "Kuala Lumpur, Penang, Johor Bahru, Kota Kinabalu",
+              "Metropolitan growth, regional balance, infrastructure"
+            ],
+            [
+              "Indonesia",
+              "Large archipelagic population",
+              "Rapid growth across capital, provincial, and industrial cities",
+              "Jakarta, Surabaya, Bandung, Medan, Makassar",
+              "Decentralized infrastructure, migration, urban services"
+            ],
+            [
+              "Regional comparison",
+              "Highly varied scale",
+              "Urbanization linked to migration and industrial change",
+              "Cross-border metropolitan and maritime networks",
+              "Connectivity, housing, environment, and service access"
+            ]
+          ],
+          "metadata": {
+            "source_notes": [
+              "Population scale is expressed qualitatively to avoid time-sensitive exact figures."
+            ]
+          }
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_005_education_labor_language",
+          "title": "Education, Labor-Force Development, and Language Policy Themes",
+          "caption": "Comparison of education development, labor-force change, and language context.",
+          "matrix": [
+            [
+              "Country",
+              "Education Development Theme",
+              "Labor-Force Theme",
+              "Language Context"
+            ],
+            [
+              "Singapore",
+              "Mass education, bilingual policy, technical and tertiary expansion",
+              "Skills upgrading, services, manufacturing, professional sectors",
+              "English plus official Malay, Mandarin Chinese, and Tamil"
+            ],
+            [
+              "Malaysia",
+              "National education expansion with multiple school traditions",
+              "Manufacturing, services, public sector, plantations, and skilled employment",
+              "Bahasa Malaysia with multilingual social and educational contexts"
+            ],
+            [
+              "Indonesia",
+              "School expansion across a large archipelago",
+              "Agriculture, manufacturing, services, migration, and informal employment",
+              "Bahasa Indonesia as national language with many regional languages"
+            ],
+            [
+              "Regional comparison",
+              "Education linked to nation-building and development",
+              "Labor markets shaped by urbanization and cross-border movement",
+              "Multilingual settings remain important in public life"
+            ]
+          ],
+          "metadata": {
+            "source_notes": [
+              "Table supports multilingual benchmark content without requiring non-Latin script in every cell."
+            ]
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_004_social_change_matrix",
+          "kind": "comparison_chart",
+          "source_type": "vector",
+          "title": "Urbanization, Education, and Language Policy Themes",
+          "caption": "Qualitative comparison of social development themes across Singapore, Malaysia, and Indonesia.",
+          "data": {
+            "chart_type": "score_grid",
+            "dimensions": [
+              {
+                "dimension_id": "urbanization",
+                "label": "Urbanization"
+              },
+              {
+                "dimension_id": "education_expansion",
+                "label": "Education expansion"
+              },
+              {
+                "dimension_id": "labor_force_shift",
+                "label": "Labor-force diversification"
+              },
+              {
+                "dimension_id": "language_policy",
+                "label": "Language policy role"
+              },
+              {
+                "dimension_id": "migration_linkages",
+                "label": "Migration linkages"
+              }
+            ],
+            "scale": {
+              "type": "ordinal",
+              "min": 1,
+              "max": 5,
+              "labels": {
+                "1": "limited emphasis",
+                "2": "moderate emphasis",
+                "3": "significant emphasis",
+                "4": "strong emphasis",
+                "5": "very strong emphasis"
+              }
+            },
+            "series": [
+              {
+                "country": "Singapore",
+                "values": {
+                  "urbanization": 5,
+                  "education_expansion": 5,
+                  "labor_force_shift": 5,
+                  "language_policy": 5,
+                  "migration_linkages": 4
+                }
+              },
+              {
+                "country": "Malaysia",
+                "values": {
+                  "urbanization": 4,
+                  "education_expansion": 4,
+                  "labor_force_shift": 4,
+                  "language_policy": 5,
+                  "migration_linkages": 4
+                }
+              },
+              {
+                "country": "Indonesia",
+                "values": {
+                  "urbanization": 4,
+                  "education_expansion": 4,
+                  "labor_force_shift": 4,
+                  "language_policy": 5,
+                  "migration_linkages": 5
+                }
+              }
+            ],
+            "render_hints": {
+              "show_numeric_values": false,
+              "show_annotations": true,
+              "legend_position": "bottom"
+            }
+          },
+          "metadata": {
+            "source_notes": [
+              "Ordinal scores are illustrative and qualitative, not measured statistics."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Regional Integration, ASEAN Context, and Contemporary Comparisons",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Regional integration provides a useful frame for comparing Singapore, Malaysia, and Indonesia. All three are members of ASEAN and participate in regional diplomacy, trade, infrastructure discussion, environmental cooperation, and security dialogue. Their roles differ because of scale, geography, economic structure, and political organization. Singapore is a compact city-state and global hub; Malaysia is a federal country linking peninsular and Bornean regions; Indonesia is a large archipelagic state with substantial demographic and territorial scale.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "ASEAN context is summarized at a high level for synthetic report use."
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "Cross-border connections are visible in labor migration, tourism, education, finance, transport, and supply chains. Singapore and Malaysia have especially dense movement across the Johor-Singapore corridor. Indonesia's links with both neighbors include trade, workers, investment, culture, and maritime concerns. These connections show that national histories are not isolated. They are shaped by regional proximity, colonial-era networks, post-colonial diplomacy, and practical economic interdependence.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Cross-border connection themes are qualitative and suitable for benchmark prose."
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "A comparative historical view highlights both shared regional patterns and national divergence. All three countries experienced colonial rule, wartime disruption, decolonization, state-building, economic restructuring, and social transformation. Yet they differed in geography, population scale, resource endowment, institutions, and language policy. The phrase serantau tetapi berbeza, meaning regional yet different, summarizes the report's main comparative theme. This final section links the historical narrative to a wider Southeast Asian context.",
+          "language": "en",
+          "metadata": {
+            "source_notes": [
+              "Malay phrase is synthetic and intended for controlled mixed-language PDF testing."
+            ],
+            "multilingual_terms": [
+              {
+                "text": "serantau tetapi berbeza",
+                "language": "ms",
+                "gloss": "regional yet different"
+              }
+            ]
+          }
+        },
+        {
+          "type": "table",
+          "table_id": "tbl_006_asean_regional_context",
+          "title": "ASEAN and Regional Integration Themes",
+          "caption": "High-level comparison of regional roles, cross-border linkages, and contemporary policy themes.",
+          "matrix": [
+            [
+              "Theme",
+              "Singapore",
+              "Malaysia",
+              "Indonesia",
+              "Regional Comparison"
+            ],
+            [
+              "ASEAN role",
+              "Founding member and diplomatic hub",
+              "Founding member with peninsular and Bornean links",
+              "Founding member and largest member by population",
+              "Shared regional forum with different national scales"
+            ],
+            [
+              "Trade and logistics",
+              "Port, finance, aviation, and services hub",
+              "Manufacturing corridors, ports, and commodities",
+              "Large domestic market, resources, and maritime trade",
+              "Interdependent supply chains and transport networks"
+            ],
+            [
+              "Labor and migration",
+              "Destination for regional workers and professionals",
+              "Sender, receiver, and transit country in regional labor flows",
+              "Major source of migrant labor and domestic mobility",
+              "Cross-border movement shapes households and labor markets"
+            ],
+            [
+              "Environmental issues",
+              "Urban resilience and resource constraints",
+              "Forest, coastal, flood, and urban sustainability concerns",
+              "Archipelagic climate, forest, peatland, and coastal challenges",
+              "Climate adaptation requires national and regional coordination"
+            ],
+            [
+              "Contemporary policy themes",
+              "Digital services, resilience, and connectivity",
+              "Industrial upgrading and regional development",
+              "Infrastructure, decentralization, and resource management",
+              "Digitalization, energy transition, and public health preparedness"
+            ]
+          ],
+          "metadata": {
+            "source_notes": [
+              "ASEAN context is summarized qualitatively and avoids fast-changing policy details."
+            ]
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_005_asean_context_diagram",
+          "kind": "regional_map_placeholder",
+          "source_type": "vector",
+          "title": "ASEAN Regional Context Diagram",
+          "caption": "Programmatic placeholder diagram showing Singapore, Malaysia, and Indonesia as connected members of a wider Southeast Asian regional network.",
+          "data": {
+            "map_type": "schematic_network",
+            "region_label": "Southeast Asia / ASEAN context",
+            "nodes": [
+              {
+                "node_id": "singapore",
+                "label": "Singapore",
+                "node_type": "country",
+                "relative_position": {
+                  "x": 0.56,
+                  "y": 0.57
+                },
+                "size": "small"
+              },
+              {
+                "node_id": "malaysia",
+                "label": "Malaysia",
+                "node_type": "country",
+                "relative_position": {
+                  "x": 0.5,
+                  "y": 0.47
+                },
+                "size": "medium"
+              },
+              {
+                "node_id": "indonesia",
+                "label": "Indonesia",
+                "node_type": "country",
+                "relative_position": {
+                  "x": 0.55,
+                  "y": 0.7
+                },
+                "size": "large"
+              },
+              {
+                "node_id": "asean",
+                "label": "ASEAN",
+                "node_type": "regional_organization",
+                "relative_position": {
+                  "x": 0.78,
+                  "y": 0.42
+                },
+                "size": "medium"
+              },
+              {
+                "node_id": "global_trade",
+                "label": "Global trade networks",
+                "node_type": "external_context",
+                "relative_position": {
+                  "x": 0.23,
+                  "y": 0.32
+                },
+                "size": "medium"
+              }
+            ],
+            "links": [
+              {
+                "from": "singapore",
+                "to": "malaysia",
+                "label": "labor, logistics, finance"
+              },
+              {
+                "from": "malaysia",
+                "to": "indonesia",
+                "label": "trade, migration, maritime links"
+              },
+              {
+                "from": "singapore",
+                "to": "indonesia",
+                "label": "investment, workers, services"
+              },
+              {
+                "from": "singapore",
+                "to": "asean",
+                "label": "regional diplomacy"
+              },
+              {
+                "from": "malaysia",
+                "to": "asean",
+                "label": "regional cooperation"
+              },
+              {
+                "from": "indonesia",
+                "to": "asean",
+                "label": "regional leadership"
+              }
+            ],
+            "background_elements": [
+              {
+                "element_id": "sea_placeholder",
+                "label": "Maritime Southeast Asia",
+                "shape": "soft_region_blob",
+                "relative_bbox": [0.36, 0.36, 0.72, 0.78]
+              },
+              {
+                "element_id": "mainland_placeholder",
+                "label": "Mainland Southeast Asia",
+                "shape": "soft_region_blob",
+                "relative_bbox": [0.34, 0.18, 0.66, 0.45]
+              }
+            ],
+            "render_hints": {
+              "not_geographic_to_scale": true,
+              "show_disclaimer": "Schematic placeholder, not to scale",
+              "use_curved_links": true,
+              "show_node_labels": true
+            }
+          },
+          "metadata": {
+            "source_notes": [
+              "Regional map placeholder is schematic and not geographically to scale."
+            ]
+          }
+        },
+        {
+          "type": "figure",
+          "figure_id": "fig_006_historical_arc_flow",
+          "kind": "flow_diagram",
+          "source_type": "vector",
+          "title": "From Colonial Economies to Regional Integration",
+          "caption": "Summary flow diagram of the report's broad historical arc from colonial structures to contemporary Southeast Asian regional integration.",
+          "data": {
+            "orientation": "top_to_bottom",
+            "nodes": [
+              {
+                "node_id": "colonial_structures",
+                "label": "Colonial structures and plural societies",
+                "level": 0,
+                "summary": "Ports, plantations, resource extraction, migration, and multilingual communities"
+              },
+              {
+                "node_id": "wartime_disruption",
+                "label": "War and occupation",
+                "level": 1,
+                "summary": "Japanese occupation disrupted European colonial authority and social life"
+              },
+              {
+                "node_id": "decolonization",
+                "label": "Decolonization and state formation",
+                "level": 2,
+                "summary": "Different pathways to independence, federation, separation, and sovereignty"
+              },
+              {
+                "node_id": "national_development",
+                "label": "National development strategies",
+                "level": 3,
+                "summary": "Governance, planning, infrastructure, education, and industrialization"
+              },
+              {
+                "node_id": "social_transformation",
+                "label": "Social transformation",
+                "level": 4,
+                "summary": "Urbanization, schooling, labor shifts, and language policy"
+              },
+              {
+                "node_id": "regional_integration",
+                "label": "Regional integration and contemporary issues",
+                "level": 5,
+                "summary": "ASEAN, trade, migration, climate, public health, and digitalization"
+              }
+            ],
+            "edges": [
+              {
+                "from": "colonial_structures",
+                "to": "wartime_disruption",
+                "label": "1940s turning point"
+              },
+              {
+                "from": "wartime_disruption",
+                "to": "decolonization",
+                "label": "postwar transition"
+              },
+              {
+                "from": "decolonization",
+                "to": "national_development",
+                "label": "post-independence priorities"
+              },
+              {
+                "from": "national_development",
+                "to": "social_transformation",
+                "label": "development and society"
+              },
+              {
+                "from": "social_transformation",
+                "to": "regional_integration",
+                "label": "twenty-first-century context"
+              }
+            ],
+            "render_hints": {
+              "node_shape": "rounded_rectangle",
+              "show_summary_text": true,
+              "show_side_annotations": true,
+              "max_summary_chars": 90
+            }
+          },
+          "metadata": {
+            "source_notes": [
+              "Summary flow diagram is intended as a closing comparative visual."
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

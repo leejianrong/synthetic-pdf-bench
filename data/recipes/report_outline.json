@@ -1,0 +1,190 @@
+{
+  "title": "Singapore, Malaysia, and Indonesia: Political, Economic, and Social Change Since 1900",
+  "abstract": "This synthetic research report outlines major political, economic, and social transformations in Singapore, Malaysia, and Indonesia from the early twentieth century to the present. It compares colonial legacies, wartime disruption, independence movements, state formation, economic restructuring, social development, and regional integration. The report is designed for a multilingual Southeast Asian PDF benchmark, with primarily English content and selected Chinese, Malay, and Indonesian context markers.",
+  "sections": [
+    {
+      "heading": "Colonial Legacies and Early Twentieth-Century Southeast Asia",
+      "bullet_points": [
+        "Compare British colonial rule in Singapore and Malaya with Dutch colonial rule in the Netherlands East Indies.",
+        "Describe how port cities, plantations, mining, and maritime trade shaped early twentieth-century economic structures.",
+        "Explain how migration, education, language communities, and administrative categories influenced plural societies.",
+        "Introduce multilingual context through English, Malay, Indonesian, and Chinese terms used in governance, commerce, and social life."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_colonial_structures",
+          "title": "Colonial Structures and Economic Roles, c. 1900-1941",
+          "description": "Matrix comparing colonial authority, administrative centers, major commodities, and social composition."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_colonial_map_placeholder",
+          "kind": "regional_map_placeholder",
+          "title": "Colonial Southeast Asia Reference Map",
+          "description": "Simplified regional map placeholder showing Singapore, Malaya, and the Netherlands East Indies."
+        }
+      ],
+      "source_notes": [
+        "Use general historical synthesis on British Malaya, colonial Singapore, and the Netherlands East Indies.",
+        "Preserve multilingual and document-family requirements from the synthetic PDF benchmark specification. "
+      ]
+    },
+    {
+      "heading": "War, Occupation, Decolonization, and State Formation",
+      "bullet_points": [
+        "Cover the Japanese occupation and its effects on colonial authority, local politics, and social memory.",
+        "Compare independence pathways: Indonesia's revolution and sovereignty transfer, Malaya's negotiated independence, Malaysia's formation, and Singapore's separation and independence.",
+        "Discuss the emergence of constitutional frameworks, citizenship debates, political parties, and security concerns.",
+        "Use a careful regional comparison rather than presenting one linear decolonization model."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_state_formation_milestones",
+          "title": "Selected State Formation Milestones",
+          "description": "Matrix listing major political milestones for Singapore, Malaysia, and Indonesia from the 1940s to the 1960s."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_independence_timeline",
+          "kind": "timeline",
+          "title": "Independence and State Formation Timeline",
+          "description": "Timeline of Japanese occupation, Indonesian independence proclamation, Malayan independence, Malaysia formation, and Singapore independence."
+        }
+      ],
+      "source_notes": [
+        "Use broadly accepted dates and qualitative summaries for wartime occupation and postwar transitions.",
+        "Avoid contentious causal claims unless framed as historical interpretation."
+      ]
+    },
+    {
+      "heading": "Political Institutions, Governance Models, and National Development",
+      "bullet_points": [
+        "Compare parliamentary governance in Singapore and Malaysia with Indonesia's shifts from parliamentary democracy to guided democracy, New Order rule, and post-1998 reformasi.",
+        "Explain how state capacity, ruling coalitions, bureaucracy, law, and security institutions shaped development strategies.",
+        "Address nation-building, citizenship, ethnic politics, language policy, and public legitimacy.",
+        "Include short multilingual context markers such as reformasi, pembangunan, masyarakat, and merdeka."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_governance_comparison",
+          "title": "Governance and Political Development Themes",
+          "description": "Matrix comparing institutional continuity, party systems, administrative capacity, and major reform periods."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_governance_transition_diagram",
+          "kind": "flow_diagram",
+          "title": "Governance Transition Patterns",
+          "description": "Flow diagram contrasting governance trajectories across the three countries."
+        }
+      ],
+      "source_notes": [
+        "Use neutral comparative political history rather than normative rankings.",
+        "Flag post-1998 Indonesian reform as a major institutional turning point."
+      ]
+    },
+    {
+      "heading": "Economic Transformation, Industrialization, and Global Integration",
+      "bullet_points": [
+        "Trace movement from colonial trade and resource extraction toward industrialization, services, manufacturing, finance, energy, tourism, and digital sectors.",
+        "Compare Singapore's entrepot and high-value services model, Malaysia's diversified manufacturing and resource economy, and Indonesia's large domestic market and commodity-linked development.",
+        "Discuss development planning, foreign investment, infrastructure, education, and export orientation.",
+        "Include regional and global shocks such as postwar reconstruction, commodity cycles, the Asian financial crisis, and twenty-first-century supply-chain change."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_economic_transitions",
+          "title": "Major Economic Transitions Since 1900",
+          "description": "Matrix comparing economic phases, leading sectors, policy emphasis, and external linkages."
+        },
+        {
+          "table_id": "tbl_crisis_and_adjustment",
+          "title": "Selected Regional Economic Shocks and Adjustments",
+          "description": "Matrix covering wartime disruption, postwar recovery, the Asian financial crisis, and recent supply-chain shifts."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_economic_phases_chart",
+          "kind": "comparison_chart",
+          "title": "Comparative Economic Development Phases",
+          "description": "Programmatic comparison chart showing broad development phases by country."
+        }
+      ],
+      "source_notes": [
+        "Use rounded, qualitative values unless exact quantitative figures are clearly stable.",
+        "Avoid fine-grained current economic statistics in Phase 1 unless verified and versioned."
+      ]
+    },
+    {
+      "heading": "Social Change, Education, Urbanization, and Multilingual Society",
+      "bullet_points": [
+        "Compare urbanization, public housing, education expansion, labor-force development, migration, and changing family structures.",
+        "Discuss how language policy and multilingual communities shaped schools, media, administration, and everyday identity.",
+        "Include Singapore's multilingual governance context, Malaysia's Bahasa Malaysia and multicultural setting, and Indonesia's Bahasa Indonesia as a national language.",
+        "Use short multilingual excerpts to test extraction of Chinese characters, Malay, and Indonesian text within English paragraphs."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_social_development",
+          "title": "Social Development Themes",
+          "description": "Matrix comparing education, urbanization, language policy, and labor-force themes."
+        },
+        {
+          "table_id": "tbl_multilingual_context",
+          "title": "Multilingual Context Markers",
+          "description": "Matrix listing English, Chinese, Malay, and Indonesian terms relevant to the report."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_social_change_matrix",
+          "kind": "comparison_chart",
+          "title": "Urbanization, Education, and Language Policy Themes",
+          "description": "Qualitative comparison chart for social change dimensions."
+        }
+      ],
+      "source_notes": [
+        "Use multilingual excerpts as synthetic benchmark content, not as documentary quotations.",
+        "Ensure all generated files are UTF-8 compatible."
+      ]
+    },
+    {
+      "heading": "Regional Integration, ASEAN Context, and Contemporary Comparisons",
+      "bullet_points": [
+        "Explain how Singapore, Malaysia, and Indonesia participate in ASEAN, regional trade, security dialogue, migration flows, and environmental cooperation.",
+        "Compare the three countries as interconnected neighbors with different scales, state structures, resource bases, and urban systems.",
+        "Address contemporary themes such as digitalization, climate adaptation, public health capacity, regional connectivity, and demographic change.",
+        "Conclude with a comparative synthesis that emphasizes diversity within a shared Southeast Asian regional context."
+      ],
+      "suggested_tables": [
+        {
+          "table_id": "tbl_asean_context",
+          "title": "ASEAN and Regional Integration Themes",
+          "description": "Matrix comparing regional roles, cross-border linkages, and contemporary policy themes."
+        }
+      ],
+      "suggested_figures": [
+        {
+          "figure_id": "fig_asean_context_diagram",
+          "kind": "regional_map_placeholder",
+          "title": "ASEAN Regional Context Diagram",
+          "description": "Placeholder diagram showing Singapore, Malaysia, and Indonesia within wider ASEAN networks."
+        },
+        {
+          "figure_id": "fig_comparative_summary_flow",
+          "kind": "flow_diagram",
+          "title": "From Colonial Economies to Regional Integration",
+          "description": "Flow diagram summarizing the report's broad historical arc."
+        }
+      ],
+      "source_notes": [
+        "Use ASEAN and regional integration context at a high level suitable for a six-page synthetic report.",
+        "Do not render source notes in Phase 1; preserve them as metadata."
+      ]
+    }
+  ]
+}
