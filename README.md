@@ -14,7 +14,7 @@ Ground truth is never recovered by parsing the generated PDF. The scene graph is
 
 ```bash
 uv sync
-uv run synthetic-pdf-bench --output output/synthetic_000001 --seed 123 --recipe data/recipes/sea_historical_report_v1.json
+uv run synthetic-pdf-bench --output output/synthetic_000001 --seed 123 --recipe data/recipes/canonical/sea_historical_report_v1.json
 ```
 
 This writes one document directory:
@@ -30,7 +30,7 @@ output/synthetic_000001/
     figures/*.png
 ```
 
-The default generator loads the canonical Southeast Asia historical recipe from `data/recipes/sea_historical_report_v1.json` and naturally flows it across 3-8 pages. The layout planner creates deterministic boxes for titles, headings, paragraphs, tables, table cells, raster figures, vector figures, captions, repeated headers, footers, and page numbers.
+The default generator loads the canonical Southeast Asia historical recipe from `data/recipes/canonical/sea_historical_report_v1.json` and naturally flows it across 3-8 pages. The layout planner creates deterministic boxes for titles, headings, paragraphs, tables, table cells, raster figures, vector figures, captions, repeated headers, footers, and page numbers.
 
 ## Dataset generation
 
@@ -41,7 +41,7 @@ uv run synthetic-pdf-bench \
   --output-root output/small_dataset \
   --count 5 \
   --seed-start 100 \
-  --recipe data/recipes/sea_historical_report_v1.json \
+  --recipe data/recipes/canonical/sea_historical_report_v1.json \
   --variants standard compact text_heavy figure_heavy table_heavy
 ```
 
@@ -73,7 +73,7 @@ The flow layout engine uses ReportLab font metrics for text height estimation an
 
 ## Visual benchmark recipe
 
-`data/recipes/visual_benchmark_v1.json` exercises visual extraction with deterministic matplotlib chart figures and richer table shapes.
+`data/recipes/canonical/visual_benchmark_v1.json` exercises visual extraction with deterministic matplotlib chart figures and richer table shapes.
 
 Supported matplotlib chart kinds:
 

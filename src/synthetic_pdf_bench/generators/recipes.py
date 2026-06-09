@@ -156,4 +156,4 @@ def load_recipe(path: Path) -> DocumentRecipe:
 
 
 def default_recipe_path() -> Path:
-    return Path("data/recipes/sea_historical_report_v1.json")
+    return Path("data/recipes/canonical/sea_historical_report_v1.json")

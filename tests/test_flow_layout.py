@@ -7,7 +7,7 @@ from synthetic_pdf_bench.schema.blocks import Block, FigureBlock, TableBlock
 
 
 def test_flow_layout_generates_multi_page_scene_with_repeated_furniture() -> None:
-    recipe = load_recipe(Path("data/recipes/sea_historical_report_v1.json"))
+    recipe = load_recipe(Path("data/recipes/canonical/sea_historical_report_v1.json"))
     scene = build_scene_from_recipe(recipe, seed=123)
     truth = scene.to_truth()
 
@@ -22,7 +22,7 @@ def test_flow_layout_generates_multi_page_scene_with_repeated_furniture() -> Non
 
 
 def test_flow_layout_records_table_cells() -> None:
-    recipe = load_recipe(Path("data/recipes/sea_historical_report_v1.json"))
+    recipe = load_recipe(Path("data/recipes/canonical/sea_historical_report_v1.json"))
     scene = build_scene_from_recipe(recipe, seed=123)
     tables = [block for block in scene.blocks_in_reading_order() if isinstance(block, TableBlock)]
 
@@ -33,7 +33,7 @@ def test_flow_layout_records_table_cells() -> None:
 
 
 def test_flow_layout_variant_changes_document_shape() -> None:
-    recipe = load_recipe(Path("data/recipes/sea_historical_report_v1.json"))
+    recipe = load_recipe(Path("data/recipes/canonical/sea_historical_report_v1.json"))
     compact = build_scene_from_recipe(apply_recipe_variant(recipe, "compact", 1), seed=1, variant="compact").to_truth()
     spacious = build_scene_from_recipe(apply_recipe_variant(recipe, "spacious", 1), seed=1, variant="spacious").to_truth()
 
@@ -43,7 +43,7 @@ def test_flow_layout_variant_changes_document_shape() -> None:
 
 
 def test_two_column_layout_uses_distinct_columns() -> None:
-    recipe = load_recipe(Path("data/recipes/sea_historical_report_v1.json"))
+    recipe = load_recipe(Path("data/recipes/canonical/sea_historical_report_v1.json"))
     truth = build_scene_from_recipe(
         apply_recipe_variant(recipe, "two_column", 3), seed=3, variant="two_column"
     ).to_truth()

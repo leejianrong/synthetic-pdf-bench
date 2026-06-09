@@ -35,7 +35,7 @@ def test_table_variant_matrices_are_valid() -> None:
 
 
 def test_visual_benchmark_recipe_contains_chart_and_table_variants() -> None:
-    recipe = load_recipe(Path("data/recipes/visual_benchmark_v1.json"))
+    recipe = load_recipe(Path("data/recipes/canonical/visual_benchmark_v1.json"))
     scene = build_scene_from_recipe(recipe, seed=5)
     truth = scene.to_truth()
     figures = [block for block in truth.blocks if isinstance(block, FigureBlock)]
@@ -54,7 +54,7 @@ def test_visual_benchmark_recipe_contains_chart_and_table_variants() -> None:
 
 def test_visual_benchmark_generation_outputs_chart_crops(tmp_path: Path) -> None:
     output = tmp_path / "visual"
-    summary = generate(output, seed=77, recipe_path=Path("data/recipes/visual_benchmark_v1.json"))
+    summary = generate(output, seed=77, recipe_path=Path("data/recipes/canonical/visual_benchmark_v1.json"))
 
     assert summary["figure_count"] >= 6
     assert summary["table_count"] >= 7

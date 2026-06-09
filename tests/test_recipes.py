@@ -4,7 +4,7 @@ from synthetic_pdf_bench.generators.recipes import apply_recipe_variant, load_re
 
 
 def test_load_sea_recipe() -> None:
-    recipe = load_recipe(Path("data/recipes/sea_historical_report_v1.json"))
+    recipe = load_recipe(Path("data/recipes/canonical/sea_historical_report_v1.json"))
 
     assert recipe.doc_id == "sea_historical_report_v1"
     assert len(recipe.sections) == 6
@@ -13,7 +13,7 @@ def test_load_sea_recipe() -> None:
 
 
 def test_apply_recipe_variants() -> None:
-    recipe = load_recipe(Path("data/recipes/sea_historical_report_v1.json"))
+    recipe = load_recipe(Path("data/recipes/canonical/sea_historical_report_v1.json"))
 
     for variant in recipe_variant_names():
         varied = apply_recipe_variant(recipe, variant=variant, seed=7)
