@@ -25,7 +25,7 @@ pipelines. Content comes from curated recipes; LLM-filled content is optional an
 - [ ] Timeline figure labels overlap
    - [x] Degradation profiles (`--degrade light_scan|heavy_scan`): skew, shift, contrast, blur, noise, JPEG; image-only scan PDF; `bbox_px` transformed
    - [ ] Still to add: perspective/page-curl, bleed-through, stamps/handwriting overlays, color-photo profile, rotated (90/180) pages
-   - [ ] Parallel generation; train/val/test splits grouped by recipe and template to avoid leakage
+   - [x] Parallel generation (`--workers`) and train/val/test splits grouped by recipe/template/document (`--splits`, `--split-by`), per-split COCO files
    - [ ] YOLO and HF dataset/parquet exporters; dataset card and versioning
 2. **Slides (`.pptx`):** python-pptx generation with exact shape geometry, PDF via LibreOffice, Docker image.
 3. **Word and spreadsheets (`.docx`, `.xlsx`):** python-docx/openpyxl, bbox recovery with provenance.

@@ -39,8 +39,10 @@ BLOCK_TYPE_TO_CATEGORY = {
 }
 
 
-def export_coco(root: Path) -> dict:
+def export_coco(root: Path, doc_ids: set[str] | None = None) -> dict:
     """Build a COCO dict for every ``truth/document.json`` at or directly under ``root``.
+
+    ``doc_ids`` keeps only those documents.
 
     ``file_name`` is relative to ``root``. ``reading_order`` is the block's rank within
     its page, an extra field on each annotation.
@@ -52,6 +54,8 @@ def export_coco(root: Path) -> dict:
     images, annotations = [], []
     for truth_file in truth_files:
         truth = DocumentTruth.model_validate_json(truth_file.read_text(encoding="utf-8"))
+        if doc_ids is not None and truth.doc_id not in doc_ids:
+            continue
         doc_dir = truth_file.parent.parent
         for page in truth.pages:
             rendered = page.rendered_image
@@ -90,9 +94,9 @@ def export_coco(root: Path) -> dict:
     }
 
 
-def write_coco(root: Path, output: Path | None = None) -> Path:
+def write_coco(root: Path, output: Path | None = None, doc_ids: set[str] | None = None) -> Path:
     output = output or root / "coco.json"
-    output.write_text(json.dumps(export_coco(root), indent=2), encoding="utf-8")
+    output.write_text(json.dumps(export_coco(root, doc_ids), indent=2), encoding="utf-8")
     return output
 
 

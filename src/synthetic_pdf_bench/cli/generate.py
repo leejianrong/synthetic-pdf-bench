@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import multiprocessing
+from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
 from synthetic_pdf_bench.degrade import PROFILES, degrade_pages, write_scan_pdf
@@ -22,6 +24,7 @@ from synthetic_pdf_bench.render.crops import crop_figures
 from synthetic_pdf_bench.render.pymupdf_rasterizer import rasterize_pdf
 from synthetic_pdf_bench.render.reportlab_renderer import ReportLabRenderer
 from synthetic_pdf_bench.schema.blocks import FigureBlock
+from synthetic_pdf_bench.splits import SPLIT_BY, assign_splits, write_coco_splits
 
 
 def _clear_generated_outputs(output: Path) -> None:
@@ -108,6 +111,10 @@ def generate(
     return summary
 
 
+def _generate_job(job: dict) -> dict:
+    return generate(**job)
+
+
 def generate_dataset(
     output_root: Path,
     count: int,
@@ -116,19 +123,40 @@ def generate_dataset(
     recipe_paths: list[Path] | None = None,
     variants: list[str] | None = None,
     degrade: str = "none",
+    workers: int = 1,
+    splits: dict[str, float] | None = None,
+    split_by: str = "recipe",
 ) -> dict:
     if count < 1:
         raise ValueError("count must be at least 1")
     recipes = recipe_paths or [default_recipe_path()]
     selected_variants = variants or ["standard"]
     output_root.mkdir(parents=True, exist_ok=True)
-    documents = []
-    for index in range(count):
-        seed = seed_start + index
-        recipe_path = recipes[index % len(recipes)]
-        variant = selected_variants[index % len(selected_variants)]
-        output = output_root / f"synthetic_{index + 1:06d}"
-        documents.append(generate(output, seed=seed, dpi=dpi, recipe_path=recipe_path, variant=variant, degrade=degrade))
+    jobs = [
+        {
+            "output": output_root / f"synthetic_{index + 1:06d}",
+            "seed": seed_start + index,
+            "dpi": dpi,
+            "recipe_path": recipes[index % len(recipes)],
+            "variant": selected_variants[index % len(selected_variants)],
+            "degrade": degrade,
+        }
+        for index in range(count)
+    ]
+    if workers > 1:
+        # spawn: matplotlib and PyMuPDF are not fork-safe
+        with ProcessPoolExecutor(workers, mp_context=multiprocessing.get_context("spawn")) as pool:
+            documents = list(pool.map(_generate_job, jobs))
+    else:
+        documents = [_generate_job(job) for job in jobs]
+    split_ids = assign_splits(documents, splits, split_by, seed_start) if splits else None
+    if split_ids:
+        split_of = {doc_id: name for name, ids in split_ids.items() for doc_id in ids}
+        for document in documents:
+            document["split"] = split_of[document["doc_id"]]
+        (output_root / "splits.json").write_text(
+            json.dumps({"split_by": split_by, "ratios": splits, "splits": split_ids}, indent=2), encoding="utf-8"
+        )
     manifest = {
         "dataset_id": output_root.name,
         "output_root": str(output_root),
@@ -138,6 +166,7 @@ def generate_dataset(
         "recipe_paths": [str(path) for path in recipes],
         "variants": selected_variants,
         "degradation": degrade,
+        "splits": split_ids,
         "summary_stats": manifest_summary_stats(documents),
         "documents": documents,
     }
@@ -192,6 +221,19 @@ def _add_generation_args(parser: argparse.ArgumentParser) -> None:
         default="none",
         help="Scan degradation: page images are degraded, document.pdf becomes an image-only scan.",
     )
+    parser.add_argument("--workers", type=int, default=1, help="Parallel processes in dataset mode.")
+    parser.add_argument(
+        "--splits",
+        nargs="+",
+        metavar="NAME=RATIO",
+        help="Dataset mode: e.g. train=0.8 val=0.1 test=0.1. Writes splits.json; whole groups go to one split.",
+    )
+    parser.add_argument(
+        "--split-by",
+        choices=SPLIT_BY,
+        default="recipe",
+        help="Leakage group: recipe (same text source), template (same page layout), or document (can leak).",
+    )
     parser.add_argument(
         "--variants",
         choices=recipe_variant_names(),
@@ -210,7 +252,10 @@ def main() -> None:
         prediction_from_truth(args.truth, args.prediction)
         return
     if args.command == "export-coco":
-        print(write_coco(args.root, args.output))
+        if args.output is None and (args.root / "splits.json").exists():
+            print("\n".join(str(path) for path in write_coco_splits(args.root)))
+        else:
+            print(write_coco(args.root, args.output))
         return
     if args.command == "prediction-shape":
         shape = expected_prediction_shape()
@@ -230,6 +275,9 @@ def main() -> None:
             recipe_paths=recipe_paths,
             variants=args.variants or [args.variant],
             degrade=args.degrade,
+            workers=args.workers,
+            splits={name: float(ratio) for name, ratio in (item.split("=") for item in args.splits)} if args.splits else None,
+            split_by=args.split_by,
         )
         return
     if args.output is None:
