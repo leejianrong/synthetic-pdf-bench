@@ -9,9 +9,13 @@ from synthetic_pdf_bench.schema.truth import DocumentTruth
 TEXT_TYPES = {"title", "heading", "paragraph", "list", "caption", "footnote", "reference"}
 
 
-@pytest.mark.parametrize("variant", ["standard", "compact", "spacious", "two_column", "text_heavy"])
-def test_rendered_text_fits_inside_its_bbox(tmp_path: Path, variant: str) -> None:
-    generate(tmp_path / "doc", seed=5, variant=variant)
+CASES = [(v, 5) for v in ("standard", "compact", "spacious", "two_column", "text_heavy")]
+CASES += [("random", seed) for seed in range(1, 13)]
+
+
+@pytest.mark.parametrize(("variant", "seed"), CASES)
+def test_rendered_text_fits_inside_its_bbox(tmp_path: Path, variant: str, seed: int) -> None:
+    generate(tmp_path / "doc", seed=seed, variant=variant)
     truth = DocumentTruth.model_validate_json((tmp_path / "doc/truth/document.json").read_text())
     pdf = fitz.open(tmp_path / "doc/document.pdf")
 

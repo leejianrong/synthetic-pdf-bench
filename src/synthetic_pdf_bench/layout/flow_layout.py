@@ -1,9 +1,10 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+import random
+from dataclasses import asdict, dataclass
 from pathlib import Path
 
-from reportlab.lib.pagesizes import letter
+from reportlab.lib.pagesizes import A4, letter
 from reportlab.pdfbase import pdfmetrics
 
 from synthetic_pdf_bench.generators.figures import make_raster_figure
@@ -17,7 +18,12 @@ from synthetic_pdf_bench.generators.recipes import (
 )
 from synthetic_pdf_bench.generators.tables import table_to_html, table_to_markdown
 from synthetic_pdf_bench.layout.scene import SceneGraph
-from synthetic_pdf_bench.render.fonts import contains_cjk, font_for_text, register_fonts
+from synthetic_pdf_bench.render.fonts import (
+    FONT_FAMILIES,
+    contains_cjk,
+    font_for_text,
+    register_fonts,
+)
 from synthetic_pdf_bench.schema.blocks import Block, FigureBlock, TableBlock, TableCell
 
 
@@ -46,9 +52,39 @@ class LayoutStyle:
     column_gutter: float = 24
     min_table_rows_per_segment: int = 2
     force_section_page_breaks: bool = False
+    page_size: tuple[float, float] = letter
+    font_family: str = "Helvetica"
+    page_number_align: str = "right"
 
 
-def style_for_variant(variant: str) -> LayoutStyle:
+def random_style(seed: int) -> LayoutStyle:
+    """Sample a whole page template (geometry, type, columns, page furniture) from ``seed``."""
+    rng = random.Random(seed)
+    body = rng.choice([8, 9, 10, 11])
+    return LayoutStyle(
+        margin_left=rng.randint(48, 80),
+        margin_right=rng.randint(48, 80),
+        margin_top=rng.randint(62, 84),
+        margin_bottom=rng.randint(62, 84),
+        title_font_size=rng.randint(16, 20),  # title/heading line heights are fixed at 22/16
+        heading_font_size=rng.randint(11, 14),
+        body_font_size=body,
+        caption_font_size=max(7, body - 1),
+        body_line_height=round(body * rng.uniform(1.2, 1.45), 1),
+        block_spacing=rng.randint(6, 14),
+        section_spacing=rng.randint(8, 18),
+        table_row_height=rng.randint(19, 24),  # cells wrap to two lines, so no shorter than the default
+        columns=rng.choice([1, 1, 2]),
+        force_section_page_breaks=rng.random() < 0.25,
+        page_size=rng.choice([letter, A4]),
+        font_family=rng.choice(list(FONT_FAMILIES)),
+        page_number_align=rng.choice(["left", "center", "right"]),
+    )
+
+
+def style_for_variant(variant: str, seed: int = 0) -> LayoutStyle:
+    if variant == "random":
+        return random_style(seed)
     if variant == "compact":
         return LayoutStyle(
             margin_left=50,
@@ -113,7 +149,7 @@ class FlowLayoutPlanner:
         self.seed = seed
         self.dpi = dpi
         self.style = style or LayoutStyle()
-        self.page_width, self.page_height = letter
+        self.page_width, self.page_height = self.style.page_size
         self.scene: SceneGraph | None = None
         self.cursor_y = 0.0
         self.column_index = 0
@@ -134,7 +170,7 @@ class FlowLayoutPlanner:
     def build_scene(self, recipe: DocumentRecipe) -> SceneGraph:
         self.scene = SceneGraph(doc_id=recipe.doc_id, seed=self.seed, dpi=self.dpi)
         self.scene.language_profile = recipe.language_profile
-        self.scene.metadata = recipe.metadata
+        self.scene.metadata = {**recipe.metadata, "layout_style": asdict(self.style)}
         self._new_page()
         self._add_title(recipe.title, recipe.metadata)
         self._add_raster_overview(recipe)
@@ -178,6 +214,7 @@ class FlowLayoutPlanner:
     def _add_page_furniture(self, page_index: int) -> None:
         assert self.scene is not None
         page_number = page_index + 1
+        footer_text = "Synthetic benchmark document"
         header_text = "Singapore, Malaysia, and Indonesia since 1900"
         self.scene.add_block(
             Block(
@@ -202,8 +239,8 @@ class FlowLayoutPlanner:
                 type="footer",
                 page_index=page_index,
                 reading_order=100000 + page_index,
-                bbox_pt=[self.style.margin_left, 38, self.page_width - self.style.margin_right, 52],
-                text="Synthetic benchmark document",
+                bbox_pt=self._footer_bbox(footer_text),
+                text=footer_text,
                 include_in_markdown=False,
                 metadata={"role": "repeated_footer"},
             )
@@ -214,12 +251,25 @@ class FlowLayoutPlanner:
                 type="page_number",
                 page_index=page_index,
                 reading_order=100100 + page_index,
-                bbox_pt=[self.page_width - self.style.margin_right - 40, 38, self.page_width - self.style.margin_right, 52],
+                bbox_pt=self._page_number_bbox(),
                 text=f"Page {page_number}",
                 include_in_markdown=False,
                 metadata={"role": "page_number"},
             )
         )
+
+    def _footer_bbox(self, text: str) -> list[float]:
+        """Tight to the text, on the side opposite a left-aligned page number."""
+        width = pdfmetrics.stringWidth(text, font_for_text(text), 8)
+        x0 = self.style.margin_left
+        if self.style.page_number_align == "left":
+            x0 = self.page_width - self.style.margin_right - width
+        return [x0, 38, x0 + width, 52]
+
+    def _page_number_bbox(self) -> list[float]:
+        left, right = self.style.margin_left, self.page_width - self.style.margin_right
+        x0 = {"left": left, "center": (left + right) / 2 - 20, "right": right - 40}[self.style.page_number_align]
+        return [x0, 38, x0 + 40, 52]
 
     def _add_title(self, title: str, metadata: dict) -> None:
         height = self._text_height(title, self.style.title_font_size, self.content_width, line_height=22, bold=True)
@@ -520,7 +570,7 @@ class FlowLayoutPlanner:
         return len(self._wrap_text(text, font_size, width, bold)) * line_height
 
     def _wrap_text(self, text: str, font_size: int, width: float, bold: bool = False) -> list[str]:
-        font_name = font_for_text(text, bold=bold)
+        font_name = font_for_text(text, bold=bold, family=self.style.font_family)
         lines: list[str] = []
         for paragraph in text.splitlines() or [""]:
             tokens = self._wrap_tokens(paragraph)
@@ -576,7 +626,12 @@ class FlowLayoutPlanner:
         typography = self._typography(block.type)
         if typography is not None:
             # The renderer draws with exactly the metrics used to size the box.
-            block.metadata = {**block.metadata, "font_size": typography[0], "line_height": typography[1]}
+            block.metadata = {
+                **block.metadata,
+                "font_size": typography[0],
+                "line_height": typography[1],
+                "font_family": self.style.font_family,
+            }
         self.scene.add_block(block)
 
     def _typography(self, block_type: str) -> tuple[int, float] | None:
@@ -630,7 +685,7 @@ class FlowLayoutPlanner:
 def build_scene_from_recipe(
     recipe: DocumentRecipe, seed: int = 123, dpi: int = 144, variant: str = "standard"
 ) -> SceneGraph:
-    return FlowLayoutPlanner(seed=seed, dpi=dpi, style=style_for_variant(variant)).build_scene(recipe)
+    return FlowLayoutPlanner(seed=seed, dpi=dpi, style=style_for_variant(variant, seed)).build_scene(recipe)
 
 
 def build_scene_from_recipe_path(path: Path, seed: int = 123, dpi: int = 144, variant: str = "standard") -> SceneGraph:
