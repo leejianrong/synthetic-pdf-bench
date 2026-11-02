@@ -35,16 +35,12 @@ class ReportLabRenderer:
             self._draw_table(canvas, block)
         elif isinstance(block, FigureBlock):
             self._draw_figure(canvas, block)
-        elif block.type == "title":
-            self._draw_text(canvas, block, font_size=20, bold=True)
-        elif block.type == "heading":
-            self._draw_text(canvas, block, font_size=14, bold=True)
-        elif block.type in {"footnote", "reference", "caption"} or block.type in {"footer", "page_number", "header"}:
-            self._draw_text(canvas, block, font_size=8)
         else:
-            self._draw_text(canvas, block, font_size=10)
+            self._draw_text(canvas, block, bold=block.type in {"title", "heading"})
 
-    def _draw_text(self, canvas: Canvas, block: Block, font_size: int, bold: bool = False) -> None:
+    def _draw_text(self, canvas: Canvas, block: Block, bold: bool = False) -> None:
+        font_size = block.metadata.get("font_size", 8)  # furniture (header/footer/page number) has no entry
+        line_height = block.metadata.get("line_height", font_size * 1.25)
         x0, y0, x1, y1 = block.bbox_pt
         canvas.setFillColor(colors.black)
         text = block.markdown if block.type == "list" and block.markdown else block.text or block.markdown
@@ -56,7 +52,7 @@ class ReportLabRenderer:
             if y < y0:
                 break
             canvas.drawString(x0, y, line)
-            y -= font_size * 1.25
+            y -= line_height
 
     def _draw_table(self, canvas: Canvas, block: TableBlock) -> None:
         canvas.setStrokeColor(colors.black)

@@ -222,7 +222,7 @@ class FlowLayoutPlanner:
         )
 
     def _add_title(self, title: str, metadata: dict) -> None:
-        height = self._text_height(title, self.style.title_font_size, self.content_width, line_height=22)
+        height = self._text_height(title, self.style.title_font_size, self.content_width, line_height=22, bold=True)
         self._ensure_space(height + self.style.section_spacing)
         bbox = self._take_box(height)
         self._add_block(
@@ -267,7 +267,7 @@ class FlowLayoutPlanner:
         figure.caption_block_id = caption.block_id
 
     def _add_heading(self, heading: str, metadata: dict) -> None:
-        height = self._text_height(heading, self.style.heading_font_size, self.content_width, line_height=16)
+        height = self._text_height(heading, self.style.heading_font_size, self.content_width, line_height=16, bold=True)
         self._ensure_space(height + self.style.section_spacing)
         self.cursor_y -= self.style.section_spacing
         bbox = self._take_box(height)
@@ -455,6 +455,7 @@ class FlowLayoutPlanner:
         )
 
     def _add_caption(self, text: str, height: float, metadata: dict) -> Block:
+        height = max(height, self._text_height(text, self.style.caption_font_size, self.content_width, self.style.body_line_height))
         self._ensure_space(height + self.style.block_spacing)
         bbox = self._take_box(height)
         caption = Block(
@@ -515,11 +516,11 @@ class FlowLayoutPlanner:
     def _cell_metadata(self, table_id: str, span: dict) -> dict:
         return {"table_id": table_id, **span}
 
-    def _text_height(self, text: str, font_size: int, width: float, line_height: float) -> float:
-        return len(self._wrap_text(text, font_size, width)) * line_height
+    def _text_height(self, text: str, font_size: int, width: float, line_height: float, bold: bool = False) -> float:
+        return len(self._wrap_text(text, font_size, width, bold)) * line_height
 
-    def _wrap_text(self, text: str, font_size: int, width: float) -> list[str]:
-        font_name = font_for_text(text)
+    def _wrap_text(self, text: str, font_size: int, width: float, bold: bool = False) -> list[str]:
+        font_name = font_for_text(text, bold=bold)
         lines: list[str] = []
         for paragraph in text.splitlines() or [""]:
             tokens = self._wrap_tokens(paragraph)
@@ -572,7 +573,23 @@ class FlowLayoutPlanner:
 
     def _add_block(self, block: Block | TableBlock | FigureBlock) -> None:
         assert self.scene is not None
+        typography = self._typography(block.type)
+        if typography is not None:
+            # The renderer draws with exactly the metrics used to size the box.
+            block.metadata = {**block.metadata, "font_size": typography[0], "line_height": typography[1]}
         self.scene.add_block(block)
+
+    def _typography(self, block_type: str) -> tuple[int, float] | None:
+        style = self.style
+        return {
+            "title": (style.title_font_size, 22),
+            "heading": (style.heading_font_size, 16),
+            "paragraph": (style.body_font_size, style.body_line_height),
+            "list": (style.body_font_size, style.body_line_height),
+            "caption": (style.caption_font_size, style.body_line_height),
+            "footnote": (style.caption_font_size, style.body_line_height),
+            "reference": (style.caption_font_size, style.body_line_height),
+        }.get(block_type)
 
     @property
     def _page_index(self) -> int:
