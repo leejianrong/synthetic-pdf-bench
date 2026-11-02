@@ -152,6 +152,14 @@ uv run synthetic-pdf-bench dummy-parse \
   --prediction output/synthetic_000001/dummy_prediction
 ```
 
+## Layout-detection export
+
+```bash
+uv run synthetic-pdf-bench export-coco output/small_dataset   # writes output/small_dataset/coco.json
+```
+
+Boxes use DocLayNet-style classes, with a per-page `reading_order` on each annotation.
+
 ## Quality controls
 
 Generation runs quality validation before writing the final manifest. The checks verify:

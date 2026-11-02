@@ -9,6 +9,7 @@ from synthetic_pdf_bench.evaluation.evaluator import (
     prediction_from_truth,
     write_evaluation_report,
 )
+from synthetic_pdf_bench.export.coco import write_coco
 from synthetic_pdf_bench.generators.recipes import (
     default_recipe_path,
     recipe_variant_names,
@@ -148,6 +149,10 @@ def build_parser() -> argparse.ArgumentParser:
     dummy_parser.add_argument("--truth", type=Path, required=True)
     dummy_parser.add_argument("--prediction", type=Path, required=True)
 
+    coco_parser = subparsers.add_parser("export-coco", help="Export layout annotations in COCO format.")
+    coco_parser.add_argument("root", type=Path, help="Document or dataset directory.")
+    coco_parser.add_argument("--output", type=Path, help="Defaults to <root>/coco.json.")
+
     shape_parser = subparsers.add_parser("prediction-shape", help="Print expected parser output shape.")
     shape_parser.add_argument("--output", type=Path)
 
@@ -185,6 +190,9 @@ def main() -> None:
         return
     if args.command == "dummy-parse":
         prediction_from_truth(args.truth, args.prediction)
+        return
+    if args.command == "export-coco":
+        print(write_coco(args.root, args.output))
         return
     if args.command == "prediction-shape":
         shape = expected_prediction_shape()
