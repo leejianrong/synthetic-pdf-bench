@@ -47,6 +47,8 @@
 
 ### Dataset and evaluation
 
+- COCO layout export (`export-coco`) with DocLayNet-style classes and reading order
+
 - Single-document generation
 - Batch dataset generation with dataset manifest
 - Recipe/layout variants
@@ -99,6 +101,8 @@ data/recipes/research/sea_historical_report_v1/
 - No parser-side aggregation report for multi-document evaluation runs
 
 ## Recommended Next Steps
+
+See [roadmap.md](roadmap.md) for the current plan (training-data focus, Office formats). The list below is the older backlog.
 
 ### Highest value
 
