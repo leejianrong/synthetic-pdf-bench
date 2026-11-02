@@ -64,15 +64,14 @@ class ReportLabRenderer:
                 canvas.rect(x0, y0, x1 - x0, y1 - y0, stroke=0, fill=1)
             canvas.setFillColor(colors.black)
             canvas.rect(x0, y0, x1 - x0, y1 - y0, stroke=1, fill=0)
-            font_name = font_for_text(cell.text, bold=cell.is_header)
-            canvas.setFont(font_name, 7)
-            lines = self._wrap_text(canvas, cell.text, font_name, 7, x1 - x0 - 8)
-            y = y1 - 10
-            for line in lines[:2]:
-                if y <= y0 + 3:
-                    break
-                canvas.drawString(x0 + 4, y, line)
-                y -= 8
+            font_name = font_for_text(cell.text, bold=cell.is_header, family=block.metadata["font_family"])
+            font_size, line_height = block.metadata["font_size"], block.metadata["line_height"]
+            canvas.setFont(font_name, font_size)
+            pad_x, pad_y = block.metadata["cell_padding"]
+            y = y1 - pad_y - font_size
+            for line in cell.metadata["lines"]:
+                canvas.drawString(x0 + pad_x, y, line)
+                y -= line_height
 
     def _draw_figure(self, canvas: Canvas, block: FigureBlock) -> None:
         x0, y0, x1, y1 = block.bbox_pt

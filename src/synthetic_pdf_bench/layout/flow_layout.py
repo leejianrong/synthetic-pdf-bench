@@ -26,6 +26,9 @@ from synthetic_pdf_bench.render.fonts import (
 )
 from synthetic_pdf_bench.schema.blocks import Block, FigureBlock, TableBlock, TableCell
 
+_CELL_PAD_X = 4  # table cell padding in points, recorded in table metadata for the renderer
+_CELL_PAD_Y = 3
+
 
 @dataclass(frozen=True)
 class LayoutStyle:
@@ -40,6 +43,7 @@ class LayoutStyle:
     body_font_size: int = 9
     caption_font_size: int = 8
     table_font_size: int = 7
+    table_line_height: float = 8
     body_line_height: float = 12
     block_spacing: float = 10
     section_spacing: float = 12
@@ -73,7 +77,7 @@ def random_style(seed: int) -> LayoutStyle:
         body_line_height=round(body * rng.uniform(1.2, 1.45), 1),
         block_spacing=rng.randint(6, 14),
         section_spacing=rng.randint(8, 18),
-        table_row_height=rng.randint(19, 24),  # cells wrap to two lines, so no shorter than the default
+        table_row_height=rng.randint(15, 24),
         columns=rng.choice([1, 1, 2]),
         force_section_page_breaks=rng.random() < 0.25,
         page_size=rng.choice([letter, A4]),
@@ -378,21 +382,36 @@ class FlowLayoutPlanner:
     def _add_table(self, recipe: TableRecipe) -> None:
         if recipe.caption and recipe.caption_position == "before":
             self._add_caption(recipe.caption, self.style.table_caption_height, {"caption_for": recipe.table_id, "caption_type": "table"})
-        header = recipe.matrix[0]
-        body_rows = recipe.matrix[1:]
+        col_widths = self._column_widths(recipe.matrix)
+        wrapped = [self._wrap_row(row, col_widths, bold=i == 0) for i, row in enumerate(recipe.matrix)]
+        heights = [self._row_height(lines) for lines in wrapped]
+        first_body = 1
         segment_index = 1
-        while body_rows:
+        while first_body < len(recipe.matrix):
             available_height = max(0, self.cursor_y - self.content_bottom)
-            available_rows = int(available_height // self.style.table_row_height)
-            if available_rows < self.style.min_table_rows_per_segment:
+            fitted, used = 0, heights[0]
+            for height in heights[first_body:]:
+                if used + height > available_height:
+                    break
+                fitted, used = fitted + 1, used + height
+            if fitted < self.style.min_table_rows_per_segment - 1:
                 self._advance_region()
                 continue
-            max_body_rows = max(1, available_rows - 1)
-            segment_rows = body_rows[:max_body_rows]
-            body_rows = body_rows[max_body_rows:]
-            matrix = [header] + segment_rows
-            table_id = recipe.table_id if segment_index == 1 and not body_rows else f"{recipe.table_id}_part_{segment_index:02d}"
-            self._add_table_segment(recipe, table_id, matrix, segment_index, body_rows_remaining=len(body_rows))
+            rows = [0, *range(first_body, first_body + fitted)]
+            first_body += fitted
+            body_rows_remaining = len(recipe.matrix) - first_body
+            matrix = [recipe.matrix[i] for i in rows]
+            table_id = recipe.table_id if segment_index == 1 and not body_rows_remaining else f"{recipe.table_id}_part_{segment_index:02d}"
+            self._add_table_segment(
+                recipe,
+                table_id,
+                matrix,
+                segment_index,
+                body_rows_remaining,
+                [wrapped[i] for i in rows],
+                [heights[i] for i in rows],
+                col_widths,
+            )
             segment_index += 1
         if recipe.caption and recipe.caption_position == "after":
             self._add_caption(recipe.caption, self.style.table_caption_height, {"caption_for": recipe.table_id, "caption_type": "table"})
@@ -404,11 +423,16 @@ class FlowLayoutPlanner:
         matrix: list[list[str]],
         segment_index: int,
         body_rows_remaining: int,
+        wrapped: list[list[list[str]]],
+        row_heights: list[float],
+        col_widths: list[float],
     ) -> None:
-        height = len(matrix) * self.style.table_row_height
+        height = sum(row_heights)
         self._ensure_space(height + self.style.block_spacing)
         bbox = self._take_box(height)
-        cells = self._table_cells(table_id, matrix, self._page_index, bbox, recipe.merged_cells)
+        cells = self._table_cells(
+            table_id, matrix, self._page_index, bbox, row_heights, col_widths, wrapped, recipe.merged_cells
+        )
         table = TableBlock(
             block_id=self._next_block_id(),
             page_index=self._page_index,
@@ -427,6 +451,10 @@ class FlowLayoutPlanner:
                 "parent_table_id": recipe.table_id,
                 "table_segment_index": segment_index,
                 "body_rows_remaining": body_rows_remaining,
+                "font_size": self.style.table_font_size,
+                "line_height": self.style.table_line_height,
+                "font_family": self.style.font_family,
+                "cell_padding": [_CELL_PAD_X, _CELL_PAD_Y],
             },
         )
         self._add_block(table)
@@ -521,21 +549,55 @@ class FlowLayoutPlanner:
         self._add_block(caption)
         return caption
 
-    def _table_cells(
-        self, table_id: str, matrix: list[list[str]], page_index: int, bbox: list[float], merged_cells: list[dict] | None = None
-    ) -> list[TableCell]:
-        x0, y0, x1, y1 = bbox
-        row_count = len(matrix)
-        col_count = len(matrix[0])
-        row_h = (y1 - y0) / row_count
-        col_w = (x1 - x0) / col_count
-        cells: list[TableCell] = []
+    def _column_widths(self, matrix: list[list[str]]) -> list[float]:
+        """Widths summing to the content width: each column at least as wide as its longest word when possible."""
+        size, pad = self.style.table_font_size, 2 * _CELL_PAD_X
+        longest, natural = [0.0] * len(matrix[0]), [0.0] * len(matrix[0])
         for row_idx, row in enumerate(matrix):
+            for col, text in enumerate(row):
+                font = font_for_text(text, bold=row_idx == 0, family=self.style.font_family)
+                longest[col] = max(longest[col], *(pdfmetrics.stringWidth(t.strip(), font, size) for t in self._wrap_tokens(text)))
+                natural[col] = max(natural[col], pdfmetrics.stringWidth(text, font, size))
+        floor = [w + pad for w in longest]
+        target = [max(n + pad, f) for n, f in zip(natural, floor, strict=True)]
+        total = self.content_width
+        if sum(target) <= total:
+            widths = [w * total / sum(target) for w in target]
+        elif sum(floor) >= total:
+            widths = [w * total / sum(floor) for w in floor]  # narrower than the longest words; cells break words
+        else:
+            spare = (total - sum(floor)) / (sum(target) - sum(floor))
+            widths = [f + (t - f) * spare for f, t in zip(floor, target, strict=True)]
+        widths[-1] = total - sum(widths[:-1])  # exact sum, so cells stay inside the table bbox
+        return widths
+
+    def _wrap_row(self, row: list[str], col_widths: list[float], bold: bool) -> list[list[str]]:
+        size = self.style.table_font_size
+        return [self._wrap_text(text, size, w - 2 * _CELL_PAD_X, bold, break_words=True) for text, w in zip(row, col_widths, strict=True)]
+
+    def _row_height(self, wrapped_row: list[list[str]]) -> float:
+        lines = max(len(cell_lines) for cell_lines in wrapped_row)
+        style = self.style
+        return max(style.table_row_height, 2 * _CELL_PAD_Y + style.table_font_size + (lines - 1) * style.table_line_height)
+
+    def _table_cells(
+        self,
+        table_id: str,
+        matrix: list[list[str]],
+        page_index: int,
+        bbox: list[float],
+        row_heights: list[float],
+        col_widths: list[float],
+        wrapped: list[list[list[str]]],
+        merged_cells: list[dict] | None = None,
+    ) -> list[TableCell]:
+        x0, y1 = bbox[0], bbox[3]
+        col_x = [x0 + sum(col_widths[:i]) for i in range(len(col_widths))]
+        cells: list[TableCell] = []
+        cell_y1 = y1
+        for row_idx, row in enumerate(matrix):
+            cell_y0 = cell_y1 - row_heights[row_idx]
             for col_idx, text in enumerate(row):
-                cell_x0 = x0 + col_idx * col_w
-                cell_x1 = cell_x0 + col_w
-                cell_y1 = y1 - row_idx * row_h
-                cell_y0 = cell_y1 - row_h
                 span = self._span_for_cell(row_idx, col_idx, merged_cells or [])
                 cells.append(
                     TableCell(
@@ -545,11 +607,12 @@ class FlowLayoutPlanner:
                         rowspan=span["rowspan"],
                         colspan=span["colspan"],
                         text=text,
-                        bbox_pt=[cell_x0, cell_y0, cell_x1, cell_y1],
+                        bbox_pt=[col_x[col_idx], cell_y0, col_x[col_idx] + col_widths[col_idx], cell_y1],
                         is_header=row_idx == 0,
-                        metadata=self._cell_metadata(table_id, span),
+                        metadata={**self._cell_metadata(table_id, span), "lines": wrapped[row_idx][col_idx]},
                     )
                 )
+            cell_y1 = cell_y0
         return cells
 
     def _span_for_cell(self, row_idx: int, col_idx: int, merged_cells: list[dict]) -> dict:
@@ -569,7 +632,7 @@ class FlowLayoutPlanner:
     def _text_height(self, text: str, font_size: int, width: float, line_height: float, bold: bool = False) -> float:
         return len(self._wrap_text(text, font_size, width, bold)) * line_height
 
-    def _wrap_text(self, text: str, font_size: int, width: float, bold: bool = False) -> list[str]:
+    def _wrap_text(self, text: str, font_size: int, width: float, bold: bool = False, break_words: bool = False) -> list[str]:
         font_name = font_for_text(text, bold=bold, family=self.style.font_family)
         lines: list[str] = []
         for paragraph in text.splitlines() or [""]:
@@ -583,6 +646,13 @@ class FlowLayoutPlanner:
                 if current:
                     lines.append(current.strip())
                 current = token.lstrip()
+                while break_words and len(current) > 1 and pdfmetrics.stringWidth(current, font_name, font_size) > width:
+                    cut = next(
+                        (k for k in range(len(current) - 1, 0, -1) if pdfmetrics.stringWidth(current[:k], font_name, font_size) <= width),
+                        1,
+                    )
+                    lines.append(current[:cut])
+                    current = current[cut:]
             if current:
                 lines.append(current.strip())
             elif not tokens:
