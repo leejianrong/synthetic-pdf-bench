@@ -152,6 +152,17 @@ uv run synthetic-pdf-bench dummy-parse \
   --prediction output/synthetic_000001/dummy_prediction
 ```
 
+## Parallel generation and leakage-safe splits
+
+```bash
+uv run synthetic-pdf-bench --output-root output/corpus --count 200 --workers 8 \
+  --variants random standard --recipe data/recipes/canonical/a.json --recipe data/recipes/canonical/b.json \
+  --splits train=0.8 val=0.1 test=0.1 --split-by recipe
+uv run synthetic-pdf-bench export-coco output/corpus     # coco_train.json, coco_val.json, coco_test.json
+```
+
+`--splits` writes `splits.json` and tags each document in the manifest. Whole groups go to one split, chosen by `--split-by`: `recipe` (same text source, the default), `template` (same page layout), or `document` (can leak text across splits). With only a few groups the realized proportions are coarse (4 recipes cannot make a 90/5/5 split); if there are fewer groups than splits, generation fails instead of leaking. Output is identical for any `--workers` value.
+
 ## Scan degradation
 
 ```bash
