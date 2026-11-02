@@ -44,7 +44,7 @@ class ReportLabRenderer:
         x0, y0, x1, y1 = block.bbox_pt
         canvas.setFillColor(colors.black)
         text = block.markdown if block.type == "list" and block.markdown else block.text or block.markdown
-        font_name = font_for_text(text, bold=bold)
+        font_name = font_for_text(text, bold=bold, family=block.metadata.get("font_family", "Helvetica"))
         canvas.setFont(font_name, font_size)
         lines = self._wrap_text(canvas, text, font_name, font_size, x1 - x0)
         y = y1 - font_size

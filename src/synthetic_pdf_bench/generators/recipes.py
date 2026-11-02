@@ -113,11 +113,8 @@ class DocumentRecipe(BaseModel):
     sections: list[SectionRecipe]
 
 
-RecipeVariant = Literal["standard", "compact", "spacious", "text_heavy", "figure_heavy", "table_heavy", "two_column"]
-
-
 def recipe_variant_names() -> list[str]:
-    return ["standard", "compact", "spacious", "text_heavy", "figure_heavy", "table_heavy", "two_column"]
+    return ["standard", "compact", "spacious", "text_heavy", "figure_heavy", "table_heavy", "two_column", "random"]
 
 
 def apply_recipe_variant(recipe: DocumentRecipe, variant: str, seed: int) -> DocumentRecipe:
@@ -131,7 +128,7 @@ def apply_recipe_variant(recipe: DocumentRecipe, variant: str, seed: int) -> Doc
         "recipe_variant": variant,
         "variant_seed": seed,
     }
-    if variant in {"standard", "spacious", "two_column"}:
+    if variant in {"standard", "spacious", "two_column", "random"}:
         return copied
 
     for section_index, section in enumerate(copied.sections):

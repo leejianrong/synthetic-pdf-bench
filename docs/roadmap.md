@@ -19,7 +19,10 @@ pipelines. Content comes from curated recipes; LLM-filled content is optional an
 
 1. **Training-data core (PDF path)**
    - [x] COCO export with DocLayNet classes and per-page reading order (`export-coco`)
-   - [ ] Template/style randomization (fonts, margins, columns, header/footer styles) beyond the report look
+   - [x] Template randomization: `--variant random` samples page size, margins, type sizes, font family, columns and page-number position per seed
+   - [ ] Still to add: table styles, header/footer text per recipe (the header string is hardcoded to the SEA report), more font families (needs bundled font files)
+- [ ] Table cell text is clipped in rendered tables (cell bboxes vs drawn text); investigate and add a fit test
+- [ ] Timeline figure labels overlap
    - [ ] Degradation profiles (scan noise, skew, blur, rasterized pages) with transformed truth
    - [ ] Parallel generation; train/val/test splits grouped by recipe and template to avoid leakage
    - [ ] YOLO and HF dataset/parquet exporters; dataset card and versioning

@@ -5,8 +5,12 @@ from functools import lru_cache
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.cidfonts import UnicodeCIDFont
 
-LATIN_FONT = "Helvetica"
-LATIN_BOLD_FONT = "Helvetica-Bold"
+# family -> (regular, bold); all are ReportLab built-ins, so no font files are needed.
+FONT_FAMILIES = {
+    "Helvetica": ("Helvetica", "Helvetica-Bold"),
+    "Times": ("Times-Roman", "Times-Bold"),
+    "Courier": ("Courier", "Courier-Bold"),
+}
 CJK_FONT = "STSong-Light"
 
 
@@ -24,8 +28,8 @@ def register_fonts() -> None:
     pdfmetrics.registerFont(UnicodeCIDFont(CJK_FONT))
 
 
-def font_for_text(text: str, bold: bool = False) -> str:
+def font_for_text(text: str, bold: bool = False, family: str = "Helvetica") -> str:
     register_fonts()
     if contains_cjk(text):
         return CJK_FONT
-    return LATIN_BOLD_FONT if bold else LATIN_FONT
+    return FONT_FAMILIES[family][bold]
