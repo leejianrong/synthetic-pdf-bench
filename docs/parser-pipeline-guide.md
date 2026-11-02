@@ -21,6 +21,7 @@ Each generated document directory looks like this:
 ```text
 synthetic_000001/
   document.pdf
+  document_clean.pdf        # only with --degrade
   truth/
     document.json
     document.md
@@ -38,6 +39,9 @@ synthetic_000001/
 - `document.pdf`
   The input file for your parsing pipeline.
 
+- `document_clean.pdf`
+  Only present with `--degrade`: the digital original. In that case `document.pdf` is an image-only scan (no text layer), so your pipeline needs OCR.
+
 - `truth/document.md`
   Canonical Markdown for the document.
 
@@ -48,7 +52,7 @@ synthetic_000001/
   Per-document summary including seed, recipe, variant, counts, and quality checks.
 
 - `truth/pages/*.png`
-  Rasterized page images from the generated PDF.
+  Rasterized page images from the generated PDF. With `--degrade` these are the degraded images, and `bbox_px` follows them. `bbox_pt` and `bbox_norm` always describe the digital PDF.
 
 - `truth/figures/*.png`
   Ground-truth figure crops derived from the rendered PDF pages.

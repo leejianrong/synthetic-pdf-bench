@@ -1,3 +1,5 @@
+> Original Phase 1 specification, kept for reference. The product direction (training-data generation, Office formats) is in [roadmap.md](roadmap.md) and what exists today is in [implementation-status.md](implementation-status.md).
+
 # Synthetic PDF Benchmark Generator — Project Specification
 
 ## 1. Project Goal
