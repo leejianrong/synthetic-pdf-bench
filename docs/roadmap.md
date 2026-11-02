@@ -19,14 +19,14 @@ pipelines. Content comes from curated recipes; LLM-filled content is optional an
 
 1. **Training-data core (PDF path)**
    - [x] COCO export with DocLayNet classes and per-page reading order (`export-coco`)
-   - [x] Template randomization: `--variant random` samples page size, margins, type sizes, font family, columns and page-number position per seed
-   - [ ] Still to add: table styles, header/footer text per recipe (the header string is hardcoded to the SEA report), more font families (needs bundled font files)
-- [x] Table cell text clipping fixed: content-sized columns, row heights from wrapped cell lines, lines recorded in `cell.metadata.lines`
-- [ ] Timeline figure labels overlap
+   - [x] Template randomization (`--variant random`): page size, margins, type sizes, font family, columns, page-number position
+   - [x] Table cell text fits its cell (content-sized columns, row heights from wrapped lines)
    - [x] Degradation profiles (`--degrade light_scan|heavy_scan`): skew, shift, contrast, blur, noise, JPEG; image-only scan PDF; `bbox_px` transformed
-   - [ ] Still to add: perspective/page-curl, bleed-through, stamps/handwriting overlays, color-photo profile, rotated (90/180) pages
-   - [x] Parallel generation (`--workers`) and train/val/test splits grouped by recipe/template/document (`--splits`, `--split-by`), per-split COCO files
+   - [x] Parallel generation (`--workers`) and leakage-safe splits (`--splits`, `--split-by`), per-split COCO files
    - [ ] YOLO and HF dataset/parquet exporters; dataset card and versioning
+   - [ ] More template dimensions: table styles, header/footer text per recipe (currently hardcoded to the SEA report), more font families (needs bundled font files)
+   - [ ] More degradation: perspective/page curl, bleed-through, stamps, color-photo profile, rotated pages
+   - [ ] Fix overlapping timeline figure labels
 2. **Slides (`.pptx`):** python-pptx generation with exact shape geometry, PDF via LibreOffice, Docker image.
 3. **Word and spreadsheets (`.docx`, `.xlsx`):** python-docx/openpyxl, bbox recovery with provenance.
 4. **Evaluation and RAG:** benchmark runner over a dataset; retrieval Q&A ground truth derived from the scene graph.
