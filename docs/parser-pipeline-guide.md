@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This guide is for users and developers building PDF parsing pipelines against `synthetic_pdf_bench`.
+This guide is for users and developers building PDF parsing pipelines against `synthetic-pdf-bench`.
 
 The benchmark gives you:
 

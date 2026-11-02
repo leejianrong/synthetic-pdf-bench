@@ -1,14 +1,18 @@
-# synthetic_pdf_bench
+# synthetic-pdf-bench
 
-`synthetic_pdf_bench` generates synthetic PDFs with deterministic ground truth for PDF-to-Markdown evaluation.
+Generate synthetic PDFs whose ground truth is exact, to benchmark PDF-to-Markdown and structured extraction pipelines.
 
-Phase 1 uses a scene-graph-first pipeline:
+The truth (text, reading order, coordinates, tables, figures, Markdown spans) comes straight from the scene graph the PDF is rendered from. It is never recovered by parsing the output PDF, so it cannot be wrong.
 
-```text
-semantic content -> planned layout boxes -> scene graph -> PDF rendering -> JSON/Markdown export -> page rasterization -> figure crops
+```mermaid
+flowchart LR
+  A[recipe + seed] --> B[layout boxes] --> C[scene graph]
+  C --> D[PDF]
+  C --> E[truth JSON + Markdown]
+  D --> F[page PNGs + figure crops]
+  P[your parser] --> G[evaluate vs truth]
+  E --> G
 ```
-
-Ground truth is never recovered by parsing the generated PDF. The scene graph is the canonical source for block text, reading order, coordinates, tables, figures, and Markdown spans.
 
 ## Quick start
 
@@ -163,3 +167,11 @@ Generation runs quality validation before writing the final manifest. The checks
 ## Fonts
 
 The ReportLab renderer automatically uses the built-in `STSong-Light` CID font for text containing Chinese characters. Latin-only text uses Helvetica by default. Future phases can add configurable external fonts such as Noto Sans CJK for higher visual fidelity.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+[Apache 2.0](LICENSE)

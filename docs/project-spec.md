@@ -478,7 +478,7 @@ model training export
 ## 10. Recommended Python Package Structure
 
 ```text
-synthetic_pdf_bench/
+synthetic-pdf-bench/
   pyproject.toml
   README.md
   src/

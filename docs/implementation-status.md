@@ -2,7 +2,7 @@
 
 ## Overview
 
-`synthetic_pdf_bench` is a scene-graph-first synthetic PDF generator for benchmarking PDF-to-Markdown and structured document extraction pipelines. Ground truth is created before rendering and exported directly from the planned scene graph rather than recovered by parsing the generated PDF.
+`synthetic-pdf-bench` is a scene-graph-first synthetic PDF generator for benchmarking PDF-to-Markdown and structured document extraction pipelines. Ground truth is created before rendering and exported directly from the planned scene graph rather than recovered by parsing the generated PDF.
 
 ## What Is Implemented
 

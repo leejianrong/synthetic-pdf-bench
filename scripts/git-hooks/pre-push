@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Mirrors the CI jobs. Install: ln -sf ../../scripts/git-hooks/pre-push .git/hooks/pre-push
+# Bypass for a scoped exception: git push --no-verify
+set -euo pipefail
+uv run --with ruff ruff check src tests scripts
+uv run pytest -q
