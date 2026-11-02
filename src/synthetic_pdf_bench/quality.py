@@ -5,7 +5,6 @@ from statistics import mean
 
 from PIL import Image, ImageStat
 
-from synthetic_pdf_bench.schema.blocks import FigureBlock, TableBlock
 from synthetic_pdf_bench.schema.truth import DocumentTruth
 
 

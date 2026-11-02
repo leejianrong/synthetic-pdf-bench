@@ -15,7 +15,6 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
-
 REQUIRED_FILES = {
     "report_outline.json",
     "prose_blocks.json",

@@ -4,6 +4,8 @@ import json
 from pathlib import Path
 from statistics import mean
 
+from pydantic import ValidationError
+
 from synthetic_pdf_bench.evaluation.normalize_markdown import normalize_markdown
 from synthetic_pdf_bench.evaluation.prediction import PredictionDocument
 from synthetic_pdf_bench.evaluation.table_metrics import table_exact_match
@@ -56,7 +58,7 @@ def _load_truth(truth_dir: Path) -> DocumentTruth:
     raw = json.loads((truth_dir / "document.json").read_text(encoding="utf-8"))
     try:
         return DocumentTruth.model_validate(raw)
-    except Exception:
+    except ValidationError:
         return DocumentTruth.model_validate(_repair_legacy_truth_blocks(raw))
 
 

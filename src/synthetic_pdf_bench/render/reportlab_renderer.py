@@ -6,7 +6,10 @@ from reportlab.lib import colors
 from reportlab.lib.utils import ImageReader
 from reportlab.pdfgen.canvas import Canvas
 
-from synthetic_pdf_bench.generators.figures import make_matplotlib_figure, make_raster_figure
+from synthetic_pdf_bench.generators.figures import (
+    make_matplotlib_figure,
+    make_raster_figure,
+)
 from synthetic_pdf_bench.render.fonts import contains_cjk, font_for_text, register_fonts
 from synthetic_pdf_bench.schema.blocks import Block, FigureBlock, TableBlock
 from synthetic_pdf_bench.schema.truth import PageTruth
@@ -36,9 +39,7 @@ class ReportLabRenderer:
             self._draw_text(canvas, block, font_size=20, bold=True)
         elif block.type == "heading":
             self._draw_text(canvas, block, font_size=14, bold=True)
-        elif block.type in {"footnote", "reference", "caption"}:
-            self._draw_text(canvas, block, font_size=8)
-        elif block.type in {"footer", "page_number", "header"}:
+        elif block.type in {"footnote", "reference", "caption"} or block.type in {"footer", "page_number", "header"}:
             self._draw_text(canvas, block, font_size=8)
         else:
             self._draw_text(canvas, block, font_size=10)

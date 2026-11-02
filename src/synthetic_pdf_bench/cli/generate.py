@@ -4,11 +4,14 @@ import argparse
 import json
 from pathlib import Path
 
-from synthetic_pdf_bench.generators.recipes import default_recipe_path, recipe_variant_names
 from synthetic_pdf_bench.evaluation.evaluator import (
     expected_prediction_shape,
     prediction_from_truth,
     write_evaluation_report,
+)
+from synthetic_pdf_bench.generators.recipes import (
+    default_recipe_path,
+    recipe_variant_names,
 )
 from synthetic_pdf_bench.layout.flow_layout import build_scene_from_recipe_path
 from synthetic_pdf_bench.markdown.writer import write_markdown

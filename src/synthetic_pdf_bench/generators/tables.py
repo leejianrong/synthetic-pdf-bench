@@ -4,7 +4,6 @@ from html import escape
 
 from synthetic_pdf_bench.schema.blocks import TableBlock, TableCell
 
-
 TableVariant = str
 
 

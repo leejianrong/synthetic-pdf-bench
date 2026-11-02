@@ -5,7 +5,10 @@ from PIL import Image
 from synthetic_pdf_bench.cli.generate import generate
 from synthetic_pdf_bench.generators.figures import make_matplotlib_figure
 from synthetic_pdf_bench.generators.recipes import load_recipe
-from synthetic_pdf_bench.generators.tables import make_table_variant_matrix, table_variant_names
+from synthetic_pdf_bench.generators.tables import (
+    make_table_variant_matrix,
+    table_variant_names,
+)
 from synthetic_pdf_bench.layout.flow_layout import build_scene_from_recipe
 from synthetic_pdf_bench.schema.blocks import FigureBlock, TableBlock
 

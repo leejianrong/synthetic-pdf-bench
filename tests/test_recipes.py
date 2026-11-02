@@ -1,6 +1,10 @@
 from pathlib import Path
 
-from synthetic_pdf_bench.generators.recipes import apply_recipe_variant, load_recipe, recipe_variant_names
+from synthetic_pdf_bench.generators.recipes import (
+    apply_recipe_variant,
+    load_recipe,
+    recipe_variant_names,
+)
 
 
 def test_load_sea_recipe() -> None:

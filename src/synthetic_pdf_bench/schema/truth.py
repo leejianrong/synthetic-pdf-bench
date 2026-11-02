@@ -45,7 +45,7 @@ class DocumentTruth(BaseModel):
     metadata: dict[str, Any] = Field(default_factory=dict)
 
     @model_validator(mode="after")
-    def validate_references(self) -> "DocumentTruth":
+    def validate_references(self) -> DocumentTruth:
         block_ids = {block.block_id for block in self.blocks}
         table_block_ids = {block.block_id for block in self.blocks if isinstance(block, TableBlock)}
         figure_block_ids = {block.block_id for block in self.blocks if isinstance(block, FigureBlock)}

@@ -1,7 +1,10 @@
 from pathlib import Path
 
 from synthetic_pdf_bench.cli.generate import generate
-from synthetic_pdf_bench.evaluation.evaluator import evaluate_prediction, prediction_from_truth
+from synthetic_pdf_bench.evaluation.evaluator import (
+    evaluate_prediction,
+    prediction_from_truth,
+)
 
 
 def test_dummy_prediction_scores_perfectly(tmp_path: Path) -> None:

@@ -5,8 +5,8 @@ from reportlab.lib.pagesizes import letter
 from synthetic_pdf_bench.generators.figures import make_raster_figure
 from synthetic_pdf_bench.generators.tables import make_simple_table
 from synthetic_pdf_bench.generators.text_content import sample_paragraph
-from synthetic_pdf_bench.schema.blocks import Block, FigureBlock, TableBlock
 from synthetic_pdf_bench.layout.scene import SceneGraph
+from synthetic_pdf_bench.schema.blocks import Block, FigureBlock
 
 
 def build_mvp_scene(seed: int = 123, dpi: int = 144) -> SceneGraph:

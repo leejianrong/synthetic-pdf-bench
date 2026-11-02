@@ -1,4 +1,10 @@
-from synthetic_pdf_bench.render.fonts import CJK_FONT, LATIN_BOLD_FONT, LATIN_FONT, contains_cjk, font_for_text
+from synthetic_pdf_bench.render.fonts import (
+    CJK_FONT,
+    LATIN_BOLD_FONT,
+    LATIN_FONT,
+    contains_cjk,
+    font_for_text,
+)
 
 
 def test_cjk_detection() -> None:

@@ -1,7 +1,8 @@
+from pydantic import ValidationError
+
 from synthetic_pdf_bench.layout.scene import SceneGraph
 from synthetic_pdf_bench.schema.blocks import Block, FigureBlock
 from synthetic_pdf_bench.schema.truth import DocumentTruth
-from pydantic import ValidationError
 
 
 def test_document_truth_serializes_round_trip() -> None:

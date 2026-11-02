@@ -1,7 +1,14 @@
 from pathlib import Path
 
-from synthetic_pdf_bench.generators.recipes import DocumentRecipe, apply_recipe_variant, load_recipe
-from synthetic_pdf_bench.layout.flow_layout import FlowLayoutPlanner, build_scene_from_recipe
+from synthetic_pdf_bench.generators.recipes import (
+    DocumentRecipe,
+    apply_recipe_variant,
+    load_recipe,
+)
+from synthetic_pdf_bench.layout.flow_layout import (
+    FlowLayoutPlanner,
+    build_scene_from_recipe,
+)
 from synthetic_pdf_bench.layout.scene import SceneGraph
 from synthetic_pdf_bench.schema.blocks import Block, FigureBlock, TableBlock
 
