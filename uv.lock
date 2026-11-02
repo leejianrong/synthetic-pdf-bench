@@ -686,6 +686,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "matplotlib" },
+    { name = "numpy" },
     { name = "pillow" },
     { name = "pydantic" },
     { name = "pymupdf" },
@@ -700,6 +701,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "matplotlib" },
+    { name = "numpy" },
     { name = "pillow" },
     { name = "pydantic" },
     { name = "pymupdf" },
