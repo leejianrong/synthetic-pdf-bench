@@ -152,6 +152,14 @@ uv run synthetic-pdf-bench dummy-parse \
   --prediction output/synthetic_000001/dummy_prediction
 ```
 
+## Scan degradation
+
+```bash
+uv run synthetic-pdf-bench --output output/scan_1 --seed 3 --degrade heavy_scan   # or light_scan
+```
+
+Page images get per-page skew, shift, contrast loss, blur, noise and JPEG artifacts. `document.pdf` becomes an image-only scan (no text layer, so OCR is needed) and the digital original is kept as `document_clean.pdf`. `bbox_px` in the truth and COCO export follow the degraded pages; `bbox_pt` and `bbox_norm` still describe the digital PDF, and figure crops stay clean. Boxes are axis-aligned around the skewed content, so they are a little looser than the text.
+
 ## Layout-detection export
 
 ```bash

@@ -16,6 +16,7 @@ class RenderedPage(BaseModel):
     width_px: int | None = None
     height_px: int | None = None
     dpi: int
+    degradation: dict[str, Any] | None = None
 
 
 class PageTruth(BaseModel):

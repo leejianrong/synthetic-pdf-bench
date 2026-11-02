@@ -23,7 +23,8 @@ pipelines. Content comes from curated recipes; LLM-filled content is optional an
    - [ ] Still to add: table styles, header/footer text per recipe (the header string is hardcoded to the SEA report), more font families (needs bundled font files)
 - [x] Table cell text clipping fixed: content-sized columns, row heights from wrapped cell lines, lines recorded in `cell.metadata.lines`
 - [ ] Timeline figure labels overlap
-   - [ ] Degradation profiles (scan noise, skew, blur, rasterized pages) with transformed truth
+   - [x] Degradation profiles (`--degrade light_scan|heavy_scan`): skew, shift, contrast, blur, noise, JPEG; image-only scan PDF; `bbox_px` transformed
+   - [ ] Still to add: perspective/page-curl, bleed-through, stamps/handwriting overlays, color-photo profile, rotated (90/180) pages
    - [ ] Parallel generation; train/val/test splits grouped by recipe and template to avoid leakage
    - [ ] YOLO and HF dataset/parquet exporters; dataset card and versioning
 2. **Slides (`.pptx`):** python-pptx generation with exact shape geometry, PDF via LibreOffice, Docker image.

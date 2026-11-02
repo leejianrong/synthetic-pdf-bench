@@ -4,6 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
+from synthetic_pdf_bench.degrade import PROFILES, degrade_pages, write_scan_pdf
 from synthetic_pdf_bench.evaluation.evaluator import (
     expected_prediction_shape,
     prediction_from_truth,
@@ -26,6 +27,7 @@ from synthetic_pdf_bench.schema.blocks import FigureBlock
 def _clear_generated_outputs(output: Path) -> None:
     files = [
         output / "document.pdf",
+        output / "document_clean.pdf",
         output / "truth" / "document.json",
         output / "truth" / "document.md",
     ]
@@ -37,7 +39,7 @@ def _clear_generated_outputs(output: Path) -> None:
             path.unlink()
 
 
-def _document_summary(output: Path, truth, recipe_path: Path, variant: str, quality: dict) -> dict:
+def _document_summary(output: Path, truth, recipe_path: Path, variant: str, quality: dict, degrade: str) -> dict:
     return {
         "doc_id": truth.doc_id,
         "output_dir": str(output),
@@ -46,6 +48,7 @@ def _document_summary(output: Path, truth, recipe_path: Path, variant: str, qual
         "truth_markdown_path": str(output / "truth" / "document.md"),
         "recipe_path": str(recipe_path),
         "recipe_variant": variant,
+        "degradation": degrade,
         "seed": truth.seed,
         "page_count": len(truth.pages),
         "block_count": len(truth.blocks),
@@ -63,6 +66,7 @@ def generate(
     dpi: int = 144,
     recipe_path: Path | None = None,
     variant: str = "standard",
+    degrade: str = "none",
 ) -> dict:
     output.mkdir(parents=True, exist_ok=True)
     _clear_generated_outputs(output)
@@ -87,13 +91,19 @@ def generate(
     figures = [block for block in scene.blocks_in_reading_order() if isinstance(block, FigureBlock)]
     crop_figures(figures, [path for path, _, _ in rendered_pages], figures_dir)
 
+    if degrade != "none":
+        page_paths = [path for path, _, _ in rendered_pages]
+        degrade_pages(scene, page_paths, degrade, seed)
+        pdf_path.replace(output / "document_clean.pdf")
+        write_scan_pdf(page_paths, scene.pages, pdf_path)
+
     markdown = write_markdown(scene.blocks_in_reading_order())
     truth_dir.mkdir(parents=True, exist_ok=True)
     (truth_dir / "document.md").write_text(markdown, encoding="utf-8")
     truth = scene.to_truth()
     quality = validate_generation(output, truth, markdown)
     (truth_dir / "document.json").write_text(truth.model_dump_json(indent=2), encoding="utf-8")
-    summary = _document_summary(output, truth, resolved_recipe_path, variant, quality)
+    summary = _document_summary(output, truth, resolved_recipe_path, variant, quality, degrade)
     (truth_dir / "manifest.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
     return summary
 
@@ -105,6 +115,7 @@ def generate_dataset(
     dpi: int = 144,
     recipe_paths: list[Path] | None = None,
     variants: list[str] | None = None,
+    degrade: str = "none",
 ) -> dict:
     if count < 1:
         raise ValueError("count must be at least 1")
@@ -117,7 +128,7 @@ def generate_dataset(
         recipe_path = recipes[index % len(recipes)]
         variant = selected_variants[index % len(selected_variants)]
         output = output_root / f"synthetic_{index + 1:06d}"
-        documents.append(generate(output, seed=seed, dpi=dpi, recipe_path=recipe_path, variant=variant))
+        documents.append(generate(output, seed=seed, dpi=dpi, recipe_path=recipe_path, variant=variant, degrade=degrade))
     manifest = {
         "dataset_id": output_root.name,
         "output_root": str(output_root),
@@ -126,6 +137,7 @@ def generate_dataset(
         "dpi": dpi,
         "recipe_paths": [str(path) for path in recipes],
         "variants": selected_variants,
+        "degradation": degrade,
         "summary_stats": manifest_summary_stats(documents),
         "documents": documents,
     }
@@ -175,6 +187,12 @@ def _add_generation_args(parser: argparse.ArgumentParser) -> None:
         help="Recipe/layout variant for single-document generation.",
     )
     parser.add_argument(
+        "--degrade",
+        choices=["none", *PROFILES],
+        default="none",
+        help="Scan degradation: page images are degraded, document.pdf becomes an image-only scan.",
+    )
+    parser.add_argument(
         "--variants",
         choices=recipe_variant_names(),
         nargs="+",
@@ -211,11 +229,12 @@ def main() -> None:
             dpi=args.dpi,
             recipe_paths=recipe_paths,
             variants=args.variants or [args.variant],
+            degrade=args.degrade,
         )
         return
     if args.output is None:
         raise SystemExit("--output is required unless --output-root is provided")
-    generate(args.output, seed=args.seed, dpi=args.dpi, recipe_path=recipe_paths[0], variant=args.variant)
+    generate(args.output, seed=args.seed, dpi=args.dpi, recipe_path=recipe_paths[0], variant=args.variant, degrade=args.degrade)
 
 
 if __name__ == "__main__":
