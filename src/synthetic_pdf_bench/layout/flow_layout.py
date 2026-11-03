@@ -13,6 +13,7 @@ from synthetic_pdf_bench.generators.recipes import (
     FigureRecipe,
     FootnoteRecipe,
     ListRecipe,
+    MergedCell,
     ReferenceRecipe,
     TableRecipe,
 )
@@ -29,6 +30,13 @@ from synthetic_pdf_bench.schema.blocks import Block, FigureBlock, TableBlock, Ta
 _CELL_PAD_X = 4  # table cell padding in points, recorded in table metadata for the renderer
 _CELL_PAD_Y = 3
 
+
+
+def _span_maps(spans: list[MergedCell]) -> tuple[dict[tuple[int, int], MergedCell], set[tuple[int, int]]]:
+    """Anchor position -> span, and the positions each span covers besides its anchor."""
+    anchors = {(m.row, m.col): m for m in spans}
+    covered = {(m.row + r, m.col + c) for m in spans for r in range(m.rowspan) for c in range(m.colspan)} - set(anchors)
+    return anchors, covered
 
 @dataclass(frozen=True)
 class LayoutStyle:
@@ -382,9 +390,10 @@ class FlowLayoutPlanner:
     def _add_table(self, recipe: TableRecipe) -> None:
         if recipe.caption and recipe.caption_position == "before":
             self._add_caption(recipe.caption, self.style.table_caption_height, {"caption_for": recipe.table_id, "caption_type": "table"})
-        col_widths = self._column_widths(recipe.matrix)
-        wrapped = [self._wrap_row(row, col_widths, bold=i == 0) for i, row in enumerate(recipe.matrix)]
-        heights = [self._row_height(lines) for lines in wrapped]
+        spans = recipe.merged_cells
+        col_widths = self._column_widths(recipe.matrix, spans)
+        wrapped = [self._wrap_row(row, col_widths, i, spans) for i, row in enumerate(recipe.matrix)]
+        heights = self._row_heights(wrapped, spans)
         first_body = 1
         segment_index = 1
         while first_body < len(recipe.matrix):
@@ -394,6 +403,8 @@ class FlowLayoutPlanner:
                 if used + height > available_height:
                     break
                 fitted, used = fitted + 1, used + height
+            while fitted and any(m.row <= first_body + fitted - 1 < m.row + m.rowspan - 1 for m in spans):
+                fitted -= 1  # never cut a row-spanning cell between segments
             if fitted < self.style.min_table_rows_per_segment - 1:
                 self._advance_region()
                 continue
@@ -411,6 +422,7 @@ class FlowLayoutPlanner:
                 [wrapped[i] for i in rows],
                 [heights[i] for i in rows],
                 col_widths,
+                [m.model_copy(update={"row": rows.index(m.row)}) for m in spans if m.row in rows],
             )
             segment_index += 1
         if recipe.caption and recipe.caption_position == "after":
@@ -426,12 +438,13 @@ class FlowLayoutPlanner:
         wrapped: list[list[list[str]]],
         row_heights: list[float],
         col_widths: list[float],
+        spans: list[MergedCell],
     ) -> None:
         height = sum(row_heights)
         self._ensure_space(height + self.style.block_spacing)
         bbox = self._take_box(height)
         cells = self._table_cells(
-            table_id, matrix, self._page_index, bbox, row_heights, col_widths, wrapped, recipe.merged_cells
+            table_id, matrix, self._page_index, bbox, row_heights, col_widths, wrapped, spans
         )
         table = TableBlock(
             block_id=self._next_block_id(),
@@ -441,13 +454,13 @@ class FlowLayoutPlanner:
             table_id=table_id,
             matrix=matrix,
             markdown=table_to_markdown(matrix),
-            html=table_to_html(matrix),
+            html=table_to_html(matrix, spans),
             cells=cells,
             metadata={
                 **recipe.metadata,
                 "title": recipe.title,
                 "caption": recipe.caption,
-                "merged_cells": recipe.merged_cells,
+                "merged_cells": [m.model_dump() for m in spans],
                 "parent_table_id": recipe.table_id,
                 "table_segment_index": segment_index,
                 "body_rows_remaining": body_rows_remaining,
@@ -549,12 +562,15 @@ class FlowLayoutPlanner:
         self._add_block(caption)
         return caption
 
-    def _column_widths(self, matrix: list[list[str]]) -> list[float]:
+    def _column_widths(self, matrix: list[list[str]], spans: list[MergedCell]) -> list[float]:
         """Widths summing to the content width: each column at least as wide as its longest word when possible."""
         size, pad = self.style.table_font_size, 2 * _CELL_PAD_X
         longest, natural = [0.0] * len(matrix[0]), [0.0] * len(matrix[0])
+        anchors, covered = _span_maps(spans)
         for row_idx, row in enumerate(matrix):
             for col, text in enumerate(row):
+                if (row_idx, col) in covered or (m := anchors.get((row_idx, col))) and m.colspan > 1:
+                    continue  # a wide cell fits the combined width instead of sizing one column
                 font = font_for_text(text, bold=row_idx == 0, family=self.style.font_family)
                 longest[col] = max(longest[col], *(pdfmetrics.stringWidth(t.strip(), font, size) for t in self._wrap_tokens(text)))
                 natural[col] = max(natural[col], pdfmetrics.stringWidth(text, font, size))
@@ -571,9 +587,27 @@ class FlowLayoutPlanner:
         widths[-1] = total - sum(widths[:-1])  # exact sum, so cells stay inside the table bbox
         return widths
 
-    def _wrap_row(self, row: list[str], col_widths: list[float], bold: bool) -> list[list[str]]:
-        size = self.style.table_font_size
-        return [self._wrap_text(text, size, w - 2 * _CELL_PAD_X, bold, break_words=True) for text, w in zip(row, col_widths, strict=True)]
+    def _wrap_row(self, row: list[str], col_widths: list[float], row_idx: int, spans: list[MergedCell]) -> list[list[str]]:
+        anchors, covered = _span_maps(spans)
+        size, bold = self.style.table_font_size, row_idx == 0
+        wrapped = []
+        for col, text in enumerate(row):
+            if (row_idx, col) in covered:
+                wrapped.append([""])
+                continue
+            colspan = m.colspan if (m := anchors.get((row_idx, col))) else 1
+            width = sum(col_widths[col : col + colspan])
+            wrapped.append(self._wrap_text(text, size, width - 2 * _CELL_PAD_X, bold, break_words=True))
+        return wrapped
+
+    def _row_heights(self, wrapped: list[list[list[str]]], spans: list[MergedCell]) -> list[float]:
+        tall = {(m.row, m.col) for m in spans if m.rowspan > 1}
+        heights = [self._row_height([w for c, w in enumerate(row) if (r, c) not in tall] or [[""]]) for r, row in enumerate(wrapped)]
+        for m in spans:
+            if m.rowspan > 1:  # grow the last spanned row if the cell's text needs more room
+                shortfall = self._row_height([wrapped[m.row][m.col]]) - sum(heights[m.row : m.row + m.rowspan])
+                heights[m.row + m.rowspan - 1] += max(0.0, shortfall)
+        return heights
 
     def _row_height(self, wrapped_row: list[list[str]]) -> float:
         lines = max(len(cell_lines) for cell_lines in wrapped_row)
@@ -589,45 +623,33 @@ class FlowLayoutPlanner:
         row_heights: list[float],
         col_widths: list[float],
         wrapped: list[list[list[str]]],
-        merged_cells: list[dict] | None = None,
+        spans: list[MergedCell],
     ) -> list[TableCell]:
         x0, y1 = bbox[0], bbox[3]
-        col_x = [x0 + sum(col_widths[:i]) for i in range(len(col_widths))]
+        col_x = [x0 + sum(col_widths[:i]) for i in range(len(col_widths) + 1)]
+        row_y = [y1 - sum(row_heights[:i]) for i in range(len(row_heights) + 1)]
+        anchors, covered = _span_maps(spans)
         cells: list[TableCell] = []
-        cell_y1 = y1
         for row_idx, row in enumerate(matrix):
-            cell_y0 = cell_y1 - row_heights[row_idx]
             for col_idx, text in enumerate(row):
-                span = self._span_for_cell(row_idx, col_idx, merged_cells or [])
+                if (row_idx, col_idx) in covered:
+                    continue
+                m = anchors.get((row_idx, col_idx))
+                rowspan, colspan = (m.rowspan, m.colspan) if m else (1, 1)
                 cells.append(
                     TableCell(
                         cell_id=f"{table_id}_r{row_idx + 1:02d}c{col_idx + 1:02d}",
                         row=row_idx,
                         col=col_idx,
-                        rowspan=span["rowspan"],
-                        colspan=span["colspan"],
+                        rowspan=rowspan,
+                        colspan=colspan,
                         text=text,
-                        bbox_pt=[col_x[col_idx], cell_y0, col_x[col_idx] + col_widths[col_idx], cell_y1],
+                        bbox_pt=[col_x[col_idx], row_y[row_idx + rowspan], col_x[col_idx + colspan], row_y[row_idx]],
                         is_header=row_idx == 0,
-                        metadata={**self._cell_metadata(table_id, span), "lines": wrapped[row_idx][col_idx]},
+                        metadata={"table_id": table_id, "lines": wrapped[row_idx][col_idx]},
                     )
                 )
-            cell_y1 = cell_y0
         return cells
-
-    def _span_for_cell(self, row_idx: int, col_idx: int, merged_cells: list[dict]) -> dict:
-        for span in merged_cells:
-            if span.get("row") == row_idx and span.get("col") == col_idx:
-                return {
-                    "span_kind": "merged_approximation",
-                    "rowspan": int(span.get("rowspan", 1)),
-                    "colspan": int(span.get("colspan", 1)),
-                    "text": span.get("text", ""),
-                }
-        return {"span_kind": "regular", "rowspan": 1, "colspan": 1}
-
-    def _cell_metadata(self, table_id: str, span: dict) -> dict:
-        return {"table_id": table_id, **span}
 
     def _text_height(self, text: str, font_size: int, width: float, line_height: float, bold: bool = False) -> float:
         return len(self._wrap_text(text, font_size, width, bold)) * line_height

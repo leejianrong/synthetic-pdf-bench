@@ -42,7 +42,7 @@
   - numeric tables
   - multilingual tables
   - wrapped cell text
-  - merged-cell approximations
+  - merged cells with real rowspan/colspan
   - multi-page long tables
 
 ### Dataset and evaluation
@@ -97,7 +97,6 @@ data/recipes/research/sea_historical_report_v1/
 - No document-family templates beyond the current report-style flows
 - No OCR/noise/degradation simulation yet
 - No image-based visual diff checks beyond nonblank smoke validation
-- No advanced table semantics beyond merged-cell approximation metadata
 - No parser-side aggregation report for multi-document evaluation runs
 
 ## Recommended Next Steps

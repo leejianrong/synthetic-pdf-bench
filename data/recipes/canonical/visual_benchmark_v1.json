@@ -184,12 +184,12 @@
         },
         {
           "type": "table",
-          "table_id": "tbl_merged_approx",
-          "title": "Merged Cell Approximation",
-          "caption": "Rectangular matrix with merged-cell span metadata.",
-          "matrix": [["Theme", "Singapore", "Malaysia", "Indonesia"], ["Politics", "Republic", "Federal monarchy", "Republic"], ["Economy", "Services hub", "Mixed economy", "Domestic scale"], ["Society", "Urban multilingual", "Multicultural", "Archipelagic diversity"]],
-          "merged_cells": [{"row": 0, "col": 0, "rowspan": 1, "colspan": 4, "text": "Regional Comparison Header"}],
-          "metadata": {"table_variant": "merged_cell_approximation"}
+          "table_id": "tbl_merged_cells",
+          "title": "Merged Cells",
+          "caption": "Table with a two-column cell and a two-row cell.",
+          "matrix": [["Theme", "Singapore", "Malaysia", "Indonesia"], ["Politics", "Republic", "Federal monarchy", "Republic"], ["Economy and society", "Open trade economies", "Open trade economies", "Domestic scale"], ["Economy and society", "Urban multilingual", "Multicultural", "Archipelagic diversity"]],
+          "merged_cells": [{"row": 2, "col": 0, "rowspan": 2}, {"row": 2, "col": 1, "colspan": 2}],
+          "metadata": {"table_variant": "merged_cells"}
         },
         {
           "type": "table",
