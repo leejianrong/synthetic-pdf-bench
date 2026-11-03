@@ -48,6 +48,7 @@
 ### Dataset and evaluation
 
 - COCO layout export (`export-coco`) with DocLayNet-style classes and reading order
+- Table-structure export (`export-tables`): PubTabNet-style JSONL with spans and cell boxes
 
 - Single-document generation
 - Batch dataset generation with dataset manifest
