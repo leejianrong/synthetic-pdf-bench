@@ -152,7 +152,7 @@ Canonical recipes should:
 - include `metadata.source_notes`
 - organize content into sections with meaningful headings
 - use supported block types only
-- keep tables rectangular even when approximating merged cells
+- keep tables rectangular; give covered positions the text a Markdown reader should see
 - keep figure specs deterministic
 
 ## Figure Rules
@@ -165,7 +165,7 @@ Canonical recipes should:
 ## Table Rules
 
 - Use canonical matrices as the truth source.
-- If approximating merged cells, keep the matrix rectangular and attach span metadata.
+- For merged cells, keep the matrix rectangular and list each span in `merged_cells` as `{row, col, rowspan, colspan}` anchored at its top-left cell. Spans may not overlap or cross the header row.
 - Use multilingual cells deliberately, not decoratively.
 - Make long tables deterministic so split-table evaluation stays stable.
 

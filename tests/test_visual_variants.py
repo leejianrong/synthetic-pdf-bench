@@ -33,8 +33,8 @@ def test_table_variant_matrices_are_valid() -> None:
         widths = {len(row) for row in matrix}
         assert len(matrix) >= 2
         assert len(widths) == 1
-        if variant == "merged_cell_approximation":
-            assert merged_cells[0]["colspan"] > 1
+        if variant == "merged_cells":
+            assert merged_cells[0].rowspan > 1 and merged_cells[1].colspan > 1
 
 
 def test_visual_benchmark_recipe_contains_chart_and_table_variants() -> None:
@@ -47,11 +47,11 @@ def test_visual_benchmark_recipe_contains_chart_and_table_variants() -> None:
     assert {"bar_chart", "line_chart", "stacked_bar", "timeline", "scatter_plot", "heatmap"}.issubset(
         {figure.kind for figure in figures}
     )
-    assert {"narrow", "wide", "numeric", "multilingual", "wrapped_cell_text", "merged_cell_approximation"}.issubset(
+    assert {"narrow", "wide", "numeric", "multilingual", "wrapped_cell_text", "merged_cells"}.issubset(
         {table.metadata.get("table_variant") for table in tables}
     )
     assert any(table.metadata.get("parent_table_id") == "tbl_multi_page" for table in tables)
-    merged_table = next(table for table in tables if table.table_id == "tbl_merged_approx")
+    merged_table = next(table for table in tables if table.table_id == "tbl_merged_cells")
     assert any(cell.colspan > 1 for cell in merged_table.cells)
 
 

@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from typing import Any, Literal
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 
 class ParagraphRecipe(BaseModel):
@@ -16,6 +16,17 @@ class ParagraphRecipe(BaseModel):
     metadata: dict[str, Any] = Field(default_factory=dict)
 
 
+class MergedCell(BaseModel):
+    """A span anchored at (row, col) in the recipe matrix. The matrix still holds text for the covered positions."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    row: int = Field(ge=0)
+    col: int = Field(ge=0)
+    rowspan: int = Field(default=1, ge=1)
+    colspan: int = Field(default=1, ge=1)
+
+
 class TableRecipe(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
@@ -25,7 +36,7 @@ class TableRecipe(BaseModel):
     caption: str = ""
     caption_position: Literal["before", "after"] = "after"
     matrix: list[list[str]]
-    merged_cells: list[dict[str, Any]] = Field(default_factory=list)
+    merged_cells: list[MergedCell] = Field(default_factory=list)
     metadata: dict[str, Any] = Field(default_factory=dict)
 
     @field_validator("matrix")
@@ -39,6 +50,20 @@ class TableRecipe(BaseModel):
         if next(iter(widths)) == 0:
             raise ValueError("table matrix rows cannot be empty")
         return matrix
+
+    @model_validator(mode="after")
+    def validate_merged_cells(self) -> TableRecipe:
+        taken: set[tuple[int, int]] = set()
+        for m in self.merged_cells:
+            if m.row + m.rowspan > len(self.matrix) or m.col + m.colspan > len(self.matrix[0]):
+                raise ValueError(f"merged cell at ({m.row}, {m.col}) extends past the table")
+            if m.row == 0 and m.rowspan > 1:
+                raise ValueError("a merged cell cannot span the header row into the body")
+            covered = {(m.row + r, m.col + c) for r in range(m.rowspan) for c in range(m.colspan)}
+            if covered & taken:
+                raise ValueError(f"merged cell at ({m.row}, {m.col}) overlaps another merged cell")
+            taken |= covered
+        return self
 
 
 class FigureRecipe(BaseModel):

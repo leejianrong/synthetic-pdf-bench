@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from html import escape
 
+from synthetic_pdf_bench.generators.recipes import MergedCell
 from synthetic_pdf_bench.schema.blocks import TableBlock, TableCell
 
 TableVariant = str
@@ -19,12 +20,18 @@ def table_to_markdown(matrix: list[list[str]]) -> str:
     return "\n".join(lines)
 
 
-def table_to_html(matrix: list[list[str]]) -> str:
-    header = "".join(f"<th>{escape(cell)}</th>" for cell in matrix[0])
-    body_rows = []
-    for row in matrix[1:]:
-        body_rows.append("<tr>" + "".join(f"<td>{escape(cell)}</td>" for cell in row) + "</tr>")
-    return "<table><thead><tr>" + header + "</tr></thead><tbody>" + "".join(body_rows) + "</tbody></table>"
+def table_to_html(matrix: list[list[str]], merged_cells: list[MergedCell] | None = None) -> str:
+    anchors = {(m.row, m.col): m for m in merged_cells or []}
+    covered = {(m.row + r, m.col + c) for m in anchors.values() for r in range(m.rowspan) for c in range(m.colspan)} - set(anchors)
+
+    def cell(r: int, c: int, text: str) -> str:
+        tag = "th" if r == 0 else "td"
+        m = anchors.get((r, c))
+        attrs = "".join(f' {k}="{v}"' for k, v in (("rowspan", m.rowspan), ("colspan", m.colspan)) if v > 1) if m else ""
+        return f"<{tag}{attrs}>{escape(text)}</{tag}>"
+
+    rows = ["<tr>" + "".join(cell(r, c, t) for c, t in enumerate(row) if (r, c) not in covered) + "</tr>" for r, row in enumerate(matrix)]
+    return "<table><thead>" + rows[0] + "</thead><tbody>" + "".join(rows[1:]) + "</tbody></table>"
 
 
 def table_variant_names() -> list[str]:
@@ -34,12 +41,12 @@ def table_variant_names() -> list[str]:
         "numeric",
         "multilingual",
         "wrapped_cell_text",
-        "merged_cell_approximation",
+        "merged_cells",
         "multi_page",
     ]
 
 
-def make_table_variant_matrix(variant: TableVariant, seed: int = 1) -> tuple[list[list[str]], list[dict]]:
+def make_table_variant_matrix(variant: TableVariant, seed: int = 1) -> tuple[list[list[str]], list[MergedCell]]:
     if variant == "narrow":
         return [["Country", "Theme"], ["Singapore", "Port city"], ["Malaysia", "Federal economy"], ["Indonesia", "Archipelago"]], []
     if variant == "wide":
@@ -82,13 +89,13 @@ def make_table_variant_matrix(variant: TableVariant, seed: int = 1) -> tuple[lis
                 "Tests long text extraction.",
             ],
         ], []
-    if variant == "merged_cell_approximation":
+    if variant == "merged_cells":
         return [
             ["Theme", "Singapore", "Malaysia", "Indonesia"],
             ["Politics", "Republic", "Federal monarchy", "Republic"],
-            ["Economy", "Services hub", "Mixed economy", "Domestic scale"],
-            ["Society", "Urban multilingual", "Multicultural", "Archipelagic diversity"],
-        ], [{"row": 0, "col": 0, "rowspan": 1, "colspan": 4, "text": "Regional Comparison Header"}]
+            ["Economy and society", "Open trade economies", "Open trade economies", "Domestic scale"],
+            ["Economy and society", "Urban multilingual", "Multicultural", "Archipelagic diversity"],
+        ], [MergedCell(row=2, col=0, rowspan=2), MergedCell(row=2, col=1, colspan=2)]
     if variant == "multi_page":
         rows = [["Year", "Singapore", "Malaysia", "Indonesia"]]
         for index in range(1, 85):

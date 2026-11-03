@@ -96,7 +96,7 @@ Supported table variants:
 - numeric table
 - multilingual table
 - wrapped cell text
-- merged-cell approximation with span metadata
+- merged cells (real `rowspan`/`colspan`: spanned positions have no cell of their own, and the table HTML carries the spans)
 - multi-page table splitting
 
 ## Benchmark evaluation
