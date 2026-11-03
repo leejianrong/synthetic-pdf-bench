@@ -3,7 +3,12 @@ from pathlib import Path
 import pytest
 from pydantic import ValidationError
 
-from synthetic_pdf_bench.generators.recipes import DocumentRecipe, SectionRecipe, TableRecipe, load_recipe
+from synthetic_pdf_bench.generators.recipes import (
+    DocumentRecipe,
+    SectionRecipe,
+    TableRecipe,
+    load_recipe,
+)
 from synthetic_pdf_bench.layout.flow_layout import build_scene_from_recipe
 from synthetic_pdf_bench.schema import TableBlock
 
