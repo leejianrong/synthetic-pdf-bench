@@ -13,6 +13,7 @@ from synthetic_pdf_bench.evaluation.evaluator import (
     write_evaluation_report,
 )
 from synthetic_pdf_bench.export.coco import write_coco
+from synthetic_pdf_bench.export.datasets import write_hf_imagefolder, write_yolo
 from synthetic_pdf_bench.generators.recipes import (
     default_recipe_path,
     recipe_variant_names,
@@ -194,6 +195,11 @@ def build_parser() -> argparse.ArgumentParser:
     coco_parser.add_argument("root", type=Path, help="Document or dataset directory.")
     coco_parser.add_argument("--output", type=Path, help="Defaults to <root>/coco.json.")
 
+    for name, helptext in (("export-yolo", "Export a YOLO detection dataset."), ("export-hf", "Export a Hugging Face imagefolder dataset.")):
+        dataset_parser = subparsers.add_parser(name, help=helptext + " Follows splits.json when present.")
+        dataset_parser.add_argument("root", type=Path, help="Document or dataset directory.")
+        dataset_parser.add_argument("--output", type=Path, help=f"Defaults to <root>/{name.removeprefix('export-')}.")
+
     shape_parser = subparsers.add_parser("prediction-shape", help="Print expected parser output shape.")
     shape_parser.add_argument("--output", type=Path)
 
@@ -256,6 +262,10 @@ def main() -> None:
             print("\n".join(str(path) for path in write_coco_splits(args.root)))
         else:
             print(write_coco(args.root, args.output))
+        return
+    if args.command in ("export-yolo", "export-hf"):
+        writer = write_yolo if args.command == "export-yolo" else write_hf_imagefolder
+        print(writer(args.root, args.output or args.root / args.command.removeprefix("export-")))
         return
     if args.command == "prediction-shape":
         shape = expected_prediction_shape()
