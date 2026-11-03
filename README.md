@@ -179,6 +179,14 @@ uv run synthetic-pdf-bench export-coco output/small_dataset   # writes output/sm
 
 Boxes use DocLayNet-style classes, with a per-page `reading_order` on each annotation.
 
+## Table-structure export
+
+```bash
+uv run synthetic-pdf-bench export-tables output/small_dataset   # writes output/small_dataset/tables.jsonl
+```
+
+One JSON line per table segment, in the PubTabNet layout that table-structure models train on: the page image, the table box in page pixels, HTML structure tokens (with `rowspan`/`colspan`), and each cell's characters and pixel box. A table split across pages is one record per segment.
+
 ## Quality controls
 
 Generation runs quality validation before writing the final manifest. The checks verify:
