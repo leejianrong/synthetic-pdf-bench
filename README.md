@@ -1,6 +1,6 @@
 # synthetic-pdf-bench
 
-Generate synthetic PDFs whose ground truth is exact, to benchmark PDF-to-Markdown and structured extraction pipelines.
+Generate synthetic PDFs with exact labels, to train and evaluate Docling-style document models: layout detection, reading order, table structure and PDF-to-Markdown.
 
 The truth (text, reading order, coordinates, tables, figures, Markdown spans) comes straight from the scene graph the PDF is rendered from. It is never recovered by parsing the output PDF, so it cannot be wrong.
 
@@ -10,7 +10,8 @@ flowchart LR
   C --> D[PDF]
   C --> E[truth JSON + Markdown]
   D --> F[page PNGs + figure crops]
-  P[your parser] --> G[evaluate vs truth]
+  C --> H[COCO layout export + splits] --> T[train your model]
+  P[your parser or model] --> G[evaluate vs truth]
   E --> G
 ```
 
