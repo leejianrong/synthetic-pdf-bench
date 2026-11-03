@@ -8,7 +8,7 @@ from pydantic import ValidationError
 
 from synthetic_pdf_bench.evaluation.normalize_markdown import normalize_markdown
 from synthetic_pdf_bench.evaluation.prediction import PredictionDocument
-from synthetic_pdf_bench.evaluation.table_metrics import table_exact_match
+from synthetic_pdf_bench.evaluation.table_metrics import table_exact_match, teds
 from synthetic_pdf_bench.evaluation.text_metrics import token_f1
 from synthetic_pdf_bench.layout.coordinates import bbox_iou
 from synthetic_pdf_bench.schema.blocks import FigureBlock, TableBlock
@@ -40,6 +40,7 @@ def evaluate_prediction(truth_dir: Path, prediction_dir: Path) -> dict:
             "markdown_token_f1": markdown_scores["f1"],
             "mean_block_bbox_iou": block_scores["mean_bbox_iou"],
             "table_exact_match_rate": table_scores["exact_match_rate"],
+            "table_teds": table_scores["mean_teds"],
             "figure_count_match": figure_scores["count_match"],
             "figure_markdown_ref_match_rate": figure_scores["markdown_ref_match_rate"],
         },
@@ -113,17 +114,23 @@ def _block_scores(truth: DocumentTruth, prediction: PredictionDocument) -> dict:
 def _table_scores(truth: DocumentTruth, prediction: PredictionDocument) -> dict:
     truth_tables = {table.table_id: table for table in truth.tables}
     predicted_tables = {table.table_id: table for table in prediction.tables}
-    matches = 0
+    matches, teds_scores = 0, []
     for table_id, truth_table in truth_tables.items():
         predicted = predicted_tables.get(table_id)
-        if predicted is not None and table_exact_match(predicted.matrix, truth_table.matrix):
+        if predicted is None:
+            teds_scores.append(0.0)
+            continue
+        if table_exact_match(predicted.matrix, truth_table.matrix):
             matches += 1
+        # With predicted HTML, row/column spans are scored too; a matrix has none.
+        teds_scores.append(teds(predicted.html, truth_table.html) if predicted.html else teds(predicted.matrix, truth_table.matrix))
     truth_count = len(truth_tables)
     return {
         "truth_count": truth_count,
         "predicted_count": len(predicted_tables),
         "exact_matches": matches,
         "exact_match_rate": matches / truth_count if truth_count else 1.0,
+        "mean_teds": sum(teds_scores) / truth_count if truth_count else 1.0,
     }
 
 

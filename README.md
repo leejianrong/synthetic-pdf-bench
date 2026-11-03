@@ -142,7 +142,7 @@ uv run synthetic-pdf-bench evaluate \
   --output output/synthetic_000001/evaluation.json
 ```
 
-Metrics include normalized Markdown exact match, Markdown token F1, block bbox IoU, table matrix exact match, figure count match, figure bbox IoU, and figure Markdown reference match.
+Metrics include normalized Markdown exact match, table TEDS (a `tables[].html` string in the prediction also scores row/column spans), Markdown token F1, block bbox IoU, table matrix exact match, figure count match, figure bbox IoU, and figure Markdown reference match.
 
 For smoke testing the evaluator, generate a truth-copy dummy prediction:
 
