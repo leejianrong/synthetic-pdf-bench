@@ -1,6 +1,6 @@
 # synthetic-pdf-bench
 
-Synthetic PDF generator with exact scene-graph ground truth, for benchmarking PDF-to-Markdown parsers. Truth is exported from the scene graph, never parsed back from the PDF.
+Synthetic PDF generator with exact scene-graph ground truth, for training and evaluating Docling-style document models (layout, reading order, tables, PDF-to-Markdown). Truth is exported from the scene graph, never parsed back from the PDF.
 
 ## Commands
 

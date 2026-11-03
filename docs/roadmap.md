@@ -2,9 +2,10 @@
 
 ## Positioning
 
-A dataset generation tool: produce large, diverse, exactly-labelled document corpora to
-train models (layout detection, reading order, table structure) and to test ingestion/RAG
-pipelines. Content comes from curated recipes; LLM-filled content is optional and secondary.
+A training-data generator: produce large, diverse, exactly-labelled document corpora to
+train a Docling-style model (layout detection, reading order, table structure, PDF-to-Markdown).
+Benchmarking is the evaluation side: scoring our model and existing parsers (Docling as the
+baseline) on the same truth. It also serves ingestion/RAG testing. Content comes from curated recipes; LLM-filled content is optional and secondary.
 
 ## Decisions
 
