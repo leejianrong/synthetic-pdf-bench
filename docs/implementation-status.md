@@ -48,6 +48,7 @@
 ### Dataset and evaluation
 
 - COCO layout export (`export-coco`) with DocLayNet-style classes and reading order
+- YOLO (`export-yolo`) and Hugging Face imagefolder (`export-hf`) exports that follow the splits
 
 - Single-document generation
 - Batch dataset generation with dataset manifest
