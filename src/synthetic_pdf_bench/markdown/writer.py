@@ -23,14 +23,17 @@ def write_markdown(blocks: list[Block | TableBlock | FigureBlock]) -> str:
     included = [block for block in blocks if block.include_in_markdown]
     chunks: list[str] = []
     cursor = 0
+    previous = None
     for block in included:
         markdown = block_to_markdown(block).strip()
         if not markdown:
             block.markdown_span = None
             continue
         if chunks:
-            chunks.append("\n\n")
-            cursor += 2
+            gap = "\n" if previous == block.type == "list_item" else "\n\n"  # list items form one tight list
+            chunks.append(gap)
+            cursor += len(gap)
+        previous = block.type
         start = cursor
         chunks.append(markdown)
         cursor += len(markdown)

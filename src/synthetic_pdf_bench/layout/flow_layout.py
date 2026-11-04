@@ -8,10 +8,12 @@ from reportlab.lib.pagesizes import A4, letter
 from reportlab.pdfbase import pdfmetrics
 
 from synthetic_pdf_bench.generators.figures import make_raster_figure
+from synthetic_pdf_bench.generators.formulas import formula_size
 from synthetic_pdf_bench.generators.recipes import (
     DocumentRecipe,
     FigureRecipe,
     FootnoteRecipe,
+    FormulaRecipe,
     ListRecipe,
     MergedCell,
     ReferenceRecipe,
@@ -29,6 +31,7 @@ from synthetic_pdf_bench.schema.blocks import Block, FigureBlock, TableBlock, Ta
 
 _CELL_PAD_X = 4  # table cell padding in points, recorded in table metadata for the renderer
 _CELL_PAD_Y = 3
+_NOTE_GAP = 4  # points between stacked footnotes
 
 
 
@@ -95,7 +98,7 @@ def random_style(seed: int) -> LayoutStyle:
 
 
 def style_for_variant(variant: str, seed: int = 0) -> LayoutStyle:
-    if variant == "random":
+    if variant in {"random", "structured"}:
         return random_style(seed)
     if variant == "compact":
         return LayoutStyle(
@@ -165,6 +168,7 @@ class FlowLayoutPlanner:
         self.scene: SceneGraph | None = None
         self.cursor_y = 0.0
         self.column_index = 0
+        self.note_reserve = 0.0  # page height taken by footnotes so far
         self.reading_order = 0
         self.block_counter = 0
         self.figure_counter = 0
@@ -177,7 +181,7 @@ class FlowLayoutPlanner:
 
     @property
     def content_bottom(self) -> float:
-        return self.style.margin_bottom + self.style.footer_height
+        return self.style.margin_bottom + self.style.footer_height + self.note_reserve
 
     def build_scene(self, recipe: DocumentRecipe) -> SceneGraph:
         self.scene = SceneGraph(doc_id=recipe.doc_id, seed=self.seed, dpi=self.dpi)
@@ -203,6 +207,8 @@ class FlowLayoutPlanner:
                     self._add_note(recipe_block)
                 elif recipe_block.type == "reference":
                     self._add_reference(recipe_block)
+                elif recipe_block.type == "formula":
+                    self._add_formula(recipe_block)
         self.validate_layout()
         return self.scene
 
@@ -210,6 +216,7 @@ class FlowLayoutPlanner:
         assert self.scene is not None
         page = self.scene.add_page(width_pt=self.page_width, height_pt=self.page_height)
         self.column_index = 0
+        self.note_reserve = 0.0
         self.cursor_y = self.page_height - self.style.margin_top - self.style.header_height
         self._add_page_furniture(page.page_index)
 
@@ -364,26 +371,44 @@ class FlowLayoutPlanner:
         )
 
     def _add_list(self, recipe: ListRecipe) -> None:
-        lines: list[str] = []
         for idx, item in enumerate(recipe.items, start=1):
-            marker = f"{idx}." if recipe.ordered else "-"
-            lines.append(f"{marker} {item}")
-        markdown = "\n".join(lines)
-        height = self._text_height(markdown, self.style.body_font_size, self.content_width, self.style.body_line_height)
+            line = f"{idx}. {item}" if recipe.ordered else f"- {item}"
+            height = self._text_height(line, self.style.body_font_size, self.content_width, self.style.body_line_height)
+            self._ensure_space(height + self.style.block_spacing)
+            bbox = self._take_box(height)
+            self._add_block(
+                Block(
+                    block_id=self._next_block_id(),
+                    type="list_item",
+                    subtype="ordered" if recipe.ordered else "unordered",
+                    page_index=self._page_index,
+                    reading_order=self._next_reading_order(),
+                    bbox_pt=bbox,
+                    text=item,
+                    markdown=line,
+                    language=recipe.language,
+                    metadata=recipe.metadata,
+                )
+            )
+
+    def _add_formula(self, recipe: FormulaRecipe) -> None:
+        font_size = self.style.body_font_size * 1.4
+        width, height = formula_size(recipe.latex, font_size)
+        while width > self.content_width and font_size > 6:
+            font_size -= 1
+            width, height = formula_size(recipe.latex, font_size)
         self._ensure_space(height + self.style.block_spacing)
-        bbox = self._take_box(height)
+        bbox = self._take_box(height, horizontal_inset=max(0.0, (self.content_width - width) / 2))
         self._add_block(
             Block(
                 block_id=self._next_block_id(),
-                type="list",
-                subtype="ordered" if recipe.ordered else "unordered",
+                type="formula",
                 page_index=self._page_index,
                 reading_order=self._next_reading_order(),
                 bbox_pt=bbox,
-                text="\n".join(recipe.items),
-                markdown=markdown,
-                language=recipe.language,
-                metadata=recipe.metadata,
+                text=recipe.latex,
+                markdown=f"$${recipe.latex}$$",
+                metadata={**recipe.metadata, "font_size": font_size},
             )
         )
 
@@ -508,18 +533,20 @@ class FlowLayoutPlanner:
         figure.caption_block_id = caption.block_id
 
     def _add_note(self, recipe: FootnoteRecipe) -> None:
-        marker = recipe.marker or "*"
-        text = f"{marker} {recipe.text}"
+        text = f"{recipe.marker or '*'} {recipe.text}"
         height = self._text_height(text, self.style.caption_font_size, self.content_width, self.style.body_line_height)
-        self._ensure_space(height + self.style.block_spacing)
-        bbox = self._take_box(height)
+        self._ensure_space(height + _NOTE_GAP)
+        # Footnotes sit at the foot of the page, stacked upward, and the body text gives up that space.
+        x0 = self.style.margin_left + self.column_index * (self.content_width + self.style.column_gutter)
+        y0 = self.style.margin_bottom + self.style.footer_height + self.note_reserve
+        self.note_reserve += height + _NOTE_GAP
         self._add_block(
             Block(
                 block_id=self._next_block_id(),
                 type="footnote",
                 page_index=self._page_index,
                 reading_order=self._next_reading_order(),
-                bbox_pt=bbox,
+                bbox_pt=[x0, y0, x0 + self.content_width, y0 + height],
                 text=text,
                 markdown=text,
                 language=recipe.language,
@@ -732,7 +759,7 @@ class FlowLayoutPlanner:
             "title": (style.title_font_size, 22),
             "heading": (style.heading_font_size, 16),
             "paragraph": (style.body_font_size, style.body_line_height),
-            "list": (style.body_font_size, style.body_line_height),
+            "list_item": (style.body_font_size, style.body_line_height),
             "caption": (style.caption_font_size, style.body_line_height),
             "footnote": (style.caption_font_size, style.body_line_height),
             "reference": (style.caption_font_size, style.body_line_height),

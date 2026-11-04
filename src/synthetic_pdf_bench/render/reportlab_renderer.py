@@ -10,6 +10,7 @@ from synthetic_pdf_bench.generators.figures import (
     make_matplotlib_figure,
     make_raster_figure,
 )
+from synthetic_pdf_bench.generators.formulas import render_formula
 from synthetic_pdf_bench.render.fonts import contains_cjk, font_for_text, register_fonts
 from synthetic_pdf_bench.schema.blocks import Block, FigureBlock, TableBlock
 from synthetic_pdf_bench.schema.truth import PageTruth
@@ -35,6 +36,9 @@ class ReportLabRenderer:
             self._draw_table(canvas, block)
         elif isinstance(block, FigureBlock):
             self._draw_figure(canvas, block)
+        elif block.type == "formula":
+            x0, y0, x1, y1 = block.bbox_pt
+            canvas.drawImage(ImageReader(str(render_formula(block.text, block.metadata["font_size"]))), x0, y0, x1 - x0, y1 - y0, mask="auto")
         else:
             self._draw_text(canvas, block, bold=block.type in {"title", "heading"})
 
@@ -43,7 +47,7 @@ class ReportLabRenderer:
         line_height = block.metadata.get("line_height", font_size * 1.25)
         x0, y0, x1, y1 = block.bbox_pt
         canvas.setFillColor(colors.black)
-        text = block.markdown if block.type == "list" and block.markdown else block.text or block.markdown
+        text = block.markdown if block.type == "list_item" and block.markdown else block.text or block.markdown
         font_name = font_for_text(text, bold=bold, family=block.metadata.get("font_family", "Helvetica"))
         canvas.setFont(font_name, font_size)
         lines = self._wrap_text(canvas, text, font_name, font_size, x1 - x0)

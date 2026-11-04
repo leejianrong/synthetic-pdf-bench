@@ -6,7 +6,7 @@ import pytest
 from synthetic_pdf_bench.cli.generate import generate
 from synthetic_pdf_bench.schema.truth import DocumentTruth
 
-TEXT_TYPES = {"title", "heading", "paragraph", "list", "caption", "footnote", "reference"}
+TEXT_TYPES = {"title", "heading", "paragraph", "list_item", "caption", "footnote", "reference"}
 
 
 CASES = [(v, 5) for v in ("standard", "compact", "spacious", "two_column", "text_heavy")]

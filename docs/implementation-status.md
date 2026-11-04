@@ -21,7 +21,7 @@
 - Metric-based text height estimation using ReportLab font metrics
 - Repeated headers, footers, and page numbers
 - Section page-break hints
-- Paragraphs, lists, tables, figures, captions, footnotes, and references
+- Paragraphs, lists (one box per item), tables, figures, captions, footnotes (page-bottom), display formulas, and references; the `structured` variant derives lists, footnotes and formulas from recipe text
 - Table splitting across columns and pages
 - Caption placement before or after figures and tables
 - Page-level overlap and bounds validation
