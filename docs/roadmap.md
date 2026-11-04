@@ -21,7 +21,7 @@ baseline) on the same truth. It also serves ingestion/RAG testing. Content comes
 1. **Training-data core (PDF path)**
    - [x] COCO export with DocLayNet classes and per-page reading order (`export-coco`)
    - [x] Template randomization: `--variant random` samples page size, margins, type sizes, font family, columns and page-number position per seed
-   - [ ] Still to add: table styles, header/footer text per recipe (the header string is hardcoded to the SEA report), more font families (needs bundled font files)
+   - [ ] Header and footer text come from recipe `metadata.header_text` / `footer_text` (default: the title before the colon, and "Synthetic benchmark document"). Still to add: table styles, more font families (needs bundled font files)
 - [x] Table cell text clipping fixed: content-sized columns, row heights from wrapped cell lines, lines recorded in `cell.metadata.lines`
 - [x] Timeline figure labels overlap (labels take the first free height lane)
    - [x] Degradation profiles (`--degrade light_scan|heavy_scan`): skew, shift, contrast, blur, noise, JPEG; image-only scan PDF; `bbox_px` transformed

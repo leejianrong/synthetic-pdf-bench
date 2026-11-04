@@ -172,6 +172,7 @@ class FlowLayoutPlanner:
         self.reading_order = 0
         self.block_counter = 0
         self.figure_counter = 0
+        self.header_text = self.footer_text = ""
         register_fonts()
 
     @property
@@ -187,6 +188,8 @@ class FlowLayoutPlanner:
         self.scene = SceneGraph(doc_id=recipe.doc_id, seed=self.seed, dpi=self.dpi)
         self.scene.language_profile = recipe.language_profile
         self.scene.metadata = {**recipe.metadata, "layout_style": asdict(self.style)}
+        self.header_text = recipe.metadata.get("header_text") or recipe.title.split(":")[0]
+        self.footer_text = recipe.metadata.get("footer_text") or "Synthetic benchmark document"
         self._new_page()
         self._add_title(recipe.title, recipe.metadata)
         self._add_raster_overview(recipe)
@@ -233,8 +236,7 @@ class FlowLayoutPlanner:
     def _add_page_furniture(self, page_index: int) -> None:
         assert self.scene is not None
         page_number = page_index + 1
-        footer_text = "Synthetic benchmark document"
-        header_text = "Singapore, Malaysia, and Indonesia since 1900"
+        footer_text, header_text = self.footer_text, self.header_text
         self.scene.add_block(
             Block(
                 block_id=self._next_block_id(),
