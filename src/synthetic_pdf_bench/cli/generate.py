@@ -14,6 +14,7 @@ from synthetic_pdf_bench.evaluation.evaluator import (
 )
 from synthetic_pdf_bench.export.coco import write_coco
 from synthetic_pdf_bench.export.datasets import write_hf_imagefolder, write_yolo
+from synthetic_pdf_bench.export.tables import write_table_structure
 from synthetic_pdf_bench.generators.recipes import (
     default_recipe_path,
     recipe_variant_names,
@@ -195,6 +196,9 @@ def build_parser() -> argparse.ArgumentParser:
     coco_parser.add_argument("root", type=Path, help="Document or dataset directory.")
     coco_parser.add_argument("--output", type=Path, help="Defaults to <root>/coco.json.")
 
+    tables_parser = subparsers.add_parser("export-tables", help="Export table structure (PubTabNet-style JSONL).")
+    tables_parser.add_argument("root", type=Path, help="Document or dataset directory.")
+    tables_parser.add_argument("--output", type=Path, help="Defaults to <root>/tables.jsonl.")
     for name, helptext in (("export-yolo", "Export a YOLO detection dataset."), ("export-hf", "Export a Hugging Face imagefolder dataset.")):
         dataset_parser = subparsers.add_parser(name, help=helptext + " Follows splits.json when present.")
         dataset_parser.add_argument("root", type=Path, help="Document or dataset directory.")
@@ -262,6 +266,9 @@ def main() -> None:
             print("\n".join(str(path) for path in write_coco_splits(args.root)))
         else:
             print(write_coco(args.root, args.output))
+        return
+    if args.command == "export-tables":
+        print(write_table_structure(args.root, args.output))
         return
     if args.command in ("export-yolo", "export-hf"):
         writer = write_yolo if args.command == "export-yolo" else write_hf_imagefolder
