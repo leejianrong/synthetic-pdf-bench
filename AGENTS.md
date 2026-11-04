@@ -27,3 +27,4 @@ Synthetic PDF generator with exact scene-graph ground truth, for training and ev
 - Update README/docs in the same PR as the behavior they describe.
 - Never commit `output/` or secrets. The repo is public (Apache-2.0).
 - A canonical recipe is only done when it passes `load_recipe` and a sample PDF generates; tick it in `docs/canonical-recipe-backlog.md` only then.
+- RunPod jobs go through `scripts/runpod_launch.sh` (runpod-jobs skill; spend cap `TOTAL_CAP_USD`=5, ledger `output/runpod/spend.jsonl`). The key is read from `~/.runpod/config.toml` (single-quoted `apikey`), never printed. Use `python:3.12` with torch from the PyTorch cu124 index alone; run detached (`setsid nohup`); afterwards `runpodctl pod list` must show no `syn-*` pod (other projects' pods are not ours). Rehearse on CPU first.
