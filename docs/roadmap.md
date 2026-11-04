@@ -31,5 +31,5 @@ baseline) on the same truth. It also serves ingestion/RAG testing. Content comes
    - [ ] Parquet export and dataset versioning
 2. **Slides (`.pptx`):** python-pptx generation with exact shape geometry, PDF via LibreOffice, Docker image.
 3. **Word and spreadsheets (`.docx`, `.xlsx`):** python-docx/openpyxl, bbox recovery with provenance.
-4. **Evaluation and RAG:** benchmark runner over a dataset; retrieval Q&A ground truth derived from the scene graph.
+4. **Evaluation and RAG:** ~~benchmark runner over a dataset~~ (done: `benchmark`); retrieval Q&A ground truth derived from the scene graph.
 5. **Content breadth:** recipes beyond SEA history (finance, policy, manuals, academic), checking source licensing for training use.

@@ -60,6 +60,7 @@
 - Dataset-level summary stats
 - Evaluator for parser outputs
 - Dummy parser that copies truth into prediction format for smoke testing
+- `benchmark` runs a parser command over a dataset and aggregates per variant and split
 - Scan degradation (`--degrade`), parallel generation (`--workers`) and leakage-safe splits (`--splits`, `--split-by`)
 - Table metrics: TEDS, including spans
 - Research notes on DocLayNet and Docling: [research/doclaynet-docling-spike.md](research/doclaynet-docling-spike.md)
@@ -99,7 +100,7 @@ data/recipes/research/sea_historical_report_v1/
 - Only report-style documents from history recipes; no invoices, forms, slides or academic layouts
 - Degradation is flat-scan only (skew, shift, contrast, blur, noise, JPEG): no perspective, curl or rotated pages
 - Line and word boxes cover text blocks only; table cells and text inside figures have none
-- No benchmark runner that executes a parser across a whole dataset, and reading order is scored only for blocks that carry our `block_id`
+- Reading order is scored only for blocks that carry our `block_id`, so an external parser scores 0 on it until blocks are matched by text or position
 - Models trained on synthetic pages alone do not transfer to real pages (0.025 mAP50-95 vs 0.463 from 2,000 real pages): [layout-baselines.md](layout-baselines.md)
 - No image-based visual diff checks beyond nonblank smoke validation
 

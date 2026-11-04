@@ -145,6 +145,15 @@ uv run synthetic-pdf-bench evaluate \
 
 Metrics include normalized Markdown exact match, table TEDS (a `tables[].html` string in the prediction also scores row/column spans), Markdown token F1, Markdown edit similarity (token-level, 1 minus normalized Levenshtein), reading order (share of body block pairs ordered like the truth; blocks are matched by `block_id`, so a parser without our ids scores 0 until SYN-1 adds matching), block bbox IoU, table matrix exact match, figure count match, figure bbox IoU, and figure Markdown reference match.
 
+Score a parser over a whole dataset (per-variant and per-split means in `benchmark.json`):
+
+```bash
+uv run synthetic-pdf-bench benchmark output/corpus --parser dummy --output output/bench          # truth copy: every metric 1.0
+uv run synthetic-pdf-bench benchmark output/corpus --parser "my-parser {pdf} {out}" --output output/bench_mine
+```
+
+`--parser` is a shell command with `{pdf}`, `{truth}` (for self-tests only) and `{out}` placeholders; it must write the prediction shape above into `{out}`. A document where the command fails or its output cannot be scored counts as zero on every metric and is listed under `failed`.
+
 For smoke testing the evaluator, generate a truth-copy dummy prediction:
 
 ```bash
