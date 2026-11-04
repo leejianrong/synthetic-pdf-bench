@@ -84,3 +84,15 @@ Reading it:
 - Formula and footnote are over-represented too (2.3% and 2.4% against 0.0% and 0.2% in the real sample), though in the paper they are 2.3% and 0.6%.
 
 **After SYN-29:** `structured` now makes a list from any paragraph of 3 or more sentences (60% of them, last 3 sentences as items). On the same 14-document sample list-item is 9.4% of boxes (real sample 9.8%, paper 16.8%) and boxes per page is 11.7. The SYN-6 and SYN-7 models were trained before this change.
+
+## Why synthetic pages do not transfer: first look (SYN-28)
+
+Four random real test pages next to four synthetic pages, both with their boxes drawn (14-document sample, `random standard structured`). What differs, by eye:
+
+- **Real pages are mostly not white-on-black-text reports.** Of the four, two are full-bleed photo or colour pages with a few text boxes, one is a two-column magazine page with a portrait, one is a photo-and-charts page on a tinted background. Synthetic pages are always white with plain text, one table or one pale figure.
+- **Pictures are photographs, charts with real colour, and logos.** Synthetic pictures are flat pale rectangles with a few labelled boxes. A detector trained on them has never seen a photo labelled `picture`.
+- **Text is small, dense and in varied faces** (condensed bold, serif on dark backgrounds, text set in the image). Synthetic body text is large, loosely spaced and in three built-in fonts.
+- **Page furniture is tiny and inconsistent** (a folio in a corner, a running head inside a colour band). Synthetic headers and footers are the same two strings on every page.
+- **Boxes per page are similar (11.7 vs 10.7), but their sizes are not**: real pages have a few very large boxes (pictures) and many small ones; synthetic boxes are evenly sized.
+
+This is a visual impression from eight pages, not a measurement. The largest gaps to try first, in order: photographic and coloured pictures, tinted or image backgrounds, denser and smaller type, then font variety. The SYN-28 done-when (re-run the synthetic-only arm on the same 500 pages) needs a GPU pod and waits for the SYN-27 run to clear the pod queue.
