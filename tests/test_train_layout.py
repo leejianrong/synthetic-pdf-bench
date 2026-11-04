@@ -89,3 +89,16 @@ def test_mixed_run_reports_the_mix_and_rejects_bad_shares(tmp_path: Path) -> Non
     assert report["n_train_images"] == 2 * len(json.loads(coco.read_text())["images"])
     with pytest.raises(ValueError, match="shares"):
         _load_script().run(**kw, also_train=[(root, coco, 1.0)])
+
+
+def test_own_checkpoint_loads_as_starting_weights(tmp_path: Path) -> None:
+    import torch
+
+    module = _load_script()
+    first = module.build_model(11, None)
+    torch.save(first.state_dict(), tmp_path / "ckpt.pt")
+
+    second = module.build_model(11, tmp_path / "ckpt.pt")
+
+    key = next(k for k in first.state_dict() if k.endswith("cls_preds.0.weight"))
+    assert torch.equal(first.state_dict()[key], second.state_dict()[key])  # the class head came along too
