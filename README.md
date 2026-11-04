@@ -197,6 +197,19 @@ uv run synthetic-pdf-bench export-tables output/small_dataset   # writes output/
 
 One JSON line per table segment, in the PubTabNet layout that table-structure models train on: the page image, the table box in page pixels, HTML structure tokens (with `rowspan`/`colspan`), and each cell's characters and pixel box. A table split across pages is one record per segment.
 
+## Train a layout model
+
+`scripts/train_layout.py` fine-tunes YOLOX-Tiny (Apache-2.0, COCO weights) on the COCO export and reports per-class mAP, with the hardware it ran on. The training stack is optional and pinned by commit, so it needs a venv rather than `uv sync`:
+
+```bash
+uv venv .venv-train && uv pip install --python .venv-train/bin/python torch --index-url https://download.pytorch.org/whl/cpu   # or a CUDA build
+uv pip install --python .venv-train/bin/python "rtod[torch,coco] @ git+https://github.com/leejianrong/real-time-object-detection@3751bc7146a7491152facc6d6fb31b0544f37a69" -e .
+.venv-train/bin/python scripts/train_layout.py --root output/corpus --train-json output/corpus/coco_train.json \
+  --val-json output/corpus/coco_val.json --out output/run1 --steps 2000
+```
+
+Add `--steps 6 --batch 2 --size 416` for a CPU smoke run. Pages are not flipped during training because mirrored text is not a page. `tests/test_train_layout.py` runs a 2-step rehearsal and is skipped when the stack is missing.
+
 ## Quality controls
 
 Generation runs quality validation before writing the final manifest. The checks verify:

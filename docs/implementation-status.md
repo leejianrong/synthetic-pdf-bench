@@ -49,6 +49,7 @@
 
 - COCO layout export (`export-coco`) with DocLayNet-style classes and reading order
 - Table-structure export (`export-tables`): PubTabNet-style JSONL with spans and cell boxes
+- Layout training and eval script (`scripts/train_layout.py`): YOLOX-Tiny fine-tune with per-class mAP, rehearsed on CPU
 - YOLO (`export-yolo`) and Hugging Face imagefolder (`export-hf`) exports that follow the splits
 
 - Single-document generation
