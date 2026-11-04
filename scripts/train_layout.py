@@ -99,10 +99,11 @@ class LayoutPages(Dataset):
 
 
 def build_model(num_classes: int, weights: Path | None):
-    """YOLOX-Tiny with a fresh class head; backbone, neck and box/objectness heads come from `weights` (COCO) if given."""
+    """YOLOX-Tiny with a fresh class head; backbone, neck and box/objectness heads come from `weights` (COCO or one of our own checkpoints) if given."""
     model = build_yolox_tiny(num_classes)
     if weights is not None:
-        state = torch.load(weights, map_location="cpu")["model"]
+        state = torch.load(weights, map_location="cpu")
+        state = state.get("model", state)  # the COCO release wraps its weights; our own checkpoints are bare
         own = model.state_dict()
         model.load_state_dict({k: v for k, v in state.items() if k in own and own[k].shape == v.shape}, strict=False)
     return model

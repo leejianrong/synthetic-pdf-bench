@@ -3,9 +3,12 @@
 # and report speed and memory so a full run can be sized. Started by scripts/runpod_launch.sh through rp.
 # Env: SYN_SHA and RTOD_SHA (required, pinned commits), STEPS (100), BATCH (16), SIZE (640), DOCS (70),
 # TEST_N (0): also score on this many real DocLayNet test pages (the SYN-7 sample is 500).
+# SYN-7 arms: REAL_N (0) real train pages, ARMS (empty = one synthetic run) from `synthetic real finetune mix`, STEPS for
+# synthetic, REAL_STEPS (3000) for real and finetune, MIX_STEPS (4000). `finetune` starts from the `synthetic` checkpoint.
 # Markers: STAGE, hb, WARN, ERROR, STAGE failed, MEASURE, TRAIN, REPORT, RP_REPORT_BEGIN/END, RP_ARTIFACT_CODE.
 set -Eeuo pipefail
 : "${SYN_SHA:?}" "${RTOD_SHA:?}"; STEPS=${STEPS:-100}; BATCH=${BATCH:-16}; SIZE=${SIZE:-640}; DOCS=${DOCS:-70}; TEST_N=${TEST_N:-0}
+REAL_N=${REAL_N:-0}; ARMS=${ARMS:-}; REAL_STEPS=${REAL_STEPS:-3000}; MIX_STEPS=${MIX_STEPS:-4000}
 W=${W:-/workspace}; RUN=$W/run; mkdir -p "$RUN"
 exec > >(tee -a "$RUN/job.log") 2>&1
 START=$(date +%s); : > "$RUN/stage"
@@ -27,7 +30,9 @@ heartbeat & HB=$!
 
 publish() {  # always runs: results go out on success and on failure
   kill "$HB" 2>/dev/null || true
-  echo RP_REPORT_BEGIN; cat "$RUN/train/report.json" 2>/dev/null || echo '{"report":"missing"}'; echo RP_REPORT_END
+  echo RP_REPORT_BEGIN
+  for f in "$RUN"/*/report.json; do echo "ARM_REPORT $f"; cat "$f"; echo; done 2>/dev/null || true
+  echo RP_REPORT_END
   tar -cf "$W/artifact.tar" -C "$W" run 2>/dev/null
   echo "ARTIFACT bytes=$(stat -c %s "$W/artifact.tar") sha256=$(sha256sum "$W/artifact.tar" | cut -d' ' -f1)"
   runpodctl send --code rpgpu "$W/artifact.tar" > "$RUN/send.log" 2>&1 &
@@ -71,14 +76,36 @@ echo "MEASURE generate docs=$DOCS secs=$(( $(date +%s) - t0 )) workers=$(nproc) 
 stage real-val
 timeout 600 python scripts/prepare_doclaynet.py --out "$W/real" --split validation --use 2 --n 50 --seed 0 --cache "$W/shards"
 
-ALSO=(--also-eval "$W/real:$W/real/coco_validation.json")
 if [ "$TEST_N" -gt 0 ]; then
   stage real-test
   timeout 1500 python scripts/prepare_doclaynet.py --out "$W/real" --split test --use 6 --n "$TEST_N" --seed 0 --cache "$W/shards"
-  ALSO+=(--also-eval "$W/real:$W/real/coco_test.json")
+fi
+if [ "$REAL_N" -gt 0 ]; then
+  stage real-train
+  timeout 2400 python scripts/prepare_doclaynet.py --out "$W/real" --split train --use 24 --n "$REAL_N" --seed 0 --cache "$W/shards"
 fi
 
-stage train
-timeout $(( STEPS * 10 + 900 )) python scripts/train_layout.py --root "$W/syn" --train-json "$W/syn/coco_train.json" --val-json "$W/syn/coco_val.json" \
-  "${ALSO[@]}" --out "$RUN/train" --steps "$STEPS" --batch "$BATCH" --size "$SIZE" --workers 8 --max-val-images 50
+# arm NAME STEPS ROOT TRAIN_JSON VAL_JSON [train_layout args...]: train, then score on synthetic val and the real pages.
+arm() {
+  local name=$1 steps=$2 root=$3 tj=$4 vj=$5; shift 5
+  stage "arm-$name"
+  local ev=(--also-eval "$W/syn:$W/syn/coco_val.json" --also-eval "$W/real:$W/real/coco_validation.json")
+  if [ "$TEST_N" -gt 0 ]; then ev+=(--also-eval "$W/real:$W/real/coco_test.json"); fi
+  timeout $(( steps * 10 + 900 )) python scripts/train_layout.py --root "$root" --train-json "$tj" --val-json "$vj" "${ev[@]}" \
+    --out "$RUN/$name" --steps "$steps" --batch "$BATCH" --size "$SIZE" --workers 8 --max-val-images 50 "$@"
+  echo "ARM $name $(python -c "import json; r = json.load(open('$RUN/$name/report.json')); print({k: round(v['map50_95'], 4) for k, v in r['also'].items()})")"
+}
+
+SYN=("$W/syn" "$W/syn/coco_train.json" "$W/syn/coco_val.json")
+REAL=("$W/real" "$W/real/coco_train.json" "$W/real/coco_validation.json")
+if [ -z "$ARMS" ]; then arm train "$STEPS" "${SYN[@]}"; fi
+for a in $ARMS; do
+  case $a in
+    synthetic) arm synthetic "$STEPS" "${SYN[@]}" ;;
+    real) arm real "$REAL_STEPS" "${REAL[@]}" --augment ;;
+    finetune) arm finetune "$REAL_STEPS" "${REAL[@]}" --augment --weights "$RUN/synthetic/checkpoint.pt" --lr 0.002 ;;
+    mix) arm mix "$MIX_STEPS" "${REAL[@]}" --augment --also-train "$W/syn:$W/syn/coco_train.json:0.5" ;;
+    *) echo "ERROR unknown arm $a"; exit 2 ;;
+  esac
+done
 stage done
