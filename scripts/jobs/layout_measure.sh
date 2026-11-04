@@ -5,10 +5,12 @@
 # TEST_N (0): also score on this many real DocLayNet test pages (the SYN-7 sample is 500).
 # SYN-7 arms: REAL_N (0) real train pages, ARMS (comma list, empty = one synthetic run) from `synthetic,real,finetune,mix`, STEPS for
 # synthetic, REAL_STEPS (3000) for real and finetune, MIX_STEPS (4000). `finetune` starts from the `synthetic` checkpoint.
+# SYN-27: SCALE ("2000:3000,5000:6000,10000:10000" = real pages:steps) and SEEDS ("0 1") train real-only on seeded nested subsets of one
+# real sample (the largest size), once per seed, and score each on synthetic val, real val and real test.
 # Markers: STAGE, hb, WARN, ERROR, STAGE failed, MEASURE, TRAIN, REPORT, RP_REPORT_BEGIN/END, RP_ARTIFACT_CODE.
 set -Eeuo pipefail
 : "${SYN_SHA:?}" "${RTOD_SHA:?}"; STEPS=${STEPS:-100}; BATCH=${BATCH:-16}; SIZE=${SIZE:-640}; DOCS=${DOCS:-70}; TEST_N=${TEST_N:-0}
-REAL_N=${REAL_N:-0}; ARMS=${ARMS:-}; REAL_STEPS=${REAL_STEPS:-3000}; MIX_STEPS=${MIX_STEPS:-4000}
+REAL_N=${REAL_N:-0}; ARMS=${ARMS:-}; SCALE=${SCALE:-}; SEEDS=${SEEDS:-0}; REAL_STEPS=${REAL_STEPS:-3000}; MIX_STEPS=${MIX_STEPS:-4000}
 W=${W:-/workspace}; RUN=$W/run; mkdir -p "$RUN"
 exec > >(tee -a "$RUN/job.log") 2>&1
 START=$(date +%s); : > "$RUN/stage"
@@ -80,6 +82,7 @@ if [ "$TEST_N" -gt 0 ]; then
   stage real-test
   timeout 1500 python scripts/prepare_doclaynet.py --out "$W/real" --split test --use 6 --n "$TEST_N" --seed 0 --cache "$W/shards"
 fi
+if [ -n "$SCALE" ]; then REAL_N=$(tr ',' '\n' <<< "$SCALE" | cut -d: -f1 | sort -n | tail -1); fi
 if [ "$REAL_N" -gt 0 ]; then
   stage real-train
   timeout 2400 python scripts/prepare_doclaynet.py --out "$W/real" --split train --use 24 --n "$REAL_N" --seed 0 --cache "$W/shards"
@@ -96,9 +99,22 @@ arm() {
   echo "ARM $name $(python -c "import json; r = json.load(open('$RUN/$name/report.json')); print({k: round(v['map50_95'], 4) for k, v in r['also'].items()})")"
 }
 
+subset() {  # subset N: coco_train_N.json holds N seeded random pages of coco_train.json
+  python - "$W/real/coco_train.json" "$1" <<'PY'
+import json, random, sys
+src, n = sys.argv[1], int(sys.argv[2])
+coco = json.load(open(src))
+keep = {i["id"] for i in random.Random(0).sample(coco["images"], min(n, len(coco["images"])))}
+coco["images"] = [i for i in coco["images"] if i["id"] in keep]
+coco["annotations"] = [a for a in coco["annotations"] if a["image_id"] in keep]
+json.dump(coco, open(src.replace(".json", f"_{n}.json"), "w"))
+print(f"SUBSET {n} images={len(coco['images'])} boxes={len(coco['annotations'])}")
+PY
+}
+
 SYN=("$W/syn" "$W/syn/coco_train.json" "$W/syn/coco_val.json")
 REAL=("$W/real" "$W/real/coco_train.json" "$W/real/coco_validation.json")
-if [ -z "$ARMS" ]; then arm train "$STEPS" "${SYN[@]}"; fi
+if [ -z "$ARMS$SCALE" ]; then arm train "$STEPS" "${SYN[@]}"; fi
 for a in ${ARMS//,/ }; do
   case $a in
     synthetic) arm synthetic "$STEPS" "${SYN[@]}" ;;
@@ -107,5 +123,9 @@ for a in ${ARMS//,/ }; do
     mix) arm mix "$MIX_STEPS" "${REAL[@]}" --augment --also-train "$W/syn:$W/syn/coco_train.json:0.5" ;;
     *) echo "ERROR unknown arm $a"; exit 2 ;;
   esac
+done
+for spec in ${SCALE//,/ }; do
+  n=${spec%%:*}; steps=${spec##*:}; subset "$n"
+  for seed in $SEEDS; do arm "real-$n-s$seed" "$steps" "$W/real" "$W/real/coco_train_$n.json" "$W/real/coco_validation.json" --augment --seed "$seed"; done
 done
 stage done
