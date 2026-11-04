@@ -32,7 +32,8 @@ def test_two_step_cpu_run_trains_and_reports_map(tmp_path: Path) -> None:
     out = tmp_path / "out"
 
     report = _load_script().run(
-        root=root, train_json=coco, val_json=coco, out=out, steps=2, batch=2, size=320, weights=None, workers=0, seed=0
+        root=root, train_json=coco, val_json=coco, out=out, steps=2, batch=2, size=320, weights=None, workers=0, seed=0,
+        also_eval=[(root, coco)],
     )
 
     assert (out / "checkpoint.pt").exists()
@@ -42,3 +43,5 @@ def test_two_step_cpu_run_trains_and_reports_map(tmp_path: Path) -> None:
     assert len(report["per_class"]) == 11
     assert report["steps"] == 2 and report["hardware"]["device"] == "cpu"
     assert 0.0 <= report["map50_95"] <= 1.0
+    assert set(report["also"]) == {"coco"} and len(report["also"]["coco"]["per_class"]) == 11
+    assert report["train_secs"] > 0 and report["eval_secs"] > 0

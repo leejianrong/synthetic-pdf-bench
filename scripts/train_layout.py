@@ -113,8 +113,10 @@ def train(model, data: LayoutPages, *, steps: int, batch: int, lr: float, device
                 raise FloatingPointError(f"non-finite loss {loss} at step {step}")
             if step in (1, steps) or step % 10 == 0:
                 rate = step / (time.monotonic() - t0)
+                mem = torch.cuda.max_memory_allocated() // 2**20 if device == "cuda" else 0
                 print(f"TRAIN step={step}/{steps} loss={loss:.3f} iou={float(out['iou_loss']):.3f} conf={float(out['conf_loss']):.3f} "
-                      f"cls={float(out['cls_loss']):.3f} lr={opt.param_groups[0]['lr']:.2e} it_s={rate:.2f} eta_s={(steps - step) / rate:.0f}", flush=True)
+                      f"cls={float(out['cls_loss']):.3f} lr={opt.param_groups[0]['lr']:.2e} it_s={rate:.2f} eta_s={(steps - step) / rate:.0f} "
+                      f"gpu_mem_mb={mem}", flush=True)
             if step >= steps:
                 break
 
@@ -156,7 +158,8 @@ def evaluate(model, data: LayoutPages, device: str, size: int) -> dict:
 
 
 def run(*, root: Path, train_json: Path, val_json: Path, out: Path, steps: int, batch: int, size: int, weights: Path | None,
-        workers: int, seed: int, lr: float = 0.005, max_train_images: int | None = None, max_val_images: int | None = None) -> dict:
+        workers: int, seed: int, lr: float = 0.005, max_train_images: int | None = None, max_val_images: int | None = None,
+        also_eval: list[tuple[Path, Path]] = ()) -> dict:
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
@@ -168,11 +171,17 @@ def run(*, root: Path, train_json: Path, val_json: Path, out: Path, steps: int, 
     stage("model")
     model = build_model(len(train_data.categories), weights)
     stage("train")
+    t0 = time.monotonic()
     train(model, train_data, steps=steps, batch=batch, lr=lr, device=hw["device"], workers=workers, seed=seed)
+    train_secs = time.monotonic() - t0
     torch.save(model.state_dict(), out / "checkpoint.pt")
     stage("evaluate")
+    t0 = time.monotonic()
     report = {**evaluate(model, val_data, hw["device"], size), "hardware": hw, "steps": steps, "batch": batch, "size": size, "lr": lr,
               "n_train_images": len(train_data), "n_val_images": len(val_data), "weights": str(weights) if weights else None}
+    # More datasets scored with the same model, e.g. real pages: {json stem: metrics}. Pass the pages' own root.
+    report["also"] = {j.stem: evaluate(model, LayoutPages(r, j, size, max_val_images), hw["device"], size) for r, j in also_eval}
+    report |= {"train_secs": train_secs, "eval_secs": time.monotonic() - t0}
     (out / "report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     print("REPORT " + json.dumps({k: report[k] for k in ("map50_95", "map50")}), flush=True)
     return report
@@ -193,10 +202,12 @@ def main() -> None:
     p.add_argument("--weights", default="official", help="'official' downloads the COCO checkpoint, 'none' trains from random, or a path.")
     p.add_argument("--max-train-images", type=int)
     p.add_argument("--max-val-images", type=int)
+    p.add_argument("--also-eval", action="append", default=[], metavar="ROOT:JSON", help="Also score this dataset (repeatable).")
     a = p.parse_args()
     weights = None if a.weights == "none" else fetch_official_weights() if a.weights == "official" else Path(a.weights)
     run(root=a.root, train_json=a.train_json, val_json=a.val_json, out=a.out, steps=a.steps, batch=a.batch, size=a.size, weights=weights,
-        workers=a.workers, seed=a.seed, lr=a.lr, max_train_images=a.max_train_images, max_val_images=a.max_val_images)
+        workers=a.workers, seed=a.seed, lr=a.lr, max_train_images=a.max_train_images, max_val_images=a.max_val_images,
+        also_eval=[(Path(r), Path(j)) for r, j in (x.split(":", 1) for x in a.also_eval)])
 
 
 if __name__ == "__main__":

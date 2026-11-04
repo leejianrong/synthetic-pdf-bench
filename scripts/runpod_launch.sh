@@ -6,7 +6,8 @@
 # Ships <file>... to the pod inline in the start command (nothing is fetched before the dead-man's-switch
 # is armed), runs <entry-script> there, pulls the artifact over the relay into <dest-dir>, terminates the
 # pod and appends to the ledger. Configure by env: RP_COMPUTE_TYPE (CPU|GPU), RP_POD_IMAGE, RP_GPU_TYPE,
-# RP_MAX_HOURLY_USD, RP_MAX_LIFETIME_SECS, RP_VCPU_COUNT, RP_CONTAINER_DISK_GB; TOTAL_CAP_USD (default 5).
+# RP_MAX_HOURLY_USD, RP_MAX_LIFETIME_SECS, RP_VCPU_COUNT, RP_CONTAINER_DISK_GB; TOTAL_CAP_USD (default 5);
+# JOB_ENV ("A=1 B=2") is set for the entry script.
 # Run it detached:  setsid nohup scripts/runpod_launch.sh ... > output/runpod/<name>.out 2>&1 &
 # The API key is read by reference from ~/.runpod/config.toml (single-quoted apikey) and never printed.
 set -euo pipefail
@@ -30,7 +31,7 @@ export RUNPOD_API_KEY="$(awk -F"'" '/^apikey/{print $2}' ~/.runpod/config.toml)"
 [ -n "$RUNPOD_API_KEY" ] || { echo "no apikey in ~/.runpod/config.toml" >&2; exit 4; }
 export PATH="$HOME/.claude/skills/runpod-jobs/scripts:$PATH"
 export RP_POD_NAME="syn-$NAME" RP_INTERRUPTIBLE=false RP_STATE_FILE="$PWD/output/runpod/.rp-state-$NAME"
-export RP_JOB_CMD="mkdir -p /workspace && cd /workspace && echo $(tar czf - "${FILES[@]}" | base64 -w0) | base64 -d | tar xz && bash $ENTRY"
+export RP_JOB_CMD="mkdir -p /workspace && cd /workspace && echo $(tar czf - "${FILES[@]}" | base64 -w0) | base64 -d | tar xz && ${JOB_ENV:-} bash $ENTRY"
 
 pod=""; hb_pid=""; t_start=$(date +%s)
 cleanup() {
