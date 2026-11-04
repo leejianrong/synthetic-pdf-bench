@@ -8,6 +8,25 @@ BBox = list[float]
 MarkdownSpan = list[int] | None
 
 
+class TextWord(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    text: str
+    bbox_pt: BBox
+    bbox_px: BBox | None = None
+
+
+class TextLine(BaseModel):
+    """One drawn line of a text block. Boxes span ascent to descent of the font, so they are a little taller than the glyphs."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    text: str
+    bbox_pt: BBox
+    bbox_px: BBox | None = None
+    words: list[TextWord] = Field(default_factory=list)
+
+
 class Block(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
@@ -24,6 +43,7 @@ class Block(BaseModel):
     markdown_span: MarkdownSpan = None
     include_in_markdown: bool = True
     language: str = "en"
+    lines: list[TextLine] = Field(default_factory=list)
     metadata: dict[str, Any] = Field(default_factory=dict)
 
     @field_validator("bbox_pt", "bbox_px", "bbox_norm")

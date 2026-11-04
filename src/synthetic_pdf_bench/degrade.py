@@ -91,6 +91,10 @@ def degrade_pages(scene: SceneGraph, page_paths: list[Path], profile_name: str, 
         move = (params["angle_deg"], tuple(params["shift_px"]), degraded.size)
         for block in page.blocks:
             block.bbox_px = transform_bbox(block.bbox_px, *move)
+            for line in block.lines:
+                line.bbox_px = transform_bbox(line.bbox_px, *move)
+                for word in line.words:
+                    word.bbox_px = transform_bbox(word.bbox_px, *move)
             if isinstance(block, TableBlock):
                 for cell in block.cells:
                     cell.bbox_px = transform_bbox(cell.bbox_px, *move)

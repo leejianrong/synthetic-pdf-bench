@@ -21,6 +21,7 @@ from synthetic_pdf_bench.generators.recipes import (
 )
 from synthetic_pdf_bench.generators.tables import table_to_html, table_to_markdown
 from synthetic_pdf_bench.layout.scene import SceneGraph
+from synthetic_pdf_bench.layout.text_lines import text_lines
 from synthetic_pdf_bench.render.fonts import (
     FONT_FAMILIES,
     contains_cjk,
@@ -212,8 +213,16 @@ class FlowLayoutPlanner:
                     self._add_reference(recipe_block)
                 elif recipe_block.type == "formula":
                     self._add_formula(recipe_block)
+        self._add_text_lines()
         self.validate_layout()
         return self.scene
+
+    def _add_text_lines(self) -> None:
+        assert self.scene is not None
+        for page in self.scene.pages:
+            for block in page.blocks:
+                if type(block) is Block and block.type != "formula":
+                    block.lines = text_lines(block, bold=block.type in {"title", "heading"}, dpi=self.dpi, page_height_pt=page.height_pt)
 
     def _new_page(self) -> None:
         assert self.scene is not None
