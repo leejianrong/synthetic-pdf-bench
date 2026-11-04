@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
+from random import Random
 from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
@@ -116,7 +118,17 @@ class ReferenceRecipe(BaseModel):
     metadata: dict[str, Any] = Field(default_factory=dict)
 
 
-RecipeBlock = ParagraphRecipe | TableRecipe | FigureRecipe | ListRecipe | FootnoteRecipe | ReferenceRecipe
+class FormulaRecipe(BaseModel):
+    """A display equation. ``latex`` is matplotlib mathtext, so it stays within \\frac, \\sqrt, \\sum, scripts and Greek letters."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    type: Literal["formula"]
+    latex: str
+    metadata: dict[str, Any] = Field(default_factory=dict)
+
+
+RecipeBlock = ParagraphRecipe | TableRecipe | FigureRecipe | ListRecipe | FootnoteRecipe | ReferenceRecipe | FormulaRecipe
 
 
 class SectionRecipe(BaseModel):
@@ -139,7 +151,48 @@ class DocumentRecipe(BaseModel):
 
 
 def recipe_variant_names() -> list[str]:
-    return ["standard", "compact", "spacious", "text_heavy", "figure_heavy", "table_heavy", "two_column", "random"]
+    return ["standard", "compact", "spacious", "text_heavy", "figure_heavy", "table_heavy", "two_column", "random", "structured"]
+
+
+_FORMULAS = [
+    r"g = \frac{P_{t} - P_{t-1}}{P_{t-1}} \times 100",
+    r"\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_{i}",
+    r"\sigma = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (x_{i} - \bar{x})^{2}}",
+    r"Y_{t} = \alpha + \beta X_{t} + \epsilon_{t}",
+    r"r = \frac{\sum (x_{i} - \bar{x})(y_{i} - \bar{y})}{\sqrt{\sum (x_{i} - \bar{x})^{2} \sum (y_{i} - \bar{y})^{2}}}",
+    r"V_{n} = V_{0} (1 + r)^{n}",
+    r"\Delta = \frac{X_{2} - X_{1}}{X_{1}}",
+    r"S = \sum_{k=1}^{m} w_{k} s_{k}",
+]
+
+
+def _structure(recipe: DocumentRecipe, seed: int) -> None:
+    """Turn some paragraphs into paragraph + list, paragraph + footnote and paragraph + formula, in place.
+
+    The recipes carry no lists, footnotes or equations, so layout models trained on them never see those classes.
+    """
+    rng = Random(seed)
+    note = 0
+    for section in recipe.sections:
+        blocks: list[RecipeBlock] = []
+        for block in section.blocks:
+            blocks.append(block)
+            if block.type != "paragraph":
+                continue
+            sentences = re.split(r"(?<=[.!?])\s+", block.text.strip())
+            extra: list[RecipeBlock] = []
+            if len(sentences) >= 5 and rng.random() < 0.4:
+                items = [s.rstrip(".") for s in sentences[-3:]]
+                block.text, sentences = " ".join(sentences[:-3]), sentences[:-3]
+                extra.append(ListRecipe(type="list", items=items, ordered=rng.random() < 0.5, language=block.language))
+            if len(sentences) >= 3 and rng.random() < 0.3:
+                note += 1
+                block.text, tail = " ".join(sentences[:-1]), sentences[-1]
+                extra.append(FootnoteRecipe(type="footnote", text=tail, marker=str(note), language=block.language))
+            if rng.random() < 0.2:
+                extra.append(FormulaRecipe(type="formula", latex=rng.choice(_FORMULAS)))
+            blocks.extend(extra)
+        section.blocks = blocks
 
 
 def apply_recipe_variant(recipe: DocumentRecipe, variant: str, seed: int) -> DocumentRecipe:
@@ -153,6 +206,9 @@ def apply_recipe_variant(recipe: DocumentRecipe, variant: str, seed: int) -> Doc
         "recipe_variant": variant,
         "variant_seed": seed,
     }
+    if variant == "structured":
+        _structure(copied, seed)
+        return copied
     if variant in {"standard", "spacious", "two_column", "random"}:
         return copied
 

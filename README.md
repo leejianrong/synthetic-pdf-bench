@@ -60,7 +60,7 @@ output/small_dataset/
   synthetic_000003/
 ```
 
-Available variants are `standard`, `compact`, `spacious`, `text_heavy`, `figure_heavy`, `table_heavy`, `two_column`, and `random`. `random` samples a whole page template from the seed (page size, margins, type sizes, font family, 1 or 2 columns, page-number position) and records it in `truth/document.json` under `metadata.layout_style`.
+Available variants are `standard`, `compact`, `spacious`, `text_heavy`, `figure_heavy`, `table_heavy`, `two_column`, `random` and `structured`. `structured` turns some paragraphs into paragraph + list (one `list-item` box per item), paragraph + footnote (placed at the foot of the page) and paragraph + display formula, on a random page template, so all 11 layout classes occur. `random` samples a whole page template from the seed (page size, margins, type sizes, font family, 1 or 2 columns, page-number position) and records it in `truth/document.json` under `metadata.layout_style`.
 
 Each document manifest includes a `quality` report. The dataset manifest includes aggregate `summary_stats` for pages, blocks, tables, figures, and variant counts.
 

@@ -63,7 +63,7 @@ stage generate
 cd "$W/repo"
 R=(); for f in data/recipes/canonical/*.json; do R+=(--recipe "$f"); done
 t0=$(date +%s)
-timeout 900 python -m synthetic_pdf_bench.cli.generate --output-root "$W/syn" --count "$DOCS" "${R[@]}" --variants random standard \
+timeout 900 python -m synthetic_pdf_bench.cli.generate --output-root "$W/syn" --count "$DOCS" "${R[@]}" --variants random standard structured \
   --workers "$(nproc)" --splits train=0.85 val=0.15 --split-by recipe > "$RUN/generate.log" 2>&1
 timeout 300 python -m synthetic_pdf_bench.cli.generate export-coco "$W/syn"
 echo "MEASURE generate docs=$DOCS secs=$(( $(date +%s) - t0 )) workers=$(nproc) pages=$(grep -c '"file_name"' "$W/syn/coco_train.json")+$(grep -c '"file_name"' "$W/syn/coco_val.json")"

@@ -97,7 +97,7 @@ def test_flow_layout_supports_lists_footnotes_references_and_caption_before() ->
     figure = next(block for block in blocks if isinstance(block, FigureBlock) and block.figure_id == "fig_caption_before")
     caption = next(block for block in blocks if block.block_id == figure.caption_block_id)
 
-    assert any(block.type == "list" and block.markdown.startswith("- First") for block in blocks)
+    assert any(block.type == "list_item" and block.markdown == "- First point" for block in blocks)
     assert any(block.type == "footnote" for block in blocks)
     assert any(block.type == "reference" for block in blocks)
     assert caption.reading_order < figure.reading_order
