@@ -29,8 +29,17 @@ class ReportLabRenderer:
             canvas.setPageSize((page.width_pt, page.height_pt))
             for block in sorted(page.blocks, key=lambda item: item.reading_order):
                 self._draw_block(canvas, block)
+            self._draw_footnote_rule(canvas, page)
             canvas.showPage()
         canvas.save()
+
+    def _draw_footnote_rule(self, canvas: Canvas, page: PageTruth) -> None:
+        notes = [b for b in page.blocks if b.type == "footnote"]
+        if notes:  # DocLayNet footnotes sit below a short horizontal rule, which belongs to no box
+            x0, _, x1, _ = notes[0].bbox_pt
+            canvas.setLineWidth(0.5)
+            canvas.setStrokeColor(colors.black)
+            canvas.line(x0, max(b.bbox_pt[3] for b in notes) + 2, x0 + (x1 - x0) / 3, max(b.bbox_pt[3] for b in notes) + 2)
 
     def _draw_block(self, canvas: Canvas, block: Block | TableBlock | FigureBlock) -> None:
         if isinstance(block, TableBlock):
@@ -38,17 +47,27 @@ class ReportLabRenderer:
         elif isinstance(block, FigureBlock):
             self._draw_figure(canvas, block)
         elif block.type == "formula":
-            x0, y0, x1, y1 = block.bbox_pt
+            x0, y0, x1, y1 = block.metadata["image_box"]
             canvas.drawImage(ImageReader(str(render_formula(block.text, block.metadata["font_size"]))), x0, y0, x1 - x0, y1 - y0, mask="auto")
+            if block.metadata["number"]:
+                canvas.setFillColor(colors.black)
+                canvas.setFont("Helvetica", block.metadata["number_font_size"])
+                canvas.drawRightString(block.bbox_pt[2], (y0 + y1) / 2 - block.metadata["number_font_size"] * 0.3, block.metadata["number"])
         else:
             self._draw_text(canvas, block, bold=block.type in {"title", "heading"})
 
     def _draw_text(self, canvas: Canvas, block: Block, bold: bool = False) -> None:
-        text = block.markdown if block.type == "list_item" and block.markdown else block.text or block.markdown
+        font_size = block.metadata.get("font_size", 8)
         canvas.setFillColor(colors.black)
-        canvas.setFont(font_for_text(text, bold=bold, family=block.metadata.get("font_family", "Helvetica")), block.metadata.get("font_size", 8))
-        for line in block.lines:  # the baseline sits `descent` above the line box bottom, as text_lines placed it
-            canvas.drawString(line.bbox_pt[0], line.bbox_pt[1] + DESCENT * block.metadata.get("font_size", 8), line.text)
+        canvas.setFont(font_for_text(block.text or block.markdown, bold=bold, family=block.metadata.get("font_family", "Helvetica")), font_size)
+        marker = block.metadata.get("marker")
+        for n, line in enumerate(block.lines):  # the baseline sits `descent` above the line box bottom, as text_lines placed it
+            baseline = line.bbox_pt[1] + DESCENT * font_size
+            if marker and n == 0:  # a hanging marker is its own word, left of the text block
+                canvas.drawString(line.words[0].bbox_pt[0], baseline, marker)
+                canvas.drawString(line.words[1].bbox_pt[0], baseline, line.text[len(marker) + 1 :])
+            else:
+                canvas.drawString(line.words[0].bbox_pt[0], baseline, line.text)
 
     def _draw_table(self, canvas: Canvas, block: TableBlock) -> None:
         canvas.setStrokeColor(colors.black)
