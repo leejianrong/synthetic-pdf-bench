@@ -8,6 +8,7 @@ Synthetic PDF generator with exact scene-graph ground truth, for training and ev
 - Test: `uv run pytest -q`
 - Lint: `uv run --with ruff ruff check src tests scripts`
 - Generate one doc: `uv run synthetic-pdf-bench --output output/x --seed 1 --recipe data/recipes/canonical/<name>.json`
+- Rehearse layout training on CPU (optional stack, see README): `.venv-train/bin/python -m pytest tests/test_train_layout.py`
 - Validate a research recipe: `scripts/validate_research_recipe.py`
 - Install the pre-push hook (runs lint + tests): `ln -sf ../../scripts/git-hooks/pre-push .git/hooks/pre-push`
 
