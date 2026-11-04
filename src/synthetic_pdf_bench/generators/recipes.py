@@ -181,9 +181,10 @@ def _structure(recipe: DocumentRecipe, seed: int) -> None:
                 continue
             sentences = re.split(r"(?<=[.!?])\s+", block.text.strip())
             extra: list[RecipeBlock] = []
-            if len(sentences) >= 5 and rng.random() < 0.4:
-                items = [s.rstrip(".") for s in sentences[-3:]]
-                block.text, sentences = " ".join(sentences[:-3]), sentences[:-3]
+            if len(sentences) >= 3 and rng.random() < 0.6:
+                keep = max(1, len(sentences) - 3)
+                items = [s.rstrip(".") for s in sentences[keep:]]
+                block.text, sentences = " ".join(sentences[:keep]), sentences[:keep]
                 extra.append(ListRecipe(type="list", items=items, ordered=rng.random() < 0.5, language=block.language))
             if len(sentences) >= 3 and rng.random() < 0.3:
                 note += 1

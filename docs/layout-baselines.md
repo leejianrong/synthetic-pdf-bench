@@ -82,3 +82,5 @@ Reading it:
 - **Page-footer (18.6% vs 6.4%) and caption (15.6% vs 5.6% in the sample, 2.0% in the paper) are over-represented**, and text is under (27.4% vs 38.9% sampled, 46.1% in the paper).
 - **Density is close** (10.8 boxes per page vs 10.7 in the real sample, 12.2 in the paper), so the page-level count is not the problem; the mix and the look are.
 - Formula and footnote are over-represented too (2.3% and 2.4% against 0.0% and 0.2% in the real sample), though in the paper they are 2.3% and 0.6%.
+
+**After SYN-29:** `structured` now makes a list from any paragraph of 3 or more sentences (60% of them, last 3 sentences as items). On the same 14-document sample list-item is 9.4% of boxes (real sample 9.8%, paper 16.8%) and boxes per page is 11.7. The SYN-6 and SYN-7 models were trained before this change.

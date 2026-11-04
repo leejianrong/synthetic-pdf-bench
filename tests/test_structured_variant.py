@@ -53,3 +53,10 @@ def test_formula_block_carries_latex_markdown(tmp_path: Path) -> None:
     root = _structured(tmp_path)
     formulas = [b for p in root.glob("*/truth/document.json") for pg in DocumentTruth.model_validate_json(p.read_text()).pages for b in pg.blocks if b.type == "formula"]
     assert formulas and all(b.markdown == f"$${b.text}$$" for b in formulas)
+
+
+def test_lists_are_common_enough_to_matter() -> None:
+    from synthetic_pdf_bench.generators.recipes import apply_recipe_variant, load_recipe
+
+    lists = sum(1 for path in RECIPES for s in apply_recipe_variant(load_recipe(path), "structured", 1).sections for b in s.blocks if b.type == "list")
+    assert lists >= 50  # real DocLayNet pages are 17% list items; paragraphs of 3 sentences must qualify
