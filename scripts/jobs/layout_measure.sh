@@ -3,7 +3,7 @@
 # and report speed and memory so a full run can be sized. Started by scripts/runpod_launch.sh through rp.
 # Env: SYN_SHA and RTOD_SHA (required, pinned commits), STEPS (100), BATCH (16), SIZE (640), DOCS (70),
 # TEST_N (0): also score on this many real DocLayNet test pages (the SYN-7 sample is 500).
-# SYN-7 arms: REAL_N (0) real train pages, ARMS (empty = one synthetic run) from `synthetic real finetune mix`, STEPS for
+# SYN-7 arms: REAL_N (0) real train pages, ARMS (comma list, empty = one synthetic run) from `synthetic,real,finetune,mix`, STEPS for
 # synthetic, REAL_STEPS (3000) for real and finetune, MIX_STEPS (4000). `finetune` starts from the `synthetic` checkpoint.
 # Markers: STAGE, hb, WARN, ERROR, STAGE failed, MEASURE, TRAIN, REPORT, RP_REPORT_BEGIN/END, RP_ARTIFACT_CODE.
 set -Eeuo pipefail
@@ -99,7 +99,7 @@ arm() {
 SYN=("$W/syn" "$W/syn/coco_train.json" "$W/syn/coco_val.json")
 REAL=("$W/real" "$W/real/coco_train.json" "$W/real/coco_validation.json")
 if [ -z "$ARMS" ]; then arm train "$STEPS" "${SYN[@]}"; fi
-for a in $ARMS; do
+for a in ${ARMS//,/ }; do
   case $a in
     synthetic) arm synthetic "$STEPS" "${SYN[@]}" ;;
     real) arm real "$REAL_STEPS" "${REAL[@]}" --augment ;;
