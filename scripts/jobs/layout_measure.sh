@@ -5,7 +5,7 @@
 # TEST_N (0): also score on this many real DocLayNet test pages (the SYN-7 sample is 500).
 # SYN-7 arms: REAL_N (0) real train pages, ARMS (comma list, empty = one synthetic run) from `synthetic,real,finetune,mix`, STEPS for
 # synthetic, REAL_STEPS (3000) for real and finetune, MIX_STEPS (4000). `finetune` starts from the `synthetic` checkpoint.
-# SYN-27: SCALE ("2000:3000,5000:6000,10000:10000" = real pages:steps) and SEEDS ("0 1") train real-only on seeded nested subsets of one
+# SYN-27: SCALE ("2000:3000,5000:6000,10000:10000" = real pages:steps) and SEEDS ("0,1") train real-only on seeded nested subsets of one
 # real sample (the largest size), once per seed, and score each on synthetic val, real val and real test.
 # Markers: STAGE, hb, WARN, ERROR, STAGE failed, MEASURE, TRAIN, REPORT, RP_REPORT_BEGIN/END, RP_ARTIFACT_CODE.
 set -Eeuo pipefail
@@ -126,6 +126,6 @@ for a in ${ARMS//,/ }; do
 done
 for spec in ${SCALE//,/ }; do
   n=${spec%%:*}; steps=${spec##*:}; subset "$n"
-  for seed in $SEEDS; do arm "real-$n-s$seed" "$steps" "$W/real" "$W/real/coco_train_$n.json" "$W/real/coco_validation.json" --augment --seed "$seed"; done
+  for seed in ${SEEDS//,/ }; do arm "real-$n-s$seed" "$steps" "$W/real" "$W/real/coco_train_$n.json" "$W/real/coco_validation.json" --augment --seed "$seed"; done
 done
 stage done
