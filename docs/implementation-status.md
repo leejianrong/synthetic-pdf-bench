@@ -60,6 +60,9 @@
 - Dataset-level summary stats
 - Evaluator for parser outputs
 - Dummy parser that copies truth into prediction format for smoke testing
+- Scan degradation (`--degrade`), parallel generation (`--workers`) and leakage-safe splits (`--splits`, `--split-by`)
+- Table metrics: TEDS, including spans
+- Research notes on DocLayNet and Docling: [research/doclaynet-docling-spike.md](research/doclaynet-docling-spike.md)
 
 ## Current Repository Structure
 
@@ -71,10 +74,7 @@ Canonical runtime inputs live in:
 data/recipes/canonical/
 ```
 
-Current canonical recipes:
-
-- `sea_historical_report_v1.json`
-- `visual_benchmark_v1.json`
+Six Southeast Asian history recipes (`sea_historical_report_v1`, `indonesia_colonial_nationalist_origins_v1`, `malaya_malaysia_state_formation_v1`, `malaysia_history_1900_post_2018_v1`, `singapore_history_1900_2020s_v1`, `singapore_malaysia_1963_1965_v1`) and `visual_benchmark_v1` (charts and table shapes). All share one subject area, so content variety is thin; see [roadmap.md](roadmap.md).
 
 ### Research and enrichment artifacts
 
@@ -96,39 +96,13 @@ data/recipes/research/sea_historical_report_v1/
 
 ## Current Limitations
 
-- No dedicated recipe validation CLI yet
-- No benchmark runner that executes a parser across a whole dataset automatically
-- No document-family templates beyond the current report-style flows
-- No OCR/noise/degradation simulation yet
+- Only report-style documents from history recipes; no invoices, forms, slides or academic layouts
+- Degradation is flat-scan only (skew, shift, contrast, blur, noise, JPEG): no perspective, curl or rotated pages
+- No word or text-line boxes in the truth, so OCR models cannot be trained from it yet
+- No benchmark runner that executes a parser across a whole dataset, and no edit-distance or reading-order metric
+- Models trained on synthetic pages alone do not transfer to real pages (0.025 mAP50-95 vs 0.463 from 2,000 real pages): [layout-baselines.md](layout-baselines.md)
 - No image-based visual diff checks beyond nonblank smoke validation
-- No parser-side aggregation report for multi-document evaluation runs
 
-## Recommended Next Steps
+## Next steps
 
-See [roadmap.md](roadmap.md) for the current plan (training-data focus, Office formats). The list below is the older backlog.
-
-### Highest value
-
-- Build a small benchmark runner that loops over a dataset, invokes a parser, and aggregates evaluation outputs
-- Add more canonical recipes across distinct document families
-- Add parser-run summary metrics across a whole dataset
-
-### Generator expansion
-
-- Add recipe families for academic papers, policy briefs, annual reports, manuals, and semi-structured government documents
-- Add more realistic bibliography/reference layouts
-- Add callouts, sidebars, multi-figure pages, and denser footnote patterns
-- Add noise and degradation options as explicit generation profiles
-
-### Evaluation expansion
-
-- Add block-type confusion summaries
-- Add page-level scorecards
-- Add document-level pass/fail thresholds
-- Add dataset-wide leaderboard-style aggregation
-
-### Workflow hardening
-
-- Add a dedicated recipe validation command
-- Add release/versioning conventions for benchmark datasets
-- Add documentation for benchmark dataset versioning and parser result storage
+See [roadmap.md](roadmap.md) for the plan and the Pandan board (SYN) for the cards.
