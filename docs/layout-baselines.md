@@ -34,4 +34,25 @@ Per-class AP50-95 on the test sample: text 0.095, table 0.048, picture 0.044, ti
 
 **Reading it.** The model solves its own distribution and barely transfers. Real validation scored 0.060 after 100 steps and 0.062 after 5,000, so more steps on the same synthetic pages add nothing. Two causes are visible. First, the synthetic pages contain no `list-item`, `footnote` or `formula` boxes at all (counted on a 14-document regeneration of the same recipes and variants, 278 pages), so three of the 11 classes cannot be learned; list-items alone are 1,083 boxes in the real train sample. Second, the recipes are all Southeast Asia history, so the content and page furniture are narrow. More steps are not the next move; covering the missing classes, more varied pages and mixing in real ones are (SYN-7, SYN-8).
 
-Our other YOLOX-Tiny rows are added here by the sim-to-real comparison (SYN-7).
+## Sim-to-real comparison (SYN-7)
+
+One pod, one seed per arm, a community NVIDIA RTX 3090 (RunPod, $0.22/hr, 0.95 h, $0.21 in all), repo `7344040`, rtod `3751bc7`. All arms start from COCO weights (except finetune), use batch 16, 640 px, the same 11-class head, and are scored on the same 500 DocLayNet test pages as Docling. Synthetic data is 150 documents (2,851 train pages, variants `random`, `standard` and `structured`, so all 11 classes occur). Real data is 2,000 DocLayNet train pages (seed 0, 24 evenly spaced shards; 671 financial, 404 manuals, 333 scientific, 309 laws, 154 patents, 129 tenders). The arms were fixed before the run, and the test pages were scored once per arm.
+
+| Arm | Steps | Train pages | Test mAP50-95 | Test mAP50 | Real val (50) mAP50-95 | Synthetic val mAP50-95 |
+|---|---|---|---|---|---|---|
+| Synthetic only | 5,000 | 2,851 synthetic | 0.025 | 0.061 | 0.083 | 0.937 |
+| Real only (+augment) | 3,000 | 2,000 real | **0.463** | 0.686 | 0.578 | 0.281 |
+| Synthetic, then real (lr 0.002, +augment) | 5,000 + 3,000 | 2,851 + 2,000 | 0.436 | 0.656 | 0.556 | 0.313 |
+| Mix 50/50 (+augment) | 4,000 | 2,000 real + 2,851 synthetic | 0.432 | 0.642 | 0.505 | 0.939 |
+| Docling heron (reference, CPU) | none | DocLayNet train and more | 0.705 | 0.883 | n/a | n/a |
+
+Test AP50-95 per class, real only: text 0.67, table 0.59, page-header 0.53, page-footer 0.53, picture 0.52, section-header 0.49, list-item 0.46, caption 0.41, formula 0.41, title 0.31, footnote 0.17.
+
+**Reading it.**
+- 2,000 real pages reach 0.463, about two thirds of Docling's 0.705 with a 29x smaller model budget, in nine minutes of training. This is the useful route.
+- Synthetic-only is still near zero (0.025) even though every class now occurs, and list-item and formula score 0.00. So the gap is how the pages look, not only which classes exist.
+- Synthetic pre-training did not help and may have hurt a little: finetune 0.436 and mix 0.432 against 0.463 for real only. These are single runs, and the 50-page validation scores differ by more (0.578, 0.556, 0.505), so treat gaps of this size as unproven rather than as a ranking. What is safe to say is that no arm beat real-only.
+- Footnote is the weakest class for every arm that trained on real pages, with 6,318 boxes in all of DocLayNet and only a few dozen in a 2,000-page sample.
+
+Open: more real pages and a longer schedule (the DocLayNet paper's learning curve flattens near 80% of the 69k training pages), a different synthetic generator that copies real layouts rather than SEA-history templates, and seeds to size the noise.
+
