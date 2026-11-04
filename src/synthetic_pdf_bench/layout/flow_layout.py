@@ -173,6 +173,7 @@ class FlowLayoutPlanner:
         self.reading_order = 0
         self.block_counter = 0
         self.figure_counter = 0
+        self.formula_counter = 0
         self.header_text = self.footer_text = ""
         register_fonts()
 
@@ -382,9 +383,9 @@ class FlowLayoutPlanner:
         )
 
     def _add_list(self, recipe: ListRecipe) -> None:
+        hang = self.style.body_font_size * 1.8  # DocLayNet list items hang: the marker sits left of the text block
         for idx, item in enumerate(recipe.items, start=1):
-            line = f"{idx}. {item}" if recipe.ordered else f"- {item}"
-            height = self._text_height(line, self.style.body_font_size, self.content_width, self.style.body_line_height)
+            height = self._text_height(item, self.style.body_font_size, self.content_width - hang, self.style.body_line_height)
             self._ensure_space(height + self.style.block_spacing)
             bbox = self._take_box(height)
             self._add_block(
@@ -396,20 +397,29 @@ class FlowLayoutPlanner:
                     reading_order=self._next_reading_order(),
                     bbox_pt=bbox,
                     text=item,
-                    markdown=line,
+                    markdown=f"{idx}. {item}" if recipe.ordered else f"- {item}",
                     language=recipe.language,
-                    metadata=recipe.metadata,
+                    metadata={**recipe.metadata, "marker": f"{idx}." if recipe.ordered else "\u2022", "hang": hang},
                 )
             )
 
     def _add_formula(self, recipe: FormulaRecipe) -> None:
+        self.formula_counter += 1
+        numbered = random.Random(f"{self.seed}-eq-{self.formula_counter}").random() < 0.7
+        label = f"({self.formula_counter})"
+        number_width = pdfmetrics.stringWidth(label, "Helvetica", self.style.body_font_size) + 8 if numbered else 0.0
         font_size = self.style.body_font_size * 1.4
         width, height = formula_size(recipe.latex, font_size)
-        while width > self.content_width and font_size > 6:
+        while width > self.content_width - 2 * number_width and font_size > 6:
             font_size -= 1
             width, height = formula_size(recipe.latex, font_size)
         self._ensure_space(height + self.style.block_spacing)
-        bbox = self._take_box(height, horizontal_inset=max(0.0, (self.content_width - width) / 2))
+        column = self._take_box(height)
+        left = column[0] + (self.content_width - width) / 2
+        image_box = [left, column[1], left + width, column[3]]
+        # DocLayNet puts the equation number inside the formula box, so the box runs from the equation to the column edge.
+        bbox = [left, column[1], column[2], column[3]] if numbered else image_box
+        tag = " \\tag{" + str(self.formula_counter) + "}" if numbered else ""
         self._add_block(
             Block(
                 block_id=self._next_block_id(),
@@ -418,8 +428,9 @@ class FlowLayoutPlanner:
                 reading_order=self._next_reading_order(),
                 bbox_pt=bbox,
                 text=recipe.latex,
-                markdown=f"$${recipe.latex}$$",
-                metadata={**recipe.metadata, "font_size": font_size},
+                markdown="$$" + recipe.latex + tag + "$$",
+                metadata={**recipe.metadata, "font_size": font_size, "image_box": image_box, "number": label if numbered else None,
+                          "number_font_size": self.style.body_font_size},
             )
         )
 

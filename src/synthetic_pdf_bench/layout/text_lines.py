@@ -51,14 +51,18 @@ def text_lines(block: Block, *, bold: bool, dpi: int, page_height_pt: float) -> 
     font_size = block.metadata.get("font_size", 8)  # furniture (header/footer/page number) has no entry
     line_height = block.metadata.get("line_height", font_size * 1.25)
     x0, y0, x1, y1 = block.bbox_pt
-    text = block.markdown if block.type == "list_item" and block.markdown else block.text or block.markdown
+    text = block.text or block.markdown
+    marker, hang = block.metadata.get("marker"), block.metadata.get("hang", 0.0)  # list items: marker at the box edge, text hangs
     font = font_for_text(text, bold=bold, family=block.metadata.get("font_family", "Helvetica"))
     lines: list[TextLine] = []
     baseline = y1 - font_size
-    for tokens in wrap_text(text, font, font_size, x1 - x0):
+    for n, tokens in enumerate(wrap_text(text, font, font_size, x1 - x0 - hang)):
         if baseline < y0:
             break
-        words, offset = [], 0.0
+        words, offset = [], hang
+        if marker and n == 0:
+            marker_box = [x0, baseline - DESCENT * font_size, x0 + pdfmetrics.stringWidth(marker, font, font_size), baseline + ASCENT * font_size]
+            words.append(TextWord(text=marker, bbox_pt=marker_box, bbox_px=pt_to_px_bbox(marker_box, page_height_pt, dpi)))
         for token in tokens:
             width = pdfmetrics.stringWidth(token, font, font_size)
             word = token.strip()
@@ -67,7 +71,7 @@ def text_lines(block: Block, *, bold: bool, dpi: int, page_height_pt: float) -> 
                 box = [left, baseline - DESCENT * font_size, left + pdfmetrics.stringWidth(word, font, font_size), baseline + ASCENT * font_size]
                 words.append(TextWord(text=word, bbox_pt=box, bbox_px=pt_to_px_bbox(box, page_height_pt, dpi)))
             offset += width
-        line_text = "".join(tokens).strip()
+        line_text = (f"{marker} " if marker and n == 0 else "") + "".join(tokens).strip()
         if words:
             box = [words[0].bbox_pt[0], baseline - DESCENT * font_size, words[-1].bbox_pt[2], baseline + ASCENT * font_size]
             lines.append(TextLine(text=line_text, bbox_pt=box, bbox_px=pt_to_px_bbox(box, page_height_pt, dpi), words=words))
