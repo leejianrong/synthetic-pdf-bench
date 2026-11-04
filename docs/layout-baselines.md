@@ -56,3 +56,29 @@ Test AP50-95 per class, real only: text 0.67, table 0.59, page-header 0.53, page
 
 Open: more real pages and a longer schedule (the DocLayNet paper's learning curve flattens near 80% of the 69k training pages), a different synthetic generator that copies real layouts rather than SEA-history templates, and seeds to size the noise.
 
+
+## Class mix against DocLayNet (SYN-25)
+
+`scripts/layout_stats.py` prints each class's share of boxes and boxes per page. Sample: 14 documents (291 pages) from all seven recipes, variants `random standard structured`, seed start 500, next to the 500-page real test sample and the paper's Table 1 (1,107,470 boxes).
+
+| class | DocLayNet | synthetic (14 documents) | real test sample (500 pages) |
+|---|---:|---:|---:|
+| Text | 46.1% | 27.4% | 38.9% |
+| List-item | 16.8% | 0.0% | 9.8% |
+| Section-header | 12.9% | 7.3% | 13.3% |
+| Page-footer | 6.4% | 18.6% | 7.0% |
+| Page-header | 5.2% | 9.3% | 6.1% |
+| Picture | 4.2% | 8.0% | 11.0% |
+| Table | 3.1% | 8.7% | 8.0% |
+| Formula | 2.3% | 2.3% | 0.0% |
+| Caption | 2.0% | 15.6% | 5.6% |
+| Footnote | 0.6% | 2.4% | 0.2% |
+| Title | 0.5% | 0.4% | 0.0% |
+| **boxes per page** | 12.2 | 10.8 | 10.7 |
+
+Reading it:
+
+- **List-item is 0.0% of synthetic boxes against 16.8% in DocLayNet.** The `structured` variant only makes a list from a paragraph with at least 5 sentences, and 7 of the 429 recipe paragraphs have that many (230 have 3, 113 have 2). The "all 11 classes occur" test in SYN-22 passed on a small sample by luck of the draw. List-item is the second most common real class, so this is the largest gap.
+- **Page-footer (18.6% vs 6.4%) and caption (15.6% vs 5.6% in the sample, 2.0% in the paper) are over-represented**, and text is under (27.4% vs 38.9% sampled, 46.1% in the paper).
+- **Density is close** (10.8 boxes per page vs 10.7 in the real sample, 12.2 in the paper), so the page-level count is not the problem; the mix and the look are.
+- Formula and footnote are over-represented too (2.3% and 2.4% against 0.0% and 0.2% in the sample), because the sample is a random 500 pages and those classes cluster in a few document categories.
