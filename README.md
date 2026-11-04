@@ -172,6 +172,10 @@ uv run synthetic-pdf-bench --output output/scan_1 --seed 3 --degrade heavy_scan 
 
 Page images get per-page skew, shift, contrast loss, blur, noise and JPEG artifacts. `document.pdf` becomes an image-only scan (no text layer, so OCR is needed) and the digital original is kept as `document_clean.pdf`. `bbox_px` in the truth and COCO export follow the degraded pages; `bbox_pt` and `bbox_norm` still describe the digital PDF, and figure crops stay clean. Boxes are axis-aligned around the skewed content, so they are a little looser than the text.
 
+## Line and word boxes
+
+Every text block in `truth/document.json` carries `lines`, each with its text, `bbox_pt`, `bbox_px` and `words` (text and boxes; CJK characters are one word each), for training or scoring text recognition. The PDF is drawn from these same lines, so they match the page exactly, and under `--degrade` the `bbox_px` values follow the skew. Boxes run from font descent to ascent, so they are a little taller than the glyphs. Table cells and figure text are not covered yet.
+
 ## Layout-detection export
 
 ```bash

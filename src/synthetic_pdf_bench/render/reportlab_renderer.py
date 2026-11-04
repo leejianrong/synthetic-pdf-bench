@@ -11,7 +11,8 @@ from synthetic_pdf_bench.generators.figures import (
     make_raster_figure,
 )
 from synthetic_pdf_bench.generators.formulas import render_formula
-from synthetic_pdf_bench.render.fonts import contains_cjk, font_for_text, register_fonts
+from synthetic_pdf_bench.layout.text_lines import DESCENT
+from synthetic_pdf_bench.render.fonts import font_for_text, register_fonts
 from synthetic_pdf_bench.schema.blocks import Block, FigureBlock, TableBlock
 from synthetic_pdf_bench.schema.truth import PageTruth
 
@@ -43,20 +44,11 @@ class ReportLabRenderer:
             self._draw_text(canvas, block, bold=block.type in {"title", "heading"})
 
     def _draw_text(self, canvas: Canvas, block: Block, bold: bool = False) -> None:
-        font_size = block.metadata.get("font_size", 8)  # furniture (header/footer/page number) has no entry
-        line_height = block.metadata.get("line_height", font_size * 1.25)
-        x0, y0, x1, y1 = block.bbox_pt
-        canvas.setFillColor(colors.black)
         text = block.markdown if block.type == "list_item" and block.markdown else block.text or block.markdown
-        font_name = font_for_text(text, bold=bold, family=block.metadata.get("font_family", "Helvetica"))
-        canvas.setFont(font_name, font_size)
-        lines = self._wrap_text(canvas, text, font_name, font_size, x1 - x0)
-        y = y1 - font_size
-        for line in lines:
-            if y < y0:
-                break
-            canvas.drawString(x0, y, line)
-            y -= line_height
+        canvas.setFillColor(colors.black)
+        canvas.setFont(font_for_text(text, bold=bold, family=block.metadata.get("font_family", "Helvetica")), block.metadata.get("font_size", 8))
+        for line in block.lines:  # the baseline sits `descent` above the line box bottom, as text_lines placed it
+            canvas.drawString(line.bbox_pt[0], line.bbox_pt[1] + DESCENT * block.metadata.get("font_size", 8), line.text)
 
     def _draw_table(self, canvas: Canvas, block: TableBlock) -> None:
         canvas.setStrokeColor(colors.black)
@@ -104,41 +96,6 @@ class ReportLabRenderer:
             self._draw_regional_map_placeholder(canvas, block)
         else:
             self._draw_vector_placeholder(canvas, block)
-
-    def _wrap_text(self, canvas: Canvas, text: str, font_name: str, font_size: int, max_width: float) -> list[str]:
-        tokens = self._wrap_tokens(text)
-        lines: list[str] = []
-        current = ""
-        for token in tokens:
-            candidate = token if not current else current + token
-            if canvas.stringWidth(candidate, font_name, font_size) <= max_width:
-                current = candidate
-                continue
-            if current:
-                lines.append(current.strip())
-            current = token.lstrip()
-        if current:
-            lines.append(current.strip())
-        return lines or [""]
-
-    def _wrap_tokens(self, text: str) -> list[str]:
-        tokens: list[str] = []
-        current = ""
-        for char in text:
-            if contains_cjk(char):
-                if current:
-                    tokens.append(current)
-                    current = ""
-                tokens.append(char)
-            elif char.isspace():
-                current += char
-                tokens.append(current)
-                current = ""
-            else:
-                current += char
-        if current:
-            tokens.append(current)
-        return tokens
 
     def _draw_figure_frame(self, canvas: Canvas, block: FigureBlock, title: str) -> tuple[float, float, float, float]:
         x0, y0, x1, y1 = block.bbox_pt

@@ -98,7 +98,7 @@ data/recipes/research/sea_historical_report_v1/
 
 - Only report-style documents from history recipes; no invoices, forms, slides or academic layouts
 - Degradation is flat-scan only (skew, shift, contrast, blur, noise, JPEG): no perspective, curl or rotated pages
-- No word or text-line boxes in the truth, so OCR models cannot be trained from it yet
+- Line and word boxes cover text blocks only; table cells and text inside figures have none
 - No benchmark runner that executes a parser across a whole dataset, and reading order is scored only for blocks that carry our `block_id`
 - Models trained on synthetic pages alone do not transfer to real pages (0.025 mAP50-95 vs 0.463 from 2,000 real pages): [layout-baselines.md](layout-baselines.md)
 - No image-based visual diff checks beyond nonblank smoke validation
