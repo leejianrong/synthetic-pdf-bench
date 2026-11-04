@@ -27,7 +27,7 @@ from pycocotools.coco import COCO
 from pycocotools.cocoeval import COCOeval
 from rtod.detect import letterbox, postprocess
 from rtod.models import build_yolox_tiny, fetch_official_weights
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import ConcatDataset, DataLoader, Dataset, WeightedRandomSampler
 
 MAX_LABELS = 200  # dense pages: far above the 120 used for COCO photos
 
@@ -48,12 +48,30 @@ def hardware() -> dict:
     }
 
 
+def augment_page(img: np.ndarray, boxes: list, rng: random.Random) -> tuple[np.ndarray, list]:
+    """Mild photometric jitter and zoom-out (shrink the page onto a larger white canvas). No flips: mirrored text is not a page.
+
+    ``boxes`` are [cls, x, y, w, h] in image pixels.
+    """
+    if rng.random() < 0.5:
+        img = np.clip(img.astype(np.float32) * rng.uniform(0.8, 1.2) + rng.uniform(-20, 20), 0, 255).astype(np.uint8)
+    if rng.random() < 0.3:
+        scale = rng.uniform(0.7, 1.0)
+        h, w = img.shape[:2]
+        big_h, big_w = int(h / scale), int(w / scale)
+        ox, oy = rng.randint(0, big_w - w), rng.randint(0, big_h - h)
+        canvas = np.full((big_h, big_w, 3), 255, dtype=np.uint8)
+        canvas[oy : oy + h, ox : ox + w] = img
+        img, boxes = canvas, [[c, x + ox, y + oy, bw, bh] for c, x, y, bw, bh in boxes]
+    return img, boxes
+
+
 class LayoutPages(Dataset):
     """Pages and boxes from a COCO json written by `export-coco`; targets are [cls, cx, cy, w, h] in input pixels."""
 
-    def __init__(self, root: Path, coco_json: Path, size: int, max_images: int | None = None) -> None:
+    def __init__(self, root: Path, coco_json: Path, size: int, max_images: int | None = None, augment: bool = False) -> None:
         data = json.loads(coco_json.read_text(encoding="utf-8"))
-        self.root, self.size = root, size
+        self.root, self.size, self.augment = root, size, augment
         self.images = data["images"][:max_images]
         self.names = {c["id"]: c["name"] for c in data["categories"]}
         self.categories = sorted(self.names)
@@ -68,8 +86,11 @@ class LayoutPages(Dataset):
     def __getitem__(self, i: int):
         info = self.images[i]
         img = cv2.imread(str(self.root / info["file_name"]))
+        raw = self.boxes[info["id"]]
+        if self.augment:
+            img, raw = augment_page(img, raw, random)  # the module `random` is reseeded per DataLoader worker
         blob, ratio = letterbox(img, self.size)
-        boxes = np.array(self.boxes[info["id"]], dtype=np.float32).reshape(-1, 5)[:MAX_LABELS]
+        boxes = np.array(raw, dtype=np.float32).reshape(-1, 5)[:MAX_LABELS]
         t = np.zeros((MAX_LABELS, 5), dtype=np.float32)
         t[: len(boxes), 0] = boxes[:, 0]
         t[: len(boxes), 1:3] = (boxes[:, 1:3] + boxes[:, 3:5] / 2) * ratio
@@ -87,9 +108,10 @@ def build_model(num_classes: int, weights: Path | None):
     return model
 
 
-def train(model, data: LayoutPages, *, steps: int, batch: int, lr: float, device: str, workers: int, seed: int) -> None:
+def train(model, data: Dataset, *, steps: int, batch: int, lr: float, device: str, workers: int, seed: int, sampler=None) -> None:
     loader = DataLoader(
-        data, batch_size=batch, shuffle=True, num_workers=workers, drop_last=len(data) >= batch, generator=torch.Generator().manual_seed(seed)
+        data, batch_size=batch, shuffle=sampler is None, sampler=sampler, num_workers=workers, drop_last=len(data) >= batch,
+        generator=torch.Generator().manual_seed(seed),
     )
     model.head.decode_in_inference = False
     model.to(device).train()
@@ -164,26 +186,38 @@ def evaluate(model, data: LayoutPages, device: str, size: int) -> dict:
 
 def run(*, root: Path, train_json: Path, val_json: Path, out: Path, steps: int, batch: int, size: int, weights: Path | None,
         workers: int, seed: int, lr: float = 0.005, max_train_images: int | None = None, max_val_images: int | None = None,
-        also_eval: list[tuple[Path, Path]] = ()) -> dict:
+        also_eval: list[tuple[Path, Path]] = (), also_train: list[tuple[Path, Path, float]] = (), augment: bool = False) -> dict:
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
     out.mkdir(parents=True, exist_ok=True)
     hw = hardware()
     stage(f"data on {hw['device']} ({hw['name']})")
-    train_data = LayoutPages(root, train_json, size, max_train_images)
+    sets = [LayoutPages(root, train_json, size, max_train_images, augment)]
+    sets += [LayoutPages(r, j, size, augment=augment) for r, j, _ in also_train]
+    shares = [1.0 - sum(sh for *_, sh in also_train), *(sh for *_, sh in also_train)]
+    if shares[0] <= 0 or any(sh <= 0 for sh in shares):
+        raise ValueError(f"train shares must be positive and leave the first set a share, got {shares}")
+    if any(d.names != sets[0].names for d in sets):
+        raise ValueError("train sets must use the same categories")
+    train_data = sets[0]
+    mix = [{"pages": len(d), "share": sh} for d, sh in zip(sets, shares, strict=True)]
     val_data = LayoutPages(root, val_json, size, max_val_images)
     stage("model")
     model = build_model(len(train_data.categories), weights)
     stage("train")
     t0 = time.monotonic()
-    train(model, train_data, steps=steps, batch=batch, lr=lr, device=hw["device"], workers=workers, seed=seed)
+    sampler = None
+    if len(sets) > 1:  # each draw comes from set i with probability share_i
+        weights = [sh / len(d) for d, sh in zip(sets, shares, strict=True) for _ in range(len(d))]
+        sampler = WeightedRandomSampler(weights, num_samples=steps * batch, replacement=True, generator=torch.Generator().manual_seed(seed))
+    train(model, ConcatDataset(sets) if sampler else train_data, steps=steps, batch=batch, lr=lr, device=hw["device"], workers=workers, seed=seed, sampler=sampler)
     train_secs = time.monotonic() - t0
     torch.save(model.state_dict(), out / "checkpoint.pt")
     stage("evaluate")
     t0 = time.monotonic()
     report = {**evaluate(model, val_data, hw["device"], size), "hardware": hw, "steps": steps, "batch": batch, "size": size, "lr": lr,
-              "n_train_images": len(train_data), "n_val_images": len(val_data), "weights": str(weights) if weights else None}
+              "n_train_images": sum(m["pages"] for m in mix), "mix": mix, "augment": augment, "n_val_images": len(val_data), "weights": str(weights) if weights else None}
     # More datasets scored with the same model, e.g. real pages: {json stem: metrics}. Pass the pages' own root.
     report["also"] = {}
     for r, j in also_eval:  # not capped by max_val_images: these are explicit samples
@@ -210,12 +244,15 @@ def main() -> None:
     p.add_argument("--weights", default="official", help="'official' downloads the COCO checkpoint, 'none' trains from random, or a path.")
     p.add_argument("--max-train-images", type=int)
     p.add_argument("--max-val-images", type=int)
+    p.add_argument("--also-train", action="append", default=[], metavar="ROOT:JSON:SHARE", help="Mix in this train set; SHARE (0-1) of the draws. The first set takes the rest.")
+    p.add_argument("--augment", action="store_true", help="Mild photometric jitter and zoom-out on training pages.")
     p.add_argument("--also-eval", action="append", default=[], metavar="ROOT:JSON", help="Also score this dataset (repeatable).")
     a = p.parse_args()
     weights = None if a.weights == "none" else fetch_official_weights() if a.weights == "official" else Path(a.weights)
     run(root=a.root, train_json=a.train_json, val_json=a.val_json, out=a.out, steps=a.steps, batch=a.batch, size=a.size, weights=weights,
         workers=a.workers, seed=a.seed, lr=a.lr, max_train_images=a.max_train_images, max_val_images=a.max_val_images,
-        also_eval=[(Path(r), Path(j)) for r, j in (x.split(":", 1) for x in a.also_eval)])
+        also_eval=[(Path(r), Path(j)) for r, j in (x.split(":", 1) for x in a.also_eval)],
+        also_train=[(Path(r), Path(j), float(sh)) for r, j, sh in (x.rsplit(":", 2) for x in a.also_train)], augment=a.augment)
 
 
 if __name__ == "__main__":

@@ -46,3 +46,46 @@ def test_two_step_cpu_run_trains_and_reports_map(tmp_path: Path) -> None:
     assert set(report["also"]) == {"coco"} and len(report["also"]["coco"]["per_class"]) == 11
     assert report["n_val_images"] == 1 and report["also"]["coco"]["n_images"] > 1  # the cap spares also-eval pages
     assert report["train_secs"] > 0 and report["eval_secs"] > 0
+
+
+class _Always:
+    """Stands in for `random`: every probability test fires, and ranges resolve to fixed values."""
+
+    @staticmethod
+    def random() -> float:
+        return 0.0
+
+    @staticmethod
+    def uniform(lo: float, hi: float) -> float:
+        return lo
+
+    @staticmethod
+    def randint(lo: int, hi: int) -> int:
+        return hi
+
+
+def test_augment_page_keeps_boxes_on_their_content() -> None:
+    import numpy as np
+
+    img = np.full((100, 200, 3), 255, dtype=np.uint8)
+    img[20:40, 50:150] = 0  # the "text" the box covers
+    out, boxes = _load_script().augment_page(img, [[3, 50, 20, 100, 20]], _Always)
+
+    (cls, x, y, w, h), = boxes
+    assert cls == 3 and (w, h) == (100, 20)
+    assert out.shape[0] > 100 and out.shape[1] > 200  # zoomed out
+    assert out[int(y) : int(y + h), int(x) : int(x + w)].mean() < 40  # still dark where the box says
+
+
+def test_mixed_run_reports_the_mix_and_rejects_bad_shares(tmp_path: Path) -> None:
+    root = tmp_path / "ds"
+    generate_dataset(root, count=2, recipe_paths=[Path("data/recipes/canonical/sea_historical_report_v1.json")])
+    coco = write_coco(root)
+    kw = {"root": root, "train_json": coco, "val_json": coco, "out": tmp_path / "out", "steps": 2, "batch": 2, "size": 320, "weights": None, "workers": 0, "seed": 0}
+
+    report = _load_script().run(**kw, also_train=[(root, coco, 0.25)], augment=True)
+
+    assert [m["share"] for m in report["mix"]] == [0.75, 0.25] and report["augment"] is True
+    assert report["n_train_images"] == 2 * len(json.loads(coco.read_text())["images"])
+    with pytest.raises(ValueError, match="shares"):
+        _load_script().run(**kw, also_train=[(root, coco, 1.0)])
