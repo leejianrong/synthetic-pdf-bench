@@ -49,10 +49,10 @@ One pod, one seed per arm, a community NVIDIA RTX 3090 (RunPod, $0.22/hr, 0.95 h
 Test AP50-95 per class, real only: text 0.67, table 0.59, page-header 0.53, page-footer 0.53, picture 0.52, section-header 0.49, list-item 0.46, caption 0.41, formula 0.41, title 0.31, footnote 0.17.
 
 **Reading it.**
-- 2,000 real pages reach 0.463, about two thirds of Docling's 0.705 with a 29x smaller model budget, in nine minutes of training. This is the useful route.
+- 2,000 real pages reach 0.463, about two thirds of Docling's 0.705 with a small model and nine minutes of training (531 s). This is the useful route.
 - Synthetic-only is still near zero (0.025) even though every class now occurs, and list-item and formula score 0.00. So the gap is how the pages look, not only which classes exist.
 - Synthetic pre-training did not help and may have hurt a little: finetune 0.436 and mix 0.432 against 0.463 for real only. These are single runs, and the 50-page validation scores differ by more (0.578, 0.556, 0.505), so treat gaps of this size as unproven rather than as a ranking. What is safe to say is that no arm beat real-only.
-- Footnote is the weakest class for every arm that trained on real pages, with 6,318 boxes in all of DocLayNet and only a few dozen in a 2,000-page sample.
+- Footnote is the weakest class for every arm that trained on real pages, and it is the rarest class: 6,318 boxes in all of DocLayNet, and 23 in the earlier 500-page train sample.
 
 Open: more real pages and a longer schedule (the DocLayNet paper's learning curve flattens near 80% of the 69k training pages), a different synthetic generator that copies real layouts rather than SEA-history templates, and seeds to size the noise.
 
