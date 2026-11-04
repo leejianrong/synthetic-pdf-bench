@@ -42,11 +42,13 @@ command -v nvidia-smi >/dev/null || { echo "ERROR no nvidia-smi: not a GPU pod";
 
 stage install
 # torch from the PyTorch index alone (CUDA 12.4 wheels, as the rtod project validated), everything else from PyPI alone.
-timeout 900 pip install -q torch==2.6.0 --index-url https://download.pytorch.org/whl/cu124
-timeout 600 pip install -q pyarrow pycocotools "rtod[torch,coco] @ git+https://github.com/leejianrong/real-time-object-detection@${RTOD_SHA}"
+# Long timeouts and retries: a slow community host timed out reading the nvidia wheels (2026-11-04). Progress stays on so a slow install is visible.
+PIP="pip install --default-timeout 120 --retries 8 --progress-bar off"
+timeout 1500 $PIP torch==2.6.0 --index-url https://download.pytorch.org/whl/cu124
+timeout 600 $PIP -q pyarrow pycocotools "rtod[torch,coco] @ git+https://github.com/leejianrong/real-time-object-detection@${RTOD_SHA}"
 timeout 300 git clone -q https://github.com/leejianrong/synthetic-pdf-bench "$W/repo"
 git -C "$W/repo" checkout -q "$SYN_SHA"
-timeout 600 pip install -q "$W/repo"
+timeout 600 $PIP -q "$W/repo"
 
 stage preflight  # a real CUDA op, not just is_available()
 python - <<'PY'
