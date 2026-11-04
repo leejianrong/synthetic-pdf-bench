@@ -7,6 +7,7 @@
 # synthetic, REAL_STEPS (3000) for real and finetune, MIX_STEPS (4000). `finetune` starts from the `synthetic` checkpoint.
 # SYN-27: SCALE ("2000:3000,5000:6000,10000:10000" = real pages:steps) and SEEDS ("0,1") train real-only on seeded nested subsets of one
 # real sample (the largest size), once per seed, and score each on synthetic val, real val and real test.
+# REAL_SHARDS (24) and PREP_TIMEOUT (2400 s) size the real-train download: community hosts took 1-8 min per 500 MB shard.
 # Markers: STAGE, hb, WARN, ERROR, STAGE failed, MEASURE, TRAIN, REPORT, RP_REPORT_BEGIN/END, RP_ARTIFACT_CODE.
 set -Eeuo pipefail
 : "${SYN_SHA:?}" "${RTOD_SHA:?}"; STEPS=${STEPS:-100}; BATCH=${BATCH:-16}; SIZE=${SIZE:-640}; DOCS=${DOCS:-70}; TEST_N=${TEST_N:-0}
@@ -85,7 +86,7 @@ fi
 if [ -n "$SCALE" ]; then REAL_N=$(tr ',' '\n' <<< "$SCALE" | cut -d: -f1 | sort -n | tail -1); fi
 if [ "$REAL_N" -gt 0 ]; then
   stage real-train
-  timeout 2400 python scripts/prepare_doclaynet.py --out "$W/real" --split train --use 24 --n "$REAL_N" --seed 0 --cache "$W/shards"
+  timeout "${PREP_TIMEOUT:-2400}" python scripts/prepare_doclaynet.py --out "$W/real" --split train --use "${REAL_SHARDS:-24}" --n "$REAL_N" --seed 0 --cache "$W/shards"
 fi
 
 # arm NAME STEPS ROOT TRAIN_JSON VAL_JSON [train_layout args...]: train, then score on synthetic val and the real pages.
