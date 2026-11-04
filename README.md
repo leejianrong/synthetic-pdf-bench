@@ -208,7 +208,7 @@ uv pip install --python .venv-train/bin/python "rtod[torch,coco] @ git+https://g
   --val-json output/corpus/coco_val.json --out output/run1 --steps 2000
 ```
 
-Add `--steps 6 --batch 2 --size 416` for a CPU smoke run. Pages are not flipped during training because mirrored text is not a page. `tests/test_train_layout.py` runs a 2-step rehearsal and is skipped when the stack is missing.
+Add `--steps 6 --batch 2 --size 416` for a CPU smoke run, and `--also-eval ROOT:JSON` (repeatable) to score the same model on other pages, such as sampled real ones. `report.json` carries train and eval seconds and the hardware; `scripts/jobs/layout_measure.sh` is the GPU job that measures speed and memory for sizing a run. Pages are not flipped during training because mirrored text is not a page. `tests/test_train_layout.py` runs a 2-step rehearsal and is skipped when the stack is missing.
 
 ## Real pages for evaluation
 
