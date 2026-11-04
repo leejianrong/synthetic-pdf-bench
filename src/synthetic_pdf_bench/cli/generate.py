@@ -7,6 +7,7 @@ from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
 from synthetic_pdf_bench.degrade import PROFILES, degrade_pages, write_scan_pdf
+from synthetic_pdf_bench.evaluation.benchmark import run_benchmark
 from synthetic_pdf_bench.evaluation.evaluator import (
     expected_prediction_shape,
     prediction_from_truth,
@@ -204,6 +205,12 @@ def build_parser() -> argparse.ArgumentParser:
         dataset_parser.add_argument("root", type=Path, help="Document or dataset directory.")
         dataset_parser.add_argument("--output", type=Path, help=f"Defaults to <root>/{name.removeprefix('export-')}.")
 
+    bench_parser = subparsers.add_parser("benchmark", help="Run a parser over every document of a dataset and aggregate the scores.")
+    bench_parser.add_argument("root", type=Path, help="Dataset directory with manifest.json.")
+    bench_parser.add_argument("--parser", default="dummy", help="`dummy` (copies the truth) or a shell command using {pdf}, {truth} and {out}.")
+    bench_parser.add_argument("--output", type=Path, required=True, help="Writes predictions/ and benchmark.json here.")
+    bench_parser.add_argument("--timeout", type=int, default=600, help="Seconds allowed per document.")
+
     shape_parser = subparsers.add_parser("prediction-shape", help="Print expected parser output shape.")
     shape_parser.add_argument("--output", type=Path)
 
@@ -257,6 +264,9 @@ def main() -> None:
     if args.command == "evaluate":
         report = write_evaluation_report(args.truth, args.prediction, args.output)
         print(json.dumps(report, indent=2, ensure_ascii=False))
+        return
+    if args.command == "benchmark":
+        print(json.dumps(run_benchmark(args.root, args.parser, args.output, args.timeout), indent=2, ensure_ascii=False))
         return
     if args.command == "dummy-parse":
         prediction_from_truth(args.truth, args.prediction)
