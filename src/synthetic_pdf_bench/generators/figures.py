@@ -104,7 +104,11 @@ def _draw_stacked_bar(ax, data: dict) -> None:
     ax.legend(fontsize=7)
 
 
-def _draw_timeline(ax, data: dict) -> None:
+_TIMELINE_LANES = [0.12, -0.18, 0.26, -0.32, 0.40, -0.46]
+
+
+def _draw_timeline(ax, data: dict) -> list:
+    """Draw the timeline and return its label texts. Each label takes the first height lane where it clears the labels already placed."""
     events = data.get("events") or [
         {"year": 1945, "label": "Indonesia"},
         {"year": 1957, "label": "Malaya"},
@@ -114,12 +118,22 @@ def _draw_timeline(ax, data: dict) -> None:
     years = [event["year"] for event in events]
     ax.hlines(1, min(years) - 5, max(years) + 5, color="#8c969b")
     ax.scatter(years, [1] * len(years), color="#2f6f73")
-    for idx, event in enumerate(events):
-        offset = 0.12 if idx % 2 == 0 else -0.18
-        ax.text(event["year"], 1 + offset, event["label"], ha="center", fontsize=7)
-    ax.set_ylim(0.65, 1.35)
+    ax.set_ylim(0.5, 1.5)
     ax.set_yticks([])
     ax.set_title(data.get("title", "Timeline"))
+    renderer = ax.figure.canvas.get_renderer()
+    placed: list = []
+    for event in sorted(events, key=lambda e: e["year"]):
+        for lane in _TIMELINE_LANES:
+            text = ax.text(event["year"], 1 + lane, event["label"], ha="center", fontsize=7)
+            box = text.get_window_extent(renderer)
+            if not any(box.overlaps(other.get_window_extent(renderer)) for other in placed):
+                break
+            text.remove()
+        else:
+            text = ax.text(event["year"], 1 + _TIMELINE_LANES[-1], event["label"], ha="center", fontsize=7)
+        placed.append(text)
+    return placed
 
 
 def _draw_scatter_plot(ax, data: dict, rng: Random) -> None:
