@@ -210,6 +210,10 @@ uv pip install --python .venv-train/bin/python "rtod[torch,coco] @ git+https://g
 
 Add `--steps 6 --batch 2 --size 416` for a CPU smoke run. Pages are not flipped during training because mirrored text is not a page. `tests/test_train_layout.py` runs a 2-step rehearsal and is skipped when the stack is missing.
 
+## Real pages for evaluation
+
+`scripts/prepare_doclaynet.py` samples pages from DocLayNet-v1.2 (CDLA-Permissive-1.0) into the same COCO layout. The parquet shards are sorted by document category, so it draws an equal seeded quota from evenly spaced shards and logs the category mix. `scripts/runpod_launch.sh` runs such a job on a RunPod pod under a total spend cap (`TOTAL_CAP_USD`, default 5) with a ledger in `output/runpod/spend.jsonl`; `scripts/jobs/doclaynet_prep.sh` is the pod side.
+
 ## Quality controls
 
 Generation runs quality validation before writing the final manifest. The checks verify:
