@@ -143,7 +143,7 @@ uv run synthetic-pdf-bench evaluate \
   --output output/synthetic_000001/evaluation.json
 ```
 
-Metrics include normalized Markdown exact match, Markdown token F1, block bbox IoU, table matrix exact match, figure count match, figure bbox IoU, and figure Markdown reference match.
+Metrics include normalized Markdown exact match, table TEDS (a `tables[].html` string in the prediction also scores row/column spans), Markdown token F1, block bbox IoU, table matrix exact match, figure count match, figure bbox IoU, and figure Markdown reference match.
 
 For smoke testing the evaluator, generate a truth-copy dummy prediction:
 
@@ -179,6 +179,15 @@ uv run synthetic-pdf-bench export-coco output/small_dataset   # writes output/sm
 ```
 
 Boxes use DocLayNet-style classes, with a per-page `reading_order` on each annotation.
+
+## Training exports
+
+```bash
+uv run synthetic-pdf-bench export-yolo output/corpus   # output/corpus/yolo: images/, labels/, data.yaml
+uv run synthetic-pdf-bench export-hf output/corpus     # output/corpus/hf: <split>/ images + metadata.jsonl, README.md card
+```
+
+Both follow `splits.json` when it exists (otherwise everything goes in `train`) and use the same boxes and classes as `export-coco`. The Hugging Face output is an imagefolder, so `load_dataset("imagefolder", data_dir="output/corpus/hf")` reads it; each row has `objects` with `bbox` (COCO `[x, y, w, h]`), `category` and `reading_order`.
 
 ## Table-structure export
 

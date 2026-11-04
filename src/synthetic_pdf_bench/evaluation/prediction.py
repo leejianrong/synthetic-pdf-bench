@@ -22,6 +22,7 @@ class PredictedTable(BaseModel):
 
     table_id: str
     matrix: list[list[str]]
+    html: str | None = None
     page_index: int | None = None
     bbox_pt: list[float] | None = None
     metadata: dict[str, Any] = Field(default_factory=dict)
