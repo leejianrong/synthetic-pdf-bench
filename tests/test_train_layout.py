@@ -33,7 +33,7 @@ def test_two_step_cpu_run_trains_and_reports_map(tmp_path: Path) -> None:
 
     report = _load_script().run(
         root=root, train_json=coco, val_json=coco, out=out, steps=2, batch=2, size=320, weights=None, workers=0, seed=0,
-        also_eval=[(root, coco)],
+        also_eval=[(root, coco)], max_val_images=1,
     )
 
     assert (out / "checkpoint.pt").exists()
@@ -44,4 +44,5 @@ def test_two_step_cpu_run_trains_and_reports_map(tmp_path: Path) -> None:
     assert report["steps"] == 2 and report["hardware"]["device"] == "cpu"
     assert 0.0 <= report["map50_95"] <= 1.0
     assert set(report["also"]) == {"coco"} and len(report["also"]["coco"]["per_class"]) == 11
+    assert report["n_val_images"] == 1 and report["also"]["coco"]["n_images"] > 1  # the cap spares also-eval pages
     assert report["train_secs"] > 0 and report["eval_secs"] > 0

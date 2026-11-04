@@ -185,7 +185,10 @@ def run(*, root: Path, train_json: Path, val_json: Path, out: Path, steps: int, 
     report = {**evaluate(model, val_data, hw["device"], size), "hardware": hw, "steps": steps, "batch": batch, "size": size, "lr": lr,
               "n_train_images": len(train_data), "n_val_images": len(val_data), "weights": str(weights) if weights else None}
     # More datasets scored with the same model, e.g. real pages: {json stem: metrics}. Pass the pages' own root.
-    report["also"] = {j.stem: evaluate(model, LayoutPages(r, j, size, max_val_images), hw["device"], size) for r, j in also_eval}
+    report["also"] = {}
+    for r, j in also_eval:  # not capped by max_val_images: these are explicit samples
+        pages = LayoutPages(r, j, size)
+        report["also"][j.stem] = {**evaluate(model, pages, hw["device"], size), "n_images": len(pages)}
     report |= {"train_secs": train_secs, "eval_secs": time.monotonic() - t0}
     (out / "report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     print("REPORT " + json.dumps({k: report[k] for k in ("map50_95", "map50")}), flush=True)
