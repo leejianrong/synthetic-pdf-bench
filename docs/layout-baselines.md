@@ -20,4 +20,18 @@ How the 17 heron classes map to DocLayNet's 11: labels 0-10 are DocLayNet's own.
 
 **Read this as an upper reference.** Docling was trained on DocLayNet train, and these pages come from the same distribution, so this is its home set. A model trained on synthetic data is not expected to match it.
 
-Our own YOLOX-Tiny rows are added here by the sim-to-real comparison (SYN-7).
+## YOLOX-Tiny, synthetic only (SYN-6)
+
+COCO-pretrained YOLOX-Tiny (rtod `3751bc7`), 5,000 steps, batch 16, 640 px, lr 0.005, trained on 1,675 synthetic pages (100 documents from the 7 canonical recipes, variants `random` and `standard`, split by recipe, seed 0, repo `c75414c`). Run on a community NVIDIA RTX A4000 (RunPod, $0.17/hr): 1,671 s training, 28 s evaluation, about $0.10.
+
+| Pages | mAP50-95 | mAP50 |
+|---|---|---|
+| Synthetic validation (50 pages, unseen recipes) | 0.986 | 1.000 |
+| DocLayNet validation (50 pages) | 0.062 | 0.138 |
+| DocLayNet test sample (500 pages) | 0.021 | 0.058 |
+
+Per-class AP50-95 on the test sample: text 0.095, table 0.048, picture 0.044, title 0.035, caption 0.004, section-header 0.003, page-footer 0.002, footnote, formula, list-item and page-header 0.000.
+
+**Reading it.** The model solves its own distribution and barely transfers. Real validation scored 0.060 after 100 steps and 0.062 after 5,000, so more steps on the same synthetic pages add nothing; the limit is what the pages look like, not training length. The recipes are all Southeast Asia history, so every page has the same register, fonts and furniture. The generator also has no formulas, and footnotes and lists are rare. More steps are not the next move; more varied pages and mixing in real ones are (SYN-7, SYN-8).
+
+Our other YOLOX-Tiny rows are added here by the sim-to-real comparison (SYN-7).
