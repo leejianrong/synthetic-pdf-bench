@@ -9,7 +9,11 @@ from pydantic import ValidationError
 from synthetic_pdf_bench.evaluation.normalize_markdown import normalize_markdown
 from synthetic_pdf_bench.evaluation.prediction import PredictionDocument
 from synthetic_pdf_bench.evaluation.table_metrics import table_exact_match, teds
-from synthetic_pdf_bench.evaluation.text_metrics import token_f1
+from synthetic_pdf_bench.evaluation.text_metrics import (
+    edit_similarity,
+    reading_order_score,
+    token_f1,
+)
 from synthetic_pdf_bench.layout.coordinates import bbox_iou
 from synthetic_pdf_bench.schema.blocks import FigureBlock, TableBlock
 from synthetic_pdf_bench.schema.truth import DocumentTruth
@@ -24,6 +28,7 @@ def evaluate_prediction(truth_dir: Path, prediction_dir: Path) -> dict:
     markdown_scores = {
         "normalized_exact_match": normalize_markdown(predicted_markdown) == normalize_markdown(truth_markdown),
         **token_f1(predicted_markdown, truth_markdown),
+        "edit_similarity": edit_similarity(predicted_markdown, truth_markdown),
     }
     table_scores = _table_scores(truth, prediction)
     figure_scores = _figure_scores(truth, prediction)
@@ -38,6 +43,8 @@ def evaluate_prediction(truth_dir: Path, prediction_dir: Path) -> dict:
         "figures": figure_scores,
         "overall": {
             "markdown_token_f1": markdown_scores["f1"],
+            "markdown_edit_similarity": markdown_scores["edit_similarity"],
+            "reading_order": block_scores["reading_order"],
             "mean_block_bbox_iou": block_scores["mean_bbox_iou"],
             "table_exact_match_rate": table_scores["exact_match_rate"],
             "table_teds": table_scores["mean_teds"],
@@ -108,7 +115,14 @@ def _block_scores(truth: DocumentTruth, prediction: PredictionDocument) -> dict:
         "predicted_count": len(prediction.blocks),
         "matched_by_id": matched,
         "mean_bbox_iou": mean(ious) if ious else 0.0,
+        "reading_order": reading_order_score([b.block_id for b in prediction.blocks], _body_order(truth)),
     }
+
+
+def _body_order(truth: DocumentTruth) -> list[str]:
+    """Block ids in reading order, leaving out repeated headers, footers and page numbers (their order values are sentinels)."""
+    body = [b for b in truth.blocks if b.type not in {"header", "footer", "page_number"}]
+    return [b.block_id for b in sorted(body, key=lambda b: b.reading_order)]
 
 
 def _table_scores(truth: DocumentTruth, prediction: PredictionDocument) -> dict:

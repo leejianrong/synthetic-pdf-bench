@@ -27,3 +27,35 @@ def token_f1(predicted: str, expected: str) -> dict[str, float]:
     recall = matches / len(expected_tokens)
     f1 = 0.0 if precision + recall == 0 else 2 * precision * recall / (precision + recall)
     return {"precision": precision, "recall": recall, "f1": f1}
+
+
+def edit_similarity(predicted: str, expected: str) -> float:
+    """1 - token-level Levenshtein distance / the longer length: 1.0 for identical text, lower for any insertion, deletion, swap or reorder."""
+    a, b = _tokens(predicted), _tokens(expected)
+    start = 0
+    while start < min(len(a), len(b)) and a[start] == b[start]:
+        start += 1
+    end = 0
+    while end < min(len(a), len(b)) - start and a[-1 - end] == b[-1 - end]:
+        end += 1
+    a, b = a[start : len(a) - end], b[start : len(b) - end]
+    total = max(len(_tokens(predicted)), len(_tokens(expected)))
+    if total == 0:
+        return 1.0
+    previous = list(range(len(b) + 1))
+    for i, x in enumerate(a, start=1):
+        current = [i]
+        for j, y in enumerate(b, start=1):
+            current.append(min(previous[j] + 1, current[j - 1] + 1, previous[j - 1] + (x != y)))
+        previous = current
+    return 1 - previous[-1] / total
+
+
+def reading_order_score(predicted_ids: list[str], truth_ids: list[str]) -> float:
+    """Share of block pairs, among blocks present in both lists, that the prediction orders like the truth (1.0 identical, about 0.5 shuffled)."""
+    position = {block_id: n for n, block_id in enumerate(predicted_ids)}
+    common = [block_id for block_id in truth_ids if block_id in position]
+    if len(common) < 2:
+        return 1.0 if common else 0.0
+    pairs = [(i, j) for i in range(len(common)) for j in range(i + 1, len(common))]
+    return sum(position[common[i]] < position[common[j]] for i, j in pairs) / len(pairs)
