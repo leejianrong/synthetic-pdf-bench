@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+from random import Random
 
 from reportlab.lib import colors
 from reportlab.lib.utils import ImageReader
@@ -27,11 +28,18 @@ class ReportLabRenderer:
         canvas = Canvas(str(output_pdf), pagesize=(pages[0].width_pt, pages[0].height_pt))
         for page in pages:
             canvas.setPageSize((page.width_pt, page.height_pt))
+            self._draw_background(canvas, page)
             for block in sorted(page.blocks, key=lambda item: item.reading_order):
                 self._draw_block(canvas, block)
             self._draw_footnote_rule(canvas, page)
             canvas.showPage()
         canvas.save()
+
+    def _draw_background(self, canvas: Canvas, page: PageTruth) -> None:
+        rng = Random(f"{self.seed}-bg-{page.page_index}")
+        if rng.random() < 0.2:  # many DocLayNet pages sit on a pale tint rather than white
+            canvas.setFillColorRGB(*(0.85 + 0.15 * rng.random() for _ in range(3)))
+            canvas.rect(0, 0, page.width_pt, page.height_pt, stroke=0, fill=1)
 
     def _draw_footnote_rule(self, canvas: Canvas, page: PageTruth) -> None:
         notes = [b for b in page.blocks if b.type == "footnote"]
