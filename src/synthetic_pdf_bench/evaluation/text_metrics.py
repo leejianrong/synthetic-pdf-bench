@@ -29,26 +29,37 @@ def token_f1(predicted: str, expected: str) -> dict[str, float]:
     return {"precision": precision, "recall": recall, "f1": f1}
 
 
+def token_distance(a: list[str], b: list[str]) -> int:
+    """Levenshtein distance between two token lists (Hyyro's bit-parallel form: one big-int pass over `b`, not an n*m table)."""
+    if not a or not b:
+        return max(len(a), len(b))
+    peq: dict[str, int] = {}
+    for i, token in enumerate(a):
+        peq[token] = peq.get(token, 0) | 1 << i
+    mask, high = (1 << len(a)) - 1, 1 << (len(a) - 1)
+    pv, mv, score = mask, 0, len(a)
+    for token in b:
+        eq = peq.get(token, 0)
+        xv = eq | mv
+        xh = (((eq & pv) + pv) ^ pv) | eq
+        ph = mv | ~(xh | pv)
+        mh = pv & xh
+        if ph & high:
+            score += 1
+        elif mh & high:
+            score -= 1
+        ph = (ph << 1) | 1
+        mh <<= 1
+        pv = (mh | ~(xv | ph)) & mask
+        mv = ph & xv & mask
+    return score
+
+
 def edit_similarity(predicted: str, expected: str) -> float:
     """1 - token-level Levenshtein distance / the longer length: 1.0 for identical text, lower for any insertion, deletion, swap or reorder."""
     a, b = _tokens(predicted), _tokens(expected)
-    start = 0
-    while start < min(len(a), len(b)) and a[start] == b[start]:
-        start += 1
-    end = 0
-    while end < min(len(a), len(b)) - start and a[-1 - end] == b[-1 - end]:
-        end += 1
-    a, b = a[start : len(a) - end], b[start : len(b) - end]
-    total = max(len(_tokens(predicted)), len(_tokens(expected)))
-    if total == 0:
-        return 1.0
-    previous = list(range(len(b) + 1))
-    for i, x in enumerate(a, start=1):
-        current = [i]
-        for j, y in enumerate(b, start=1):
-            current.append(min(previous[j] + 1, current[j - 1] + 1, previous[j - 1] + (x != y)))
-        previous = current
-    return 1 - previous[-1] / total
+    total = max(len(a), len(b))
+    return 1.0 if total == 0 else 1 - token_distance(a, b) / total
 
 
 def reading_order_score(predicted_ids: list[str], truth_ids: list[str]) -> float:
