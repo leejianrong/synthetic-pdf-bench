@@ -130,4 +130,18 @@ This is a visual impression from eight pages, not a measurement. The largest gap
 
 Test AP50-95 per class: text 0.110, table 0.074, picture 0.050, formula 0.017, title 0.015, list-item 0.014, footnote 0.014, page-footer 0.009, section-header 0.005, caption 0.004, page-header 0.000.
 
-Not a measurable improvement: 0.025 to 0.029 is a single seed on each side, and SYN-27 showed seed spread of 0.06 at small data sizes. Synthetic-only is still at about 5% of the real-only test score (0.566 at 10k pages). What did change is that list-item is no longer 0.00 on the real validation pages (0.076), which is the expected effect of SYN-29. Pictures are no longer the obvious gap: the picture class scores 0.05, so the model does not find real photographs even after training on coloured images, which suggests the remaining gap is in page structure and typography, not picture content alone. That is an inference from one run, not tested. Next to try, in order: tinted backgrounds, denser and smaller type, font variety.
+Not a measurable improvement: 0.025 to 0.029 is a single seed on each side, and the synthetic-only arm has no seed repeat, so its noise is unknown (real-only runs differ by under 0.01 between seeds on the test pages). Synthetic-only is still at about 5% of the real-only test score (0.566 at 10k pages). What did change is that list-item is no longer 0.00 on the real validation pages (0.076), which is the expected effect of SYN-29. Pictures are no longer the obvious gap: the picture class scores 0.05, so the model does not find real photographs even after training on coloured images, which suggests the remaining gap is in page structure and typography, not picture content alone. That is an inference from one run, not tested. Next to try, in order: tinted backgrounds, denser and smaller type, font variety.
+
+**Box size against DocLayNet (SYN-28, 500 test pages vs 14 synthetic documents).** Median box width and area as a share of the page:
+
+| Class | Real width | Real area | Synthetic width | Synthetic area |
+|---|---|---|---|---|
+| text | 0.41 | 0.023 | 0.79 | 0.044 |
+| list-item | 0.40 | 0.008 | 0.37 | 0.016 |
+| section-header | 0.22 | 0.003 | 0.79 | 0.016 |
+| picture | 0.33 | 0.145 tall, area 0.044 | 0.73 | area 0.137 |
+| table | 0.75 | 0.099 | 0.79 | 0.101 |
+
+Tables match. Section headers are drawn as full-column boxes while real header boxes hug the text (0.22 of page width), pictures are three times too large, and text blocks are about twice as wide as real ones (real pages are more often multi-column or have narrow blocks). These are the geometry gaps to close next; they are cheaper to act on than the typography guesses.
+
+**Tinted backgrounds (SYN-31).** One page in five now has a pale background tint (every channel at least 0.85). It is drawn behind the page and is not a truth box.
