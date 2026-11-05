@@ -91,10 +91,10 @@ def random_style(seed: int) -> LayoutStyle:
         block_spacing=rng.randint(6, 14),
         section_spacing=rng.randint(8, 18),
         table_row_height=rng.randint(15, 24),
-        columns=rng.choice([1, 1, 2]),
+        columns=rng.choice([1, 2]),
         force_section_page_breaks=rng.random() < 0.25,
         page_size=rng.choice([letter, A4]),
-        font_family=rng.choice(list(FONT_FAMILIES)),
+        font_family=rng.choices(list(FONT_FAMILIES), weights=[46, 46, 8])[0],
         page_number_align=rng.choice(["left", "center", "right"]),
     )
 
