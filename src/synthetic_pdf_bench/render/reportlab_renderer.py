@@ -8,7 +8,7 @@ from reportlab.pdfgen.canvas import Canvas
 
 from synthetic_pdf_bench.generators.figures import (
     make_matplotlib_figure,
-    make_raster_figure,
+    make_photo_figure,
 )
 from synthetic_pdf_bench.generators.formulas import render_formula
 from synthetic_pdf_bench.layout.text_lines import DESCENT
@@ -102,7 +102,7 @@ class ReportLabRenderer:
             }:
                 image_path = make_matplotlib_figure(block.kind, data, self.seed, block.figure_id)
             else:
-                image_path = make_raster_figure(self.seed)
+                image_path = make_photo_figure(self.seed, block.figure_id)
             canvas.drawImage(ImageReader(str(image_path)), x0, y0, x1 - x0, y1 - y0)
             return
         if block.kind == "timeline":

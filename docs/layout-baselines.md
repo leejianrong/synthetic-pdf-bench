@@ -118,3 +118,5 @@ Four random real test pages next to four synthetic pages, both with their boxes 
 - **Boxes per page are similar (11.7 vs 10.7), but their sizes are not**: real pages have a few very large boxes (pictures) and many small ones; synthetic boxes are evenly sized.
 
 This is a visual impression from eight pages, not a measurement. The largest gaps to try first, in order: photographic and coloured pictures, tinted or image backgrounds, denser and smaller type, then font variety. The SYN-28 done-when (re-run the synthetic-only arm on the same 500 pages) needs a GPU pod and waits for the SYN-27 run to clear the pod queue.
+
+**First generator change (SYN-28).** Non-chart pictures are now continuous-tone, full-colour images (`make_photo_figure`: layered value noise, soft coloured blobs and grain, seeded per figure) instead of the same flat three-box diagram on every page. This addresses only the first gap, photographic and coloured pictures. Tinted backgrounds, denser type and font variety are not done. Whether it moves the synthetic-only score is not yet measured.
