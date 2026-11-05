@@ -59,7 +59,7 @@ Open: more real pages and a longer schedule (the DocLayNet paper's learning curv
 
 ## Real-only learning curve, two seeds (SYN-27)
 
-One pod, a community NVIDIA RTX 3090 (RunPod, $0.22/hr, 3.25 h, $0.71), repo `e6c4371`, rtod `3751bc7`. Real training pages are seeded random subsets of the first 12 of 24 DocLayNet train shards (so a different draw from the 2,000 pages in SYN-7). Seed changes the subset's initialisation and sampling order; every arm uses batch 16, 640 px, `--augment`, COCO start, and is scored on the same 500 test pages as above.
+One pod, a community NVIDIA RTX 3090 (RunPod, $0.22/hr, 3.25 h, $0.71), repo `e6c4371`, rtod `3751bc7`. Real training pages are seeded random subsets of the first 12 of 24 DocLayNet train shards (so a different draw from the 2,000 pages in SYN-7). Every arm uses batch 16, 640 px, `--augment`, COCO start, and is scored on the same 500 test pages as above.
 
 | Real pages | Steps | Seed 0 | Seed 1 | Mean | Spread |
 |---|---|---|---|---|---|
@@ -73,9 +73,9 @@ Per-class AP50-95 at 10,000 pages (mean of two seeds): text 0.855, table 0.779, 
 **Reading it.**
 - More real pages keep helping: 0.534, 0.592, 0.630 for 2k, 5k, 10k. 10k pages reach 89% of Docling's 0.705. Each doubling adds less (+0.058, then +0.038 for 2x), consistent with a curve that flattens, but the 10k point is not yet on a plateau.
 - Seed noise is large at 2k (0.056 between two seeds, as big as the SYN-7 gaps between arms) and small at 5k and 10k (0.001). Read the SYN-7 arm ranking with that in mind: the 0.463 there is one draw at 2k and sits below both new 2k seeds (0.506, 0.562), so differences of 0.03 at that size are within noise.
-- Title scores 0.000 in all six runs here, against 0.31 for the SYN-7 real-only run. Title is 0.5% of boxes (about 60 in 500 test pages' worth of training pages at 12k boxes per 1k pages), so a model that never learns it has little effect on the mean, but this is a real regression to look at, not noise: it appeared in every seed and size. Not investigated.
+- Title scores 0.000 in all six runs here, against 0.31 for the SYN-7 real-only run. Title is 0.5% of DocLayNet boxes, so a model that never learns it moves the mean little, but it appeared at every seed and size, so it is worth a look and is not investigated here.
 - Formula is the other weak class (0.28 at 10k) and the one that improves most with data (0.001, 0.16-0.24, 0.29).
-- Page-header and page-footer stay low even at 10k (0.29, 0.47). These are position-dependent classes that real pages mark by where they sit, so they are good candidates for synthetic data to help with, since the generator knows them exactly.
+- Page-header and page-footer stay low even at 10k (0.29, 0.47). The generator labels them exactly, so they are a candidate for synthetic data to help with; this is a hypothesis, not tested.
 
 Spend to date for the project is about $1.3 of the $5 cap (the ledger over-counts by about $0.14 because the stopped first SYN-27 attempt was logged twice).
 
