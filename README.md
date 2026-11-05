@@ -169,6 +169,26 @@ Ready-made adapters live in `scripts/parsers/`: `pymupdf_text.py`, `pypdf_text.p
 
 Read this as a first measurement, not a ranking. The synthetic PDFs have a clean text layer, so a plain text extractor already recovers almost every word: the Markdown metrics barely separate Docling (0.965) from PyMuPDF (0.953), and PyMuPDF and pypdf score the same. Wall time includes scoring (about 1.4 s per document, the dummy run), so Docling itself took about 40 s per document. What would separate parsers is structure: tables, reading order and block boxes need an adapter that writes `prediction.json`, and the `degraded` profiles (scans) need OCR. Both are open.
 
+#### With structure (SYN-34)
+
+`docling_structured.py` on the same 30 documents (repo `b61fa32`, same 8 vCPU pod, 1,410 s including scoring, $0.23):
+
+| Metric | Docling | Truth copy |
+|---|---|---|
+| Table TEDS | 0.984 | 1.000 |
+| Table exact match | 0.901 (standard 0.967, structured 0.835) | 1.000 |
+| Reading order | 0.999 | 1.000 |
+| Block box IoU | 0.678 | 1.000 |
+| Figure count correct | 0.267 of documents | 1.000 |
+| Figure Markdown reference | 0.000 | 1.000 |
+| Markdown token F1 / edit similarity | 0.965 / 0.917 (unchanged) | 1.000 |
+
+Tables are where Docling is strong here (TEDS 0.984) and the `structured` variant is harder than `standard` for exact match. Read the other rows with care:
+
+- **Block IoU and reading order only cover matched blocks.** Predictions are matched to truth boxes by overlap, and a truth block nothing overlaps does not lower either score. On one document Docling returned 28 blocks against 71 in the truth (it merges lines and skips page furniture), so 0.678 is the localisation of the blocks it found, not a recall figure, and reading order near 1.0 is partly a consequence of that.
+- **The figure count is right on only 27% of documents.** I have not diagnosed why: the pod artifact leaves out the predictions, so the per-document counts are gone. The Markdown reference score is 0 by construction because the adapter does not emit image links.
+- One run, one pod, 30 documents; the table scores on `structured` rest on 15 documents.
+
 For smoke testing the evaluator, generate a truth-copy dummy prediction:
 
 ```bash
