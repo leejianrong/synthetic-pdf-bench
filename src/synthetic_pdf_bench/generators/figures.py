@@ -3,8 +3,10 @@ from __future__ import annotations
 from pathlib import Path
 from random import Random
 from tempfile import gettempdir
+from zlib import crc32
 
 import matplotlib
+import numpy as np
 
 matplotlib.use("Agg")
 from matplotlib import pyplot as plt
@@ -27,6 +29,29 @@ def make_raster_figure(seed: int) -> Path:
     draw.ellipse([295, 245, 425, 315], outline="#2f6f73", width=5, fill="#eef8f7")
     draw.text((322, 270), "Region", fill="#1a1a1a")
     image.save(path)
+    return path
+
+
+def make_photo_figure(seed: int, figure_id: str) -> Path:
+    """A continuous-tone, full-colour picture. Real DocLayNet pictures are mostly photographs, not flat diagrams."""
+    path = Path(gettempdir()) / f"synthetic_pdf_bench_photo_{figure_id}_{seed}.png"
+    rng = np.random.default_rng(seed * 100003 + crc32(figure_id.encode()))
+    height, width = 340, 720
+    field = np.zeros((height, width))
+    for octave, weight in enumerate((1.0, 0.5, 0.25, 0.125)):  # value noise: coarse grids upsampled smoothly, finer ones added on top
+        cells = 3 * 2**octave
+        grid = rng.random((cells + 1, int(cells * width / height) + 1))
+        field += weight * np.asarray(Image.fromarray((grid * 255).astype(np.uint8)).resize((width, height), Image.BICUBIC)) / 255
+    field = (field - field.min()) / (field.max() - field.min())
+    dark, light = rng.random(3) * 0.5, 0.5 + rng.random(3) * 0.5
+    pixels = dark + field[..., None] * (light - dark)
+    for _ in range(int(rng.integers(2, 6))):  # soft coloured blobs stand in for objects
+        cy, cx, ry, rx = rng.integers(0, height), rng.integers(0, width), rng.integers(30, 110), rng.integers(40, 160)
+        yy, xx = np.ogrid[:height, :width]
+        mask = np.clip(1 - (((yy - cy) / ry) ** 2 + ((xx - cx) / rx) ** 2), 0, 1)[..., None]
+        pixels = pixels * (1 - mask) + rng.random(3) * mask
+    pixels += rng.normal(0, 0.02, pixels.shape)  # sensor grain
+    Image.fromarray((np.clip(pixels, 0, 1) * 255).astype(np.uint8)).save(path)
     return path
 
 
