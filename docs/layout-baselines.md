@@ -162,4 +162,22 @@ Test AP50-95 per class: text 0.148, picture 0.108, section-header 0.076, table 0
 
 This is the first move that looks real: 0.043 is 1.7 times the SYN-7 score, and section-header went from 0.005 to 0.076 and picture from 0.050 to 0.108, which are the classes whose box geometry changed. It is still one seed per row (the synthetic arm has no repeat), and 0.043 is 8% of the 0.566 that 10k real pages reach, so the synthetic-only model is far from useful. The pattern supports the hypothesis that box geometry and page structure matter more than picture content. Remaining differences not yet addressed: single-column text width, dense small type, background images and full-bleed photos, the actual typefaces of real documents.
 
-**Narrower text and smaller pictures (SYN-38).** Remeasured against 40 real test pages (a small sample, so medians are rough): synthetic median picture area was 0.080 of the page against 0.028 real, and median text width 0.77 against 0.38. Single-column pages now get 0 to 70 pt of extra margin on each side, and pictures take 30–70% of the column width (was 40–80%) at 55–100% of the usual height. Remeasured: picture area 0.045, text width 0.66, section-header width unchanged at 0.41 (recipe headings are long). Closer, not matched: real pages get narrow text from multi-column layouts and side boxes that single-column pages cannot produce. The effect on the synthetic-only score is measured in the next paragraph once the run exists.
+**Narrower text and smaller pictures (SYN-38).** Remeasured against 40 real test pages (a small sample, so medians are rough): synthetic median picture area was 0.080 of the page against 0.028 real, and median text width 0.77 against 0.38. Single-column pages now get 0 to 70 pt of extra margin on each side, and pictures take 30–70% of the column width (was 40–80%) at 55–100% of the usual height. Remeasured: picture area 0.045, text width 0.66, section-header width unchanged at 0.41 (recipe headings are long). Closer, not matched: real pages get narrow text from multi-column layouts and side boxes that single-column pages cannot produce. Its effect on the score is in the next section.
+
+## Seed noise of the synthetic-only arm, and the SYN-38 result (SYN-36, SYN-38)
+
+Same settings as before (5,000 steps, batch 16, 640 px, no augment, 150 documents per seed, 500 real test pages), community RTX 3090 at $0.34/hr. Each seed has its own generated documents (document seeds from 1 + seed x 100,000) and its own training seed, so the spread includes data noise. Both arms ran three seeds.
+
+| Generator | Seed 0 | Seed 1 | Seed 2 | Mean | Range | Real val (50) mean |
+|---|---|---|---|---|---|---|
+| Before SYN-38 (`bfc623d`, `4c586a2` plus the cache-race fix) | 0.0421 | 0.0476 | 0.0445 | **0.0447** | 0.0055 | 0.128 |
+| After SYN-38 (`40230a5`) | 0.0418 | 0.0439 | 0.0468 | **0.0442** | 0.0050 | 0.119 |
+
+Test mAP50-95 per class, mean over seeds, before / after: text 0.158 / 0.164, picture 0.101 / 0.078, table 0.072 / 0.077, section-header 0.054 / 0.057, title 0.028 / 0.022, page-footer 0.021 / 0.019, list-item 0.018 / 0.019, formula 0.014 / 0.022, page-header 0.014 / 0.013, caption 0.009 / 0.011, footnote 0.003 / 0.003.
+
+What this says:
+
+- **The synthetic-only arm varies by about 0.005 between seeds** (range, three seeds), roughly 12% of its score. Differences smaller than that are not readable. The 0.043 reported for SYN-31/32/33 as a single seed was consistent with this baseline.
+- **SYN-38 did nothing measurable**: 0.0442 against 0.0447, well inside the noise. Moving picture area (0.080 to 0.045 of the page) and text width (0.77 to 0.66) toward DocLayNet did not help. The picture class went down on average (0.101 to 0.078), but the per-class differences are the same size as the seed spread and I would not read them.
+- So tuning box-size medians has run out of effect at this scale. The 0.025 to 0.043 gain is still the only movement, and it is one seed on the 0.025 side. Whatever limits synthetic-only transfer (about 8% of what 10k real pages reach) is probably not the shape of the boxes. Not tested: type and rendering realism, page content variety, and whether 150 documents is simply too few pages (the real-only curve at 2,000 pages scores 0.447).
+- The earlier batch of generator changes was never ablated, so which of them mattered is not known.
