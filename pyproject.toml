@@ -20,6 +20,7 @@ synthetic-pdf-bench = "synthetic_pdf_bench.cli.generate:main"
 
 [dependency-groups]
 dev = [
+    "pypdf>=6.21.4",
     "pytest",
 ]
 
