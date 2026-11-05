@@ -145,3 +145,5 @@ Not a measurable improvement: 0.025 to 0.029 is a single seed on each side, and 
 Tables match. Section headers are drawn as full-column boxes while real header boxes hug the text (0.22 of page width), pictures are three times too large, and text blocks are about twice as wide as real ones (real pages are more often multi-column or have narrow blocks). These are the geometry gaps to close next; they are cheaper to act on than the typography guesses.
 
 **Tinted backgrounds (SYN-31).** One page in five now has a pale background tint (every channel at least 0.85). It is drawn behind the page and is not a truth box.
+
+**Box geometry changes (SYN-32).** Text boxes now hug their lines horizontally (a short heading is a narrow box, as in DocLayNet), and pictures take a seeded 40–80% of the column width instead of a fixed inset, so sizes vary. Text paragraphs are still wider than real ones because most synthetic pages are single-column. The effect on the synthetic-only score is not yet measured.
