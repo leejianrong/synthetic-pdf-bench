@@ -57,6 +57,28 @@ Test AP50-95 per class, real only: text 0.67, table 0.59, page-header 0.53, page
 Open: more real pages and a longer schedule (the DocLayNet paper's learning curve flattens near 80% of the 69k training pages), a different synthetic generator that copies real layouts rather than SEA-history templates, and seeds to size the noise.
 
 
+## Real-only learning curve, two seeds (SYN-27)
+
+One pod, a community NVIDIA RTX 3090 (RunPod, $0.22/hr, 3.25 h, $0.71), repo `e6c4371`, rtod `3751bc7`. Real training pages are seeded random subsets of the first 12 of 24 DocLayNet train shards (so a different draw from the 2,000 pages in SYN-7). Every arm uses batch 16, 640 px, `--augment`, COCO start, and is scored on the same 500 test pages as above.
+
+| Real pages | Steps | Seed 0 | Seed 1 | Mean | Spread |
+|---|---|---|---|---|---|
+| 2,000 | 3,000 | 0.506 | 0.562 | 0.534 | 0.056 |
+| 5,000 | 6,000 | 0.592 | 0.591 | 0.592 | 0.001 |
+| 10,000 | 10,000 | 0.630 | 0.629 | 0.630 | 0.001 |
+| Docling heron (reference) | none | | | 0.705 | |
+
+Per-class AP50-95 at 10,000 pages (mean of two seeds): text 0.855, table 0.779, picture 0.767, footnote 0.800, caption 0.773, list-item 0.651, section-header 0.628, page-footer 0.467, page-header 0.290, formula 0.286, title 0.000.
+
+**Reading it.**
+- More real pages keep helping: 0.534, 0.592, 0.630 for 2k, 5k, 10k. 10k pages reach 89% of Docling's 0.705. Each doubling adds less (+0.058, then +0.038 for 2x), consistent with a curve that flattens, but the 10k point is not yet on a plateau.
+- Seed noise is large at 2k (0.056 between two seeds, as big as the SYN-7 gaps between arms) and small at 5k and 10k (0.001). Read the SYN-7 arm ranking with that in mind: the 0.463 there is one draw at 2k and sits below both new 2k seeds (0.506, 0.562), so differences of 0.03 at that size are within noise.
+- Title scores 0.000 in all six runs here, against 0.31 for the SYN-7 real-only run. Title is 0.5% of DocLayNet boxes, so a model that never learns it moves the mean little, but it appeared at every seed and size, so it is worth a look and is not investigated here.
+- Formula is the other weak class (0.28 at 10k) and the one that improves most with data (0.001, 0.16-0.24, 0.29).
+- Page-header and page-footer stay low even at 10k (0.29, 0.47). The generator labels them exactly, so they are a candidate for synthetic data to help with; this is a hypothesis, not tested.
+
+Spend to date for the project is about $1.3 of the $5 cap (the ledger over-counts by about $0.14 because the stopped first SYN-27 attempt was logged twice).
+
 ## Class mix against DocLayNet (SYN-25)
 
 `scripts/layout_stats.py` prints each class's share of boxes and boxes per page. Sample: 14 documents (291 pages) from all seven recipes, variants `random standard structured`, seed start 500, next to the 500-page real test sample and the paper's Table 1 (1,107,470 boxes).
