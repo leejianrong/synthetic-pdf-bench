@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import random
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from pathlib import Path
 
 from reportlab.lib.pagesizes import A4, letter
@@ -78,7 +78,7 @@ def random_style(seed: int) -> LayoutStyle:
     """Sample a whole page template (geometry, type, columns, page furniture) from ``seed``."""
     rng = random.Random(seed)
     body = rng.choice([8, 9, 10, 11])
-    return LayoutStyle(
+    style = LayoutStyle(
         margin_left=rng.randint(48, 80),
         margin_right=rng.randint(48, 80),
         margin_top=rng.randint(62, 84),
@@ -97,6 +97,9 @@ def random_style(seed: int) -> LayoutStyle:
         font_family=rng.choices(list(FONT_FAMILIES), weights=[46, 46, 8])[0],
         page_number_align=rng.choice(["left", "center", "right"]),
     )
+    if style.columns == 1:  # DocLayNet text blocks are 0.38 of the page wide at the median; one full-width column was 0.79
+        style = replace(style, margin_left=style.margin_left + rng.randint(0, 70), margin_right=style.margin_right + rng.randint(0, 70))
+    return style
 
 
 def style_for_variant(variant: str, seed: int = 0) -> LayoutStyle:
@@ -525,7 +528,8 @@ class FlowLayoutPlanner:
         self._add_block(table)
 
     def _add_figure(self, recipe: FigureRecipe) -> None:
-        height = self.style.figure_height
+        fig_rng = random.Random(f"{self.seed}-fig-{recipe.figure_id}")
+        height = self.style.figure_height * fig_rng.uniform(0.55, 1.0)  # DocLayNet pictures are small: 0.028 of the page at the median
         total_height = height + self.style.figure_caption_height + self.style.block_spacing
         self._ensure_space(total_height)
         self.figure_counter += 1
@@ -537,7 +541,7 @@ class FlowLayoutPlanner:
                 {"caption_for": recipe.figure_id},
             )
         # DocLayNet pictures are small next to the column (a third of the page wide on median), and vary.
-        share = random.Random(f"{self.seed}-fig-{recipe.figure_id}").uniform(0.4, 0.8)
+        share = fig_rng.uniform(0.3, 0.7)
         bbox = self._take_box(height, horizontal_inset=self.content_width * (1 - share) / 2)
         figure = FigureBlock(
             block_id=self._next_block_id(),
