@@ -149,3 +149,15 @@ Tables match. Section headers are drawn as full-column boxes while real header b
 **Box geometry changes (SYN-32).** Text boxes now hug their lines horizontally (a short heading is a narrow box, as in DocLayNet), and pictures take a seeded 40–80% of the column width instead of a fixed inset, so sizes vary. Text paragraphs are still wider than real ones because most synthetic pages are single-column. The effect on the synthetic-only score is not yet measured.
 
 **Fonts and columns (SYN-33).** The `random` and `structured` variants now pick Helvetica and Times about equally (46% each) and Courier rarely (8%, was a third), and use two columns on half the documents (was a third). Two-column pages give narrower text blocks, closer to DocLayNet's median text width of 0.41 of the page.
+
+**Result after SYN-31, SYN-32 and SYN-33 (SYN-28).** Synthetic-only arm again with the same settings (5,000 steps, batch 16, 640 px, no augment), community RTX 3090 ($0.34/hr, 0.40 h, $0.13), repo `c8fe7d9`, 2,724 training pages.
+
+| Generator state | Test (500) mAP50-95 | Real val (50) | Synthetic val |
+|---|---|---|---|
+| SYN-7 (before any change) | 0.025 | 0.083 | 0.937 |
+| After SYN-29, SYN-24, photo pictures | 0.029 | 0.098 | 0.914 |
+| After tinted pages, tight boxes, varied picture width, font and column mix | **0.043** | 0.127 | 0.888 |
+
+Test AP50-95 per class: text 0.148, picture 0.108, section-header 0.076, table 0.050, page-footer 0.024, caption 0.018, formula 0.013, title 0.012, list-item 0.009, page-header 0.007, footnote 0.003.
+
+This is the first move that looks real: 0.043 is 1.7 times the SYN-7 score, and section-header went from 0.005 to 0.076 and picture from 0.050 to 0.108, which are the classes whose box geometry changed. It is still one seed per row (the synthetic arm has no repeat), and 0.043 is 8% of the 0.566 that 10k real pages reach, so the synthetic-only model is far from useful. The pattern supports the hypothesis that box geometry and page structure matter more than picture content. Remaining differences not yet addressed: single-column text width, dense small type, background images and full-bleed photos, the actual typefaces of real documents.
