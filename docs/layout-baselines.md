@@ -120,3 +120,15 @@ Four random real test pages next to four synthetic pages, both with their boxes 
 This is a visual impression from eight pages, not a measurement. The largest gaps to try first, in order: photographic and coloured pictures, tinted or image backgrounds, denser and smaller type, then font variety. The SYN-28 done-when (re-run the synthetic-only arm on the same 500 pages) needs a GPU pod and waits for the SYN-27 run to clear the pod queue.
 
 **First generator change (SYN-28).** Non-chart pictures are now continuous-tone, full-colour images (`make_photo_figure`: layered value noise, soft coloured blobs and grain, seeded per figure) instead of the same flat three-box diagram on every page. This addresses only the first gap, photographic and coloured pictures. Tinted backgrounds, denser type and font variety are not done. Whether it moves the synthetic-only score is not yet measured.
+
+**Result of the first change (SYN-28).** Synthetic-only arm again, same settings as SYN-7 (5,000 steps, batch 16, 640 px, no augment), on a community RTX 3090 ($0.34/hr, 0.39 h, $0.13), repo `8bbef77`. Training set 2,911 synthetic pages from 150 documents. The generator now includes the list fix (SYN-29), the DocLayNet box conventions (SYN-24) and photo-like pictures together, so this measures all of them, not the photo change alone.
+
+| | SYN-7 | Now |
+|---|---|---|
+| DocLayNet test (500 pages) mAP50-95 | 0.025 | **0.029** |
+| DocLayNet validation (50 pages) mAP50-95 | 0.083 | 0.098 |
+| Synthetic validation mAP50-95 | 0.937 | 0.914 |
+
+Test AP50-95 per class: text 0.110, table 0.074, picture 0.050, formula 0.017, title 0.015, list-item 0.014, footnote 0.014, page-footer 0.009, section-header 0.005, caption 0.004, page-header 0.000.
+
+Not a measurable improvement: 0.025 to 0.029 is a single seed on each side, and SYN-27 showed seed spread of 0.06 at small data sizes. Synthetic-only is still at about 4% of the real-only score (0.63 at 10k pages). What did change is that list-item is no longer 0.00 on the real validation pages (0.076), which is the expected effect of SYN-29. Pictures are no longer the obvious gap: the picture class scores 0.05, so the model does not find real photographs even after training on coloured images, which suggests the remaining gap is in page structure and typography, not picture content alone. That is an inference from one run, not tested. Next to try, in order: tinted backgrounds, denser and smaller type, font variety.
