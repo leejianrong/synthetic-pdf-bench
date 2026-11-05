@@ -20,6 +20,7 @@ from synthetic_pdf_bench.generators.recipes import (
     TableRecipe,
 )
 from synthetic_pdf_bench.generators.tables import table_to_html, table_to_markdown
+from synthetic_pdf_bench.layout.coordinates import pt_to_norm_bbox, pt_to_px_bbox
 from synthetic_pdf_bench.layout.scene import SceneGraph
 from synthetic_pdf_bench.layout.text_lines import text_lines
 from synthetic_pdf_bench.render.fonts import (
@@ -224,6 +225,10 @@ class FlowLayoutPlanner:
             for block in page.blocks:
                 if type(block) is Block and block.type != "formula":
                     block.lines = text_lines(block, bold=block.type in {"title", "heading"}, dpi=self.dpi, page_height_pt=page.height_pt)
+                    if block.lines:  # DocLayNet boxes hug the text, so a short heading is a narrow box, not a full column
+                        block.bbox_pt[0], block.bbox_pt[2] = min(l.bbox_pt[0] for l in block.lines), max(l.bbox_pt[2] for l in block.lines)
+                        block.bbox_px = pt_to_px_bbox(block.bbox_pt, page.height_pt, self.dpi)
+                        block.bbox_norm = pt_to_norm_bbox(block.bbox_pt, page.width_pt, page.height_pt)
 
     def _new_page(self) -> None:
         assert self.scene is not None
@@ -531,7 +536,9 @@ class FlowLayoutPlanner:
                 self.style.figure_caption_height,
                 {"caption_for": recipe.figure_id},
             )
-        bbox = self._take_box(height, horizontal_inset=18)
+        # DocLayNet pictures are small next to the column (a third of the page wide on median), and vary.
+        share = random.Random(f"{self.seed}-fig-{recipe.figure_id}").uniform(0.4, 0.8)
+        bbox = self._take_box(height, horizontal_inset=self.content_width * (1 - share) / 2)
         figure = FigureBlock(
             block_id=self._next_block_id(),
             page_index=self._page_index,

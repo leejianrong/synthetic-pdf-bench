@@ -146,4 +146,6 @@ Tables match. Section headers are drawn as full-column boxes while real header b
 
 **Tinted backgrounds (SYN-31).** One page in five now has a pale background tint (every channel at least 0.85). It is drawn behind the page and is not a truth box.
 
+**Box geometry changes (SYN-32).** Text boxes now hug their lines horizontally (a short heading is a narrow box, as in DocLayNet), and pictures take a seeded 40–80% of the column width instead of a fixed inset, so sizes vary. Text paragraphs are still wider than real ones because most synthetic pages are single-column. The effect on the synthetic-only score is not yet measured.
+
 **Fonts and columns (SYN-33).** The `random` and `structured` variants now pick Helvetica and Times about equally (46% each) and Courier rarely (8%, was a third), and use two columns on half the documents (was a third). Two-column pages give narrower text blocks, closer to DocLayNet's median text width of 0.41 of the page.
