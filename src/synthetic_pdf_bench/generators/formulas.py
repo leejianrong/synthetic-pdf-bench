@@ -6,6 +6,7 @@ from functools import lru_cache
 from hashlib import sha1
 from pathlib import Path
 from tempfile import gettempdir
+from uuid import uuid4
 
 import matplotlib
 
@@ -28,7 +29,8 @@ def render_formula(latex: str, font_size: float) -> Path:
         width, height = formula_size(latex, font_size)
         fig = plt.figure(figsize=(width / 72, height / 72), dpi=300)
         fig.text(0, 0, f"${latex}$", fontsize=font_size)
-        fig.savefig(path.with_suffix(".tmp.png"), transparent=True)
+        temp = path.with_name(f"{path.stem}.{uuid4().hex}.tmp.png")  # one name per call, so two workers never rename each other's file
+        fig.savefig(temp, transparent=True)
         plt.close(fig)
-        path.with_suffix(".tmp.png").replace(path)  # atomic, so parallel workers never read a half-written file
+        temp.replace(path)  # atomic, so parallel workers never read a half-written file
     return path
