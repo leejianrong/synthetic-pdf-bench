@@ -7,11 +7,13 @@
 # synthetic, REAL_STEPS (3000) for real and finetune, MIX_STEPS (4000). `finetune` starts from the `synthetic` checkpoint.
 # SYN-27: SCALE ("2000:3000,5000:6000,10000:10000" = real pages:steps) and SEEDS ("0,1") train real-only on seeded nested subsets of one
 # real sample (the largest size), once per seed, and score each on synthetic val, real val and real test.
+# SYN_SEEDS ("0,1,2"): synthetic-only arm once per seed, each on its own DOCS documents (document seeds from 1+seed*100000) and trained with that
+# seed, to measure the noise of the synthetic arm. The `also` score named coco_val is the seed-0 dataset's validation split.
 # REAL_SHARDS (24) and PREP_TIMEOUT (2400 s) size the real-train download: community hosts took 1-8 min per 500 MB shard.
 # Markers: STAGE, hb, WARN, ERROR, STAGE failed, MEASURE, TRAIN, REPORT, RP_REPORT_BEGIN/END, RP_ARTIFACT_CODE.
 set -Eeuo pipefail
 : "${SYN_SHA:?}" "${RTOD_SHA:?}"; STEPS=${STEPS:-100}; BATCH=${BATCH:-16}; SIZE=${SIZE:-640}; DOCS=${DOCS:-70}; TEST_N=${TEST_N:-0}
-REAL_N=${REAL_N:-0}; ARMS=${ARMS:-}; SCALE=${SCALE:-}; SEEDS=${SEEDS:-0}; REAL_STEPS=${REAL_STEPS:-3000}; MIX_STEPS=${MIX_STEPS:-4000}
+REAL_N=${REAL_N:-0}; ARMS=${ARMS:-}; SCALE=${SCALE:-}; SEEDS=${SEEDS:-0}; REAL_STEPS=${REAL_STEPS:-3000}; MIX_STEPS=${MIX_STEPS:-4000}; SYN_SEEDS=${SYN_SEEDS:-}
 W=${W:-/workspace}; RUN=$W/run; mkdir -p "$RUN"
 exec > >(tee -a "$RUN/job.log") 2>&1
 START=$(date +%s); : > "$RUN/stage"
@@ -115,7 +117,14 @@ PY
 
 SYN=("$W/syn" "$W/syn/coco_train.json" "$W/syn/coco_val.json")
 REAL=("$W/real" "$W/real/coco_train.json" "$W/real/coco_validation.json")
-if [ -z "$ARMS$SCALE" ]; then arm train "$STEPS" "${SYN[@]}"; fi
+if [ -z "$ARMS$SCALE$SYN_SEEDS" ]; then arm train "$STEPS" "${SYN[@]}"; fi
+for seed in ${SYN_SEEDS//,/ }; do
+  d="$W/syn-s$seed"
+  timeout 900 python -m synthetic_pdf_bench.cli.generate --output-root "$d" --count "$DOCS" "${R[@]}" --variants random standard structured \
+    --workers "$(nproc)" --splits train=0.85 val=0.15 --split-by recipe --seed-start $(( 1 + seed * 100000 )) > "$RUN/generate-s$seed.log" 2>&1
+  python -m synthetic_pdf_bench.cli.generate export-coco "$d" > /dev/null
+  arm "synthetic-s$seed" "$STEPS" "$d" "$d/coco_train.json" "$d/coco_val.json" --seed "$seed"
+done
 for a in ${ARMS//,/ }; do
   case $a in
     synthetic) arm synthetic "$STEPS" "${SYN[@]}" ;;
