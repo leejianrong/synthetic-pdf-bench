@@ -154,7 +154,7 @@ uv run synthetic-pdf-bench benchmark output/corpus --parser "my-parser {pdf} {ou
 
 `--parser` is a shell command with `{pdf}`, `{truth}` (for self-tests only) and `{out}` placeholders; it must write the prediction shape above into `{out}`. A document where the command fails or its output cannot be scored counts as zero on every metric and is listed under `failed`.
 
-Three ready-made adapters live in `scripts/parsers/` (each takes `PDF OUT_DIR` and writes `document.md`): `pymupdf_text.py`, `pypdf_text.py` and `docling_md.py` (needs `pip install docling`). They give Markdown-only predictions, so only the Markdown metrics are meaningful for them; block, table and figure metrics need `prediction.json`. `scripts/jobs/parser_benchmark.sh` runs all three on a CPU RunPod pod through `scripts/runpod_launch.sh`.
+Ready-made adapters live in `scripts/parsers/`: `pymupdf_text.py`, `pypdf_text.py` and `docling_md.py` (needs `pip install docling`) take `PDF OUT_DIR` and write `document.md`, so only the Markdown metrics are meaningful for them. `docling_structured.py` also takes `TRUTH_DIR` and writes `prediction.json` with blocks, tables (matrix and HTML) and figure boxes, which is what the block, table and figure metrics need. Parsers cannot know the truth's block, table and figure ids, so `evaluation/matching.py` gives each predicted item the id of the truth item it overlaps most on the same page (greedy, IoU of at least 0.1) and uses nothing from the truth but its boxes. `scripts/jobs/parser_benchmark.sh` runs the adapters on a CPU RunPod pod through `scripts/runpod_launch.sh`.
 
 ### Parser results (SYN-4, SYN-5)
 
