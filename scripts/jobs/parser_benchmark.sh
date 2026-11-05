@@ -3,7 +3,7 @@
 # Env: SYN_SHA (required), DOCS (30), PARSERS (comma list of scripts/parsers/<name>.py), DOC_TIMEOUT (300 s per document).
 # Markers: STAGE, hb, WARN, ERROR, STAGE failed, MEASURE, PARSER_REPORT, RP_REPORT_BEGIN/END, RP_ARTIFACT_CODE.
 set -Eeuo pipefail
-: "${SYN_SHA:?}"; DOCS=${DOCS:-30}; PARSERS=${PARSERS:-pymupdf_text,pypdf_text,docling_md}; DOC_TIMEOUT=${DOC_TIMEOUT:-300}
+: "${SYN_SHA:?}"; DOCS=${DOCS:-30}; PARSERS=${PARSERS:-pymupdf_text,pypdf_text,docling_structured}; DOC_TIMEOUT=${DOC_TIMEOUT:-300}
 W=${W:-/workspace}; RUN=$W/run; mkdir -p "$RUN"
 exec > >(tee -a "$RUN/job.log") 2>&1
 START=$(date +%s); : > "$RUN/stage"
@@ -56,7 +56,7 @@ timeout 900 python -m synthetic_pdf_bench.cli.generate --output-root "$W/syn" --
 for name in dummy ${PARSERS//,/ }; do
   stage "parser-$name"
   mkdir -p "$RUN/$name"; t0=$(date +%s)
-  if [ "$name" = dummy ]; then cmd=dummy; else cmd="python scripts/parsers/$name.py {pdf} {out}"; fi
+  if [ "$name" = dummy ]; then cmd=dummy; else cmd="python scripts/parsers/$name.py {pdf} {out} {truth}"; fi
   timeout 5400 python -m synthetic_pdf_bench.cli.generate benchmark "$W/syn" --parser "$cmd" --output "$RUN/$name" --timeout "$DOC_TIMEOUT" > "$RUN/$name/bench.log" 2>&1 \
     || echo "ERROR parser $name failed or timed out (exit $?)"
   echo "MEASURE parser=$name docs=$DOCS secs=$(( $(date +%s) - t0 )) cpus=$(nproc)"
