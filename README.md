@@ -156,6 +156,19 @@ uv run synthetic-pdf-bench benchmark output/corpus --parser "my-parser {pdf} {ou
 
 Three ready-made adapters live in `scripts/parsers/` (each takes `PDF OUT_DIR` and writes `document.md`): `pymupdf_text.py`, `pypdf_text.py` and `docling_md.py` (needs `pip install docling`). They give Markdown-only predictions, so only the Markdown metrics are meaningful for them; block, table and figure metrics need `prediction.json`. `scripts/jobs/parser_benchmark.sh` runs all three on a CPU RunPod pod through `scripts/runpod_launch.sh`.
 
+### Parser results (SYN-4, SYN-5)
+
+30 generated documents (`standard` and `structured` variants, canonical recipes, repo `c714db2`), CPU pod with 8 vCPUs, `scripts/jobs/parser_benchmark.sh`. Every parser scored on all 30 with no failures. The adapters write Markdown only, so the block, table and figure metrics are 0 for all three by construction and are not shown.
+
+| Parser | Markdown token F1 | Markdown edit similarity | Wall time, 30 docs |
+|---|---|---|---|
+| Truth copy (dummy) | 1.000 | 1.000 | 42 s |
+| Docling (default pipeline, CPU) | 0.965 | 0.917 | 1,555 s |
+| PyMuPDF text layer | 0.953 | 0.909 | 290 s |
+| pypdf text layer | 0.953 | 0.909 | 295 s |
+
+Read this as a first measurement, not a ranking. The synthetic PDFs have a clean text layer, so a plain text extractor already recovers almost every word: the Markdown metrics barely separate Docling (0.965) from PyMuPDF (0.953), and PyMuPDF and pypdf score the same. Wall time includes scoring (about 1.4 s per document, the dummy run), so Docling itself took about 40 s per document. What would separate parsers is structure: tables, reading order and block boxes need an adapter that writes `prediction.json`, and the `degraded` profiles (scans) need OCR. Both are open.
+
 For smoke testing the evaluator, generate a truth-copy dummy prediction:
 
 ```bash
