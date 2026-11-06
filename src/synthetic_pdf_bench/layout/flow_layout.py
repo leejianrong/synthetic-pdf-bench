@@ -109,7 +109,7 @@ def random_style(seed: int) -> LayoutStyle:
         columns=rng.choice([1, 2]),
         force_section_page_breaks=rng.random() < 0.25,
         page_size=rng.choice([letter, A4]),
-        font_family=rng.choices(list(FONT_FAMILIES), weights=[46, 46, 8])[0],
+        font_family=rng.choices(list(FONT_FAMILIES), weights=[25, 26, 2, 14, 11, 8, 14])[0],  # DocLayNet text: Times 26%, Helvetica 25%, LaTeX 14%, other sans and DejaVu 17%, other serif 7%
         page_number_align=rng.choice(["left", "center", "right"]),
     )
     if style.columns == 1:  # DocLayNet text blocks are 0.38 of the page wide at the median; one full-width column was 0.79

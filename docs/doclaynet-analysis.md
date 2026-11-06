@@ -251,3 +251,18 @@ Distribution distance (KS) fell on the targeted measures: classes per page 0.67 
 ## Layout replay (SYN-45)
 
 Recommendation 5 is built: `--variants replay --layout-bank BANK` generates pages on the box layouts of real DocLayNet train pages (README, "Dataset generation"). By construction, composition, box sizes, positions, page sizes and the 0.12 partial overlaps per page match real pages, so the distribution gaps above are closed for the classes and geometry; what stays synthetic is the content (recipe prose, number-filled tables, noise pictures) and the look (three built-in fonts, one document font family chosen from the real document's most common font). Layouts come from the train split only; the bank is a sample of 100 documents per category (600 documents, 24,821 pages), built from the survey. The effect on the detector score is measured in `docs/layout-baselines.md` once the run exists.
+
+## Result of the font change (SYN-43)
+
+Four TrueType families that ship with matplotlib (DejaVu Sans, DejaVu Serif, STIX, Computer Modern) join the three built-in ones, and `random` styles pick a family in roughly the real proportions. A family that lacks a glyph for a text (Computer Modern misses an accented letter in the recipes) falls back per text to DejaVu Serif. Share of boxes with text, by family group, on 150 `random` and `structured` documents against DocLayNet:
+
+| Family group | DocLayNet | Before | After |
+|---|---|---|---|
+| Times (Times, STIX) | 26% | 48% | 22% |
+| Helvetica | 25% | 37% | 22% |
+| LaTeX Computer Modern | 14% | 0% | 18% |
+| DejaVu and other sans or serif | 24% | 0% | 29% |
+| Monospace | 1% | 15% | 0% |
+| Other | 10% | 0% | 8% |
+
+What is not covered: real pages sometimes mix families on one page (code in a manual, a different heading face); every synthetic page still uses one, so the font-families-per-page distance stays at 0.43. The document-level family also does not follow the category yet (scientific articles are 90% Computer Modern; that comes with the genre profiles, SYN-44). The mean distance over all measures is unchanged (0.284 to 0.282), as fonts change the look more than the geometry the survey measures. The effect on the detector score has not been measured.
