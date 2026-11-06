@@ -111,3 +111,16 @@ def test_replayed_boxes_that_cross_are_kept_as_real_pages_have_them(tmp_path: Pa
     generate(out, seed=1, recipe_path=RECIPE, variant="replay", layout_bank=bank)
 
     assert len(export_coco(out)["annotations"]) == 2
+
+
+def test_pages_with_no_boxes_are_not_banked(tmp_path: Path) -> None:
+    empty = _page("a.pdf", 3)
+    empty["boxes"] = []  # DocLayNet has unannotated pages; replayed they would render blank
+    path = tmp_path / "survey-e.jsonl.gz"
+    with gzip.open(path, "wt") as fh:
+        for page in [_page("a.pdf", 1), empty, _page("a.pdf", 4), {**empty, "doc": "only-empty.pdf"}]:
+            fh.write(json.dumps(page) + "\n")
+
+    bank = load_layout_bank(path)
+
+    assert [p["page_no"] for p in bank["a.pdf"]] == [1, 4] and "only-empty.pdf" not in bank
