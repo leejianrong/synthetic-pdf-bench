@@ -185,3 +185,22 @@ What this says:
 The full comparison of DocLayNet and our synthetic pages (what DocLayNet contains, 25 ranked gaps, what to change) is in [doclaynet-analysis.md](doclaynet-analysis.md). Its main result for this section: SYN-38 moved the two classes that were already closest to real; the largest gaps are page composition, page furniture, titles and headings, text density and fonts.
 
 **Per-category scores (SYN-40).** Real pages carry their DocLayNet document category, so `report.json` now also holds `also.coco_test.by_category`: test mAP50-95 and page count for each of the six categories (financial reports, government tenders, laws and regulations, manuals, patents, scientific articles). Synthetic sets have no category and get none. The aggregate hides where a generator change helps, so read this next to the overall number.
+
+## Result of the DocLayNet-driven generator changes (SYN-41, SYN-42, SYN-43)
+
+Same job and settings as the seed-noise runs (5,000 steps, batch 16, 640 px, no augment, 150 documents per seed from `random`, `standard` and `structured`, 500 real test pages), community RTX 3090, repo `21b9982`, $0.20. The generator now includes page composition and furniture (SYN-41), type size, spacing and page breaks (SYN-42) and font families (SYN-43), all described in [doclaynet-analysis.md](doclaynet-analysis.md). Three seeds each; the baseline is the run before these changes.
+
+| Generator | Seed 0 | Seed 1 | Seed 2 | Mean | Range | Real val (50) |
+|---|---|---|---|---|---|---|
+| Before (`bfc623d`) | 0.0421 | 0.0476 | 0.0445 | 0.0447 | 0.0055 | 0.128 |
+| After SYN-41, 42, 43 (`21b9982`) | 0.0579 | 0.0599 | 0.0522 | **0.0567** | 0.0077 | 0.136 |
+
+The mean moved by 0.012, more than twice the seed range, and every new seed beats every old seed. It is the first change since the seed-noise run that clears that bar. Test AP50-95 per class, mean of three seeds, before / after: section-header 0.054 / 0.117, list-item 0.018 / 0.059, page-footer 0.021 / 0.054, page-header 0.014 / 0.047, text 0.158 / 0.171, formula 0.014 / 0.016, footnote 0.003 / 0.007, caption 0.009 / 0.007, table 0.072 / 0.070, picture 0.101 / 0.073, title 0.028 / 0.003.
+
+Per document category (test, mean of three seeds, pages in brackets): government tenders 0.126 (32), manuals 0.098 (81), patents 0.080 (48), financial reports 0.069 (176), scientific articles 0.062 (87), laws and regulations 0.054 (76). There is no per-category baseline, since that reporting (SYN-40) came after the earlier runs.
+
+What to make of it:
+
+- **The classes that moved are the ones the analysis said were furthest from real** (page furniture, section headers, list items), which supports the explanation that composition, furniture and density matter more than box size. It does not isolate which of the three changes did it: they ran together, so this is the effect of the three, not of each.
+- **Two classes got worse.** Title fell from 0.028 to 0.003 (titles are on 3% of pages; the change made them small and added the variants' single title per document, so there are few and the class is noisy) and picture from 0.101 to 0.073 (pictures were made smaller and rarer). The per-class numbers carry about the same seed noise as the totals; these two are worth a look, not a conclusion.
+- **Still low in absolute terms:** 0.0567 is about 10% of the 0.566 that 10,000 real pages reach, and 8% of Docling's 0.705. Three seeds, one real test sample.
