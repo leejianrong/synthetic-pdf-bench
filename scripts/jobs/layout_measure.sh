@@ -9,11 +9,14 @@
 # real sample (the largest size), once per seed, and score each on synthetic val, real val and real test.
 # SYN_SEEDS ("0,1,2"): synthetic-only arm once per seed, each on its own DOCS documents (document seeds from 1+seed*100000) and trained with that
 # seed, to measure the noise of the synthetic arm. The `also` score named coco_val is the seed-0 dataset's validation split.
+# VARIANTS ("random standard structured"): the generator variants to cycle through. With `replay` the job first builds a layout bank from DocLayNet
+# train pages (BANK_DOCS per category, 100) and the replay documents copy those layouts (SYN-45).
 # REAL_SHARDS (24) and PREP_TIMEOUT (2400 s) size the real-train download: community hosts took 1-8 min per 500 MB shard.
 # Markers: STAGE, hb, WARN, ERROR, STAGE failed, MEASURE, TRAIN, REPORT, RP_REPORT_BEGIN/END, RP_ARTIFACT_CODE.
 set -Eeuo pipefail
 : "${SYN_SHA:?}" "${RTOD_SHA:?}"; STEPS=${STEPS:-100}; BATCH=${BATCH:-16}; SIZE=${SIZE:-640}; DOCS=${DOCS:-70}; TEST_N=${TEST_N:-0}
 REAL_N=${REAL_N:-0}; ARMS=${ARMS:-}; SCALE=${SCALE:-}; SEEDS=${SEEDS:-0}; REAL_STEPS=${REAL_STEPS:-3000}; MIX_STEPS=${MIX_STEPS:-4000}; SYN_SEEDS=${SYN_SEEDS:-}
+VARIANTS=${VARIANTS:-random standard structured}
 W=${W:-/workspace}; RUN=$W/run; mkdir -p "$RUN"
 exec > >(tee -a "$RUN/job.log") 2>&1
 START=$(date +%s); : > "$RUN/stage"
@@ -56,7 +59,7 @@ stage install
 # Long timeouts and retries: a slow community host timed out reading the nvidia wheels (2026-11-04). Progress stays on so a slow install is visible.
 PIP="pip install --default-timeout 120 --retries 8 --progress-bar off"
 timeout 1500 $PIP torch==2.6.0 --index-url https://download.pytorch.org/whl/cu124
-timeout 600 $PIP -q pyarrow pycocotools "rtod[torch,coco] @ git+https://github.com/leejianrong/real-time-object-detection@${RTOD_SHA}"
+timeout 600 $PIP -q pyarrow pycocotools "rtod[torch,coco] @ git+https://github.com/leejianrong/real-time-object-detection@${RTOD_SHA}" huggingface_hub
 timeout 300 git clone -q https://github.com/leejianrong/synthetic-pdf-bench "$W/repo"
 git -C "$W/repo" checkout -q "$SYN_SHA"
 timeout 600 $PIP -q "$W/repo"
@@ -72,8 +75,16 @@ PY
 stage generate
 cd "$W/repo"
 R=(); for f in data/recipes/canonical/*.json; do R+=(--recipe "$f"); done
+LB=()
+if [[ " $VARIANTS " == *" replay "* ]]; then  # layouts of real train pages, never validation or test
+  stage bank
+  timeout 1500 python scripts/doclaynet_survey.py fetch --out "$W/survey" --splits train --workers 4
+  python scripts/doclaynet_survey.py bank "$W/survey" --out "$W/bank.jsonl.gz" --docs-per-category "${BANK_DOCS:-100}"
+  rm -rf "$W/survey"
+  LB=(--layout-bank "$W/bank.jsonl.gz")
+fi
 t0=$(date +%s)
-timeout 900 python -m synthetic_pdf_bench.cli.generate --output-root "$W/syn" --count "$DOCS" "${R[@]}" --variants random standard structured \
+timeout 900 python -m synthetic_pdf_bench.cli.generate --output-root "$W/syn" --count "$DOCS" "${R[@]}" --variants $VARIANTS "${LB[@]}" \
   --workers "$(nproc)" --splits train=0.85 val=0.15 --split-by recipe > "$RUN/generate.log" 2>&1
 timeout 300 python -m synthetic_pdf_bench.cli.generate export-coco "$W/syn"
 echo "MEASURE generate docs=$DOCS secs=$(( $(date +%s) - t0 )) workers=$(nproc) pages=$(grep -c '"file_name"' "$W/syn/coco_train.json")+$(grep -c '"file_name"' "$W/syn/coco_val.json")"
@@ -120,7 +131,7 @@ REAL=("$W/real" "$W/real/coco_train.json" "$W/real/coco_validation.json")
 if [ -z "$ARMS$SCALE$SYN_SEEDS" ]; then arm train "$STEPS" "${SYN[@]}"; fi
 for seed in ${SYN_SEEDS//,/ }; do
   d="$W/syn-s$seed"
-  timeout 900 python -m synthetic_pdf_bench.cli.generate --output-root "$d" --count "$DOCS" "${R[@]}" --variants random standard structured \
+  timeout 900 python -m synthetic_pdf_bench.cli.generate --output-root "$d" --count "$DOCS" "${R[@]}" --variants $VARIANTS "${LB[@]}" \
     --workers "$(nproc)" --splits train=0.85 val=0.15 --split-by recipe --seed-start $(( 1 + seed * 100000 )) > "$RUN/generate-s$seed.log" 2>&1
   python -m synthetic_pdf_bench.cli.generate export-coco "$d" > /dev/null
   arm "synthetic-s$seed" "$STEPS" "$d" "$d/coco_train.json" "$d/coco_val.json" --seed "$seed"

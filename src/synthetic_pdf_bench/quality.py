@@ -8,13 +8,15 @@ from PIL import Image, ImageStat
 from synthetic_pdf_bench.schema.truth import DocumentTruth
 
 
-def validate_generation(output: Path, truth: DocumentTruth, markdown: str) -> dict:
+def validate_generation(output: Path, truth: DocumentTruth, markdown: str, allow_overlap: bool = False) -> dict:
+    """`allow_overlap` is for pages that copy real layouts, where annotated boxes sometimes cross."""
     checks: list[dict] = []
     _check_blocks_have_bboxes(truth, checks)
     _check_markdown_spans(truth, markdown, checks)
     _check_figure_captions(truth, checks)
     _check_table_cells_inside_tables(truth, checks)
-    _check_no_content_overlap(truth, checks)
+    if not allow_overlap:
+        _check_no_content_overlap(truth, checks)
     _check_page_images(output, truth, checks)
     _check_figure_crops(output, truth, checks)
     failed = [check for check in checks if not check["passed"]]

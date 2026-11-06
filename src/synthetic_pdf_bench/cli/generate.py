@@ -21,6 +21,7 @@ from synthetic_pdf_bench.generators.recipes import (
     recipe_variant_names,
 )
 from synthetic_pdf_bench.layout.flow_layout import build_scene_from_recipe_path
+from synthetic_pdf_bench.layout.replay_layout import build_replay_scene_from_path
 from synthetic_pdf_bench.markdown.writer import write_markdown
 from synthetic_pdf_bench.quality import manifest_summary_stats, validate_generation
 from synthetic_pdf_bench.render.crops import crop_figures
@@ -73,6 +74,7 @@ def generate(
     recipe_path: Path | None = None,
     variant: str = "standard",
     degrade: str = "none",
+    layout_bank: Path | None = None,
 ) -> dict:
     output.mkdir(parents=True, exist_ok=True)
     _clear_generated_outputs(output)
@@ -80,7 +82,12 @@ def generate(
     pages_dir = truth_dir / "pages"
     figures_dir = truth_dir / "figures"
     resolved_recipe_path = recipe_path or default_recipe_path()
-    scene = build_scene_from_recipe_path(resolved_recipe_path, seed=seed, dpi=dpi, variant=variant)
+    if variant == "replay":
+        if layout_bank is None:
+            raise ValueError("variant 'replay' needs a layout bank (--layout-bank)")
+        scene = build_replay_scene_from_path(resolved_recipe_path, seed, dpi, layout_bank)
+    else:
+        scene = build_scene_from_recipe_path(resolved_recipe_path, seed=seed, dpi=dpi, variant=variant)
 
     pdf_path = output / "document.pdf"
     ReportLabRenderer(seed=seed).render(scene.pages, pdf_path)
@@ -107,7 +114,7 @@ def generate(
     truth_dir.mkdir(parents=True, exist_ok=True)
     (truth_dir / "document.md").write_text(markdown, encoding="utf-8")
     truth = scene.to_truth()
-    quality = validate_generation(output, truth, markdown)
+    quality = validate_generation(output, truth, markdown, allow_overlap=variant == "replay")
     (truth_dir / "document.json").write_text(truth.model_dump_json(indent=2), encoding="utf-8")
     summary = _document_summary(output, truth, resolved_recipe_path, variant, quality, degrade)
     (truth_dir / "manifest.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
@@ -129,6 +136,7 @@ def generate_dataset(
     workers: int = 1,
     splits: dict[str, float] | None = None,
     split_by: str = "recipe",
+    layout_bank: Path | None = None,
 ) -> dict:
     if count < 1:
         raise ValueError("count must be at least 1")
@@ -143,6 +151,7 @@ def generate_dataset(
             "recipe_path": recipes[index % len(recipes)],
             "variant": selected_variants[index % len(selected_variants)],
             "degrade": degrade,
+            "layout_bank": layout_bank,
         }
         for index in range(count)
     ]
@@ -228,7 +237,7 @@ def _add_generation_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--recipe", type=Path, action="append", default=None)
     parser.add_argument(
         "--variant",
-        choices=recipe_variant_names(),
+        choices=[*recipe_variant_names(), "replay"],
         default="standard",
         help="Recipe/layout variant for single-document generation.",
     )
@@ -238,6 +247,7 @@ def _add_generation_args(parser: argparse.ArgumentParser) -> None:
         default="none",
         help="Scan degradation: page images are degraded, document.pdf becomes an image-only scan.",
     )
+    parser.add_argument("--layout-bank", type=Path, help="Variant 'replay': survey bank (see scripts/doclaynet_survey.py bank) whose train layouts the pages copy.")
     parser.add_argument("--workers", type=int, default=1, help="Parallel processes in dataset mode.")
     parser.add_argument(
         "--splits",
@@ -253,7 +263,7 @@ def _add_generation_args(parser: argparse.ArgumentParser) -> None:
     )
     parser.add_argument(
         "--variants",
-        choices=recipe_variant_names(),
+        choices=[*recipe_variant_names(), "replay"],
         nargs="+",
         help="Variants to cycle through in dataset mode.",
     )
@@ -305,11 +315,12 @@ def main() -> None:
             workers=args.workers,
             splits={name: float(ratio) for name, ratio in (item.split("=") for item in args.splits)} if args.splits else None,
             split_by=args.split_by,
+            layout_bank=args.layout_bank,
         )
         return
     if args.output is None:
         raise SystemExit("--output is required unless --output-root is provided")
-    generate(args.output, seed=args.seed, dpi=args.dpi, recipe_path=recipe_paths[0], variant=args.variant, degrade=args.degrade)
+    generate(args.output, seed=args.seed, dpi=args.dpi, recipe_path=recipe_paths[0], variant=args.variant, degrade=args.degrade, layout_bank=args.layout_bank)
 
 
 if __name__ == "__main__":
