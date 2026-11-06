@@ -34,7 +34,7 @@ BLOCK_TYPE_TO_CATEGORY = {
     "list_item": "list-item",
     "page_number": "page-footer",
     "paragraph": "text",
-    "reference": "text",
+    "reference": "list-item",  # real bibliographies are annotated one list item per entry
     "table": "table",
     "title": "title",
 }
