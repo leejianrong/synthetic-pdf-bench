@@ -183,3 +183,5 @@ What this says:
 - The earlier batch of generator changes was never ablated, so which of them mattered is not known.
 
 The full comparison of DocLayNet and our synthetic pages (what DocLayNet contains, 25 ranked gaps, what to change) is in [doclaynet-analysis.md](doclaynet-analysis.md). Its main result for this section: SYN-38 moved the two classes that were already closest to real; the largest gaps are page composition, page furniture, titles and headings, text density and fonts.
+
+**Per-category scores (SYN-40).** Real pages carry their DocLayNet document category, so `report.json` now also holds `also.coco_test.by_category`: test mAP50-95 and page count for each of the six categories (financial reports, government tenders, laws and regulations, manuals, patents, scientific articles). Synthetic sets have no category and get none. The aggregate hides where a generator change helps, so read this next to the overall number.

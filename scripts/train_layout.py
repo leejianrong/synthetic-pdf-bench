@@ -19,6 +19,7 @@ import random
 import sys
 import time
 from pathlib import Path
+from types import SimpleNamespace
 
 import cv2
 import numpy as np
@@ -169,6 +170,17 @@ def score_coco(data: LayoutPages, results: list[dict]) -> dict:
     return {"map50_95": float(ev.stats[0]), "map50": float(ev.stats[1]), "per_class": per_class}
 
 
+def score_by_category(data: LayoutPages, results: list[dict]) -> dict:
+    """mAP per `doc_category` of the pages: DocLayNet pages carry one, synthetic pages do not, so this is empty for them."""
+    out = {}
+    for category in sorted({i["doc_category"] for i in data.images if i.get("doc_category")}):
+        ids = {i["id"] for i in data.images if i.get("doc_category") == category}
+        part = SimpleNamespace(images=[i for i in data.images if i["id"] in ids], boxes={k: v for k, v in data.boxes.items() if k in ids},
+                               categories=data.categories, names=data.names)
+        out[category] = {"map50_95": score_coco(part, [r for r in results if r["image_id"] in ids])["map50_95"], "n_images": len(ids)}
+    return out
+
+
 @torch.no_grad()
 def evaluate(model, data: LayoutPages, device: str, size: int) -> dict:
     """COCO mAP over the pages. Boxes are in the exported images' pixels, same as the ground truth."""
@@ -182,7 +194,8 @@ def evaluate(model, data: LayoutPages, device: str, size: int) -> dict:
         det = postprocess(raw, ratio, img.shape, conf=0.001, iou=0.65)
         for (x1, y1, x2, y2), s, c in zip(det.boxes, det.scores, det.class_ids, strict=True):
             results.append({"image_id": info["id"], "category_id": data.categories[int(c)], "bbox": [float(x1), float(y1), float(x2 - x1), float(y2 - y1)], "score": float(s)})
-    return score_coco(data, results)
+    by_category = score_by_category(data, results)
+    return {**score_coco(data, results), **({"by_category": by_category} if by_category else {})}
 
 
 def run(*, root: Path, train_json: Path, val_json: Path, out: Path, steps: int, batch: int, size: int, weights: Path | None,

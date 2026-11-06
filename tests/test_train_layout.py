@@ -102,3 +102,21 @@ def test_own_checkpoint_loads_as_starting_weights(tmp_path: Path) -> None:
 
     key = next(k for k in first.state_dict() if k.endswith("cls_preds.0.weight"))
     assert torch.equal(first.state_dict()[key], second.state_dict()[key])  # the class head came along too
+
+
+def test_scores_are_split_by_document_category(tmp_path: Path) -> None:
+    script = _load_script()
+    box = {"category_id": 1, "bbox": [10, 10, 50, 50]}
+    coco = {"categories": [{"id": 1, "name": "text"}],
+            "images": [{"id": 1, "file_name": "a.png", "width": 100, "height": 100, "doc_category": "manuals"},
+                       {"id": 2, "file_name": "b.png", "width": 100, "height": 100, "doc_category": "patents"}],
+            "annotations": [{"id": 1, "image_id": 1, **box}, {"id": 2, "image_id": 2, **box}]}
+    path = tmp_path / "coco.json"
+    path.write_text(json.dumps(coco))
+    pages = script.LayoutPages(tmp_path, path, 640)
+    results = [{"image_id": 1, **box, "score": 0.9}]  # found on the manuals page, missed on the patents page
+
+    scores = script.score_by_category(pages, results)
+
+    assert scores["manuals"] == {"map50_95": pytest.approx(1.0), "n_images": 1}
+    assert scores["patents"] == {"map50_95": 0.0, "n_images": 1}
