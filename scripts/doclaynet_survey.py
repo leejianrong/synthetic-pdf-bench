@@ -2,6 +2,7 @@
 
     python scripts/doclaynet_survey.py fetch --out output/doclaynet/survey [--splits train validation test] [--workers 4]
     python scripts/doclaynet_survey.py synthetic ROOT --out output/doclaynet/survey_synthetic.jsonl.gz
+    python scripts/doclaynet_survey.py bank output/doclaynet/survey --out output/doclaynet/bank.jsonl.gz [--docs-per-category 100]
 
 `fetch` reads only the small parquet columns (boxes, classes, metadata, text cells) over HTTP range requests, so no page image or
 PDF is downloaded. Output is gzipped JSON lines, one page per line:
@@ -138,6 +139,29 @@ def synthetic(root: Path, out: Path) -> None:
                                        "cells": cells, "chars": chars, "boxes": boxes}, separators=(",", ":")) + "\n")
 
 
+def bank(survey_dir: Path, out: Path, docs_per_category: int, seed: int) -> None:
+    """A compact layout bank: the train pages of `docs_per_category` seeded random documents of each category (a few hundred documents are
+    plenty of layouts and keep every generator worker's memory small)."""
+    import random
+
+    by_doc: dict[tuple[str, str], list[str]] = collections.defaultdict(list)
+    for path in sorted(survey_dir.glob("*.jsonl.gz")):
+        with gzip.open(path, "rt", encoding="utf-8") as fh:
+            for line in fh:
+                page = json.loads(line)
+                if page["split"] == "train":
+                    by_doc[(page["category"], page["doc"])].append(line)
+    rng = random.Random(seed)
+    chosen = []
+    for category in sorted({c for c, _ in by_doc}):
+        docs = sorted(d for c, d in by_doc if c == category)
+        chosen += [(category, d) for d in rng.sample(docs, min(docs_per_category, len(docs)))]
+    with gzip.open(out, "wt", encoding="utf-8") as sink:
+        for key in chosen:
+            sink.writelines(by_doc[key])
+    print(f"{len(chosen)} documents, {sum(len(by_doc[k]) for k in chosen)} pages -> {out}")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -145,12 +169,19 @@ def main() -> None:
     f.add_argument("--out", type=Path, required=True)
     f.add_argument("--splits", nargs="+", default=["train", "validation", "test"], choices=list(SHARDS))
     f.add_argument("--workers", type=int, default=4)
+    b = sub.add_parser("bank")
+    b.add_argument("survey", type=Path)
+    b.add_argument("--out", type=Path, required=True)
+    b.add_argument("--docs-per-category", type=int, default=100)
+    b.add_argument("--seed", type=int, default=0)
     s = sub.add_parser("synthetic")
     s.add_argument("root", type=Path)
     s.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
     if args.command == "fetch":
         fetch(args.out, args.splits, args.workers)
+    elif args.command == "bank":
+        bank(args.survey, args.out, args.docs_per_category, args.seed)
     else:
         synthetic(args.root, args.out)
 

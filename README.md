@@ -64,6 +64,16 @@ Available variants are `standard`, `compact`, `spacious`, `text_heavy`, `figure_
 
 Each document manifest includes a `quality` report. The dataset manifest includes aggregate `summary_stats` for pages, blocks, tables, figures, and variant counts.
 
+The `replay` variant copies the box layouts of real DocLayNet train pages instead of flowing a recipe's blocks: every real box becomes one block of the same class in the same place, filled with content that fits it (text from the recipe, a table gridded to the box, a photo-like picture, a formula), on a page of the real size. Boxes that cross in the real page cross here too. It needs a layout bank built from the DocLayNet survey (train split only; see `docs/doclaynet-analysis.md`):
+
+```bash
+uv run --with pyarrow --with huggingface_hub python scripts/doclaynet_survey.py fetch --out output/doclaynet/survey --splits train
+uv run python scripts/doclaynet_survey.py bank output/doclaynet/survey --out output/doclaynet/bank.jsonl.gz --docs-per-category 100
+uv run synthetic-pdf-bench --output-root output/replay --count 20 --variants replay --layout-bank output/doclaynet/bank.jsonl.gz
+```
+
+Each replay document is one real document's page layouts (up to 12 pages) with the text of one recipe. Pictures are photo-like noise and the text is the recipes' prose, so the content is synthetic; the structure is not. Reading order in the truth is top to bottom, not DocLayNet's.
+
 ## Layout features
 
 The flow layout engine uses ReportLab font metrics for text height estimation and supports:

@@ -233,3 +233,7 @@ uv run python scripts/doclaynet_analysis.py --real output/doclaynet/survey --syn
 uv run synthetic-pdf-bench export-coco output/doclaynet/syn
 uv run --with pyarrow --with huggingface_hub python scripts/doclaynet_contact_sheet.py real --survey output/doclaynet/survey --out output/doclaynet/sheets
 ```
+
+## Layout replay (SYN-45)
+
+Recommendation 5 is built: `--variants replay --layout-bank BANK` generates pages on the box layouts of real DocLayNet train pages (README, "Dataset generation"). By construction, composition, box sizes, positions, page sizes and the 0.12 partial overlaps per page match real pages, so the distribution gaps above are closed for the classes and geometry; what stays synthetic is the content (recipe prose, number-filled tables, noise pictures) and the look (three built-in fonts, one document font family chosen from the real document's most common font). Layouts come from the train split only; the bank is a sample of 100 documents per category (600 documents, 24,821 pages), built from the survey. The effect on the detector score is measured in `docs/layout-baselines.md` once the run exists.

@@ -71,3 +71,22 @@ def test_analysis_finds_no_gap_between_a_corpus_and_itself(tmp_path: Path) -> No
 
     assert corpus.n > 10 and gaps
     assert all(g["ks"] == 0.0 for g in gaps if g["ks"] is not None)
+
+
+def test_the_bank_keeps_train_pages_of_a_few_documents_per_category(tmp_path: Path) -> None:
+    def page(split: str, category: str, doc: str, n: int) -> str:
+        return json.dumps({"split": split, "category": category, "doc": doc, "page_no": n, "boxes": []}) + "\n"
+
+    (tmp_path / "s").mkdir()
+    with gzip.open(tmp_path / "s" / "x.jsonl.gz", "wt") as fh:
+        for d in range(5):
+            fh.write(page("train", "manuals", f"m{d}", 1) + page("train", "manuals", f"m{d}", 2))
+        fh.write(page("train", "patents", "p0", 1) + page("test", "patents", "p1", 1) + page("validation", "manuals", "m9", 1))
+
+    survey.bank(tmp_path / "s", tmp_path / "bank.jsonl.gz", docs_per_category=2, seed=0)
+
+    with gzip.open(tmp_path / "bank.jsonl.gz", "rt") as fh:
+        pages = [json.loads(line) for line in fh]
+    assert {p["split"] for p in pages} == {"train"}
+    assert len({p["doc"] for p in pages if p["category"] == "manuals"}) == 2 and len([p for p in pages if p["category"] == "manuals"]) == 4
+    assert [p["doc"] for p in pages if p["category"] == "patents"] == ["p0"]
