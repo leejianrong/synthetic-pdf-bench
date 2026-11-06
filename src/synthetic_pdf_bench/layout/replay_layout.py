@@ -44,7 +44,7 @@ def load_layout_bank(source: Path, split: str = "train") -> dict[str, list[dict]
         with gzip.open(path, "rt", encoding="utf-8") as fh:
             for line in fh:
                 page = json.loads(line)
-                if page["split"] == split:
+                if page["split"] == split and page["boxes"]:  # unannotated pages would replay as blank pages
                     bank[page["doc"]].append(page)
     for pages in bank.values():
         pages.sort(key=lambda p: p["page_no"])

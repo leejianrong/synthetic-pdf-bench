@@ -149,7 +149,7 @@ def bank(survey_dir: Path, out: Path, docs_per_category: int, seed: int) -> None
         with gzip.open(path, "rt", encoding="utf-8") as fh:
             for line in fh:
                 page = json.loads(line)
-                if page["split"] == "train":
+                if page["split"] == "train" and page["boxes"]:  # unannotated pages would replay as blank pages
                     by_doc[(page["category"], page["doc"])].append(line)
     rng = random.Random(seed)
     chosen = []
