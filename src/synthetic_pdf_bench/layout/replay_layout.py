@@ -36,6 +36,13 @@ FORMULAS = [r"E = mc^2", r"x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}", r"\sum_{i=1}
             r"y = \alpha + \beta x + \epsilon", r"\lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n = e"]
 
 
+def has_content(page: dict) -> bool:
+    """A picture, table or formula of some size, or a few lines of text. Fewer would render as a blank page (a page number alone does),
+    which the generator's blank-page check rejects."""
+    big = any(box[0] in {"picture", "table", "formula"} and box[3] * box[4] >= 0.001 for box in page["boxes"])
+    return big or sum(box[6] for box in page["boxes"] if box[0] not in {"picture", "table", "formula"}) >= 30
+
+
 def load_layout_bank(source: Path, split: str = "train") -> dict[str, list[dict]]:
     """Bank pages grouped by source document, in page order. Only `split` pages are kept, so validation and test layouts never train anything."""
     files = sorted(source.glob("*.jsonl.gz")) if source.is_dir() else [source]
@@ -44,7 +51,7 @@ def load_layout_bank(source: Path, split: str = "train") -> dict[str, list[dict]
         with gzip.open(path, "rt", encoding="utf-8") as fh:
             for line in fh:
                 page = json.loads(line)
-                if page["split"] == split and page["boxes"]:  # unannotated pages would replay as blank pages
+                if page["split"] == split and has_content(page):
                     bank[page["doc"]].append(page)
     for pages in bank.values():
         pages.sort(key=lambda p: p["page_no"])

@@ -124,3 +124,31 @@ def test_pages_with_no_boxes_are_not_banked(tmp_path: Path) -> None:
     bank = load_layout_bank(path)
 
     assert [p["page_no"] for p in bank["a.pdf"]] == [1, 4] and "only-empty.pdf" not in bank
+
+
+def test_pages_with_next_to_nothing_on_them_are_not_banked(tmp_path: Path) -> None:
+    number_only = _page("a.pdf", 2)
+    number_only["boxes"] = [["page-footer", 0.5, 0.95, 0.02, 0.01, 1, 1, 8.0, "Helvetica"]]  # renders as a blank page
+    a_line = _page("a.pdf", 3)
+    a_line["boxes"] = [["text", 0.1, 0.1, 0.8, 0.012, 1, 60, 9.0, "Times-Roman"]]
+    a_picture = _page("a.pdf", 4)
+    a_picture["boxes"] = [["picture", 0.1, 0.1, 0.5, 0.3, 0, 0, None, None]]
+    path = tmp_path / "survey-s.jsonl.gz"
+    with gzip.open(path, "wt") as fh:
+        for page in [_page("a.pdf", 1), number_only, a_line, a_picture]:
+            fh.write(json.dumps(page) + "\n")
+
+    assert [p["page_no"] for p in load_layout_bank(path)["a.pdf"]] == [1, 3, 4]
+
+
+def test_a_bank_with_a_number_only_page_still_generates(tmp_path: Path) -> None:
+    number_only = _page("a.pdf", 2)
+    number_only["boxes"] = [["page-footer", 0.5, 0.95, 0.02, 0.01, 1, 1, 8.0, "Helvetica"]]
+    bank = tmp_path / "survey-n.jsonl.gz"
+    with gzip.open(bank, "wt") as fh:
+        for page in [_page("a.pdf", 1), number_only]:
+            fh.write(json.dumps(page) + "\n")
+
+    generate(tmp_path / "doc", seed=1, recipe_path=RECIPE, variant="replay", layout_bank=bank)  # failed the blank-page check with the number-only page
+
+    assert len(export_coco(tmp_path / "doc")["images"]) == 1
