@@ -72,6 +72,21 @@ class LayoutStyle:
     page_size: tuple[float, float] = letter
     font_family: str = "Helvetica"
     page_number_align: str = "right"
+    title_line_height: float = 22
+    heading_line_height: float = 16
+    # Page furniture. The defaults reproduce the standard style; random_style varies them per document.
+    has_header: bool = True
+    footer_mode: str = "both"  # none, number, text or both
+    furniture_font_size: float = 8
+    furniture_box_height: float = 16
+    header_top: float = 34  # distance from the page's top edge to the header box
+    footer_bottom: float = 38  # distance from the page's bottom edge to the footer box
+    header_align: str = "left"
+    number_style: str = "Page {n}"
+    header_text_mode: str = "short"  # the title up to its colon, or the whole title
+    # Which tables, figures and captions the document keeps (1.0 keeps all, as the standard style does).
+    visual_keep: float = 1.0
+    caption_keep: float = 1.0
 
 
 def random_style(seed: int) -> LayoutStyle:
@@ -83,8 +98,8 @@ def random_style(seed: int) -> LayoutStyle:
         margin_right=rng.randint(48, 80),
         margin_top=rng.randint(62, 84),
         margin_bottom=rng.randint(62, 84),
-        title_font_size=rng.randint(16, 20),  # title/heading line heights are fixed at 22/16
-        heading_font_size=rng.randint(11, 14),
+        title_font_size=rng.randint(10, 17),
+        heading_font_size=rng.randint(9, 13),
         body_font_size=body,
         caption_font_size=max(7, body - 1),
         body_line_height=round(body * rng.uniform(1.2, 1.45), 1),
@@ -99,7 +114,24 @@ def random_style(seed: int) -> LayoutStyle:
     )
     if style.columns == 1:  # DocLayNet text blocks are 0.38 of the page wide at the median; one full-width column was 0.79
         style = replace(style, margin_left=style.margin_left + rng.randint(0, 70), margin_right=style.margin_right + rng.randint(0, 70))
-    return style
+    # Real pages are mostly text: header on about half, footer on three quarters, and a table, picture or caption on a quarter of pages.
+    size = rng.choice([7, 8, 9, 9, 10, 10, 11, 12, 14])
+    return replace(
+        style,
+        title_line_height=round(style.title_font_size * 1.25, 1),
+        heading_line_height=round(style.heading_font_size * 1.25, 1),
+        has_header=rng.random() < 0.5,
+        footer_mode=rng.choices(["none", "number", "text", "both"], weights=[25, 45, 15, 15])[0],
+        furniture_font_size=size,
+        furniture_box_height=round(size * 1.05, 1),
+        header_top=rng.uniform(22, 56),
+        footer_bottom=rng.uniform(22, 50),
+        header_align=rng.choice(["left", "center", "right"]),
+        number_style=rng.choice(["{n}", "{n}", "Page {n}"]),
+        header_text_mode=rng.choice(["short", "short", "title"]),
+        visual_keep=rng.uniform(0.1, 0.4),
+        caption_keep=rng.uniform(0.1, 0.35),
+    )
 
 
 def style_for_variant(variant: str, seed: int = 0) -> LayoutStyle:
@@ -194,7 +226,7 @@ class FlowLayoutPlanner:
         self.scene = SceneGraph(doc_id=recipe.doc_id, seed=self.seed, dpi=self.dpi)
         self.scene.language_profile = recipe.language_profile
         self.scene.metadata = {**recipe.metadata, "layout_style": asdict(self.style)}
-        self.header_text = recipe.metadata.get("header_text") or recipe.title.split(":")[0]
+        self.header_text = recipe.metadata.get("header_text") or (recipe.title if self.style.header_text_mode == "title" else recipe.title.split(":")[0])
         self.footer_text = recipe.metadata.get("footer_text") or "Synthetic benchmark document"
         self._new_page()
         self._add_title(recipe.title, recipe.metadata)
@@ -203,7 +235,13 @@ class FlowLayoutPlanner:
             if section.page_break_before or self.style.force_section_page_breaks or section.metadata.get("page_break_before"):
                 self._advance_page()
             self._add_heading(section.heading, section.metadata)
-            for recipe_block in section.blocks:
+            for block_index, recipe_block in enumerate(section.blocks):
+                if recipe_block.type in {"table", "figure"}:
+                    pick = random.Random(f"{self.seed}-keep-{recipe_block.type}-{section.heading}-{block_index}")
+                    if pick.random() >= self.style.visual_keep:
+                        continue
+                    if pick.random() >= self.style.caption_keep:
+                        recipe_block = recipe_block.model_copy(update={"caption": ""})
                 if recipe_block.type == "paragraph":
                     self._add_paragraph(recipe_block.text, recipe_block.language, recipe_block.metadata)
                 elif recipe_block.type == "list":
@@ -253,65 +291,50 @@ class FlowLayoutPlanner:
 
     def _add_page_furniture(self, page_index: int) -> None:
         assert self.scene is not None
-        page_number = page_index + 1
-        footer_text, header_text = self.footer_text, self.header_text
-        self.scene.add_block(
-            Block(
-                block_id=self._next_block_id(),
-                type="header",
-                page_index=page_index,
-                reading_order=-1000 + page_index,
-                bbox_pt=[
-                    self.style.margin_left,
-                    self.page_height - 50,
-                    self.page_width - self.style.margin_right,
-                    self.page_height - 34,
-                ],
-                text=header_text,
-                include_in_markdown=False,
-                metadata={"role": "repeated_header"},
+        st = self.style
+        meta = {"font_size": st.furniture_font_size, "font_family": st.font_family}
+
+        def put(kind: str, order: int, bbox: list[float], text: str, role: str) -> None:
+            self.scene.add_block(
+                Block(block_id=self._next_block_id(), type=kind, page_index=page_index, reading_order=order, bbox_pt=bbox, text=text,
+                      include_in_markdown=False, metadata={"role": role, **meta})
             )
-        )
-        self.scene.add_block(
-            Block(
-                block_id=self._next_block_id(),
-                type="footer",
-                page_index=page_index,
-                reading_order=100000 + page_index,
-                bbox_pt=self._footer_bbox(footer_text),
-                text=footer_text,
-                include_in_markdown=False,
-                metadata={"role": "repeated_footer"},
-            )
-        )
-        self.scene.add_block(
-            Block(
-                block_id=self._next_block_id(),
-                type="page_number",
-                page_index=page_index,
-                reading_order=100100 + page_index,
-                bbox_pt=self._page_number_bbox(),
-                text=f"Page {page_number}",
-                include_in_markdown=False,
-                metadata={"role": "page_number"},
-            )
-        )
+
+        if st.has_header:
+            put("header", -1000 + page_index, self._header_bbox(self.header_text), self.header_text, "repeated_header")
+        if st.footer_mode in {"text", "both"}:
+            put("footer", 100000 + page_index, self._footer_bbox(self.footer_text), self.footer_text, "repeated_footer")
+        if st.footer_mode in {"number", "both"}:
+            number = st.number_style.format(n=page_index + 1)
+            put("page_number", 100100 + page_index, self._page_number_bbox(number), number, "page_number")
+
+    def _furniture_box(self, text: str, y0: float, x0: float) -> list[float]:
+        size = self.style.furniture_font_size
+        width = pdfmetrics.stringWidth(text, font_for_text(text, family=self.style.font_family), size)
+        return [x0, y0, x0 + width, y0 + self.style.furniture_box_height]
+
+    def _header_bbox(self, text: str) -> list[float]:
+        """Tight to the text, left, centred or right in the margins."""
+        left, right = self.style.margin_left, self.page_width - self.style.margin_right
+        width = self._furniture_box(text, 0, 0)[2]
+        x0 = {"left": left, "center": (left + right - width) / 2, "right": right - width}[self.style.header_align]
+        return self._furniture_box(text, self.page_height - self.style.header_top - self.style.furniture_box_height, x0)
 
     def _footer_bbox(self, text: str) -> list[float]:
         """Tight to the text, on the side opposite a left-aligned page number."""
-        width = pdfmetrics.stringWidth(text, font_for_text(text), 8)
         x0 = self.style.margin_left
         if self.style.page_number_align == "left":
-            x0 = self.page_width - self.style.margin_right - width
-        return [x0, 38, x0 + width, 52]
+            x0 = self.page_width - self.style.margin_right - self._furniture_box(text, 0, 0)[2]
+        return self._furniture_box(text, self.style.footer_bottom, x0)
 
-    def _page_number_bbox(self) -> list[float]:
+    def _page_number_bbox(self, text: str) -> list[float]:
         left, right = self.style.margin_left, self.page_width - self.style.margin_right
-        x0 = {"left": left, "center": (left + right) / 2 - 20, "right": right - 40}[self.style.page_number_align]
-        return [x0, 38, x0 + 40, 52]
+        width = self._furniture_box(text, 0, 0)[2]
+        x0 = {"left": left, "center": (left + right - width) / 2, "right": right - width}[self.style.page_number_align]
+        return self._furniture_box(text, self.style.footer_bottom, x0)
 
     def _add_title(self, title: str, metadata: dict) -> None:
-        height = self._text_height(title, self.style.title_font_size, self.content_width, line_height=22, bold=True)
+        height = self._text_height(title, self.style.title_font_size, self.content_width, line_height=self.style.title_line_height, bold=True)
         self._ensure_space(height + self.style.section_spacing)
         bbox = self._take_box(height)
         self._add_block(
@@ -356,7 +379,7 @@ class FlowLayoutPlanner:
         figure.caption_block_id = caption.block_id
 
     def _add_heading(self, heading: str, metadata: dict) -> None:
-        height = self._text_height(heading, self.style.heading_font_size, self.content_width, line_height=16, bold=True)
+        height = self._text_height(heading, self.style.heading_font_size, self.content_width, line_height=self.style.heading_line_height, bold=True)
         self._ensure_space(height + self.style.section_spacing)
         self.cursor_y -= self.style.section_spacing
         bbox = self._take_box(height)
@@ -530,11 +553,11 @@ class FlowLayoutPlanner:
     def _add_figure(self, recipe: FigureRecipe) -> None:
         fig_rng = random.Random(f"{self.seed}-fig-{recipe.figure_id}")
         height = self.style.figure_height * fig_rng.uniform(0.55, 1.0)  # DocLayNet pictures are small: 0.028 of the page at the median
-        total_height = height + self.style.figure_caption_height + self.style.block_spacing
+        total_height = height + (self.style.figure_caption_height if recipe.caption else 0) + self.style.block_spacing
         self._ensure_space(total_height)
         self.figure_counter += 1
         caption: Block | None = None
-        if recipe.caption_position == "before":
+        if recipe.caption and recipe.caption_position == "before":
             caption = self._add_caption(
                 f"Figure {self.figure_counter}: {recipe.caption}",
                 self.style.figure_caption_height,
@@ -557,13 +580,13 @@ class FlowLayoutPlanner:
             metadata={**recipe.metadata, "title": recipe.title, "data": recipe.data},
         )
         self._add_block(figure)
-        if caption is None:
+        if caption is None and recipe.caption:
             caption = self._add_caption(
                 f"Figure {self.figure_counter}: {recipe.caption}",
                 self.style.figure_caption_height,
                 {"caption_for": recipe.figure_id},
             )
-        figure.caption_block_id = caption.block_id
+        figure.caption_block_id = caption.block_id if caption else None
 
     def _add_note(self, recipe: FootnoteRecipe) -> None:
         text = f"{recipe.marker or '*'} {recipe.text}"
@@ -606,7 +629,7 @@ class FlowLayoutPlanner:
         )
 
     def _add_caption(self, text: str, height: float, metadata: dict) -> Block:
-        height = max(height, self._text_height(text, self.style.caption_font_size, self.content_width, self.style.body_line_height))
+        height = self._text_height(text, self.style.caption_font_size, self.content_width, self.style.body_line_height)  # as tall as its text, as real captions are
         self._ensure_space(height + self.style.block_spacing)
         bbox = self._take_box(height)
         caption = Block(
@@ -789,8 +812,8 @@ class FlowLayoutPlanner:
     def _typography(self, block_type: str) -> tuple[int, float] | None:
         style = self.style
         return {
-            "title": (style.title_font_size, 22),
-            "heading": (style.heading_font_size, 16),
+            "title": (style.title_font_size, style.title_line_height),
+            "heading": (style.heading_font_size, style.heading_line_height),
             "paragraph": (style.body_font_size, style.body_line_height),
             "list_item": (style.body_font_size, style.body_line_height),
             "caption": (style.caption_font_size, style.body_line_height),

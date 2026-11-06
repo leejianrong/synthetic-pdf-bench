@@ -233,3 +233,17 @@ uv run python scripts/doclaynet_analysis.py --real output/doclaynet/survey --syn
 uv run synthetic-pdf-bench export-coco output/doclaynet/syn
 uv run --with pyarrow --with huggingface_hub python scripts/doclaynet_contact_sheet.py real --survey output/doclaynet/survey --out output/doclaynet/sheets
 ```
+
+## Result of the page composition change (SYN-41)
+
+Random and structured pages now vary their furniture per document (header on about half, footer as none, number only, text only or both, type 7 to 14 pt, varied offsets and alignment, tight boxes), draw titles and headings smaller with line heights that follow the type size, keep only a share of tables and figures and fewer captions, and size captions to their text. The standard style is unchanged. Measured the same way as above, on 150 documents of the `random` and `structured` variants against all of DocLayNet:
+
+| Pages with the class | DocLayNet | Before | After |
+|---|---|---|---|
+| page-footer | 75% | 100% | 71% |
+| page-header | 49% | 100% | 56% |
+| caption | 18% | 97% | 20% |
+| picture | 29% | 80% | 36% |
+| table | 26% | 78% | 33% |
+
+Distribution distance (KS) fell on the targeted measures: classes per page 0.67 to 0.25, footers per page 0.89 to 0.04, captions per page 0.79 to 0.05, caption height 0.66 to 0.29, page-header type height 0.89 to 0.21, title type height 0.80 to 0.29, top margin 0.74 to 0.30. The mean over all measures went from 0.404 to 0.284. What did not move: title and section-header area and width (about 0.52 to 0.57) and character counts, because the recipe titles and headings are long sentences, not the 25-character headings real pages have; that is a content gap for the genre profiles (SYN-44). Characters per page rose from 1,268 to 1,663 on average (real 2,552), so density (SYN-42) is still open. The effect on the detector score has not been measured yet.
