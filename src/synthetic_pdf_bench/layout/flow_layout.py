@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import random
+import re
 from dataclasses import asdict, dataclass, replace
 from pathlib import Path
 
@@ -42,6 +43,17 @@ def _span_maps(spans: list[MergedCell]) -> tuple[dict[tuple[int, int], MergedCel
     anchors = {(m.row, m.col): m for m in spans}
     covered = {(m.row + r, m.col + c) for m in spans for r in range(m.rowspan) for c in range(m.colspan)} - set(anchors)
     return anchors, covered
+
+def _sentence_groups(text: str, rng: random.Random) -> list[str]:
+    """The paragraph cut into groups of one or two sentences, in order."""
+    sentences = re.split(r"(?<=[.!?])\s+", text.strip())
+    groups, i = [], 0
+    while i < len(sentences):
+        n = rng.choice([1, 2])
+        groups.append(" ".join(sentences[i : i + n]))
+        i += n
+    return groups
+
 
 @dataclass(frozen=True)
 class LayoutStyle:
@@ -87,12 +99,14 @@ class LayoutStyle:
     # Which tables, figures and captions the document keeps (1.0 keeps all, as the standard style does).
     visual_keep: float = 1.0
     caption_keep: float = 1.0
+    honour_breaks: float = 1.0  # share of the recipe's forced page breaks kept; they leave half-empty pages real documents rarely have
+    split_prob: float = 0.0  # share of paragraphs cut into one or two sentence boxes, for the short text boxes of real pages
 
 
 def random_style(seed: int) -> LayoutStyle:
     """Sample a whole page template (geometry, type, columns, page furniture) from ``seed``."""
     rng = random.Random(seed)
-    body = rng.choice([8, 9, 10, 11])
+    body = rng.choice([7, 8, 8, 9, 9, 10, 10, 11])
     style = LayoutStyle(
         margin_left=rng.randint(48, 80),
         margin_right=rng.randint(48, 80),
@@ -102,18 +116,18 @@ def random_style(seed: int) -> LayoutStyle:
         heading_font_size=rng.randint(9, 13),
         body_font_size=body,
         caption_font_size=max(7, body - 1),
-        body_line_height=round(body * rng.uniform(1.2, 1.45), 1),
-        block_spacing=rng.randint(6, 14),
-        section_spacing=rng.randint(8, 18),
+        body_line_height=round(body * rng.uniform(1.15, 1.35), 1),
+        block_spacing=rng.randint(4, 10),
+        section_spacing=rng.randint(6, 14),
         table_row_height=rng.randint(15, 24),
         columns=rng.choice([1, 2]),
-        force_section_page_breaks=rng.random() < 0.25,
+        force_section_page_breaks=rng.random() < 0.08,  # was 0.25: each section on a new page left the overflow alone on a half-empty page
         page_size=rng.choice([letter, A4]),
         font_family=rng.choices(list(FONT_FAMILIES), weights=[25, 26, 2, 14, 11, 8, 14])[0],  # DocLayNet text: Times 26%, Helvetica 25%, LaTeX 14%, other sans and DejaVu 17%, other serif 7%
         page_number_align=rng.choice(["left", "center", "right"]),
     )
     if style.columns == 1:  # DocLayNet text blocks are 0.38 of the page wide at the median; one full-width column was 0.79
-        style = replace(style, margin_left=style.margin_left + rng.randint(0, 70), margin_right=style.margin_right + rng.randint(0, 70))
+        style = replace(style, margin_left=style.margin_left + rng.randint(0, 30), margin_right=style.margin_right + rng.randint(0, 30))
     # Real pages are mostly text: header on about half, footer on three quarters, and a table, picture or caption on a quarter of pages.
     size = rng.choice([7, 8, 9, 9, 10, 10, 11, 12, 14])
     return replace(
@@ -129,8 +143,10 @@ def random_style(seed: int) -> LayoutStyle:
         header_align=rng.choice(["left", "center", "right"]),
         number_style=rng.choice(["{n}", "{n}", "Page {n}"]),
         header_text_mode=rng.choice(["short", "short", "title"]),
-        visual_keep=rng.uniform(0.1, 0.4),
+        visual_keep=rng.uniform(0.05, 0.3),
         caption_keep=rng.uniform(0.1, 0.35),
+        honour_breaks=rng.uniform(0.0, 0.4),
+        split_prob=rng.uniform(0.0, 0.5),
     )
 
 
@@ -232,7 +248,8 @@ class FlowLayoutPlanner:
         self._add_title(recipe.title, recipe.metadata)
         self._add_raster_overview(recipe)
         for section in recipe.sections:
-            if section.page_break_before or self.style.force_section_page_breaks or section.metadata.get("page_break_before"):
+            recipe_break = section.page_break_before or section.metadata.get("page_break_before")
+            if self.style.force_section_page_breaks or (recipe_break and random.Random(f"{self.seed}-brk-{section.heading}").random() < self.style.honour_breaks):
                 self._advance_page()
             self._add_heading(section.heading, section.metadata)
             for block_index, recipe_block in enumerate(section.blocks):
@@ -243,7 +260,9 @@ class FlowLayoutPlanner:
                     if pick.random() >= self.style.caption_keep:
                         recipe_block = recipe_block.model_copy(update={"caption": ""})
                 if recipe_block.type == "paragraph":
-                    self._add_paragraph(recipe_block.text, recipe_block.language, recipe_block.metadata)
+                    pick = random.Random(f"{self.seed}-split-{section.heading}-{block_index}")
+                    for part in _sentence_groups(recipe_block.text, pick) if pick.random() < self.style.split_prob else [recipe_block.text]:
+                        self._add_paragraph(part, recipe_block.language, recipe_block.metadata)
                 elif recipe_block.type == "list":
                     self._add_list(recipe_block)
                 elif recipe_block.type == "table":

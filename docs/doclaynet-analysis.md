@@ -266,3 +266,22 @@ Four TrueType families that ship with matplotlib (DejaVu Sans, DejaVu Serif, STI
 | Other | 10% | 0% | 8% |
 
 What is not covered: real pages sometimes mix families on one page (code in a manual, a different heading face); every synthetic page still uses one, so the font-families-per-page distance stays at 0.43. The document-level family also does not follow the category yet (scientific articles are 90% Computer Modern; that comes with the genre profiles, SYN-44). The mean distance over all measures is unchanged (0.284 to 0.282), as fonts change the look more than the geometry the survey measures. The effect on the detector score has not been measured.
+
+## Result of the density change (SYN-42)
+
+Random and structured pages are set a little tighter (type 7 to 11 pt with more small sizes, line pitch 1.15 to 1.35 times the type size, block spacing 4 to 10 pt, at most 30 pt of extra margin on single-column pages instead of 70), about a tenth of the documents start every section on a new page instead of a quarter, the recipes' own forced page breaks are honoured in 0 to 40% of documents, 0 to 50% of paragraphs are cut into one or two sentence boxes (for the short text boxes of real pages), and reference entries are exported as `list-item`, as bibliographies are in DocLayNet. Tables and figures are kept less often (5 to 30% of them) because denser pages put the same ones on fewer pages.
+
+Correction to an earlier note: the half-empty pages in the long structured document were not caused by the recipe forcing a page break before every section. Only 5 of that recipe's 35 sections ask for one (the key is present on all 35, which is what I counted). They came from the page template: `force_section_page_breaks` was on for a quarter of random documents, and then every section starts a new page, leaving a section's overflow alone on a page.
+
+Measured against all of DocLayNet on 150 `random` and `structured` documents:
+
+| Measure | DocLayNet | After SYN-41 and SYN-43 | After SYN-42 |
+|---|---|---|---|
+| Characters per page, mean | 2,552 | 1,663 | 2,240 |
+| Characters per page, distance (KS) | | 0.33 | 0.14 |
+| Share of page covered, distance (KS) | | 0.50 | 0.39 |
+| Pages with a table | 26% | 33% | 31% |
+| Pages with a picture | 29% | 35% | 35% |
+| Mean distance over all measures | | 0.282 | 0.263 |
+
+What is still off: classes per page (0.25 to 0.35, because denser pages hold more blocks), and the over-represented structured classes: section headers on 91% of pages (real 64%), formulas 35% (8%), footnotes 21% (4%), titles 10% (3%). Those come from the `structured` variant, which adds lists, formulas and footnotes to every recipe so that all 11 classes occur; setting class mix per genre belongs to SYN-44. The effect on the detector score has not been measured.
