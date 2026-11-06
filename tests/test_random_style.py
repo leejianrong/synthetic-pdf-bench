@@ -2,6 +2,7 @@ from pathlib import Path
 
 from synthetic_pdf_bench.cli.generate import generate
 from synthetic_pdf_bench.layout.flow_layout import random_style
+from synthetic_pdf_bench.render.fonts import FONT_FAMILIES
 from synthetic_pdf_bench.schema.truth import DocumentTruth
 
 
@@ -10,7 +11,8 @@ def test_random_style_is_deterministic_and_diverse() -> None:
     styles = {random_style(seed) for seed in range(30)}
     assert len(styles) == 30
     assert {s.columns for s in styles} == {1, 2}
-    assert {s.font_family for s in styles} == {"Helvetica", "Times", "Courier"}
+    families = {s.font_family for s in styles}
+    assert families <= set(FONT_FAMILIES) and len(families) >= 4
     assert len({s.page_size for s in styles}) == 2
 
 
